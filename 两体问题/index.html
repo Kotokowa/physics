@@ -11,7 +11,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>archives: 2025/10 | Hexo</title>
+  <title>Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,157 +355,653 @@
   
 </header>
         <!-- 内容区域 -->
-        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
-  <div class="archive-header-title">
-    archive
-  </div>
-  <div class="archive-header-desc">
-  
-  <span class="title" id="archive-header-desc"></span>
-  <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-  
-  </div>
-  <div class="mask-box"></div>
-</div>
+        
+<!-- prismjs 代码高亮 -->
 
-<div class="archive-video">
-  <video class="full-video" autoplay loop muted>
-      <source style="width: 100%;height: 100vh;" src="/physics/">
-  </video>
-  <div class="video-header-title">
-    archive
-  </div>
-  <div class="video-header-desc">
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        
+      </span>
+    </div>
+    
+    
       
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2025-10-17 |
+        </span>
+      
+
+      
+
+      
+    
   </div>
-  <div class="mask-box"></div>
+  
+  
+    <script defer src="/physics/js/bubble/bubble.js"></script>
+  
 </div>
 
-<!-- hash算法 -->
 
 
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
+
+
+<div class="post-detail-content post-row" 
+  style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <p>-–</p>
+<p>title: 两体中心势</p>
+<p>tags: 经典力学</p>
+<p>mathjax: true</p>
+<p>-–</p>
+<h1 id="两体问题"><a href="#两体问题" class="headerlink" title="两体问题"></a>两体问题</h1><ul>
+<li>两体问题的化简 → 中心力场</li>
+<li>有效势、运动解和轨道</li>
+<li>开普勒问题</li>
+<li>粒子弹性散射</li>
+</ul>
+<p>拉格朗日量：<br>$$<br>L &#x3D; \frac{1}{2} m_1 \dot{\vec{r}}_1^2 + \frac{1}{2} m_2 \dot{\vec{r}}_2^2 - V(\vec{r}_1 - \vec{r}_2)<br>$$</p>
+<p>其中不含可遗坐标. </p>
+<p>引入质心位矢 $\vec{R}$ 和相对位矢 $\vec{r}$：<br>$$<br>\begin{cases}<br>\vec{R} &#x3D; \frac{m_1 \vec{r}_1 + m_2 \vec{r}_2}{m_1 + m_2} \<br>\vec{r} &#x3D; \vec{r}_1 - \vec{r}_2<br>\end{cases}<br>$$</p>
+<p>总质量 $M &#x3D; m_1 + m_2$，约化质量 $\mu$ 满足：<br>$$<br>\frac{1}{\mu} &#x3D; \frac{1}{m_1} + \frac{1}{m_2}<br>$$</p>
+<p>位置关系：<br>$$<br>\begin{cases}<br>\vec{r}_1 &#x3D; \vec{R} + \frac{m_2}{M} \vec{r} &#x3D; \vec{R} + \frac{\mu}{m_1} \vec{r} \<br>\vec{r}_2 &#x3D; \vec{R} - \frac{m_1}{M} \vec{r} &#x3D; \vec{R} - \frac{\mu}{m_2} \vec{r}<br>\end{cases}<br>$$</p>
+<p>拉格朗日量分解：<br>$$<br>L &#x3D; \frac{1}{2} M \dot{\vec{R}}^2 + \frac{1}{2} \mu \dot{\vec{r}}^2 - V(\vec{r}) &#x3D; L_c + L’<br>$$</p>
+<p>解耦：将两体问题等效为两个单体问题：整体运动和相对运动</p>
+<p>现在可考虑动能和角动量分解：<br>$$<br>T &#x3D; T_c + T’ &#x3D; \frac{1}{2} M \dot{\vec{R}}^2 + \frac{1}{2} \mu \dot{\vec{r}}^2<br>$$<br>$$<br>\vec{J} &#x3D; \vec{J}_c + \vec{J}’ &#x3D; \vec{R} \times M \dot{\vec{R}} + \vec{r} \times \mu \dot{\vec{r}}<br>$$</p>
+<p>相对运动拉格朗日量（极坐标）：<br>$$<br>L’ &#x3D; \frac{1}{2} \mu ( \dot{r}^2 + r^2 \dot{\theta}^2 ) - V(r)<br>$$</p>
+<p>运动方程：<br>$$<br>\begin{cases}<br>\mu ( \ddot{r} - r \dot{\theta}^2 ) &#x3D; -\frac{\partial V}{\partial r} &#x3D; f(r) \<br>\mu ( r \ddot{\theta} + 2 \dot{r} \dot{\theta} ) &#x3D; 0<br>\end{cases}<br>$$</p>
+<p>守恒量：</p>
+<ol>
+<li>角动量守恒：<br>$$<br>\frac{\partial L}{\partial \theta} &#x3D; 0<br>$$<br>$$<br>p_\theta &#x3D; \mu r^2 \dot{\theta} &#x3D; l \quad (\text{const.})<br>$$</li>
+<li>两体内能量守恒：<br>$$<br>\frac{\partial L}{\partial t} &#x3D; 0<br>$$<br>$$<br>H &#x3D; \frac{1}{2} \mu ( \dot{r}^2 + r^2 \dot{\theta}^2 ) + V(r) &#x3D; E \quad (\text{const.})<br>$$</li>
+</ol>
+<p>将以上两个守恒式联立得：<br>$$<br>\frac{1}{2} \mu \dot{r}^2 + \frac{l^2}{2 \mu r^2} + V(r) &#x3D; E<br>$$</p>
+<p>定义有效势能：<br>$$<br>U(r) &#x3D; \frac{l^2}{2 \mu r^2} + V(r)<br>$$<br>其中 $\frac{l^{2}}{2\mu r^{2}}$ 可视为有效离心势能</p>
+<p>则有径向运动方程：<br>$$<br>\frac{1}{2} \mu \dot{r}^2 + U(r) &#x3D; E<br>$$</p>
+<p>等效为质点 $\mu$ 在等效势场 $U$ 中的一维运动</p>
+<p>轨道方程（Binet方程）的推导：</p>
+<p>$$<br>\frac{\mathrm{d}r}{\mathrm{d}t} &#x3D; \pm \sqrt{\frac{2}{\mu}\left[ E - U(r) \right]}<br>$$</p>
+<p>$$<br>t - t_0 &#x3D; \pm \sqrt{\frac{\mu}{2}} \int_{r_0}^r \frac{\mathrm{d}r}{\sqrt{E - U(r)}} \longrightarrow r &#x3D; r(t)<br>$$</p>
+<p>$$<br>\frac{\mathrm{d}\theta}{\mathrm{d}t} &#x3D; \frac{l}{\mu r^2}<br>$$</p>
+<p>$$<br> \theta - \theta_0 &#x3D; \frac{l}{\mu} \int_{t_0}^t \frac{\mathrm{d}t}{[r(t)]^2} \longrightarrow \theta &#x3D; \theta(t)<br>$$</p>
+<p>$$<br> \frac{\mathrm{d}r}{\mathrm{d}\theta} &#x3D; \pm \frac{\mu r^2}{l} \sqrt{\frac{2}{\mu}\left[ E - U(r) \right]}<br>$$</p>
+<p>代换：<br>$$<br>u &#x3D; \frac{1}{r} \quad \frac{\mathrm{d}u}{\mathrm{d}\theta} &#x3D; \mp \frac{1}{l} \sqrt{2\mu \left[ E - U\left( \frac{1}{u} \right) \right]}<br>$$</p>
+<p>$$<br>\theta - \theta_0 &#x3D; \mp \int_{u_0}^u \frac{l \mathrm{d}u}{\sqrt{2\mu \left[ E - U\left( 1&#x2F;u \right) \right]}} \quad \frac{1}{r} &#x3D; u &#x3D; u(\theta) \quad r &#x3D; r(\theta)<br>$$</p>
+<p>当 $( V(r) \propto \frac{1}{r} )，( \frac{1}{r^2} ) $时，可解得轨道闭合. 这两种情形为万有引力 胡克定律</p>
+<p>$$<br>\mu (\ddot{r} - r \dot{\theta}^2) &#x3D; f(r) \quad \frac{1}{r} &#x3D; u<br>$$</p>
+<p>$$<br>\dot{r} &#x3D; \frac{\mathrm{d}r}{\mathrm{d}t} &#x3D; \frac{\mathrm{d}\theta}{\mathrm{d}t} \frac{\mathrm{d}r}{\mathrm{d}\theta} &#x3D; \dot{\theta} \frac{\mathrm{d}r}{\mathrm{d}\theta} &#x3D; \frac{l}{\mu r^2} \frac{\mathrm{d}r}{\mathrm{d}\theta} &#x3D; -\frac{l}{\mu} \frac{\mathrm{d}u}{\mathrm{d}\theta}<br>$$</p>
+<p>$$<br>\ddot{r} &#x3D; \frac{\mathrm{d}\dot{r}}{\mathrm{d}t} &#x3D; \frac{\mathrm{d}\theta}{\mathrm{d}t} \frac{\mathrm{d}\dot{r}}{\mathrm{d}\theta} &#x3D; \dot{\theta} \frac{\mathrm{d}\dot{r}}{\mathrm{d}\theta} &#x3D; \frac{l}{\mu r^2} \frac{\mathrm{d}}{\mathrm{d}\theta} \left( -\frac{l}{\mu} \frac{\mathrm{d}u}{\mathrm{d}\theta} \right) &#x3D; -\frac{l^2 u^2}{\mu^2} \frac{\mathrm{d}^2 u}{\mathrm{d}\theta^2}<br>$$</p>
+<p>$$<br>r \dot{\theta}^2 &#x3D; r \left( \frac{l}{\mu r^2} \right)^2 &#x3D; \frac{l^2 u^3}{\mu^2}<br>$$</p>
+<p>Binet 方程<br>$$<br>\frac{\mathrm{d}^2 u}{\mathrm{d}\theta^2} + u &#x3D; -\frac{\mu}{l^2 u^2} f\left( \frac{1}{u} \right)<br>$$</p>
+<p>圆轨道条件（径向运动处于静止状态）：</p>
+<ul>
+<li>存在性：$\left. \frac{dU}{dr} \right|_{r_m} &#x3D; 0$</li>
+<li>稳定性：$\left. \frac{d^2U}{dr^2} \right|_{r_m} &gt; 0$</li>
+</ul>
+<p>eg.<br>开普勒问题<br>( V(r) &#x3D; -\frac{\alpha}{r} ) ( f(r) &#x3D; -\frac{\mathrm{d}V}{\mathrm{d}r} &#x3D; -\frac{\alpha}{r^2} ) ( \alpha &gt; 0 ) 引力<br>( U(r) &#x3D; \frac{l^2}{2\mu r^2} - \frac{\alpha}{r} )<br>求极值点：<br>$$<br>U’(r_m) &#x3D; -\frac{l^2}{\mu r_m^3} + \frac{\alpha}{r_m^2} &#x3D; 0<br>$$<br>$$<br>r_m &#x3D; \frac{l^2}{\mu \alpha}<br>$$<br>$$<br>U_{\text{min}} &#x3D; -\frac{\mu \alpha^2}{2l^2} &lt; 0<br>$$<br>开普勒问题 轨道方程<br>Binet 方程<br>$$<br>\frac{\mathrm{d}^2 u}{\mathrm{d}\theta^2} + u &#x3D; -\frac{\mu}{l^2 u^2} f\left( \frac{1}{u} \right) \implies \frac{\mathrm{d}^2 u}{\mathrm{d}\theta^2} + u &#x3D; \frac{1}{r_m}<br>$$<br>$$<br>u &#x3D; \frac{1}{r_m} + B \cos(\theta + C) \quad u &#x3D; \frac{1}{r} \quad r &#x3D; \frac{r_m}{1 + B r_m \cos(\theta + C)}<br>$$<br>适当选取极轴方向，使 ( C &#x3D; 0 ) ( r &#x3D; \frac{r_m}{1 + B r_m \cos\theta} )<br>令半通径 ( p &#x3D; r_m &#x3D; -\frac{l^2}{\mu \alpha} ) 离心率 ( e &#x3D; B p )<br>圆锥曲线：<br>$$<br>r &#x3D; \frac{p}{1 + e \cos\theta}<br>$$<br>当 ( \theta &#x3D; 0, \pi )：<br>$$<br>r_1 &#x3D; \frac{p}{1 + e} \quad r_2 &#x3D; \frac{p}{1 - e} \quad r_1 + r_2 &#x3D; \frac{2p}{1 - e^2}<br>$$<br>近远日点：( \dot{r} &#x3D; 0 )：<br>$$<br>\frac{l^2}{2\mu r^2} - \frac{\alpha}{r} &#x3D; E \quad r_1 + r_2 &#x3D; \frac{\alpha}{E}<br>$$<br>$$<br>E &#x3D; \frac{\alpha}{2p}(1 - e^2) &#x3D; -\frac{\mu \alpha^2}{2l^2}(1 - e^2) \quad p &#x3D; -\frac{l^2}{\mu \alpha}<br>$$<br>$$<br>e &#x3D; \sqrt{1 + \frac{2El^2}{\mu \alpha^2}}<br>$$<br>LRL vector 反映动力学对称性 ( \vec{A} &#x3D; \vec{p} \times \vec{l} - \frac{m\alpha}{r} \vec{r} )，α 来自 V(r)<br>$$<br>\frac{\mathrm{d}\vec{p}}{\mathrm{d}t} &#x3D; m\ddot{\vec{r}} &#x3D; -\frac{\alpha}{r^3} \vec{r} \quad \frac{\mathrm{d}\vec{r}}{\mathrm{d}t} \frac{\dot{r}r - r\dot{r}}{r^2}<br>$$<br>$$<br>\vec{c} \times (\vec{a} \times \vec{b}) &#x3D; (\vec{c} \cdot \vec{b})\vec{a} - (\vec{c} \cdot \vec{a})\vec{b}<br>$$<br>$$<br>\vec{r} \cdot \vec{p} &#x3D; mr \cdot \dot{\vec{r}} &#x3D; \frac{1}{2}m \frac{\mathrm{d}(r \cdot r)}{\mathrm{d}t} &#x3D; mr\dot{r}<br>$$<br>$$<br>\vec{l} &#x3D; \vec{r} \times \vec{p}<br>$$<br>$$<br>\vec{p} \times \frac{\mathrm{d}\vec{l}}{\mathrm{d}t} &#x3D; 0<br>$$<br>$$<br>\frac{\mathrm{d}}{\mathrm{d}t} \vec{A} &#x3D; \frac{\mathrm{d}\vec{p}}{\mathrm{d}t} \times \vec{l} + \vec{p} \times \frac{\mathrm{d}\vec{l}}{\mathrm{d}t} - m\alpha \frac{\mathrm{d}}{\mathrm{d}t} \frac{\vec{r}}{r}<br>$$<br>$$<br>&#x3D; -\frac{\alpha}{r^3} \vec{r} \times (\vec{r} \times \vec{p}) - m\alpha \frac{\dot{r}r - r\dot{r}}{r^2}<br>$$<br>$$<br>&#x3D; -\frac{\alpha}{r^3} [(\vec{r} \cdot \vec{p})\vec{r} - r^2 \vec{p}] - m\alpha \frac{\dot{r}r - r\dot{r}}{r^2}<br>$$<br>$$<br>&#x3D; -\frac{\alpha}{r^3} [mr\dot{r}r - mr^2 \dot{\vec{r}}] - m\alpha \frac{\dot{r}}{r} + m\alpha \frac{r\dot{r}}{r^2} &#x3D; 0<br>$$<br>且 ( \vec{A} \cdot \vec{l} &#x3D; (\vec{p} \times \vec{l}) \cdot \vec{l} - \frac{m\alpha}{r} \vec{r} \cdot \vec{l} &#x3D; (\vec{p} \times \vec{l}) \cdot \vec{l} - \frac{m\alpha}{r} \vec{r} \cdot (\vec{r} \times \vec{p}) &#x3D; 0 )<br>$$<br>A^2 &#x3D; (\vec{p} \times \vec{l}) \cdot (\vec{p} \times \vec{l}) - 2 \frac{m\alpha}{r} \vec{r} \cdot (\vec{p} \times \vec{l}) + m^2 \alpha^2 \frac{\vec{r} \cdot \vec{r}}{r^2}<br>$$<br>$$<br>&#x3D; p^2 l^2 - 2 \frac{m\alpha}{r} \vec{l} \cdot (\vec{r} \times \vec{p}) + m^2 \alpha^2<br>$$<br>$$<br>&#x3D; p^2 l^2 - 2 \frac{m\alpha}{r} l^2 + m^2 \alpha^2<br>$$</p>
+<p>$p^2 &#x3D; 2m\left( E + \frac{\alpha}{r} \right)$ as $V(r)$ 设为 $\frac{\alpha}{r}$</p>
+<p>$$<br>A^2 &#x3D; m^2\alpha^2\left( 1 + \frac{2E\ell^2}{m\alpha^2} \right)<br>$$</p>
+<p>$$<br>\because e &#x3D; \sqrt{1 + \frac{2E\ell^2}{m\alpha^2}}<br>$$</p>
+<p>$$<br>\therefore A &#x3D; m\alpha e<br>$$</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa</a>
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/两体问题/" target="_blank" title="">https://kotokowa.github.io/physics/两体问题/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">矢量运算</div>
+      </div>
+      <!-- <div class="content">
+        梯度、散度、旋度与拉普拉斯算子公式及推导梯度、散度、旋度与拉普拉斯算子在不同坐标系下的公式总结——梯度、散度、旋度和拉普
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+      <div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
+  </div>
+  <transition name="fade">
+    <div 
+      class="donate-box-mask"
+      v-cloak 
+      v-show="visible"
+      @click="cancelDialogDrawer()"
+    >
+    </div>
+  </transition>
+  <transition name="bounce">
+    <div class="donate-box" v-cloak v-show="visible">
+      <div class="donate-box_close">
+        <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
+      </div>
+      <div class="donate-box_title">
+        <h4>
+          你的赏识是我前进的动力
+        </h4>
+      </div>
+      <div class="donate-box_tab">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+          支付宝
+        </div>
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+          微信
+        </div>
+      </div>
+      <div class="donate-box_img">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
+          <img src="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="支付宝打赏" />
+        </div> 
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
+          <img src="https://pic2.zhimg.com/80/v2-29e78b52051ce542adf6d786d61fbd19_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-29e78b52051ce542adf6d786d61fbd19_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="微信打赏" />
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      tabActive: 'Alipay',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        // function getScroll() {
+        //   return {
+        //     left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+        //     top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+        //   };
+        // }
+        this.top = $(document).scrollTop() // or getScroll().top
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+      changeTabActive(name) {
+        this.tabActive = name;
+      }
+    },
+    created() {}
+  })
+</script>
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer src="/physics/js/shareJs/social-share.min.js"></script>
+</script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id='l_side'>
+  
+    
+      <section class="widget side_blogger">
+  <div class='content'>
+    
+      
+        <a class='avatar flat-box rectangle' href='/physics/about/'>
+          <img src='https://pic2.zhimg.com/80/v2-42b72d5ebee4b8d8aa70d9687effe87b_1440w.webp'/>
+        </a>
+      
+    
+    
+      <div class='text'>
+        
+          <h2>青墨书晚风</h2>
         
         
+          <p>我是副标题</p>
+
+        
+        
+          <p><span id="jinrishici-sentence">Hexo</span></p>
+          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
           
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/physics/archives/2025">2025</a>
-            </div>
+            <a href="/physics/atom.xml"
+              class="social fas fa-rss flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
           
-          <li class="post-item" data-aos="fade-left">
+        
+          
+            <a href="mailto:me@xxx.com"
+              class="social fas fa-envelope flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics"
+              class="social fab fa-github flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="tencent://AddContact/?fromId=50&amp;fromSubId=1&amp;subcmd=all&amp;uin=你的qq号码"
+              class="social fab fa-qq flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name' style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class='content'>
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%A4%E4%BD%93%E9%97%AE%E9%A2%98"><span class="toc-text">两体问题</span></a></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href='/tags/'><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class='name'>最新文章</span></a>
+    
+  </header>
+
+
+    <div class='content'>
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/%E4%B8%A4%E4%BD%93%E9%97%AE%E9%A2%98/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">10-17</span>
+                
+                  <span class="post-date">10-17</span>
+                
               </div>
-              <a class="post-title" href="/physics/%E4%B8%A4%E4%BD%93%E9%97%AE%E9%A2%98/"></a>
+              <a class="post-title" href="/physics/%E4%B8%A4%E4%BD%93%E9%97%AE%E9%A2%98/">no title</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">10-14</span>
+                
+                  <span class="post-date">10-14</span>
+                
               </div>
               <a class="post-title" href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/">矢量运算</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8A%9B%E5%AD%A6/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">10-14</span>
+                
+                  <span class="post-date">10-14</span>
+                
               </div>
               <a class="post-title" href="/physics/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8A%9B%E5%AD%A6/">拉格朗日力学</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/hello-world/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">10-14</span>
+                
+                  <span class="post-date">10-14</span>
+                
               </div>
               <a class="post-title" href="/physics/hello-world/">Hello World</a>
             </div>
-          </li>
+          </div>
         
-      </ul>
+      </div>
     </div>
   </section>
-  <div class="w-70">
+
     
   </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer src="/physics/js/wrapImage.js"></script>
 </div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"
+	:style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for='(image,index) in img' :key='index' v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>
