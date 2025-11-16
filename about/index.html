@@ -757,6 +757,27 @@
             </div>
           </div>
         
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/test/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-01</span>
+                
+              </div>
+              <a class="post-title" href="/physics/test/">Math Test</a>
+            </div>
+          </div>
+        
       </div>
     </div>
   </section>
@@ -764,7 +785,7 @@
       
   <section class="widget side_archives">
     
-    <header><a style="color: red" href='/physics/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/10/"><span class="card-archive-list-date">October 2025</span><span class="card-archive-list-count">4</span></a></li></ul></div>
+    <header><a style="color: red" href='/physics/archives/'><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class='name'>归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/10/"><span class="card-archive-list-date">October 2025</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/01/"><span class="card-archive-list-date">January 2025</span><span class="card-archive-list-count">1</span></a></li></ul></div>
   </section>
 
       <section class="widget side_webinfo">
@@ -781,7 +802,7 @@
       
         <div class="webinfo-item">
           <div>文章数目：</div>
-          <div>4 篇</div>
+          <div>5 篇</div>
         </div>
       
 
@@ -824,7 +845,7 @@
         <div class="webinfo-item">
           <div>最后活动时间：</div>
           
-            <div id="last-update" style="display: none;">Sun Nov 16 2025 11:44:29 GMT+0800 (China Standard Time)</div>
+            <div id="last-update" style="display: none;">Sun Nov 16 2025 14:46:28 GMT+0800 (China Standard Time)</div>
             <div id="last-update-show">2025-11-16 日</div>
           
         </div>
@@ -1025,7 +1046,7 @@
           mermaid.initialize({
             theme: 'default',
           })
-          if ('true') {
+          if ('false') {
             mermaid.init();
           }
         })
@@ -1868,84 +1889,6 @@
     
 
 <!-- pjax -->
-
-
-  <script src="/physics/js/pjax@0.2.8/index.js"></script>
-  
-    <div class="pjax-animate">
-  
-    <div class="loading-circle"><div id="loader-circle"></div></div>
-    <script>
-      window.ShowLoading = function() {
-        $(".loading-circle").css("display", "block");
-      };
-      window.HideLoading = function() {
-        $(".loading-circle").css("display", "none");
-      }
-    </script>
-  
-	<script>
-    document.addEventListener('pjax:complete', function () {
-      window.HideLoading();
-    })
-    document.addEventListener('pjax:send', function () {
-      window.ShowLoading();
-    })
-    document.addEventListener('pjax:error', function () {
-      window.HideLoading();
-    })
-	</script>
-</div>
-
-  
-
-  <script>
-    var pjax = new Pjax({
-      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
-      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
-      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
-      timeout: 5000
-    });
-
-    document.addEventListener('pjax:send', function (e) {
-
-      try {
-        var currentUrl = window.location.pathname;
-        var targetUrl = e.triggerElement.href;
-        var banUrl = [""];
-        if (banUrl[0] != "") {
-          banUrl.forEach(item => {
-            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
-              window.location.href = targetUrl;
-            }
-          });
-        }
-      } catch (error) {}
-
-      $(window).unbind('resize');
-      $(window).unbind('scroll');
-      $(document).unbind('scroll');
-      $(document).unbind('click');
-      $('body').unbind('click');
-
-    })
-    
-    document.addEventListener('pjax:complete', function () {
-      $('script[data-pjax], .pjax-reload script').each(function () {
-        $(this).parent().append($(this).remove());
-      });
-    });
-
-    document.addEventListener('pjax:error', function (e) {
-      window.location.href = e.triggerElement.href;
-    })
-    
-    // 刷新不从顶部开始
-    document.addEventListener("DOMContentLoaded", function () {
-      history.scrollRestoration = 'auto';
-    })
-  </script>
-
 
 
   </body>
