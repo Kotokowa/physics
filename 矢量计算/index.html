@@ -427,7 +427,7 @@
 </ul>
 <h3 id="梯度-1"><a href="#梯度-1" class="headerlink" title="梯度"></a>梯度</h3><p>$$<br>\nabla f &#x3D; \frac{\partial f}{\partial \rho} \hat{\rho} + \frac{1}{\rho}\frac{\partial f}{\partial \phi} \hat{\phi} + \frac{\partial f}{\partial z} \hat{z}<br>$$</p>
 <h3 id="散度-1"><a href="#散度-1" class="headerlink" title="散度"></a>散度</h3><p>$$<br>\nabla \cdot \mathbf{A} &#x3D; \frac{1}{\rho}\frac{\partial}{\partial \rho}(\rho A_\rho) + \frac{1}{\rho}\frac{\partial A_\phi}{\partial \phi} + \frac{\partial A_z}{\partial z}<br>$$</p>
-<h3 id="旋度-1"><a href="#旋度-1" class="headerlink" title="旋度"></a>旋度</h3><p>$$<br>\nabla \times \mathbf{A} &#x3D; \frac{1}{\rho} \begin{vmatrix}<br>\hat{\rho} &amp; \rho\hat{\phi} &amp; \hat{z} \<br>\frac{\partial}{\partial \rho} &amp; \frac{\partial}{\partial \phi} &amp; \frac{\partial}{\partial z} \<br>A_\rho &amp; \rho A_\phi &amp; A_z<br>\end{vmatrix}<br>$$</p>
+<h3 id="旋度-1"><a href="#旋度-1" class="headerlink" title="旋度"></a>旋度</h3><p>$$<br>\nabla \times \mathbf{A} &#x3D; \frac{1}{\rho} \begin{vmatrix}<br>\hat{\rho} &amp; \rho\hat{\phi} &amp; \hat{z} \\<br>\frac{\partial}{\partial \rho} &amp; \frac{\partial}{\partial \phi} &amp; \frac{\partial}{\partial z} \\<br>A_\rho &amp; \rho A_\phi &amp; A_z<br>\end{vmatrix}<br>$$</p>
 <h3 id="拉普拉斯算子-1"><a href="#拉普拉斯算子-1" class="headerlink" title="拉普拉斯算子"></a>拉普拉斯算子</h3><p>$$<br>\nabla^2 f &#x3D; \frac{1}{\rho}\frac{\partial}{\partial \rho}\left(\rho \frac{\partial f}{\partial \rho}\right) + \frac{1}{\rho^2}\frac{\partial^2 f}{\partial \phi^2} + \frac{\partial^2 f}{\partial z^2}<br>$$</p>
 <hr>
 <h2 id="3-球坐标系"><a href="#3-球坐标系" class="headerlink" title="3. 球坐标系"></a>3. 球坐标系</h2><ul>
@@ -438,7 +438,7 @@
 </ul>
 <h3 id="梯度-2"><a href="#梯度-2" class="headerlink" title="梯度"></a>梯度</h3><p>$$<br>\nabla f &#x3D; \frac{\partial f}{\partial r} \hat{r} + \frac{1}{r}\frac{\partial f}{\partial \theta} \hat{\theta} + \frac{1}{r\sin\theta}\frac{\partial f}{\partial \phi} \hat{\phi}<br>$$</p>
 <h3 id="散度-2"><a href="#散度-2" class="headerlink" title="散度"></a>散度</h3><p>$$<br>\nabla \cdot \mathbf{A} &#x3D; \frac{1}{r^2}\frac{\partial}{\partial r}(r^2 A_r) + \frac{1}{r\sin\theta}\frac{\partial}{\partial \theta}(A_\theta \sin\theta) + \frac{1}{r\sin\theta}\frac{\partial A_\phi}{\partial \phi}<br>$$</p>
-<h3 id="旋度-2"><a href="#旋度-2" class="headerlink" title="旋度"></a>旋度</h3><p>$$<br>\nabla \times \mathbf{A} &#x3D; \frac{1}{r^2\sin\theta} \begin{vmatrix}<br>\hat{r} &amp; r\hat{\theta} &amp; r\sin\theta\hat{\phi} \<br>\frac{\partial}{\partial r} &amp; \frac{\partial}{\partial \theta} &amp; \frac{\partial}{\partial \phi} \<br>A_r &amp; rA_\theta &amp; r\sin\theta A_\phi<br>\end{vmatrix}<br>$$</p>
+<h3 id="旋度-2"><a href="#旋度-2" class="headerlink" title="旋度"></a>旋度</h3><p>$$<br>\nabla \times \mathbf{A} &#x3D; \frac{1}{r^2\sin\theta} \begin{vmatrix}<br>\hat{r} &amp; r\hat{\theta} &amp; r\sin\theta\hat{\phi} \\<br>\frac{\partial}{\partial r} &amp; \frac{\partial}{\partial \theta} &amp; \frac{\partial}{\partial \phi} \\<br>A_r &amp; rA_\theta &amp; r\sin\theta A_\phi<br>\end{vmatrix}<br>$$</p>
 <h3 id="拉普拉斯算子-2"><a href="#拉普拉斯算子-2" class="headerlink" title="拉普拉斯算子"></a>拉普拉斯算子</h3><p>$$<br>\nabla^2 f &#x3D; \frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2 \frac{\partial f}{\partial r}\right) + \frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}\left(\sin\theta \frac{\partial f}{\partial \theta}\right) + \frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial \phi^2}<br>$$</p>
 <hr>
 <h3 id="总结表格"><a href="#总结表格" class="headerlink" title="总结表格"></a>总结表格</h3><p>下表对上述公式进行了快速概览。</p>
@@ -456,28 +456,28 @@
 <td align="left"><strong>直角</strong><br>$(x, y, z)$</td>
 <td align="left">$\frac{\partial f}{\partial x}\mathbf{e}_x + \frac{\partial f}{\partial y}\mathbf{e}_y + \frac{\partial f}{\partial z}\mathbf{e}_z$</td>
 <td align="left">$\frac{\partial A_x}{\partial x} + \frac{\partial A_y}{\partial y} + \frac{\partial A_z}{\partial z}$</td>
-<td align="left">$\begin{vmatrix} \mathbf{e}_x &amp; \mathbf{e}_y &amp; \mathbf{e}_z \ \partial_x &amp; \partial_y &amp; \partial_z \ A_x &amp; A_y &amp; A_z \end{vmatrix}$</td>
+<td align="left">$\begin{vmatrix} \mathbf{e}_x &amp; \mathbf{e}_y &amp; \mathbf{e}_z \\ \partial_x &amp; \partial_y &amp; \partial_z \\ A_x &amp; A_y &amp; A_z \end{vmatrix}$</td>
 <td align="left">$\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}$</td>
 </tr>
 <tr>
 <td align="left"><strong>柱坐标</strong><br>$(\rho, \phi, z)$</td>
 <td align="left">$\frac{\partial f}{\partial \rho}\mathbf{e}<em>\rho + \frac{1}{\rho}\frac{\partial f}{\partial \phi}\mathbf{e}</em>\phi + \frac{\partial f}{\partial z}\mathbf{e}_z$</td>
 <td align="left">$\frac{1}{\rho}\frac{\partial}{\partial \rho}(\rho A_\rho) + \frac{1}{\rho}\frac{\partial A_\phi}{\partial \phi} + \frac{\partial A_z}{\partial z}$</td>
-<td align="left">$\frac{1}{\rho}\begin{vmatrix} \mathbf{e}<em>\rho &amp; \rho\mathbf{e}</em>\phi &amp; \mathbf{e}<em>z \ \partial</em>\rho &amp; \partial_\phi &amp; \partial_z \ A_\rho &amp; \rho A_\phi &amp; A_z \end{vmatrix}$</td>
+<td align="left">$\frac{1}{\rho}\begin{vmatrix} \mathbf{e}<em>\rho &amp; \rho\mathbf{e}</em>\phi &amp; \mathbf{e}<em>z \\ \partial</em>\rho &amp; \partial_\phi &amp; \partial_z \\ A_\rho &amp; \rho A_\phi &amp; A_z \end{vmatrix}$</td>
 <td align="left">$\frac{1}{\rho}\frac{\partial}{\partial \rho}(\rho \frac{\partial f}{\partial \rho}) + \frac{1}{\rho^2}\frac{\partial^2 f}{\partial \phi^2} + \frac{\partial^2 f}{\partial z^2}$</td>
 </tr>
 <tr>
 <td align="left"><strong>球坐标</strong><br>$(r, \theta, \phi)$</td>
 <td align="left">$\frac{\partial f}{\partial r}\mathbf{e}<em>r + \frac{1}{r}\frac{\partial f}{\partial \theta}\mathbf{e}</em>\theta + \frac{1}{r\sin\theta}\frac{\partial f}{\partial \phi}\mathbf{e}_\phi$</td>
 <td align="left">$\frac{1}{r^2}\frac{\partial}{\partial r}(r^2 A_r) + \frac{1}{r\sin\theta}\frac{\partial}{\partial \theta}(A_\theta \sin\theta) + \frac{1}{r\sin\theta}\frac{\partial A_\phi}{\partial \phi}$</td>
-<td align="left">$\frac{1}{r^2 \sin\theta}\begin{vmatrix} \mathbf{e}<em>r &amp; r\mathbf{e}</em>\theta &amp; r\sin\theta\mathbf{e}<em>\phi \ \partial_r &amp; \partial</em>\theta &amp; \partial_\phi \ A_r &amp; rA_\theta &amp; r\sin\theta A_\phi \end{vmatrix}$</td>
+<td align="left">$\frac{1}{r^2 \sin\theta}\begin{vmatrix} \mathbf{e}<em>r &amp; r\mathbf{e}</em>\theta &amp; r\sin\theta\mathbf{e}<em>\phi \\ \partial_r &amp; \partial</em>\theta &amp; \partial_\phi \\ A_r &amp; rA_\theta &amp; r\sin\theta A_\phi \end{vmatrix}$</td>
 <td align="left">$\frac{1}{r^2}\frac{\partial}{\partial r}(r^2 \frac{\partial f}{\partial r}) + \frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}(\sin\theta \frac{\partial f}{\partial \theta}) + \frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial \phi^2}$</td>
 </tr>
 </tbody></table>
-<h2 id="正交曲线坐标系下的微分算子推导"><a href="#正交曲线坐标系下的微分算子推导" class="headerlink" title="正交曲线坐标系下的微分算子推导"></a>正交曲线坐标系下的微分算子推导</h2><h3 id="微元的写法"><a href="#微元的写法" class="headerlink" title="微元的写法"></a>微元的写法</h3><p>在直角坐标系中，微元写作 ( dx, dy, dz )，形式直观；但在球坐标系等正交曲线坐标系中并非如此：( \hat{r} ) 表示径向微元，( \theta )、( \phi ) 不直接表示角向微元（量纲不对）。  </p>
+<h2 id="正交曲线坐标系下的微分算子推导"><a href="#正交曲线坐标系下的微分算子推导" class="headerlink" title="正交曲线坐标系下的微分算子推导"></a>正交曲线坐标系下的微分算子推导</h2><h3 id="微元的写法"><a href="#微元的写法" class="headerlink" title="微元的写法"></a>微元的写法</h3><p>在直角坐标系中，微元写作 $( dx, dy, dz )$，形式直观；但在球坐标系等正交曲线坐标系中并非如此：$( \hat{r} )$ 表示径向微元，$( \theta )$、$( \phi )$ 不直接表示角向微元（量纲不对）。  </p>
 <ul>
-<li>( \theta ) 方向微元应为 ( r d\theta , \hat{\theta} )  </li>
-<li>( \phi ) 方向微元应为 ( r \sin\theta , d\phi , \hat{\phi} )<br>记位移微元为：<br>[ d\vec{l} &#x3D; f du , \hat{u} + g dv , \hat{v} + h dw , \hat{w} ]  <table>
+<li>$( \theta )$ 方向微元应为 $( r d\theta , \hat{\theta} )$  </li>
+<li>$( \phi )$ 方向微元应为 $( r \sin\theta , d\phi , \hat{\phi} )$<br>记位移微元为：<br>$[ d\vec{l} &#x3D; f du , \hat{u} + g dv , \hat{v} + h dw , \hat{w} ]$  <table>
 <thead>
 <tr>
 <th>坐标系</th>
@@ -489,32 +489,32 @@
 </thead>
 <tbody><tr>
 <td>直角坐标系</td>
-<td>( \hat{x}, \hat{y}, \hat{z} )</td>
+<td>$( \hat{x}, \hat{y}, \hat{z} )$</td>
 <td>1</td>
 <td>1</td>
 <td>1</td>
 </tr>
 <tr>
 <td>球坐标系</td>
-<td>( \hat{r}, \hat{\theta}, \hat{\phi} )</td>
+<td>$( \hat{r}, \hat{\theta}, \hat{\phi} )$</td>
 <td>1</td>
-<td>( r )</td>
-<td>( r \sin\theta )</td>
+<td>$( r )$</td>
+<td>$( r \sin\theta )$</td>
 </tr>
 <tr>
 <td>柱坐标系</td>
-<td>( \hat{\rho}, \hat{\phi}, \hat{z} )</td>
+<td>$( \hat{\rho}, \hat{\phi}, \hat{z} )$</td>
 <td>1</td>
-<td>( \rho )</td>
+<td>$( \rho )$</td>
 <td>1</td>
 </tr>
 </tbody></table>
 </li>
 </ul>
-<h3 id="梯度-nabla-t"><a href="#梯度-nabla-t" class="headerlink" title="梯度 ( \nabla t )"></a>梯度 ( \nabla t )</h3><p>全微分表达式为：<br>[ dt &#x3D; \frac{\partial t}{\partial u} du + \frac{\partial t}{\partial v} dv + \frac{\partial t}{\partial w} dw &#x3D; \nabla t \cdot d\vec{l} ]<br>代入 ( d\vec{l} &#x3D; f du , \hat{u} + g dv , \hat{v} + h dw , \hat{w} )，得梯度公式：<br>[ \nabla t &#x3D; \frac{1}{f} \frac{\partial t}{\partial u} \hat{u} + \frac{1}{g} \frac{\partial t}{\partial v} \hat{v} + \frac{1}{h} \frac{\partial t}{\partial w} \hat{w} ]</p>
-<h3 id="散度-nabla-cdot-vec-A"><a href="#散度-nabla-cdot-vec-A" class="headerlink" title="散度 ( \nabla \cdot \vec{A} )"></a>散度 ( \nabla \cdot \vec{A} )</h3><p>散度用于计算 ( \oint \vec{A} \cdot d\vec{a} )。由于坐标系正交，面元 ( d\vec{a} ) 为立方体表面，体积元 ( d\tau &#x3D; dl_u dl_v dl_w &#x3D; (fgh) , du dv dw )。<br>前表面面元 ( d\vec{a}<em>{\text{前}} &#x3D; - (gh) , dv dw , \hat{u} )，后表面面元 ( d\vec{a}</em>{\text{后}} &#x3D; + (gh) , dv dw , \hat{u} )（含高阶小项）。<br>前后表面积分差为：<br>[ \vec{A} \cdot d\vec{a}<em>{\text{后}} - \vec{A} \cdot d\vec{a}</em>{\text{前}} &#x3D; \frac{\partial}{\partial u} (gh A_u) , du , dv , dw ]<br>同理，左右、上下表面积分差分别为 ( \frac{\partial}{\partial v} (fh A_v) , du , dv , dw ) 和 ( \frac{\partial}{\partial w} (fg A_w) , du , dv , dw )。<br>总积分满足高斯定理：<br>[ \oint \vec{A} \cdot d\vec{a} &#x3D; \int (\nabla \cdot \vec{A}) , d\tau ]<br>因此散度为：<br>[ \nabla \cdot \vec{A} &#x3D; \frac{1}{fgh} \left[ \frac{\partial}{\partial u} (gh A_u) + \frac{\partial}{\partial v} (fh A_v) + \frac{\partial}{\partial w} (fg A_w) \right] ]</p>
-<h3 id="旋度-nabla-times-vec-A"><a href="#旋度-nabla-times-vec-A" class="headerlink" title="旋度 ( \nabla \times \vec{A} )"></a>旋度 ( \nabla \times \vec{A} )</h3><p>旋度用于计算 ( \oint \vec{A} \cdot d\vec{l} )。取面元 ( d\vec{a} &#x3D; (fg) , du dv , \hat{w} )，对应边长 ( d\vec{l}<em>u &#x3D; f du , \hat{u} )、( d\vec{l}<em>v &#x3D; g dv , \hat{v} )。<br>上部边积分 ( \vec{A} \cdot d\vec{l}</em>{\text{上}} &#x3D; (f A_u) , du )，下部边积分 ( \vec{A} \cdot d\vec{l}</em>{\text{下}} &#x3D; - \left[ \frac{\partial}{\partial v} (f A_u) \right] dv , du )（含高阶小项），左右边类似处理。<br>环路积分满足斯托克斯定理：<br>[ \oint \vec{A} \cdot d\vec{l} &#x3D; \int (\nabla \times \vec{A}) \cdot d\vec{a} ]<br>通过分量分析，旋度分量为：<br>[ (\nabla \times \vec{A})_w &#x3D; \frac{1}{fg} \left[ \frac{\partial}{\partial u} (g A_v) - \frac{\partial}{\partial v} (f A_u) \right] ]<br>推广到其他分量，最终旋度公式需结合全部方向（此处略去完整展开，核心是通过环路积分与面元的关系推导分量）。</p>
-<p>###拉普拉斯算子<br>根据 $$\nabla^2 &#x3D; $$\nabla \cdot (\nabla f)$$ 计算可得</p>
+<h3 id="梯度-nabla-t"><a href="#梯度-nabla-t" class="headerlink" title="梯度 $( \nabla t )$"></a>梯度 $( \nabla t )$</h3><p>全微分表达式为：<br>$$[ dt &#x3D; \frac{\partial t}{\partial u} du + \frac{\partial t}{\partial v} dv + \frac{\partial t}{\partial w} dw &#x3D; \nabla t \cdot d\vec{l} ]$$<br>代入 $( d\vec{l} &#x3D; f du , \hat{u} + g dv , \hat{v} + h dw , \hat{w} )$，得梯度公式：<br>$$[ \nabla t &#x3D; \frac{1}{f} \frac{\partial t}{\partial u} \hat{u} + \frac{1}{g} \frac{\partial t}{\partial v} \hat{v} + \frac{1}{h} \frac{\partial t}{\partial w} \hat{w} ]$$</p>
+<h3 id="散度-nabla-cdot-vec-A"><a href="#散度-nabla-cdot-vec-A" class="headerlink" title="散度 $( \nabla \cdot \vec{A} )$"></a>散度 $( \nabla \cdot \vec{A} )$</h3><p>散度用于计算 $( \oint \vec{A} \cdot d\vec{a} )$。由于坐标系正交，面元 $( d\vec{a} )$ 为立方体表面，体积元 $( d\tau &#x3D; dl_u dl_v dl_w &#x3D; (fgh) , du dv dw )$。<br>前表面面元 $( d\vec{a}<em>{\text{前}} &#x3D; - (gh) , dv dw , \hat{u} )$，后表面面元 $( d\vec{a}</em>{\text{后}} &#x3D; + (gh) , dv dw , \hat{u} )$（含高阶小项）。<br>前后表面积分差为：<br>$$[ \vec{A} \cdot d\vec{a}<em>{\text{后}} - \vec{A} \cdot d\vec{a}</em>{\text{前}} &#x3D; \frac{\partial}{\partial u} (gh A_u) , du , dv , dw ]$$<br>同理，左右、上下表面积分差分别为：<br>$$( \frac{\partial}{\partial v} (fh A_v) , du , dv , dw ) 和 ( \frac{\partial}{\partial w} (fg A_w) , du , dv , dw )$$。<br>总积分满足高斯定理：<br>$$[ \oint \vec{A} \cdot d\vec{a} &#x3D; \int (\nabla \cdot \vec{A}) , d\tau ]$$<br>因此散度为：<br>$$[ \nabla \cdot \vec{A} &#x3D; \frac{1}{fgh} \left[ \frac{\partial}{\partial u} (gh A_u) + \frac{\partial}{\partial v} (fh A_v) + \frac{\partial}{\partial w} (fg A_w) \right] ]$$</p>
+<h3 id="旋度-nabla-times-vec-A"><a href="#旋度-nabla-times-vec-A" class="headerlink" title="旋度 $( \nabla \times \vec{A} )$"></a>旋度 $( \nabla \times \vec{A} )$</h3><p>旋度用于计算 $( \oint \vec{A} \cdot d\vec{l} )$。取面元 $( d\vec{a} &#x3D; (fg) , du dv , \hat{w} )$，对应边长 $( d\vec{l}<em>u &#x3D; f du , \hat{u} )$、$( d\vec{l}<em>v &#x3D; g dv , \hat{v} )$。<br>上部边积分 $( \vec{A} \cdot d\vec{l}</em>{\text{上}} &#x3D; (f A_u) , du )$，下部边积分 $( \vec{A} \cdot d\vec{l}</em>{\text{下}} &#x3D; - \left[ \frac{\partial}{\partial v} (f A_u) \right] dv , du )$（含高阶小项），左右边类似处理。<br>环路积分满足斯托克斯定理：<br>$$[ \oint \vec{A} \cdot d\vec{l} &#x3D; \int (\nabla \times \vec{A}) \cdot d\vec{a} ]$$<br>通过分量分析，旋度分量为：<br>$$[ (\nabla \times \vec{A})_w &#x3D; \frac{1}{fg} \left[ \frac{\partial}{\partial u} (g A_v) - \frac{\partial}{\partial v} (f A_u) \right] ]$$<br>推广到其他分量，最终旋度公式需结合全部方向（此处略去完整展开，核心是通过环路积分与面元的关系推导分量）。</p>
+<p>###拉普拉斯算子<br>根据 $$\nabla^2 &#x3D; \nabla \cdot (\nabla f)$$ 计算可得</p>
 
       </div>
       <div class="post-tags-categories">
@@ -558,21 +558,40 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/hello-world/" class="post-nav-link">
+    <a href="/physics/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8A%9B%E5%AD%A6/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">Hello World</div>
+        <div class="title-text">拉格朗日力学</div>
       </div>
       
       <!-- <div class="content">
-        Welcome to Hexo! This is your very first post. Check documen
+        Part1 拉格朗日力学约束与自由度约束分为完整约束（可积约束）和非完整约束（不可积约束）：  
+
+完整约束：约束方程可
       </div> -->
     </a>
   </div>
 
 
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" src="" alt="">
+    </div>
+    <a href="/physics/hello-world/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Hello World</div>
+      </div>
+      <!-- <div class="content">
+        Welcome to Hexo! This is your very first post. Check documen
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -791,7 +810,7 @@
   <div class='content'>
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E3%80%81%E6%97%8B%E5%BA%A6%E4%B8%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E5%85%AC%E5%BC%8F%E5%8F%8A%E6%8E%A8%E5%AF%BC"><span class="toc-text">梯度、散度、旋度与拉普拉斯算子公式及推导</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E3%80%81%E6%97%8B%E5%BA%A6%E4%B8%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E5%9C%A8%E4%B8%8D%E5%90%8C%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8B%E7%9A%84%E5%85%AC%E5%BC%8F%E6%80%BB%E7%BB%93"><span class="toc-text">梯度、散度、旋度与拉普拉斯算子在不同坐标系下的公式总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%80%94%E2%80%94%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E3%80%81%E6%97%8B%E5%BA%A6%E5%92%8C%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E5%9C%A8%E4%B8%89%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%AD%A3%E4%BA%A4%E5%9D%90%E6%A0%87%E7%B3%BB%EF%BC%9A%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB%E3%80%81%E6%9F%B1%E5%9D%90%E6%A0%87%E7%B3%BB%E5%92%8C%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8B%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">——梯度、散度、旋度和拉普拉斯算子在三种常用正交坐标系：直角坐标系、柱坐标系和球坐标系下的表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">1. 直角坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90"><span class="toc-text">拉普拉斯算子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9F%B1%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">2. 柱坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-1"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-1"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-1"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90-1"><span class="toc-text">拉普拉斯算子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">3. 球坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-2"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-2"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-2"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90-2"><span class="toc-text">拉普拉斯算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E8%A1%A8%E6%A0%BC"><span class="toc-text">总结表格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E6%9B%B2%E7%BA%BF%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8B%E7%9A%84%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%8E%A8%E5%AF%BC"><span class="toc-text">正交曲线坐标系下的微分算子推导</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%85%83%E7%9A%84%E5%86%99%E6%B3%95"><span class="toc-text">微元的写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-nabla-t"><span class="toc-text">梯度 ( \nabla t )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-nabla-cdot-vec-A"><span class="toc-text">散度 ( \nabla \cdot \vec{A} )</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-nabla-times-vec-A"><span class="toc-text">旋度 ( \nabla \times \vec{A} )</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E3%80%81%E6%97%8B%E5%BA%A6%E4%B8%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E5%85%AC%E5%BC%8F%E5%8F%8A%E6%8E%A8%E5%AF%BC"><span class="toc-text">梯度、散度、旋度与拉普拉斯算子公式及推导</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E3%80%81%E6%97%8B%E5%BA%A6%E4%B8%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E5%9C%A8%E4%B8%8D%E5%90%8C%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8B%E7%9A%84%E5%85%AC%E5%BC%8F%E6%80%BB%E7%BB%93"><span class="toc-text">梯度、散度、旋度与拉普拉斯算子在不同坐标系下的公式总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%80%94%E2%80%94%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E3%80%81%E6%97%8B%E5%BA%A6%E5%92%8C%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E5%9C%A8%E4%B8%89%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%AD%A3%E4%BA%A4%E5%9D%90%E6%A0%87%E7%B3%BB%EF%BC%9A%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB%E3%80%81%E6%9F%B1%E5%9D%90%E6%A0%87%E7%B3%BB%E5%92%8C%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8B%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">——梯度、散度、旋度和拉普拉斯算子在三种常用正交坐标系：直角坐标系、柱坐标系和球坐标系下的表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">1. 直角坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90"><span class="toc-text">拉普拉斯算子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9F%B1%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">2. 柱坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-1"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-1"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-1"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90-1"><span class="toc-text">拉普拉斯算子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">3. 球坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-2"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-2"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-2"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90-2"><span class="toc-text">拉普拉斯算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E8%A1%A8%E6%A0%BC"><span class="toc-text">总结表格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E6%9B%B2%E7%BA%BF%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8B%E7%9A%84%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%8E%A8%E5%AF%BC"><span class="toc-text">正交曲线坐标系下的微分算子推导</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%85%83%E7%9A%84%E5%86%99%E6%B3%95"><span class="toc-text">微元的写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-nabla-t"><span class="toc-text">梯度 $( \nabla t )$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-nabla-cdot-vec-A"><span class="toc-text">散度 $( \nabla \cdot \vec{A} )$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-nabla-times-vec-A"><span class="toc-text">旋度 $( \nabla \times \vec{A} )$</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -866,27 +885,6 @@
             
 
             <div class="post-img-box">
-              <a href="/physics/hello-world/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">10-14</span>
-                
-              </div>
-              <a class="post-title" href="/physics/hello-world/">Hello World</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
               <a href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
@@ -899,6 +897,27 @@
                 
               </div>
               <a class="post-title" href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/">矢量运算</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/hello-world/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-10</span>
+                
+              </div>
+              <a class="post-title" href="/physics/hello-world/">Hello World</a>
             </div>
           </div>
         
