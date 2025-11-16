@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <!-- meta/link... -->
-  
-
-
-
-<head>
+<!DOCTYPE html><html><!-- meta/link... --><head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -42,7 +35,7 @@
             }
         }
     </style>
-    <script defer src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
     <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
 
     
@@ -74,7 +67,7 @@
   <!-- 预加载动画 -->
   
   
-  <div class="preloader_6" id="loader">
+  <body><div class="preloader_6" id="loader">
   <div class="loader"></div>
 </div>
   <script>
@@ -86,10 +79,10 @@
   </script>
 
 
-  <body>
+  
     <!-- 判断是否为暗黑风格 -->
     <!-- 判断是否为黑夜模式 -->
-<script defer>
+<script defer="">
   let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
 
   if (isDark) {
@@ -172,11 +165,8 @@
       <main class="main" id="pjax-container">
         <!-- 头部导航 -->
         
-<header class="header  " 
-  id="navHeader"
-  style="position: fixed;
-  left: 0; top: 0; z-index: 10;width: 100%;"
->
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
   <div class="header-content">
     <div class="bars">
       <div id="appDrawer" class="sidebar-image">
@@ -185,7 +175,7 @@
   </div>
   
   <transition name="fade">
-    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
     </div>
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
@@ -272,25 +262,19 @@
       
       
         <div id="appSearch">
-  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
   <transition name="fade">
-    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
       <div class="message-box animated bounceInDown">
         <h2>
           <span>
             <i class="fas fa-search" aria-hidden="true"></i>
             <span class="title">Search</span>
           </span>
-          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
         </h2>
         <form class="site-search-form">
-          <input type="text"
-            placeholder="Please enter keywords"
-            id="local-search-input" 
-            @click="getSearchFile()"
-            class="st-search-input"
-            v-model="searchInput"
-          />
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
         </form>
         <div class="result-wrapper">
           <div id="local-search-result" class="local-search-result-cls"></div>
@@ -398,16 +382,14 @@
                 
                 
                 <a href="/physics/tags/%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6/" title="经典力学: 2">
-                    <span class="tag-content"
-                        title="经典力学" style="background-color: #E8F8F5;">经典力学
+                    <span class="tag-content" title="经典力学" style="background-color: #E8F8F5;">经典力学
                         <span class="tag-length">2</span>
                     </span>
                 </a>
                 
                 
                 <a href="/physics/tags/%E5%85%89%E5%AD%A6/" title="光学: 1">
-                    <span class="tag-content"
-                        title="光学" style="background-color: #FEF9E7;">光学
+                    <span class="tag-content" title="光学" style="background-color: #FEF9E7;">光学
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -426,7 +408,7 @@
   
     <!-- 底部鱼儿跳动效果，依赖于jquery-->
 <div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
-<script defer>
+<script defer="">
   var RENDERER = {
     POINT_INTERVAL: 5,
     FISH_COUNT: 3,
@@ -617,7 +599,7 @@
   </div>
 </div>
 
-<script defer>
+<script defer="">
   $(function() {
     // 初始化暗黑模式状态
     let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
@@ -646,10 +628,10 @@
     
     <!-- 渲染回到顶部按钮 -->
     
-      <div class="goTop top-btn-color" pointer>
+      <div class="goTop top-btn-color" pointer="">
   <i class="fas fa-arrow-up" aria-hidden="true"></i>
 </div>
-<script defer src="/physics/js/goTop.js"></script>
+<script defer="" src="/physics/js/goTop.js"></script>
 
     
     <!-- 渲染左下角音乐播放器 -->
@@ -680,20 +662,7 @@
 
 
 </style>
-<meting-js  
-  class=""
-  server="netease"
-  type="song"
-  id="33937479"
-  fixed='true'
-  autoplay='true'
-  theme='#42b983'
-  loop='all'
-  order='random'
-  preload='auto'
-  volume='0.7'
-  list-folded='true'
->
+<meting-js class="" server="netease" type="song" id="33937479" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="auto" volume="0.7" list-folded="true">
 </meting-js>
 
 <!-- <style>
@@ -703,8 +672,8 @@
     bottom: 300px;
   }
 </style> -->
-<script defer src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
-<script defer src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
     
 
     <!-- 图片放大 -->
@@ -717,7 +686,7 @@
 
     <!-- Baidu Push -->
 
-<script async>
+<script async="">
     (function () {
         var bp = document.createElement('script');
         var curProtocol = window.location.protocol.split(':')[0];
@@ -734,7 +703,7 @@
     
     <!-- 背景彩带 -->
     
-      <script async type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/physics/js/ribbon.min.js"></script>
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
     
 
     <script src="/physics/js/utils/index.js"></script>
@@ -1021,7 +990,7 @@
   <script src="/physics/js/clipboard/clipboard.min.js"></script>
   <div id="appCopy">
   </div>
-  <script data-pjax>
+  <script data-pjax="">
     var vm = new Vue({
       el: '#appCopy',
       data: {
@@ -1071,7 +1040,7 @@
   
 
 <!-- 图片懒加载 -->
-<script defer src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
 <script>
   // https://www.npmjs.com/package/vanilla-lazyload
   // Set the options globally
@@ -1173,15 +1142,15 @@
 <!-- 爱心点击 -->
 
   
-    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-    <script async src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-    <script async src="/physics/js/cursor/explosion.min.js"></script>
+    <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;"></canvas>
+    <script async="" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script async="" src="/physics/js/cursor/explosion.min.js"></script>
   
 
 
 
 
-  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
 
 
 <!-- 轮播图标签 -->
@@ -1244,5 +1213,83 @@
 <!-- pjax -->
 
 
-  </body>
-</html>
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>
