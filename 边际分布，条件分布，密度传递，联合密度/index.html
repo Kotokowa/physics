@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>friends | Hexo</title>
+  <title>边际分布，条件分布，密度传递，联合密度 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,17 +355,27 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic4.zhimg.com/80/v2-cde50ed4c355bb20693b266edd0bd0bd_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        friends
+        边际分布，条件分布，密度传递，联合密度
       </span>
     </div>
     
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2025-10-29 |
+        </span>
+      
+
+      
+
+      
     
   </div>
   
@@ -382,9 +392,144 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1>边际分布，条件分布，密度传递，联合密度</h1>
+<h3 id="边际（边缘）分布">边际（边缘）分布</h3>
+<p>需要先学习：<a href="https://kotokowa.github.io/physics/随机向量及其分布/" target="_blank">随机向量及其分布</a></p>
+<p>设有二维随机变量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span>的联合分布函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x,y)</annotation></semantics></math></span></span>，则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span></span>的分布函数记为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo separator="true">,</mo><msub><mi>F</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F_X(x), F_Y(y)</annotation></semantics></math></span></span>，称为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span>关于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span></span>的边缘分布函数.</p>
+<p>● 边缘分布测度：</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>X</mi></msub><mo>(</mo><mi>A</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>∈</mo><mi>A</mi><mo>)</mo><mo>=</mo><msub><mi>μ</mi><mrow><mi>X</mi><mo separator="true">,</mo><mi>Y</mi></mrow></msub><mo>(</mo><mi>A</mi><mo>×</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\mu_X(A) = P(X \in A) = \mu_{X,Y}(A \times \mathbb{R})</annotation></semantics></math></span></span>,</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>Y</mi></msub><mo>(</mo><mi>B</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>Y</mi><mo>∈</mo><mi>B</mi><mo>)</mo><mo>=</mo><msub><mi>μ</mi><mrow><mi>X</mi><mo separator="true">,</mo><mi>Y</mi></mrow></msub><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>×</mo><mi>B</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mu_Y(B) = P(Y \in B) = \mu_{X,Y}(\mathbb{R} \times B)</annotation></semantics></math></span></span>.</p>
+<p>● 边缘分布函数：</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msub><mi>μ</mi><mi>X</mi></msub><mo>(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo separator="true">,</mo><mi>x</mi><mo>]</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>F</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi mathvariant="normal">∞</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F_X(x) = \mu_X(-\infty, x] = P(X \leq x) = F(x, \infty)</annotation></semantics></math></span></span>,</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo>=</mo><msub><mi>μ</mi><mi>Y</mi></msub><mo>(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo separator="true">,</mo><mi>y</mi><mo>]</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>)</mo><mo>=</mo><mi>F</mi><mo>(</mo><mi mathvariant="normal">∞</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F_Y(y) = \mu_Y(-\infty, y] = P(Y \leq y) = F(\infty, y)</annotation></semantics></math></span></span>,</p>
+<p>● 边际分布律：</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>i</mi><mo>⋅</mo></mrow></msub><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{i\cdot} = P(X = x_i) = \sum_{j=1}^{\infty} p_{ij}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mo>⋅</mo><mi>j</mi></mrow></msub><mo>=</mo><mi>P</mi><mo>(</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\cdot j} = P(Y = y_j) = \sum_{i=1}^{\infty} p_{ij}</annotation></semantics></math></span></span></p>
+<p>● 边缘密度函数：</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mi>d</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">p_X(x) = \int_{-\infty}^{\infty} p(x,y) dy</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">p_Y(y) = \int_{-\infty}^{\infty} p(x,y) dx</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>x</mi></mrow></msubsup><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>u</mi><mo>)</mo><mi>d</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">F_X(x) = \int_{-\infty}^{x} p_X(u) du</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>y</mi></mrow></msubsup><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>u</mi><mo>)</mo><mi>d</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">F_Y(y) = \int_{-\infty}^{y} p_Y(u) du</annotation></semantics></math></span></span>.</p>
+<h3 id="条件分布">条件分布</h3>
+<h4 id="离散情形">离散情形</h4>
+<p>2-维离散随机向量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span>的联合分布律为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo separator="true">,</mo><mtext>&nbsp;</mtext><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">P(X=x_i,Y=y_j)=p_{ij},\ i,j=1,2,\cdots
+</annotation></semantics></math></span></span></span></p>
+<p>在事件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{Y=y_j\}</annotation></semantics></math></span></span>条件下事件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>j</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{X=x_j\}</annotation></semantics></math></span></span>发生的概率（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>{</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>}</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P\{Y=y_j\}&gt;0</annotation></semantics></math></span></span>）</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">.</mi><mi>j</mi></mrow></msub></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P(X=x_i|Y=y_j)=\frac{P(X=x_i,Y=y_j)}{P(Y=y_j)}=\frac{p_{ij}}{p_{.j}}.
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∙</mo><mtext>&nbsp;</mtext><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>≥</mo><mn>0</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\bullet\ P(X=x_i|Y=y_j)\geq0,</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∙</mo><mtext>&nbsp;</mtext><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mfrac><mrow><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">.</mi><mi>j</mi></mrow></msub></mrow></mfrac><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\bullet\ \sum_{i=1}^{\infty}P(X=x_i|Y=y_j)=\sum_{i=1}^{\infty}\frac{p_{ij}}{p_{.j}}=1.</annotation></semantics></math></span></span></p>
+<p>称<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">P(X=x_i|Y=y_j)</annotation></semantics></math></span></span>为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{Y=y_j\}</annotation></semantics></math></span></span>条件下<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>的条件分布律，为以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>y</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">y_j</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>{</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>}</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P\{Y=y_j\}&gt;0</annotation></semantics></math></span></span>）为指标的概率族</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mfrac><mrow><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">.</mi><mi>j</mi></mrow></msub></mrow></mfrac><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">P_{X|Y}(X=x_i|y_j)=P(X=x_i|Y=y_j)=\frac{p_{ij}}{p_{.j}},
+</annotation></semantics></math></span></span></span></p>
+<p>对于任意可测集<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>X</mi><mo>∈</mo><mi>A</mi><mi mathvariant="normal">∣</mi><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>∈</mo><mi>A</mi><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><msub><mo>∑</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>∈</mo><mi>A</mi></mrow></msub><mfrac><mrow><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">.</mi><mi>j</mi></mrow></msub></mrow></mfrac><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">P_{X|Y}(X\in A|y_j)=P(X\in A|Y=y_j)=\sum_{x_i\in A}\frac{p_{ij}}{p_{.j}},
+</annotation></semantics></math></span></span></span></p>
+<h4 id="连续情形">连续情形</h4>
+<p>设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span>为2-维连续型随机变量, 联合概率密度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p(x,y)</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_Y(y)</annotation></semantics></math></span></span>为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span></span>的边缘分布. 给定<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>∈</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">y\in R</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math></span></span>, 若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>y</mi><mo>&lt;</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>+</mo><mi>ε</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(y&lt;Y\leq y+\varepsilon)&gt;0</annotation></semantics></math></span></span>, 任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">x\in R</annotation></semantics></math></span></span>,</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>&lt;</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>+</mo><mi>ε</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>&lt;</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>+</mo><mi>ε</mi><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>y</mi><mo>&lt;</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>+</mo><mi>ε</mi><mo>)</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>x</mi></mrow></msubsup><msubsup><mo>∫</mo><mrow><mi>y</mi></mrow><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>u</mi><mrow><mi mathvariant="normal">d</mi></mrow><mi>v</mi></mrow><mrow><msubsup><mo>∫</mo><mrow><mi>y</mi></mrow><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>v</mi><mo>)</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>v</mi></mrow></mfrac><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>x</mi></mrow></msubsup><mfrac><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ε</mi></mrow></mfrac><msubsup><mo>∫</mo><mrow><mi>y</mi></mrow><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>v</mi></mrow><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ε</mi></mrow></mfrac><msubsup><mo>∫</mo><mrow><mi>y</mi></mrow><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>v</mi><mo>)</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>v</mi></mrow></mfrac><mrow><mi mathvariant="normal">d</mi></mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">P(X\leq x|y&lt;Y\leq y+\varepsilon)  
+= \frac{P(X\leq x,y&lt;Y\leq y+\varepsilon)}{P(y&lt;Y\leq y+\varepsilon)} = \frac{\int_{-\infty}^{x}\int_{y}^{y+\varepsilon} p(u,v)\mathrm{d}u\mathrm{d}v}{\int_{y}^{y+\varepsilon} p_Y(v)\mathrm{d}v} = \int_{-\infty}^{x} \frac{\frac{1}{\varepsilon}\int_{y}^{y+\varepsilon} p(u,v)\mathrm{d}v}{\frac{1}{\varepsilon}\int_{y}^{y+\varepsilon} p_Y(v)\mathrm{d}v}\mathrm{d}u  
+</annotation></semantics></math></span></span></span></p>
+<p>于是得到：</p>
+<p><strong>条件密度函数</strong></p>
+<p>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>ε</mi><mo>→</mo><mn>0</mn></mrow></msub><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ε</mi></mrow></mfrac><msubsup><mo>∫</mo><mi>y</mi><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo><mi>d</mi><mi>v</mi><mo>=</mo><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\lim_{\varepsilon \to 0} \frac{1}{\varepsilon} \int_y^{y+\varepsilon} p(u,v)dv = p(u,y)</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>ε</mi><mo>→</mo><mn>0</mn></mrow></msub><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ε</mi></mrow></mfrac><msubsup><mo>∫</mo><mi>y</mi><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>v</mi><mo>)</mo><mi>d</mi><mi>v</mi><mo>=</mo><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\lim_{\varepsilon \to 0} \frac{1}{\varepsilon} \int_y^{y+\varepsilon} p_Y(v)dv = p_Y(y)</annotation></semantics></math></span></span>存在, 则有</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><mi>y</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi>x</mi></msubsup><mfrac><mrow><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow></mfrac><mi>d</mi><mi>u</mi><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi>x</mi></msubsup><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>u</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mi>d</mi><mi>u</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P(X \leq x|Y=y)=\int_{-\infty}^x \frac{p(u,y)}{p_Y(y)}du=\int_{-\infty}^x p_{X|Y}(u|y)du.
+</annotation></semantics></math></span></span></span></p>
+<p>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p_Y(y)&gt;0</annotation></semantics></math></span></span>, 则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">p_{X|Y}(x|y)=\frac{p(x,y)}{p_Y(y)}</annotation></semantics></math></span></span>给出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>在条件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>Y</mi><mo>=</mo><mi>y</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">\{Y=y\}</annotation></semantics></math></span></span>下的条件密度函数.</p>
+<p><strong>条件分布函数</strong></p>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p_Y(y) &gt; 0</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_{X|Y}(x|y)</annotation></semantics></math></span></span> 给出了一族以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 为指标的密度函数</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∙</mo></mrow><annotation encoding="application/x-tex">\bullet</annotation></semantics></math></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p_{X|Y}(x|y) \geq 0</annotation></semantics></math></span></span>,</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∙</mo></mrow><annotation encoding="application/x-tex">\bullet</annotation></semantics></math></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mi>d</mi><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{+\infty} p_{X|Y}(x|y) dx = 1</annotation></semantics></math></span></span>.</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>Y</mi><mo>=</mo><mi>y</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">\{ Y = y \}</annotation></semantics></math></span></span> 下的条件分布为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><mi>y</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>x</mi></mrow></msubsup><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>u</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mi>d</mi><mi>u</mi><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>x</mi></mrow></msubsup><mfrac><mrow><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow></mfrac><mi>d</mi><mi>u</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">F_{X|Y}(x|y) = P(X \leq x | Y = y) = \int_{-\infty}^{x} p_{X|Y}(u|y) du = \int_{-\infty}^{x} \frac{p(u,y)}{p_Y(y)} du.
+</annotation></semantics></math></span></span></span></p>
+<h3 id="概率密度的传递">概率密度的传递</h3>
+<p>设随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 有概率密度函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_X(x)</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">x \in \mathbb{R}</annotation></semantics></math></span></span>, 设函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math></span></span> 处处可导且恒有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>x</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g'(x) &gt; 0</annotation></semantics></math></span></span> (或者 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>x</mi><mo>)</mo><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g'(x) &lt; 0</annotation></semantics></math></span></span>), 则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mi>g</mi><mo>(</mo><mi>X</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Y = g(X)</annotation></semantics></math></span></span> 为连续型随机变量, 其概率密度为</p>
+
+$$
+p_Y(y) = 
+\begin{cases} 
+p_X(h(y))|h'(y)|, &amp; \alpha &lt; y &lt; \beta, \\
+0, &amp; \text{其他},
+\end{cases}
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mi>min</mi><mo>{</mo><mi>g</mi><mo>(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo>)</mo><mo separator="true">,</mo><mi>g</mi><mo>(</mo><mi mathvariant="normal">∞</mi><mo>)</mo><mo>}</mo></mrow><annotation encoding="application/x-tex">\alpha = \min\{g(-\infty), g(\infty)\}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mi>max</mi><mo>{</mo><mi>g</mi><mo>(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo>)</mo><mo separator="true">,</mo><mi>g</mi><mo>(</mo><mi mathvariant="normal">∞</mi><mo>)</mo><mo>}</mo></mrow><annotation encoding="application/x-tex">\beta = \max\{g(-\infty), g(\infty)\}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">h(x)</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math></span></span> 的反函数.</p>
+<h3 id="联合密度">联合密度</h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>=</mo><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">X=(X_1,\cdots,X_n)</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 维连续型随机变量，其联合密度函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">p_X(x_1,\cdots,x_n)</annotation></semantics></math></span></span>，</p>
+<p>● 令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mo>(</mo><msub><mi>Y</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>Y</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><mi>f</mi><mo>(</mo><mi>X</mi><mo>)</mo><mo>=</mo><mo>(</mo><msub><mi>f</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>f</mi><mi>n</mi></msub><mo>)</mo><mo>(</mo><mi>X</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Y=(Y_1,\cdots,Y_n)=f(X)=(f_1,\cdots,f_n)(X)</annotation></semantics></math></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>j</mi></msub><mo>=</mo><msub><mi>f</mi><mi>j</mi></msub><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">Y_j=f_j(X_1,\cdots,X_n)</annotation></semantics></math></span></span>。</p>
+<p>● 设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span> 为 Borel 可测函数且逆 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f^{-1}</annotation></semantics></math></span></span> 存在，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>=</mo><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>(</mo><mi>Y</mi><mo>)</mo><mo>=</mo><mi>h</mi><mo>(</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">X=f^{-1}(Y)=h(Y)</annotation></semantics></math></span></span>，若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span></span> 的一阶偏导数存在，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span></span> 为连续型 r.v.，且其联合密度函数为</p>
+
+$$
+p_Y(y)=p_X(h(y))\cdot|\det(J)|, y\in Y 的值域,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 为变换的 Jacobi 行列式</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>h</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>h</mi><mn>1</mn></msub></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>y</mi><mn>1</mn></msub></mrow></mfrac></mrow></mtd><mtd><mrow><mo>⋯</mo></mrow></mtd><mtd><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>h</mi><mn>1</mn></msub></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>y</mi><mi>n</mi></msub></mrow></mfrac></mrow></mtd></mtr><mtr><mtd><mrow><mo>⋯</mo></mrow></mtd><mtd><mrow><mo>⋯</mo></mrow></mtd><mtd><mrow><mo>⋯</mo></mrow></mtd></mtr><mtr><mtd><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>h</mi><mi>n</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>y</mi><mn>1</mn></msub></mrow></mfrac></mrow></mtd><mtd><mrow><mo>⋯</mo></mrow></mtd><mtd><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>h</mi><mi>n</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>y</mi><mi>n</mi></msub></mrow></mfrac></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">J=\frac{\partial h}{\partial y}=\begin{pmatrix} \frac{\partial h_1}{\partial y_1} &amp; \cdots &amp; \frac{\partial h_1}{\partial y_n} \\ \cdots &amp; \cdots &amp; \cdots \\ \frac{\partial h_n}{\partial y_1} &amp; \cdots &amp; \frac{\partial h_n}{\partial y_n} \end{pmatrix}.
+</annotation></semantics></math></span></span></span></p>
+<p>为便于使用，将和差积商的联合密度函数列表如下</p>
+<style>
+/* 给表格定义一个专门的样式，方便以后复用 */
+.physics-formula-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+.physics-formula-table th, .physics-formula-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+}
+/* 关键部分：设置每一列的宽度 */
+.physics-formula-table th:nth-child(1) { width: 15%; } /* 运算类型 */
+.physics-formula-table th:nth-child(2) { width: 20%; } /* 变换公式 */
+.physics-formula-table th:nth-child(3) { width: 50%; } /* 联合密度函数 (最宽的一列) */
+.physics-formula-table th:nth-child(4) { width: 15%; } /* 适用条件 */
+</style>
+<table class="physics-formula-table">
+  <thead>
+    <tr>
+      <th>运算类型</th>
+      <th>变换公式</th>
+      <th>联合密度函数</th>
+      <th>适用条件</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>和</strong></td>
+      <td>$Z = X + Y$</td>
+      <td>$p_Z(z) = \int_{-\infty}^{\infty} p_X(x) p_Y(z-x) dx$</td>
+      <td>X,Y相互独立</td>
+    </tr>
+    <tr>
+      <td><strong>差</strong></td>
+      <td>$Z = X - Y$</td>
+      <td>$p_Z(z) = \int_{-\infty}^{\infty} p_X(x) p_Y(x-z) dx$</td>
+      <td>X,Y相互独立</td>
+    </tr>
+    <tr>
+      <td><strong>积</strong></td>
+      <td>$Z = X \cdot Y$</td>
+      <td>$p_Z(z) = \int_{-\infty}^{\infty} \frac{1}{\lvert y \rvert} p_X(\frac{z}{y}) p_Y(y) dy$</td>
+      <td>X,Y相互独立，$y \neq 0$</td>
+    </tr>
+    <tr>
+      <td><strong>商</strong></td>
+      <td>$Z = X / Y$</td>
+      <td>$p_Z(z) = \int_{-\infty}^{\infty} {\lvert y \rvert} p_X(zy) p_Y(y) dy$</td>
+      <td>X,Y相互独立，$y \neq 0$</td>
+    </tr>
+  </tbody>
+</table>
+
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E6%A6%82%E7%BB%9F/" class="">
+              概统
+            </a>
+          
+        </div>
         
       </div>
       
@@ -395,7 +540,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/friends/index.html" target="_blank" title="friends">https://kotokowa.github.io/physics/friends/index.html</a>
+    <a href="/physics/边际分布，条件分布，密度传递，联合密度/" target="_blank" title="边际分布，条件分布，密度传递，联合密度">https://kotokowa.github.io/physics/边际分布，条件分布，密度传递，联合密度/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -413,7 +558,46 @@
 
 
 
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%90%91%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">随机向量及其分布</div>
+      </div>
+      
+      <!-- <div class="content">
+        随机向量及其分布
+随机向量
+定义： 若X1,X2,⋯,XdX_1,X_2,\cdots,X_dX​1​​,X​2​​,⋯
+      </div> -->
+    </a>
+  </div>
 
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%92%8C%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">随机变量的分布函数和密度函数定义</div>
+      </div>
+      <!-- <div class="content">
+        随机变量的分布函数和密度函数定义
+分布函数
+离散型随机变量 XXX：取值为 {xk}k∈N\{x_k\}_{k \in 
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -516,27 +700,29 @@
   <div class="layout_sticky">    
     
       
-        
+<section class="widget side_toc">
   
-      
-      
-        
-<section class="widget side_tagcloud">
-    
   <header>
     
-      <a style="color: " href="/tags/"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a>
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
     
   </header>
 
 
-    <div class="content">
-    <a href="/physics/tags/%E5%85%89%E5%AD%A6/" style="font-size: 14px; color: #999">光学</a> <a href="/physics/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 24px; color: #555">概统</a> <a href="/physics/tags/%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6/" style="font-size: 19px; color: #777">经典力学</a>
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">边际分布，条件分布，密度传递，联合密度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E9%99%85%EF%BC%88%E8%BE%B9%E7%BC%98%EF%BC%89%E5%88%86%E5%B8%83"><span class="toc-text">边际（边缘）分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83"><span class="toc-text">条件分布</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%83%85%E5%BD%A2"><span class="toc-text">离散情形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E6%83%85%E5%BD%A2"><span class="toc-text">连续情形</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E7%9A%84%E4%BC%A0%E9%80%92"><span class="toc-text">概率密度的传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E5%90%88%E5%AF%86%E5%BA%A6"><span class="toc-text">联合密度</span></a></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
     </div>
+  </div>
 </section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  
-      
       
   <section class="widget side_recent_post">
     
@@ -662,129 +848,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href="/physics/archives/"><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class="name">归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/11/"><span class="card-archive-list-date">November 2025</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/10/"><span class="card-archive-list-date">October 2025</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/09/"><span class="card-archive-list-date">September 2025</span><span class="card-archive-list-count">2</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class="name" style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class="content">
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>12 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2025/10/01'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Mon Nov 17 2025 21:59:26 GMT+0800 (China Standard Time)</div>
-            <div id="last-update-show">2025-11-17 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2025-11-17 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>
@@ -911,6 +974,59 @@
 		height: 100%;
 	}
 </style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
 

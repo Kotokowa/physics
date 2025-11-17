@@ -469,49 +469,69 @@ A_r &amp; rA_\theta &amp; r\sin\theta A_\phi
 <hr>
 <h3 id="总结表格">总结表格</h3>
 <p>下表对上述公式进行了快速概览。</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">坐标系</th>
-<th style="text-align:left">梯度 (∇f)</th>
-<th style="text-align:left">散度 (∇ ⋅ A)</th>
-<th style="text-align:left">旋度 (∇ × A)</th>
-<th style="text-align:left">拉普拉斯 (∇²f)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><strong>直角</strong><br><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x, y, z)</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>x</mi></msub><mo>+</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>y</mi></msub><mo>+</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>z</mi></msub></mrow><annotation encoding="application/x-tex">\frac{\partial f}{\partial x}\mathbf{e}_x + \frac{\partial f}{\partial y}\mathbf{e}_y + \frac{\partial f}{\partial z}\mathbf{e}_z</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>A</mi><mi>x</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>A</mi><mi>y</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>A</mi><mi>z</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\partial A_x}{\partial x} + \frac{\partial A_y}{\partial y} + \frac{\partial A_z}{\partial z}</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">∣</mo><mtable><mtr><mtd><mrow><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>x</mi></msub></mrow></mtd><mtd><mrow><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>y</mi></msub></mrow></mtd><mtd><mrow><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>z</mi></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi mathvariant="normal">∂</mi><mi>x</mi></msub></mrow></mtd><mtd><mrow><msub><mi mathvariant="normal">∂</mi><mi>y</mi></msub></mrow></mtd><mtd><mrow><msub><mi mathvariant="normal">∂</mi><mi>z</mi></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>A</mi><mi>x</mi></msub></mrow></mtd><mtd><mrow><msub><mi>A</mi><mi>y</mi></msub></mrow></mtd><mtd><mrow><msub><mi>A</mi><mi>z</mi></msub></mrow></mtd></mtr></mtable><mo fence="true">∣</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{vmatrix} \mathbf{e}_x &amp; \mathbf{e}_y &amp; \mathbf{e}_z \\ \partial_x &amp; \partial_y &amp; \partial_z \\ A_x &amp; A_y &amp; A_z \end{vmatrix}</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><msup><mi mathvariant="normal">∂</mi><mn>2</mn></msup><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi mathvariant="normal">∂</mi><mn>2</mn></msup><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msup><mi>y</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi mathvariant="normal">∂</mi><mn>2</mn></msup><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msup><mi>z</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}</annotation></semantics></math></span></span></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>柱坐标</strong><br><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>ρ</mi><mo separator="true">,</mo><mi>ϕ</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(\rho, \phi, z)</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>ρ</mi></mrow></mfrac><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ρ</mi></msub><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ρ</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>ϕ</mi></mrow></mfrac><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ϕ</mi></msub><mo>+</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>z</mi></msub></mrow><annotation encoding="application/x-tex">\frac{\partial f}{\partial \rho}\mathbf{e}_\rho + \frac{1}{\rho}\frac{\partial f}{\partial \phi}\mathbf{e}_\phi + \frac{\partial f}{\partial z}\mathbf{e}_z</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ρ</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>ρ</mi></mrow></mfrac><mo>(</mo><mi>ρ</mi><msub><mi>A</mi><mi>ρ</mi></msub><mo>)</mo><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ρ</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>A</mi><mi>ϕ</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>ϕ</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>A</mi><mi>z</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\rho}\frac{\partial}{\partial \rho}(\rho A_\rho) + \frac{1}{\rho}\frac{\partial A_\phi}{\partial \phi} + \frac{\partial A_z}{\partial z}</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ρ</mi></mrow></mfrac><mrow><mo fence="true">∣</mo><mtable><mtr><mtd><mrow><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ρ</mi></msub></mrow></mtd><mtd><mrow><mi>ρ</mi><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ϕ</mi></msub></mrow></mtd><mtd><mrow><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>z</mi></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi mathvariant="normal">∂</mi><mi>ρ</mi></msub></mrow></mtd><mtd><mrow><msub><mi mathvariant="normal">∂</mi><mi>ϕ</mi></msub></mrow></mtd><mtd><mrow><msub><mi mathvariant="normal">∂</mi><mi>z</mi></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>A</mi><mi>ρ</mi></msub></mrow></mtd><mtd><mrow><mi>ρ</mi><msub><mi>A</mi><mi>ϕ</mi></msub></mrow></mtd><mtd><mrow><msub><mi>A</mi><mi>z</mi></msub></mrow></mtd></mtr></mtable><mo fence="true">∣</mo></mrow></mrow><annotation encoding="application/x-tex">\frac{1}{\rho}\begin{vmatrix} \mathbf{e}_\rho &amp; \rho\mathbf{e}_\phi &amp; \mathbf{e}_z \\ \partial_\rho &amp; \partial_\phi &amp; \partial_z \\ A_\rho &amp; \rho A_\phi &amp; A_z \end{vmatrix}</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ρ</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>ρ</mi></mrow></mfrac><mo>(</mo><mi>ρ</mi><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>ρ</mi></mrow></mfrac><mo>)</mo><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>ρ</mi><mn>2</mn></msup></mrow></mfrac><mfrac><mrow><msup><mi mathvariant="normal">∂</mi><mn>2</mn></msup><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msup><mi>ϕ</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi mathvariant="normal">∂</mi><mn>2</mn></msup><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msup><mi>z</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{\rho}\frac{\partial}{\partial \rho}(\rho \frac{\partial f}{\partial \rho}) + \frac{1}{\rho^2}\frac{\partial^2 f}{\partial \phi^2} + \frac{\partial^2 f}{\partial z^2}</annotation></semantics></math></span></span></td>
-</tr>
-<tr>
-<td style="text-align:left"><strong>球坐标</strong><br><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>θ</mi><mo separator="true">,</mo><mi>ϕ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r, \theta, \phi)</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>r</mi></mrow></mfrac><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>r</mi></msub><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>r</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>θ</mi></mrow></mfrac><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>θ</mi></msub><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>r</mi><mi>sin</mi><mi>θ</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>ϕ</mi></mrow></mfrac><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ϕ</mi></msub></mrow><annotation encoding="application/x-tex">\frac{\partial f}{\partial r}\mathbf{e}_r + \frac{1}{r}\frac{\partial f}{\partial \theta}\mathbf{e}_\theta + \frac{1}{r\sin\theta}\frac{\partial f}{\partial \phi}\mathbf{e}_\phi</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>r</mi><mn>2</mn></msup></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>r</mi></mrow></mfrac><mo>(</mo><msup><mi>r</mi><mn>2</mn></msup><msub><mi>A</mi><mi>r</mi></msub><mo>)</mo><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>r</mi><mi>sin</mi><mi>θ</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>θ</mi></mrow></mfrac><mo>(</mo><msub><mi>A</mi><mi>θ</mi></msub><mi>sin</mi><mi>θ</mi><mo>)</mo><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>r</mi><mi>sin</mi><mi>θ</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>A</mi><mi>ϕ</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>ϕ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{r^2}\frac{\partial}{\partial r}(r^2 A_r) + \frac{1}{r\sin\theta}\frac{\partial}{\partial \theta}(A_\theta \sin\theta) + \frac{1}{r\sin\theta}\frac{\partial A_\phi}{\partial \phi}</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>r</mi><mn>2</mn></msup><mi>sin</mi><mi>θ</mi></mrow></mfrac><mrow><mo fence="true">∣</mo><mtable><mtr><mtd><mrow><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>r</mi></msub></mrow></mtd><mtd><mrow><mi>r</mi><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>θ</mi></msub></mrow></mtd><mtd><mrow><mi>r</mi><mi>sin</mi><mi>θ</mi><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ϕ</mi></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi mathvariant="normal">∂</mi><mi>r</mi></msub></mrow></mtd><mtd><mrow><msub><mi mathvariant="normal">∂</mi><mi>θ</mi></msub></mrow></mtd><mtd><mrow><msub><mi mathvariant="normal">∂</mi><mi>ϕ</mi></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>A</mi><mi>r</mi></msub></mrow></mtd><mtd><mrow><mi>r</mi><msub><mi>A</mi><mi>θ</mi></msub></mrow></mtd><mtd><mrow><mi>r</mi><mi>sin</mi><mi>θ</mi><msub><mi>A</mi><mi>ϕ</mi></msub></mrow></mtd></mtr></mtable><mo fence="true">∣</mo></mrow></mrow><annotation encoding="application/x-tex">\frac{1}{r^2 \sin\theta}\begin{vmatrix} \mathbf{e}_r &amp; r\mathbf{e}_\theta &amp; r\sin\theta\mathbf{e}_\phi \\ \partial_r &amp; \partial_\theta &amp; \partial_\phi \\ A_r &amp; rA_\theta &amp; r\sin\theta A_\phi \end{vmatrix}</annotation></semantics></math></span></span></td>
-<td style="text-align:left"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>r</mi><mn>2</mn></msup></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>r</mi></mrow></mfrac><mo>(</mo><msup><mi>r</mi><mn>2</mn></msup><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>r</mi></mrow></mfrac><mo>)</mo><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>r</mi><mn>2</mn></msup><mi>sin</mi><mi>θ</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>θ</mi></mrow></mfrac><mo>(</mo><mi>sin</mi><mi>θ</mi><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>θ</mi></mrow></mfrac><mo>)</mo><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>r</mi><mn>2</mn></msup><msup><mi>sin</mi><mn>2</mn></msup><mi>θ</mi></mrow></mfrac><mfrac><mrow><msup><mi mathvariant="normal">∂</mi><mn>2</mn></msup><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msup><mi>ϕ</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{r^2}\frac{\partial}{\partial r}(r^2 \frac{\partial f}{\partial r}) + \frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}(\sin\theta \frac{\partial f}{\partial \theta}) + \frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial \phi^2}</annotation></semantics></math></span></span></td>
-</tr>
-</tbody>
+<!------------------------------ 这是一段被注释掉的文字 ------------------------------>
+<style>
+/* 专门为数学公式表格设计的样式 */
+.math-formula-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.8em; /* 稍微缩小字体以容纳更多内容 */
+}
+.math-formula-table th, .math-formula-table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    vertical-align: top; /* 内容顶部对齐，看起来更整齐 */
+}
+/* 针对这种5列表格的宽度分配 */
+.math-formula-table th:nth-child(1) { width: 6%; } /* 坐标系 */
+.math-formula-table th:nth-child(2) { width: 22%; } /* 梯度 */
+.math-formula-table th:nth-child(3) { width: 26%; } /* 散度 */
+.math-formula-table th:nth-child(4) { width: 21%; } /* 旋度（最宽，因为行列式） */
+.math-formula-table th:nth-child(5) { width: 25%; } /* 拉普拉斯 */
+</style>
+<table class="math-formula-table">
+  <thead>
+    <tr>
+      <th>坐标系</th>
+      <th>梯度 (∇f)</th>
+      <th>散度 (∇ ⋅ A)</th>
+      <th>旋度 (∇ × A)</th>
+      <th>拉普拉斯 (∇²f)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>直角</strong><br>$(x, y, z)$</td>
+      <td>$\frac{\partial f}{\partial x}\mathbf{e}_x + \frac{\partial f}{\partial y}\mathbf{e}_y + \frac{\partial f}{\partial z}\mathbf{e}_z$</td>
+      <td>$\frac{\partial A_x}{\partial x} + \frac{\partial A_y}{\partial y} + \frac{\partial A_z}{\partial z}$</td>
+      <td>$\begin{vmatrix} \mathbf{e}_x &amp; \mathbf{e}_y &amp; \mathbf{e}_z \\ \partial_x &amp; \partial_y &amp; \partial_z \\ A_x &amp; A_y &amp; A_z \end{vmatrix}$</td>
+      <td>$\frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}$</td>
+    </tr>
+    <tr>
+      <td><strong>柱坐标</strong><br>$(\rho, \phi, z)$</td>
+      <td>$\frac{\partial f}{\partial \rho}\mathbf{e}_\rho + \frac{1}{\rho}\frac{\partial f}{\partial \phi}\mathbf{e}_\phi + \frac{\partial f}{\partial z}\mathbf{e}_z$</td>
+      <td>$\frac{1}{\rho}\frac{\partial}{\partial \rho}(\rho A_\rho) + \frac{1}{\rho}\frac{\partial A_\phi}{\partial \phi} + \frac{\partial A_z}{\partial z}$</td>
+      <td>$\frac{1}{\rho}\begin{vmatrix} \mathbf{e}_\rho &amp; \rho\mathbf{e}_\phi &amp; \mathbf{e}_z \\ \partial_\rho &amp; \partial_\phi &amp; \partial_z \\ A_\rho &amp; \rho A_\phi &amp; A_z \end{vmatrix}$</td>
+      <td>$\frac{1}{\rho}\frac{\partial}{\partial \rho}(\rho \frac{\partial f}{\partial \rho}) + \frac{1}{\rho^2}\frac{\partial^2 f}{\partial \phi^2} + \frac{\partial^2 f}{\partial z^2}$</td>
+    </tr>
+    <tr>
+      <td><strong>球坐标</strong><br>$(r, \theta, \phi)$</td>
+      <td>$\frac{\partial f}{\partial r}\mathbf{e}_r + \frac{1}{r}\frac{\partial f}{\partial \theta}\mathbf{e}_\theta + \frac{1}{r\sin\theta}\frac{\partial f}{\partial \phi}\mathbf{e}_\phi$</td>
+      <td>$\frac{1}{r^2}\frac{\partial}{\partial r}(r^2 A_r) + \frac{1}{r\sin\theta}\frac{\partial}{\partial \theta}(A_\theta \sin\theta)$<br>$+ \frac{1}{r\sin\theta}\frac{\partial A_\phi}{\partial \phi}$</td>
+      <td>$\frac{1}{r^2 \sin\theta}\begin{vmatrix} \mathbf{e}_r &amp; r\mathbf{e}_\theta &amp; r\sin\theta\mathbf{e}_\phi \\ \partial_r &amp; \partial_\theta &amp; \partial_\phi \\ A_r &amp; rA_\theta &amp; r\sin\theta A_\phi \end{vmatrix}$</td>
+      <td>$\frac{1}{r^2}\frac{\partial}{\partial r}(r^2 \frac{\partial f}{\partial r}) + \frac{1}{r^2\sin\theta}\frac{\partial}{\partial \theta}(\sin\theta \frac{\partial f}{\partial \theta})$<br>$+ \frac{1}{r^2\sin^2\theta}\frac{\partial^2 f}{\partial \phi^2}$</td>
+    </tr>
+  </tbody>
 </table>
-<h2 id="正交曲线坐标系下的微分算子推导">正交曲线坐标系下的微分算子推导</h2>
-<h3 id="微元的写法">微元的写法</h3>
-<p>在直角坐标系中，微元写作 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>x</mi><mo separator="true">,</mo><mi>d</mi><mi>y</mi><mo separator="true">,</mo><mi>d</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">dx, dy, dz</annotation></semantics></math></span></span>，形式直观；但在球坐标系等正交曲线坐标系中并非如此：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>r</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{r}</annotation></semantics></math></span></span> 表示径向微元，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span></span> 不直接表示角向微元（量纲不对）。</p>
-<ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 方向微元应为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>d</mi><mi>θ</mi><mspace width="0.16667em"></mspace><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">r d\theta \, \hat{\theta}</annotation></semantics></math></span></span></li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span></span> 方向微元应为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>sin</mi><mi>θ</mi><mspace width="0.16667em"></mspace><mi>d</mi><mi>ϕ</mi><mspace width="0.16667em"></mspace><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">r \sin\theta \, d\phi \, \hat{\phi}</annotation></semantics></math></span></span><br>
-记位移微元为：<br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mover accent="true"><mrow><mi>l</mi></mrow><mo>⃗</mo></mover><mo>=</mo><mi>f</mi><mi>d</mi><mi>u</mi><mspace width="0.16667em"></mspace><mover accent="true"><mrow><mi>u</mi></mrow><mo>^</mo></mover><mo>+</mo><mi>g</mi><mi>d</mi><mi>v</mi><mspace width="0.16667em"></mspace><mover accent="true"><mrow><mi>v</mi></mrow><mo>^</mo></mover><mo>+</mo><mi>h</mi><mi>d</mi><mi>w</mi><mspace width="0.16667em"></mspace><mover accent="true"><mrow><mi>w</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">d\vec{l} = f du \, \hat{u} + g dv \, \hat{v} + h dw \, \hat{w}</annotation></semantics></math></span></span></li>
-</ul>
+<!------------------------------ 这是一段被注释掉的文字 ------------------------------>
+## 正交曲线坐标系下的微分算子推导
+### 微元的写法  
+在直角坐标系中，微元写作 $dx, dy, dz$，形式直观；但在球坐标系等正交曲线坐标系中并非如此：$\hat{r}$ 表示径向微元，$\theta$、$\phi$ 不直接表示角向微元（量纲不对）。  
+- $\theta$ 方向微元应为 $r d\theta \, \hat{\theta}$  
+- $\phi$ 方向微元应为 $r \sin\theta \, d\phi \, \hat{\phi}$  
+记位移微元为：  
+$d\vec{l} = f du \, \hat{u} + g dv \, \hat{v} + h dw \, \hat{w}$ 
 <table>
 <thead>
 <tr>
@@ -626,20 +646,19 @@ A_r &amp; rA_\theta &amp; r\sin\theta A_\phi
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8A%9B%E5%AD%A6/" class="post-nav-link">
+    <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E5%8F%8A%E5%85%B6%E7%8B%AC%E7%AB%8B%E6%80%A7/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">拉格朗日力学</div>
+        <div class="title-text">随机变量及其独立性</div>
       </div>
       
       <!-- <div class="content">
-        Part1 拉格朗日力学
-约束与自由度
-约束分为完整约束（可积约束）和非完整约束（不可积约束）：
-
-完整约束：约束方程可
+        随机变量及其独立性
+随机变量
+定义
+设 (Ω,F,P)(\Omega, \mathcal{F}, \mathbf{P})
       </div> -->
     </a>
   </div>
@@ -652,13 +671,17 @@ A_r &amp; rA_\theta &amp; r\sin\theta A_\phi
       background-position: center center;">
       <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87/" class="post-nav-link">
+    <a href="/physics/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8A%9B%E5%AD%A6/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">条件概率</div>
+        <div class="title-text">拉格朗日力学</div>
       </div>
       <!-- <div class="content">
-        
+        拉格朗日力学
+约束与自由度
+约束分为完整约束（可积约束）和非完整约束（不可积约束）：
+
+完整约束：约束方程可表示为坐标和
       </div> -->
     </a>
   </div>
@@ -776,7 +799,7 @@ A_r &amp; rA_\theta &amp; r\sin\theta A_\phi
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">梯度、散度、旋度与拉普拉斯算子公式及推导</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E3%80%81%E6%97%8B%E5%BA%A6%E4%B8%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E5%9C%A8%E4%B8%8D%E5%90%8C%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8B%E7%9A%84%E5%85%AC%E5%BC%8F%E6%80%BB%E7%BB%93"><span class="toc-text">梯度、散度、旋度与拉普拉斯算子在不同坐标系下的公式总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%80%94%E2%80%94%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E3%80%81%E6%97%8B%E5%BA%A6%E5%92%8C%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E5%9C%A8%E4%B8%89%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%AD%A3%E4%BA%A4%E5%9D%90%E6%A0%87%E7%B3%BB%EF%BC%9A%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB%E3%80%81%E6%9F%B1%E5%9D%90%E6%A0%87%E7%B3%BB%E5%92%8C%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8B%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">——梯度、散度、旋度和拉普拉斯算子在三种常用正交坐标系：直角坐标系、柱坐标系和球坐标系下的表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">1. 直角坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90"><span class="toc-text">拉普拉斯算子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9F%B1%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">2. 柱坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-2"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-2"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-2"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90-2"><span class="toc-text">拉普拉斯算子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">3. 球坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-3"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-3"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-3"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90-3"><span class="toc-text">拉普拉斯算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E8%A1%A8%E6%A0%BC"><span class="toc-text">总结表格</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E6%9B%B2%E7%BA%BF%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8B%E7%9A%84%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90%E6%8E%A8%E5%AF%BC"><span class="toc-text">正交曲线坐标系下的微分算子推导</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AE%E5%85%83%E7%9A%84%E5%86%99%E6%B3%95"><span class="toc-text">微元的写法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-nabla-t"><span class="toc-text">梯度 \( \nabla t \)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-nabla-cdot-vec-A"><span class="toc-text">散度 \( \nabla \cdot \vec{A} \)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-nabla-times-vec-A"><span class="toc-text">旋度 \( \nabla \times \vec{A} \)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90-4"><span class="toc-text">拉普拉斯算子</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">梯度、散度、旋度与拉普拉斯算子公式及推导</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E3%80%81%E6%97%8B%E5%BA%A6%E4%B8%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E5%9C%A8%E4%B8%8D%E5%90%8C%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8B%E7%9A%84%E5%85%AC%E5%BC%8F%E6%80%BB%E7%BB%93"><span class="toc-text">梯度、散度、旋度与拉普拉斯算子在不同坐标系下的公式总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%80%94%E2%80%94%E6%A2%AF%E5%BA%A6%E3%80%81%E6%95%A3%E5%BA%A6%E3%80%81%E6%97%8B%E5%BA%A6%E5%92%8C%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90%E5%9C%A8%E4%B8%89%E7%A7%8D%E5%B8%B8%E7%94%A8%E6%AD%A3%E4%BA%A4%E5%9D%90%E6%A0%87%E7%B3%BB%EF%BC%9A%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB%E3%80%81%E6%9F%B1%E5%9D%90%E6%A0%87%E7%B3%BB%E5%92%8C%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%8B%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">——梯度、散度、旋度和拉普拉斯算子在三种常用正交坐标系：直角坐标系、柱坐标系和球坐标系下的表达式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">1. 直角坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90"><span class="toc-text">拉普拉斯算子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E6%9F%B1%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">2. 柱坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-2"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-2"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-2"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90-2"><span class="toc-text">拉普拉斯算子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">3. 球坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-3"><span class="toc-text">梯度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-3"><span class="toc-text">散度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-3"><span class="toc-text">旋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90-3"><span class="toc-text">拉普拉斯算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E8%A1%A8%E6%A0%BC"><span class="toc-text">总结表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%AF%E5%BA%A6-nabla-t"><span class="toc-text">梯度 \( \nabla t \)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%A3%E5%BA%A6-nabla-cdot-vec-A"><span class="toc-text">散度 \( \nabla \cdot \vec{A} \)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E5%BA%A6-nabla-times-vec-A"><span class="toc-text">旋度 \( \nabla \times \vec{A} \)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%AE%97%E5%AD%90-4"><span class="toc-text">拉普拉斯算子</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -809,91 +832,7 @@ A_r &amp; rA_\theta &amp; r\sin\theta A_\phi
             
 
             <div class="post-img-box">
-              <a href="/physics/%E4%B8%A4%E4%BD%93%E9%97%AE%E9%A2%98/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">10-17</span>
-                
-              </div>
-              <a class="post-title" href="/physics/%E4%B8%A4%E4%BD%93%E9%97%AE%E9%A2%98/">两体中心势</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8A%9B%E5%AD%A6/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">10-14</span>
-                
-              </div>
-              <a class="post-title" href="/physics/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8A%9B%E5%AD%A6/">拉格朗日力学</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">10-14</span>
-                
-              </div>
-              <a class="post-title" href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/">矢量运算</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">10-11</span>
-                
-              </div>
-              <a class="post-title" href="/physics/%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87/">条件概率</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/%E5%8F%A4%E5%85%B8%E6%A6%82%E7%8E%87/" class="post-img " style="background-size: cover; 
+              <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -901,10 +840,94 @@ A_r &amp; rA_\theta &amp; r\sin\theta A_\phi
             <div class="post-date-title">
               <div>
                 
-                  <span class="post-date">09-17</span>
+                  <span class="post-date">11-12</span>
                 
               </div>
-              <a class="post-title" href="/physics/%E5%8F%A4%E5%85%B8%E6%A6%82%E7%8E%87/">古典概率</a>
+              <a class="post-title" href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">随机变量的数字特征</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%B8%B8%E8%A7%81%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">11-05</span>
+                
+              </div>
+              <a class="post-title" href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%B8%B8%E8%A7%81%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0/">随机变量的常见分布函数</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%90%91%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">11-05</span>
+                
+              </div>
+              <a class="post-title" href="/physics/%E9%9A%8F%E6%9C%BA%E5%90%91%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">随机向量及其分布</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%EF%BC%8C%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%EF%BC%8C%E5%AF%86%E5%BA%A6%E4%BC%A0%E9%80%92%EF%BC%8C%E8%81%94%E5%90%88%E5%AF%86%E5%BA%A6/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-cde50ed4c355bb20693b266edd0bd0bd_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-cde50ed4c355bb20693b266edd0bd0bd_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-29</span>
+                
+              </div>
+              <a class="post-title" href="/physics/%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%EF%BC%8C%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%EF%BC%8C%E5%AF%86%E5%BA%A6%E4%BC%A0%E9%80%92%EF%BC%8C%E8%81%94%E5%90%88%E5%AF%86%E5%BA%A6/">边际分布，条件分布，密度传递，联合密度</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%92%8C%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-22</span>
+                
+              </div>
+              <a class="post-title" href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%92%8C%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89/">随机变量的分布函数和密度函数定义</a>
             </div>
           </div>
         

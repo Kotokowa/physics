@@ -392,7 +392,80 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1>条件概率</h1>
+<h3 id="条件概率">条件概率</h3>
+<p><strong>定义</strong>事件A发生的条件下，事件B发生的概率. 若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(A) &gt; 0</annotation></semantics></math></span></span>,</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>B</mi><mi mathvariant="normal">∣</mi><mi>A</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>∩</mo><mi>B</mi><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">P(B|A) = \frac{P(A \cap B)}{P(A)}
+</annotation></semantics></math></span></span></span></p>
+<h4 id="定理：条件概率也是一个概率">定理：条件概率也是一个概率</h4>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(A) &gt; 0</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mo>⋅</mo><mi mathvariant="normal">∣</mi><mi>A</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(\cdot|A)</annotation></semantics></math></span></span> 满足概率定义的三个条件：</p>
+<ol>
+<li>
+<p><strong>非负性</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>B</mi><mi mathvariant="normal">∣</mi><mi>A</mi><mo>)</mo><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(B|A) \geq 0</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mo>∈</mo><mrow><mi mathvariant="script">F</mi></mrow></mrow><annotation encoding="application/x-tex">B \in \mathcal{F}</annotation></semantics></math></span></span>；</p>
+</li>
+<li>
+<p><strong>规范性</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi mathvariant="normal">Ω</mi><mi mathvariant="normal">∣</mi><mi>A</mi><mo>)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">P(\Omega|A) = 1</annotation></semantics></math></span></span>；</p>
+</li>
+<li>
+<p><strong>可列可加性</strong>：若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(B_i)</annotation></semantics></math></span></span> 为一列可数个两两互斥集合，则</p>
+</li>
+</ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mrow><mo fence="true">(</mo><msubsup><mo>⋃</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>B</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>A</mi><mo fence="true">)</mo></mrow><mo>=</mo><mi>P</mi><mrow><mo fence="true">(</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>B</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>A</mi><mo fence="true">)</mo></mrow><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>P</mi><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>A</mi><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P\left( \bigcup_{i=1}^{+\infty} B_i | A \right) = P\left( \sum_{i=1}^{+\infty} B_i | A \right) = \sum_{i=1}^{+\infty} P(B_i|A).
+</annotation></semantics></math></span></span></span></p>
+<h4 id="加法公式">加法公式</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">F</mi></mrow></mrow><annotation encoding="application/x-tex">\mathcal{F}</annotation></semantics></math></span></span> 中任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>B</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">B_1, B_2</annotation></semantics></math></span></span>，</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>B</mi><mn>2</mn></msub><mi mathvariant="normal">∣</mi><mi>A</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>B</mi><mn>1</mn></msub><mi mathvariant="normal">∣</mi><mi>A</mi><mo>)</mo><mo>+</mo><mi>P</mi><mo>(</mo><msub><mi>B</mi><mn>2</mn></msub><mi mathvariant="normal">∣</mi><mi>A</mi><mo>)</mo><mo>−</mo><mi>P</mi><mo>(</mo><msub><mi>B</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>B</mi><mn>2</mn></msub><mi mathvariant="normal">∣</mi><mi>A</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(B_1 \cup B_2 | A) = P(B_1|A) + P(B_2|A) - P(B_1 \cap B_2 | A)
+</annotation></semantics></math></span></span></span></p>
+<h4 id="定义：乘法公式">定义：乘法公式</h4>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>A</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>A</mi><mi>n</mi></msub><mo>∈</mo><mrow><mi mathvariant="script">F</mi></mrow></mrow><annotation encoding="application/x-tex">A_1, A_2, \cdots, A_n \in \mathcal{F}</annotation></semantics></math></span></span>，且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>A</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>A</mi><mi>n</mi></msub><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(A_1 \cdots A_n) &gt; 0</annotation></semantics></math></span></span>，则</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>A</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>A</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>A</mi><mn>1</mn></msub><mo>)</mo><mi>P</mi><mo>(</mo><msub><mi>A</mi><mn>2</mn></msub><mi mathvariant="normal">∣</mi><msub><mi>A</mi><mn>1</mn></msub><mo>)</mo><mo>⋯</mo><mi>P</mi><mo>(</mo><msub><mi>A</mi><mi>n</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>A</mi><mn>1</mn></msub><mo>⋯</mo><msub><mi>A</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P(A_1 \cdots A_n) = P(A_1)P(A_2|A_1) \cdots P(A_n|A_1 \cdots A_{n-1}).
+</annotation></semantics></math></span></span></span></p>
+<h3 id="全概率公式">全概率公式</h3>
+<p><strong>定义</strong>设事件列 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><msub><mo>)</mo><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow></msub><mo>∈</mo><mrow><mi mathvariant="script">F</mi></mrow></mrow><annotation encoding="application/x-tex">(B_i)_{1 \leq i \leq n} \in \mathcal{F}</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span></span> 的一个划分，且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(B_i) &gt; 0</annotation></semantics></math></span></span>，那么，对于事件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>∈</mo><mrow><mi mathvariant="script">F</mi></mrow></mrow><annotation encoding="application/x-tex">A \in \mathcal{F}</annotation></semantics></math></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mi>P</mi><mo>(</mo><mi>A</mi><mi mathvariant="normal">∣</mi><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo><mi>P</mi><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P(A) = \sum_{i=1}^n P(A|B_i)P(B_i).
+</annotation></semantics></math></span></span></span></p>
+<p>这里需要补充划分的定义：</p>
+<h4 id="划分">划分</h4>
+<p>事件列 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><msub><mo>)</mo><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow></msub><mo>∈</mo><mrow><mi mathvariant="script">F</mi></mrow></mrow><annotation encoding="application/x-tex">(B_i)_{1 \leq i \leq n} \in \mathcal{F}</annotation></semantics></math></span></span>，称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>B</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">B_1, \cdots, B_n</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span></span> 的一个划分，若它满足</p>
+<p>① <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mi>i</mi></msub><mo>∩</mo><msub><mi>B</mi><mi>j</mi></msub><mo>=</mo><mi mathvariant="normal">∅</mi></mrow><annotation encoding="application/x-tex">B_i \cap B_j = \emptyset</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>≠</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i \neq j</annotation></semantics></math></span></span>；</p>
+<p>② <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>B</mi><mn>2</mn></msub><mo>∪</mo><mo>⋯</mo><mo>∪</mo><msub><mi>B</mi><mi>n</mi></msub><mo>=</mo><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">B_1 \cup B_2 \cup \cdots \cup B_n = \Omega</annotation></semantics></math></span></span>.</p>
+<p>再由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>=</mo><mi>A</mi><mo>∩</mo><mo>(</mo><msub><mo>∪</mo><mi>k</mi></msub><msub><mi>B</mi><mi>k</mi></msub><mo>)</mo><mo>=</mo><msub><mo>∪</mo><mi>k</mi></msub><mo>(</mo><mi>A</mi><mo>∩</mo><msub><mi>B</mi><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">A = A \cap (\cup_k B_k) = \cup_k (A \cap B_k)</annotation></semantics></math></span></span>，与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 的有限可加性，易证全概率公式.</p>
+<h3 id="Bayes公式">Bayes公式</h3>
+<p><strong>定义</strong>设事件列 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><msub><mo>)</mo><mrow><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">(B_i)_{1 \leq i \leq n}</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span></span> 的一个划分，且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(B_i) &gt; 0</annotation></semantics></math></span></span>，事件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(A) &gt; 0</annotation></semantics></math></span></span>，那么</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>A</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mi mathvariant="normal">∣</mi><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo><mi>P</mi><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo></mrow><mrow><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mi>P</mi><mo>(</mo><mi>A</mi><mi mathvariant="normal">∣</mi><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo><mi>P</mi><mo>(</mo><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo></mrow></mfrac><mo separator="true">,</mo><mspace width="1em"></mspace><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>n</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P(B_i|A) = \frac{P(A|B_i)P(B_i)}{\sum_{i=1}^n P(A|B_i)P(B_i)}, \quad i = 1, \cdots, n.
+</annotation></semantics></math></span></span></span></p>
+<h3 id="独立性">独立性</h3>
+<blockquote>
+<p>这里只简单介绍事件的独立性，后面会介绍随机变量的独立性.</p>
+</blockquote>
+<p><strong>两两独立</strong>：若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mi>B</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(AB) = P(A)P(B)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>B</mi><mi>C</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo><mi>P</mi><mo>(</mo><mi>C</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(BC) = P(B)P(C)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mi>C</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mi>P</mi><mo>(</mo><mi>C</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(AC) = P(A)P(C)</annotation></semantics></math></span></span>，则称三个事件两两独立；</p>
+<p><strong>相互独立</strong>：若还有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mi>B</mi><mi>C</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo><mi>P</mi><mo>(</mo><mi>C</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(ABC) = P(A)P(B)P(C)</annotation></semantics></math></span></span>，则称三个事件相互独立.</p>
+<p><strong>注意</strong>：三个（多个）事件可以两两独立，而非相互独立. （反例：抛两次硬币， $\text{第一次是H}, \text{第二次是H}, \text{两次结果相同}$ ）</p>
+<h4 id="推广：事件类和事件域的独立性">推广：事件类和事件域的独立性</h4>
+<ul>
+<li><strong>事件类 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>A</mi><mi>i</mi></msub><msub><mo>)</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub></mrow><annotation encoding="application/x-tex">(A_i)_{i\in I}</annotation></semantics></math></span></span> 的两两独立</strong>：若对于任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>∈</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">i,j \in I</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>≠</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i \neq j</annotation></semantics></math></span></span>，</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>A</mi><mi>i</mi></msub><msub><mi>A</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>A</mi><mi>i</mi></msub><mo>)</mo><mi>P</mi><mo>(</mo><msub><mi>A</mi><mi>j</mi></msub><mo>)</mo><mo separator="true">;</mo></mrow><annotation encoding="application/x-tex">P(A_i A_j) = P(A_i)P(A_j);
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li><strong>事件类 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>A</mi><mi>i</mi></msub><msub><mo>)</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub></mrow><annotation encoding="application/x-tex">(A_i)_{i\in I}</annotation></semantics></math></span></span> 的相互独立</strong>：若对于任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span> 的有限子集 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span>，</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mo>∩</mo><mrow><mi>i</mi><mo>∈</mo><mi>J</mi></mrow></msub><msub><mi>A</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><msub><mo>∏</mo><mrow><mi>i</mi><mo>∈</mo><mi>J</mi></mrow></msub><mi>P</mi><mo>(</mo><msub><mi>A</mi><mi>i</mi></msub><mo>)</mo><mo separator="true">;</mo></mrow><annotation encoding="application/x-tex">P(\cap_{i\in J} A_i) = \prod_{i\in J} P(A_i);
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">F</mi></mrow></mrow><annotation encoding="application/x-tex">\mathcal{F}</annotation></semantics></math></span></span> 的子 <strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span></span>-代数</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mrow><mi mathvariant="script">A</mi></mrow><mi>i</mi></msub><msub><mo>)</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub></mrow><annotation encoding="application/x-tex">(\mathcal{A}_i)_{i\in I}</annotation></semantics></math></span></span> 称为<strong>两两独立</strong>，若对于任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>∈</mo><mi>I</mi></mrow><annotation encoding="application/x-tex">i,j \in I</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>≠</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i \neq j</annotation></semantics></math></span></span>，任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub><mo>∈</mo><msub><mrow><mi mathvariant="script">A</mi></mrow><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i \in \mathcal{A}_i</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>j</mi></msub><mo>∈</mo><msub><mrow><mi mathvariant="script">A</mi></mrow><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">A_j \in \mathcal{A}_j</annotation></semantics></math></span></span>，总有</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>A</mi><mi>i</mi></msub><mo>∩</mo><msub><mi>A</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>A</mi><mi>i</mi></msub><mo>)</mo><mi>P</mi><mo>(</mo><msub><mi>A</mi><mi>j</mi></msub><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P(A_i \cap A_j) = P(A_i)P(A_j).
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">F</mi></mrow></mrow><annotation encoding="application/x-tex">\mathcal{F}</annotation></semantics></math></span></span> 的子 <strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span></span>-代数</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mrow><mi mathvariant="script">A</mi></mrow><mi>i</mi></msub><msub><mo>)</mo><mrow><mi>i</mi><mo>∈</mo><mi>I</mi></mrow></msub></mrow><annotation encoding="application/x-tex">(\mathcal{A}_i)_{i\in I}</annotation></semantics></math></span></span> 称为<strong>相互独立</strong>，若对于任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span> 的有限子集 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span>，任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub><mo>∈</mo><msub><mrow><mi mathvariant="script">A</mi></mrow><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i \in \mathcal{A}_i</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>∈</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">i \in J</annotation></semantics></math></span></span>），总有</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mo>∩</mo><mrow><mi>i</mi><mo>∈</mo><mi>J</mi></mrow></msub><msub><mi>A</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><msub><mo>∏</mo><mrow><mi>i</mi><mo>∈</mo><mi>J</mi></mrow></msub><mi>P</mi><mo>(</mo><msub><mi>A</mi><mi>i</mi></msub><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P(\cap_{i\in J} A_i) = \prod_{i\in J} P(A_i).
+</annotation></semantics></math></span></span></span></p>
+<blockquote>
+<p>在上面的命题中，将部分集合替换为其补集，结论不变。</p>
+</blockquote>
+
       </div>
       <div class="post-tags-categories">
         
@@ -435,18 +508,20 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/" class="post-nav-link">
+    <a href="/physics/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8A%9B%E5%AD%A6/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">矢量运算</div>
+        <div class="title-text">拉格朗日力学</div>
       </div>
       
       <!-- <div class="content">
-        梯度、散度、旋度与拉普拉斯算子公式及推导
-梯度、散度、旋度与拉普拉斯算子在不同坐标系下的公式总结
-——梯度、散度、旋度和
+        拉格朗日力学
+约束与自由度
+约束分为完整约束（可积约束）和非完整约束（不可积约束）：
+
+完整约束：约束方程可表示为坐标和
       </div> -->
     </a>
   </div>
@@ -585,7 +660,7 @@
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">条件概率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87"><span class="toc-text">条件概率</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E7%90%86%EF%BC%9A%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87%E4%B9%9F%E6%98%AF%E4%B8%80%E4%B8%AA%E6%A6%82%E7%8E%87"><span class="toc-text">定理：条件概率也是一个概率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%A0%E6%B3%95%E5%85%AC%E5%BC%8F"><span class="toc-text">加法公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A%E4%B9%98%E6%B3%95%E5%85%AC%E5%BC%8F"><span class="toc-text">定义：乘法公式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E6%A6%82%E7%8E%87%E5%85%AC%E5%BC%8F"><span class="toc-text">全概率公式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%92%E5%88%86"><span class="toc-text">划分</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bayes%E5%85%AC%E5%BC%8F"><span class="toc-text">Bayes公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-text">独立性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A8%E5%B9%BF%EF%BC%9A%E4%BA%8B%E4%BB%B6%E7%B1%BB%E5%92%8C%E4%BA%8B%E4%BB%B6%E5%9F%9F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-text">推广：事件类和事件域的独立性</span></a></li></ol></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -618,91 +693,7 @@
             
 
             <div class="post-img-box">
-              <a href="/physics/%E4%B8%A4%E4%BD%93%E9%97%AE%E9%A2%98/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">10-17</span>
-                
-              </div>
-              <a class="post-title" href="/physics/%E4%B8%A4%E4%BD%93%E9%97%AE%E9%A2%98/">两体中心势</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8A%9B%E5%AD%A6/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">10-14</span>
-                
-              </div>
-              <a class="post-title" href="/physics/%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%8A%9B%E5%AD%A6/">拉格朗日力学</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">10-14</span>
-                
-              </div>
-              <a class="post-title" href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/">矢量运算</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">10-11</span>
-                
-              </div>
-              <a class="post-title" href="/physics/%E6%9D%A1%E4%BB%B6%E6%A6%82%E7%8E%87/">条件概率</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/%E5%8F%A4%E5%85%B8%E6%A6%82%E7%8E%87/" class="post-img " style="background-size: cover; 
+              <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -710,10 +701,94 @@
             <div class="post-date-title">
               <div>
                 
-                  <span class="post-date">09-17</span>
+                  <span class="post-date">11-12</span>
                 
               </div>
-              <a class="post-title" href="/physics/%E5%8F%A4%E5%85%B8%E6%A6%82%E7%8E%87/">古典概率</a>
+              <a class="post-title" href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">随机变量的数字特征</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%B8%B8%E8%A7%81%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">11-05</span>
+                
+              </div>
+              <a class="post-title" href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%B8%B8%E8%A7%81%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0/">随机变量的常见分布函数</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%90%91%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">11-05</span>
+                
+              </div>
+              <a class="post-title" href="/physics/%E9%9A%8F%E6%9C%BA%E5%90%91%E9%87%8F%E5%8F%8A%E5%85%B6%E5%88%86%E5%B8%83/">随机向量及其分布</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%EF%BC%8C%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%EF%BC%8C%E5%AF%86%E5%BA%A6%E4%BC%A0%E9%80%92%EF%BC%8C%E8%81%94%E5%90%88%E5%AF%86%E5%BA%A6/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-cde50ed4c355bb20693b266edd0bd0bd_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-cde50ed4c355bb20693b266edd0bd0bd_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-29</span>
+                
+              </div>
+              <a class="post-title" href="/physics/%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%EF%BC%8C%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%EF%BC%8C%E5%AF%86%E5%BA%A6%E4%BC%A0%E9%80%92%EF%BC%8C%E8%81%94%E5%90%88%E5%AF%86%E5%BA%A6/">边际分布，条件分布，密度传递，联合密度</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%92%8C%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">10-22</span>
+                
+              </div>
+              <a class="post-title" href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%92%8C%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89/">随机变量的分布函数和密度函数定义</a>
             </div>
           </div>
         

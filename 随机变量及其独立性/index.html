@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>friends | Hexo</title>
+  <title>随机变量及其独立性 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -362,10 +362,20 @@
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        friends
+        随机变量及其独立性
       </span>
     </div>
     
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2025-10-15 |
+        </span>
+      
+
+      
+
+      
     
   </div>
   
@@ -382,9 +392,113 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1>随机变量及其独立性</h1>
+<h3 id="随机变量">随机变量</h3>
+<p><strong>定义</strong></p>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi mathvariant="normal">Ω</mi><mo separator="true">,</mo><mrow><mi mathvariant="script">F</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">P</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">(\Omega, \mathcal{F}, \mathbf{P})</annotation></semantics></math></span></span> 为一个概率空间. 随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 是定义在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span></span> 上的实值可测函数，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>:</mo><mi mathvariant="normal">Ω</mi><mo>→</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">X: \Omega \to \mathbb{R}</annotation></semantics></math></span></span>，对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">B</mi></mrow><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{B}(\mathbb{R})</annotation></semantics></math></span></span> 中任何集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>，</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>X</mi><mo>∈</mo><mi>B</mi><mo>}</mo><mo>=</mo><mo>{</mo><mi>ω</mi><mo>∈</mo><mi mathvariant="normal">Ω</mi><mo>:</mo><mi>X</mi><mo>(</mo><mi>ω</mi><mo>)</mo><mo>∈</mo><mi>B</mi><mo>}</mo><mo>(</mo><mi>ω</mi><mo>=</mo><msup><mi>X</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>(</mo><mi>B</mi><mo>)</mo><mo>)</mo><mo>∈</mo><mrow><mi mathvariant="script">F</mi></mrow><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\{X \in B\} = \{\omega \in \Omega : X(\omega) \in B\} (\omega = X^{-1}(B)) \in \mathcal{F}.
+</annotation></semantics></math></span></span></span></p>
+<p><strong>随机变量</strong></p>
+<ul>
+<li>若随机变量仅取有限或可数个值，则称其为离散随机变量；</li>
+<li>若随机变量的取值充满数轴上的一个区间，则称其为连续随机变量；</li>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, \cdots, X_n</annotation></semantics></math></span></span> 都是空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi mathvariant="normal">Ω</mi><mo separator="true">,</mo><mrow><mi mathvariant="script">F</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">P</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">(\Omega, \mathcal{F}, \mathbf{P})</annotation></semantics></math></span></span> 上的随机变量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mo>⋅</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">f(\cdot)</annotation></semantics></math></span></span> 为连续函数，则以下都是随机变量：
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>+</mo><msub><mi>X</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">X_1 + X_2</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>∧</mo><msub><mi>X</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">X_1 \wedge X_2</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">f(X_1, \cdots, X_n)</annotation></semantics></math></span></span>；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>inf</mi><mi>n</mi></msub><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\inf_n X_n</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>sup</mi><mi>n</mi></msub><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\sup_n X_n</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mi>n</mi></msub><mi>sup</mi><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\lim_n \sup X_n</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mi>n</mi></msub><mi>inf</mi><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\lim_n \inf X_n</annotation></semantics></math></span></span>.</li>
+</ul>
+</li>
+</ul>
+<p><strong>分布测度定义</strong></p>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 为概率空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi mathvariant="normal">Ω</mi><mo separator="true">,</mo><mrow><mi mathvariant="script">F</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">P</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">(\Omega, \mathcal{F}, \mathbf{P})</annotation></semantics></math></span></span> 上的一个随机变量. 随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的分布测度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">\mu_X</annotation></semantics></math></span></span> 定义为：对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span></span> 中任何 Borel 集 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>，</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>X</mi></msub><mo>(</mo><mi>B</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mo>{</mo><mi>X</mi><mo>∈</mo><mi>B</mi><mo>}</mo><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mo>{</mo><mi>ω</mi><mo>∈</mo><mi mathvariant="normal">Ω</mi><mo>:</mo><mi>X</mi><mo>(</mo><mi>ω</mi><mo>)</mo><mo>∈</mo><mi>B</mi><mo>}</mo><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msup><mi>X</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>(</mo><mi>B</mi><mo>)</mo><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\mu_X(B) = P(\{X \in B\}) = P(\{\omega \in \Omega : X(\omega) \in B\}) = P(X^{-1}(B)).
+</annotation></semantics></math></span></span></span></p>
+<blockquote>
+<p>简单例子：抛硬币</p>
+<p>设 $\Omega = \{\text{正面}, \text{反面}\}$，$\mathcal{F} = 2^{\Omega}$，$P(\{\text{正面}\}) = P(\{\text{反面}\}) = \frac{1}{2}$. </p>
+<p>定义随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>:</mo><mi mathvariant="normal">Ω</mi><mo>→</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">X: \Omega \to \mathbb{R}</annotation></semantics></math></span></span> 为：</p>
+
+$$
+X(\text{正面}) = 1, \quad X(\text{反面}) = 0
+$$
+
+<p>验证可测性：对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo>}</mo><mo>∈</mo><mrow><mi mathvariant="script">B</mi></mrow><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">B = \{1\} \in \mathcal{B}(\mathbb{R})</annotation></semantics></math></span></span>，</p>
+
+$$
+\{X \in B\} = \{\omega \in \Omega : X(\omega) = 1\} = \{\text{正面}\} \in \mathcal{F}
+$$
+
+<p>分布测度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">\mu_X</annotation></semantics></math></span></span>：</p>
+<ul>
+<li>
+$\mu_X(\{0\}) = P(\{X = 0\}) = P(\{\text{反面}\}) = \frac{1}{2}$
+</li>
+<li>
+$\mu_X(\{1\}) = P(\{X = 1\}) = P(\{\text{正面}\}) = \frac{1}{2}$
+</li>
+<li>
+$\mu_X(\mathbb{R}) = P(\Omega) = 1$
+</li>
+</ul>
+<p>这个例子中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 是离散随机变量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">\mu_X</annotation></semantics></math></span></span> 是一个概率测度，描述了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 取各个值的概率.</p>
+</blockquote>
+<h3 id="随机变量的独立性">随机变量的独立性</h3>
+<h4 id="定义">定义</h4>
+<p>2-维随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span> 联合分布函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x,y)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo separator="true">,</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X,Y</annotation></semantics></math></span></span> 的边缘分布函数分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo separator="true">,</mo><msub><mi>F</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F_X(x), F_Y(y)</annotation></semantics></math></span></span>，若对于所有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math></span></span> 有</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo separator="true">,</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo>)</mo><mi>P</mi><mo>(</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>)</mo><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">P(X \leq x, Y \leq y) = P(X \leq x)P(Y \leq y),
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mo>=</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><msub><mi>F</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">F(x,y) = F_X(x)F_Y(y),
+</annotation></semantics></math></span></span></span></p>
+<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo separator="true">,</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X,Y</annotation></semantics></math></span></span> 相互独立.</p>
+<h4 id="X-与-Y-相互独立的充要条件"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span></span> 相互独立的充要条件</h4>
+<ul>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span> 为离散型随机变量，对于所有可能取值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_i,y_j)</annotation></semantics></math></span></span>，</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo>)</mo><mi>P</mi><mo>(</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">P(X = x_i, Y = y_j) = P(X = x_i)P(Y = y_j)
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p>连续型随机变量：联合密度函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p(x,y)</annotation></semantics></math></span></span>，</p>
+<ul>
+<li>边缘密度函数满足：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mo>=</mo><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p(x,y) = p_X(x)p_Y(y)</annotation></semantics></math></span></span>；</li>
+<li>条件密度函数满足：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mo>=</mo><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_{X|Y}(x|y) = p_X(x)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>Y</mi><mi mathvariant="normal">∣</mi><mi>X</mi></mrow></msub><mo>(</mo><mi>y</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo>)</mo><mo>=</mo><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_{Y|X}(y|x) = p_Y(y)</annotation></semantics></math></span></span>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="多个随机变量的独立性">多个随机变量的独立性</h4>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, X_2, \cdots, X_n</annotation></semantics></math></span></span> 为同一概率空间中的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span></span>-随机变量，称其相互独立，</p>
+<ul>
+<li>若对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow><mi mathvariant="double-struck">R</mi></mrow><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">\mathbb{R}^1</annotation></semantics></math></span></span> 中任意 Borel 集 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>B</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>B</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">B_1, B_2, \cdots, B_n</annotation></semantics></math></span></span>，事件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>ω</mi><mo>:</mo><msub><mi>X</mi><mi>i</mi></msub><mo>(</mo><mi>ω</mi><mo>)</mo><mo>∈</mo><msub><mi>B</mi><mi>i</mi></msub><mo>}</mo><mtext>&nbsp;</mtext><mo>(</mo><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\{\omega : X_i(\omega) \in B_i\} \ (i = 1, 2, \cdots, n)</annotation></semantics></math></span></span> 是相互独立的，即</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mrow><mo fence="true">{</mo><msubsup><mo>⋂</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo>(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>∈</mo><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo><mo fence="true">}</mo></mrow><mo>=</mo><msubsup><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mi>P</mi><mo>(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>∈</mo><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P\left\{\bigcap_{i=1}^n (X_i \in B_i)\right\} = \prod_{i=1}^n P(X_i \in B_i).
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>若对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi><msub><mi>x</mi><mi>i</mi></msub><mo>∈</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo separator="true">,</mo><mtext>&nbsp;</mtext><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\forall x_i \in \mathbb{R}, \ 1 \leq i \leq n</annotation></semantics></math></span></span>，</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo>≤</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>≤</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo>≤</mo><msub><mi>x</mi><mn>1</mn></msub><mo>)</mo><mo>⋯</mo><mi>P</mi><mo>(</mo><msub><mi>X</mi><mi>n</mi></msub><mo>≤</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P(X_1 \leq x_1, \cdots, X_n \leq x_n) = P(X_1 \leq x_1) \cdots P(X_n \leq x_n).
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>
+<p>联合分布为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x_1, \cdots, x_n)</annotation></semantics></math></span></span>，联合密度函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">p(x_1, \cdots, x_n)</annotation></semantics></math></span></span>，</p>
+<ul>
+<li>联合分布函数满足：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><msub><mi>F</mi><mrow><msub><mi>X</mi><mn>1</mn></msub></mrow></msub><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>)</mo><mo>⋯</mo><msub><mi>F</mi><mrow><msub><mi>X</mi><mi>n</mi></msub></mrow></msub><mo>(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x_1, \cdots, x_n) = F_{X_1}(x_1) \cdots F_{X_n}(x_n)</annotation></semantics></math></span></span>.</li>
+<li>联合密度函数满足：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><msub><mi>p</mi><mrow><msub><mi>X</mi><mn>1</mn></msub></mrow></msub><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>)</mo><mo>⋯</mo><msub><mi>p</mi><mrow><msub><mi>X</mi><mi>n</mi></msub></mrow></msub><mo>(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">p(x_1, \cdots, x_n) = p_{X_1}(x_1) \cdots p_{X_n}(x_n)</annotation></semantics></math></span></span>.</li>
+</ul>
+</li>
+</ul>
+<h4 id="定理">定理</h4>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(X_1, \cdots, X_n)</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>Y</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>Y</mi><mi>m</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(Y_1, \cdots, Y_m)</annotation></semantics></math></span></span> 相互独立，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">\forall i, j</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">X_i</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">Y_j</annotation></semantics></math></span></span> 独立，若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo separator="true">,</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">h, g</annotation></semantics></math></span></span> 为连续函数，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">h(X_1, \cdots, X_n)</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><msub><mi>Y</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>Y</mi><mi>m</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">g(Y_1, \cdots, Y_m)</annotation></semantics></math></span></span> 相互独立.</p>
+
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E6%A6%82%E7%BB%9F/" class="">
+              概统
+            </a>
+          
+        </div>
         
       </div>
       
@@ -395,7 +509,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/friends/index.html" target="_blank" title="friends">https://kotokowa.github.io/physics/friends/index.html</a>
+    <a href="/physics/随机变量及其独立性/" target="_blank" title="随机变量及其独立性">https://kotokowa.github.io/physics/随机变量及其独立性/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -413,7 +527,52 @@
 
 
 
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/%E4%B8%A4%E4%BD%93%E9%97%AE%E9%A2%98/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">两体中心势</div>
+      </div>
+      
+      <!-- <div class="content">
+        两体问题
 
+两体问题的化简 → 中心力场
+有效势、运动解和轨道
+开普勒问题
+粒子弹性散射
+
+拉格朗日量：
+L=12m1r
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">矢量运算</div>
+      </div>
+      <!-- <div class="content">
+        梯度、散度、旋度与拉普拉斯算子公式及推导
+梯度、散度、旋度与拉普拉斯算子在不同坐标系下的公式总结
+——梯度、散度、旋度和
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -516,27 +675,29 @@
   <div class="layout_sticky">    
     
       
-        
+<section class="widget side_toc">
   
-      
-      
-        
-<section class="widget side_tagcloud">
-    
   <header>
     
-      <a style="color: " href="/tags/"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a>
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
     
   </header>
 
 
-    <div class="content">
-    <a href="/physics/tags/%E5%85%89%E5%AD%A6/" style="font-size: 14px; color: #999">光学</a> <a href="/physics/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 24px; color: #555">概统</a> <a href="/physics/tags/%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6/" style="font-size: 19px; color: #777">经典力学</a>
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">随机变量及其独立性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="toc-text">随机变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-text">随机变量的独立性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-%E4%B8%8E-Y-%E7%9B%B8%E4%BA%92%E7%8B%AC%E7%AB%8B%E7%9A%84%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">XXX 与 YYY 相互独立的充要条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-text">多个随机变量的独立性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E7%90%86"><span class="toc-text">定理</span></a></li></ol></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
     </div>
+  </div>
 </section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  
-      
       
   <section class="widget side_recent_post">
     
@@ -662,129 +823,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href="/physics/archives/"><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class="name">归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/11/"><span class="card-archive-list-date">November 2025</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/10/"><span class="card-archive-list-date">October 2025</span><span class="card-archive-list-count">7</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/09/"><span class="card-archive-list-date">September 2025</span><span class="card-archive-list-count">2</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class="name" style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class="content">
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>12 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2025/10/01'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Mon Nov 17 2025 21:59:26 GMT+0800 (China Standard Time)</div>
-            <div id="last-update-show">2025-11-17 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2025-11-17 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>
@@ -911,6 +949,59 @@
 		height: 100%;
 	}
 </style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
 
