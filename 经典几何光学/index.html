@@ -396,7 +396,9 @@
 <h3 id="符号约定">符号约定</h3>
 <p>这里的符号约定和光学工程领域相同，和Zemax软件的相同，它的好处在于不区分实像虚像，也不区分透镜面镜.</p>
 <ul>
-<li></li>
+<li>
+<p>确定一个点的距离（如：物体位置，物距，像位置，像距，球心etc.）：以光学元件位置（如球面顶点）或折射点为参考点，光线传播方向为正方向，从参考点出发到这个点的有向线段若与光线方向相同则距离为正，反之为负。注意，这个定义与实像虚像无关。</p>
+</li>
 <li>
 <p>对于角度，以光轴或法线为基准，向光线旋转一个锐角，逆时针为正，顺时针为负.</p>
 </li>
@@ -493,9 +495,12 @@
 <p>色差是由于不同波长光线折射率不同造成的像差.</p>
 <h5 id="位置色差">位置色差</h5>
 <p>轴向色差：</p>
-\Delta f = f_{\text{红}} - f_{\text{蓝}} = f \cdot \frac{\Delta n}{n - 1}
 
-<p>其中 \Delta n = n_{\text{蓝}} - n_{\text{红}}</p>
+$$
+\Delta f = f_{\text{红}} - f_{\text{蓝}} = f \cdot \frac{\Delta n}{n - 1}
+$$
+
+<p>其中 $\Delta n = n_{\text{蓝}} - n_{\text{红}}$</p>
 <h5 id="倍率色差">倍率色差</h5>
 <p>横向色差：</p>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msup><mi>y</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><msup><mi>y</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>⋅</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>n</mi></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>⋅</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mi>f</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\Delta y' = y' \cdot \frac{\Delta n}{n - 1} \cdot \frac{h}{f}
