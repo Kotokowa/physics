@@ -6,7 +6,7 @@
   <link href="https://kotokowa.github.io/physics/atom.xml" rel="self"/>
   
   <link href="https://kotokowa.github.io/physics/"/>
-  <updated>2025-11-19T04:32:16.390Z</updated>
+  <updated>2025-11-19T05:17:00.205Z</updated>
   <id>https://kotokowa.github.io/physics/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>随机变量的收敛性</title>
+    <link href="https://kotokowa.github.io/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7/"/>
+    <id>https://kotokowa.github.io/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7/</id>
+    <published>2025-11-18T16:00:00.000Z</published>
+    <updated>2025-11-19T05:17:00.205Z</updated>
+    
+    <content type="html"><![CDATA[<h1>随机变量的收敛性</h1>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1&gt;随机变量的收敛性&lt;/h1&gt;
+</summary>
+      
+    
+    
+    
+    
+    <category term="概统" scheme="https://kotokowa.github.io/physics/tags/%E6%A6%82%E7%BB%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>随机变量的数字特征</title>
