@@ -393,6 +393,123 @@
     <article class="post post-detail">
       <div class="post-content">
         <h1>光学appendix</h1>
+<h3 id=""></h3>
+<h3 id="Gerchberg-Saxton-GS-算法收敛性证明"><strong>Gerchberg-Saxton (GS) 算法收敛性证明</strong></h3>
+<h4 id="1-证明目标"><strong>1. 证明目标</strong></h4>
+<p>本证明旨在阐明：Gerchberg-Saxton (GS) 算法的迭代过程必然会收敛到一个稳定点（不动点）。然而，此证明<strong>不保证</strong>该稳定点对应于真实的物理相位，即算法可能收敛到局部最优解或平凡解。</p>
+<h4 id="2-数学框架与定义"><strong>2. 数学框架与定义</strong></h4>
+<p>为了进行严谨的证明，我们首先定义算法中涉及的数学对象和操作。</p>
+<p><strong>物平面与频谱平面</strong>：</p>
+<ul>
+<li>物平面的复振幅分布为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">g_n</annotation></semantics></math></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 为迭代次数。</li>
+<li>频谱平面的复振幅分布为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>G</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">G_n</annotation></semantics></math></span></span>。</li>
+</ul>
+<p><strong>傅里叶变换</strong>：</p>
+<ul>
+<li>正向傅里叶变换：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>G</mi><mi>n</mi></msub><mo>=</mo><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msub><mi>g</mi><mi>n</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">G_n = \mathcal{F}\{g_n\}</annotation></semantics></math></span></span></li>
+<li>逆向傅里叶变换：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mi>n</mi></msub><mo>=</mo><msup><mrow><mi mathvariant="script">F</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>{</mo><msub><mi>G</mi><mi>n</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">g_n = \mathcal{F}^{-1}\{G_n\}</annotation></semantics></math></span></span></li>
+</ul>
+<p><strong>已知约束</strong>：</p>
+<ul>
+<li>物平面的真实振幅分布为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>g</mi><mn>0</mn></msub><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|g_0|</annotation></semantics></math></span></span>。</li>
+<li>频谱平面的真实振幅分布为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>G</mi><mn>0</mn></msub><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|G_0|</annotation></semantics></math></span></span>。</li>
+</ul>
+<p><strong>投影算子</strong>：<br>
+GS算法的每一步"替换振幅"操作，本质上是在一个集合上进行投影。</p>
+<ul>
+<li><strong>物平面约束集合</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">S_A</annotation></semantics></math></span></span>：所有满足物平面振幅约束的复振幅的集合。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>A</mi></msub><mo>=</mo><mo>{</mo><mi>g</mi><mo>∣</mo><mi mathvariant="normal">∣</mi><mi>g</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>g</mi><mn>0</mn></msub><mi mathvariant="normal">∣</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">S_A = \{ g \mid |g| = |g_0| \}</annotation></semantics></math></span></span></li>
+<li><strong>频谱平面约束集合</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">S_B</annotation></semantics></math></span></span>：所有满足频谱平面振幅约束的复振幅的集合。<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>B</mi></msub><mo>=</mo><mo>{</mo><mi>G</mi><mo>∣</mo><mi mathvariant="normal">∣</mi><mi>G</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>G</mi><mn>0</mn></msub><mi mathvariant="normal">∣</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">S_B = \{ G \mid |G| = |G_0| \}</annotation></semantics></math></span></span></li>
+</ul>
+<p>相应的投影算子定义为：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">P_A</annotation></semantics></math></span></span>：将任意复振幅 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span> 投影到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">S_A</annotation></semantics></math></span></span> 上，即保留其相位，替换振幅为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>g</mi><mn>0</mn></msub><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|g_0|</annotation></semantics></math></span></span>。<br> $$\displaystyle P_A(g) = |g_0| \exp(i \cdot \text{phase}(g)) \tag{1}$$</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">P_B</annotation></semantics></math></span></span>：将任意复振幅 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span></span> 投影到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">S_B</annotation></semantics></math></span></span> 上，即保留其相位，替换振幅为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>G</mi><mn>0</mn></msub><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|G_0|</annotation></semantics></math></span></span>。$$\displaystyle P_B(G) = |G_0| \exp(i \cdot \text{phase}(G)) \tag{2}$$</li>
+</ul>
+<p><strong>GS算法的迭代公式</strong>：<br>
+综合以上定义，一次完整的GS迭代可以表示为：</p>
+
+$$
+\displaystyle g_{n+1} = P_A(\mathcal{F}^{-1}(P_B(\mathcal{F}\{g_n\}))) \tag{3}
+$$
+
+<p><strong>误差函数</strong>：<br>
+我们定义一个衡量当前猜测 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">g_n</annotation></semantics></math></span></span> 与真实解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">g^*</annotation></semantics></math></span></span>（一个满足所有约束的真实复振幅）之间距离的函数。这里使用L2范数的平方作为距离度量。$$\displaystyle E_n = \| g_n - g^* \|^2 \tag{4}$$</p>
+<p>其中，真实解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">g^*</annotation></semantics></math></span></span> 同时满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mo>∗</mo></msup><mo>∈</mo><msub><mi>S</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">g^* \in S_A</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msup><mi>g</mi><mo>∗</mo></msup><mo>}</mo><mo>∈</mo><msub><mi>S</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal{F}\{g^*\} \in S_B</annotation></semantics></math></span></span>。因此，必然有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>A</mi></msub><mo>(</mo><msup><mi>g</mi><mo>∗</mo></msup><mo>)</mo><mo>=</mo><msup><mi>g</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">P_A(g^*) = g^*</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>B</mi></msub><mo>(</mo><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msup><mi>g</mi><mo>∗</mo></msup><mo>}</mo><mo>)</mo><mo>=</mo><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msup><mi>g</mi><mo>∗</mo></msup><mo>}</mo></mrow><annotation encoding="application/x-tex">P_B(\mathcal{F}\{g^*\}) = \mathcal{F}\{g^*\}</annotation></semantics></math></span></span>。</p>
+<h4 id="3-收敛性证明"><strong>3. 收敛性证明</strong></h4>
+<p>我们的目标是证明误差函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">E_n</annotation></semantics></math></span></span> 是一个单调递减序列。</p>
+<p>根据公式(4)和(3)，我们有：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi mathvariant="normal">∥</mi><msub><mi>g</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msup><mi>g</mi><mo>∗</mo></msup><msup><mi mathvariant="normal">∥</mi><mn>2</mn></msup><mo>=</mo><mi mathvariant="normal">∥</mi><msub><mi>P</mi><mi>A</mi></msub><mo>(</mo><msup><mrow><mi mathvariant="script">F</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>(</mo><msub><mi>P</mi><mi>B</mi></msub><mo>(</mo><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msub><mi>g</mi><mi>n</mi></msub><mo>}</mo><mo>)</mo><mo>)</mo><mo>)</mo><mo>−</mo><msup><mi>g</mi><mo>∗</mo></msup><msup><mi mathvariant="normal">∥</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E_{n+1} = \| g_{n+1} - g^* \|^2 
+= \| P_A(\mathcal{F}^{-1}(P_B(\mathcal{F}\{g_n\}))) - g^* \|^2
+</annotation></semantics></math></span></span></span></p>
+<p>由于真实解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">g^*</annotation></semantics></math></span></span> 在物平面约束集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">S_A</annotation></semantics></math></span></span> 中，所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mo>∗</mo></msup><mo>=</mo><msub><mi>P</mi><mi>A</mi></msub><mo>(</mo><msup><mi>g</mi><mo>∗</mo></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">g^* = P_A(g^*)</annotation></semantics></math></span></span>。代入上式：</p>
+
+$$
+\displaystyle E_{n+1} = \| P_A(\mathcal{F}^{-1}(P_B(\mathcal{F}\{g_n\}))) - P_A(g^*) \|^2 \tag{5}
+$$
+
+<p>这里我们引入一个关键的数学性质：<strong>投影算子是非扩张的</strong>。</p>
+<p>这意味着对于任意两点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span>，它们经过同一个投影算子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 后的距离不会变大：</p>
+
+$$
+\displaystyle \| P(x) - P(y) \| \le \| x - y \| \tag{6}
+$$
+
+<p>将性质(6)应用于(5)式中的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">P_A</annotation></semantics></math></span></span> 算子，令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><msup><mrow><mi mathvariant="script">F</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>(</mo><msub><mi>P</mi><mi>B</mi></msub><mo>(</mo><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msub><mi>g</mi><mi>n</mi></msub><mo>}</mo><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">x = \mathcal{F}^{-1}(P_B(\mathcal{F}\{g_n\}))</annotation></semantics></math></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><msup><mi>g</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">y = g^*</annotation></semantics></math></span></span>，我们得到：</p>
+
+$$
+\displaystyle E_{n+1} \le \| \mathcal{F}^{-1}(P_B(\mathcal{F}\{g_n\})) - g^* \|^2 \tag{7}
+$$
+
+<p>现在，我们对(7)式右边进行傅里叶变换。根据<strong>帕塞瓦尔定理</strong>，傅里叶变换是保范的（能量守恒），即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∥</mi><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><mi>u</mi><mo>}</mo><mi mathvariant="normal">∥</mi><mo>=</mo><mi mathvariant="normal">∥</mi><mi>u</mi><mi mathvariant="normal">∥</mi></mrow><annotation encoding="application/x-tex">\| \mathcal{F}\{u\} \| = \| u \|</annotation></semantics></math></span></span>。因此：</p>
+
+$$
+\displaystyle \| \mathcal{F}^{-1}(P_B(\mathcal{F}\{g_n\})) - g^* \|^2 = \| P_B(\mathcal{F}\{g_n\}) - \mathcal{F}\{g^*\} \|^2 \tag{8}
+$$
+
+<p>将(8)代入(7)：</p>
+
+$$
+\displaystyle E_{n+1} \le \| P_B(\mathcal{F}\{g_n\}) - \mathcal{F}\{g^*\} \|^2 \tag{9}
+$$
+
+<p>再次利用投影算子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">P_B</annotation></semantics></math></span></span> 的非扩张性（性质(6)），我们知道真实解的频谱 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msup><mi>g</mi><mo>∗</mo></msup><mo>}</mo></mrow><annotation encoding="application/x-tex">\mathcal{F}\{g^*\}</annotation></semantics></math></span></span> 在约束集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">S_B</annotation></semantics></math></span></span> 中，所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msup><mi>g</mi><mo>∗</mo></msup><mo>}</mo><mo>=</mo><msub><mi>P</mi><mi>B</mi></msub><mo>(</mo><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msup><mi>g</mi><mo>∗</mo></msup><mo>}</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{F}\{g^*\} = P_B(\mathcal{F}\{g^*\})</annotation></semantics></math></span></span>。代入(9)式：</p>
+
+$$
+\begin{aligned}
+E_{n+1} &amp;\le \| P_B(\mathcal{F}\{g_n\}) - P_B(\mathcal{F}\{g^*\}) \|^2 \\
+&amp;\le \| \mathcal{F}\{g_n\} - \mathcal{F}\{g^*\} \|^2 \quad \text{(再次应用非扩张性)}
+\end{aligned}
+$$
+
+<p>最后，再次应用帕塞瓦尔定理：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi mathvariant="normal">∥</mi><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msub><mi>g</mi><mi>n</mi></msub><mo>}</mo><mo>−</mo><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msup><mi>g</mi><mo>∗</mo></msup><mo>}</mo><msup><mi mathvariant="normal">∥</mi><mn>2</mn></msup><mo>=</mo><mi mathvariant="normal">∥</mi><msub><mi>g</mi><mi>n</mi></msub><mo>−</mo><msup><mi>g</mi><mo>∗</mo></msup><msup><mi mathvariant="normal">∥</mi><mn>2</mn></msup><mo>=</mo><msub><mi>E</mi><mi>n</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \| \mathcal{F}\{g_n\} - \mathcal{F}\{g^*\} \|^2 = \| g_n - g^* \|^2 = E_n
+</annotation></semantics></math></span></span></span></p>
+<p>至此，我们证明了：</p>
+
+$$
+\displaystyle E_{n+1} \le E_n \tag{10}
+$$
+
+<p><strong>结论</strong>：误差函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">E_n</annotation></semantics></math></span></span> 是一个单调递减序列。同时，由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">E_n</annotation></semantics></math></span></span> 是距离的平方，它必然有下界（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">E_n \ge 0</annotation></semantics></math></span></span>）。根据单调有界定理，序列 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>E</mi><mi>n</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{E_n\}</annotation></semantics></math></span></span> 必然收敛。当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">E_n</annotation></semantics></math></span></span> 收敛时，意味着 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">g_{n+1}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">g_n</annotation></semantics></math></span></span> 的差异趋于零，即迭代序列 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>g</mi><mi>n</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{g_n\}</annotation></semantics></math></span></span> 收敛到一个不动点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">g^*</annotation></semantics></math></span></span>。</p>
+<p><strong>因此，GS算法一定会收敛。</strong></p>
+<h4 id="4-为何可能收敛到-不正确-的解？"><strong>4. 为何可能收敛到"不正确"的解？</strong></h4>
+<p>上述证明只保证了算法会"停下来"，但没保证它停在了"正确的位置"。根本原因在于问题的<strong>非凸性</strong>。</p>
+<ul>
+<li>
+<p><strong>不动点</strong>：算法收敛到的点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">g^*</annotation></semantics></math></span></span> 满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mo>∗</mo></msup><mo>=</mo><msub><mi>P</mi><mi>A</mi></msub><mo>(</mo><msup><mrow><mi mathvariant="script">F</mi></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>(</mo><msub><mi>P</mi><mi>B</mi></msub><mo>(</mo><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msup><mi>g</mi><mo>∗</mo></msup><mo>}</mo><mo>)</mo><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">g^* = P_A(\mathcal{F}^{-1}(P_B(\mathcal{F}\{g^*\})))</annotation></semantics></math></span></span>。这意味着 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">g^*</annotation></semantics></math></span></span> 同时满足两个振幅约束：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msup><mi>g</mi><mo>∗</mo></msup><mi mathvariant="normal">∣</mi><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>g</mi><mn>0</mn></msub><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|g^*| = |g_0|</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><msup><mi>g</mi><mo>∗</mo></msup><mo>}</mo><mi mathvariant="normal">∣</mi><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>G</mi><mn>0</mn></msub><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|\mathcal{F}\{g^*\}| = |G_0|</annotation></semantics></math></span></span>。</p>
+</li>
+<li>
+<p><strong>多解性</strong>：满足这两个约束的解可能不止一个。除了真实的物理解，还存在：</p>
+<ol>
+<li><strong>平凡解</strong>：例如，对真实解添加一个全局相位因子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>exp</mi><mo>(</mo><mi>i</mi><mi>ϕ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\exp(i\phi)</annotation></semantics></math></span></span>，其振幅分布不变，因此也是一个有效解。</li>
+<li><strong>局部最优解</strong>：由于约束集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">S_A</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">S_B</annotation></semantics></math></span></span> 在高维空间中形状复杂，它们的交集可能存在多个不连通的区域。GS算法的迭代路径高度依赖于初始的随机相位 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">g_0</annotation></semantics></math></span></span>。如果初始点离某个"假解"（局部最优解）更近，算法就可能陷入该区域并收敛于此，而无法"跳出"去寻找全局最优的真实解。</li>
+</ol>
+</li>
+</ul>
+<h4 id="5-总结"><strong>5. 总结</strong></h4>
+<p>我们通过定义误差函数并利用投影算子的非扩张性，严谨地证明了GS算法的迭代过程必然收敛。然而，由于相位恢复问题本质上是一个非凸优化问题，该算法的收敛性不保证解的全局最优性。其最终结果可能是一个满足所有约束但并非真实物理相位的局部最优解，且结果对初始值高度敏感。</p>
 
       </div>
       <div class="post-tags-categories">
@@ -588,7 +705,7 @@ a.s. 几乎必然
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">光学appendix</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">光学appendix</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-text"></span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gerchberg-Saxton-GS-%E7%AE%97%E6%B3%95%E6%94%B6%E6%95%9B%E6%80%A7%E8%AF%81%E6%98%8E"><span class="toc-text">Gerchberg-Saxton (GS) 算法收敛性证明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AF%81%E6%98%8E%E7%9B%AE%E6%A0%87"><span class="toc-text">1. 证明目标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%95%B0%E5%AD%A6%E6%A1%86%E6%9E%B6%E4%B8%8E%E5%AE%9A%E4%B9%89"><span class="toc-text">2. 数学框架与定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%94%B6%E6%95%9B%E6%80%A7%E8%AF%81%E6%98%8E"><span class="toc-text">3. 收敛性证明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%B8%BA%E4%BD%95%E5%8F%AF%E8%83%BD%E6%94%B6%E6%95%9B%E5%88%B0-%E4%B8%8D%E6%AD%A3%E7%A1%AE-%E7%9A%84%E8%A7%A3%EF%BC%9F"><span class="toc-text">4. 为何可能收敛到&quot;不正确&quot;的解？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E6%80%BB%E7%BB%93"><span class="toc-text">5. 总结</span></a></li></ol></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
