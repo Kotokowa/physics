@@ -393,6 +393,126 @@
     <article class="post post-detail">
       <div class="post-content">
         <h1>哈密顿力学</h1>
+<h2 id="定义">定义</h2>
+<p>广义动量 $\displaystyle p_{\alpha}:=\frac{\partial L}{\partial \dot{q}_{\alpha}}$</p>
+<p>广义能量 $H(\boldsymbol{q},\dot{\boldsymbol{q}},t):=\sum_{\alpha=1}^{s} p_{\alpha}(\boldsymbol{q},\dot{\boldsymbol{q}},t)\dot{q}_{\alpha}-L(\boldsymbol{q},\dot{\boldsymbol{q}},t)$</p>
+<p>可以从 $\displaystyle p_{\alpha}=\frac{\partial L}{\partial \dot{q}_{\alpha}}$ 反解出 $\dot{q}_{\alpha}=\dot{q}_{\alpha}(\boldsymbol{q},\boldsymbol{p},t)$</p>
+<p>定义 <strong>哈密顿量</strong> $H(\boldsymbol{q},\boldsymbol{p},t):=\sum_{\alpha=1}^{s} p_{\alpha}\dot{q}_{\alpha}(\boldsymbol{q},\boldsymbol{p},t)-L\bigl(\boldsymbol{q},\dot{\boldsymbol{q}}(\boldsymbol{q},\boldsymbol{p},t),t\bigr)$
+</p>
+<p>哈密顿量的特点：只与时间，广义坐标，广义动量有关，具有全微分不变性（在加上一个全微分之后，哈密顿形式不变）：</p>
+
+$$
+\displaystyle \begin{align*}
+\mathrm{d}H&amp;=\mathrm{d}\left(\sum_{\alpha=1}^{s}p_{\alpha}\dot{q}_{\alpha}-L\right)=\sum_{\alpha=1}^{s}\mathrm{d}p_{\alpha}\dot{q}_{\alpha}+\sum_{\alpha=1}^{s}p_{\alpha}\mathrm{d}\dot{q}_{\alpha}-\left(\frac{\partial L}{\partial t}\mathrm{d}t+\sum_{\alpha=1}^{s}\frac{\partial L}{\partial q_{\alpha}}\mathrm{d}q_{\alpha}+\sum_{\alpha=1}^{s}\frac{\partial L}{\partial \dot{q}_{\alpha}}\mathrm{d}\dot{q}_{\alpha}\right)\\
+&amp;=-\frac{\partial L}{\partial t}\mathrm{d}t+\sum_{\alpha=1}^{s}\dot{q}_{\alpha}\mathrm{d}p_{\alpha}-\sum_{\alpha=1}^{s}\frac{\partial L}{\partial q_{\alpha}}\mathrm{d}q_{\alpha}+\sum_{\alpha=1}^{s}p_{\alpha}\mathrm{d}\dot{q}_{\alpha}-\sum_{\alpha=1}^{s}\frac{\partial L}{\partial \dot{q}_{\alpha}}\mathrm{d}\dot{q}_{\alpha}\\
+&amp;=-\frac{\partial L}{\partial t}\mathrm{d}t+\sum_{\alpha=1}^{s}\dot{q}_{\alpha}\mathrm{d}p_{\alpha}-\sum_{\alpha=1}^{s}\dot{p}_{\alpha}\mathrm{d}q_{\alpha}
+\end{align*}
+$$
+
+<p>举例说明：</p>
+<details>
+<summary>点击展开：一维谐振子与哈密顿量的全微分不变性</summary>
+<blockquote>
+<p>1 标准的一维谐振子</p>
+<p>考虑质量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>、角频率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span> 的一维谐振子，广义坐标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span></span>。</p>
+<p>拉氏量为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>L</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>m</mi><msup><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mn>2</mn></msup><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>q</mi><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle L = \frac{1}{2} m \dot q^2 - \frac{1}{2} m \omega^2 q^2
+</annotation></semantics></math></span></span></span></p>
+<p>对应的正则动量为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>p</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>L</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac><mo>=</mo><mi>m</mi><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle p = \frac{\partial L}{\partial \dot q} = m \dot q
+</annotation></semantics></math></span></span></span></p>
+<p>哈密顿量通过勒让德变换给出</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>H</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mi>p</mi><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>−</mo><mi>L</mi><mo>=</mo><mfrac><mrow><msup><mi>p</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>q</mi><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle H(q,p) = p \dot q - L = \frac{p^2}{2m} + \frac{1}{2} m \omega^2 q^2
+</annotation></semantics></math></span></span></span></p>
+<p>哈密顿方程为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>H</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>p</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>p</mi></mrow><mrow><mi>m</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dot q = \frac{\partial H}{\partial p} = \frac{p}{m}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mi>p</mi><mo>˙</mo></mover><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>H</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>q</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><mi>q</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dot p = -\frac{\partial H}{\partial q} = - m \omega^2 q
+</annotation></semantics></math></span></span></span></p>
+<p>于是得到运动方程</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mi>q</mi><mo>¨</mo></mover><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>q</mi><mo>=</mo><mn>0</mn></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \ddot q + \omega^2 q = 0
+</annotation></semantics></math></span></span></span></p>
+<hr>
+<p>2 对拉氏量加上一个全微分</p>
+<p>现在对拉氏量加上一个关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span></span> 的全时间导数。取一个简单的函数</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>F</mi><mo>(</mo><mi>q</mi><mo>)</mo><mo>=</mo><mi>k</mi><mi>q</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle F(q) = k q
+</annotation></semantics></math></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 为常数。它的时间导数为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>d</mi><mi>F</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>d</mi><mo>(</mo><mi>k</mi><mi>q</mi><mo>)</mo></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>k</mi><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{dF}{dt} = \frac{d(kq)}{dt} = k \dot q
+</annotation></semantics></math></span></span></span></p>
+<p>构造新的拉氏量</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>L</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mi>L</mi><mo>+</mo><mfrac><mrow><mi>d</mi><mi>F</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>m</mi><msup><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mn>2</mn></msup><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>q</mi><mn>2</mn></msup><mo>+</mo><mi>k</mi><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle L' = L + \frac{dF}{dt} = \frac{1}{2} m \dot q^2 - \frac{1}{2} m \omega^2 q^2 + k \dot q
+</annotation></semantics></math></span></span></span></p>
+<p>2.1 新的正则动量</p>
+<p>由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>L</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">L'</annotation></semantics></math></span></span> 定义的新动量为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msup><mi>L</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><mrow><mi mathvariant="normal">∂</mi><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow></mfrac><mo>=</mo><mi>m</mi><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>+</mo><mi>k</mi><mo>=</mo><mi>p</mi><mo>+</mo><mi>k</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle p' = \frac{\partial L'}{\partial \dot q} = m \dot q + k = p + k
+</annotation></semantics></math></span></span></span></p>
+<p>可以看到，新动量只是旧动量整体平移了常数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span>。</p>
+<p>2.2 新的哈密顿量</p>
+<p>新哈密顿量定义为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>H</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>−</mo><msup><mi>L</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle H' = p' \dot q - L'
+</annotation></semantics></math></span></span></span></p>
+<p>代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>L</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">L'</annotation></semantics></math></span></span> 并整理可得</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>H</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>m</mi><msup><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mn>2</mn></msup><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>q</mi><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle H' = \frac{1}{2} m \dot q^2 + \frac{1}{2} m \omega^2 q^2
+</annotation></semantics></math></span></span></span></p>
+<p>再用</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mi>m</mi><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>+</mo><mi>k</mi><mspace width="1em"></mspace><mo>⇒</mo><mspace width="1em"></mspace><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>=</mo><mfrac><mrow><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>−</mo><mi>k</mi></mrow><mrow><mi>m</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle p' = m \dot q + k \quad \Rightarrow \quad \dot q = \frac{p' - k}{m}
+</annotation></semantics></math></span></span></span></p>
+<p>消去 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">\dot q</annotation></semantics></math></span></span>，可写成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">p'</annotation></semantics></math></span></span> 的形式</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>H</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>q</mi><mo separator="true">,</mo><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>)</mo><mo>=</mo><mfrac><mrow><mo>(</mo><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>−</mo><mi>k</mi><msup><mo>)</mo><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>q</mi><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle H'(q,p') = \frac{(p' - k)^2}{2m} + \frac{1}{2} m \omega^2 q^2
+</annotation></semantics></math></span></span></span></p>
+<p>与原来的哈密顿量</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>H</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mfrac><mrow><msup><mi>p</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>q</mi><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle H(q,p) = \frac{p^2}{2m} + \frac{1}{2} m \omega^2 q^2
+</annotation></semantics></math></span></span></span></p>
+<p>对比可见，形式几乎相同，只是把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 换成了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>−</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">p' - k</annotation></semantics></math></span></span>。</p>
+<hr>
+<p>3 新旧哈密顿方程的比较</p>
+<p>现在把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p')</annotation></semantics></math></span></span> 视为新的正则变量，用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>H</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>q</mi><mo separator="true">,</mo><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">H'(q,p')</annotation></semantics></math></span></span> 写哈密顿方程。</p>
+<p>首先是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span></span> 的方程</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msup><mi>H</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><mrow><mi mathvariant="normal">∂</mi><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>−</mo><mi>k</mi></mrow><mrow><mi>m</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dot q = \frac{\partial H'}{\partial p'} = \frac{p' - k}{m}
+</annotation></semantics></math></span></span></span></p>
+<p>然后是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">p'</annotation></semantics></math></span></span> 的方程</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mover accent="true"><mi>p</mi><mo>˙</mo></mover><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msup><mi>H</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><mrow><mi mathvariant="normal">∂</mi><mi>q</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><mi>q</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dot p' = -\frac{\partial H'}{\partial q} = - m \omega^2 q
+</annotation></semantics></math></span></span></span></p>
+<p>引入旧动量的定义</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>p</mi><mo>=</mo><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>−</mo><mi>k</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle p = p' - k
+</annotation></semantics></math></span></span></span></p>
+<p>注意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 为常数，所以</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mi>p</mi><mo>˙</mo></mover><mo>=</mo><msup><mover accent="true"><mi>p</mi><mo>˙</mo></mover><mrow><mi mathvariant="normal">′</mi></mrow></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dot p = \dot p'
+</annotation></semantics></math></span></span></span></p>
+<p>于是上面两条方程可以改写为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>=</mo><mfrac><mrow><mi>p</mi></mrow><mrow><mi>m</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dot q = \frac{p}{m}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mi>p</mi><mo>˙</mo></mover><mo>=</mo><mo>−</mo><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><mi>q</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dot p = - m \omega^2 q
+</annotation></semantics></math></span></span></span></p>
+<p>这正是原来由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(q,p)</annotation></semantics></math></span></span> 得到的哈密顿方程。由此可以看出：</p>
+<p>加上全微分项后，动量变量从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 换成了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mi>p</mi><mo>+</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">p' = p + k</annotation></semantics></math></span></span>；但在新的变量下得到的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q(t)</annotation></semantics></math></span></span> 轨道完全不变，仍然满足</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mi>q</mi><mo>¨</mo></mover><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup><mi>q</mi><mo>=</mo><mn>0</mn></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \ddot q + \omega^2 q = 0
+</annotation></semantics></math></span></span></span></p>
+<hr>
+<p>4 全微分不变性的含义</p>
+<p>用这个例子可以总结出哈密顿量的全微分不变性要点：</p>
+<ol>
+<li>
+<p>在作用量中，将拉氏量做变换</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>L</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mi>L</mi><mo>+</mo><mfrac><mrow><mi>d</mi><mi>F</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle L' = L + \frac{dF(q,t)}{dt}
+</annotation></semantics></math></span></span></span></p>
+<p>只会让作用多出一个端点项 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><msub><mi>t</mi><mn>2</mn></msub><mo>)</mo><mo>−</mo><mi>F</mi><mo>(</mo><msub><mi>t</mi><mn>1</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">F(t_2) - F(t_1)</annotation></semantics></math></span></span>，欧拉–拉格朗日方程不变。</p>
+</li>
+<li>
+<p>对应的正则动量与哈密顿量会发生变换</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mi>p</mi><mo>+</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>F</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>q</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle p' = p + \frac{\partial F}{\partial q}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>H</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mi>H</mi><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>F</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>t</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle H' = H - \frac{\partial F}{\partial t}
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p>在新的正则变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><msup><mi>p</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p')</annotation></semantics></math></span></span> 下，用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>H</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">H'</annotation></semantics></math></span></span> 写出的哈密顿方程，与原来用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span></span> 写出的运动方程给出同样的物理轨道。</p>
+</li>
+</ol>
+<p>对一维谐振子的这个具体计算，就是上述一般结论的一个简单例证。这就是所谓“哈密顿量在加上全微分项后的不变性”。</p>
+</blockquote>
+</details>
 
       </div>
       <div class="post-tags-categories">
@@ -593,7 +713,7 @@ E[X]
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">哈密顿力学</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">哈密顿力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
