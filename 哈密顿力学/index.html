@@ -395,10 +395,11 @@
         <h1>哈密顿力学</h1>
 <h2 id="定义">定义</h2>
 <p>广义动量 $\displaystyle p_{\alpha}:=\frac{\partial L}{\partial \dot{q}_{\alpha}}$</p>
-<p>广义能量 $H(\boldsymbol{q},\dot{\boldsymbol{q}},t):=\sum_{\alpha=1}^{s} p_{\alpha}(\boldsymbol{q},\dot{\boldsymbol{q}},t)\dot{q}_{\alpha}-L(\boldsymbol{q},\dot{\boldsymbol{q}},t)$</p>
+<p>广义能量 $\displaystyle H(\boldsymbol{q},\dot{\boldsymbol{q}},t):=\sum_{\alpha=1}^{s} p_{\alpha}(\boldsymbol{q},\dot{\boldsymbol{q}},t)\dot{q}_{\alpha}-L(\boldsymbol{q},\dot{\boldsymbol{q}},t)$</p>
 <p>可以从 $\displaystyle p_{\alpha}=\frac{\partial L}{\partial \dot{q}_{\alpha}}$ 反解出 $\dot{q}_{\alpha}=\dot{q}_{\alpha}(\boldsymbol{q},\boldsymbol{p},t)$</p>
-<p>定义 <strong>哈密顿量</strong> $H(\boldsymbol{q},\boldsymbol{p},t):=\sum_{\alpha=1}^{s} p_{\alpha}\dot{q}_{\alpha}(\boldsymbol{q},\boldsymbol{p},t)-L\bigl(\boldsymbol{q},\dot{\boldsymbol{q}}(\boldsymbol{q},\boldsymbol{p},t),t\bigr)$
+<p>定义 <strong>哈密顿量</strong> $\displaystyle H(\boldsymbol{q},\boldsymbol{p},t):=\sum_{\alpha=1}^{s} p_{\alpha}\dot{q}_{\alpha}(\boldsymbol{q},\boldsymbol{p},t)-L\bigl(\boldsymbol{q},\dot{\boldsymbol{q}}(\boldsymbol{q},\boldsymbol{p},t),t\bigr)$
 </p>
+<h3 id="全微分不变性">全微分不变性</h3>
 <p>哈密顿量的特点：只与时间，广义坐标，广义动量有关，具有全微分不变性（在加上一个全微分之后，哈密顿形式不变）：</p>
 
 $$
@@ -512,6 +513,177 @@ $$
 </ol>
 <p>对一维谐振子的这个具体计算，就是上述一般结论的一个简单例证。这就是所谓“哈密顿量在加上全微分项后的不变性”。</p>
 </blockquote>
+</details>
+<h2 id="勒让德变换">勒让德变换</h2>
+<h3 id="定义-2">定义</h3>
+<p>勒让德变换是一种将函数的一组独立变量变换成另一组独立变量的方法.</p>
+<p>已知：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f = f(x,y)</annotation></semantics></math></span></span>， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mi>y</mi></mrow><annotation encoding="application/x-tex">x,\,y</annotation></semantics></math></span></span>为独立变量</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>f</mi><mo>=</mo><mi>u</mi><mi>d</mi><mi>x</mi><mo>+</mo><mi>v</mi><mi>d</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">df = udx + vdy</annotation></semantics></math></span></span>，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>u</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mi>v</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle u = \frac{\partial f}{\partial x},\,v = \frac{\partial f}{\partial y}</annotation></semantics></math></span></span></p>
+<p>现有：令<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>=</mo><mi>v</mi><mi>y</mi><mo>−</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">g = vy -f</annotation></semantics></math></span></span></p>
+<p>则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>g</mi><mo>=</mo><mi>d</mi><mo>(</mo><mi>v</mi><mi>y</mi><mo>)</mo><mo>−</mo><mi>d</mi><mi>f</mi><mo>=</mo><mi>y</mi><mi>d</mi><mi>v</mi><mo>+</mo><mi>v</mi><mi>d</mi><mi>y</mi><mo>−</mo><mi>u</mi><mi>d</mi><mi>x</mi><mo>−</mo><mi>v</mi><mi>d</mi><mi>y</mi><mo>=</mo><mi>y</mi><mi>d</mi><mi>v</mi><mo>−</mo><mi>u</mi><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">dg = d(vy) - df = ydv+vdy-udx-vdy = ydv - udx</annotation></semantics></math></span></span>，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>y</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>g</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>v</mi></mrow></mfrac><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mo>−</mo><mi>u</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>g</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle y = \frac{\partial g}{\partial v},\,-u = \frac{\partial g}{\partial x}.</annotation></semantics></math></span></span></p>
+<p>这是$f(x,y) \implies g(x,v)$的勒让德变换.</p>
+<p>一般的，对于多变量函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x_1,x_2,\cdots,x_n)</annotation></semantics></math></span></span>有勒让德变换 $\displaystyle g(p_1,p_2,\cdots,p_n) = \sum_{i = 1}^{n} p_i x_i - f(x_1,x_2,\cdots,x_n)$</p>
+<p>下面以勒让德变换解释哈密顿量：</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mi>L</mi><mo>(</mo><msub><mi>q</mi><mi>α</mi></msub><mo separator="true">,</mo><msub><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mi>α</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">L = L(q_\alpha,\dot{q}_\alpha)</annotation></semantics></math></span></span></p>
+$\displaystyle dL = \sum_\alpha \frac{\partial L}{\partial q_\alpha}dq_\alpha + \sum_\alpha \frac{\partial L}{\partial \dot{q}_\alpha} d\dot{q}_\alpha = \sum_\alpha \dot{p}_\alpha dq_\alpha + \sum_\alpha p_\alpha d\dot{q}_\alpha$
+<p>有$\displaystyle H = \sum_\alpha p_\alpha \dot{q}_\alpha - L$</p>
+<h3 id="正则方程">正则方程</h3>
+$\displaystyle \left\{\begin{array}{ll}
+\displaystyle y = \frac{\partial g}{\partial v}\\
+\displaystyle -u = \frac{\partial g}{\partial x}
+\end{array}\right.$
+<p>对哈密顿方程，则有：</p>
+$\displaystyle \left\{\begin{array}{ll}
+\displaystyle \dot{q}_\alpha = \frac{\partial H}{\partial p_\alpha}\\
+\displaystyle \dot{p}_\alpha = -\frac{\partial H}{\partial q_\alpha}
+\end{array}\right.$
+<h3 id="几何上理解勒让德变换">几何上理解勒让德变换</h3>
+<p>设有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>(</mo><mi>v</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">L(v)</annotation></semantics></math></span></span></p>
+<p>过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>v</mi><mo>∗</mo></msub><mo separator="true">,</mo><mi>L</mi><mo>(</mo><msub><mi>v</mi><mo>∗</mo></msub><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">(v_*,L(v_*))</annotation></semantics></math></span></span>的切线为：</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mi>p</mi><mo>(</mo><mi>v</mi><mo>−</mo><msub><mi>v</mi><mo>∗</mo></msub><mo>)</mo><mo>+</mo><mi>L</mi><mo>(</mo><msub><mi>v</mi><mo>∗</mo></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">L = p(v - v_*) + L(v_*)</annotation></semantics></math></span></span></p>
+<p>斜率为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>.</p>
+<p>截距为：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mi>p</mi><msub><mi>v</mi><mo>∗</mo></msub><mo>+</mo><mi>L</mi><mo>(</mo><msub><mi>v</mi><mo>∗</mo></msub><mo>)</mo><mo>=</mo><mo>−</mo><mi>H</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">-pv_* + L(v_*) = -H(p)</annotation></semantics></math></span></span></p>
+<p>所以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(p)</annotation></semantics></math></span></span>即为负截距.</p>
+$v,L(v) \Leftrightarrow p,H(p)$
+<h3 id="对合性">对合性</h3>
+<p>拉格朗日量和哈密顿量互为勒让德变换.</p>
+<h3 id="能量守恒">能量守恒</h3>
+<p>有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(q, p, t)</annotation></semantics></math></span></span></p>
+
+$$
+\displaystyle dH = \frac{\partial H}{\partial t}\, dt + \sum_{\alpha = 1}^{s} \frac{\partial H}{\partial q_{\alpha}}\, dq_{\alpha} + \sum_{\alpha = 1}^{s} \frac{\partial H}{\partial p_{\alpha}}\, dp_{\alpha}
+$$
+
+$$
+\displaystyle \frac{dH}{dt} = \frac{\partial H}{\partial t} + \sum_{\alpha = 1}^{s} \frac{\partial H}{\partial q_{\alpha}} \dot{q}_{\alpha} + \sum_{\alpha = 1}^{s} \frac{\partial H}{\partial p_{\alpha}} \dot{p}_{\alpha}
+$$
+
+$$
+\displaystyle \frac{dH}{dt} = \frac{\partial H}{\partial t} + \sum_{\alpha = 1}^{s} \frac{\partial H}{\partial q_{\alpha}} \frac{\partial H}{\partial p_{\alpha}} - \sum_{\alpha = 1}^{s} \frac{\partial H}{\partial p_{\alpha}} \frac{\partial H}{\partial q_{\alpha}}
+$$
+
+$$
+\displaystyle \boxed{\frac{dH}{dt} = \frac{\partial H}{\partial t}}
+$$
+
+<p>若系统不显含时间，则哈密顿量守恒.</p>
+<h3 id="哈密顿力学">哈密顿力学</h3>
+<p><strong>哈密顿函数</strong></p>
+<p>以正则变量表示的能量</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>H</mi><mo>=</mo><mi>H</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle H = H(q, p, t)
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo separator="true">,</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">q, p</annotation></semantics></math></span></span> 正则变量</p>
+<p>相应有 <strong>哈密顿正则方程</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mrow><msub><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mrow><mi>α</mi></mrow></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>H</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>p</mi><mrow><mi>α</mi></mrow></msub></mrow></mfrac></mrow></mtd></mtr><mtr><mtd><mrow><msub><mover accent="true"><mrow><mi>p</mi></mrow><mo>˙</mo></mover><mrow><mi>α</mi></mrow></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>H</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub></mrow></mfrac></mrow></mtd></mtr></mtable></mrow><mspace width="2em"></mspace><mi>α</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>s</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle
+\begin{cases}
+\dot{q}_{\alpha} = \frac{\partial H}{\partial p_{\alpha}} \\
+\dot{p}_{\alpha} = - \frac{\partial H}{\partial q_{\alpha}}
+\end{cases}
+\qquad \alpha = 1, 2, \cdots, s
+</annotation></semantics></math></span></span></span></p>
+<p>正则 Canon</p>
+<ul>
+<li><strong>相空间</strong> <br><br>
+由正则变量张成的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>s</mi></mrow><annotation encoding="application/x-tex">2s</annotation></semantics></math></span></span> 维空间. 在哈密顿函数中，即由坐标轴 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 张成, 是一个二维平面.</li>
+<li><strong>相点</strong> <br><br>
+相空间中的点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)</annotation></semantics></math></span></span>, 唯一对应体系在某一时刻的力学状态.</li>
+<li><strong>相轨道</strong> <br><br>
+相点在相空间运动而描出的曲线, 反映体系状态随时间演化.</li>
+<li><strong>相流</strong> <br><br>
+把相空间中每一点的速度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mo separator="true">,</mo><mover accent="true"><mrow><mi>p</mi></mrow><mo>˙</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">(\dot{q}, \dot{p})</annotation></semantics></math></span></span> 画成一个矢量场, 相点在这个矢量场中“流动”.</li>
+</ul>
+<p>正则方程决定相点速度 (状态随时间变化率)</p>
+
+$$
+\displaystyle
+\underbrace{q(t_{0}), p(t_{0})}_{2s}
+\implies
+\underbrace{q(t), p(t)}_{2s}
+$$
+
+<p>下面用三个典型一维系统加深理解：一维谐振子、一维排斥力系统(倒置谐振子)和单摆。</p>
+<details>
+<summary>点击展开：一维谐振子、一维排斥力系统(倒置谐振子)和单摆的相图、相流</summary>
+<br>
+<p>为了简化, 后面的相图都取<strong>无量纲形式</strong>:</p>
+<p>质量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m = 1</annotation></semantics></math></span></span><br>
+刚性系数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k = 1</annotation></semantics></math></span></span><br>
+角频率或特征频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\omega = 1</annotation></semantics></math></span></span><br>
+单摆取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mi>l</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">g = 1, l = 1</annotation></semantics></math></span></span>.</p>
+<hr>
+<p><strong>1 一维谐振子</strong></p>
+<p><strong>1.1 哈密顿函数和能量</strong></p>
+<p>无量纲后的一维谐振子哈密顿函数为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">h</mi><mi mathvariant="normal">o</mi></mtext></mrow></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mfrac><mrow><msup><mi>p</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi>q</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle H_{\text{ho}}(q, p) = \frac{p^{2}}{2} + \frac{q^{2}}{2}.
+</annotation></semantics></math></span></span></span></p>
+<p>其中</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><msup><mi>p</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{p^{2}}{2}</annotation></semantics></math></span></span> 为动能</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><msup><mi>q</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{q^{2}}{2}</annotation></semantics></math></span></span> 为势能</li>
+</ul>
+<p>能量守恒时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">h</mi><mi mathvariant="normal">o</mi></mtext></mrow></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">H_{\text{ho}}(q,p) = E</annotation></semantics></math></span></span> 给出相空间中的等能线:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><msup><mi>p</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi>q</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac><mo>=</mo><mi>E</mi><mo separator="true">,</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{p^{2}}{2} + \frac{q^{2}}{2} = E,
+</annotation></semantics></math></span></span></span></p>
+<p>是以原点为中心的椭圆 (在这里是圆)。</p>
+<p><strong>1.2 正则方程与相轨道</strong></p>
+<p>由哈密顿方程得到</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">h</mi><mi mathvariant="normal">o</mi></mtext></mrow></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>p</mi></mrow></mfrac><mo>=</mo><mi>p</mi><mo separator="true">,</mo><mspace width="2em"></mspace><mover accent="true"><mrow><mi>p</mi></mrow><mo>˙</mo></mover><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">h</mi><mi mathvariant="normal">o</mi></mtext></mrow></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>q</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mi>q</mi><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle
+\dot{q} = \frac{\partial H_{\text{ho}}}{\partial p} = p,
+\qquad
+\dot{p} = -\frac{\partial H_{\text{ho}}}{\partial q} = -q.
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>任意初始相点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>q</mi><mrow><mn>0</mn></mrow></msub><mo separator="true">,</mo><msub><mi>p</mi><mrow><mn>0</mn></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(q_{0}, p_{0})</annotation></semantics></math></span></span> 都会沿着某一条椭圆轨道绕原点作周期运动。</li>
+<li>椭圆就是相轨道, 相流沿椭圆切向方向闭合。</li>
+</ul>
+<p><img src="https://pic4.zhimg.com/80/v2-dd568bdd78d3713b22612ab2a02a7787_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-dd568bdd78d3713b22612ab2a02a7787_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="1-D谐振子示意图" title="1-D谐振子示意图"></p>
+<hr>
+<p><strong>2 一维排斥力系统 (倒置谐振子)</strong></p>
+<p>这里取一个简单的排斥势, 即倒置谐振子:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">p</mi></mtext></mrow></msub><mrow><mo fence="true">(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo fence="true">)</mo></mrow><mo>=</mo><mfrac><mrow><msup><mi>p</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac><mo>−</mo><mfrac><mrow><msup><mi>q</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle H_{\text{rep}}\left(q, p\right) = \frac{p^{2}}{2} - \frac{q^{2}}{2}.
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>势能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>V</mi><mrow><mo fence="true">(</mo><mi>q</mi><mo fence="true">)</mo></mrow><mo>=</mo><mo>−</mo><mfrac><mrow><msup><mi>q</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle V\left(q\right) = -\frac{q^{2}}{2}</annotation></semantics></math></span></span>, 在原点附近是一个“山顶”, 质点被从原点排斥开。</li>
+<li>等能线由</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><msup><mi>p</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac><mo>−</mo><mfrac><mrow><msup><mi>q</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac><mo>=</mo><mi>E</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{p^{2}}{2} - \frac{q^{2}}{2} = E
+</annotation></semantics></math></span></span></span></p>
+<p>给出, 是一族双曲线。</p>
+<p>正则方程为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">p</mi></mtext></mrow></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>p</mi></mrow></mfrac><mo>=</mo><mi>p</mi><mo separator="true">,</mo><mspace width="2em"></mspace><mover accent="true"><mrow><mi>p</mi></mrow><mo>˙</mo></mover><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">p</mi></mtext></mrow></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>q</mi></mrow></mfrac><mo>=</mo><mo>+</mo><mi>q</mi><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle
+\dot{q} = \frac{\partial H_{\text{rep}}}{\partial p} = p,
+\qquad
+\dot{p} = -\frac{\partial H_{\text{rep}}}{\partial q} = +q.
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>原点是<strong>不稳定平衡点</strong>。</li>
+<li>相点沿双曲线向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>q</mi><mi mathvariant="normal">∣</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">|q| \to \infty</annotation></semantics></math></span></span> 区域流去, 相轨道不再闭合, 反映体系会“发散”离开平衡位置。</li>
+</ul>
+<p><img src="https://pic2.zhimg.com/80/v2-bf76b27932149a7c9bfbef5d30ab4d39_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-bf76b27932149a7c9bfbef5d30ab4d39_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="1-D排斥力系统示意图" title="1-D排斥力系统示意图"></p>
+<hr>
+<p><strong>3 单摆</strong></p>
+<p>取摆角 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span></span> 作为广义坐标, 共轭动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> (与角速度成正比)。<br>
+无量纲形式的哈密顿函数可写为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mtext></mrow></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mfrac><mrow><msup><mi>p</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac><mo>+</mo><mn>1</mn><mo>−</mo><mi>cos</mi><mi>q</mi><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle H_{\text{pend}}(q, p) = \frac{p^{2}}{2} + 1 - \cos q.
+</annotation></semantics></math></span></span></span></p>
+<p>其中</p>
+<ul>
+<li>势能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>(</mo><mi>q</mi><mo>)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mi>cos</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">V(q) = 1 - \cos q</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">q = 0</annotation></semantics></math></span></span> 处有最低点, 周期为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">2\pi</annotation></semantics></math></span></span>。</li>
+<li>动能为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><msup><mi>p</mi><mrow><mn>2</mn></mrow></msup></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{p^{2}}{2}</annotation></semantics></math></span></span>。</li>
+</ul>
+<p>正则方程为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mtext></mrow></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>p</mi></mrow></mfrac><mo>=</mo><mi>p</mi><mo separator="true">,</mo><mspace width="2em"></mspace><mover accent="true"><mrow><mi>p</mi></mrow><mo>˙</mo></mover><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mtext></mrow></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>q</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mi>sin</mi><mi>q</mi><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle
+\dot{q} = \frac{\partial H_{\text{pend}}}{\partial p} = p,
+\qquad
+\dot{p} = -\frac{\partial H_{\text{pend}}}{\partial q} = -\sin q.
+</annotation></semantics></math></span></span></span></p>
+<p>相空间特征:</p>
+<ul>
+<li>低能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mtext></mrow></msub><mo>&lt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">H_{\text{pend}} &lt; 2</annotation></semantics></math></span></span> 时, 相轨道是围绕 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">q = 0</annotation></semantics></math></span></span> 的<strong>闭合曲线</strong>, 对应摆的来回摆动。</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mtext></mrow></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">H_{\text{pend}} = 2</annotation></semantics></math></span></span> 时出现<strong>分界轨道</strong>(鞍点轨道), 对应极限的上翻状态。</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mrow><mtext><mi mathvariant="normal">p</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mtext></mrow></msub><mo>&gt;</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">H_{\text{pend}} &gt; 2</annotation></semantics></math></span></span> 时, 相轨道为穿越所有角度的开曲线, 对应摆杆持续转圈。</li>
+</ul>
+<p><img src="https://pic3.zhimg.com/80/v2-f3b4570061a7e9a240a85b073437a066_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-f3b4570061a7e9a240a85b073437a066_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="1-D单摆示意图" title="1-D单摆示意图"></p>
 </details>
 
       </div>
@@ -713,7 +885,7 @@ E[X]
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">哈密顿力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">哈密顿力学</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%BE%AE%E5%88%86%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-text">全微分不变性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2"><span class="toc-text">勒让德变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E6%96%B9%E7%A8%8B"><span class="toc-text">正则方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E4%B8%8A%E7%90%86%E8%A7%A3%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2"><span class="toc-text">几何上理解勒让德变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%90%88%E6%80%A7"><span class="toc-text">对合性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E9%87%8F%E5%AE%88%E6%81%92"><span class="toc-text">能量守恒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%8A%9B%E5%AD%A6"><span class="toc-text">哈密顿力学</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
