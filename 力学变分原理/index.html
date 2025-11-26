@@ -392,7 +392,1028 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1>力学变分原理</h1>
+<h2 id="哈密顿原理与作用量">哈密顿原理与作用量</h2>
+<p>哈密顿原理（最小作用量原理）的核心表述是：实际运动轨迹使作用量泛函取得驻值（常说“最小”），其变分为零。</p>
+
+$$
+\displaystyle \delta S = 0
+$$
+
+<p>其中作用量泛函定义为</p>
+
+$$
+\displaystyle S[q(t)] = \int_{t_1}^{t_2} L\bigl(q(t), \dot{q}(t), t\bigr) \, dt
+$$
+
+<p>这里</p>
+<ul>
+<li>(q(t)) 表示广义坐标</li>
+<li>(\dot{q}(t)) 表示对时间的导数</li>
+<li>(L(q, \dot{q}, t)) 为拉格朗日量。对质点机械系统，常取</li>
+</ul>
+
+$$
+\displaystyle L = T - V
+$$
+
+<p>其中 (T) 是动能，(V) 是势能。</p>
+<p>直观上，可以把作用量理解为“动能减势能在整个运动过程中的累积”。在同样的起点和终点之间，真正发生的运动，会让这个累积值相比其他可能路径更“经济”。</p>
+<p>以自由落体为例，可以想象两种极端“候选”过程：</p>
+<ul>
+<li>一开始落得比较慢，后面再逐渐加速</li>
+<li>一开始落得很快，后面再逐渐减速</li>
+</ul>
+<p>在势能较高（物体较高）的位置，如果停留时间长，势能项的贡献会更大，影响作用量。因此自然界“选择”的实际轨迹，是让整体作用量最小（更严格地说是驻值）的那条路径。</p>
+<hr>
+<h2 id="泛函的概念与例子">泛函的概念与例子</h2>
+<p>普通函数把一个数、向量、矩阵等映射成一个数；而<strong>泛函</strong>可以理解为“对函数进行映射”的函数，即：</p>
+<blockquote>
+<p>从一个函数空间映射到实数的映射。</p>
+</blockquote>
+<p>简单对比可以写成下面的表格：</p>
+<table>
+<thead>
+<tr>
+<th>输入对象</th>
+<th>输出</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>函数 (f(x))、向量、矩阵等</td>
+<td>数</td>
+</tr>
+<tr>
+<td>函数 (y(x))、曲线、曲面等</td>
+<td>数（通过泛函）</td>
+</tr>
+</tbody>
+</table>
+<p>常见的一类泛函形式为</p>
+
+$$
+\displaystyle J[y(x)] = \int_{a}^{b} F\bigl(x, y(x), y'(x)\bigr) \, dx
+$$
+
+<p>一个几何上的例子是平面曲线弧长泛函：</p>
+
+$$
+\displaystyle J[y(x)] = \int_{a}^{b} \sqrt{1 + \bigl(y'(x)\bigr)^2} \, dx
+$$
+
+<p>另一个在场论中的例子是二元场 (\varphi(x, y))、(\psi(x, y)) 的作用量泛函：</p>
+
+$$
+\displaystyle S[\varphi, \psi] 
+= \iint_{D} \left[
+\frac{1}{2} \bigl(\nabla \varphi - \nabla \psi\bigr)^2 
+- V(\varphi, \psi)
+\right] \, dx \, dy
+$$
+
+<hr>
+<h2 id="变分法中的典型问题：最速降线">变分法中的典型问题：最速降线</h2>
+<p>最速降线问题是变分法的经典例子：在竖直平面内，有一条光滑轨道，从点 (A) 到点 (B)。质点从静止出发，下滑到 (B) 所用时间最短的轨迹 (y = y(x)) 是什么？</p>
+<p>从动力学能量守恒可得滑动速度为</p>
+
+$$
+\displaystyle v = \sqrt{2 g y}
+$$
+
+<p>弧长元为</p>
+
+$$
+\displaystyle ds = \sqrt{(dx)^2 + (dy)^2} 
+= \sqrt{1 + \bigl(y'(x)\bigr)^2} \, dx
+$$
+
+<p>下滑总时间为</p>
+
+$$
+\displaystyle T[y] = \int_{A}^{B} \frac{ds}{v}
+= \int_{a}^{b} \frac{\sqrt{1 + \bigl(y'(x)\bigr)^2}}{\sqrt{2 g y(x)}} \, dx
+$$
+
+<p>这里 (A)、(B) 两端点固定。这个 (T[y]) 就是一个需要取极值的泛函。</p>
+<hr>
+<h2 id="函数的微分与泛函的变分">函数的微分与泛函的变分</h2>
+<h3 id="函数的微分">函数的微分</h3>
+<p>对于一个函数 (y(x))，在邻近点 (x + \varepsilon) 上有</p>
+
+$$
+\displaystyle dy(x) = y(x + \varepsilon) - y(x)
+$$
+
+<p>其中 (\varepsilon) 是一个小量。</p>
+<h3 id="泛函的变分">泛函的变分</h3>
+<p>对于一个泛函</p>
+
+$$
+\displaystyle J[y] = \int_{a}^{b} F\bigl(x, y(x), y'(x)\bigr) \, dx
+$$
+
+<p>考虑邻近函数</p>
+
+$$
+\displaystyle \bar{y}(x) = y(x) + \varepsilon \, \eta(x)
+$$
+
+<p>其中 (\varepsilon) 是小参数，(\eta(x)) 是任意光滑且满足端点条件的“试探函数”。</p>
+<p><strong>泛函的变分</strong>定义为</p>
+
+$$
+\displaystyle \delta J[y] = J[y + \varepsilon \eta] - J[y]
+$$
+
+<p>记</p>
+
+$$
+\displaystyle \delta y(x) = \bar{y}(x) - y(x) = \varepsilon \, \eta(x)
+$$
+
+<p>常把这种形式也写成 Gateaux 微分的形式</p>
+
+$$
+\displaystyle \delta J[y] = J\bigl[y + \delta y\bigr] - J[y]
+$$
+
+<p><strong>极值条件</strong>：若在某个 (y(x)) 附近，对任意满足边界条件的 (\delta y(x)) 都有</p>
+
+$$
+\displaystyle \delta J[y] = 0
+$$
+
+<p>则称 (y(x)) 是泛函 (J) 的极值（更严格说是驻值）函数。</p>
+<hr>
+<h2 id="变分学涉及的主要内容与应用">变分学涉及的主要内容与应用</h2>
+<p>从数学角度看，变分学与很多分支密切相关：</p>
+<ul>
+<li>泛函分析、实分析</li>
+<li>常微分方程与动力系统</li>
+<li>偏微分方程</li>
+<li>几何与拓扑（在更广泛的背景下）</li>
+</ul>
+<p>在应用上，变分思想渗透在各个领域：</p>
+<ul>
+<li>力学与物理（经典场论、量子场论等）</li>
+<li>经济学与最优控制</li>
+<li>图像处理、模式识别</li>
+<li>人工智能与机器学习（例如许多损失泛函的极小化）</li>
+<li>数值方法、有限元和一般的优化问题</li>
+</ul>
+<hr>
+<h2 id="变分与求导的可交换性">变分与求导的可交换性</h2>
+<p>在变分计算中，一个关键事实是：对自变量求导与对函数做变分是可以交换的，即</p>
+
+$$
+\displaystyle \frac{d}{dx} \bigl(\delta y(x)\bigr)
+= \delta \left( \frac{dy(x)}{dx} \right)
+$$
+
+<p>同样地</p>
+
+$$
+\displaystyle \delta \left( \frac{d}{dx} y(x) \right)
+= \frac{d}{dx} \bigl(\delta y(x)\bigr)
+$$
+
+<p>推导思路如下。由</p>
+
+$$
+\displaystyle \delta y'(x)
+= \bar{y}'(x) - y'(x)
+= \bigl[\bar{y}(x) - y(x)\bigr]'
+= \bigl(\varepsilon \, \eta(x)\bigr)'
+= \varepsilon \, \eta'(x)
+$$
+
+<p>可以看出对任意函数 (f) 都有类似的规律：</p>
+
+$$
+\displaystyle \delta (df) = d(\delta f)
+$$
+
+<hr>
+<h2 id="泛函变分的计算">泛函变分的计算</h2>
+<p>考虑一般形式的泛函</p>
+
+$$
+\displaystyle J[y(x)] = \int_{a}^{b} F\bigl(x, y(x), y'(x)\bigr) \, dx
+$$
+
+<p>其变分定义为</p>
+
+$$
+\displaystyle \delta J[y] = J[y + \delta y] - J[y]
+$$
+
+<p>将积分中的被积函数按 (\delta y)、(\delta y’) 在一阶展开：</p>
+
+$$
+\displaystyle \delta J[y]
+= \int_{a}^{b} \left[
+F\bigl(x, y + \delta y, y' + \delta y'\bigr)
+- F\bigl(x, y, y'\bigr)
+\right] \, dx
+$$
+
+<p>在一阶近似下得到</p>
+
+$$
+\displaystyle \delta J[y]
+= \int_{a}^{b}
+\left(
+\frac{\partial F}{\partial y} \, \delta y
++ \frac{\partial F}{\partial y'} \, \delta y'
+\right) dx
+$$
+
+<p>对第二项做分部积分：</p>
+
+$$
+\displaystyle \int_{a}^{b}
+\frac{\partial F}{\partial y'} \, \delta y' \, dx
+= \left.
+\frac{\partial F}{\partial y'} \, \delta y
+\right|_{a}^{b}
+- \int_{a}^{b}
+\frac{d}{dx} \left(
+\frac{\partial F}{\partial y'}
+\right) \delta y \, dx
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle \delta J[y]
+= \int_{a}^{b}
+\left(
+\frac{\partial F}{\partial y}
+- \frac{d}{dx} \frac{\partial F}{\partial y'}
+\right) \delta y \, dx
++ \left.
+\frac{\partial F}{\partial y'} \, \delta y
+\right|_{a}^{b}
+$$
+
+<p>在端点固定的情况下，(\delta y(a) = \delta y(b) = 0)，最后的边界项为零。</p>
+<hr>
+<h2 id="变分计算的常用规则">变分计算的常用规则</h2>
+<p>对于泛函与函数的变分，常用规则可以总结如下。</p>
+<p>若 (F) 只依赖于 (y(x))，则</p>
+
+$$
+\displaystyle \delta \bigl[F(y(x))\bigr]
+= \int_{a}^{b} \frac{\partial F}{\partial y} \, \delta y(x) \, dx
+$$
+
+<p>若 (F = F(x, y, y’))，则</p>
+
+$$
+\displaystyle \delta \int_{a}^{b} F(x, y, y') \, dx
+= \int_{a}^{b}
+\left(
+\frac{\partial F}{\partial y} \, \delta y
++ \frac{\partial F}{\partial y'} \, \delta y'
+\right) dx
+$$
+
+<p>局部来看，有</p>
+
+$$
+\displaystyle \delta F(x, y, y')
+= \frac{\partial F}{\partial y} \, \delta y
++ \frac{\partial F}{\partial y'} \, \delta y'
+$$
+
+<p>对自变量 (x) 的变分为零：</p>
+
+$$
+\displaystyle \delta x = 0
+$$
+
+<p>对加法、乘法和幂运算有类似“链式法则”：</p>
+
+$$
+\displaystyle \delta(F_1 + F_2) = \delta F_1 + \delta F_2
+$$
+
+
+$$
+\displaystyle \delta(F_1 F_2) = F_1 \, \delta F_2 + F_2 \, \delta F_1
+$$
+
+
+$$
+\displaystyle \delta(F^n) = n F^{n-1} \, \delta F
+$$
+
+<hr>
+<h2 id="例子：简单泛函的变分计算">例子：简单泛函的变分计算</h2>
+<p>考虑泛函</p>
+
+$$
+\displaystyle J[y(x)] = \int_{0}^{1} \bigl( y'(x)^2 + y(x)^2 \bigr) \, dx
+$$
+
+<p>此时</p>
+
+$$
+\displaystyle F = y'^2 + y^2
+$$
+
+<p>对 (F) 变分：</p>
+
+$$
+\displaystyle \delta F = 2 y' \, \delta y' + 2 y \, \delta y
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle \delta J[y]
+= \int_{0}^{1} \bigl( 2 y' \, \delta y' + 2 y \, \delta y \bigr) \, dx
+$$
+
+<p>对第一项分部积分：</p>
+
+$$
+\displaystyle \int_{0}^{1} 2 y' \, \delta y' \, dx
+= \left. 2 y' \, \delta y \right|_{0}^{1}
+- \int_{0}^{1} 2 y'' \, \delta y \, dx
+$$
+
+<p>若端点固定，则</p>
+
+$$
+\displaystyle \delta y \bigl|_{0}^{1} = 0
+$$
+
+<p>于是得到</p>
+
+$$
+\displaystyle \delta J[y]
+= \int_{0}^{1} \bigl( 2 y - 2 y'' \bigr) \, \delta y \, dx
+$$
+
+<p>由变分法基本引理可知，当 (\delta J[y] = 0) 对任意 (\delta y) 成立时，必须有</p>
+
+$$
+\displaystyle 2 y - 2 y'' = 0
+$$
+
+<p>也就是</p>
+
+$$
+\displaystyle y'' = y
+$$
+
+<p>得到一条常微分方程作为极值函数 (y(x)) 的方程。</p>
+<details>
+<summary>补充：利用欧拉方程直接求解</summary>
+<p>对上面的泛函</p>
+
+$$
+\displaystyle J[y] = \int_{0}^{1} \bigl( y'^2 + y^2 \bigr) \, dx
+$$
+
+<p>有</p>
+
+$$
+\displaystyle \frac{\partial F}{\partial y} = 2 y,
+\quad
+\frac{\partial F}{\partial y'} = 2 y'
+$$
+
+<p>欧拉方程</p>
+
+$$
+\displaystyle \frac{\partial F}{\partial y}
+- \frac{d}{dx} \left( \frac{\partial F}{\partial y'} \right)
+= 0
+$$
+
+<p>代入得到</p>
+
+$$
+\displaystyle 2 y - \frac{d}{dx}(2 y') = 0
+\quad \Rightarrow \quad
+y'' = y
+$$
+
+<p>解这个方程再配合具体边界条件，就可以得到极值函数的具体形式。</p>
+</details>
+<hr>
+<h2 id="变分法基本引理">变分法基本引理</h2>
+<p><strong>变分法基本引理</strong>：</p>
+<p>设 (f(x)) 为区间 ([a, b]) 上的连续函数，如果对所有满足端点条件</p>
+
+$$
+\displaystyle \eta(a) = \eta(b) = 0
+$$
+
+<p>的光滑函数 (\eta(x))，都有</p>
+
+$$
+\displaystyle \int_{a}^{b} f(x) \, \eta(x) \, dx = 0
+$$
+
+<p>那么在整个区间 ([a, b]) 内必有</p>
+
+$$
+\displaystyle f(x) = 0
+$$
+
+<p>这个引理由“任意可调的试探函数 (\eta(x))”推出“被积函数本身为零”，是变分法从“变分为零”过渡到“微分方程”的关键。</p>
+<hr>
+<h2 id="欧拉–拉格朗日方程（单一函数情形）">欧拉–拉格朗日方程（单一函数情形）</h2>
+<p>再次考虑一般泛函</p>
+
+$$
+\displaystyle J[y] = \int_{a}^{b} F\bigl(x, y(x), y'(x)\bigr) \, dx
+$$
+
+<p>我们前面已经得到变分形式</p>
+
+$$
+\displaystyle \delta J[y]
+= \int_{a}^{b}
+\left(
+\frac{\partial F}{\partial y}
+- \frac{d}{dx} \frac{\partial F}{\partial y'}
+\right) \delta y \, dx
++ \left.
+\frac{\partial F}{\partial y'} \, \delta y
+\right|_{a}^{b}
+$$
+
+<p>在端点固定的情况下，</p>
+
+$$
+\displaystyle \delta y(a) = \delta y(b) = 0
+$$
+
+<p>因此边界项为零。极值条件为</p>
+
+$$
+\displaystyle \delta J[y]
+= \int_{a}^{b}
+\left(
+\frac{\partial F}{\partial y}
+- \frac{d}{dx} \frac{\partial F}{\partial y'}
+\right) \delta y \, dx
+= 0
+$$
+
+<p>由于 (\delta y(x)) 在区间内是任意的，根据变分法基本引理可得：</p>
+
+$$
+\displaystyle \frac{\partial F}{\partial y}
+- \frac{d}{dx} \left(
+\frac{\partial F}{\partial y'}
+\right)
+= 0
+$$
+
+<p>这就是单函数情形的<strong>欧拉–拉格朗日方程</strong>。</p>
+<details>
+<summary>例子：两点间最短路径问题</summary>
+<p>在平面内，从 ((x_1, y_1)) 到 ((x_2, y_2)) 的曲线 (y(x)) 的弧长为</p>
+
+$$
+\displaystyle J[y]
+= \int_{x_1}^{x_2} \sqrt{1 + y'(x)^2} \, dx
+$$
+
+<p>此时</p>
+
+$$
+\displaystyle F(x, y, y') = \sqrt{1 + y'^2}
+$$
+
+<p>有</p>
+
+$$
+\displaystyle \frac{\partial F}{\partial y} = 0,
+\quad
+\frac{\partial F}{\partial y'} =
+\frac{y'}{\sqrt{1 + y'^2}}
+$$
+
+<p>欧拉方程给出</p>
+
+$$
+\displaystyle 0 - \frac{d}{dx} \left(
+\frac{y'}{\sqrt{1 + y'^2}}
+\right) = 0
+$$
+
+<p>也就是</p>
+
+$$
+\displaystyle \frac{y'}{\sqrt{1 + y'^2}} = C
+$$
+
+<p>其中 (C) 为常数。由此可得 (y’) 为常数，进一步得到</p>
+
+$$
+\displaystyle y(x) = a x + b
+$$
+
+<p>即两点之间的最短路径是一条直线。</p>
+</details>
+<hr>
+<h2 id="泛函导数">泛函导数</h2>
+<p>在忽略端点项的情况下，泛函的变分通常可以写成</p>
+
+$$
+\displaystyle \delta J[y]
+= \int_{a}^{b}
+\frac{\delta J}{\delta y(x)} \, \delta y(x) \, dx
+$$
+
+<p>这里的 (\dfrac{\delta J}{\delta y(x)}) 被称为<strong>泛函导数</strong>，在形式上类似于多元函数中的偏导数。</p>
+<h3 id="一个简单例子">一个简单例子</h3>
+<p>考虑泛函</p>
+
+$$
+\displaystyle J[y] = \int_{a}^{b} y(x)^2 \, dx
+$$
+
+<p>对 (y) 做变分：</p>
+
+$$
+\displaystyle \delta J[y]
+= \int_{a}^{b}
+\left[
+\bigl(y + \delta y\bigr)^2 - y^2
+\right] dx
+= \int_{a}^{b}
+\left(
+2 y \, \delta y + (\delta y)^2
+\right) dx
+$$
+
+<p>在一阶近似下忽略 ((\delta y)^2) 项，得到</p>
+
+$$
+\displaystyle \delta J[y]
+= \int_{a}^{b} 2 y \, \delta y \, dx
+$$
+
+<p>与标准写法比较，可见</p>
+
+$$
+\displaystyle \frac{\delta J}{\delta y(x)} = 2 y(x)
+$$
+
+<hr>
+<h2 id="首次积分：自变量不显含时的守恒量">首次积分：自变量不显含时的守恒量</h2>
+<p>若泛函</p>
+
+$$
+\displaystyle J[y] = \int_{a}^{b}
+F\bigl(y(x), y'(x)\bigr) \, dx
+$$
+
+<p>中被积函数 (F) 不显含自变量 (x)，即 (F = F(y, y’))，则有一种特别有用的“首次积分”。</p>
+<p>考虑</p>
+
+$$
+\displaystyle \frac{dF}{dx}
+= \frac{\partial F}{\partial y} \, \frac{dy}{dx}
++ \frac{\partial F}{\partial y'} \, \frac{dy'}{dx}
+$$
+
+<p>由欧拉–拉格朗日方程</p>
+
+$$
+\displaystyle \frac{\partial F}{\partial y}
+= \frac{d}{dx}
+\left(
+\frac{\partial F}{\partial y'}
+\right)
+$$
+
+<p>代入上式可得</p>
+
+$$
+\displaystyle \frac{dF}{dx}
+= \frac{d}{dx}
+\left(
+\frac{\partial F}{\partial y'}
+\right) y'
++ \frac{\partial F}{\partial y'} y''
+= \frac{d}{dx}
+\left(
+y' \frac{\partial F}{\partial y'}
+\right)
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle \frac{d}{dx}
+\left(
+F - y' \frac{\partial F}{\partial y'}
+\right) = 0
+$$
+
+<p>从而得到一个积分不变式：</p>
+
+$$
+\displaystyle F - y' \frac{\partial F}{\partial y'} = C
+$$
+
+<p>其中 (C) 为常数。这就是泛函在自变量不显含时的<strong>首次积分</strong>，在力学里常与能量守恒等物理量对应。</p>
+<hr>
+<h2 id="最速降线的解析解：旋轮线">最速降线的解析解：旋轮线</h2>
+<p>回到最速降线问题，时间泛函可写为</p>
+
+$$
+\displaystyle T[y]
+= \frac{1}{\sqrt{2 g}} \int_{a}^{b}
+\frac{\sqrt{1 + y'(x)^2}}{\sqrt{y(x)}} \, dx
+$$
+
+<p>可把被积函数记为</p>
+
+$$
+\displaystyle F(y, y')
+= \frac{\sqrt{1 + y'^2}}{\sqrt{y}}
+$$
+
+<p>由于 (F) 不显含 (x)，可以使用前面的首次积分。先计算</p>
+
+$$
+\displaystyle \frac{\partial F}{\partial y'}
+= \frac{y'}{\sqrt{y} \sqrt{1 + y'^2}}
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle F - y' \frac{\partial F}{\partial y'}
+= \frac{\sqrt{1 + y'^2}}{\sqrt{y}}
+- y' \cdot
+\frac{y'}{\sqrt{y} \sqrt{1 + y'^2}}
+= \frac{1}{\sqrt{y} \sqrt{1 + y'^2}}
+= \frac{1}{\sqrt{2 C}}
+$$
+
+<p>记</p>
+
+$$
+\displaystyle C_1 = \frac{1}{2 C}
+$$
+
+<p>可以得到</p>
+
+$$
+\displaystyle y \bigl( 1 + y'^2 \bigr) = 2 C_1
+$$
+
+<p>做代换</p>
+
+$$
+\displaystyle y' = \cot \theta
+$$
+
+<p>可得</p>
+
+$$
+\displaystyle y = C_1 \bigl( 1 - \cos 2 \theta \bigr)
+$$
+
+<p>积分并消去参数，最终得到旋轮线（摆线）参数方程：</p>
+
+$$
+\displaystyle
+\begin{cases}
+x(\theta) = C_1 \bigl( 2 \theta - \sin 2 \theta \bigr) + C_2 \\
+y(\theta) = C_1 \bigl( 1 - \cos 2 \theta \bigr)
+\end{cases}
+$$
+
+<p>这说明从 (A) 到 (B) 的最速降线是一条旋轮线轨道，而不是直线或圆弧。</p>
+<details>
+<summary>补充：为什么不是直线？</summary>
+<p>直线虽然是两点间的最短路径，但最速降线问题关心的是“时间最短”，而不是“距离最短”。</p>
+<p>直线上，初期下降高度较慢，势能转化为动能的速度相对较慢；而旋轮线在一开始下降得更快，让质点在早期就获得更大的速度。后期尽管路径更长，但由于速度较大，整体时间反而更短。</p>
+<p>这也体现了“变分极值”不一定等于“局部几何最短”，而是由整体泛函（这里是时间积分）决定。</p>
+</details>
+<hr>
+<h2 id="多元泛函的极值问题">多元泛函的极值问题</h2>
+<p>很多情况下需要同时处理多个函数（例如多自由度系统），设有</p>
+
+$$
+\displaystyle J[y_1(x), y_2(x), \cdots, y_n(x)]
+= \int_{a}^{b}
+F\bigl(
+x, y_1, y_2, \cdots, y_n,
+y_1', y_2', \cdots, y_n'
+\bigr) dx
+$$
+
+<p>固定端点条件为</p>
+
+$$
+\displaystyle y_{\alpha}(a) = y_{\alpha}(b) = 0,
+\quad \alpha = 1, 2, \cdots, n
+$$
+
+<p>对每个分量分别做变分，可以得到一组欧拉–拉格朗日方程：</p>
+
+$$
+\displaystyle
+\frac{\partial F}{\partial y_{\alpha}}
+- \frac{d}{dx}
+\left(
+\frac{\partial F}{\partial y_{\alpha}'}
+\right)
+= 0,
+\quad
+\alpha = 1, 2, \cdots, n
+$$
+
+<p>每个分量的方程是彼此独立的，但通过 (F) 的形式彼此耦合。</p>
+<hr>
+<h2 id="数学形式与力学形式的对应关系">数学形式与力学形式的对应关系</h2>
+<p>在数学中，我们常写一个泛函</p>
+
+$$
+\displaystyle \delta J[y(x)]
+= \delta \int_{a}^{b}
+F\bigl(x, y, y'\bigr) \, dx
+$$
+
+<p>在力学中，作用量则写成</p>
+
+$$
+\displaystyle \delta S[q(t)]
+= \delta \int_{t_1}^{t_2}
+L\bigl(q, \dot{q}, t\bigr) \, dt
+$$
+
+<p>两者之间有如下对应关系：</p>
+
+$$
+\displaystyle L \longleftrightarrow F,
+\quad t \longleftrightarrow x,
+\quad q \longleftrightarrow y,
+\quad \dot{q} \longleftrightarrow y'
+$$
+
+<p>等时变分（不改变时间端点）对应于数学中“自变量固定”的变分：</p>
+
+$$
+\displaystyle \delta t = 0
+\quad \Longleftrightarrow \quad
+\delta x = 0
+$$
+
+<p>对变分与求导的可交换性也有类似关系：</p>
+
+$$
+\displaystyle \frac{d}{dt} \bigl(\delta q\bigr)
+= \delta \dot{q}
+\quad \Longleftrightarrow \quad
+\frac{d}{dx} \bigl(\delta y\bigr)
+= \delta y'
+$$
+
+<p>欧拉–拉格朗日方程在两种表述下形式完全平行：</p>
+
+$$
+\displaystyle
+\frac{d}{dt}
+\left(
+\frac{\partial L}{\partial \dot{q}}
+\right)
+- \frac{\partial L}{\partial q} = 0
+\quad \Longleftrightarrow \quad
+\frac{\partial F}{\partial y}
+- \frac{d}{dx}
+\left(
+\frac{\partial F}{\partial y'}
+\right) = 0
+$$
+
+<hr>
+<h2 id="拉格朗日方程">拉格朗日方程</h2>
+<p>在力学中，作用量写作</p>
+
+$$
+\displaystyle S[q(t)] = \int_{t_1}^{t_2}
+L\bigl(q(t), \dot{q}(t), t\bigr) \, dt
+$$
+
+<p>实际运动为 (q(t))，邻近运动为 (q(t) + \delta q(t))，满足固定端点条件</p>
+
+$$
+\displaystyle \delta q(t_1) = \delta q(t_2) = 0
+$$
+
+<p>对 (S) 做变分，并利用与数学中同样的变分计算规则，可以得到</p>
+
+$$
+\displaystyle
+\frac{\partial L}{\partial q_{\alpha}}
+- \frac{d}{dt}
+\left(
+\frac{\partial L}{\partial \dot{q}_{\alpha}}
+\right)
+= 0,
+\quad
+\alpha = 1, 2, \cdots, s
+$$
+
+<p>这就是力学中的<strong>拉格朗日方程</strong>，它是牛顿运动定律在广义坐标下的等价表述。</p>
+<hr>
+<h2 id="首次积分与能量守恒">首次积分与能量守恒</h2>
+<p>当拉格朗日量中不显含时间 (t)，即</p>
+
+$$
+\displaystyle L = L\bigl(q, \dot{q}\bigr)
+$$
+
+<p>时，可以得到一个类似“能量守恒”的积分不变量。</p>
+<p>由拉格朗日方程推导，可得</p>
+
+$$
+\displaystyle \frac{d}{dt}
+\left(
+\dot{q}_{\alpha}
+\frac{\partial L}{\partial \dot{q}_{\alpha}}
+- L
+\right) = 0
+$$
+
+<p>于是有</p>
+
+$$
+\displaystyle
+\dot{q}_{\alpha}
+\frac{\partial L}{\partial \dot{q}_{\alpha}}
+- L
+= \text{常数}
+$$
+
+<p>对常见的力学系统，这个量正是系统的总能量（动能加势能），体现了时间平移对称性对应能量守恒的观念。</p>
+<hr>
+<h2 id="例子：竖直上抛运动的拉格朗日推导">例子：竖直上抛运动的拉格朗日推导</h2>
+<details>
+<summary>展开推导过程</summary>
+<p>考虑竖直方向的单自由度运动，设坐标为 (x(t))，质量为 (m)，重力加速度为 (g)。拉格朗日量取为</p>
+
+$$
+\displaystyle L
+= \frac{1}{2} m \dot{x}^2 - m g x
+$$
+
+<p>作用量泛函为</p>
+
+$$
+\displaystyle S[x(t)]
+= \int_{t_1}^{t_2}
+L\bigl(x(t), \dot{x}(t), t\bigr) \, dt
+$$
+
+<p>对 (S) 做变分：</p>
+
+$$
+\displaystyle \delta S[x(t)]
+= \int_{t_1}^{t_2}
+\left(
+\frac{\partial L}{\partial x} \, \delta x
++ \frac{\partial L}{\partial \dot{x}} \, \delta \dot{x}
+\right) dt
+= \int_{t_1}^{t_2}
+\left(
+- m g \, \delta x
++ m \dot{x} \, \delta \dot{x}
+\right) dt
+$$
+
+<p>对第二项进行分部积分：</p>
+
+$$
+\displaystyle
+\int_{t_1}^{t_2}
+m \dot{x} \, \delta \dot{x} \, dt
+= \left. m \dot{x} \, \delta x \right|_{t_1}^{t_2}
+- \int_{t_1}^{t_2} m \ddot{x} \, \delta x \, dt
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle
+\delta S[x(t)]
+= \int_{t_1}^{t_2}
+\bigl( - m g - m \ddot{x} \bigr) \, \delta x \, dt
++ \left. m \dot{x} \, \delta x \right|_{t_1}^{t_2}
+$$
+
+<p>端点固定时</p>
+
+$$
+\displaystyle \delta x(t_1) = \delta x(t_2) = 0
+$$
+
+<p>边界项为零。极值条件 (\delta S = 0) 给出</p>
+
+$$
+\displaystyle - m g - m \ddot{x} = 0
+$$
+
+<p>化简得到</p>
+
+$$
+\displaystyle \ddot{x} = - g
+$$
+
+<p>这就是熟悉的竖直上抛（或自由落体）运动方程，即牛顿第二定律在本问题中的具体形式。</p>
+</details>
+<hr>
+<h2 id="相空间形式与哈密顿方程">相空间形式与哈密顿方程</h2>
+<p>在相空间形式中，拉格朗日量常写成</p>
+
+$$
+\displaystyle L
+= \sum_{\alpha = 1}^{s}
+p_{\alpha} \dot{q}_{\alpha}
+- H\bigl(p, q, t\bigr)
+$$
+
+<p>其中</p>
+
+$$
+\displaystyle p_{\alpha}
+= \frac{\partial L}{\partial \dot{q}_{\alpha}}
+$$
+
+<p>为共轭动量，(H(p, q, t)) 为哈密顿量。</p>
+<p>将这一形式代入作用量，并对 (q_{\alpha})、(p_{\alpha}) 分别做变分，利用变分法基本引理，可以得到<strong>哈密顿正则方程</strong>：</p>
+
+$$
+\displaystyle \dot{q}_{\alpha}
+= \frac{\partial H}{\partial p_{\alpha}},
+\quad
+\dot{p}_{\alpha}
+= - \frac{\partial H}{\partial q_{\alpha}},
+\quad
+\alpha = 1, 2, \cdots, s
+$$
+
+<p>这给出了在相空间 ((q, p)) 中的动力学演化方式。</p>
+<hr>
+<h2 id="零拉格朗日量与拉格朗日量的规范等价">零拉格朗日量与拉格朗日量的规范等价</h2>
+<p>考虑一个特殊的拉格朗日量</p>
+
+$$
+\displaystyle L_0 = \dot{q} + q
+$$
+
+<p>其作用量为</p>
+
+$$
+\displaystyle S_0 = \int_{t_1}^{t_2} L_0 \, dt
+$$
+
+<p>对其做变分：</p>
+
+$$
+\displaystyle \delta S_0
+= \int_{t_1}^{t_2} \delta L_0 \, dt
+= \int_{t_1}^{t_2}
+\bigl( \delta \dot{q} + \delta q \bigr) dt
+$$
+
+<p>注意到</p>
+
+$$
+\displaystyle \delta \dot{q}
+= \frac{d}{dt} (\delta q)
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle \delta S_0
+= \int_{t_1}^{t_2}
+\left(
+\frac{d}{dt} \delta q + \delta q
+\right) dt
+= \left. \delta q \right|_{t_1}^{t_2}
++ \int_{t_1}^{t_2} \delta q \, dt
+$$
+
+<p>这类拉格朗日量在实际物理系统中可以被视为“零拉格朗日量”的一部分：在给定边界条件下，它们对运动方程不产生影响。</p>
+<p>一般地，两个拉格朗日量若只相差一个关于时间的全微分项（或等价的零拉格朗日量），则它们描述的是同一个物理系统。这种“非唯一性”被称为拉格朗日量的<strong>规范等价</strong>。</p>
+<p>在现代物理学中，这一思想与规范场论、全息对偶、拓扑场论等都有深刻联系：很多物理量只依赖于等价类，而非具体选取的拉格朗日量本身。</p>
+
       </div>
       <div class="post-tags-categories">
         
@@ -592,7 +1613,7 @@ $X_n \xright
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">力学变分原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%8E%9F%E7%90%86%E4%B8%8E%E4%BD%9C%E7%94%A8%E9%87%8F"><span class="toc-text">哈密顿原理与作用量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BE%8B%E5%AD%90"><span class="toc-text">泛函的概念与例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E6%B3%95%E4%B8%AD%E7%9A%84%E5%85%B8%E5%9E%8B%E9%97%AE%E9%A2%98%EF%BC%9A%E6%9C%80%E9%80%9F%E9%99%8D%E7%BA%BF"><span class="toc-text">变分法中的典型问题：最速降线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86%E4%B8%8E%E6%B3%9B%E5%87%BD%E7%9A%84%E5%8F%98%E5%88%86"><span class="toc-text">函数的微分与泛函的变分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86"><span class="toc-text">函数的微分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E7%9A%84%E5%8F%98%E5%88%86"><span class="toc-text">泛函的变分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E5%AD%A6%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9%E4%B8%8E%E5%BA%94%E7%94%A8"><span class="toc-text">变分学涉及的主要内容与应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E4%B8%8E%E6%B1%82%E5%AF%BC%E7%9A%84%E5%8F%AF%E4%BA%A4%E6%8D%A2%E6%80%A7"><span class="toc-text">变分与求导的可交换性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E5%8F%98%E5%88%86%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-text">泛函变分的计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E8%AE%A1%E7%AE%97%E7%9A%84%E5%B8%B8%E7%94%A8%E8%A7%84%E5%88%99"><span class="toc-text">变分计算的常用规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E7%AE%80%E5%8D%95%E6%B3%9B%E5%87%BD%E7%9A%84%E5%8F%98%E5%88%86%E8%AE%A1%E7%AE%97"><span class="toc-text">例子：简单泛函的变分计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E6%B3%95%E5%9F%BA%E6%9C%AC%E5%BC%95%E7%90%86"><span class="toc-text">变分法基本引理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E2%80%93%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B%EF%BC%88%E5%8D%95%E4%B8%80%E5%87%BD%E6%95%B0%E6%83%85%E5%BD%A2%EF%BC%89"><span class="toc-text">欧拉–拉格朗日方程（单一函数情形）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E5%AF%BC%E6%95%B0"><span class="toc-text">泛函导数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90"><span class="toc-text">一个简单例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E6%AC%A1%E7%A7%AF%E5%88%86%EF%BC%9A%E8%87%AA%E5%8F%98%E9%87%8F%E4%B8%8D%E6%98%BE%E5%90%AB%E6%97%B6%E7%9A%84%E5%AE%88%E6%81%92%E9%87%8F"><span class="toc-text">首次积分：自变量不显含时的守恒量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E9%80%9F%E9%99%8D%E7%BA%BF%E7%9A%84%E8%A7%A3%E6%9E%90%E8%A7%A3%EF%BC%9A%E6%97%8B%E8%BD%AE%E7%BA%BF"><span class="toc-text">最速降线的解析解：旋轮线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E6%B3%9B%E5%87%BD%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">多元泛函的极值问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%BD%A2%E5%BC%8F%E4%B8%8E%E5%8A%9B%E5%AD%A6%E5%BD%A2%E5%BC%8F%E7%9A%84%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB"><span class="toc-text">数学形式与力学形式的对应关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B"><span class="toc-text">拉格朗日方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E6%AC%A1%E7%A7%AF%E5%88%86%E4%B8%8E%E8%83%BD%E9%87%8F%E5%AE%88%E6%81%92"><span class="toc-text">首次积分与能量守恒</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E7%AB%96%E7%9B%B4%E4%B8%8A%E6%8A%9B%E8%BF%90%E5%8A%A8%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8E%A8%E5%AF%BC"><span class="toc-text">例子：竖直上抛运动的拉格朗日推导</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E7%A9%BA%E9%97%B4%E5%BD%A2%E5%BC%8F%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF%E6%96%B9%E7%A8%8B"><span class="toc-text">相空间形式与哈密顿方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E9%87%8F%E4%B8%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E9%87%8F%E7%9A%84%E8%A7%84%E8%8C%83%E7%AD%89%E4%BB%B7"><span class="toc-text">零拉格朗日量与拉格朗日量的规范等价</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
