@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>边际分布，条件分布，密度传递，联合密度 | Hexo</title>
+  <title>样本与抽样分布 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,21 +355,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        边际分布，条件分布，密度传递，联合密度
+        样本与抽样分布
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2025-10-29 |
+          <i class="fas fa-calendar"></i> Published in：2025-11-26 |
         </span>
       
 
@@ -392,133 +392,636 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1>边际分布，条件分布，密度传递，联合密度</h1>
-<h3 id="边际（边缘）分布">边际（边缘）分布</h3>
-<p>需要先学习：<a href="https://kotokowa.github.io/physics/随机向量及其分布/" target="_blank">随机向量及其分布</a></p>
-<p>设有二维随机变量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span>的联合分布函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x,y)</annotation></semantics></math></span></span>，则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span></span>的分布函数记为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo separator="true">,</mo><msub><mi>F</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F_X(x), F_Y(y)</annotation></semantics></math></span></span>，称为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span>关于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span></span>的边缘分布函数.</p>
-<p>● 边缘分布测度：</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>X</mi></msub><mo>(</mo><mi>A</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>∈</mo><mi>A</mi><mo>)</mo><mo>=</mo><msub><mi>μ</mi><mrow><mi>X</mi><mo separator="true">,</mo><mi>Y</mi></mrow></msub><mo>(</mo><mi>A</mi><mo>×</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\mu_X(A) = P(X \in A) = \mu_{X,Y}(A \times \mathbb{R})</annotation></semantics></math></span></span>,</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>Y</mi></msub><mo>(</mo><mi>B</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>Y</mi><mo>∈</mo><mi>B</mi><mo>)</mo><mo>=</mo><msub><mi>μ</mi><mrow><mi>X</mi><mo separator="true">,</mo><mi>Y</mi></mrow></msub><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>×</mo><mi>B</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mu_Y(B) = P(Y \in B) = \mu_{X,Y}(\mathbb{R} \times B)</annotation></semantics></math></span></span>.</p>
-<p>● 边缘分布函数：</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msub><mi>μ</mi><mi>X</mi></msub><mo>(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo separator="true">,</mo><mi>x</mi><mo>]</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>F</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi mathvariant="normal">∞</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F_X(x) = \mu_X(-\infty, x] = P(X \leq x) = F(x, \infty)</annotation></semantics></math></span></span>,</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo>=</mo><msub><mi>μ</mi><mi>Y</mi></msub><mo>(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo separator="true">,</mo><mi>y</mi><mo>]</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>)</mo><mo>=</mo><mi>F</mi><mo>(</mo><mi mathvariant="normal">∞</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F_Y(y) = \mu_Y(-\infty, y] = P(Y \leq y) = F(\infty, y)</annotation></semantics></math></span></span>,</p>
-<p>● 边际分布律：</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>i</mi><mo>⋅</mo></mrow></msub><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{i\cdot} = P(X = x_i) = \sum_{j=1}^{\infty} p_{ij}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mo>⋅</mo><mi>j</mi></mrow></msub><mo>=</mo><mi>P</mi><mo>(</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\cdot j} = P(Y = y_j) = \sum_{i=1}^{\infty} p_{ij}</annotation></semantics></math></span></span></p>
-<p>● 边缘密度函数：</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mi>d</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">p_X(x) = \int_{-\infty}^{\infty} p(x,y) dy</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">p_Y(y) = \int_{-\infty}^{\infty} p(x,y) dx</annotation></semantics></math></span></span></p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>x</mi></mrow></msubsup><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>u</mi><mo>)</mo><mi>d</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">F_X(x) = \int_{-\infty}^{x} p_X(u) du</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>y</mi></mrow></msubsup><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>u</mi><mo>)</mo><mi>d</mi><mi>u</mi></mrow><annotation encoding="application/x-tex">F_Y(y) = \int_{-\infty}^{y} p_Y(u) du</annotation></semantics></math></span></span>.</p>
-<h3 id="条件分布">条件分布</h3>
-<h4 id="离散情形">离散情形</h4>
-<p>2-维离散随机向量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span>的联合分布律为</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo separator="true">,</mo><mtext>&nbsp;</mtext><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">P(X=x_i,Y=y_j)=p_{ij},\ i,j=1,2,\cdots
-</annotation></semantics></math></span></span></span></p>
-<p>在事件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{Y=y_j\}</annotation></semantics></math></span></span>条件下事件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>j</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{X=x_j\}</annotation></semantics></math></span></span>发生的概率（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>{</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>}</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P\{Y=y_j\}&gt;0</annotation></semantics></math></span></span>）</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">.</mi><mi>j</mi></mrow></msub></mrow></mfrac><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle P(X=x_i|Y=y_j)=\frac{P(X=x_i,Y=y_j)}{P(Y=y_j)}=\frac{p_{ij}}{p_{.j}}.
-</annotation></semantics></math></span></span></span></p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∙</mo><mtext>&nbsp;</mtext><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>≥</mo><mn>0</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">\bullet\ P(X=x_i|Y=y_j)\geq0,</annotation></semantics></math></span></span></p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>∙</mo><mtext>&nbsp;</mtext><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mfrac><mrow><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">.</mi><mi>j</mi></mrow></msub></mrow></mfrac><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \bullet\ \sum_{i=1}^{\infty}P(X=x_i|Y=y_j)=\sum_{i=1}^{\infty}\frac{p_{ij}}{p_{.j}}=1.</annotation></semantics></math></span></span></p>
-<p>称<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">P(X=x_i|Y=y_j)</annotation></semantics></math></span></span>为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{Y=y_j\}</annotation></semantics></math></span></span>条件下<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>的条件分布律，为以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>y</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">y_j</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>{</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>}</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P\{Y=y_j\}&gt;0</annotation></semantics></math></span></span>）为指标的概率族</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>P</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mfrac><mrow><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">.</mi><mi>j</mi></mrow></msub></mrow></mfrac><mo separator="true">,</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle P_{X|Y}(X=x_i|y_j)=P(X=x_i|Y=y_j)=\frac{p_{ij}}{p_{.j}},
-</annotation></semantics></math></span></span></span></p>
-<p>对于任意可测集<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>P</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>X</mi><mo>∈</mo><mi>A</mi><mi mathvariant="normal">∣</mi><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>∈</mo><mi>A</mi><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><msub><mo>∑</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>∈</mo><mi>A</mi></mrow></msub><mfrac><mrow><msub><mi>p</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><mrow><msub><mi>p</mi><mrow><mi mathvariant="normal">.</mi><mi>j</mi></mrow></msub></mrow></mfrac><mo separator="true">,</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle P_{X|Y}(X\in A|y_j)=P(X\in A|Y=y_j)=\sum_{x_i\in A}\frac{p_{ij}}{p_{.j}},
-</annotation></semantics></math></span></span></span></p>
-<h4 id="连续情形">连续情形</h4>
-<p>设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span>为2-维连续型随机变量, 联合概率密度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p(x,y)</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_Y(y)</annotation></semantics></math></span></span>为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span></span>的边缘分布. 给定<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>∈</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">y\in R</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math></span></span>, 若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>y</mi><mo>&lt;</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>+</mo><mi>ε</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(y&lt;Y\leq y+\varepsilon)&gt;0</annotation></semantics></math></span></span>, 任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">x\in R</annotation></semantics></math></span></span>,</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>&lt;</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>+</mo><mi>ε</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>&lt;</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>+</mo><mi>ε</mi><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>y</mi><mo>&lt;</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>+</mo><mi>ε</mi><mo>)</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>x</mi></mrow></msubsup><msubsup><mo>∫</mo><mrow><mi>y</mi></mrow><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>u</mi><mrow><mi mathvariant="normal">d</mi></mrow><mi>v</mi></mrow><mrow><msubsup><mo>∫</mo><mrow><mi>y</mi></mrow><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>v</mi><mo>)</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>v</mi></mrow></mfrac><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>x</mi></mrow></msubsup><mfrac><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ε</mi></mrow></mfrac><msubsup><mo>∫</mo><mrow><mi>y</mi></mrow><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>v</mi></mrow><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ε</mi></mrow></mfrac><msubsup><mo>∫</mo><mrow><mi>y</mi></mrow><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>v</mi><mo>)</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>v</mi></mrow></mfrac><mrow><mi mathvariant="normal">d</mi></mrow><mi>u</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle P(X\leq x|y&lt;Y\leq y+\varepsilon)  
-= \frac{P(X\leq x,y&lt;Y\leq y+\varepsilon)}{P(y&lt;Y\leq y+\varepsilon)} = \frac{\int_{-\infty}^{x}\int_{y}^{y+\varepsilon} p(u,v)\mathrm{d}u\mathrm{d}v}{\int_{y}^{y+\varepsilon} p_Y(v)\mathrm{d}v} = \int_{-\infty}^{x} \frac{\frac{1}{\varepsilon}\int_{y}^{y+\varepsilon} p(u,v)\mathrm{d}v}{\frac{1}{\varepsilon}\int_{y}^{y+\varepsilon} p_Y(v)\mathrm{d}v}\mathrm{d}u  
-</annotation></semantics></math></span></span></span></p>
-<p>于是得到：</p>
-<p><strong>条件密度函数</strong></p>
-<p>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>lim</mi><mrow><mi>ε</mi><mo>→</mo><mn>0</mn></mrow></msub><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ε</mi></mrow></mfrac><msubsup><mo>∫</mo><mi>y</mi><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>v</mi><mo>)</mo><mi>d</mi><mi>v</mi><mo>=</mo><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \lim_{\varepsilon \to 0} \frac{1}{\varepsilon} \int_y^{y+\varepsilon} p(u,v)dv = p(u,y)</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>lim</mi><mrow><mi>ε</mi><mo>→</mo><mn>0</mn></mrow></msub><mfrac><mrow><mn>1</mn></mrow><mrow><mi>ε</mi></mrow></mfrac><msubsup><mo>∫</mo><mi>y</mi><mrow><mi>y</mi><mo>+</mo><mi>ε</mi></mrow></msubsup><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>v</mi><mo>)</mo><mi>d</mi><mi>v</mi><mo>=</mo><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \lim_{\varepsilon \to 0} \frac{1}{\varepsilon} \int_y^{y+\varepsilon} p_Y(v)dv = p_Y(y)</annotation></semantics></math></span></span>存在, 则有</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><mi>y</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi>x</mi></msubsup><mfrac><mrow><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow></mfrac><mi>d</mi><mi>u</mi><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi>x</mi></msubsup><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>u</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mi>d</mi><mi>u</mi><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle P(X \leq x|Y=y)=\int_{-\infty}^x \frac{p(u,y)}{p_Y(y)}du=\int_{-\infty}^x p_{X|Y}(u|y)du.
-</annotation></semantics></math></span></span></span></p>
-<p>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p_Y(y)&gt;0</annotation></semantics></math></span></span>, 则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle p_{X|Y}(x|y)=\frac{p(x,y)}{p_Y(y)}</annotation></semantics></math></span></span>给出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>在条件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>Y</mi><mo>=</mo><mi>y</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">\{Y=y\}</annotation></semantics></math></span></span>下的条件密度函数.</p>
-<p><strong>条件分布函数</strong></p>
-<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p_Y(y) &gt; 0</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_{X|Y}(x|y)</annotation></semantics></math></span></span> 给出了一族以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 为指标的密度函数</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∙</mo></mrow><annotation encoding="application/x-tex">\bullet</annotation></semantics></math></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p_{X|Y}(x|y) \geq 0</annotation></semantics></math></span></span>,</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∙</mo></mrow><annotation encoding="application/x-tex">\bullet</annotation></semantics></math></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mi>d</mi><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{+\infty} p_{X|Y}(x|y) dx = 1</annotation></semantics></math></span></span>.</p>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>Y</mi><mo>=</mo><mi>y</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">\{ Y = y \}</annotation></semantics></math></span></span> 下的条件分布为</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>F</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>Y</mi><mo>=</mo><mi>y</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>x</mi></mrow></msubsup><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>u</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mi>d</mi><mi>u</mi><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi>x</mi></mrow></msubsup><mfrac><mrow><mi>p</mi><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><mrow><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow></mfrac><mi>d</mi><mi>u</mi><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle F_{X|Y}(x|y) = P(X \leq x | Y = y) = \int_{-\infty}^{x} p_{X|Y}(u|y) du = \int_{-\infty}^{x} \frac{p(u,y)}{p_Y(y)} du.
-</annotation></semantics></math></span></span></span></p>
-<h3 id="概率密度的传递">概率密度的传递</h3>
-<p>设随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 有概率密度函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_X(x)</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">x \in \mathbb{R}</annotation></semantics></math></span></span>, 设函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math></span></span> 处处可导且恒有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>x</mi><mo>)</mo><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g'(x) &gt; 0</annotation></semantics></math></span></span> (或者 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>g</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>x</mi><mo>)</mo><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">g'(x) &lt; 0</annotation></semantics></math></span></span>), 则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mi>g</mi><mo>(</mo><mi>X</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Y = g(X)</annotation></semantics></math></span></span> 为连续型随机变量, 其概率密度为</p>
+        <h1>样本与抽样分布</h1>
+<h2 id="总体与随机样本">总体与随机样本</h2>
+<h3 id="总体与个体">总体与个体</h3>
+<ol>
+<li><strong>总体</strong>：一次或一类随机实验中，<strong>所有可能的观察值</strong>构成的集合.</li>
+<li><strong>个体</strong>：总体中的每一个可能观察值.</li>
+<li><strong>总体容量</strong>：
+<ul>
+<li>总体中个体的个数.</li>
+<li>容量有限 → <strong>有限总体</strong>；容量无限 → <strong>无限总体</strong>.</li>
+</ul>
+</li>
+<li><strong>随机变量视角</strong>：
+<ul>
+<li>总体的每个个体都可以看成是某个随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的一个取值.</li>
+<li>一个总体对应一个随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>，其分布及数字特征就是总体的分布及数字特征，一般不加区分.</li>
+</ul>
+</li>
+<li><strong>总体分布的未知性</strong>：
+<ul>
+<li>实际问题中，总体的分布往往是<strong>未知</strong>的，或者只知道它含有若干未知参数.</li>
+<li>统计推断的任务：通过从总体中抽取部分个体（样本），根据样本数据来推断总体的分布或参数.</li>
+</ul>
+</li>
+</ol>
+<h3 id="随机样本与样本值">随机样本与样本值</h3>
+<ol>
+<li>
+<p><strong>抽样过程</strong><br>
+在总体中抽取一个个体，即对总体随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 做一次观察并记录结果.<br>
+在相同条件下重复进行 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 次独立观察，记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, X_2, \cdots, X_n</annotation></semantics></math></span></span>. 可以认为：</p>
+<ul>
+<li>它们相互独立；</li>
+<li>且都与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 有相同的分布函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span>.</li>
+</ul>
+</li>
+<li>
+<p><strong>简单随机样本（样本）</strong><br>
+设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 具有分布函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span>. 若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, X_2, \cdots, X_n</annotation></semantics></math></span></span> 是一列<strong>相互独立</strong>且都服从分布函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 的随机变量，则称：</p>
+ 
+    $$
+    \displaystyle X_1, X_2, \cdots, X_n
+    $$
+    
+<p>是从分布函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 得到的容量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 的<strong>简单随机样本（样本）</strong>.</p>
+</li>
+<li>
+<p><strong>样本值</strong><br>
+对应的观察值记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_1, x_2, \cdots, x_n</annotation></semantics></math></span></span>，称为 <strong>样本值</strong>或随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 个独立观察值.</p>
+</li>
+<li>
+<p><strong>联合分布（离散或连续统一写法）</strong></p>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, \cdots, X_n</annotation></semantics></math></span></span> 为来自分布函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 的样本，则它们相互独立，联合分布函数为：</p>
+ 
+    $$
+    \displaystyle F^{*}(x_{1}, x_{2}, \cdots, x_{n}) = \prod_{i=1}^{n} F(x_{i}).
+    $$
+    
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 有密度函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>，则联合密度为：</p>
+ 
+    $$
+    \displaystyle f^{*}(x_{1}, x_{2}, \cdots, x_{n}) = \prod_{i=1}^{n} f(x_{i}).
+    $$
+    
+</li>
+</ol>
+<details>
+<summary>例：抛硬币样本的联合分布（离散情形）</summary>
+<p>考虑一次抛硬币实验，令随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 取值为：正面 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">=1</annotation></semantics></math></span></span>，反面 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">=0</annotation></semantics></math></span></span>，且</p>
 
 $$
-p_Y(y) = 
-\begin{cases} 
-p_X(h(y))|h'(y)|, &amp; \alpha &lt; y &lt; \beta, \\
-0, &amp; \text{其他},
-\end{cases}
+\displaystyle \mathrm{P}(X=1) = p, \quad \mathrm{P}(X=0) = 1-p.
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mi>min</mi><mo>{</mo><mi>g</mi><mo>(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo>)</mo><mo separator="true">,</mo><mi>g</mi><mo>(</mo><mi mathvariant="normal">∞</mi><mo>)</mo><mo>}</mo></mrow><annotation encoding="application/x-tex">\alpha = \min\{g(-\infty), g(\infty)\}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mi>max</mi><mo>{</mo><mi>g</mi><mo>(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo>)</mo><mo separator="true">,</mo><mi>g</mi><mo>(</mo><mi mathvariant="normal">∞</mi><mo>)</mo><mo>}</mo></mrow><annotation encoding="application/x-tex">\beta = \max\{g(-\infty), g(\infty)\}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">h(x)</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">g(x)</annotation></semantics></math></span></span> 的反函数.</p>
-<h3 id="联合密度">联合密度</h3>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>=</mo><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">X=(X_1,\cdots,X_n)</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 维连续型随机变量，其联合密度函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">p_X(x_1,\cdots,x_n)</annotation></semantics></math></span></span>，</p>
-<p>● 令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi><mo>=</mo><mo>(</mo><msub><mi>Y</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>Y</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><mi>f</mi><mo>(</mo><mi>X</mi><mo>)</mo><mo>=</mo><mo>(</mo><msub><mi>f</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>f</mi><mi>n</mi></msub><mo>)</mo><mo>(</mo><mi>X</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Y=(Y_1,\cdots,Y_n)=f(X)=(f_1,\cdots,f_n)(X)</annotation></semantics></math></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>j</mi></msub><mo>=</mo><msub><mi>f</mi><mi>j</mi></msub><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">Y_j=f_j(X_1,\cdots,X_n)</annotation></semantics></math></span></span>.</p>
-<p>● 设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span> 为 Borel 可测函数且逆 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">f^{-1}</annotation></semantics></math></span></span> 存在，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>=</mo><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>(</mo><mi>Y</mi><mo>)</mo><mo>=</mo><mi>h</mi><mo>(</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">X=f^{-1}(Y)=h(Y)</annotation></semantics></math></span></span>，若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span></span> 的一阶偏导数存在，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span></span> 为连续型 r.v.，且其联合密度函数为</p>
+<p>重复独立抛硬币 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 次，得到样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, \cdots, X_n</annotation></semantics></math></span></span>.<br>
+则样本的联合分布为：</p>
 
 $$
-p_Y(y)=p_X(h(y))\cdot|\det(J)|, y\in Y 的值域,
+\displaystyle \mathrm{P}(X_1 = x_1, \cdots, X_n = x_n) = \prod_{i=1}^{n} \mathrm{P}(X_i = x_i),
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 为变换的 Jacobi 行列式</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>J</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>h</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo>=</mo><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>h</mi><mn>1</mn></msub></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>y</mi><mn>1</mn></msub></mrow></mfrac></mrow></mtd><mtd><mrow><mo>⋯</mo></mrow></mtd><mtd><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>h</mi><mn>1</mn></msub></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>y</mi><mi>n</mi></msub></mrow></mfrac></mrow></mtd></mtr><mtr><mtd><mrow><mo>⋯</mo></mrow></mtd><mtd><mrow><mo>⋯</mo></mrow></mtd><mtd><mrow><mo>⋯</mo></mrow></mtd></mtr><mtr><mtd><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>h</mi><mi>n</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>y</mi><mn>1</mn></msub></mrow></mfrac></mrow></mtd><mtd><mrow><mo>⋯</mo></mrow></mtd><mtd><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>h</mi><mi>n</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>y</mi><mi>n</mi></msub></mrow></mfrac></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle J=\frac{\partial h}{\partial y}=\begin{pmatrix} \frac{\partial h_1}{\partial y_1} &amp; \cdots &amp; \frac{\partial h_1}{\partial y_n} \\ \cdots &amp; \cdots &amp; \cdots \\ \frac{\partial h_n}{\partial y_1} &amp; \cdots &amp; \frac{\partial h_n}{\partial y_n} \end{pmatrix}.
-</annotation></semantics></math></span></span></span></p>
-<p>为便于使用，将和差积商的联合密度函数列表如下</p>
-<style>
-/* 给表格定义一个专门的样式，方便以后复用 */
-.physics-formula-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
-}
-.physics-formula-table th, .physics-formula-table td {
-    border: 1px solid #ccc;
-    padding: 8px;
-}
-/* 关键部分：设置每一列的宽度 */
-.physics-formula-table th:nth-child(1) { width: 15%; } /* 运算类型 */
-.physics-formula-table th:nth-child(2) { width: 20%; } /* 变换公式 */
-.physics-formula-table th:nth-child(3) { width: 50%; } /* 联合密度函数 (最宽的一列) */
-.physics-formula-table th:nth-child(4) { width: 15%; } /* 适用条件 */
-</style>
-<table class="physics-formula-table">
-  <thead>
-    <tr>
-      <th>运算类型</th>
-      <th>变换公式</th>
-      <th>联合密度函数</th>
-      <th>适用条件</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>和</strong></td>
-      <td>$Z = X + Y$</td>
-      <td>$p_Z(z) = \int_{-\infty}^{\infty} p_X(x) p_Y(z-x) dx$</td>
-      <td>X,Y相互独立</td>
-    </tr>
-    <tr>
-      <td><strong>差</strong></td>
-      <td>$Z = X - Y$</td>
-      <td>$p_Z(z) = \int_{-\infty}^{\infty} p_X(x) p_Y(x-z) dx$</td>
-      <td>X,Y相互独立</td>
-    </tr>
-    <tr>
-      <td><strong>积</strong></td>
-      <td>$Z = X \cdot Y$</td>
-      <td>$p_Z(z) = \int_{-\infty}^{\infty} \frac{1}{\lvert y \rvert} p_X(\frac{z}{y}) p_Y(y) dy$</td>
-      <td>X,Y相互独立，$y \neq 0$</td>
-    </tr>
-    <tr>
-      <td><strong>商</strong></td>
-      <td>$Z = X / Y$</td>
-      <td>$p_Z(z) = \int_{-\infty}^{\infty} {\lvert y \rvert} p_X(zy) p_Y(y) dy$</td>
-      <td>X,Y相互独立，$y \neq 0$</td>
-    </tr>
-  </tbody>
-</table>
+<p>其中每个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>∈</mo><mo>{</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">x_i \in \{0, 1\}</annotation></semantics></math></span></span>. 这就是样本来自同一分布且相互独立的具体体现.</p>
+</details>
+<h2 id="统计量与常用统计量">统计量与常用统计量</h2>
+<h3 id="统计量的定义">统计量的定义</h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, X_2, \cdots, X_n</annotation></semantics></math></span></span> 为总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的一个样本. 令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">g(X_1, X_2, \cdots, X_n)</annotation></semantics></math></span></span> 为一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 元函数.</p>
+<ul>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span> 中<strong>不含未知参数</strong>（如总体均值、方差等未知量），则称</li>
+</ul>
+
+$$
+\displaystyle g(X_1, X_2, \cdots, X_n)
+$$
+
+<p>为一个<strong>统计量</strong>.</p>
+<ul>
+<li>对应的样本值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_1, x_2, \cdots, x_n</annotation></semantics></math></span></span> 带入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span> 得到</li>
+</ul>
+
+$$
+\displaystyle g(x_1, x_2, \cdots, x_n)
+$$
+
+<p>称为该统计量的<strong>观察值</strong>.</p>
+<h3 id="常用统计量">常用统计量</h3>
+<ol>
+<li>
+<p><strong>样本均值</strong></p>
+ 
+    $$
+    \displaystyle \overline{X} = \frac{1}{n}\sum_{i=1}^{n} X_i.
+    $$
+    
+</li>
+<li>
+<p><strong>样本方差</strong></p>
+ 
+    $$
+    \displaystyle S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i - \overline{X})^2
+    = \frac{1}{n-1}\left( \sum_{i=1}^{n} X_i^2 - n\overline{X}^2 \right).
+    $$
+    
+</li>
+<li>
+<p><strong>样本标准差</strong></p>
+ 
+    $$
+    \displaystyle S = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(X_i - \overline{X})^2}.
+    $$
+    
+</li>
+<li>
+<p><strong>样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 阶矩</strong></p>
+ 
+    $\displaystyle A_k = \frac{1}{n}\sum_{i=1}^{n} X_i^k, \quad k = 1, 2, \cdots.$
+    
+</li>
+<li>
+<p><strong>样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 阶中心矩</strong></p>
+ 
+    $\displaystyle B_k = \frac{1}{n}\sum_{i=1}^{n}(X_i - \overline{X})^k, \quad k = 2, 3, \cdots.$
+    
+</li>
+</ol>
+<h3 id="统计量的观察值（由样本值得到）">统计量的观察值（由样本值得到）</h3>
+<p>将样本值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_1, \cdots, x_n</annotation></semantics></math></span></span> 带入上述公式，得到相应的<strong>数值统计量</strong>：</p>
+<ol>
+<li>
+<p><strong>样本均值的观察值</strong></p>
+ 
+    $$
+    \displaystyle \bar{x} = \frac{1}{n}\sum_{i=1}^{n} x_i.
+    $$
+    
+</li>
+<li>
+<p><strong>样本方差的观察值</strong></p>
+ 
+    $$
+    \displaystyle S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2
+    = \frac{1}{n-1}\left( \sum_{i=1}^{n} x_i^2 - n\bar{x}^2 \right).
+    $$
+    
+</li>
+<li>
+<p><strong>样本标准差的观察值</strong></p>
+ 
+    $$
+    \displaystyle s = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}(x_i - \bar{x})^2}.
+    $$
+    
+</li>
+<li>
+<p><strong>样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 阶矩的观察值</strong></p>
+ 
+    $\displaystyle a_k = \frac{1}{n}\sum_{i=1}^{n} x_i^k, \quad k = 1, 2, \cdots.$
+    
+</li>
+<li>
+<p><strong>样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 阶中心矩的观察值</strong></p>
+ 
+    $\displaystyle b_k = \frac{1}{n}\sum_{i=1}^{n}(x_i - \bar{x})^k, \quad k = 2, 3, \cdots.$
+    
+</li>
+</ol>
+<h2 id="统计量的收敛结果">统计量的收敛结果</h2>
+<p>设总体随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 阶矩存在，记为</p>
+
+$\displaystyle \mathbb{E}[X^k] = \mu_k.$
+
+<p>则样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 阶矩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">A_k</annotation></semantics></math></span></span> 的收敛性可以由大数定律给出.</p>
+<ol>
+<li>
+<p><strong>辛钦弱大数律</strong><br>
+对每个固定的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span>，有</p>
+ 
+    $\displaystyle A_k \xrightarrow{P} \mu_k.$
+    
+<p>即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">A_k</annotation></semantics></math></span></span> 依概率收敛于总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 阶矩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\mu_k</annotation></semantics></math></span></span>.</p>
+</li>
+<li>
+<p><strong>Kolmogorov 强大数律</strong></p>
+ 
+    $\displaystyle A_k \xrightarrow{a.s.} \mu_k.$
+    
+<p>即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">A_k</annotation></semantics></math></span></span> 几乎处处收敛到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\mu_k</annotation></semantics></math></span></span>.</p>
+</li>
+<li>
+<p><strong>连续映射定理</strong><br>
+设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span> 是多元连续函数，则</p>
+ 
+    $\displaystyle g(A_1, A_2, \cdots, A_k) \xrightarrow{P} g(\mu_1, \mu_2, \cdots, \mu_k).$
+    
+<p>直观理解：只要样本矩整体“贴近”总体矩，任何对它们做的连续运算，其结果也会“贴近”总体对应的真实量.</p>
+</li>
+</ol>
+<details>
+<summary>例：伯努利分布的样本均值收敛到总体均值</summary>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 服从伯努利分布，取值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span></span> 的概率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>，取值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span> 的概率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">1-p</annotation></semantics></math></span></span>. 则</p>
+
+$\displaystyle \mathbb{E}[X] = p.$
+
+<p>取样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, \cdots, X_n</annotation></semantics></math></span></span>，定义样本均值</p>
+
+$$
+\displaystyle \overline{X} = \frac{1}{n}\sum_{i=1}^{n} X_i.
+$$
+
+<p>由弱大数律，</p>
+
+$\displaystyle \overline{X} \xrightarrow{P} p,$
+
+<p>说明样本中“1”的比例会收敛到真实成功概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>. 实际计算中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\overline{X}</annotation></semantics></math></span></span> 就是对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 的自然估计.</p>
+</details>
+<h2 id="统计基本定理：实证分布与-Glivenko–Cantelli-定理">统计基本定理：实证分布与 Glivenko–Cantelli 定理</h2>
+<h3 id="实证（经验）分布的定义">实证（经验）分布的定义</h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>X</mi><mi>n</mi></msub><mo separator="true">,</mo><mi>n</mi><mo>≥</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(X_n, n \geq 1)</annotation></semantics></math></span></span> 为一列独立同分布的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span></span> 值随机变量，公共分布函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span>. 对每个固定的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">x \in \mathbb{R}</annotation></semantics></math></span></span>，定义</p>
+
+$$
+\displaystyle F_n(x)
+= \frac{1}{n} \sum_{k=1}^n Y_k(x)
+= \frac{1}{n} \sum_{k=1}^n 1_{\{X_k \leq x\}}, \quad x \in \mathbb{R},
+$$
+
+<p>称为由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, \cdots, X_n</annotation></semantics></math></span></span> 诱导出的<strong>实证（empirical）分布函数</strong>. 它统计了样本中有多少比例的观测值不超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>.</p>
+<h3 id="点态收敛与一致收敛">点态收敛与一致收敛</h3>
+<p>由 Kolmogorov 强大数律可知：对每个固定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>，当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">n \to \infty</annotation></semantics></math></span></span> 时，有</p>
+
+$$
+\displaystyle F_n(x) \to F(x)
+$$
+
+<p>在几乎处处和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>L</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">L^2</annotation></semantics></math></span></span> 意义下均成立.</p>
+<p>更强的结论是 <strong>Glivenko–Cantelli 定理</strong>：</p>
+
+$$
+\displaystyle
+\mathrm{P}\left( \forall x \in \mathbb{R}, \lim_{n \to \infty} \bigl|F_n(x, \omega) - F(x)\bigr| = 0 \right) = 1.
+$$
+
+<p>这说明：<strong>在同一个样本路径上，实证分布函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>n</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F_n(x)</annotation></semantics></math></span></span> 对所有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 同时一致收敛到真实分布函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span></span>，并且该事件的概率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span></span></strong>.</p>
+<h3 id="收敛速度：中心极限定理">收敛速度：中心极限定理</h3>
+<p>由中心极限定理可以得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>n</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F_n(x)</annotation></semantics></math></span></span> 收敛到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span></span> 的速度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mrow><mi>n</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{n}</annotation></semantics></math></span></span> 量级：</p>
+
+$$
+\displaystyle
+\sqrt{n}(F_n(x) - F(x))
+= \frac{1}{\sqrt{n}}\left( \sum_{k=1}^n Y_k(x) - n \mathbb{E}[Y_1(x)] \right)
+\xrightarrow{d} Z,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mo>∼</mo><mi>N</mi><mo>(</mo><mn>0</mn><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>(</mo><mi>x</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">Z \sim N(0, \sigma^2(x))</annotation></semantics></math></span></span>，且</p>
+
+$$
+\displaystyle \sigma^2(x) = F(x)\bigl(1 - F(x)\bigr).
+$$
+
+<h2 id="三种重要抽样分布：-chi-2、t-与-F">三种重要抽样分布：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span></h2>
+<h3 id="卡方分布-chi-2-n">卡方分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi^2(n)</annotation></semantics></math></span></span></h3>
+<ol>
+<li>
+<p><strong>定义</strong><br>
+设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, X_2, \cdots, X_n</annotation></semantics></math></span></span> 为来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">N(0, 1)</annotation></semantics></math></span></span> 的样本，则统计量</p>
+ 
+    $$
+    \displaystyle Y = X_1^2 + X_2^2 + \cdots + X_n^2 \sim \chi^2(n).
+    $$
+    
+</li>
+<li>
+<p><strong>密度函数</strong></p>
+ 
+    $$
+    \displaystyle
+    f(x) =
+    \frac{1}{2^{\frac{n}{2}} \Gamma\!\left(\frac{n}{2}\right)}
+    x^{\frac{n}{2}-1} e^{-\frac{x}{2}}, \quad x \geq 0;
+    \qquad
+    f(x) = 0, \quad x &lt; 0.
+    $$
+    
+</li>
+<li>
+<p><strong>再生性（可加性）</strong><br>
+若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mn>1</mn></msub><mo>∼</mo><msup><mi>χ</mi><mn>2</mn></msup><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">Y_1 \sim \chi^2(n_1)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mn>2</mn></msub><mo>∼</mo><msup><mi>χ</mi><mn>2</mn></msup><mo>(</mo><msub><mi>n</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">Y_2 \sim \chi^2(n_2)</annotation></semantics></math></span></span> 且独立，则</p>
+ 
+    $\displaystyle Y_1 + Y_2 \sim \chi^2(n_1 + n_2).$
+    
+</li>
+<li>
+<p><strong>期望与方差</strong></p>
+ 
+    $\displaystyle \mathbb{E}[Y] = n, \quad \mathrm{D}(Y) = 2n.$
+    
+</li>
+<li>
+<p><strong>上分位数近似公式</strong><br>
+对于上分位数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>χ</mi><mrow><mi>α</mi></mrow><mrow><mn>2</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">\chi_{\alpha}^{2}</annotation></semantics></math></span></span>，有近似</p>
+ 
+    $$
+    \displaystyle
+    \chi_{\alpha}^{2} \approx \frac{1}{2}\left(z_{\alpha} + \sqrt{2n - 1}\right)^{2},
+    $$
+    
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mrow><mi>α</mi></mrow></msub></mrow><annotation encoding="application/x-tex">z_{\alpha}</annotation></semantics></math></span></span> 为标准正态分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">N(0, 1)</annotation></semantics></math></span></span> 的上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 分位数.</p>
+</li>
+</ol>
+<details>
+<summary>例：卡方分布的构造与再生性</summary>
+<ol>
+<li>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mn>5</mn></msub></mrow><annotation encoding="application/x-tex">X_1, \cdots, X_5</annotation></semantics></math></span></span> 为来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">N(0,1)</annotation></semantics></math></span></span> 的样本，则</p>
+ 
+    $$
+    \displaystyle Y = \sum_{i=1}^{5} X_i^2 \sim \chi^2(5).
+    $$
+    
+</li>
+<li>
+<p>若另有独立样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>Y</mi><mn>7</mn></msub></mrow><annotation encoding="application/x-tex">Y_1, \cdots, Y_7</annotation></semantics></math></span></span> 也来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">N(0,1)</annotation></semantics></math></span></span>，则</p>
+ 
+    $$
+    \displaystyle Z = \sum_{i=1}^{5} X_i^2 + \sum_{j=1}^{7} Y_j^2
+    \sim \chi^2(5 + 7) = \chi^2(12).
+    $$
+    
+</li>
+</ol>
+<p>用到的正是卡方分布的再生性.</p>
+</details>
+<h3 id="学生分布-t-n">学生分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">t(n)</annotation></semantics></math></span></span></h3>
+<ol>
+<li>
+<p><strong>定义</strong><br>
+设随机变量</p>
+ 
+    $\displaystyle X \sim \chi^{2}(n), \quad Y \sim N(0, 1),$
+    
+<p>且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span></span> 独立，则</p>
+ 
+    $$
+    \displaystyle
+    T = \frac{Y}{\sqrt{X/\mathbb{E}[X]}}
+    $$
+    
+<p>服从自由度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 的<strong>学生 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 分布</strong>，记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>∼</mo><mi>t</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">T \sim t(n)</annotation></semantics></math></span></span>. 注意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">E</mi></mrow><mo>[</mo><mi>X</mi><mo>]</mo><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\mathbb{E}[X] = n</annotation></semantics></math></span></span>.</p>
+</li>
+<li>
+<p><strong>密度函数</strong></p>
+ 
+    $$
+    \displaystyle
+    f(x) =
+    \frac{\Gamma\!\left(\frac{n+1}{2}\right)}
+    {\sqrt{\pi n}\,\Gamma\!\left(\frac{n}{2}\right)}
+    \left(1 + \frac{x^{2}}{n}\right)^{-\frac{n+1}{2}},
+    \quad -\infty &lt; x &lt; \infty.
+    $$
+    
+</li>
+<li>
+<p><strong>上分位数性质</strong></p>
+ 
+    $\displaystyle t_{1-\alpha}(n) = -t_{\alpha}(n), \qquad t_{\alpha}(n) \simeq z_{\alpha} \quad (\text{自由度 } n \text{ 较大时}).$
+    
+<p>也就是说，当自由度较大时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 分布在数值上可以近似标准正态分布的分位数.</p>
+</li>
+</ol>
+<details>
+<summary>例：用 t 分布刻画标准化样本均值</summary>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, \cdots, X_n</annotation></semantics></math></span></span> 为来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu, \sigma^2)</annotation></semantics></math></span></span> 的样本（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mu, \sigma^2</annotation></semantics></math></span></span> 均未知），记</p>
+
+$$
+\displaystyle \overline{X} = \frac{1}{n}\sum_{i=1}^{n} X_i,
+\qquad
+S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i - \overline{X})^2.
+$$
+
+<p>则有</p>
+
+$$
+\displaystyle
+T = \frac{\overline{X} - \mu}{S/\sqrt{n}} \sim t(n-1),
+$$
+
+<p>这说明在未知方差的正态总体下，用样本标准差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 来标准化样本均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\overline{X}</annotation></semantics></math></span></span>，得到的统计量服从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 分布.</p>
+</details>
+<h3 id="F-分布-F-n-1-n-2"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">F(n_1, n_2)</annotation></semantics></math></span></span></h3>
+<ol>
+<li>
+<p><strong>定义</strong><br>
+若</p>
+ 
+    $\displaystyle U \sim \chi^2(n_1), \quad V \sim \chi^2(n_2),$
+    
+<p>且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span></span> 相互独立，则随机变量</p>
+ 
+    $$
+    \displaystyle F = \frac{U/n_1}{V/n_2}
+    $$
+    
+<p>服从自由度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(n_1, n_2)</annotation></semantics></math></span></span> 的 <strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 分布</strong>，记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>∼</mo><mi>F</mi><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">F \sim F(n_1, n_2)</annotation></semantics></math></span></span>.</p>
+</li>
+<li>
+<p><strong>密度函数</strong></p>
+ 
+    $$
+    \displaystyle
+    f(y)
+    = \frac{\Gamma\!\left(\frac{n_1+n_2}{2}\right)}
+    {\Gamma\!\left(\frac{n_1}{2}\right)\Gamma\!\left(\frac{n_2}{2}\right)}
+    \sqrt{\frac{(n_1 y)^{n_1}(n_2)^{n_2}}{y^2 (n_1 y + n_2)^{n_1 + n_2}}},
+    \quad y \geq 0;
+    \qquad
+    f(y) = 0, \quad y &lt; 0.
+    $$
+    
+</li>
+<li>
+<p><strong>倒数性质</strong><br>
+若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>∼</mo><mi>F</mi><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">F \sim F(n_1, n_2)</annotation></semantics></math></span></span>，则有</p>
+ 
+    $\displaystyle \frac{1}{F} \sim F(n_2, n_1).$
+    
+</li>
+</ol>
+<details>
+<summary>例：两个正态样本方差比的分布</summary>
+<p>设</p>
+
+$\displaystyle X_1, \cdots, X_{n_1} \sim N(\mu_1, \sigma^2), \quad
+Y_1, \cdots, Y_{n_2} \sim N(\mu_2, \sigma^2),$
+
+<p>且两组样本相互独立. 记样本方差分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>S</mi><mn>1</mn><mn>2</mn></msubsup><mo separator="true">,</mo><msubsup><mi>S</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">S_1^2, S_2^2</annotation></semantics></math></span></span>. 则可构造统计量</p>
+
+$$
+\displaystyle
+F = \frac{S_1^2/\sigma^2}{S_2^2/\sigma^2} = \frac{S_1^2}{S_2^2} \sim F(n_1-1, n_2-1).
+$$
+
+<p>这就是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 分布在比较两个正态总体方差时的典型应用.</p>
+</details>
+<h2 id="正态总体下样本均值与样本方差的分布">正态总体下样本均值与样本方差的分布</h2>
+<p>设</p>
+
+$\displaystyle X_1, X_2, \cdots, X_n$
+
+<p>为来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu, \sigma^2)</annotation></semantics></math></span></span> 的样本，样本均值为</p>
+
+$$
+\displaystyle \overline{X} = \frac{1}{n}\sum_{i=1}^{n} X_i.
+$$
+
+<h3 id="单个正态样本的基本结论">单个正态样本的基本结论</h3>
+<p><strong>定理 1：样本均值的分布</strong></p>
+
+$$
+\displaystyle \overline{X} \sim N\!\left(\mu, \frac{\sigma^2}{n}\right).
+$$
+
+<p>即样本均值仍然服从正态分布，其均值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span>，方差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\sigma^2/n</annotation></semantics></math></span></span>.</p>
+<p><strong>定理 2：样本方差的分布及独立性</strong></p>
+<p>样本方差</p>
+
+$$
+\displaystyle
+S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i - \overline{X})^2
+$$
+
+<p>满足：</p>
+<ol>
+<li>
+<p>卡方分布：</p>
+ 
+    $$
+    \displaystyle \frac{(n-1) S^2}{\sigma^2} \sim \chi^2(n-1).
+    $$
+    
+</li>
+<li>
+<p>独立性：样本均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo stretchy="true">‾</mo></mover></mrow><annotation encoding="application/x-tex">\overline{X}</annotation></semantics></math></span></span> 与样本方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">S^2</annotation></semantics></math></span></span> <strong>相互独立</strong>.</p>
+</li>
+</ol>
+<p>该独立性是正态样本的一个非常特殊且重要的性质，可以推广到多组独立正态样本的情形.</p>
+<p><strong>定理 3：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 统计量</strong></p>
+<p>仍假设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, \cdots, X_n</annotation></semantics></math></span></span> 来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu, \sigma^2)</annotation></semantics></math></span></span>，则统计量</p>
+
+$$
+\displaystyle
+\frac{\overline{X} - \mu}{S/\sqrt{n}} \sim t(n-1).
+$$
+
+<p>这说明在未知 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的情况下，用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 替代 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span></span> 标准化样本均值，得到的统计量服从自由度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 分布.</p>
+<details>
+<summary>例：构造正态均值的置信区间</summary>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, \cdots, X_n</annotation></semantics></math></span></span> 为来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu, \sigma^2)</annotation></semantics></math></span></span> 的样本，且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 未知，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 也未知. 利用定理 3，有</p>
+
+$$
+\displaystyle
+T = \frac{\overline{X} - \mu}{S/\sqrt{n}} \sim t(n-1).
+$$
+
+<p>给定显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>，取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">t_{\alpha/2}(n-1)</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">t(n-1)</annotation></semantics></math></span></span> 分布的双侧分位数，则</p>
+
+$$
+\displaystyle
+\mathrm{P}\left(
+- t_{\alpha/2}(n-1) \leq
+\frac{\overline{X} - \mu}{S/\sqrt{n}}
+\leq t_{\alpha/2}(n-1)
+\right) = 1 - \alpha.
+$$
+
+<p>等价地得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mi>α</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(1-\alpha)</annotation></semantics></math></span></span> 置信区间：</p>
+
+$$
+\displaystyle
+\left[
+\overline{X} - t_{\alpha/2}(n-1)\frac{S}{\sqrt{n}},\,
+\overline{X} + t_{\alpha/2}(n-1)\frac{S}{\sqrt{n}}
+\right].
+$$
+
+</details>
+<h3 id="两组正态样本的均值与方差">两组正态样本的均值与方差</h3>
+<p>设</p>
+
+$\displaystyle X_1, X_2, \cdots, X_{n_1}$
+
+<p>为来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><msub><mi>μ</mi><mn>1</mn></msub><mo separator="true">,</mo><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu_1, \sigma_1^2)</annotation></semantics></math></span></span> 的样本，</p>
+
+$\displaystyle Y_1, Y_2, \cdots, Y_{n_2}$
+
+<p>为来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><msub><mi>μ</mi><mn>2</mn></msub><mo separator="true">,</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu_2, \sigma_2^2)</annotation></semantics></math></span></span> 的样本，且两组样本相互独立. 记</p>
+
+$$
+\displaystyle
+\overline{X} = \frac{1}{n_1}\sum_{i=1}^{n_1} X_i,
+\qquad
+\overline{Y} = \frac{1}{n_2}\sum_{i=1}^{n_2} Y_i,
+$$
+
+<p>为两个样本均值；样本方差分别为</p>
+
+$$
+\displaystyle
+S_1^2 = \frac{1}{n_1 - 1}\sum_{i=1}^{n_1}(X_i - \overline{X})^2,
+\qquad
+S_2^2 = \frac{1}{n_2 - 1}\sum_{i=1}^{n_2}(Y_i - \overline{Y})^2.
+$$
+
+<p><strong>定理 4：两组样本的均值与方差关系</strong></p>
+<ol>
+<li>
+<p><strong>方差比的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 分布</strong></p>
+ 
+    $$
+    \displaystyle
+    \frac{S_1^2/S_2^2}{\sigma_1^2/\sigma_2^2} \sim F(n_1 - 1, n_2 - 1).
+    $$
+    
+</li>
+<li>
+<p><strong>方差相等情形下的两样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 分布</strong></p>
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>σ</mi><mn>1</mn></msub><mo>=</mo><msub><mi>σ</mi><mn>2</mn></msub><mo>=</mo><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma_1 = \sigma_2 = \sigma</annotation></semantics></math></span></span> 时，设</p>
+ 
+    $$
+    \displaystyle
+    S_W^2 = \frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1 + n_2 - 2},
+    $$
+    
+<p>称为<strong>合并样本方差</strong>，则有</p>
+ 
+    $$
+    \displaystyle
+    \frac{\overline{X} - \overline{Y} - (\mu_1 - \mu_2)}
+    {S_W\sqrt{\dfrac{1}{n_1} + \dfrac{1}{n_2}}}
+    \sim t(n_1 + n_2 - 2).
+    $$
+    
+<p>这是双样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 检验中常用的统计量形式.</p>
+</li>
+</ol>
+<details>
+<summary>例：比较两个正态总体均值（方差相等）</summary>
+<p>设有两组独立样本：</p>
+
+$\displaystyle X_1, \cdots, X_{n_1} \sim N(\mu_1, \sigma^2),
+\quad
+Y_1, \cdots, Y_{n_2} \sim N(\mu_2, \sigma^2),$
+
+<p>且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 未知但相同. 为了检验</p>
+
+$\displaystyle H_0: \mu_1 = \mu_2 \quad \text{对比} \quad H_1: \mu_1 \neq \mu_2,$
+
+<p>构造统计量</p>
+
+$$
+\displaystyle
+T =
+\frac{\overline{X} - \overline{Y}}
+{S_W\sqrt{\dfrac{1}{n_1} + \dfrac{1}{n_2}}},
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>S</mi><mi>W</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">S_W^2</annotation></semantics></math></span></span> 为前述合并样本方差. 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 下有</p>
+
+$\displaystyle T \sim t(n_1 + n_2 - 2),$
+
+<p>从而可以查 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 分布表完成显著性检验或构造均值差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mu_1 - \mu_2</annotation></semantics></math></span></span> 的置信区间.</p>
+</details>
 
       </div>
       <div class="post-tags-categories">
@@ -540,7 +1043,7 @@ $$
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/边际分布，条件分布，密度传递，联合密度/" target="_blank" title="边际分布，条件分布，密度传递，联合密度">https://kotokowa.github.io/physics/边际分布，条件分布，密度传递，联合密度/</a>
+    <a href="/physics/样本与抽样分布/" target="_blank" title="样本与抽样分布">https://kotokowa.github.io/physics/样本与抽样分布/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -558,45 +1061,21 @@ $$
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/physics/%E5%A4%9A%E8%87%AA%E7%94%B1%E5%BA%A6%E5%B0%8F%E6%8C%AF%E5%8A%A8/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">多自由度小振动</div>
-      </div>
-      
-      <!-- <div class="content">
-        多自由度小振动
-目的：求解体系在稳定平衡位形附近的小幅振动问题.
-工具：线性代数
-本质：两个对称阵同时对角化
-小振动矩阵
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%92%8C%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%E5%AE%9A%E4%B9%89/" class="post-nav-link">
+    <a href="/physics/%E5%8A%9B%E5%AD%A6%E5%8F%98%E5%88%86%E5%8E%9F%E7%90%86/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">随机变量的分布函数和密度函数定义</div>
+        <div class="title-text">力学变分原理</div>
       </div>
       <!-- <div class="content">
-        随机变量的分布函数和密度函数定义
-分布函数
-离散型随机变量 XXX：取值为 {xk}k∈N\{x_k\}_{k \in 
+        
       </div> -->
     </a>
   </div>
@@ -714,7 +1193,7 @@ $$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">边际分布，条件分布，密度传递，联合密度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%B9%E9%99%85%EF%BC%88%E8%BE%B9%E7%BC%98%EF%BC%89%E5%88%86%E5%B8%83"><span class="toc-text">边际（边缘）分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83"><span class="toc-text">条件分布</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E6%83%85%E5%BD%A2"><span class="toc-text">离散情形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E6%83%85%E5%BD%A2"><span class="toc-text">连续情形</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6%E7%9A%84%E4%BC%A0%E9%80%92"><span class="toc-text">概率密度的传递</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%94%E5%90%88%E5%AF%86%E5%BA%A6"><span class="toc-text">联合密度</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">样本与抽样分布</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E4%BD%93%E4%B8%8E%E9%9A%8F%E6%9C%BA%E6%A0%B7%E6%9C%AC"><span class="toc-text">总体与随机样本</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E4%BD%93%E4%B8%8E%E4%B8%AA%E4%BD%93"><span class="toc-text">总体与个体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%A0%B7%E6%9C%AC%E4%B8%8E%E6%A0%B7%E6%9C%AC%E5%80%BC"><span class="toc-text">随机样本与样本值</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E9%87%8F%E4%B8%8E%E5%B8%B8%E7%94%A8%E7%BB%9F%E8%AE%A1%E9%87%8F"><span class="toc-text">统计量与常用统计量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E9%87%8F%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">统计量的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%BB%9F%E8%AE%A1%E9%87%8F"><span class="toc-text">常用统计量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E9%87%8F%E7%9A%84%E8%A7%82%E5%AF%9F%E5%80%BC%EF%BC%88%E7%94%B1%E6%A0%B7%E6%9C%AC%E5%80%BC%E5%BE%97%E5%88%B0%EF%BC%89"><span class="toc-text">统计量的观察值（由样本值得到）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E9%87%8F%E7%9A%84%E6%94%B6%E6%95%9B%E7%BB%93%E6%9E%9C"><span class="toc-text">统计量的收敛结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E5%9F%BA%E6%9C%AC%E5%AE%9A%E7%90%86%EF%BC%9A%E5%AE%9E%E8%AF%81%E5%88%86%E5%B8%83%E4%B8%8E-Glivenko%E2%80%93Cantelli-%E5%AE%9A%E7%90%86"><span class="toc-text">统计基本定理：实证分布与 Glivenko–Cantelli 定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E8%AF%81%EF%BC%88%E7%BB%8F%E9%AA%8C%EF%BC%89%E5%88%86%E5%B8%83%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">实证（经验）分布的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E6%80%81%E6%94%B6%E6%95%9B%E4%B8%8E%E4%B8%80%E8%87%B4%E6%94%B6%E6%95%9B"><span class="toc-text">点态收敛与一致收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B6%E6%95%9B%E9%80%9F%E5%BA%A6%EF%BC%9A%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="toc-text">收敛速度：中心极限定理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E9%87%8D%E8%A6%81%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83%EF%BC%9A-chi-2%E3%80%81t-%E4%B8%8E-F"><span class="toc-text">三种重要抽样分布：χ2\chi^2χ​2​​、ttt 与 FFF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%A1%E6%96%B9%E5%88%86%E5%B8%83-chi-2-n"><span class="toc-text">卡方分布 χ2(n)\chi^2(n)χ​2​​(n)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%A6%E7%94%9F%E5%88%86%E5%B8%83-t-n"><span class="toc-text">学生分布 t(n)t(n)t(n)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#F-%E5%88%86%E5%B8%83-F-n-1-n-2"><span class="toc-text">FFF 分布 F(n1,n2)F(n_1, n_2)F(n​1​​,n​2​​)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E4%B8%8B%E6%A0%B7%E6%9C%AC%E5%9D%87%E5%80%BC%E4%B8%8E%E6%A0%B7%E6%9C%AC%E6%96%B9%E5%B7%AE%E7%9A%84%E5%88%86%E5%B8%83"><span class="toc-text">正态总体下样本均值与样本方差的分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E6%AD%A3%E6%80%81%E6%A0%B7%E6%9C%AC%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%93%E8%AE%BA"><span class="toc-text">单个正态样本的基本结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%BB%84%E6%AD%A3%E6%80%81%E6%A0%B7%E6%9C%AC%E7%9A%84%E5%9D%87%E5%80%BC%E4%B8%8E%E6%96%B9%E5%B7%AE"><span class="toc-text">两组正态样本的均值与方差</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
