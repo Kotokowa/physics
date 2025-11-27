@@ -408,16 +408,16 @@ $$
 
 <p>这里</p>
 <ul>
-<li>(q(t)) 表示广义坐标</li>
-<li>(\dot{q}(t)) 表示对时间的导数</li>
-<li>(L(q, \dot{q}, t)) 为拉格朗日量。对质点机械系统，常取</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q(t)</annotation></semantics></math></span></span> 表示广义坐标</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\dot{q}(t)</annotation></semantics></math></span></span> 表示对时间的导数</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">L(q, \dot{q}, t)</annotation></semantics></math></span></span> 为拉格朗日量。对质点机械系统，常取</li>
 </ul>
 
 $$
 \displaystyle L = T - V
 $$
 
-<p>其中 (T) 是动能，(V) 是势能。</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span> 是动能，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span></span> 是势能。</p>
 <p>直观上，可以把作用量理解为“动能减势能在整个运动过程中的累积”。在同样的起点和终点之间，真正发生的运动，会让这个累积值相比其他可能路径更“经济”。</p>
 <p>以自由落体为例，可以想象两种极端“候选”过程：</p>
 <ul>
@@ -441,11 +441,11 @@ $$
 </thead>
 <tbody>
 <tr>
-<td>函数 (f(x))、向量、矩阵等</td>
+<td>函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span></span>、向量、矩阵等</td>
 <td>数</td>
 </tr>
 <tr>
-<td>函数 (y(x))、曲线、曲面等</td>
+<td>函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span>、曲线、曲面等</td>
 <td>数（通过泛函）</td>
 </tr>
 </tbody>
@@ -462,7 +462,7 @@ $$
 \displaystyle J[y(x)] = \int_{a}^{b} \sqrt{1 + \bigl(y'(x)\bigr)^2} \, dx
 $$
 
-<p>另一个在场论中的例子是二元场 (\varphi(x, y))、(\psi(x, y)) 的作用量泛函：</p>
+<p>另一个在场论中的例子是二元场 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi(x, y)</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\psi(x, y)</annotation></semantics></math></span></span> 的作用量泛函：</p>
 
 $$
 \displaystyle S[\varphi, \psi] 
@@ -474,7 +474,7 @@ $$
 
 <hr>
 <h2 id="变分法中的典型问题：最速降线">变分法中的典型问题：最速降线</h2>
-<p>最速降线问题是变分法的经典例子：在竖直平面内，有一条光滑轨道，从点 (A) 到点 (B)。质点从静止出发，下滑到 (B) 所用时间最短的轨迹 (y = y(x)) 是什么？</p>
+<p>最速降线问题是变分法的经典例子：在竖直平面内，有一条光滑轨道，从点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 到点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>。质点从静止出发，下滑到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 所用时间最短的轨迹 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y = y(x)</annotation></semantics></math></span></span> 是什么？</p>
 <p>从动力学能量守恒可得滑动速度为</p>
 
 $$
@@ -495,17 +495,17 @@ $$
 = \int_{a}^{b} \frac{\sqrt{1 + \bigl(y'(x)\bigr)^2}}{\sqrt{2 g y(x)}} \, dx
 $$
 
-<p>这里 (A)、(B) 两端点固定。这个 (T[y]) 就是一个需要取极值的泛函。</p>
+<p>这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 两端点固定。这个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>[</mo><mi>y</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">T[y]</annotation></semantics></math></span></span> 就是一个需要取极值的泛函。</p>
 <hr>
 <h2 id="函数的微分与泛函的变分">函数的微分与泛函的变分</h2>
 <h3 id="函数的微分">函数的微分</h3>
-<p>对于一个函数 (y(x))，在邻近点 (x + \varepsilon) 上有</p>
+<p>对于一个函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span>，在邻近点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>+</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">x + \varepsilon</annotation></semantics></math></span></span> 上有</p>
 
 $$
 \displaystyle dy(x) = y(x + \varepsilon) - y(x)
 $$
 
-<p>其中 (\varepsilon) 是一个小量。</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span></span> 是一个小量。</p>
 <h3 id="泛函的变分">泛函的变分</h3>
 <p>对于一个泛函</p>
 
@@ -519,7 +519,7 @@ $$
 \displaystyle \bar{y}(x) = y(x) + \varepsilon \, \eta(x)
 $$
 
-<p>其中 (\varepsilon) 是小参数，(\eta(x)) 是任意光滑且满足端点条件的“试探函数”。</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span></span> 是小参数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>η</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\eta(x)</annotation></semantics></math></span></span> 是任意光滑且满足端点条件的“试探函数”。</p>
 <p><strong>泛函的变分</strong>定义为</p>
 
 $$
@@ -538,13 +538,13 @@ $$
 \displaystyle \delta J[y] = J\bigl[y + \delta y\bigr] - J[y]
 $$
 
-<p><strong>极值条件</strong>：若在某个 (y(x)) 附近，对任意满足边界条件的 (\delta y(x)) 都有</p>
+<p><strong>极值条件</strong>：若在某个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span> 附近，对任意满足边界条件的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\delta y(x)</annotation></semantics></math></span></span> 都有</p>
 
 $$
 \displaystyle \delta J[y] = 0
 $$
 
-<p>则称 (y(x)) 是泛函 (J) 的极值（更严格说是驻值）函数。</p>
+<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span> 是泛函 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 的极值（更严格说是驻值）函数。</p>
 <hr>
 <h2 id="变分学涉及的主要内容与应用">变分学涉及的主要内容与应用</h2>
 <p>从数学角度看，变分学与很多分支密切相关：</p>
@@ -588,7 +588,7 @@ $$
 = \varepsilon \, \eta'(x)
 $$
 
-<p>可以看出对任意函数 (f) 都有类似的规律：</p>
+<p>可以看出对任意函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span> 都有类似的规律：</p>
 
 $$
 \displaystyle \delta (df) = d(\delta f)
@@ -608,7 +608,7 @@ $$
 \displaystyle \delta J[y] = J[y + \delta y] - J[y]
 $$
 
-<p>将积分中的被积函数按 (\delta y)、(\delta y’) 在一阶展开：</p>
+<p>将积分中的被积函数按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">\delta y</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><msup><mi>y</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\delta y'</annotation></semantics></math></span></span> 在一阶展开：</p>
 
 $$
 \displaystyle \delta J[y]
@@ -657,18 +657,18 @@ $$
 \right|_{a}^{b}
 $$
 
-<p>在端点固定的情况下，(\delta y(a) = \delta y(b) = 0)，最后的边界项为零。</p>
+<p>在端点固定的情况下，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>y</mi><mo>(</mo><mi>a</mi><mo>)</mo><mo>=</mo><mi>δ</mi><mi>y</mi><mo>(</mo><mi>b</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta y(a) = \delta y(b) = 0</annotation></semantics></math></span></span>，最后的边界项为零。</p>
 <hr>
 <h2 id="变分计算的常用规则">变分计算的常用规则</h2>
 <p>对于泛函与函数的变分，常用规则可以总结如下。</p>
-<p>若 (F) 只依赖于 (y(x))，则</p>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 只依赖于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span>，则</p>
 
 $$
 \displaystyle \delta \bigl[F(y(x))\bigr]
 = \int_{a}^{b} \frac{\partial F}{\partial y} \, \delta y(x) \, dx
 $$
 
-<p>若 (F = F(x, y, y’))，则</p>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>F</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><msup><mi>y</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">F = F(x, y, y')</annotation></semantics></math></span></span>，则</p>
 
 $$
 \displaystyle \delta \int_{a}^{b} F(x, y, y') \, dx
@@ -687,7 +687,7 @@ $$
 + \frac{\partial F}{\partial y'} \, \delta y'
 $$
 
-<p>对自变量 (x) 的变分为零：</p>
+<p>对自变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 的变分为零：</p>
 
 $$
 \displaystyle \delta x = 0
@@ -723,7 +723,7 @@ $$
 \displaystyle F = y'^2 + y^2
 $$
 
-<p>对 (F) 变分：</p>
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 变分：</p>
 
 $$
 \displaystyle \delta F = 2 y' \, \delta y' + 2 y \, \delta y
@@ -757,7 +757,7 @@ $$
 = \int_{0}^{1} \bigl( 2 y - 2 y'' \bigr) \, \delta y \, dx
 $$
 
-<p>由变分法基本引理可知，当 (\delta J[y] = 0) 对任意 (\delta y) 成立时，必须有</p>
+<p>由变分法基本引理可知，当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>J</mi><mo>[</mo><mi>y</mi><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta J[y] = 0</annotation></semantics></math></span></span> 对任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">\delta y</annotation></semantics></math></span></span> 成立时，必须有</p>
 
 $$
 \displaystyle 2 y - 2 y'' = 0
@@ -769,7 +769,7 @@ $$
 \displaystyle y'' = y
 $$
 
-<p>得到一条常微分方程作为极值函数 (y(x)) 的方程。</p>
+<p>得到一条常微分方程作为极值函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span> 的方程。</p>
 <details>
 <summary>补充：利用欧拉方程直接求解</summary>
 <p>对上面的泛函</p>
@@ -807,25 +807,25 @@ $$
 <hr>
 <h2 id="变分法基本引理">变分法基本引理</h2>
 <p><strong>变分法基本引理</strong>：</p>
-<p>设 (f(x)) 为区间 ([a, b]) 上的连续函数，如果对所有满足端点条件</p>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span></span> 为区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[a, b]</annotation></semantics></math></span></span> 上的连续函数，如果对所有满足端点条件</p>
 
 $$
 \displaystyle \eta(a) = \eta(b) = 0
 $$
 
-<p>的光滑函数 (\eta(x))，都有</p>
+<p>的光滑函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>η</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\eta(x)</annotation></semantics></math></span></span>，都有</p>
 
 $$
 \displaystyle \int_{a}^{b} f(x) \, \eta(x) \, dx = 0
 $$
 
-<p>那么在整个区间 ([a, b]) 内必有</p>
+<p>那么在整个区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[a, b]</annotation></semantics></math></span></span> 内必有</p>
 
 $$
 \displaystyle f(x) = 0
 $$
 
-<p>这个引理由“任意可调的试探函数 (\eta(x))”推出“被积函数本身为零”，是变分法从“变分为零”过渡到“微分方程”的关键。</p>
+<p>这个引理由“任意可调的试探函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>η</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\eta(x)</annotation></semantics></math></span></span>”推出“被积函数本身为零”，是变分法从“变分为零”过渡到“微分方程”的关键。</p>
 <hr>
 <h2 id="欧拉–拉格朗日方程（单一函数情形）">欧拉–拉格朗日方程（单一函数情形）</h2>
 <p>再次考虑一般泛函</p>
@@ -866,7 +866,7 @@ $$
 = 0
 $$
 
-<p>由于 (\delta y(x)) 在区间内是任意的，根据变分法基本引理可得：</p>
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\delta y(x)</annotation></semantics></math></span></span> 在区间内是任意的，根据变分法基本引理可得：</p>
 
 $$
 \displaystyle \frac{\partial F}{\partial y}
@@ -879,7 +879,7 @@ $$
 <p>这就是单函数情形的<strong>欧拉–拉格朗日方程</strong>。</p>
 <details>
 <summary>例子：两点间最短路径问题</summary>
-<p>在平面内，从 ((x_1, y_1)) 到 ((x_2, y_2)) 的曲线 (y(x)) 的弧长为</p>
+<p>在平面内，从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_1, y_1)</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_2, y_2)</annotation></semantics></math></span></span> 的曲线 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span> 的弧长为</p>
 
 $$
 \displaystyle J[y]
@@ -915,7 +915,7 @@ $$
 \displaystyle \frac{y'}{\sqrt{1 + y'^2}} = C
 $$
 
-<p>其中 (C) 为常数。由此可得 (y’) 为常数，进一步得到</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 为常数。由此可得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>y</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y'</annotation></semantics></math></span></span> 为常数，进一步得到</p>
 
 $$
 \displaystyle y(x) = a x + b
@@ -933,7 +933,7 @@ $$
 \frac{\delta J}{\delta y(x)} \, \delta y(x) \, dx
 $$
 
-<p>这里的 (\dfrac{\delta J}{\delta y(x)}) 被称为<strong>泛函导数</strong>，在形式上类似于多元函数中的偏导数。</p>
+<p>这里的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>δ</mi><mi>J</mi></mrow><mrow><mi>δ</mi><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dfrac{\delta J}{\delta y(x)}</annotation></semantics></math></span></span> 被称为<strong>泛函导数</strong>，在形式上类似于多元函数中的偏导数。</p>
 <h3 id="一个简单例子">一个简单例子</h3>
 <p>考虑泛函</p>
 
@@ -941,7 +941,7 @@ $$
 \displaystyle J[y] = \int_{a}^{b} y(x)^2 \, dx
 $$
 
-<p>对 (y) 做变分：</p>
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 做变分：</p>
 
 $$
 \displaystyle \delta J[y]
@@ -955,7 +955,7 @@ $$
 \right) dx
 $$
 
-<p>在一阶近似下忽略 ((\delta y)^2) 项，得到</p>
+<p>在一阶近似下忽略 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>δ</mi><mi>y</mi><msup><mo>)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(\delta y)^2</annotation></semantics></math></span></span> 项，得到</p>
 
 $$
 \displaystyle \delta J[y]
@@ -977,7 +977,7 @@ $$
 F\bigl(y(x), y'(x)\bigr) \, dx
 $$
 
-<p>中被积函数 (F) 不显含自变量 (x)，即 (F = F(y, y’))，则有一种特别有用的“首次积分”。</p>
+<p>中被积函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 不显含自变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>F</mi><mo>(</mo><mi>y</mi><mo separator="true">,</mo><msup><mi>y</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">F = F(y, y')</annotation></semantics></math></span></span>，则有一种特别有用的“首次积分”。</p>
 <p>考虑</p>
 
 $$
@@ -1026,7 +1026,7 @@ $$
 \displaystyle F - y' \frac{\partial F}{\partial y'} = C
 $$
 
-<p>其中 (C) 为常数。这就是泛函在自变量不显含时的<strong>首次积分</strong>，在力学里常与能量守恒等物理量对应。</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 为常数。这就是泛函在自变量不显含时的<strong>首次积分</strong>，在力学里常与能量守恒等物理量对应。</p>
 <hr>
 <h2 id="最速降线的解析解：旋轮线">最速降线的解析解：旋轮线</h2>
 <p>回到最速降线问题，时间泛函可写为</p>
@@ -1044,7 +1044,7 @@ $$
 = \frac{\sqrt{1 + y'^2}}{\sqrt{y}}
 $$
 
-<p>由于 (F) 不显含 (x)，可以使用前面的首次积分。先计算</p>
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 不显含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>，可以使用前面的首次积分。先计算</p>
 
 $$
 \displaystyle \frac{\partial F}{\partial y'}
@@ -1096,7 +1096,7 @@ y(\theta) = C_1 \bigl( 1 - \cos 2 \theta \bigr)
 \end{cases}
 $$
 
-<p>这说明从 (A) 到 (B) 的最速降线是一条旋轮线轨道，而不是直线或圆弧。</p>
+<p>这说明从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 的最速降线是一条旋轮线轨道，而不是直线或圆弧。</p>
 <details>
 <summary>补充：为什么不是直线？</summary>
 <p>直线虽然是两点间的最短路径，但最速降线问题关心的是“时间最短”，而不是“距离最短”。</p>
@@ -1137,7 +1137,7 @@ $$
 \alpha = 1, 2, \cdots, n
 $$
 
-<p>每个分量的方程是彼此独立的，但通过 (F) 的形式彼此耦合。</p>
+<p>每个分量的方程是彼此独立的，但通过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 的形式彼此耦合。</p>
 <hr>
 <h2 id="数学形式与力学形式的对应关系">数学形式与力学形式的对应关系</h2>
 <p>在数学中，我们常写一个泛函</p>
@@ -1209,13 +1209,13 @@ $$
 L\bigl(q(t), \dot{q}(t), t\bigr) \, dt
 $$
 
-<p>实际运动为 (q(t))，邻近运动为 (q(t) + \delta q(t))，满足固定端点条件</p>
+<p>实际运动为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q(t)</annotation></semantics></math></span></span>，邻近运动为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>+</mo><mi>δ</mi><mi>q</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q(t) + \delta q(t)</annotation></semantics></math></span></span>，满足固定端点条件</p>
 
 $$
 \displaystyle \delta q(t_1) = \delta q(t_2) = 0
 $$
 
-<p>对 (S) 做变分，并利用与数学中同样的变分计算规则，可以得到</p>
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 做变分，并利用与数学中同样的变分计算规则，可以得到</p>
 
 $$
 \displaystyle
@@ -1232,7 +1232,7 @@ $$
 <p>这就是力学中的<strong>拉格朗日方程</strong>，它是牛顿运动定律在广义坐标下的等价表述。</p>
 <hr>
 <h2 id="首次积分与能量守恒">首次积分与能量守恒</h2>
-<p>当拉格朗日量中不显含时间 (t)，即</p>
+<p>当拉格朗日量中不显含时间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>，即</p>
 
 $$
 \displaystyle L = L\bigl(q, \dot{q}\bigr)
@@ -1265,7 +1265,7 @@ $$
 <h2 id="例子：竖直上抛运动的拉格朗日推导">例子：竖直上抛运动的拉格朗日推导</h2>
 <details>
 <summary>展开推导过程</summary>
-<p>考虑竖直方向的单自由度运动，设坐标为 (x(t))，质量为 (m)，重力加速度为 (g)。拉格朗日量取为</p>
+<p>考虑竖直方向的单自由度运动，设坐标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math></span></span>，质量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>，重力加速度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span>。拉格朗日量取为</p>
 
 $$
 \displaystyle L
@@ -1280,7 +1280,7 @@ $$
 L\bigl(x(t), \dot{x}(t), t\bigr) \, dt
 $$
 
-<p>对 (S) 做变分：</p>
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 做变分：</p>
 
 $$
 \displaystyle \delta S[x(t)]
@@ -1322,7 +1322,7 @@ $$
 \displaystyle \delta x(t_1) = \delta x(t_2) = 0
 $$
 
-<p>边界项为零。极值条件 (\delta S = 0) 给出</p>
+<p>边界项为零。极值条件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta S = 0</annotation></semantics></math></span></span> 给出</p>
 
 $$
 \displaystyle - m g - m \ddot{x} = 0
@@ -1354,8 +1354,8 @@ $$
 = \frac{\partial L}{\partial \dot{q}_{\alpha}}
 $$
 
-<p>为共轭动量，(H(p, q, t)) 为哈密顿量。</p>
-<p>将这一形式代入作用量，并对 (q_{\alpha})、(p_{\alpha}) 分别做变分，利用变分法基本引理，可以得到<strong>哈密顿正则方程</strong>：</p>
+<p>为共轭动量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(p, q, t)</annotation></semantics></math></span></span> 为哈密顿量。</p>
+<p>将这一形式代入作用量，并对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub></mrow><annotation encoding="application/x-tex">q_{\alpha}</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>α</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\alpha}</annotation></semantics></math></span></span> 分别做变分，利用变分法基本引理，可以得到<strong>哈密顿正则方程</strong>：</p>
 
 $$
 \displaystyle \dot{q}_{\alpha}
@@ -1367,7 +1367,7 @@ $$
 \alpha = 1, 2, \cdots, s
 $$
 
-<p>这给出了在相空间 ((q, p)) 中的动力学演化方式。</p>
+<p>这给出了在相空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q, p)</annotation></semantics></math></span></span> 中的动力学演化方式。</p>
 <hr>
 <h2 id="零拉格朗日量与拉格朗日量的规范等价">零拉格朗日量与拉格朗日量的规范等价</h2>
 <p>考虑一个特殊的拉格朗日量</p>
