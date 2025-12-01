@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>随机变量及其独立性 | Hexo</title>
+  <title>正则变换与哈密顿-雅可比方程 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,21 +355,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        随机变量及其独立性
+        正则变换与哈密顿-雅可比方程
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2025-10-15 |
+          <i class="fas fa-calendar"></i> Published in：2025-12-01 |
         </span>
       
 
@@ -392,110 +392,1247 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1>随机变量及其独立性</h1>
-<h3 id="随机变量">随机变量</h3>
-<p><strong>定义</strong></p>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi mathvariant="normal">Ω</mi><mo separator="true">,</mo><mrow><mi mathvariant="script">F</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">P</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">(\Omega, \mathcal{F}, \mathbf{P})</annotation></semantics></math></span></span> 为一个概率空间. 随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 是定义在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span></span> 上的实值可测函数，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>:</mo><mi mathvariant="normal">Ω</mi><mo>→</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">X: \Omega \to \mathbb{R}</annotation></semantics></math></span></span>，对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">B</mi></mrow><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{B}(\mathbb{R})</annotation></semantics></math></span></span> 中任何集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>，</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>X</mi><mo>∈</mo><mi>B</mi><mo>}</mo><mo>=</mo><mo>{</mo><mi>ω</mi><mo>∈</mo><mi mathvariant="normal">Ω</mi><mo>:</mo><mi>X</mi><mo>(</mo><mi>ω</mi><mo>)</mo><mo>∈</mo><mi>B</mi><mo>}</mo><mo>(</mo><mi>ω</mi><mo>=</mo><msup><mi>X</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>(</mo><mi>B</mi><mo>)</mo><mo>)</mo><mo>∈</mo><mrow><mi mathvariant="script">F</mi></mrow><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\{X \in B\} = \{\omega \in \Omega : X(\omega) \in B\} (\omega = X^{-1}(B)) \in \mathcal{F}.
-</annotation></semantics></math></span></span></span></p>
-<p><strong>随机变量</strong></p>
-<ul>
-<li>若随机变量仅取有限或可数个值，则称其为离散随机变量；</li>
-<li>若随机变量的取值充满数轴上的一个区间，则称其为连续随机变量；</li>
-<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, \cdots, X_n</annotation></semantics></math></span></span> 都是空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi mathvariant="normal">Ω</mi><mo separator="true">,</mo><mrow><mi mathvariant="script">F</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">P</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">(\Omega, \mathcal{F}, \mathbf{P})</annotation></semantics></math></span></span> 上的随机变量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mo>⋅</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">f(\cdot)</annotation></semantics></math></span></span> 为连续函数，则以下都是随机变量：
-<ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>+</mo><msub><mi>X</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">X_1 + X_2</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo>∧</mo><msub><mi>X</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">X_1 \wedge X_2</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">f(X_1, \cdots, X_n)</annotation></semantics></math></span></span>；</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>inf</mi><mi>n</mi></msub><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\inf_n X_n</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>sup</mi><mi>n</mi></msub><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\sup_n X_n</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mi>n</mi></msub><mi>sup</mi><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\lim_n \sup X_n</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mi>n</mi></msub><mi>inf</mi><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\lim_n \inf X_n</annotation></semantics></math></span></span>.</li>
-</ul>
-</li>
-</ul>
-<p><strong>分布测度定义</strong></p>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 为概率空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi mathvariant="normal">Ω</mi><mo separator="true">,</mo><mrow><mi mathvariant="script">F</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">P</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">(\Omega, \mathcal{F}, \mathbf{P})</annotation></semantics></math></span></span> 上的一个随机变量. 随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的分布测度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">\mu_X</annotation></semantics></math></span></span> 定义为：对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span></span> 中任何 Borel 集 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>，</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>X</mi></msub><mo>(</mo><mi>B</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mo>{</mo><mi>X</mi><mo>∈</mo><mi>B</mi><mo>}</mo><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mo>{</mo><mi>ω</mi><mo>∈</mo><mi mathvariant="normal">Ω</mi><mo>:</mo><mi>X</mi><mo>(</mo><mi>ω</mi><mo>)</mo><mo>∈</mo><mi>B</mi><mo>}</mo><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msup><mi>X</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>(</mo><mi>B</mi><mo>)</mo><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\mu_X(B) = P(\{X \in B\}) = P(\{\omega \in \Omega : X(\omega) \in B\}) = P(X^{-1}(B)).
-</annotation></semantics></math></span></span></span></p>
-<blockquote>
-<p>简单例子：抛硬币</p>
-<p>设 $\Omega = \{\text{正面}, \text{反面}\}$，$\mathcal{F} = 2^{\Omega}$，$\displaystyle P(\{\text{正面}\}) = P(\{\text{反面}\}) = \frac{1}{2}$. </p>
-<p>定义随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>:</mo><mi mathvariant="normal">Ω</mi><mo>→</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">X: \Omega \to \mathbb{R}</annotation></semantics></math></span></span> 为：</p>
+        <h1>正则变换与哈密顿-雅可比方程</h1>
+<h2 id="引言">引言</h2>
+<p>在哈密顿力学中, 广义坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">q_\alpha</annotation></semantics></math></span></span> 与广义动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">p_\alpha</annotation></semantics></math></span></span> 处于完全对称的地位, 可以进行更一般的变量变换。适当的变换往往反映或放大体系的对称性, 从而大大简化方程的求解。</p>
+<p>这一章的主线大致可以概括为三点:</p>
+<ol>
+<li>通过正则变换在相空间中重新选择坐标系。</li>
+<li>通过母函数系统化地构造正则变换。</li>
+<li>通过哈密顿-雅可比方程连接从粒子力学到波动描述的通路。</li>
+</ol>
+<p>在本笔记中重点整理正则变换与母函数, 以及一维谐振子中正则变换的具体应用, 并简单给出哈密顿-雅可比方程的标准形式。</p>
 
 $$
-X(\text{正面}) = 1, \quad X(\text{反面}) = 0
+\displaystyle H\left(q_1,\cdots,q_s,\frac{\partial S}{\partial q_1},\cdots,\frac{\partial S}{\partial q_s},t\right)
++
+\frac{\partial S}{\partial t}
+=
+0
 $$
 
-<p>验证可测性：对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mo>=</mo><mo>{</mo><mn>1</mn><mo>}</mo><mo>∈</mo><mrow><mi mathvariant="script">B</mi></mrow><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">B = \{1\} \in \mathcal{B}(\mathbb{R})</annotation></semantics></math></span></span>，</p>
+<p>上式就是哈密顿-雅可比方程, 其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 通常称为$\text{哈密顿主函数}$。在合适的变量选择下, 这可以把动力学问题转化为一阶偏微分方程的问题。</p>
+<h2 id="点变换与拉格朗日形式的不变性">点变换与拉格朗日形式的不变性</h2>
+<h3 id="拉格朗日方程与点变换">拉格朗日方程与点变换</h3>
+<p>考虑具有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span></span> 个自由度的体系, 用广义坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">q_\alpha</annotation></semantics></math></span></span> 描述。拉格朗日量写成</p>
 
 $$
-\{X \in B\} = \{\omega \in \Omega : X(\omega) = 1\} = \{\text{正面}\} \in \mathcal{F}
+\displaystyle L = L_q(q,\dot{q},t)
 $$
 
-<p>分布测度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">\mu_X</annotation></semantics></math></span></span>：</p>
-<ul>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>=</mo><mo>(</mo><msub><mi>q</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>q</mi><mi>s</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">q = (q_1,\cdots,q_s)</annotation></semantics></math></span></span>, 对应的欧拉–拉格朗日方程为</p>
+
+$$
+\displaystyle
+\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial \dot{q}_\alpha}
+-
+\frac{\partial L}{\partial q_\alpha}
+=
+0,
+\quad
+\alpha = 1,2,\cdots,s
+$$
+
+<p>进行仅涉及坐标的点变换</p>
+
+$$
+\displaystyle
+q_\alpha \mapsto Q_\alpha = Q_\alpha(q,t),
+\quad
+\alpha = 1,2,\cdots,s
+$$
+
+<p>若把新坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">Q_\alpha</annotation></semantics></math></span></span> 看作旧坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>β</mi></msub></mrow><annotation encoding="application/x-tex">q_\beta</annotation></semantics></math></span></span> 的函数, 则有链式法则</p>
+
+$$
+\displaystyle
+\dot{Q}_\alpha
+=
+\sum_{\beta=1}^s
+\frac{\partial Q_\alpha}{\partial q_\beta}\,\dot{q}_\beta
++
+\frac{\partial Q_\alpha}{\partial t}.
+$$
+
+<p>在新坐标下, 拉格朗日量可以改写为</p>
+
+$$
+\displaystyle L = L_Q(Q,\dot{Q},t),
+$$
+
+<p>欧拉–拉格朗日方程保持形式不变:</p>
+
+$$
+\displaystyle
+\frac{\mathrm{d}}{\mathrm{d}t}\frac{\partial L}{\partial \dot{Q}_\alpha}
+-
+\frac{\partial L}{\partial Q_\alpha}
+=
+0,
+\quad
+\alpha = 1,2,\cdots,s
+$$
+
+<p>这正是点变换的基本性质: 它保持拉格朗日方程的形式不变。</p>
+<p>广义动量的定义</p>
+
+$$
+\displaystyle
+p_\alpha = \frac{\partial L}{\partial \dot{q}_\alpha}
+$$
+
+<p>在点变换下转化为</p>
+
+$$
+\displaystyle
+P_\alpha = \frac{\partial L}{\partial \dot{Q}_\alpha}.
+$$
+
+<details>
+<summary>例: 直角坐标到柱坐标的点变换</summary>
+<p>考虑三维空间中质点的位置可以用直角坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y,z)</annotation></semantics></math></span></span> 或柱坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>θ</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,\theta,z)</annotation></semantics></math></span></span> 描述。变换关系为</p>
+
+$$
+\displaystyle
+x = r\cos\theta,
+\quad
+y = r\sin\theta,
+\quad
+z = z.
+$$
+
+<p>对时间求导得到速度分量</p>
+
+$$
+\displaystyle
+\dot{x} = \dot{r}\cos\theta - r\sin\theta\,\dot{\theta},
+\quad
+\dot{y} = \dot{r}\sin\theta + r\cos\theta\,\dot{\theta},
+\quad
+\dot{z} = \dot{z}.
+$$
+
+<p>自由粒子在外势 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span></span> 中的拉格朗日量在直角坐标下为</p>
+
+$$
+\displaystyle
+L
+=
+\frac{1}{2}m\left(\dot{x}^2 + \dot{y}^2 + \dot{z}^2\right)
+-
+V(x,y,z).
+$$
+
+<p>把速度用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>θ</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,\theta,z)</annotation></semantics></math></span></span> 表示并化简, 利用恒等式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>cos</mi><mn>2</mn></msup><mi>θ</mi><mo>+</mo><msup><mi>sin</mi><mn>2</mn></msup><mi>θ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\cos^2\theta + \sin^2\theta = 1</annotation></semantics></math></span></span>, 得到</p>
+
+$$
+\displaystyle
+\dot{x}^2 + \dot{y}^2
+=
+\dot{r}^2 + r^2\dot{\theta}^2,
+$$
+
+<p>于是拉格朗日量变为</p>
+
+$$
+\displaystyle
+L
+=
+\frac{1}{2}m\left(\dot{r}^2 + r^2\dot{\theta}^2 + \dot{z}^2\right)
+-
+V(r,\theta,z).
+$$
+
+<p>这说明在点变换 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo><mo>↦</mo><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>θ</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y,z)\mapsto(r,\theta,z)</annotation></semantics></math></span></span> 下, 拉格朗日形式保持不变, 只是具体的表达由直角坐标改写成了柱坐标。</p>
+</details>
+<h2 id="正则变换与哈密顿方程">正则变换与哈密顿方程</h2>
+<h3 id="哈密顿方程">哈密顿方程</h3>
+<p>在哈密顿形式中, 体系由广义坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">q_\alpha</annotation></semantics></math></span></span> 与共轭动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">p_\alpha</annotation></semantics></math></span></span> 描述, 哈密顿量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(q,p,t)</annotation></semantics></math></span></span> 给出正则方程</p>
+
+$$
+\displaystyle
+\dot{q}_\alpha = \frac{\partial H}{\partial p_\alpha},
+\quad
+\dot{p}_\alpha = -\frac{\partial H}{\partial q_\alpha},
+\quad
+\alpha = 1,2,\cdots,s.
+$$
+
+<h3 id="正则变换的定义">正则变换的定义</h3>
+<p>设进行变量变换</p>
+
+$$
+\displaystyle
+q_\alpha \mapsto Q_\alpha = Q_\alpha(q,p,t),
+\quad
+p_\alpha \mapsto P_\alpha = P_\alpha(q,p,t),
+\quad
+\alpha = 1,2,\cdots,s.
+$$
+
+<p>同时哈密顿量变为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">K(Q,P,t)</annotation></semantics></math></span></span>。如果新变量也满足一组形式完全相同的哈密顿正则方程</p>
+
+$$
+\displaystyle
+\dot{Q}_\alpha = \frac{\partial K}{\partial P_\alpha},
+\quad
+\dot{P}_\alpha = -\frac{\partial K}{\partial Q_\alpha},
+\quad
+\alpha = 1,2,\cdots,s,
+$$
+
+<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>↦</mo><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)\mapsto(Q,P)</annotation></semantics></math></span></span> 为$\text{正则变换}$。</p>
+<p>直观上, 正则变换就是在相空间中更换一套“坐标系”, 但保持哈密顿结构不变。</p>
+<h2 id="正则变换的作用量条件与母函数">正则变换的作用量条件与母函数</h2>
+<h3 id="作用量的等价条件">作用量的等价条件</h3>
+<p>对同一个力学体系, 若在不同正则变量下写出的作用量只相差一个关于时间的全导数, 则它们给出完全相同的动力学。</p>
+<p>旧变量下的拉格朗日函数 (哈密顿形式) 为</p>
+
+$$
+\displaystyle
+L_1
+=
+\sum_{\alpha=1}^s p_\alpha\dot{q}_\alpha
+-
+H(p,q,t),
+$$
+
+<p>新变量下为</p>
+
+$$
+\displaystyle
+L_2
+=
+\sum_{\alpha=1}^s P_\alpha\dot{Q}_\alpha
+-
+K(P,Q,t).
+$$
+
+<p>若存在某个函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span> 使得</p>
+
+$$
+\displaystyle
+L_1 - L_2
+=
+\frac{\mathrm{d}U}{\mathrm{d}t},
+$$
+
+<p>则两种描述给出相同的变分原理和运动方程。这一条件可写成微分形式</p>
+
+$$
+\displaystyle
+\mathrm{d}U
+=
+\sum_{\alpha=1}^s p_\alpha\,\mathrm{d}q_\alpha
+-
+\sum_{\alpha=1}^s P_\alpha\,\mathrm{d}Q_\alpha
++
+\left(K - H\right)\mathrm{d}t,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mi>U</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U = U(q,Q,t)</annotation></semantics></math></span></span> 可以看作旧新坐标的某个标量函数, 称为$\text{母函数}$ 或 $\text{生成函数}$。</p>
+<h3 id="四类母函数的定义">四类母函数的定义</h3>
+<p>通过对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span> 做不同的勒让德变换, 可以得到常用的四类母函数。</p>
+<h4 id="第一类母函数-U-1-U-1-q-Q-t">第一类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub><mo>=</mo><msub><mi>U</mi><mn>1</mn></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_1 = U_1(q,Q,t)</annotation></semantics></math></span></span></h4>
+<p>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">q,Q,t</annotation></semantics></math></span></span> 为自变量:</p>
+
+$$
+\displaystyle
+\mathrm{d}U_1
+=
+\sum_{\alpha=1}^s p_\alpha\,\mathrm{d}q_\alpha
+-
+\sum_{\alpha=1}^s P_\alpha\,\mathrm{d}Q_\alpha
++
+\left(K - H\right)\mathrm{d}t.
+$$
+
+<p>另一方面又有</p>
+
+$$
+\displaystyle
+\mathrm{d}U_1
+=
+\sum_{\alpha=1}^s
+\frac{\partial U_1}{\partial q_\alpha}\,\mathrm{d}q_\alpha
++
+\sum_{\alpha=1}^s
+\frac{\partial U_1}{\partial Q_\alpha}\,\mathrm{d}Q_\alpha
++
+\frac{\partial U_1}{\partial t}\,\mathrm{d}t.
+$$
+
+<p>比较两式, 得到正则变换关系</p>
+
+$$
+\displaystyle
+p_\alpha = \frac{\partial U_1}{\partial q_\alpha},
+\quad
+P_\alpha = -\frac{\partial U_1}{\partial Q_\alpha},
+$$
+
+<p>以及新哈密顿量</p>
+
+$$
+\displaystyle
+K
+=
+H
++
+\frac{\partial U_1}{\partial t}.
+$$
+
+<p>给定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_1(q,Q,t)</annotation></semantics></math></span></span>, 由上式可以解出新旧变量之间的关系。</p>
+<h4 id="第二类母函数-U-2-U-2-p-Q-t">第二类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>2</mn></msub><mo>=</mo><msub><mi>U</mi><mn>2</mn></msub><mo>(</mo><mi>p</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_2 = U_2(p,Q,t)</annotation></semantics></math></span></span></h4>
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">U_1</annotation></semantics></math></span></span> 作对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span></span> 的勒让德变换</p>
+
+$$
+\displaystyle
+U_2(p,Q,t)
+=
+U_1(q,Q,t)
+-
+\sum_{\alpha=1}^s p_\alpha q_\alpha,
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle
+\mathrm{d}U_2
+=
+-\sum_{\alpha=1}^s q_\alpha\,\mathrm{d}p_\alpha
+-
+\sum_{\alpha=1}^s P_\alpha\,\mathrm{d}Q_\alpha
++
+\left(K - H\right)\mathrm{d}t.
+$$
+
+<p>另一方面</p>
+
+$$
+\displaystyle
+\mathrm{d}U_2
+=
+\sum_{\alpha=1}^s
+\frac{\partial U_2}{\partial p_\alpha}\,\mathrm{d}p_\alpha
++
+\sum_{\alpha=1}^s
+\frac{\partial U_2}{\partial Q_\alpha}\,\mathrm{d}Q_\alpha
++
+\frac{\partial U_2}{\partial t}\,\mathrm{d}t.
+$$
+
+<p>比较得到</p>
+
+$$
+\displaystyle
+q_\alpha = -\frac{\partial U_2}{\partial p_\alpha},
+\quad
+P_\alpha = -\frac{\partial U_2}{\partial Q_\alpha},
+\quad
+K = H + \frac{\partial U_2}{\partial t}.
+$$
+
+<h4 id="第三类母函数-U-3-U-3-q-P-t">第三类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>3</mn></msub><mo>=</mo><msub><mi>U</mi><mn>3</mn></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_3 = U_3(q,P,t)</annotation></semantics></math></span></span></h4>
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">U_1</annotation></semantics></math></span></span> 作对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span> 的勒让德变换也可以得到第三类母函数, 更常见的形式是</p>
+
+$$
+\displaystyle
+U_3(q,P,t)
+=
+U_1(q,Q,t)
++
+\sum_{\alpha=1}^s p_\alpha q_\alpha,
+$$
+
+<p>其微分形式为</p>
+
+$$
+\displaystyle
+\mathrm{d}U_3
+=
+\sum_{\alpha=1}^s p_\alpha\,\mathrm{d}q_\alpha
++
+\sum_{\alpha=1}^s Q_\alpha\,\mathrm{d}P_\alpha
++
+\left(K - H\right)\mathrm{d}t.
+$$
+
+<p>再写成</p>
+
+$$
+\displaystyle
+\mathrm{d}U_3
+=
+\sum_{\alpha=1}^s
+\frac{\partial U_3}{\partial q_\alpha}\,\mathrm{d}q_\alpha
++
+\sum_{\alpha=1}^s
+\frac{\partial U_3}{\partial P_\alpha}\,\mathrm{d}P_\alpha
++
+\frac{\partial U_3}{\partial t}\,\mathrm{d}t,
+$$
+
+<p>比较得到</p>
+
+$$
+\displaystyle
+p_\alpha = \frac{\partial U_3}{\partial q_\alpha},
+\quad
+Q_\alpha = \frac{\partial U_3}{\partial P_\alpha},
+\quad
+K = H + \frac{\partial U_3}{\partial t}.
+$$
+
+<h4 id="第四类母函数-U-4-U-4-p-P-t">第四类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>4</mn></msub><mo>=</mo><msub><mi>U</mi><mn>4</mn></msub><mo>(</mo><mi>p</mi><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_4 = U_4(p,P,t)</annotation></semantics></math></span></span></h4>
+<p>进一步做对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span></span> 的勒让德变换, 定义</p>
+
+$$
+\displaystyle
+U_4(p,P,t)
+=
+U_3(q,P,t)
+-
+\sum_{\alpha=1}^s p_\alpha q_\alpha
+=
+U_2(p,Q,t)
++
+\sum_{\alpha=1}^s P_\alpha Q_\alpha.
+$$
+
+<p>其微分为</p>
+
+$$
+\displaystyle
+\mathrm{d}U_4
+=
+-\sum_{\alpha=1}^s q_\alpha\,\mathrm{d}p_\alpha
++
+\sum_{\alpha=1}^s Q_\alpha\,\mathrm{d}P_\alpha
++
+\left(K - H\right)\mathrm{d}t.
+$$
+
+<p>比较系数得到</p>
+
+$$
+\displaystyle
+q_\alpha = -\frac{\partial U_4}{\partial p_\alpha},
+\quad
+Q_\alpha = \frac{\partial U_4}{\partial P_\alpha},
+\quad
+K = H + \frac{\partial U_4}{\partial t}.
+$$
+
+<p>若母函数显含时间的导数为零, 即</p>
+
+$$
+\displaystyle
+\frac{\partial U}{\partial t} = 0,
+$$
+
+<p>则有</p>
+
+$$
+\displaystyle
+K = H.
+$$
+
+<p>同时母函数的量纲与动作量一致:</p>
+
+$$
+\displaystyle
+[U] = [H]\,[t] = [S] = [p_\alpha q_\alpha].
+$$
+
+<h2 id="常见正则变换的母函数表示">常见正则变换的母函数表示</h2>
+<p>本节通过若干例子说明上述四类母函数的具体用法。</p>
+<details>
+<summary>例: 恒等变换</summary>
+<p>选择第三类母函数</p>
+
+$$
+\displaystyle
+U_3(q,P,t)
+=
+\sum_{\beta=1}^s q_\beta P_\beta.
+$$
+
+<p>由定义有</p>
+
+$$
+\displaystyle
+p_\alpha
+=
+\frac{\partial U_3}{\partial q_\alpha}
+=
+P_\alpha,
+\quad
+Q_\alpha
+=
+\frac{\partial U_3}{\partial P_\alpha}
+=
+q_\alpha.
+$$
+
+<p>并且</p>
+
+$$
+\displaystyle
+K
+=
+H
++
+\frac{\partial U_3}{\partial t}
+=
+H,
+$$
+
+<p>这就是平凡的恒等变换。</p>
+<p>同样可以用第二类母函数</p>
+
+$$
+\displaystyle
+U_2(p,Q,t)
+=
+-
+\sum_{\beta=1}^s p_\beta Q_\beta
+$$
+
+<p>来表示, 这时有</p>
+
+$$
+\displaystyle
+q_\alpha
+=
+-
+\frac{\partial U_2}{\partial p_\alpha}
+=
+Q_\alpha,
+\quad
+P_\alpha
+=
+-\frac{\partial U_2}{\partial Q_\alpha}
+=
+p_\alpha,
+\quad
+K = H.
+$$
+
+</details>
+<details>
+<summary>例: 坐标与动量的平移</summary>
+<p>考虑把坐标整体平移 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">a_\alpha</annotation></semantics></math></span></span>, 动量整体平移 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>b</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">b_\alpha</annotation></semantics></math></span></span>, 选取第三类母函数</p>
+
+$$
+\displaystyle
+U_3(q,P,t)
+=
+\sum_{\beta=1}^s
+\left(
+q_\beta P_\beta
++
+a_\beta P_\beta
+-
+b_\beta q_\beta
+\right).
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle
+p_\alpha
+=
+\frac{\partial U_3}{\partial q_\alpha}
+=
+P_\alpha - b_\alpha,
+\quad
+Q_\alpha
+=
+\frac{\partial U_3}{\partial P_\alpha}
+=
+q_\alpha + a_\alpha.
+$$
+
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>α</mi></msub><mo separator="true">,</mo><msub><mi>b</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">a_\alpha,b_\alpha</annotation></semantics></math></span></span> 不显含时间, 则</p>
+
+$$
+\displaystyle
+K
+=
+H + \frac{\partial U_3}{\partial t}
+=
+H,
+$$
+
+<p>即平移变换保持哈密顿量的形式。</p>
+</details>
+<details>
+<summary>例: 对偶变换 (坐标与动量互换)</summary>
+<p>取第一类母函数</p>
+
+$$
+\displaystyle
+U_1(q,Q,t)
+=
+\sum_{\beta=1}^s q_\beta Q_\beta.
+$$
+
+<p>由定义得到</p>
+
+$$
+\displaystyle
+p_\alpha
+=
+\frac{\partial U_1}{\partial q_\alpha}
+=
+Q_\alpha,
+\quad
+P_\alpha
+=
+-
+\frac{\partial U_1}{\partial Q_\alpha}
+=
+-
+q_\alpha.
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle
+Q_\alpha = p_\alpha,
+\quad
+P_\alpha = -q_\alpha,
+$$
+
+<p>也就是坐标与动量在相空间中的互换, 同时</p>
+
+$$
+\displaystyle
+K
+=
+H
++
+\frac{\partial U_1}{\partial t}
+=
+H.
+$$
+
+</details>
+<details>
+<summary>例: 点变换的正则形式</summary>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>β</mi></msub><mo>=</mo><msub><mi>Q</mi><mi>β</mi></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Q_\beta = Q_\beta(q,t)</annotation></semantics></math></span></span> 给出一组点变换。选取第三类母函数</p>
+
+$$
+\displaystyle
+U_3(q,P,t)
+=
+\sum_{\beta=1}^s Q_\beta(q,t)\,P_\beta.
+$$
+
+<p>由此得到</p>
+
+$$
+\displaystyle
+Q_\alpha
+=
+\frac{\partial U_3}{\partial P_\alpha}
+=
+Q_\alpha(q,t),
+$$
+
+<p>以及</p>
+
+$$
+\displaystyle
+p_\alpha
+=
+\frac{\partial U_3}{\partial q_\alpha}
+=
+\sum_{\beta=1}^s
+P_\beta
+\frac{\partial Q_\beta}{\partial q_\alpha}.
+$$
+
+<p>新哈密顿量为</p>
+
+$$
+\displaystyle
+K
+=
+H
++
+\frac{\partial U_3}{\partial t}
+=
+H
++
+\sum_{\beta=1}^s
+P_\beta
+\frac{\partial Q_\beta}{\partial t}.
+$$
+
+<p>这与点变换从拉格朗日形式出发得到的结果完全一致。</p>
+</details>
+<h2 id="一维谐振子的正则变换解法">一维谐振子的正则变换解法</h2>
+<p>考虑质量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>, 角频率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span> 的一维谐振子, 其哈密顿量为</p>
+
+$$
+\displaystyle
+H(q,p)
+=
+\frac{p^2}{2m}
++
+\frac{1}{2}m\omega^2 q^2.
+$$
+
+<p>目标是通过正则变换把它化为只含新动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 的形式</p>
+
+$$
+\displaystyle
+K(Q,P)
+=
+\omega P,
+$$
+
+<p>这样 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 将是常数, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span> 只做匀速演化, 求解大为简化。</p>
+<h3 id="变换的构造思路">变换的构造思路</h3>
+<p>希望新变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 满足</p>
+
+$$
+\displaystyle
+\frac{\partial K}{\partial Q} = 0,
+\quad
+\dot{P} = 0,
+$$
+
+<p>即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 为守恒量, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span> 为随时间线性增长的角变量。设构造第一类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_1(q,Q,t)</annotation></semantics></math></span></span>, 满足</p>
+
+$$
+\displaystyle
+p = \frac{\partial U_1}{\partial q},
+\quad
+P = -\frac{\partial U_1}{\partial Q},
+\quad
+K
+=
+H
++
+\frac{\partial U_1}{\partial t}.
+$$
+
+<p>为使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span></span> 不含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span>, 可以先从几何上猜测一个把椭圆轨道映射为圆的变换。谐振子在相空间中的轨道是椭圆</p>
+
+$$
+\displaystyle
+\frac{p^2}{2m} + \frac{1}{2}m\omega^2 q^2 = E.
+$$
+
+<p>设引入极坐标形式</p>
+
+$$
+\displaystyle
+q
+=
+\frac{f(P)}{m\omega}\cos Q,
+\quad
+p
+=
+-\,f(P)\sin Q,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(P)</annotation></semantics></math></span></span> 只依赖于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span>, 用来调节振幅。代入哈密顿量</p>
+
+$$
+\displaystyle
+H
+=
+\frac{p^2}{2m}
++
+\frac{1}{2}m\omega^2 q^2
+=
+\frac{f(P)^2}{2m}\sin^2 Q
++
+\frac{1}{2}m\omega^2
+\frac{f(P)^2}{m^2\omega^2}\cos^2 Q
+=
+\frac{f(P)^2}{2m},
+$$
+
+<p>果然不含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span>, 于是可以取</p>
+
+$$
+\displaystyle
+K(P)
+=
+\frac{f(P)^2}{2m}.
+$$
+
+<p>将来只需把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(P)</annotation></semantics></math></span></span> 选成线性的, 就可以把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span></span> 直接写成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mi>P</mi></mrow><annotation encoding="application/x-tex">\omega P</annotation></semantics></math></span></span> 的形式。</p>
+<h3 id="由母函数-U-1-q-Q-求出变换">由母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_1(q,Q)</annotation></semantics></math></span></span> 求出变换</h3>
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span></span> 不显含时间, 可以选取与时间无关的母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_1(q,Q)</annotation></semantics></math></span></span>。由定义</p>
+
+$$
+\displaystyle
+p
+=
+\frac{\partial U_1}{\partial q}.
+$$
+
+<p>另一方面由几何构造得</p>
+
+$$
+\displaystyle
+p
+=
+-\,m\omega q\tan Q.
+$$
+
+<p>比较可得</p>
+
+$$
+\displaystyle
+\frac{\partial U_1}{\partial q}
+=
+-\,m\omega q\tan Q
+\implies
+U_1(q,Q)
+=
+-\frac{1}{2}m\omega q^2\tan Q
++
+C(Q),
+$$
+
+<p>其中关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span> 的函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>(</mo><mi>Q</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">C(Q)</annotation></semantics></math></span></span> 在后续不会影响动量变换, 可以省略, 于是取</p>
+
+$$
+\displaystyle
+U_1(q,Q)
+=
+-\frac{1}{2}m\omega q^2\tan Q.
+$$
+
+<p>由</p>
+
+$$
+\displaystyle
+P
+=
+-
+\frac{\partial U_1}{\partial Q}
+$$
+
+<p>得到</p>
+
+$$
+\displaystyle
+P
+=
+-\left(
+-\frac{1}{2}m\omega q^2\sec^2 Q
+\right)
+=
+\frac{m\omega q^2}{2\cos^2 Q}.
+$$
+
+<p>解出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo separator="true">,</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">q,p</annotation></semantics></math></span></span> 关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 的表示:</p>
+
+$$
+\displaystyle
+q
+=
+\sqrt{\frac{2P}{m\omega}}\cos Q,
+\quad
+p
+=
+-\,\sqrt{2m\omega P}\,\sin Q.
+$$
+
+<p>代入哈密顿量</p>
+
+$$
+\displaystyle
+K(P)
+=
+H
+=
+\frac{p^2}{2m}
++
+\frac{1}{2}m\omega^2 q^2
+=
+\omega P.
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle
+P
+=
+\frac{E}{\omega}
+=
+\text{常数},
+\quad
+\dot{Q}
+=
+\frac{\partial K}{\partial P}
+=
+\omega
+\implies
+Q
+=
+\omega t + \varphi.
+$$
+
+<p>恢复到原变量, 得到谐振子的标准解</p>
+
+$$
+\displaystyle
+q(t)
+=
+\sqrt{\frac{2E}{m\omega^2}}
+\cos(\omega t + \varphi),
+\quad
+p(t)
+=
+-\sqrt{2mE}
+\sin(\omega t + \varphi).
+$$
+
+<p>这就是把一维谐振子的动力学通过正则变换化为简单匀速角变量的过程。</p>
+
+<h2 id="正则变换的几何图像与泊松括号">正则变换的几何图像与泊松括号</h2>
+<p>从几何上看, 正则变换是保持辛结构的相空间同胚, 具有如下等价刻画:</p>
+<ol>
+<li>保持基本泊松括号结构, 即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msub><mi>Q</mi><mi>α</mi></msub><mo separator="true">,</mo><msub><mi>Q</mi><mi>β</mi></msub><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">[Q_\alpha,Q_\beta]=0</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msub><mi>P</mi><mi>α</mi></msub><mo separator="true">,</mo><msub><mi>P</mi><mi>β</mi></msub><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">[P_\alpha,P_\beta]=0</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msub><mi>Q</mi><mi>α</mi></msub><mo separator="true">,</mo><msub><mi>P</mi><mi>β</mi></msub><mo>]</mo><mo>=</mo><msub><mi>δ</mi><mrow><mi>α</mi><mi>β</mi></mrow></msub></mrow><annotation encoding="application/x-tex">[Q_\alpha,P_\beta]=\delta_{\alpha\beta}</annotation></semantics></math></span></span>。</li>
+<li>对应变换的雅可比矩阵具有单位行列式, 体元保持不变。</li>
+<li>相轨道的面积 (二维情形下) 或辛体积保持不变, 类似不可压缩流体。</li>
+</ol>
+<details>
+<summary>例: 一个具体的正则变换</summary>
+<p>在二维相空间中, 给出变换</p>
+
+$$
+\displaystyle
+Q
+=
+\ln\left(
+\frac{\sin p}{q}
+\right),
+\quad
+P
+=
+q\cot p.
+$$
+
+<p>计算泊松括号</p>
+
+$$
+\displaystyle
+[Q,P]
+=
+\frac{\partial Q}{\partial q}
+\frac{\partial P}{\partial p}
+-
+\frac{\partial Q}{\partial p}
+\frac{\partial P}{\partial q}.
+$$
+
+<p>逐项计算</p>
+
+$$
+\displaystyle
+\frac{\partial Q}{{\partial q}}
+=
+\frac{\partial}{\partial q}
+\ln\left(
+\frac{\sin p}{q}
+\right)
+=
+-\frac{1}{q},
+$$
+
+
+$$
+\displaystyle
+\frac{\partial Q}{\partial p}
+=
+\frac{\partial}{\partial p}
+\ln\left(
+\frac{\sin p}{q}
+\right)
+=
+\cot p,
+$$
+
+
+$$
+\displaystyle
+\frac{\partial P}{\partial p}
+=
+\frac{\partial}{\partial p}
+\left(
+q\cot p
+\right)
+=
+-q\csc^2 p,
+\quad
+\frac{\partial P}{\partial q}
+=
+\cot p.
+$$
+
+<p>代入泊松括号</p>
+
+$$
+\displaystyle
+[Q,P]
+=
+\left(-\frac{1}{q}\right)\left(-q\csc^2 p\right)
+-
+\cot p\cdot\cot p
+=
+\csc^2 p - \cot^2 p
+=
+1.
+$$
+
+<p>同时容易验证</p>
+
+$$
+\displaystyle
+[Q,Q] = 0,
+\quad
+[P,P] = 0,
+$$
+
+<p>因此该变换是正则变换。几何上可以把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)</annotation></semantics></math></span></span> 平面上的网格映射成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 平面上弯曲的网格, 但相面积保持不变。</p>
+</details>
+<h2 id="热力学中的四类“母函数”-特性函数">热力学中的四类“母函数” (特性函数)</h2>
+<p>在热力学中, 通过对状态函数做勒让德变换得到的若干特性函数, 形式上与哈密顿力学中的四类母函数高度相似。</p>
+<h3 id="四个基本热力学势及其微分形式">四个基本热力学势及其微分形式</h3>
+<ol>
 <li>
-$\displaystyle \mu_X(\{0\}) = P(\{X = 0\}) = P(\{\text{反面}\}) = \frac{1}{2}$
+<p>内能函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mi>U</mi><mo>(</mo><mi>S</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U = U(S,V)</annotation></semantics></math></span></span></p>
+
+   $$
+   \displaystyle
+   \mathrm{d}U
+   =
+   T\,\mathrm{d}S
+   -
+   p\,\mathrm{d}V
+   $$
+   
+<p>由此得到</p>
+
+   $$
+   \displaystyle
+   T
+   =
+   \frac{\partial U}{\partial S},
+   \quad
+   p
+   =
+   -\frac{\partial U}{\partial V}.
+   $$
+   
 </li>
 <li>
-$\displaystyle \mu_X(\{1\}) = P(\{X = 1\}) = P(\{\text{正面}\}) = \frac{1}{2}$
+<p>自由能函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>F</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo><mo>=</mo><mi>U</mi><mo>−</mo><mi>T</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">F = F(T,V) = U - T S</annotation></semantics></math></span></span></p>
+
+   $$
+   \displaystyle
+   \mathrm{d}F
+   =
+   -S\,\mathrm{d}T
+   -
+   p\,\mathrm{d}V
+   $$
+   
+<p>因此</p>
+
+   $$
+   \displaystyle
+   S
+   =
+   -\frac{\partial F}{\partial T},
+   \quad
+   p
+   =
+   -\frac{\partial F}{\partial V}.
+   $$
+   
 </li>
 <li>
-$\mu_X(\mathbb{R}) = P(\Omega) = 1$
+<p>焓函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>=</mo><mi>H</mi><mo>(</mo><mi>S</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mi>U</mi><mo>+</mo><mi>p</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">H = H(S,p) = U + pV</annotation></semantics></math></span></span></p>
+
+   $$
+   \displaystyle
+   \mathrm{d}H
+   =
+   T\,\mathrm{d}S
+   +
+   V\,\mathrm{d}p
+   $$
+   
+<p>于是</p>
+
+   $$
+   \displaystyle
+   T
+   =
+   \frac{\partial H}{\partial S},
+   \quad
+   V
+   =
+   \frac{\partial H}{\partial p}.
+   $$
+   
 </li>
-</ul>
-<p>这个例子中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 是离散随机变量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">\mu_X</annotation></semantics></math></span></span> 是一个概率测度，描述了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 取各个值的概率.</p>
-</blockquote>
-<h3 id="随机变量的独立性">随机变量的独立性</h3>
-<h4 id="定义">定义</h4>
-<p>2-维随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span> 联合分布函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x,y)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo separator="true">,</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X,Y</annotation></semantics></math></span></span> 的边缘分布函数分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo separator="true">,</mo><msub><mi>F</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F_X(x), F_Y(y)</annotation></semantics></math></span></span>，若对于所有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math></span></span> 有</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo separator="true">,</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo>)</mo><mi>P</mi><mo>(</mo><mi>Y</mi><mo>≤</mo><mi>y</mi><mo>)</mo><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">P(X \leq x, Y \leq y) = P(X \leq x)P(Y \leq y),
-</annotation></semantics></math></span></span></span></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mo>=</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><msub><mi>F</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">F(x,y) = F_X(x)F_Y(y),
-</annotation></semantics></math></span></span></span></p>
-<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo separator="true">,</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X,Y</annotation></semantics></math></span></span> 相互独立.</p>
-<h4 id="X-与-Y-相互独立的充要条件"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Y</mi></mrow><annotation encoding="application/x-tex">Y</annotation></semantics></math></span></span> 相互独立的充要条件</h4>
-<ul>
 <li>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>X</mi><mo separator="true">,</mo><mi>Y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(X,Y)</annotation></semantics></math></span></span> 为离散型随机变量，对于所有可能取值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_i,y_j)</annotation></semantics></math></span></span>，</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo separator="true">,</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>i</mi></msub><mo>)</mo><mi>P</mi><mo>(</mo><mi>Y</mi><mo>=</mo><msub><mi>y</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">P(X = x_i, Y = y_j) = P(X = x_i)P(Y = y_j)
-</annotation></semantics></math></span></span></span></p>
+<p>自由焓函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mo>=</mo><mi>G</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mi>H</mi><mo>−</mo><mi>T</mi><mi>S</mi><mo>=</mo><mi>F</mi><mo>+</mo><mi>p</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">G = G(T,p) = H - T S = F + pV</annotation></semantics></math></span></span></p>
+
+   $$
+   \displaystyle
+   \mathrm{d}G
+   =
+   -S\,\mathrm{d}T
+   +
+   V\,\mathrm{d}p
+   $$
+   
+<p>从而</p>
+
+   $$
+   \displaystyle
+   S
+   =
+   -\frac{\partial G}{\partial T},
+   \quad
+   V
+   =
+   \frac{\partial G}{\partial p}.
+   $$
+   
+</li>
+</ol>
+<p>可以看出, 不同热力学势之间通过对变量的勒让德变换相互联系, 与母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>U</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>U</mi><mn>3</mn></msub><mo separator="true">,</mo><msub><mi>U</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">U_1,U_2,U_3,U_4</annotation></semantics></math></span></span> 之间的关系完全类似。</p>
+<h2 id="从拉格朗日到哈密顿-点变换的验证">从拉格朗日到哈密顿: 点变换的验证</h2>
+<p>最后从拉格朗日力学的角度验证: 由点变换 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>α</mi></msub><mo>↦</mo><msub><mi>Q</mi><mi>α</mi></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q_\alpha\mapsto Q_\alpha(q,t)</annotation></semantics></math></span></span> 得到的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 确实给出一组正则变量, 新哈密顿量为</p>
+
+$$
+\displaystyle
+K
+=
+H
++
+\sum_{\alpha=1}^s
+P_\alpha
+\frac{\partial Q_\alpha}{\partial t}.
+$$
+
+<details>
+<summary>推导思路 (略去繁琐代数)</summary>
+<ol>
+<li>
+<p>点变换</p>
+
+   $$
+   \displaystyle
+   q_\alpha \mapsto Q_\alpha(q,t)
+   $$
+   
+<p>给出坐标之间的关系。通过链式法则可以写出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>Q</mi></mrow><mo>˙</mo></mover><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">\dot{Q}_\alpha</annotation></semantics></math></span></span> 关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mi>β</mi></msub></mrow><annotation encoding="application/x-tex">\dot{q}_\beta</annotation></semantics></math></span></span> 的线性关系, 反过来亦然。</p>
 </li>
 <li>
-<p>连续型随机变量：联合密度函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p(x,y)</annotation></semantics></math></span></span>，</p>
-<ul>
-<li>边缘密度函数满足：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo><mo>=</mo><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p(x,y) = p_X(x)p_Y(y)</annotation></semantics></math></span></span>；</li>
-<li>条件密度函数满足：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>X</mi><mi mathvariant="normal">∣</mi><mi>Y</mi></mrow></msub><mo>(</mo><mi>x</mi><mi mathvariant="normal">∣</mi><mi>y</mi><mo>)</mo><mo>=</mo><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_{X|Y}(x|y) = p_X(x)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>Y</mi><mi mathvariant="normal">∣</mi><mi>X</mi></mrow></msub><mo>(</mo><mi>y</mi><mi mathvariant="normal">∣</mi><mi>x</mi><mo>)</mo><mo>=</mo><msub><mi>p</mi><mi>Y</mi></msub><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_{Y|X}(y|x) = p_Y(y)</annotation></semantics></math></span></span>.</li>
-</ul>
+<p>拉格朗日量在两套坐标下可以视为同一个函数</p>
+
+   $$
+   \displaystyle
+   L(q,\dot{q},t) = L(Q,\dot{Q},t).
+   $$
+   
 </li>
-</ul>
-<h4 id="多个随机变量的独立性">多个随机变量的独立性</h4>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, X_2, \cdots, X_n</annotation></semantics></math></span></span> 为同一概率空间中的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span></span>-随机变量，称其相互独立，</p>
-<ul>
-<li>若对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow><mi mathvariant="double-struck">R</mi></mrow><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">\mathbb{R}^1</annotation></semantics></math></span></span> 中任意 Borel 集 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>B</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>B</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">B_1, B_2, \cdots, B_n</annotation></semantics></math></span></span>，事件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>ω</mi><mo>:</mo><msub><mi>X</mi><mi>i</mi></msub><mo>(</mo><mi>ω</mi><mo>)</mo><mo>∈</mo><msub><mi>B</mi><mi>i</mi></msub><mo>}</mo><mtext>&nbsp;</mtext><mo>(</mo><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\{\omega : X_i(\omega) \in B_i\} \ (i = 1, 2, \cdots, n)</annotation></semantics></math></span></span> 是相互独立的，即</li>
-</ul>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mrow><mo fence="true">{</mo><msubsup><mo>⋂</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mo>(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>∈</mo><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo><mo fence="true">}</mo></mrow><mo>=</mo><msubsup><mo>∏</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mi>P</mi><mo>(</mo><msub><mi>X</mi><mi>i</mi></msub><mo>∈</mo><msub><mi>B</mi><mi>i</mi></msub><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P\left\{\bigcap_{i=1}^n (X_i \in B_i)\right\} = \prod_{i=1}^n P(X_i \in B_i).
-</annotation></semantics></math></span></span></span></p>
-<ul>
-<li>若对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi><msub><mi>x</mi><mi>i</mi></msub><mo>∈</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo separator="true">,</mo><mtext>&nbsp;</mtext><mn>1</mn><mo>≤</mo><mi>i</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\forall x_i \in \mathbb{R}, \ 1 \leq i \leq n</annotation></semantics></math></span></span>，</li>
-</ul>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo>≤</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>≤</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo>≤</mo><msub><mi>x</mi><mn>1</mn></msub><mo>)</mo><mo>⋯</mo><mi>P</mi><mo>(</mo><msub><mi>X</mi><mi>n</mi></msub><mo>≤</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">P(X_1 \leq x_1, \cdots, X_n \leq x_n) = P(X_1 \leq x_1) \cdots P(X_n \leq x_n).
-</annotation></semantics></math></span></span></span></p>
-<ul>
 <li>
-<p>联合分布为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x_1, \cdots, x_n)</annotation></semantics></math></span></span>，联合密度函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">p(x_1, \cdots, x_n)</annotation></semantics></math></span></span>，</p>
-<ul>
-<li>联合分布函数满足：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><msub><mi>F</mi><mrow><msub><mi>X</mi><mn>1</mn></msub></mrow></msub><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>)</mo><mo>⋯</mo><msub><mi>F</mi><mrow><msub><mi>X</mi><mi>n</mi></msub></mrow></msub><mo>(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x_1, \cdots, x_n) = F_{X_1}(x_1) \cdots F_{X_n}(x_n)</annotation></semantics></math></span></span>.</li>
-<li>联合密度函数满足：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><msub><mi>p</mi><mrow><msub><mi>X</mi><mn>1</mn></msub></mrow></msub><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>)</mo><mo>⋯</mo><msub><mi>p</mi><mrow><msub><mi>X</mi><mi>n</mi></msub></mrow></msub><mo>(</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">p(x_1, \cdots, x_n) = p_{X_1}(x_1) \cdots p_{X_n}(x_n)</annotation></semantics></math></span></span>.</li>
-</ul>
+<p>定义新广义动量</p>
+
+   $$
+   \displaystyle
+   P_\alpha
+   =
+   \frac{\partial L}{\partial \dot{Q}_\alpha}
+   =
+   \sum_{\beta=1}^s
+   \frac{\partial L}{\partial \dot{q}_\beta}
+   \frac{\partial \dot{q}_\beta}{\partial \dot{Q}_\alpha}
+   =
+   \sum_{\beta=1}^s
+   p_\beta
+   \frac{\partial \dot{q}_\beta}{\partial \dot{Q}_\alpha}.
+   $$
+   
 </li>
-</ul>
-<h4 id="定理">定理</h4>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(X_1, \cdots, X_n)</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>Y</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>Y</mi><mi>m</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(Y_1, \cdots, Y_m)</annotation></semantics></math></span></span> 相互独立，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">\forall i, j</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">X_i</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">Y_j</annotation></semantics></math></span></span> 独立，若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo separator="true">,</mo><mi>g</mi></mrow><annotation encoding="application/x-tex">h, g</annotation></semantics></math></span></span> 为连续函数，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">h(X_1, \cdots, X_n)</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><msub><mi>Y</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>Y</mi><mi>m</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">g(Y_1, \cdots, Y_m)</annotation></semantics></math></span></span> 相互独立.</p>
+<li>
+<p>由哈密顿量的定义</p>
+
+   $$
+   \displaystyle
+   H
+   =
+   \sum_{\alpha=1}^s
+   p_\alpha\dot{q}_\alpha
+   -
+   L,
+   \quad
+   K
+   =
+   \sum_{\alpha=1}^s
+   P_\alpha\dot{Q}_\alpha
+   -
+   L,
+   $$
+   
+<p>利用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>Q</mi></mrow><mo>˙</mo></mover><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">\dot{Q}_\alpha</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mi>β</mi></msub></mrow><annotation encoding="application/x-tex">\dot{q}_\beta</annotation></semantics></math></span></span> 的线性关系整理, 可得</p>
+
+   $$
+   \displaystyle
+   K
+   =
+   H
+   +
+   \sum_{\alpha=1}^s
+   P_\alpha
+   \frac{\partial Q_\alpha}{\partial t}.
+   $$
+   
+</li>
+<li>
+<p>与使用第三类母函数</p>
+
+   $$
+   \displaystyle
+   U_3(q,P,t)
+   =
+   \sum_{\beta=1}^s
+   Q_\beta(q,t)\,P_\beta
+   $$
+   
+<p>推导出的结果一致, 说明点变换在哈密顿形式中确实对应某个正则变换。</p>
+</li>
+</ol>
+<p>这一推导说明: 只要从拉格朗日形式的点变换出发定义新广义动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mi>α</mi></msub><mo>=</mo><mi mathvariant="normal">∂</mi><mi>L</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">∂</mi><msub><mover accent="true"><mrow><mi>Q</mi></mrow><mo>˙</mo></mover><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">P_\alpha = \partial L/\partial\dot{Q}_\alpha</annotation></semantics></math></span></span>, 那么所得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 必是正则变量。</p>
+</details>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/physics/tags/%E6%A6%82%E7%BB%9F/" class="">
-              概统
+            <a href="/physics/tags/%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6/" class="">
+              经典力学
             </a>
           
         </div>
@@ -509,7 +1646,7 @@ $\mu_X(\mathbb{R}) = P(\Omega) = 1$
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/随机变量及其独立性/" target="_blank" title="随机变量及其独立性">https://kotokowa.github.io/physics/随机变量及其独立性/</a>
+    <a href="/physics/正则变换与哈密顿-雅可比方程/" target="_blank" title="正则变换与哈密顿-雅可比方程">https://kotokowa.github.io/physics/正则变换与哈密顿-雅可比方程/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -527,44 +1664,26 @@ $\mu_X(\mathbb{R}) = P(\Omega) = 1$
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/physics/%E5%85%B1%E8%BD%B4%E7%90%83%E9%9D%A2%E7%9A%84%E5%9F%BA%E7%82%B9/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">共轴球面的基点</div>
-      </div>
-      
-      <!-- <div class="content">
-        共轴球面的基点
-主要包括：主焦点，主点，节点.
-1. 主点与主面
-任何复杂的共轴球面系统，在近轴区域内，都可以等效为一个
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/%E7%9F%A2%E9%87%8F%E8%AE%A1%E7%AE%97/" class="post-nav-link">
+    <a href="/physics/%E6%A0%B7%E6%9C%AC%E4%B8%8E%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">矢量运算</div>
+        <div class="title-text">样本与抽样分布</div>
       </div>
       <!-- <div class="content">
-        梯度、散度、旋度与拉普拉斯算子公式及推导
-梯度、散度、旋度与拉普拉斯算子在不同坐标系下的公式总结
-——梯度、散度、旋度和
+        样本与抽样分布
+总体与随机样本
+总体与个体
+
+总体：一次或一类随机实验中，所有可能的观察值构成的集合.
+个体：总体中的每
       </div> -->
     </a>
   </div>
@@ -682,7 +1801,7 @@ $\mu_X(\mathbb{R}) = P(\Omega) = 1$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">随机变量及其独立性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="toc-text">随机变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-text">随机变量的独立性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#X-%E4%B8%8E-Y-%E7%9B%B8%E4%BA%92%E7%8B%AC%E7%AB%8B%E7%9A%84%E5%85%85%E8%A6%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">XXX 与 YYY 相互独立的充要条件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E7%8B%AC%E7%AB%8B%E6%80%A7"><span class="toc-text">多个随机变量的独立性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E7%90%86"><span class="toc-text">定理</span></a></li></ol></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">正则变换与哈密顿-雅可比方程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E5%8F%98%E6%8D%A2%E4%B8%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%BD%A2%E5%BC%8F%E7%9A%84%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-text">点变换与拉格朗日形式的不变性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B%E4%B8%8E%E7%82%B9%E5%8F%98%E6%8D%A2"><span class="toc-text">拉格朗日方程与点变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF%E6%96%B9%E7%A8%8B"><span class="toc-text">正则变换与哈密顿方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E6%96%B9%E7%A8%8B"><span class="toc-text">哈密顿方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">正则变换的定义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E4%BD%9C%E7%94%A8%E9%87%8F%E6%9D%A1%E4%BB%B6%E4%B8%8E%E6%AF%8D%E5%87%BD%E6%95%B0"><span class="toc-text">正则变换的作用量条件与母函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E9%87%8F%E7%9A%84%E7%AD%89%E4%BB%B7%E6%9D%A1%E4%BB%B6"><span class="toc-text">作用量的等价条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">四类母函数的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-1-U-1-q-Q-t"><span class="toc-text">第一类母函数 U1&#x3D;U1(q,Q,t)U_1 &#x3D; U_1(q,Q,t)U​1​​&#x3D;U​1​​(q,Q,t)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-2-U-2-p-Q-t"><span class="toc-text">第二类母函数 U2&#x3D;U2(p,Q,t)U_2 &#x3D; U_2(p,Q,t)U​2​​&#x3D;U​2​​(p,Q,t)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-3-U-3-q-P-t"><span class="toc-text">第三类母函数 U3&#x3D;U3(q,P,t)U_3 &#x3D; U_3(q,P,t)U​3​​&#x3D;U​3​​(q,P,t)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-4-U-4-p-P-t"><span class="toc-text">第四类母函数 U4&#x3D;U4(p,P,t)U_4 &#x3D; U_4(p,P,t)U​4​​&#x3D;U​4​​(p,P,t)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E6%AF%8D%E5%87%BD%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-text">常见正则变换的母函数表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E8%B0%90%E6%8C%AF%E5%AD%90%E7%9A%84%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E8%A7%A3%E6%B3%95"><span class="toc-text">一维谐振子的正则变换解法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E6%8D%A2%E7%9A%84%E6%9E%84%E9%80%A0%E6%80%9D%E8%B7%AF"><span class="toc-text">变换的构造思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B1%E6%AF%8D%E5%87%BD%E6%95%B0-U-1-q-Q-%E6%B1%82%E5%87%BA%E5%8F%98%E6%8D%A2"><span class="toc-text">由母函数 U1(q,Q)U_1(q,Q)U​1​​(q,Q) 求出变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E5%87%A0%E4%BD%95%E5%9B%BE%E5%83%8F%E4%B8%8E%E6%B3%8A%E6%9D%BE%E6%8B%AC%E5%8F%B7"><span class="toc-text">正则变换的几何图像与泊松括号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9B%9B%E7%B1%BB%E2%80%9C%E6%AF%8D%E5%87%BD%E6%95%B0%E2%80%9D-%E7%89%B9%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-text">热力学中的四类“母函数” (特性函数)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%8A%BF%E5%8F%8A%E5%85%B6%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="toc-text">四个基本热力学势及其微分形式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%88%B0%E5%93%88%E5%AF%86%E9%A1%BF-%E7%82%B9%E5%8F%98%E6%8D%A2%E7%9A%84%E9%AA%8C%E8%AF%81"><span class="toc-text">从拉格朗日到哈密顿: 点变换的验证</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
