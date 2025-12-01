@@ -394,7 +394,7 @@
       <div class="post-content">
         <h1>力学变分原理</h1>
 <h2 id="哈密顿原理与作用量">哈密顿原理与作用量</h2>
-<p>哈密顿原理（最小作用量原理）的核心表述是：实际运动轨迹使作用量泛函取得驻值（常说“最小”），其变分为零。</p>
+<p>哈密顿原理（最小作用量原理）的核心表述是：实际运动轨迹使作用量泛函取得驻值（常说“最小”），其变分为零.</p>
 
 $$
 \displaystyle \delta S = 0
@@ -410,46 +410,31 @@ $$
 <ul>
 <li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q(t)</annotation></semantics></math></span></span> 表示广义坐标</li>
 <li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\dot{q}(t)</annotation></semantics></math></span></span> 表示对时间的导数</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">L(q, \dot{q}, t)</annotation></semantics></math></span></span> 为拉格朗日量。对质点机械系统，常取</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">L(q, \dot{q}, t)</annotation></semantics></math></span></span> 为拉格朗日量. 对质点机械系统，常取</li>
 </ul>
 
 $$
 \displaystyle L = T - V
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span> 是动能，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span></span> 是势能。</p>
-<p>直观上，可以把作用量理解为“动能减势能在整个运动过程中的累积”。在同样的起点和终点之间，真正发生的运动，会让这个累积值相比其他可能路径更“经济”。</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span> 是动能，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span></span> 是势能.</p>
+<p>直观上，可以把作用量理解为“动能减势能在整个运动过程中的累积”. 在同样的起点和终点之间，真正发生的运动，会让这个累积值相比其他可能路径更“经济”.</p>
 <p>以自由落体为例，可以想象两种极端“候选”过程：</p>
 <ul>
 <li>一开始落得比较慢，后面再逐渐加速</li>
 <li>一开始落得很快，后面再逐渐减速</li>
 </ul>
-<p>在势能较高（物体较高）的位置，如果停留时间长，势能项的贡献会更大，影响作用量。因此自然界“选择”的实际轨迹，是让整体作用量最小（更严格地说是驻值）的那条路径。</p>
-<hr>
+<p>在势能较高（物体较高）的位置，如果停留时间长，势能项的贡献会更大，影响作用量. 因此自然界“选择”的实际轨迹，是让整体作用量最小（更严格地说是驻值）的那条路径.</p>
 <h2 id="泛函的概念与例子">泛函的概念与例子</h2>
 <p>普通函数把一个数、向量、矩阵等映射成一个数；而<strong>泛函</strong>可以理解为“对函数进行映射”的函数，即：</p>
 <blockquote>
-<p>从一个函数空间映射到实数的映射。</p>
+<p>从一个函数空间映射到实数的映射.</p>
 </blockquote>
 <p>简单对比可以写成下面的表格：</p>
-<table>
-<thead>
-<tr>
-<th>输入对象</th>
-<th>输出</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span></span>、向量、矩阵等</td>
-<td>数</td>
-</tr>
-<tr>
-<td>函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span>、曲线、曲面等</td>
-<td>数（通过泛函）</td>
-</tr>
-</tbody>
-</table>
+<p>| 输入对象 | 输出 |<br>
+|||<br>
+| 数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>、向量、矩阵等 | 数 |<br>
+| 函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span>、曲线、曲面等 | 数（通过泛函） |</p>
 <p>常见的一类泛函形式为</p>
 
 $$
@@ -472,9 +457,8 @@ $$
 \right] \, dx \, dy
 $$
 
-<hr>
 <h2 id="变分法中的典型问题：最速降线">变分法中的典型问题：最速降线</h2>
-<p>最速降线问题是变分法的经典例子：在竖直平面内，有一条光滑轨道，从点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 到点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>。质点从静止出发，下滑到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 所用时间最短的轨迹 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y = y(x)</annotation></semantics></math></span></span> 是什么？</p>
+<p>最速降线问题是变分法的经典例子：在竖直平面内，有一条光滑轨道，从点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 到点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>. 质点从静止出发，下滑到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 所用时间最短的轨迹 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y = y(x)</annotation></semantics></math></span></span> 是什么？</p>
 <p>从动力学能量守恒可得滑动速度为</p>
 
 $$
@@ -495,8 +479,7 @@ $$
 = \int_{a}^{b} \frac{\sqrt{1 + \bigl(y'(x)\bigr)^2}}{\sqrt{2 g y(x)}} \, dx
 $$
 
-<p>这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 两端点固定。这个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>[</mo><mi>y</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">T[y]</annotation></semantics></math></span></span> 就是一个需要取极值的泛函。</p>
-<hr>
+<p>这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 两端点固定. 这个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>[</mo><mi>y</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">T[y]</annotation></semantics></math></span></span> 就是一个需要取极值的泛函.</p>
 <h2 id="函数的微分与泛函的变分">函数的微分与泛函的变分</h2>
 <h3 id="函数的微分">函数的微分</h3>
 <p>对于一个函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span>，在邻近点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>+</mo><mi>ε</mi></mrow><annotation encoding="application/x-tex">x + \varepsilon</annotation></semantics></math></span></span> 上有</p>
@@ -505,7 +488,7 @@ $$
 \displaystyle dy(x) = y(x + \varepsilon) - y(x)
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span></span> 是一个小量。</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span></span> 是一个小量.</p>
 <h3 id="泛函的变分">泛函的变分</h3>
 <p>对于一个泛函</p>
 
@@ -519,7 +502,7 @@ $$
 \displaystyle \bar{y}(x) = y(x) + \varepsilon \, \eta(x)
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span></span> 是小参数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>η</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\eta(x)</annotation></semantics></math></span></span> 是任意光滑且满足端点条件的“试探函数”。</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span></span> 是小参数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>η</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\eta(x)</annotation></semantics></math></span></span> 是任意光滑且满足端点条件的“试探函数”.</p>
 <p><strong>泛函的变分</strong>定义为</p>
 
 $$
@@ -544,8 +527,7 @@ $$
 \displaystyle \delta J[y] = 0
 $$
 
-<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span> 是泛函 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 的极值（更严格说是驻值）函数。</p>
-<hr>
+<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span> 是泛函 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 的极值（更严格说是驻值）函数.</p>
 <h2 id="变分学涉及的主要内容与应用">变分学涉及的主要内容与应用</h2>
 <p>从数学角度看，变分学与很多分支密切相关：</p>
 <ul>
@@ -562,7 +544,6 @@ $$
 <li>人工智能与机器学习（例如许多损失泛函的极小化）</li>
 <li>数值方法、有限元和一般的优化问题</li>
 </ul>
-<hr>
 <h2 id="变分与求导的可交换性">变分与求导的可交换性</h2>
 <p>在变分计算中，一个关键事实是：对自变量求导与对函数做变分是可以交换的，即</p>
 
@@ -578,7 +559,7 @@ $$
 = \frac{d}{dx} \bigl(\delta y(x)\bigr)
 $$
 
-<p>推导思路如下。由</p>
+<p>推导思路如下. 由</p>
 
 $$
 \displaystyle \delta y'(x)
@@ -594,7 +575,6 @@ $$
 \displaystyle \delta (df) = d(\delta f)
 $$
 
-<hr>
 <h2 id="泛函变分的计算">泛函变分的计算</h2>
 <p>考虑一般形式的泛函</p>
 
@@ -657,10 +637,9 @@ $$
 \right|_{a}^{b}
 $$
 
-<p>在端点固定的情况下，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>y</mi><mo>(</mo><mi>a</mi><mo>)</mo><mo>=</mo><mi>δ</mi><mi>y</mi><mo>(</mo><mi>b</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta y(a) = \delta y(b) = 0</annotation></semantics></math></span></span>，最后的边界项为零。</p>
-<hr>
+<p>在端点固定的情况下，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>y</mi><mo>(</mo><mi>a</mi><mo>)</mo><mo>=</mo><mi>δ</mi><mi>y</mi><mo>(</mo><mi>b</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta y(a) = \delta y(b) = 0</annotation></semantics></math></span></span>，最后的边界项为零.</p>
 <h2 id="变分计算的常用规则">变分计算的常用规则</h2>
-<p>对于泛函与函数的变分，常用规则可以总结如下。</p>
+<p>对于泛函与函数的变分，常用规则可以总结如下.</p>
 <p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 只依赖于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span>，则</p>
 
 $$
@@ -709,8 +688,7 @@ $$
 \displaystyle \delta(F^n) = n F^{n-1} \, \delta F
 $$
 
-<hr>
-<h2 id="例子：简单泛函的变分计算">例子：简单泛函的变分计算</h2>
+<details><summary> 例子：简单泛函的变分计算 </summary>
 <p>考虑泛函</p>
 
 $$
@@ -769,9 +747,10 @@ $$
 \displaystyle y'' = y
 $$
 
-<p>得到一条常微分方程作为极值函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span> 的方程。</p>
+<p>得到一条常微分方程作为极值函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span> 的方程.</p>
+</details>
 <details>
-<summary>补充：利用欧拉方程直接求解</summary>
+<summary>补充：利用欧拉方程直接求解上面这个例子</summary>
 <p>对上面的泛函</p>
 
 $$
@@ -802,9 +781,8 @@ $$
 y'' = y
 $$
 
-<p>解这个方程再配合具体边界条件，就可以得到极值函数的具体形式。</p>
+<p>解这个方程再配合具体边界条件，就可以得到极值函数的具体形式.</p>
 </details>
-<hr>
 <h2 id="变分法基本引理">变分法基本引理</h2>
 <p><strong>变分法基本引理</strong>：</p>
 <p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span></span> 为区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[a, b]</annotation></semantics></math></span></span> 上的连续函数，如果对所有满足端点条件</p>
@@ -825,8 +803,7 @@ $$
 \displaystyle f(x) = 0
 $$
 
-<p>这个引理由“任意可调的试探函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>η</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\eta(x)</annotation></semantics></math></span></span>”推出“被积函数本身为零”，是变分法从“变分为零”过渡到“微分方程”的关键。</p>
-<hr>
+<p>这个引理由“任意可调的试探函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>η</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\eta(x)</annotation></semantics></math></span></span>”推出“被积函数本身为零”，是变分法从“变分为零”过渡到“微分方程”的关键.</p>
 <h2 id="欧拉–拉格朗日方程（单一函数情形）">欧拉–拉格朗日方程（单一函数情形）</h2>
 <p>再次考虑一般泛函</p>
 
@@ -854,7 +831,7 @@ $$
 \displaystyle \delta y(a) = \delta y(b) = 0
 $$
 
-<p>因此边界项为零。极值条件为</p>
+<p>因此边界项为零. 极值条件为</p>
 
 $$
 \displaystyle \delta J[y]
@@ -876,7 +853,7 @@ $$
 = 0
 $$
 
-<p>这就是单函数情形的<strong>欧拉–拉格朗日方程</strong>。</p>
+<p>这就是单函数情形的<strong>欧拉–拉格朗日方程</strong>.</p>
 <details>
 <summary>例子：两点间最短路径问题</summary>
 <p>在平面内，从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>1</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_1, y_1)</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_2, y_2)</annotation></semantics></math></span></span> 的曲线 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(x)</annotation></semantics></math></span></span> 的弧长为</p>
@@ -915,15 +892,14 @@ $$
 \displaystyle \frac{y'}{\sqrt{1 + y'^2}} = C
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 为常数。由此可得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>y</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y'</annotation></semantics></math></span></span> 为常数，进一步得到</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 为常数. 由此可得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>y</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">y'</annotation></semantics></math></span></span> 为常数，进一步得到</p>
 
 $$
 \displaystyle y(x) = a x + b
 $$
 
-<p>即两点之间的最短路径是一条直线。</p>
+<p>即两点之间的最短路径是一条直线.</p>
 </details>
-<hr>
 <h2 id="泛函导数">泛函导数</h2>
 <p>在忽略端点项的情况下，泛函的变分通常可以写成</p>
 
@@ -933,8 +909,8 @@ $$
 \frac{\delta J}{\delta y(x)} \, \delta y(x) \, dx
 $$
 
-<p>这里的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>δ</mi><mi>J</mi></mrow><mrow><mi>δ</mi><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dfrac{\delta J}{\delta y(x)}</annotation></semantics></math></span></span> 被称为<strong>泛函导数</strong>，在形式上类似于多元函数中的偏导数。</p>
-<h3 id="一个简单例子">一个简单例子</h3>
+<p>这里的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>δ</mi><mi>J</mi></mrow><mrow><mi>δ</mi><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dfrac{\delta J}{\delta y(x)}</annotation></semantics></math></span></span> 被称为<strong>泛函导数</strong>，在形式上类似于多元函数中的偏导数.</p>
+<details><summary>一个简单例子</summary>
 <p>考虑泛函</p>
 
 $$
@@ -968,7 +944,7 @@ $$
 \displaystyle \frac{\delta J}{\delta y(x)} = 2 y(x)
 $$
 
-<hr>
+</details>
 <h2 id="首次积分：自变量不显含时的守恒量">首次积分：自变量不显含时的守恒量</h2>
 <p>若泛函</p>
 
@@ -977,7 +953,7 @@ $$
 F\bigl(y(x), y'(x)\bigr) \, dx
 $$
 
-<p>中被积函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 不显含自变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>F</mi><mo>(</mo><mi>y</mi><mo separator="true">,</mo><msup><mi>y</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">F = F(y, y')</annotation></semantics></math></span></span>，则有一种特别有用的“首次积分”。</p>
+<p>中被积函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 不显含自变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>F</mi><mo>(</mo><mi>y</mi><mo separator="true">,</mo><msup><mi>y</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">F = F(y, y')</annotation></semantics></math></span></span>，则有一种特别有用的“首次积分”.</p>
 <p>考虑</p>
 
 $$
@@ -1026,9 +1002,8 @@ $$
 \displaystyle F - y' \frac{\partial F}{\partial y'} = C
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 为常数。这就是泛函在自变量不显含时的<strong>首次积分</strong>，在力学里常与能量守恒等物理量对应。</p>
-<hr>
-<h2 id="最速降线的解析解：旋轮线">最速降线的解析解：旋轮线</h2>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 为常数. 这就是泛函在自变量不显含时的<strong>首次积分</strong>，在力学里常与能量守恒等物理量对应.</p>
+<details><summary>例子：最速降线的解析解，旋轮线</summary>
 <p>回到最速降线问题，时间泛函可写为</p>
 
 $$
@@ -1044,7 +1019,7 @@ $$
 = \frac{\sqrt{1 + y'^2}}{\sqrt{y}}
 $$
 
-<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 不显含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>，可以使用前面的首次积分。先计算</p>
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 不显含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>，可以使用前面的首次积分. 先计算</p>
 
 $$
 \displaystyle \frac{\partial F}{\partial y'}
@@ -1096,14 +1071,14 @@ y(\theta) = C_1 \bigl( 1 - \cos 2 \theta \bigr)
 \end{cases}
 $$
 
-<p>这说明从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 的最速降线是一条旋轮线轨道，而不是直线或圆弧。</p>
+<p>这说明从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 的最速降线是一条旋轮线轨道，而不是直线或圆弧.</p>
+</details>
 <details>
 <summary>补充：为什么不是直线？</summary>
-<p>直线虽然是两点间的最短路径，但最速降线问题关心的是“时间最短”，而不是“距离最短”。</p>
-<p>直线上，初期下降高度较慢，势能转化为动能的速度相对较慢；而旋轮线在一开始下降得更快，让质点在早期就获得更大的速度。后期尽管路径更长，但由于速度较大，整体时间反而更短。</p>
-<p>这也体现了“变分极值”不一定等于“局部几何最短”，而是由整体泛函（这里是时间积分）决定。</p>
+<p>直线虽然是两点间的最短路径，但最速降线问题关心的是“时间最短”，而不是“距离最短”.</p>
+<p>直线上，初期下降高度较慢，势能转化为动能的速度相对较慢；而旋轮线在一开始下降得更快，让质点在早期就获得更大的速度. 后期尽管路径更长，但由于速度较大，整体时间反而更短.</p>
+<p>这也体现了“变分极值”不一定等于“局部几何最短”，而是由整体泛函（这里是时间积分）决定.</p>
 </details>
-<hr>
 <h2 id="多元泛函的极值问题">多元泛函的极值问题</h2>
 <p>很多情况下需要同时处理多个函数（例如多自由度系统），设有</p>
 
@@ -1137,8 +1112,7 @@ $$
 \alpha = 1, 2, \cdots, n
 $$
 
-<p>每个分量的方程是彼此独立的，但通过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 的形式彼此耦合。</p>
-<hr>
+<p>每个分量的方程是彼此独立的，但通过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 的形式彼此耦合.</p>
 <h2 id="数学形式与力学形式的对应关系">数学形式与力学形式的对应关系</h2>
 <p>在数学中，我们常写一个泛函</p>
 
@@ -1200,7 +1174,6 @@ $$
 \right) = 0
 $$
 
-<hr>
 <h2 id="拉格朗日方程">拉格朗日方程</h2>
 <p>在力学中，作用量写作</p>
 
@@ -1229,8 +1202,7 @@ $$
 \alpha = 1, 2, \cdots, s
 $$
 
-<p>这就是力学中的<strong>拉格朗日方程</strong>，它是牛顿运动定律在广义坐标下的等价表述。</p>
-<hr>
+<p>这就是力学中的<strong>拉格朗日方程</strong>，它是牛顿运动定律在广义坐标下的等价表述.</p>
 <h2 id="首次积分与能量守恒">首次积分与能量守恒</h2>
 <p>当拉格朗日量中不显含时间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>，即</p>
 
@@ -1238,7 +1210,7 @@ $$
 \displaystyle L = L\bigl(q, \dot{q}\bigr)
 $$
 
-<p>时，可以得到一个类似“能量守恒”的积分不变量。</p>
+<p>时，可以得到一个类似“能量守恒”的积分不变量.</p>
 <p>由拉格朗日方程推导，可得</p>
 
 $$
@@ -1260,12 +1232,10 @@ $$
 = \text{常数}
 $$
 
-<p>对常见的力学系统，这个量正是系统的总能量（动能加势能），体现了时间平移对称性对应能量守恒的观念。</p>
-<hr>
-<h2 id="例子：竖直上抛运动的拉格朗日推导">例子：竖直上抛运动的拉格朗日推导</h2>
+<p>对常见的力学系统，这个量正是系统的总能量（动能加势能），体现了时间平移对称性对应能量守恒的观念.</p>
 <details>
-<summary>展开推导过程</summary>
-<p>考虑竖直方向的单自由度运动，设坐标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math></span></span>，质量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>，重力加速度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span>。拉格朗日量取为</p>
+<summary>例子：竖直上抛运动的拉格朗日推导</summary>
+<p>考虑竖直方向的单自由度运动，设坐标为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x(t)</annotation></semantics></math></span></span>，质量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>，重力加速度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span>. 拉格朗日量取为</p>
 
 $$
 \displaystyle L
@@ -1322,7 +1292,7 @@ $$
 \displaystyle \delta x(t_1) = \delta x(t_2) = 0
 $$
 
-<p>边界项为零。极值条件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta S = 0</annotation></semantics></math></span></span> 给出</p>
+<p>边界项为零. 极值条件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta S = 0</annotation></semantics></math></span></span> 给出</p>
 
 $$
 \displaystyle - m g - m \ddot{x} = 0
@@ -1334,9 +1304,8 @@ $$
 \displaystyle \ddot{x} = - g
 $$
 
-<p>这就是熟悉的竖直上抛（或自由落体）运动方程，即牛顿第二定律在本问题中的具体形式。</p>
+<p>这就是熟悉的竖直上抛（或自由落体）运动方程，即牛顿第二定律在本问题中的具体形式.</p>
 </details>
-<hr>
 <h2 id="相空间形式与哈密顿方程">相空间形式与哈密顿方程</h2>
 <p>在相空间形式中，拉格朗日量常写成</p>
 
@@ -1354,7 +1323,7 @@ $$
 = \frac{\partial L}{\partial \dot{q}_{\alpha}}
 $$
 
-<p>为共轭动量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(p, q, t)</annotation></semantics></math></span></span> 为哈密顿量。</p>
+<p>为共轭动量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(p, q, t)</annotation></semantics></math></span></span> 为哈密顿量.</p>
 <p>将这一形式代入作用量，并对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub></mrow><annotation encoding="application/x-tex">q_{\alpha}</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>α</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\alpha}</annotation></semantics></math></span></span> 分别做变分，利用变分法基本引理，可以得到<strong>哈密顿正则方程</strong>：</p>
 
 $$
@@ -1367,8 +1336,7 @@ $$
 \alpha = 1, 2, \cdots, s
 $$
 
-<p>这给出了在相空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q, p)</annotation></semantics></math></span></span> 中的动力学演化方式。</p>
-<hr>
+<p>这给出了在相空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q, p)</annotation></semantics></math></span></span> 中的动力学演化方式.</p>
 <h2 id="零拉格朗日量与拉格朗日量的规范等价">零拉格朗日量与拉格朗日量的规范等价</h2>
 <p>考虑一个特殊的拉格朗日量</p>
 
@@ -1410,9 +1378,628 @@ $$
 + \int_{t_1}^{t_2} \delta q \, dt
 $$
 
-<p>这类拉格朗日量在实际物理系统中可以被视为“零拉格朗日量”的一部分：在给定边界条件下，它们对运动方程不产生影响。</p>
-<p>一般地，两个拉格朗日量若只相差一个关于时间的全微分项（或等价的零拉格朗日量），则它们描述的是同一个物理系统。这种“非唯一性”被称为拉格朗日量的<strong>规范等价</strong>。</p>
-<p>在现代物理学中，这一思想与规范场论、全息对偶、拓扑场论等都有深刻联系：很多物理量只依赖于等价类，而非具体选取的拉格朗日量本身。</p>
+<p>这类拉格朗日量在实际物理系统中可以被视为“零拉格朗日量”的一部分：在给定边界条件下，它们对运动方程不产生影响.</p>
+<p>一般地，两个拉格朗日量若只相差一个关于时间的全微分项（或等价的零拉格朗日量），则它们描述的是同一个物理系统. 这种“非唯一性”被称为拉格朗日量的<strong>规范等价</strong>.</p>
+<p>在现代物理学中，这一思想与规范场论、全息对偶、拓扑场论等都有深刻联系：很多物理量只依赖于等价类，而非具体选取的拉格朗日量本身.</p>
+<details>
+<summary>例 1: 带电粒子在电磁场中的规范等价(经典拉氏 + 哈氏)</summary>
+<p>考虑质量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 电荷 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span></span> 的粒子在电磁势 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>ϕ</mi><mo separator="true">,</mo><mrow><mi mathvariant="bold">A</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">(\phi,\mathbf{A})</annotation></semantics></math></span></span> 中运动, 标准拉格朗日量为</p>
+
+$$
+\displaystyle L=\frac{1}{2}m\dot{\mathbf{r}}^{2}+e\,\mathbf{A}(\mathbf{r},t)\cdot\dot{\mathbf{r}}-e\,\phi(\mathbf{r},t).
+$$
+
+<p>对电磁势做规范变换</p>
+
+$$
+\displaystyle \mathbf{A}\to\mathbf{A}'=\mathbf{A}+\nabla\chi,\qquad 
+\phi\to\phi'=\phi-\frac{\partial\chi}{\partial t}.
+$$
+
+<p>代入得到新的拉格朗日量</p>
+
+$$
+\displaystyle 
+\begin{aligned}
+L' 
+&amp;= \frac{1}{2}m\dot{\mathbf{r}}^{2}+e(\mathbf{A}+\nabla\chi)\cdot\dot{\mathbf{r}}
+-e\left(\phi-\frac{\partial\chi}{\partial t}\right) \\
+&amp;= L + e\left(\nabla\chi\cdot\dot{\mathbf{r}}+\frac{\partial\chi}{\partial t}\right)
+= L + e\,\frac{d\chi(\mathbf{r},t)}{dt}.
+\end{aligned}
+$$
+
+<p>即</p>
+
+$$
+\displaystyle L'=L+\frac{dF}{dt},\qquad F=e\chi.
+$$
+
+<p>因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>L</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">L'</annotation></semantics></math></span></span> 规范等价, 给出相同的欧拉-拉格朗日方程, 物理可观测的电磁场 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">E</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">B</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{E},\mathbf{B}</annotation></semantics></math></span></span> 不变.</p>
+<p>哈密顿层面, 由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 得到正则动量</p>
+
+$$
+\displaystyle \mathbf{p}=\frac{\partial L}{\partial\dot{\mathbf{r}}}
+=m\dot{\mathbf{r}}+e\mathbf{A}.
+$$
+
+<p>由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>L</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">L'</annotation></semantics></math></span></span> 得</p>
+
+$$
+\displaystyle \mathbf{p}'=m\dot{\mathbf{r}}+e\mathbf{A}'
+=\mathbf{p}+e\nabla\chi
+=\mathbf{p}+\frac{\partial F}{\partial\mathbf{r}}.
+$$
+
+<p>这表明规范变换在相空间中对应一个时间依赖的正则变换(生成函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>e</mi><mi>χ</mi></mrow><annotation encoding="application/x-tex">F=e\chi</annotation></semantics></math></span></span>).<br>
+哈密顿量</p>
+
+$$
+\displaystyle H=\mathbf{p}\cdot\dot{\mathbf{r}}-L
+=\frac{1}{2m}(\mathbf{p}-e\mathbf{A})^{2}+e\phi.
+$$
+
+<p>在规范变换下</p>
+
+$$
+\displaystyle 
+\begin{aligned}
+H'
+&amp;=\frac{1}{2m}(\mathbf{p}'-e\mathbf{A}')^{2}+e\phi' \\
+&amp;=\frac{1}{2m}(\mathbf{p}-e\mathbf{A})^{2}+e\phi
+-e\frac{\partial\chi}{\partial t}
+=H-\frac{\partial F}{\partial t}.
+\end{aligned}
+$$
+
+<p>虽然 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span></span> 本身按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>H</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mi>H</mi><mo>−</mo><mi mathvariant="normal">∂</mi><mi>F</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">∂</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">H'=H-\partial F/\partial t</annotation></semantics></math></span></span> 变换, 但哈密顿方程描述的轨道不变.<br>
+这个例子把 “拉氏加全微分” 的等价, 直接对应到 “相空间正则变换” 的等价.</p>
+</details>
+<details>
+<summary>例 2: 加全微分导致的时间依赖正则变换(更力学的代表性例子)</summary>
+<p>从一般的一维系统出发</p>
+
+$$
+\displaystyle L(q,\dot q,t)=\frac{1}{2}m\dot q^{2}-V(q,t).
+$$
+
+<p>现在加上一个关于时间的全微分项, 其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(t)</annotation></semantics></math></span></span> 为给定光滑函数:</p>
+
+$$
+\displaystyle L_f=L+\frac{d}{dt}\bigl(f(t)\,q\bigr)
+=\frac{1}{2}m\dot q^{2}-V(q,t)+\dot f(t)\,q+f(t)\,\dot q.
+$$
+
+<p>由于两拉格朗日量只差一项全微分, 它们必然是规范等价的.<br>
+我们直接看哈密顿结构如何变化.</p>
+<p>由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 得到正则动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle p=\frac{\partial L}{\partial\dot q}=m\dot q.
+$$
+
+<p>由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">L_f</annotation></semantics></math></span></span> 得到新的正则动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">p_f</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle p_f=\frac{\partial L_f}{\partial\dot q}=m\dot q+f(t)=p+f(t).
+$$
+
+<p>也就是一个随时间变化的动量平移.<br>
+对应的生成函数可以取</p>
+
+$$
+\displaystyle F(q,P,t)=qP+f(t)\,q,
+$$
+
+<p>它产生正则变换</p>
+
+$$
+\displaystyle 
+P=p,\qquad 
+p_f=P+\frac{\partial}{\partial q}\bigl(f(t)\,q\bigr)=P+f(t).
+$$
+
+<p>新的哈密顿量为</p>
+
+$$
+\displaystyle 
+\begin{aligned}
+H_f
+&amp;=p_f\dot q-L_f \\
+&amp;=(m\dot q+f)\dot q-\left(\frac{1}{2}m\dot q^{2}-V+\dot f\,q+f\dot q\right) \\
+&amp;=\frac{1}{2}m\dot q^{2}+V(q,t)-\dot f(t)\,q.
+\end{aligned}
+$$
+
+<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>f</mi></msub><mo>=</mo><mi>m</mi><mover accent="true"><mi>q</mi><mo>˙</mo></mover><mo>+</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">p_f=m\dot q+f</annotation></semantics></math></span></span> 消去 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">\dot q</annotation></semantics></math></span></span> 得</p>
+
+$$
+\displaystyle H_f(q,p_f,t)
+=\frac{(p_f-f(t))^{2}}{2m}+V(q,t)-\dot f(t)\,q.
+$$
+
+<p>注意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">H_f</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span></span> 的关系恰好是时间依赖正则变换的规则:</p>
+
+$$
+\displaystyle H_f=H-\frac{\partial}{\partial t}\bigl(f(t)\,q\bigr).
+$$
+
+<p>虽然哈密顿量形式改变了, 但哈密顿方程给出的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q(t)</annotation></semantics></math></span></span> 轨道与原系统一致.<br>
+这个例子显示:</p>
+<ol>
+<li>拉氏层面加全微分不改运动方程.</li>
+<li>哈氏层面等价于时间依赖正则变换, 改变的是相空间坐标与哈密顿量的表示.</li>
+</ol>
+<p>在更复杂的系统中(如带线性速度耦合或约束的系统), 常用这种方式把拉格朗日量"配方"成更方便的哈密顿形式, 物理内容不变.</p>
+</details>
+<details>
+<summary>例 3: 圆环上粒子的 $k\dot\theta$ 项(经典零拉氏 + 拓扑/量子差异, 量子部分可先略读)</summary>
+<p>粒子限制在圆环上, 角坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>∼</mo><mi>θ</mi><mo>+</mo><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">\theta\sim\theta+2\pi</annotation></semantics></math></span></span>. 自由转动拉格朗日量</p>
+
+$$
+\displaystyle L=\frac{1}{2}I\dot\theta^{2}.
+$$
+
+<p>加上全微分项</p>
+
+$$
+\displaystyle L_k=\frac{1}{2}I\dot\theta^{2}+k\dot\theta
+=L+\frac{d}{dt}(k\theta).
+$$
+
+<p>经典方程:</p>
+
+$$
+\displaystyle 
+\frac{d}{dt}\frac{\partial L_k}{\partial\dot\theta}
+-\frac{\partial L_k}{\partial\theta}=0
+\implies
+\frac{d}{dt}(I\dot\theta+k)=0
+\implies
+\ddot\theta=0.
+$$
+
+<p>与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 完全相同, 因而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mover accent="true"><mi>θ</mi><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">k\dot\theta</annotation></semantics></math></span></span> 在经典动力学中是零拉格朗日量.</p>
+<p>哈密顿层面:</p>
+
+$$
+\displaystyle p_\theta=\frac{\partial L_k}{\partial\dot\theta}
+=I\dot\theta+k,
+$$
+
+
+$$
+\displaystyle 
+H_k=p_\theta\dot\theta-L_k
+=\frac{(p_\theta-k)^{2}}{2I}.
+$$
+
+<p>即相当于动量平移 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>θ</mi></msub><mo>→</mo><msub><mi>p</mi><mi>θ</mi></msub><mo>−</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">p_\theta\to p_\theta-k</annotation></semantics></math></span></span>, 也是由生成函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>k</mi><mi>θ</mi></mrow><annotation encoding="application/x-tex">F=k\theta</annotation></semantics></math></span></span> 产生的正则变换.</p>
+<p>(量子/拓扑提示, 你可以先不深究)<br>
+由于配置空间是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mrow><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">S^{1}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>k</mi><mi>θ</mi></mrow><annotation encoding="application/x-tex">F=k\theta</annotation></semantics></math></span></span> 不是全局单值. 量子化后动量本征值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>θ</mi></msub><mo>=</mo><mi>n</mi><mi mathvariant="normal">ℏ</mi></mrow><annotation encoding="application/x-tex">p_\theta=n\hbar</annotation></semantics></math></span></span>, 能谱变成</p>
+
+$$
+\displaystyle E_n=\frac{(n\hbar-k)^{2}}{2I}.
+$$
+
+<p>也就是说, 经典上等价的全微分项, 可能在量子或拓扑层面留下可观测影响, 这正是现代规范与拓扑理论中常见的现象：</p>
+<ul>
+<li><strong>经典上</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">k\dot{\theta}</annotation></semantics></math></span></span> 是纯全微分，对轨道零影响；</li>
+<li><strong>哈密顿上</strong> 它平移正则动量；</li>
+<li><strong>量子/拓扑上</strong> 这种平移改变了能级与干涉相位（类似 Aharonov–Bohm 效应中的“绕圈相位”）.</li>
+</ul>
+<p>这个例子很典型地展示了：</p>
+<blockquote>
+<p>“规范等价”在局域经典动力学上成立，但全局拓扑或量子条件可能让不同代表元产生可观测差异.</p>
+</blockquote>
+</details>
+<h2 id="哈密顿量的不唯一性与规范等价">哈密顿量的不唯一性与规范等价</h2>
+<p>已知拉格朗日量存在规范等价:</p>
+
+$$
+\displaystyle L(q,\dot q,t)\to\tilde L(q,\dot q,t)=L(q,\dot q,t)+\frac{d\varphi(q,t)}{dt}.
+$$
+
+<p>这里强调一个常见且重要的前提: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span></span> 仅依赖于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo separator="true">,</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">q,t</annotation></semantics></math></span></span>, 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>q</mi><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">\dot q</annotation></semantics></math></span></span> 无关.</p>
+
+$$
+\displaystyle \frac{d\varphi}{dt}=\sum_{\alpha = 1}^s\frac{\partial\varphi}{\partial q_\alpha}\dot q_\alpha+\frac{\partial\varphi}{\partial t}.
+$$
+
+<p>于是正则动量的变换为</p>
+
+$$
+\displaystyle 
+\tilde p_\alpha
+=\frac{\partial\tilde L}{\partial\dot q_\alpha}
+=\frac{\partial L}{\partial\dot q_\alpha}
++\frac{\partial}{\partial\dot q_\alpha}\left(\frac{d\varphi}{dt}\right)
+=p_\alpha+\frac{\partial\varphi}{\partial q_\alpha}.
+$$
+
+<p>哈密顿量</p>
+
+$$
+\displaystyle H(q,p,t)=p_\alpha\dot q_\alpha-L
+$$
+
+<p>在规范变换下</p>
+
+$$
+\displaystyle 
+\begin{aligned}
+\tilde H
+&amp;=\tilde p_\alpha\dot q_\alpha-\tilde L \\
+&amp;=(p_\alpha+\frac{\partial\varphi}{\partial q_\alpha})\dot q_\alpha
+-\left(L+\frac{d\varphi}{dt}\right) \\
+&amp;=p_\alpha\dot q_\alpha-L-\frac{\partial\varphi}{\partial t}
+=H-\frac{\partial\varphi}{\partial t}.
+\end{aligned}
+$$
+
+$\text{结论是: } L\text{相差全微分} \iff (q,p)\text{做时间依赖正则变换, 且 } H\to H-\partial\varphi/\partial t, \text{ 物理轨道不变. }$
+<details>
+<summary>代表性例子: 用全微分把哈密顿量改写成更方便的形式</summary>
+$\text{考虑一维体系} L=\frac12 m\dot q^2-V(q,t). \text{加入全微分} f(t)q \text{得到}$ 
+
+$$
+\displaystyle 
+\tilde L
+=L+\frac{d}{dt}(f(t)q)
+=\frac12 m\dot q^2-V(q,t)+\dot f(t)q+f(t)\dot q.
+$$
+
+<p>正则动量</p>
+
+$$
+\displaystyle 
+\tilde p
+=\frac{\partial\tilde L}{\partial\dot q}
+=m\dot q+f(t)
+=p+f(t).
+$$
+
+<p>哈密顿量</p>
+
+$$
+\displaystyle 
+\tilde H
+=\tilde p\,\dot q-\tilde L
+=\frac{(\tilde p-f(t))^2}{2m}+V(q,t)-\dot f(t)q
+=H-\frac{\partial}{\partial t}(f(t)q).
+$$
+
+$\text{虽然 } \tilde H \text{形式更复杂, 但它与 } H \text{由同一正则变换联系, 给出相同 } q(t) \text{轨道. }$
+</details>
+<h2 id="拉格朗日乘子法">拉格朗日乘子法</h2>
+$\text{在约束 } \varphi(x,y)=0 \text{ 下求 } F(x,y) \text{ 的极值, 构造}$ 
+
+$$
+\displaystyle \tilde F(x,y,\lambda)=F(x,y)+\lambda\varphi(x,y).
+$$
+
+<p>驻值条件等价于</p>
+
+$$
+\displaystyle d\tilde F
+=\frac{\partial\tilde F}{\partial x}dx
++\frac{\partial\tilde F}{\partial y}dy
++\frac{\partial\tilde F}{\partial\lambda}d\lambda
+=0.
+$$
+
+<p>展开为</p>
+
+$$
+\displaystyle 
+\left(\frac{\partial F}{\partial x}+\lambda\frac{\partial\varphi}{\partial x}\right)dx
++\left(\frac{\partial F}{\partial y}+\lambda\frac{\partial\varphi}{\partial y}\right)dy
++\varphi\,d\lambda
+=0,
+$$
+
+<p>因此得到方程组</p>
+
+$$
+\begin{cases}
+\displaystyle \frac{\partial F}{\partial x}+\lambda\frac{\partial\varphi}{\partial x}=0, \\
+\displaystyle \frac{\partial F}{\partial y}+\lambda\frac{\partial\varphi}{\partial y}=0, \\
+\varphi(x,y)=0.
+\end{cases}
+$$
+
+$\text{几何意义: } \nabla F \text{在约束面上与 } \nabla\varphi \text{ 平行, 即极值点处等势线与约束曲线相切. }$
+<h2 id="带约束的拉格朗日方程">带约束的拉格朗日方程</h2>
+<p>设系统有约束</p>
+
+$$
+\displaystyle \varphi(q,t)=0,
+$$
+
+<p>虚位移满足</p>
+
+$$
+\displaystyle \delta\varphi=\frac{\partial\varphi}{\partial q_k}\delta q_k=0.
+$$
+
+<p>作用量</p>
+
+$$
+\displaystyle S[q(t)]=\int_{t_1}^{t_2}L(q,\dot q,t)\,dt,
+$$
+
+<p>在端点固定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>q</mi><mo>(</mo><msub><mi>t</mi><mn>1</mn></msub><mo>)</mo><mo>=</mo><mi>δ</mi><mi>q</mi><mo>(</mo><msub><mi>t</mi><mn>2</mn></msub><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\delta q(t_1)=\delta q(t_2)=0</annotation></semantics></math></span></span> 下, 引入乘子</p>
+
+$$
+\displaystyle \tilde L(q,\dot q,t)=L(q,\dot q,t)+\lambda(t)\varphi(q,t).
+$$
+
+<p>取变分得</p>
+
+$$
+\displaystyle 
+\delta S
+=\int_{t_1}^{t_2}
+\left[
+\frac{\partial\tilde L}{\partial q_k}
+-\frac{d}{dt}\frac{\partial\tilde L}{\partial\dot q_k}
+\right]\delta q_k\,dt
+=0,
+$$
+
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><msub><mi>q</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\delta q_k</annotation></semantics></math></span></span> 在约束允许的方向上任意, 得到</p>
+
+$$
+\displaystyle 
+\begin{cases}
+\displaystyle \frac{\partial\tilde L}{\partial q_k}
+-\frac{d}{dt}\frac{\partial\tilde L}{\partial\dot q_k}
+=0, \\
+\varphi(q,t)=0.
+\end{cases}
+$$
+
+$\text{这里 } \lambda(t) \text{对应约束反力的大小, 可由方程与约束联立解出. }$
+<details><summary>例子： 质点从光滑半球面滑下</summary>
+<p>质点质量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>, 半球半径 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span></span>, 自顶端零初速滑下. 取广义坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,\theta)</annotation></semantics></math></span></span>, 约束</p>
+
+$$
+\displaystyle \varphi(r)=r-R=0.
+$$
+
+<p>拉格朗日量</p>
+
+$$
+\displaystyle L=\frac12 m(\dot r^{2}+r^{2}\dot\theta^{2})-mgr\cos\theta.
+$$
+
+<p>加入乘子</p>
+
+$$
+\displaystyle 
+\tilde L
+=\frac12 m(\dot r^{2}+r^{2}\dot\theta^{2})
+-mgr\cos\theta
++\lambda(r-R).
+$$
+
+<p>欧拉-拉格朗日方程</p>
+
+$$
+\displaystyle 
+\begin{cases}
+\displaystyle \frac{\partial\tilde L}{\partial r}
+-\frac{d}{dt}\frac{\partial\tilde L}{\partial\dot r}=0, \\
+\displaystyle \frac{\partial\tilde L}{\partial\theta}
+-\frac{d}{dt}\frac{\partial\tilde L}{\partial\dot\theta}=0, \\
+r=R.
+\end{cases}
+$$
+
+<p>计算得</p>
+
+$$
+\displaystyle 
+\begin{cases}
+m(r\dot\theta^{2}-\ddot r)+mg\cos\theta-\lambda=0, \\
+\frac{d}{dt}(mr^{2}\dot\theta)-mgr\sin\theta=0, \\
+r=R.
+\end{cases}
+$$
+
+<p>消去 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 且用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>=</mo><mi>R</mi><mo separator="true">,</mo><mover accent="true"><mi>r</mi><mo>˙</mo></mover><mo>=</mo><mover accent="true"><mi>r</mi><mo>¨</mo></mover><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r=R,\dot r=\ddot r=0</annotation></semantics></math></span></span> 得</p>
+
+$$
+\displaystyle 
+\begin{cases}
+mR\dot\theta^{2}+mg\cos\theta-\lambda=0, \\
+mR^{2}\ddot\theta-mgR\sin\theta=0.
+\end{cases}
+$$
+
+<p>第二式给出</p>
+
+$$
+\displaystyle \ddot\theta=\frac{g}{R}\sin\theta.
+$$
+
+<p>由机械能守恒, 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>θ</mi><mo>˙</mo></mover><msub><mi mathvariant="normal">∣</mi><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\dot\theta|_{\theta=0}=0</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle 
+\frac12 mR^{2}\dot\theta^{2}+mgR\cos\theta=mgR,
+$$
+
+<p>所以</p>
+
+$$
+\displaystyle 
+\dot\theta^{2}=\frac{2g}{R}(1-\cos\theta).
+$$
+
+<p>由第一式得到约束反力(法向力)大小</p>
+
+$$
+\displaystyle 
+\lambda
+=mg\cos\theta-mR\dot\theta^{2}
+=mg\cos\theta-2mg(1-\cos\theta)
+=mg(3\cos\theta-2).
+$$
+
+<p>脱离球面的条件是法向力为零, 即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda=0</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle \cos\theta=\frac{2}{3}.
+$$
+
+<p>该结果与牛顿力学解法一致, 体现了乘子法对约束反力的直接刻画.</p>
+</details>
+<h2 id="连续体系的拉格朗日量与拉格朗日方程">连续体系的拉格朗日量与拉格朗日方程</h2>
+<p>以一维杆(或弦)为例, 位移场为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">u(x,t)</annotation></semantics></math></span></span>.<br>
+动能密度与势能密度</p>
+
+$$
+\displaystyle 
+T=\frac12\rho\left(\frac{\partial u}{\partial t}\right)^{2},
+\qquad
+V=\frac12 Y\left(\frac{\partial u}{\partial x}\right)^{2},
+$$
+
+<p>于是拉格朗日密度</p>
+
+$$
+\displaystyle 
+\mathcal L=T-V
+=\frac12\rho\left(\frac{\partial u}{\partial t}\right)^{2}
+-\frac12 Y\left(\frac{\partial u}{\partial x}\right)^{2}.
+$$
+
+<p>拉格朗日量为</p>
+
+$$
+\displaystyle L=\int_{0}^{l}\mathcal L\,dx.
+$$
+
+<p>作用量</p>
+
+$$
+\displaystyle 
+S[u]=\int_{t_1}^{t_2}\int_{0}^{l}\mathcal L\,dx\,dt.
+$$
+
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span></span> 变分, 并在边界上满足</p>
+
+$$
+\displaystyle 
+\delta u(x,t_1)=\delta u(x,t_2)=0,
+\qquad
+\delta u(0,t)=\delta u(l,t)=0,
+$$
+
+<p>分部积分后得到场的欧拉-拉格朗日方程</p>
+
+$$
+\displaystyle 
+\frac{\partial\mathcal L}{\partial u}
+-\frac{\partial}{\partial t}
+\frac{\partial\mathcal L}{\partial(\partial u/\partial t)}
+-\frac{\partial}{\partial x}
+\frac{\partial\mathcal L}{\partial(\partial u/\partial x)}
+=0.
+$$
+
+<p>代入一维杆的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="script">L</mi></mrow><annotation encoding="application/x-tex">\mathcal L</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle 
+\frac{\partial\mathcal L}{\partial(\partial u/\partial t)}
+=\rho\frac{\partial u}{\partial t},
+\qquad
+\frac{\partial\mathcal L}{\partial(\partial u/\partial x)}
+=-Y\frac{\partial u}{\partial x},
+$$
+
+<p>得到动力学方程</p>
+
+$$
+\displaystyle 
+\rho\frac{\partial^{2}u}{\partial t^{2}}
+=Y\frac{\partial^{2}u}{\partial x^{2}}.
+$$
+
+$\text{这就是一维波动方程, 波速 } c=\sqrt{Y/\rho}. $
+<details>
+<summary>例子: 固定两端杆的正则模态</summary>
+$\text{两端固定意味着 } u(0,t)=u(l,t)=0. \text{令 } u(x,t)=X(x)T(t), \text{代入波动方程得} $
+
+$$
+\displaystyle 
+\frac{1}{c^{2}}\frac{T''(t)}{T(t)}
+=\frac{X''(x)}{X(x)}
+=-k^{2}.
+$$
+
+<p>空间部分满足</p>
+
+$$
+\displaystyle X''+k^{2}X=0,
+\qquad
+X(0)=X(l)=0,
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle 
+k_n=\frac{n\pi}{l},
+\qquad
+X_n(x)=\sin\frac{n\pi x}{l},
+\qquad
+n=1,2,\cdots.
+$$
+
+<p>时间部分为简谐振动 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mi>n</mi></msub><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><msub><mi>A</mi><mi>n</mi></msub><mi>cos</mi><msub><mi>ω</mi><mi>n</mi></msub><mi>t</mi><mo>+</mo><msub><mi>B</mi><mi>n</mi></msub><mi>sin</mi><msub><mi>ω</mi><mi>n</mi></msub><mi>t</mi></mrow><annotation encoding="application/x-tex">T_n(t)=A_n\cos\omega_n t+B_n\sin\omega_n t</annotation></semantics></math></span></span>, 其中</p>
+
+$$
+\displaystyle \omega_n=c k_n=\frac{n\pi}{l}\sqrt{\frac{Y}{\rho}}.
+$$
+
+$\text{于是一般解为模态叠加 } u(x,t)=\sum_{n=1}^{\infty}T_n(t)X_n(x). \text{该例体现连续体系的拉氏形式与常见波动解法完全一致. }$
+</details>
+<h2 id="连续体系的哈密顿密度">连续体系的哈密顿密度</h2>
+<p>动量密度定义为</p>
+
+$$
+\displaystyle 
+\pi(x,t)=\frac{\partial\mathcal L}{\partial(\partial u/\partial t)}
+=\rho\frac{\partial u}{\partial t}.
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle 
+\frac{\partial u}{\partial t}=\frac{\pi}{\rho}.
+$$
+
+<p>哈密顿密度</p>
+
+$$
+\displaystyle 
+\mathcal H
+=\pi\frac{\partial u}{\partial t}-\mathcal L
+=\frac{\pi^{2}}{2\rho}
++\frac12 Y\left(\frac{\partial u}{\partial x}\right)^{2}.
+$$
+
+<p>总哈密顿量</p>
+
+$$
+\displaystyle H=\int_{0}^{l}\mathcal H\,dx.
+$$
+
+<p>这样连续体系也可以完全在哈密顿框架中描述, 与有限维系统形式一一对应.</p>
 
       </div>
       <div class="post-tags-categories">
@@ -1611,7 +2198,7 @@ $X_n \xright
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">力学变分原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%8E%9F%E7%90%86%E4%B8%8E%E4%BD%9C%E7%94%A8%E9%87%8F"><span class="toc-text">哈密顿原理与作用量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BE%8B%E5%AD%90"><span class="toc-text">泛函的概念与例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E6%B3%95%E4%B8%AD%E7%9A%84%E5%85%B8%E5%9E%8B%E9%97%AE%E9%A2%98%EF%BC%9A%E6%9C%80%E9%80%9F%E9%99%8D%E7%BA%BF"><span class="toc-text">变分法中的典型问题：最速降线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86%E4%B8%8E%E6%B3%9B%E5%87%BD%E7%9A%84%E5%8F%98%E5%88%86"><span class="toc-text">函数的微分与泛函的变分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86"><span class="toc-text">函数的微分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E7%9A%84%E5%8F%98%E5%88%86"><span class="toc-text">泛函的变分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E5%AD%A6%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9%E4%B8%8E%E5%BA%94%E7%94%A8"><span class="toc-text">变分学涉及的主要内容与应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E4%B8%8E%E6%B1%82%E5%AF%BC%E7%9A%84%E5%8F%AF%E4%BA%A4%E6%8D%A2%E6%80%A7"><span class="toc-text">变分与求导的可交换性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E5%8F%98%E5%88%86%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-text">泛函变分的计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E8%AE%A1%E7%AE%97%E7%9A%84%E5%B8%B8%E7%94%A8%E8%A7%84%E5%88%99"><span class="toc-text">变分计算的常用规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E7%AE%80%E5%8D%95%E6%B3%9B%E5%87%BD%E7%9A%84%E5%8F%98%E5%88%86%E8%AE%A1%E7%AE%97"><span class="toc-text">例子：简单泛函的变分计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E6%B3%95%E5%9F%BA%E6%9C%AC%E5%BC%95%E7%90%86"><span class="toc-text">变分法基本引理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E2%80%93%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B%EF%BC%88%E5%8D%95%E4%B8%80%E5%87%BD%E6%95%B0%E6%83%85%E5%BD%A2%EF%BC%89"><span class="toc-text">欧拉–拉格朗日方程（单一函数情形）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E5%AF%BC%E6%95%B0"><span class="toc-text">泛函导数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E4%BE%8B%E5%AD%90"><span class="toc-text">一个简单例子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E6%AC%A1%E7%A7%AF%E5%88%86%EF%BC%9A%E8%87%AA%E5%8F%98%E9%87%8F%E4%B8%8D%E6%98%BE%E5%90%AB%E6%97%B6%E7%9A%84%E5%AE%88%E6%81%92%E9%87%8F"><span class="toc-text">首次积分：自变量不显含时的守恒量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E9%80%9F%E9%99%8D%E7%BA%BF%E7%9A%84%E8%A7%A3%E6%9E%90%E8%A7%A3%EF%BC%9A%E6%97%8B%E8%BD%AE%E7%BA%BF"><span class="toc-text">最速降线的解析解：旋轮线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E6%B3%9B%E5%87%BD%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">多元泛函的极值问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%BD%A2%E5%BC%8F%E4%B8%8E%E5%8A%9B%E5%AD%A6%E5%BD%A2%E5%BC%8F%E7%9A%84%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB"><span class="toc-text">数学形式与力学形式的对应关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B"><span class="toc-text">拉格朗日方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E6%AC%A1%E7%A7%AF%E5%88%86%E4%B8%8E%E8%83%BD%E9%87%8F%E5%AE%88%E6%81%92"><span class="toc-text">首次积分与能量守恒</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E7%AB%96%E7%9B%B4%E4%B8%8A%E6%8A%9B%E8%BF%90%E5%8A%A8%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%8E%A8%E5%AF%BC"><span class="toc-text">例子：竖直上抛运动的拉格朗日推导</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E7%A9%BA%E9%97%B4%E5%BD%A2%E5%BC%8F%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF%E6%96%B9%E7%A8%8B"><span class="toc-text">相空间形式与哈密顿方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E9%87%8F%E4%B8%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E9%87%8F%E7%9A%84%E8%A7%84%E8%8C%83%E7%AD%89%E4%BB%B7"><span class="toc-text">零拉格朗日量与拉格朗日量的规范等价</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">力学变分原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%8E%9F%E7%90%86%E4%B8%8E%E4%BD%9C%E7%94%A8%E9%87%8F"><span class="toc-text">哈密顿原理与作用量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E7%9A%84%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BE%8B%E5%AD%90"><span class="toc-text">泛函的概念与例子</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E6%B3%95%E4%B8%AD%E7%9A%84%E5%85%B8%E5%9E%8B%E9%97%AE%E9%A2%98%EF%BC%9A%E6%9C%80%E9%80%9F%E9%99%8D%E7%BA%BF"><span class="toc-text">变分法中的典型问题：最速降线</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86%E4%B8%8E%E6%B3%9B%E5%87%BD%E7%9A%84%E5%8F%98%E5%88%86"><span class="toc-text">函数的微分与泛函的变分</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E5%BE%AE%E5%88%86"><span class="toc-text">函数的微分</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E7%9A%84%E5%8F%98%E5%88%86"><span class="toc-text">泛函的变分</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E5%AD%A6%E6%B6%89%E5%8F%8A%E7%9A%84%E4%B8%BB%E8%A6%81%E5%86%85%E5%AE%B9%E4%B8%8E%E5%BA%94%E7%94%A8"><span class="toc-text">变分学涉及的主要内容与应用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E4%B8%8E%E6%B1%82%E5%AF%BC%E7%9A%84%E5%8F%AF%E4%BA%A4%E6%8D%A2%E6%80%A7"><span class="toc-text">变分与求导的可交换性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E5%8F%98%E5%88%86%E7%9A%84%E8%AE%A1%E7%AE%97"><span class="toc-text">泛函变分的计算</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E8%AE%A1%E7%AE%97%E7%9A%84%E5%B8%B8%E7%94%A8%E8%A7%84%E5%88%99"><span class="toc-text">变分计算的常用规则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E5%88%86%E6%B3%95%E5%9F%BA%E6%9C%AC%E5%BC%95%E7%90%86"><span class="toc-text">变分法基本引理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E2%80%93%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B%EF%BC%88%E5%8D%95%E4%B8%80%E5%87%BD%E6%95%B0%E6%83%85%E5%BD%A2%EF%BC%89"><span class="toc-text">欧拉–拉格朗日方程（单一函数情形）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%9B%E5%87%BD%E5%AF%BC%E6%95%B0"><span class="toc-text">泛函导数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E6%AC%A1%E7%A7%AF%E5%88%86%EF%BC%9A%E8%87%AA%E5%8F%98%E9%87%8F%E4%B8%8D%E6%98%BE%E5%90%AB%E6%97%B6%E7%9A%84%E5%AE%88%E6%81%92%E9%87%8F"><span class="toc-text">首次积分：自变量不显含时的守恒量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%85%83%E6%B3%9B%E5%87%BD%E7%9A%84%E6%9E%81%E5%80%BC%E9%97%AE%E9%A2%98"><span class="toc-text">多元泛函的极值问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%BD%A2%E5%BC%8F%E4%B8%8E%E5%8A%9B%E5%AD%A6%E5%BD%A2%E5%BC%8F%E7%9A%84%E5%AF%B9%E5%BA%94%E5%85%B3%E7%B3%BB"><span class="toc-text">数学形式与力学形式的对应关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B"><span class="toc-text">拉格朗日方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A6%96%E6%AC%A1%E7%A7%AF%E5%88%86%E4%B8%8E%E8%83%BD%E9%87%8F%E5%AE%88%E6%81%92"><span class="toc-text">首次积分与能量守恒</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E7%A9%BA%E9%97%B4%E5%BD%A2%E5%BC%8F%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF%E6%96%B9%E7%A8%8B"><span class="toc-text">相空间形式与哈密顿方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E9%87%8F%E4%B8%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E9%87%8F%E7%9A%84%E8%A7%84%E8%8C%83%E7%AD%89%E4%BB%B7"><span class="toc-text">零拉格朗日量与拉格朗日量的规范等价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E7%9A%84%E4%B8%8D%E5%94%AF%E4%B8%80%E6%80%A7%E4%B8%8E%E8%A7%84%E8%8C%83%E7%AD%89%E4%BB%B7"><span class="toc-text">哈密顿量的不唯一性与规范等价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E4%B9%98%E5%AD%90%E6%B3%95"><span class="toc-text">拉格朗日乘子法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%A6%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B"><span class="toc-text">带约束的拉格朗日方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E4%BD%93%E7%B3%BB%E7%9A%84%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E9%87%8F%E4%B8%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B"><span class="toc-text">连续体系的拉格朗日量与拉格朗日方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E4%BD%93%E7%B3%BB%E7%9A%84%E5%93%88%E5%AF%86%E9%A1%BF%E5%AF%86%E5%BA%A6"><span class="toc-text">连续体系的哈密顿密度</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
