@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>archives | Hexo</title>
+  <title>向量组与线性相关 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -340,274 +340,858 @@
   
 </header>
         <!-- 内容区域 -->
-        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
-  <div class="archive-header-title">
-    archive
-  </div>
-  <div class="archive-header-desc">
-  
-  <span class="title" id="archive-header-desc"></span>
-  <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-  
-  </div>
-  <div class="mask-box"></div>
-</div>
+        
+<!-- prismjs 代码高亮 -->
 
-<div class="archive-video">
-  <video class="full-video" autoplay="" loop="" muted="">
-      <source style="width: 100%;height: 100vh;" src="/physics/">
-  </video>
-  <div class="video-header-title">
-    archive
-  </div>
-  <div class="video-header-desc">
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        向量组与线性相关
+      </span>
+    </div>
+    
+    
       
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2024-10-22 |
+        </span>
+      
+
+      
+
+      
+    
   </div>
-  <div class="mask-box"></div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
 </div>
 
-<!-- hash算法 -->
 
 
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>向量组与线性相关</h1>
+<h2 id="向量与线性表示">向量与线性表示</h2>
+<h3 id="向量的表示">向量的表示</h3>
+<p>n 元向量可以写成行向量或列向量：</p>
+
+$$
+\displaystyle
+\alpha = (a_1,a_2,\cdots,a_n),
+\quad
+\beta =
+\begin{pmatrix}
+a_1 \\ a_2 \\ \vdots \\ a_n
+\end{pmatrix}.
+$$
+
+<h3 id="线性表示">线性表示</h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>α</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>α</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_1,\alpha_2,\cdots,\alpha_s</annotation></semantics></math></span></span> 为 n 维向量。<br>
+若存在实数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>k</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>k</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">k_1,k_2,\cdots,k_s</annotation></semantics></math></span></span> 使得</p>
+
+$$
+\displaystyle
+\beta = k_1 \alpha_1 + k_2 \alpha_2 + \cdots + k_s \alpha_s,
+$$
+
+<p>则称向量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 可以由向量组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>α</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>α</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>α</mi><mi>s</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{\alpha_1,\alpha_2,\cdots,\alpha_s\}</annotation></semantics></math></span></span> <strong>线性表示</strong>。</p>
+<h2 id="线性相关与线性无关">线性相关与线性无关</h2>
+<h3 id="定义">定义</h3>
+<p>向量组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>α</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>α</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_1,\alpha_2,\cdots,\alpha_s</annotation></semantics></math></span></span> 若存在不全为零的数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>k</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">k_1,\cdots,k_s</annotation></semantics></math></span></span> 使</p>
+
+$$
+\displaystyle
+k_1 \alpha_1 + k_2 \alpha_2 + \cdots + k_s \alpha_s = 0,
+$$
+
+<p>则称该向量组<strong>线性相关</strong>。</p>
+<p>若上式成立只能由</p>
+
+$$
+\displaystyle
+k_1 = k_2 = \cdots = k_s = 0
+$$
+
+<p>来实现，则称向量组<strong>线性无关</strong>。</p>
+<h3 id="利用矩阵判定线性相关性">利用矩阵判定线性相关性</h3>
+<p>将向量组</p>
+$\{\alpha_1,\alpha_2,\cdots,\alpha_s\}$ 作为列向量组成矩阵
+
+$$
+\displaystyle
+A = (\alpha_1,\alpha_2,\cdots,\alpha_s).
+$$
+
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>&lt;</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r(A) &lt; s</annotation></semantics></math></span></span>，则向量组线性相关；<br>
+若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>=</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">r(A) = s</annotation></semantics></math></span></span>，则向量组线性无关。</p>
+<h3 id="线性相关性的若干性质">线性相关性的若干性质</h3>
+<ol>
+<li>向量组中若包含零向量，则必线性相关。</li>
+<li>线性无关向量组的任意子集仍线性无关。</li>
+<li>向量组线性相关的充要条件是其中至少有一个向量能由其余向量线性表示。</li>
+<li>若向量组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>α</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>α</mi><mi>s</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{\alpha_1,\cdots,\alpha_s\}</annotation></semantics></math></span></span> 可由向量组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>β</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>β</mi><mi>t</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{\beta_1,\cdots,\beta_t\}</annotation></semantics></math></span></span> 线性表示，且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>&gt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">s &gt; t</annotation></semantics></math></span></span>，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>α</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>α</mi><mi>s</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{\alpha_1,\cdots,\alpha_s\}</annotation></semantics></math></span></span> 必线性相关。</li>
+</ol>
+<h2 id="向量组的等价">向量组的等价</h2>
+<p>若向量组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>α</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>α</mi><mi>s</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{\alpha_1,\cdots,\alpha_s\}</annotation></semantics></math></span></span> 与向量组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>β</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>β</mi><mi>t</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{\beta_1,\cdots,\beta_t\}</annotation></semantics></math></span></span> 可以互相线性表示，则称这两个向量组<strong>等价</strong>。</p>
+<p>等价关系满足：</p>
+<ol>
+<li>反身性：任何向量组都与自身等价。</li>
+<li>对称性：若向量组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 等价于向量组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 也等价于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span>。</li>
+<li>传递性：若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 等价于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 等价于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span>，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 等价于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span>。</li>
+</ol>
+<h2 id="向量组的极大无关组与秩">向量组的极大无关组与秩</h2>
+<h3 id="极大无关组">极大无关组</h3>
+<p>设向量组</p>
+$\alpha_1,\alpha_2,\cdots,\alpha_s$ 中存在子集
+$\alpha_{i_1},\alpha_{i_2},\cdots,\alpha_{i_r}$ 满足：
+<ol>
+<li>这 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 个向量线性无关。</li>
+<li>向量组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>α</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>α</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>α</mi><mi>s</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{\alpha_1,\alpha_2,\cdots,\alpha_s\}</annotation></semantics></math></span></span> 中任意一个不在此子集中的向量加入后，整体线性相关。</li>
+</ol>
+<p>则称</p>
+$\{\alpha_{i_1},\cdots,\alpha_{i_r}\}$ 为原向量组的**极大无关组**。
+<h3 id="向量组的秩">向量组的秩</h3>
+<p>向量组的任何极大无关组所含向量的个数都相同，记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span>，称为该向量组的<strong>秩</strong>，记作</p>
+
+$$
+\displaystyle
+r(\alpha_1,\alpha_2,\cdots,\alpha_s) = r.
+$$
+
+<h3 id="向量组秩与矩阵秩的关系">向量组秩与矩阵秩的关系</h3>
+<p>设</p>
+
+$$
+\displaystyle
+A =
+\begin{pmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{m1} &amp; a_{m2} &amp; \cdots &amp; a_{mn}
+\end{pmatrix}
+=
+(\alpha_1,\alpha_2,\cdots,\alpha_n),
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_j</annotation></semantics></math></span></span> 是第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span></span> 列向量，则有</p>
+
+$$
+\displaystyle
+r(A) = r(\alpha_1,\alpha_2,\cdots,\alpha_n).
+$$
+
+<p>特别地：</p>
+<ol>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>(</mo><msub><mi>α</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>α</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">r(\alpha_1,\cdots,\alpha_n) = n</annotation></semantics></math></span></span>，则这 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 个向量线性无关。</li>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>(</mo><msub><mi>α</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>α</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><mi>r</mi><mo>&lt;</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">r(\alpha_1,\cdots,\alpha_n) = r &lt; n</annotation></semantics></math></span></span>，则存在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 个向量线性无关，其余向量都可以由这 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 个向量线性表示。</li>
+</ol>
+<h2 id="极大无关组的求法示例">极大无关组的求法示例</h2>
+<details>
+<summary>例题：求向量组的极大无关组</summary>
+<p>向量组</p>
+
+$$
+\displaystyle
+\alpha_1 =
+\begin{pmatrix}
+1 \\ 2 \\ 2
+\end{pmatrix},
+\quad
+\alpha_2 =
+\begin{pmatrix}
+0 \\ -1 \\ 1
+\end{pmatrix},
+\quad
+\alpha_3 =
+\begin{pmatrix}
+2 \\ 1 \\ 4
+\end{pmatrix},
+\quad
+\alpha_4 =
+\begin{pmatrix}
+2 \\ 4 \\ 4
+\end{pmatrix}.
+$$
+
+<p>构造矩阵</p>
+
+$$
+\displaystyle
+A = (\alpha_1,\alpha_2,\alpha_3,\alpha_4)
+=
+\begin{pmatrix}
+1 &amp; 0 &amp; 2 &amp; 2 \\
+2 &amp; -1 &amp; 1 &amp; 4 \\
+2 &amp; 1 &amp; 4 &amp; 4
+\end{pmatrix}.
+$$
+
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 做初等行变换：</p>
+<ol>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub><mo>→</mo><msub><mi>R</mi><mn>2</mn></msub><mo>−</mo><mn>2</mn><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_2 \to R_2 - 2 R_1</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mn>3</mn></msub><mo>→</mo><msub><mi>R</mi><mn>3</mn></msub><mo>−</mo><mn>2</mn><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_3 \to R_3 - 2 R_1</annotation></semantics></math></span></span> 得</p>
+
+   $$
+   \displaystyle
+   \begin{pmatrix}
+   1 &amp; 0 &amp; 2 &amp; 2 \\
+   0 &amp; -1 &amp; -3 &amp; 0 \\
+   0 &amp; 1 &amp; 0 &amp; 0
+   \end{pmatrix}.
+   $$
+   
+</li>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub><mo>→</mo><mo>−</mo><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">R_2 \to -R_2</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mn>3</mn></msub><mo>→</mo><msub><mi>R</mi><mn>3</mn></msub><mo>+</mo><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">R_3 \to R_3 + R_2</annotation></semantics></math></span></span> 得</p>
+
+   $$
+   \displaystyle
+   \begin{pmatrix}
+   1 &amp; 0 &amp; 2 &amp; 2 \\
+   0 &amp; 1 &amp; 3 &amp; 0 \\
+   0 &amp; 0 &amp; 3 &amp; 0
+   \end{pmatrix}.
+   $$
+   
+</li>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mn>3</mn></msub><mo>→</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>3</mn></mrow></mfrac><msub><mi>R</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">R_3 \to \dfrac{1}{3} R_3</annotation></semantics></math></span></span> 得</p>
+
+   $$
+   \displaystyle
+   \begin{pmatrix}
+   1 &amp; 0 &amp; 2 &amp; 2 \\
+   0 &amp; 1 &amp; 3 &amp; 0 \\
+   0 &amp; 0 &amp; 1 &amp; 0
+   \end{pmatrix}.
+   $$
+   
+</li>
+<li>
+<p>消去上方的元素：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub><mo>→</mo><msub><mi>R</mi><mn>2</mn></msub><mo>−</mo><mn>3</mn><msub><mi>R</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">R_2 \to R_2 - 3 R_3</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub><mo>→</mo><msub><mi>R</mi><mn>1</mn></msub><mo>−</mo><mn>2</mn><msub><mi>R</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">R_1 \to R_1 - 2 R_3</annotation></semantics></math></span></span>，得到</p>
+
+   $$
+   \displaystyle
+   \begin{pmatrix}
+   1 &amp; 0 &amp; 0 &amp; 2 \\
+   0 &amp; 1 &amp; 0 &amp; 0 \\
+   0 &amp; 0 &amp; 1 &amp; 0
+   \end{pmatrix}.
+   $$
+   
+</li>
+</ol>
+<p>从阶梯形可以看出有三个主元列，对应原矩阵的第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">1,2,3</annotation></semantics></math></span></span> 列，<br>
+因此</p>
+
+$$
+\displaystyle
+\alpha_1,\alpha_2,\alpha_3
+$$
+
+<p>构成一个极大无关组，向量组的秩为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn></mrow><annotation encoding="application/x-tex">3</annotation></semantics></math></span></span>。向量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">\alpha_4</annotation></semantics></math></span></span> 可以由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>α</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>α</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">\alpha_1,\alpha_2,\alpha_3</annotation></semantics></math></span></span> 线性表示。</p>
+</details>
+<h2 id="综合例题：向量组的秩">综合例题：向量组的秩</h2>
+<details>
+<summary>例题：求向量组的秩及一个极大无关组</summary>
+<p>考虑向量组 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>α</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>α</mi><mn>3</mn></msub><mo separator="true">,</mo><msub><mi>α</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">\alpha_1,\alpha_2,\alpha_3,\alpha_4</annotation></semantics></math></span></span>，其矩阵表示为</p>
+
+$$
+\displaystyle
+(\alpha_1,\alpha_2,\alpha_3,\alpha_4) =
+\begin{pmatrix}
+2 &amp; 3 &amp; 1 &amp; 4 \\
+1 &amp; -1 &amp; 3 &amp; -3 \\
+3 &amp; 2 &amp; 4 &amp; 1 \\
+-1 &amp; 0 &amp; -2 &amp; 1
+\end{pmatrix}.
+$$
+
+<p>对该矩阵做初等行变换，得到行阶梯形矩阵（略去具体步骤），其中有三行非零行，因此</p>
+
+$$
+\displaystyle
+r(\alpha_1,\alpha_2,\alpha_3,\alpha_4) = 3.
+$$
+
+<p>从阶梯形矩阵中可以读出一个极大无关组，例如</p>
+
+$$
+\displaystyle
+\{\alpha_1,\alpha_2,\alpha_4\}
+$$
+
+<p>就是原向量组的一个极大无关组（并非唯一）。</p>
+</details>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E7%BA%BF%E4%BB%A3/" class="">
+              线代
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/向量组与线性相关/" target="_blank" title="向量组与线性相关">https://kotokowa.github.io/physics/向量组与线性相关/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/%E7%BA%BF%E6%80%A7%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%A7%A3%E7%BB%93%E6%9E%84/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">线性方程组的解结构</div>
+      </div>
+      
+      <!-- <div class="content">
+        线性方程组的解结构
+齐次线性方程组
+基础解系的定义
+考虑齐次线性方程组
+
+$$
+\displaystyle
+A X = 
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2%E3%80%81%E5%88%9D%E7%AD%89%E7%9F%A9%E9%98%B5%E4%B8%8E%E7%A7%A9/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">初等变换、初等矩阵与秩</div>
+      </div>
+      <!-- <div class="content">
+        初等变换、初等矩阵与秩
+矩阵的初等行列变换
+三种基本初等行变换（列变换完全类似）：
+
+交换两行：Ri↔RjR_i \le
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
         
         
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
           
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/physics/archives/2025">2025</a>
-            </div>
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
           
-          <li class="post-item" data-aos="fade-left">
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">向量组与线性相关</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E4%B8%8E%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%A4%BA"><span class="toc-text">向量与线性表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-text">向量的表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%A4%BA"><span class="toc-text">线性表示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E4%B8%8E%E7%BA%BF%E6%80%A7%E6%97%A0%E5%85%B3"><span class="toc-text">线性相关与线性无关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E7%9F%A9%E9%98%B5%E5%88%A4%E5%AE%9A%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%80%A7"><span class="toc-text">利用矩阵判定线性相关性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3%E6%80%A7%E7%9A%84%E8%8B%A5%E5%B9%B2%E6%80%A7%E8%B4%A8"><span class="toc-text">线性相关性的若干性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%AD%89%E4%BB%B7"><span class="toc-text">向量组的等价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E6%9E%81%E5%A4%A7%E6%97%A0%E5%85%B3%E7%BB%84%E4%B8%8E%E7%A7%A9"><span class="toc-text">向量组的极大无关组与秩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E5%A4%A7%E6%97%A0%E5%85%B3%E7%BB%84"><span class="toc-text">极大无关组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%A7%A9"><span class="toc-text">向量组的秩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%91%E9%87%8F%E7%BB%84%E7%A7%A9%E4%B8%8E%E7%9F%A9%E9%98%B5%E7%A7%A9%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">向量组秩与矩阵秩的关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%81%E5%A4%A7%E6%97%A0%E5%85%B3%E7%BB%84%E7%9A%84%E6%B1%82%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text">极大无关组的求法示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%BC%E5%90%88%E4%BE%8B%E9%A2%98%EF%BC%9A%E5%90%91%E9%87%8F%E7%BB%84%E7%9A%84%E7%A7%A9"><span class="toc-text">综合例题：向量组的秩</span></a></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">12-01</span>
+                
+                  <span class="post-date">12-01</span>
+                
               </div>
               <a class="post-title" href="/physics/%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B/">正则变换与哈密顿-雅可比方程</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/%E6%A0%B7%E6%9C%AC%E4%B8%8E%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">11-26</span>
+                
+                  <span class="post-date">11-26</span>
+                
               </div>
               <a class="post-title" href="/physics/%E6%A0%B7%E6%9C%AC%E4%B8%8E%E6%8A%BD%E6%A0%B7%E5%88%86%E5%B8%83/">样本与抽样分布</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E4%B8%8E%E6%B3%A2%E7%9F%A2%E7%A9%BA%E9%97%B4%E5%87%A0%E4%BD%95/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">11-25</span>
+                
+                  <span class="post-date">11-25</span>
+                
               </div>
               <a class="post-title" href="/physics/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E4%B8%8E%E6%B3%A2%E7%9F%A2%E7%A9%BA%E9%97%B4%E5%87%A0%E4%BD%95/">各向异性晶体与波矢空间几何</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/%E5%8A%9B%E5%AD%A6%E5%8F%98%E5%88%86%E5%8E%9F%E7%90%86/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">11-24</span>
+                
+                  <span class="post-date">11-24</span>
+                
               </div>
               <a class="post-title" href="/physics/%E5%8A%9B%E5%AD%A6%E5%8F%98%E5%88%86%E5%8E%9F%E7%90%86/">力学变分原理</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">11-19</span>
+                
+                  <span class="post-date">11-19</span>
+                
               </div>
               <a class="post-title" href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7/">随机变量的收敛性</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/physics/%E5%82%85%E9%87%8C%E5%8F%B6%E5%85%89%E5%AD%A6/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-18</span>
-              </div>
-              <a class="post-title" href="/physics/%E5%82%85%E9%87%8C%E5%8F%B6%E5%85%89%E5%AD%A6/">傅里叶光学</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/physics/%E5%93%88%E5%AF%86%E9%A1%BF%E5%8A%9B%E5%AD%A62/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-17</span>
-              </div>
-              <a class="post-title" href="/physics/%E5%93%88%E5%AF%86%E9%A1%BF%E5%8A%9B%E5%AD%A62/">哈密顿力学2</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-12</span>
-              </div>
-              <a class="post-title" href="/physics/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E5%AD%97%E7%89%B9%E5%BE%81/">随机变量的数字特征</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/physics/%E5%93%88%E5%AF%86%E9%A1%BF%E5%8A%9B%E5%AD%A61/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-5309be9f08b1404293b5fa867d1a84d3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-5309be9f08b1404293b5fa867d1a84d3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-10</span>
-              </div>
-              <a class="post-title" href="/physics/%E5%93%88%E5%AF%86%E9%A1%BF%E5%8A%9B%E5%AD%A61/">哈密顿力学1</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/physics/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0%E4%B8%8E%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E5%85%A5%E9%97%A8/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">11-09</span>
-              </div>
-              <a class="post-title" href="/physics/%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0%E4%B8%8E%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E5%85%A5%E9%97%A8/">傅里叶级数与傅里叶变换入门</a>
-            </div>
-          </li>
-        
-      </ul>
+      </div>
     </div>
   </section>
-  <div class="w-70">
-    
-  <!-- <nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/physics/archives/page/2/">2</a><a class="page-number" href="/physics/archives/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/physics/archives/page/5/">5</a><a class="extend next" rel="next" href="/physics/archives/page/2/">Next</a>
-  </nav> -->
-  <div class="page-nav">
-    
-    <div class="page-info">
-        <div class="page-info-text">1 / 5</div>
-    </div>
-    
-      <a href="/physics/archives/page/2/" class="page-nav-next">
-          <span class="mr-5">Next</span><i class="fas fa-angle-right"></i>
-      </a>
-      
-  </div>
 
+    
   </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
 </div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>
