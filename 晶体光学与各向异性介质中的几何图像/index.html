@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>随机变量的分布函数和密度函数定义 | Hexo</title>
+  <title>晶体光学与各向异性介质中的几何图像 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,21 +355,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        随机变量的分布函数和密度函数定义
+        晶体光学与各向异性介质中的几何图像
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2025-10-22 |
+          <i class="fas fa-calendar"></i> Published in：2025-12-02 |
         </span>
       
 
@@ -392,63 +392,1007 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1>随机变量的分布函数和密度函数定义</h1>
-<h3 id="分布函数">分布函数</h3>
-<p>离散型随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>：取值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>x</mi><mi>k</mi></msub><msub><mo>}</mo><mrow><mi>k</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">N</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">\{x_k\}_{k \in \mathbb{N}}</annotation></semantics></math></span></span>，定义分布函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">F_X</annotation></semantics></math></span></span> 为一个右连续非降阶梯函数：</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>≤</mo><mi>x</mi><mo>)</mo><mo>=</mo><msub><mo>∑</mo><mrow><mi>j</mi><mo>:</mo><msub><mi>x</mi><mi>j</mi></msub><mo>≤</mo><mi>x</mi></mrow></msub><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">F_X(x) = P(X \leq x) = \sum_{j: x_j \leq x} P(X = x_j)
-</annotation></semantics></math></span></span></span></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>k</mi></msub><mo>=</mo><mi>F</mi><mo>(</mo><msub><mi>x</mi><mi>k</mi></msub><mo>)</mo><mo>−</mo><mi>F</mi><mo>(</mo><msub><mi>x</mi><mi>k</mi></msub><mo>−</mo><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><msub><mi>x</mi><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">p_k = F(x_k) - F(x_k-) = P(X = x_k)
-</annotation></semantics></math></span></span></span></p>
-<h4 id="分布函数的性质">分布函数的性质</h4>
-<p>① 单调性：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub></mrow><annotation encoding="application/x-tex">F_X</annotation></semantics></math></span></span> 是单调非降函数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>)</mo><mo>≤</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">F_X(x_1) \leq F_X(x_2)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>≤</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">x_1 \leq x_2</annotation></semantics></math></span></span>；</p>
-<p>② 有界性：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>≤</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0 \leq F_X(x) \leq 1</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>x</mi><mo>→</mo><mo>−</mo><mi mathvariant="normal">∞</mi></mrow></msub><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lim_{x \to -\infty} F_X(x) = 0</annotation></semantics></math></span></span>；<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>x</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></msub><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lim_{x \to \infty} F_X(x) = 1</annotation></semantics></math></span></span>；</p>
-<p>③ 右连续性：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi><msub><mi>x</mi><mn>0</mn></msub><mo>∈</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">\forall x_0 \in \mathbb{R}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>x</mi><mo>→</mo><msubsup><mi>x</mi><mn>0</mn><mo>+</mo></msubsup></mrow></msub><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\lim_{x \to x_0^+} F_X(x) = F_X(x_0)</annotation></semantics></math></span></span>.</p>
-<h4 id="由分布函数可以计算概率">由分布函数可以计算概率</h4>
-<p>① 对于任何 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">x_1 &lt; x_2</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">P</mi></mrow><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><mi>X</mi><mo>≤</mo><msub><mi>x</mi><mn>2</mn></msub><mo>)</mo><mo>=</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo>)</mo><mo>−</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathbf{P}(x_1 &lt; X \leq x_2) = F_X(x_2) - F_X(x_1)</annotation></semantics></math></span></span>；</p>
-<p>② <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi><mi>x</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">\forall x \in \mathbb{R}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">P</mi></mrow><mo>(</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo>)</mo><mo>=</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>−</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>−</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathbf{P}(X = x) = F_X(x) - F_X(x-)</annotation></semantics></math></span></span>；</p>
-<p>③ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi><mi>x</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">\forall x \in \mathbb{R}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">P</mi></mrow><mo>(</mo><mi>X</mi><mo>&gt;</mo><mi>x</mi><mo>)</mo><mo>=</mo><mn>1</mn><mo>−</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathbf{P}(X &gt; x) = 1 - F_X(x)</annotation></semantics></math></span></span>.</p>
-<h4 id="定理">定理</h4>
-<p>1 由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="script">B</mi></mrow><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">(\mathbb{R}, \mathcal{B}(\mathbb{R}))</annotation></semantics></math></span></span> 上的概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">P</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{P}</annotation></semantics></math></span></span> 可以定义出一个分布函数</p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mrow><mi mathvariant="bold">P</mi></mrow><mo>(</mo><mo>(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo separator="true">,</mo><mi>x</mi><mo>]</mo><mo>)</mo><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">F(x) = \mathbf{P}((-\infty, x]).
-</annotation></semantics></math></span></span></span></p>
-<p>2 由分布函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 可以确定一个在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="script">B</mi></mrow><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">(\mathbb{R}, \mathcal{B}(\mathbb{R}))</annotation></semantics></math></span></span> 上的概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">P</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{P}</annotation></semantics></math></span></span>.</p>
-<p>3 若函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 满足定义中的 ①-③ 三个性质，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 为一个在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="script">B</mi></mrow><mo>(</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">(\mathbb{R}, \mathcal{B}(\mathbb{R}))</annotation></semantics></math></span></span> 上（唯一）确定概率的分布函数.</p>
-<h3 id="密度函数">密度函数</h3>
-<p><strong>连续型随机变量才有密度函数！</strong></p>
-<h4 id="若-X-为连续型随机变量">若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 为连续型随机变量</h4>
-<p>① <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo>)</mo><mo>=</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>−</mo><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>−</mo><mo>)</mo><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mi mathvariant="normal">∀</mi><mi>x</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">P(X = x) = F_X(x) - F_X(x-) = 0, \forall x \in \mathbb{R}</annotation></semantics></math></span></span></p>
-<p>② 事件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi>X</mi><mo>=</mo><mi>x</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">\{X = x\}</annotation></semantics></math></span></span> 不是空集，但是为零概集</p>
-<p>③ <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><mi>X</mi><mo>≤</mo><msub><mi>x</mi><mn>2</mn></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><mi>X</mi><mo>&lt;</mo><msub><mi>x</mi><mn>2</mn></msub><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>≤</mo><mi>X</mi><mo>≤</mo><msub><mi>x</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">P(x_1 &lt; X \leq x_2) = P(x_1 &lt; X &lt; x_2) = P(x_1 \leq X \leq x_2)</annotation></semantics></math></span></span></p>
-<h4 id="连续型随机变量-密度函数：定义">连续型随机变量-密度函数：定义</h4>
-<p>连续型随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>：存在一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbb{R}</annotation></semantics></math></span></span> 上的非负Lebesgue可测函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_X(x)</annotation></semantics></math></span></span> 满足，对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">R</mi></mrow></mrow><annotation encoding="application/x-tex">x \in \mathbb{R}</annotation></semantics></math></span></span></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi>x</mi></msubsup><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>u</mi><mo>)</mo><mi>d</mi><mi>u</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">F_X(x) = \int_{-\infty}^x p_X(u) du.
-</annotation></semantics></math></span></span></span></p>
-<p>称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_X(x)</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的概率密度函数.</p>
-<h4 id="连续型随机变量-密度函数：性质">连续型随机变量-密度函数：性质</h4>
+        <h1>晶体光学与各向异性介质中的几何图像</h1>
+<h2 id="光线（能流）的菲涅耳方程">光线（能流）的菲涅耳方程</h2>
+<p>在各向异性晶体中，波矢方向 $\vec{k}$ 与能流方向（或群速度方向）$\vec{s}$ 一般不一致，但两者之间存在一一对应关系，因此可以从能流方向出发，重写与传统菲涅耳方程等价的“光线版本”。</p>
+<h3 id="从-vec-D-与-vec-E-的几何关系出发">从 $\vec{D}$ 与 $\vec{E}$ 的几何关系出发</h3>
+<p>设 $\hat{e}_s$ 为光线（能流）方向的单位矢量，将位移矢量 $\vec{D}$ 分解到 $\hat{e}_s$ 方向和平行于 $\vec{E}$ 的方向：</p>
+
+$$
+\displaystyle \vec{D}_s = \hat{e}_s \left$ \vec{D} \cdot \hat{e}_s \right$
+$$
+
+
+$$
+\displaystyle \vec{D}_e = \vec{D} - \hat{e}_s \left$ \vec{D} \cdot \hat{e}_s \right$
+= \frac{\vec{D} \cdot \vec{E}}{E} \,\frac{\vec{E}}{E}
+$$
+
+<p>其中 $\vec{D}_e$ 与 $\vec{E}$ 共线。由此可以凑出一个与波矢方向版本完全类似、只需将 $\hat{e}_k$ 替换为 $\hat{e}_s$ 的关系式：</p>
+
+$$
+\displaystyle \vec{E} = \frac{E^{2}}{\vec{D} \cdot \vec{E}} \left[ \vec{D} - \hat{e}_s \left$ \vec{D} \cdot \hat{e}_s \right$ \right]
+$$
+
+<p>下面的目标是消去前面的比例因子 $E^{2}/<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover><mo>⋅</mo><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}\cdot\vec{E}</annotation></semantics></math></span></span>$。</p>
+<h3 id="用介电张量关系消去比例因子">用介电张量关系消去比例因子</h3>
+<p>线性各向异性介质中有关系<br>
+$\vec{D} = \varepsilon_0 \overleftrightarrow{\varepsilon},\vec{E}$。在波矢版本的推导中，已有</p>
+
+$$
+\displaystyle \vec{D} 
+= \frac{k^{2}}{\mu_0 \omega^{2}} \left[ \vec{E} - \hat{e}_p \left$ \hat{e}_p \cdot \vec{E} \right$ \right]
+= \frac{k^{2}}{\mu_0 \omega^{2}} \vec{E}_d
+= \frac{1}{v_p^{2}\mu_0} \vec{E}_d
+= \frac{n^{2}}{c^{2}\mu_0} \vec{E}_d
+= n^{2} \varepsilon_0 \vec{E}_d
+$$
+
+<p>其中 $\vec{E}_d$ 是与 $\vec{D}$ 相对应的“有效场”。于是</p>
+
+$$
+\displaystyle \vec{E}_d = \frac{\vec{D}}{n^{2}\varepsilon_0}
+$$
+
+<p>又因为 $\vec{D}$ 与 $\vec{E}_d$ 共线，有</p>
+
+$$
+\displaystyle \vec{D} \cdot \vec{E}
+= D\,E_d
+= \frac{D^{2}}{n^{2}\varepsilon_0}
+$$
+
+<p>另一方面，$\vec{D}$ 与 $\vec{E}$ 之间的夹角为 $\alpha$，则</p>
+
+$$
+\displaystyle \vec{D} \cdot \vec{E} = D E \cos\alpha
+$$
+
+<p>由此得到大小关系</p>
+
+$$
+\displaystyle \frac{D^{2}}{n^{2}\varepsilon_0} = D E \cos\alpha
+\quad \Rightarrow \quad
+E = \frac{D}{n^{2}\varepsilon_0 \cos\alpha}
+$$
+
+<p>将 $E$ 代入前面的比例因子：</p>
+
+$$
+\displaystyle \frac{E^{2}}{\vec{D} \cdot \vec{E}}
+= \frac{E \left$ D/$n^{2}\varepsilon_0 \cos\alpha$ \right$}{D E \cos\alpha}
+= \frac{1}{\varepsilon_0 n^{2} \cos^{2}\alpha}
+$$
+
+<p>回忆定义群折射率</p>
+
+$$
+\displaystyle n_g = n \cos\alpha
+$$
+
+<p>于是比例因子化简为</p>
+
+$$
+\displaystyle \frac{E^{2}}{\vec{D} \cdot \vec{E}}
+= \frac{1}{\varepsilon_0 n_g^{2}}
+$$
+
+<p>将其代回即可得到<strong>光线（能流）版本的菲涅耳方程</strong>：</p>
+
+$$
+\displaystyle \vec{E} = \frac{1}{\varepsilon_0 n_g^{2}} 
+\left[ \vec{D} - \hat{e}_s \left$ \vec{D} \cdot \hat{e}_s \right$ \right]
+$$
+
+<h3 id="与波矢版本菲涅耳方程的一一对应">与波矢版本菲涅耳方程的一一对应</h3>
+<p>波矢方向（相速度方向）上的菲涅耳方程为</p>
+
+$$
+\displaystyle \vec{D} = n^{2} \varepsilon_0 
+\left[ \vec{E} - \hat{e}_p \left$ \vec{E} \cdot \hat{e}_p \right$ \right]
+$$
+
+<p>两者之间存在清晰的对应关系：</p>
+<ul>
+<li>$\vec{D} \leftrightarrow \vec{E}$</li>
+<li>$1/n_g \leftrightarrow n$</li>
+<li>$1/\varepsilon_0 \leftrightarrow \varepsilon_0$</li>
+<li>$\hat{e}_s \leftrightarrow \hat{e}_p$</li>
+<li>主折射率 $n_{ii} \leftrightarrow 1/n_{ii}$</li>
+</ul>
+<p>也就是说，在能流描述中，$\vec{D}$ 与 $\vec{E}$、折射率与群折射率出现了一种“对偶”关系。</p>
+<h3 id="在主轴坐标中的分量形式">在主轴坐标中的分量形式</h3>
+<p>在介质主轴坐标系中，</p>
+
+$$
+\displaystyle D_i = \varepsilon_0 \varepsilon_{ii} E_i
+= \varepsilon_0 n_{ii}^{2} E_i
+$$
+
+<p>将 $\vec{E}$ 的光线版菲涅耳方程逐分量代入：</p>
+
+$$
+\displaystyle \varepsilon_0 \varepsilon_{ii} E_i
+= \frac{1}{\varepsilon_0 n_g^{2}} \varepsilon_0 \varepsilon_{ii}
+\left$ D_i - e_{si} \, \vec{D} \cdot \hat{e}_s \right$
+$$
+
+<p>得到对 $\vec{D}$ 的约束：</p>
+
+$$
+\displaystyle D_i
+= \frac{\varepsilon_{ii}}{n_g^{2}}
+\left$ D_i - e_{si} \, \vec{D} \cdot \hat{e}_s \right$
+= \frac{n_{ii}^{2}}{n_g^{2}}
+\left$ D_i - e_{si} \, \vec{D} \cdot \hat{e}_s \right$
+$$
+
+<p>这给出了在给定能流方向 $\hat{e}_s$ 时，$\vec{D}$ 各分量之间的约束关系，是能流方向本征值问题的出发点。</p>
+<h2 id="本征值问题与折射率椭球、群速度椭球">本征值问题与折射率椭球、群速度椭球</h2>
+<h3 id="能流方向的本征值方程">能流方向的本征值方程</h3>
+<p>从光线版菲涅耳方程出发：</p>
+
+$$
+\displaystyle \vec{E}
+= \frac{1}{\varepsilon_0 n_g^{2}} 
+\left$ \varepsilon_0 \overleftrightarrow{\varepsilon} \vec{E}
+- \hat{e}_s \left[ \hat{e}_s \cdot \varepsilon_0 \overleftrightarrow{\varepsilon} \vec{E} \right] \right$
+$$
+
+<p>记</p>
+
+$$
+\displaystyle \Gamma_s = I - \hat{e}_s \hat{e}_s^{\top},
+\qquad
+\overleftrightarrow{n} \propto \overleftrightarrow{\varepsilon}
+$$
+
+<p>则有</p>
+
+$$
+\displaystyle \vec{E} = \frac{1}{n_g^{2}} 
+\Gamma_s \,\overleftrightarrow{n}\, \vec{E}
+\quad \Rightarrow \quad
+n_g^{2} \vec{E} = \Gamma_s \,\overleftrightarrow{n}\, \vec{E}
+$$
+
+<p>并且必须满足横向条件</p>
+
+$$
+\displaystyle \vec{E} \cdot \hat{e}_s = 0
+$$
+
+<p>因此 $\vec{E}$ 在给定能流方向 $\hat{e}_s$ 下有两个本征态，对应两个不同的群折射率 $n_g$，这与经典相速度问题中的“双折射两本征态”是一致的。非平凡解要求</p>
+
+$$
+\displaystyle \det\!\left$ n_g^{2} I - \Gamma_s \,\overleftrightarrow{n} \right$ = 0
+$$
+
+<p>这给出了群折射率 $n_g$ 在不同能流方向上的分布，形成所谓的“群速度椭球”（或群折射率椭球）。</p>
+<h3 id="折射率椭球与群速度折射率椭球">折射率椭球与群速度折射率椭球</h3>
+<p>在介质主轴坐标系下，折射率椭球的常见形式为</p>
+
+$$
+\displaystyle \frac{x_d^{2}}{n_{x}^{2}}
++ \frac{y_d^{2}}{n_{y}^{2}}
++ \frac{z_d^{2}}{n_{z}^{2}} = 1
+$$
+
+<p>这里 $<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>d</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>d</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">x_d, y_d, z_d</annotation></semantics></math></span></span>$ 是与 $\vec{D}$ 或 $\vec{k}$ 相关的几何坐标，描述相速度（或折射率）在各方向上的分布。</p>
+<p>另一方面，从能流角度出发，可以定义群速度（或群折射率）椭球。例如用能量密度的形式写：</p>
+
+$$
+\displaystyle
+\frac{D_x^{2}}{2\omega \varepsilon_0 \varepsilon_{xx}}
++ \frac{D_y^{2}}{2\omega \varepsilon_0 \varepsilon_{yy}}
++ \frac{D_z^{2}}{2\omega \varepsilon_0 \varepsilon_{zz}}
+= 1
+$$
+
+<p>或者等价地，用电场的能量密度来写群速度椭球：</p>
+
+$$
+\displaystyle
+\frac{\varepsilon_0 E_x^{2}}{2\omega \varepsilon_{xx}}
++ \frac{\varepsilon_0 E_y^{2}}{2\omega \varepsilon_{yy}}
++ \frac{\varepsilon_0 E_z^{2}}{2\omega \varepsilon_{zz}}
+= 1
+$$
+
+<p>在适当的坐标变换下，群速度椭球可以写成类似</p>
+
+$$
+\displaystyle x_e^{2} n_{x}^{2} 
++ y_e^{2} n_{y}^{2}
++ z_e^{2} n_{z}^{2} = 1
+$$
+
+<p>或者</p>
+
+$$
+\displaystyle \frac{x_e^{2}}{n_{x}^{2}} 
++ \frac{y_e^{2}}{n_{y}^{2}}
++ \frac{z_e^{2}}{n_{z}^{2}} = 1
+$$
+
+<p>这两种写法本质上是对同一几何体在不同缩放坐标下的表示，表明折射率椭球与群速度椭球之间存在一种“互逆”关系：一个用 $n_{i}$ 做分母，另一个可以用 $n_{i}$ 做分子或通过坐标缩放转换为相同形式。</p>
+<h2 id="群速度（光线）曲面与等频率图的联系">群速度（光线）曲面与等频率图的联系</h2>
+<h3 id="齐次性假设与-vec-v-g-nabla-k-omega">齐次性假设与 $\vec{v}_g = \nabla_k \omega$</h3>
+<p>假设工作频率远离材料的共振区，体内传播近似无色散，满足</p>
+
+$$
+\displaystyle \omega$\lambda \vec{k}$ = \lambda \,\omega$\vec{k}$
+$$
+
+<p>即 $\omega<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span>$ 关于 $\vec{k}$ 是一阶齐次函数。</p>
+<p>对 $\lambda$ 求导：</p>
+<p>左边</p>
+
+$$
+\displaystyle
+\frac{\mathrm{d}}{\mathrm{d}\lambda} \omega$\lambda \vec{k}$
+= \frac{\partial \omega}{\partial $\lambda k_x$} \frac{\partial $\lambda k_x$}{\partial \lambda}
++ \frac{\partial \omega}{\partial $\lambda k_y$} \frac{\partial $\lambda k_y$}{\partial \lambda}
++ \frac{\partial \omega}{\partial $\lambda k_z$} \frac{\partial $\lambda k_z$}{\partial \lambda}
+= \nabla_{k} \omega \cdot \vec{k}
+$$
+
+<p>右边</p>
+
+$$
+\displaystyle
+\frac{\mathrm{d}}{\mathrm{d}\lambda} \left[ \lambda \omega$\vec{k}$ \right]
+= \omega$\vec{k}$
+$$
+
+<p>令 $\lambda = 1$，得到</p>
+
+$$
+\displaystyle
+\nabla_{k} \omega$\vec{k}$ \cdot \vec{k} = \omega$\vec{k}$
+$$
+
+<p>群速度定义为</p>
+
+$$
+\displaystyle \vec{v}_g = \nabla_{k} \omega
+$$
+
+<p>于是得到重要关系</p>
+
+$$
+\displaystyle \vec{v}_g \cdot \vec{k} = \omega$\vec{k}$
+$$
+
+<p>这是后续讨论群速度曲面与等频率图的关键方程。</p>
+<h3 id="群速度曲面的法线与波矢方向">群速度曲面的法线与波矢方向</h3>
+<p>对上式两边做微分：</p>
+
+$$
+\displaystyle \mathrm{d}\vec{v}_g \cdot \vec{k}
++ \vec{v}_g \cdot \mathrm{d}\vec{k} = 0
+$$
+
+<p>而在等频率面 $\omega = \text{const.}$ 上，$\mathrm{d}\omega = 0$，又有</p>
+
+$$
+\displaystyle \vec{v}_g \cdot \mathrm{d}\vec{k}
+= \nabla_k \omega \cdot \mathrm{d}\vec{k}
+= \mathrm{d}\omega = 0
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle \mathrm{d}\vec{v}_g \cdot \vec{k} = 0
+$$
+
+<p>这表示在群速度曲面上，任意无穷小变动 $\mathrm{d}\vec{v}_g$ 都与 $\vec{k}$ 正交，即<strong>群速度曲面的法线方向就是波矢方向</strong>。在各向异性介质中，$\vec{k}$ 不再与能流方向重合，而是成为群速度曲面上的法线。</p>
+<p>进一步由</p>
+
+$$
+\displaystyle \vec{v}_g \cdot \vec{k} = \omega
+$$
+
+<p>若定义 $\alpha$ 为群速度 $\vec{v}_g$ 与波矢 $\vec{k}$ 之间的夹角，则有</p>
+
+$$
+\displaystyle v_g k \cos\alpha = \omega
+\quad \Rightarrow \quad
+v_p = \frac{\omega}{k} = v_g \cos\alpha
+$$
+
+<p>这说明<strong>相速度大小可以从群速度曲面上通过夹角 $\alpha$ 直接得到</strong>。</p>
+<h2 id="等相位面与等频率图">等相位面与等频率图</h2>
+<h3 id="等相位面的定义与相速度">等相位面的定义与相速度</h3>
+<p>平面波相位为</p>
+
+$$
+\displaystyle \phi = \vec{k} \cdot \vec{r} - \omega t
+$$
+
+<p>等相位面上的相位为常数 $\phi = \phi_0$，于是</p>
+
+$$
+\displaystyle \vec{k} \cdot \vec{r} = \omega t + \phi_0
+$$
+
+<p>定义相速度 $v_p$ 为等相位面某一点沿法线方向的移动速度。若在 $t=0$ 时该相位点在 $\vec{r}_0$，在时间 $t$ 后移动到 $\vec{r} = \vec{r}_0 + \vec{v}_p t$，代入上式：</p>
+
+$$
+\displaystyle
+\vec{k} \cdot $\vec{r}_0 + \vec{v}_p t$
+= \vec{k} \cdot \vec{r}_0 + \vec{k} \cdot \vec{v}_p t
+= \omega t + \phi_0
+$$
+
+<p>等相位面上有 $\phi_0 = \vec{k} \cdot \vec{r}_0$，故</p>
+
+$$
+\displaystyle k v_p t = \omega t
+\quad \Rightarrow \quad
+v_p = \frac{\omega}{k}
+$$
+
+<p>且方向与 $\vec{k}$ 同向。这与各向同性介质中“相速度沿法线、大小为 $\omega/k$”的结论完全一致，只是各向异性介质中不同本征态对应不同 $k$ 和 $v_p$。</p>
+<h3 id="等相位面与群速度的关系">等相位面与群速度的关系</h3>
+<p>由波动光学可知</p>
+
+$$
+\displaystyle \vec{k} = \nabla \phi
+$$
+
+<p>因此 $\vec{k}$ 总是垂直于等相位面 $\phi|_{\text{const.}}$。另一方面，我们已经得出</p>
+
+$$
+\displaystyle \vec{v}_g \cdot \vec{k} = \omega,
+\qquad
+\vec{k} \parallel \text{群速度曲面的法线}
+$$
+
+<p>因此直观上可以预期：<strong>等相位面的形状与群速度分布密切相关</strong>。</p>
+<p>更具体地，考虑用位置方向 $\hat{r}$ 来参数化 $\vec{k}$，令</p>
+
+$$
+\displaystyle \varphi$\vec{r}$
+= \vec{k}$\hat{r}$ \cdot \vec{r},
+\qquad t = 0
+$$
+
+<p>在各点，能流方向（即 $\vec{v}_g$ 与 $\vec{s}$）与 $\vec{r}$ 同向，有</p>
+
+$$
+\displaystyle \vec{k} \cdot \vec{v}_g = \omega = k_r v_g
+$$
+
+<p>其中 $k_r$ 为 $\vec{k}$ 在 $\hat{r}$ 方向上的分量。于是</p>
+
+$$
+\displaystyle \varphi$\vec{r}$ = k_r r = \frac{\omega}{v_g} r
+$$
+
+<p>若固定相位 $\varphi = \varphi_0$，则所有满足等相位条件的点半径满足</p>
+
+$$
+\displaystyle r = \frac{\varphi_0}{\omega} v_g
+$$
+
+<p>将 $\varphi_0/\omega$ 视作一段“时间” $t$（量纲为时间），有</p>
+
+$$
+\displaystyle r = t v_g
+\quad \Rightarrow \quad
+\vec{r} = t \,\vec{v}_g
+$$
+
+<p>这给出一个非常直观的结论：</p>
+<blockquote>
+<p><strong>等相位面在几何上就是群速度分布放大 $t$ 倍之后得到的曲面。</strong></p>
+</blockquote>
+<p>因此，等相位图、群速度分布图与等频率图之间构成了如下对应：</p>
+<ul>
+<li>等频率图 $\omega<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> = \text{const.}$：给出波矢 $\vec{k}$ 的分布，曲面法线方向为 $\vec{v}_g$。</li>
+<li>群速度曲面：给出 $\vec{v}_g$ 的方向和大小，法线方向为 $\vec{k}$。</li>
+<li>等相位图：在给定时间 $t$ 下，等相位面的位置是 $\vec{r} = t \vec{v}_g$。</li>
+</ul>
+<p>在这些图像中，$\vec{k}$、$\vec{s}$、$\vec{v}_p$、$\vec{v}_g$ 的几何关系可以通过<br>
+$v_p = v_g \cos\alpha$（$\alpha$ 为 $\vec{k}$ 与 $\vec{v}_g$ 的夹角）统一起来。</p>
+<h2 id="各向异性晶体的分类与折射率椭球">各向异性晶体的分类与折射率椭球</h2>
+<h3 id="各向同性晶体">各向同性晶体</h3>
+<p>各向同性晶体满足</p>
+
+$$
+\displaystyle n_x = n_y = n_z
+$$
+
+<p>折射率椭球退化为球。此时无论 $\vec{k}$ 指向哪个方向，其垂直平面与球面的交线始终是圆，说明所有偏振都感受相同折射率，任何偏振态都是本征态。具有立方晶体结构等高对称性晶体便属于此类。</p>
+<h3 id="单轴各向异性晶体">单轴各向异性晶体</h3>
+<p>单轴晶体满足</p>
+
+$$
+\displaystyle n_x = n_y \neq n_z
+$$
+
+<p>通常取 $z$ 轴为光轴（对称轴）。除沿光轴方向外，任意 $\vec{k}$ 方向的垂直平面与折射率椭球的交线是椭圆，具有长、短轴，对应两种本征偏振态：<strong>普通光 o 光</strong>与<strong>非常光 e 光</strong>。</p>
+<p>当 $\vec{k} \parallel z$ 时，交线是圆，长、短轴退化，两个本征态简并，对应同一个折射率和相速度，因此在该方向上传播时偏振不发生变化。</p>
+<h3 id="双轴各向异性晶体">双轴各向异性晶体</h3>
+<p>双轴晶体满足</p>
+
+$$
+\displaystyle n_x \neq n_y \neq n_z
+$$
+
+<p>此时折射率椭球不再具有单一旋转对称轴。沿任一坐标主轴（$x,y,z$）方向观察，垂直于 $\vec{k}$ 的平面与椭球的交线都不是圆，而是椭圆。因此：</p>
+<ul>
+<li>对于任一给定 $\vec{k}$（不在特殊方向上），仍然只有两种偏振本征态；</li>
+<li>任意偏振态都可以分解为这两个本征态的叠加；</li>
+<li>这两种本征态感受到<strong>不同的折射率</strong>，从而产生双折射。</li>
+</ul>
+<p>存在两条特殊方向 $\vec{k}$ 与 $\vec{k}'$，称为<strong>光轴</strong>：在这些方向上，垂直 $\vec{k}$ 的平面与折射率椭球的交线是圆。此时平面内任意偏振都对应相同折射率，本征态简并，可形成“偏振不变”的传播。这与单轴晶体中光轴方向的情形类似，但双轴晶体一般有两条光轴。</p>
+<h2 id="单轴各向异性晶体中的相速度分布">单轴各向异性晶体中的相速度分布</h2>
+<h3 id="相速度的基本方程">相速度的基本方程</h3>
+<p>在各向异性介质中，相速度 $v_p$ 满足通用方程</p>
+
+$$
+\displaystyle 
+\frac{e_{kx}^{2}}{v_p^{2} - v_x^{2}}
++ \frac{e_{ky}^{2}}{v_p^{2} - v_y^{2}}
++ \frac{e_{kz}^{2}}{v_p^{2} - v_z^{2}} = 0
+$$
+
+<p>其中 $<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>e</mi><mrow><mi>k</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>e</mi><mrow><mi>k</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>e</mi><mrow><mi>k</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">e_{kx}, e_{ky}, e_{kz}</annotation></semantics></math></span></span>$ 是波矢方向 $\hat{e}_k$ 的方向余弦，$v_x, v_y, v_z$ 是各主轴方向上的相速度。将分母通分，可得等价形式</p>
+
+$$
+\displaystyle
+$v_p^{2} - v_y^{2}$$v_p^{2} - v_z^{2}$ e_{kx}^{2}
++ $v_p^{2} - v_x^{2}$$v_p^{2} - v_z^{2}$ e_{ky}^{2}
++ $v_p^{2} - v_x^{2}$$v_p^{2} - v_y^{2}$ e_{kz}^{2}
+= 0
+$$
+
+<h3 id="单轴晶体中的简化">单轴晶体中的简化</h3>
+<p>单轴晶体满足</p>
+
+$$
+\displaystyle v_x^{2} = v_y^{2} = \frac{c^{2}}{n_x^{2}}
+= \frac{c^{2}}{n_y^{2}} \equiv v_o^{2},
+\qquad
+v_z^{2} = \frac{c^{2}}{n_z^{2}} \equiv v_e^{2}
+$$
+
+<p>将其代入上式，得到</p>
+
+$$
+\displaystyle
+$v_p^{2} - v_o^{2}$$v_p^{2} - v_e^{2}$ e_{kx}^{2}
++ $v_p^{2} - v_o^{2}$$v_p^{2} - v_e^{2}$ e_{ky}^{2}
++ $v_p^{2} - v_o^{2}$$v_p^{2} - v_o^{2}$ e_{kz}^{2}
+= 0
+$$
+
+<p>整理为</p>
+
+$$
+\displaystyle
+$v_p^{2} - v_o^{2}$
+\left[
+$v_p^{2} - v_e^{2}$$e_{kx}^{2} + e_{ky}^{2}$
++ $v_p^{2} - v_o^{2}$ e_{kz}^{2}
+\right] = 0
+$$
+
+<p>又因为方向余弦满足</p>
+
+$$
+\displaystyle e_{kx}^{2} + e_{ky}^{2} + e_{kz}^{2} = 1
+$$
+
+<p>设 $\theta$ 为 $\vec{k}$ 与光轴 $z$ 之间的夹角，则</p>
+
+$$
+\displaystyle
+e_{kx}^{2} + e_{ky}^{2} = \sin^{2}\theta,
+\qquad
+e_{kz}^{2} = \cos^{2}\theta
+$$
+
+<p>代入得到</p>
+
+$$
+\displaystyle
+$v_p^{2} - v_o^{2}$
+\left[
+\sin^{2}\theta $v_p^{2} - v_e^{2}$
++ \cos^{2}\theta $v_p^{2} - v_o^{2}$
+\right] = 0
+$$
+
+<p>显然有两个解：</p>
+
+$$
+\displaystyle
+\begin{cases}
+v_{p1}^{2} = v_o^{2}, \\
+v_{p2}^{2} = v_e^{2} \sin^{2}\theta + v_o^{2} \cos^{2}\theta.
+\end{cases}
+$$
+
+<ul>
+<li>解 $v_{p1}$ 对应于 o 光，其相速度与方向无关，折射率为 $n_o$，波矢等频率面为球面。</li>
+<li>解 $v_{p2}$ 对应于 e 光，其相速度随 $\theta$ 变化，等频率面不再是球，而是扭曲的椭球。</li>
+</ul>
+<p>这与本征值问题“两本征态”的普适结论完全一致。</p>
+<details>
+<summary>例：给定方向下 e 光的有效折射率</summary>
+<p>假设某负单轴晶体中<br>
+$n_o = 1.7$，$n_e = 1.5$，入射波矢与光轴夹角为 $\theta = 45^\circ$。求 e 光的等效相速度 $v_{p2}$ 和折射率 $n_{\text{eff}}$。</p>
+
+$$
+\displaystyle
+v_{p2}^{2}
+= v_e^{2} \sin^{2}\theta + v_o^{2} \cos^{2}\theta
+= \left$ \frac{c}{n_e} \right$^{2} \frac{1}{2}
++ \left$ \frac{c}{n_o} \right$^{2} \frac{1}{2}
+$$
+
+<p>数值上</p>
+
+$$
+\displaystyle
+v_{p2}^{2}
+= \frac{c^{2}}{2}
+\left$ \frac{1}{n_e^{2}} + \frac{1}{n_o^{2}} \right$
+= \frac{c^{2}}{2}
+\left$ \frac{1}{1.5^{2}} + \frac{1}{1.7^{2}} \right$
+$$
+
+<p>令 $v_{p2} = c / n_{\text{eff}}$，则</p>
+
+$$
+\displaystyle
+\frac{1}{n_{\text{eff}}^{2}}
+= \frac{1}{2}
+\left$ \frac{1}{n_e^{2}} + \frac{1}{n_o^{2}} \right$
+$$
+
+<p>即可得到 e 光在该方向上的有效折射率 $n_{\text{eff}}$。<br>
+这种“方向相关折射率”正是各向异性和双折射的根源。</p>
+</details>
+<h2 id="单轴晶体的等频率图与群速度分布">单轴晶体的等频率图与群速度分布</h2>
+<h3 id="等频率图：波矢空间中的球面与椭球面">等频率图：波矢空间中的球面与椭球面</h3>
+<p>折射率与相速度关系为 $v_p = c/n$。对于 o 光，有</p>
+
+$$
+\displaystyle v_{p1}^{2} = v_o^{2}
+= \frac{c^{2}}{n_o^{2}}
+$$
+
+<p>所以</p>
+
+$$
+\displaystyle
+\left| \vec{k} \right|^{2}
+= \frac{\omega^{2}}{c^{2}} n_{1}^{2}
+= \frac{\omega^{2}}{c^{2}} n_o^{2}
+$$
+
+<p>即</p>
+
+$$
+\displaystyle
+k_x^{2} + k_y^{2} + k_z^{2}
+= \frac{\omega^{2}}{c^{2}} n_o^{2}
+$$
+
+<p>在标准化形式下</p>
+
+$$
+\displaystyle
+\frac{k_x^{2}}{\frac{\omega^{2}}{c^{2}} n_o^{2}}
++ \frac{k_y^{2}}{\frac{\omega^{2}}{c^{2}} n_o^{2}}
++ \frac{k_z^{2}}{\frac{\omega^{2}}{c^{2}} n_o^{2}}
+= 1
+$$
+
+<p>对应<strong>球面等频率图</strong>。</p>
+<p>对 e 光，由前面得到的方向相关折射率 $n<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>$ 有</p>
+
+$$
+\displaystyle
+\frac{1}{n^{2}}
+= \frac{\cos^{2}\theta}{n_o^{2}}
++ \frac{\sin^{2}\theta}{n_e^{2}}
+$$
+
+<p>又有</p>
+
+$$
+\displaystyle
+k_x^{2} + k_y^{2} + k_z^{2}
+= \left| \vec{k} \right|^{2}
+= \frac{\omega^{2}}{c^{2}} n^{2}
+$$
+
+<p>令</p>
+
+$$
+\displaystyle
+\frac{k_z}{k} = \cos\theta,
+\qquad
+\frac{\sqrt{k_x^{2} + k_y^{2}}}{k} = \sin\theta
+$$
+
+<p>代入 $1/n^{2}$ 的表达式，可以得到</p>
+
+$$
+\displaystyle
+\frac{\omega^{2}}{c^{2} k^{2}}
+= \frac{k_z^{2}}{k^{2} n_o^{2}}
++ \frac{k_x^{2} + k_y^{2}}{k^{2} n_e^{2}}
+$$
+
+<p>化简为</p>
+
+$$
+\displaystyle
+\frac{\omega^{2}}{c^{2}}
+= \frac{k_z^{2}}{n_o^{2}}
++ \frac{k_x^{2} + k_y^{2}}{n_e^{2}}
+$$
+
+<p>再写成归一化形式：</p>
+
+$$
+\displaystyle
+\frac{k_x^{2} + k_y^{2}}{\frac{\omega^{2}}{c^{2}} n_e^{2}}
++ \frac{k_z^{2}}{\frac{\omega^{2}}{c^{2}} n_o^{2}}
+= 1
+$$
+
+<p>这是一张<strong>椭球面等频率图</strong>，对应 e 光。由此可以清楚看出：单轴晶体中 o 光的等频率图是球面，而 e 光的是扭曲椭球面（在某些特殊情况下可以近似为椭球）。</p>
+<h3 id="群速度的基本方程与单轴情形">群速度的基本方程与单轴情形</h3>
+<p>群速度 $v_g$ 的方程与相速度类似，但形式为“倒数”型：</p>
+
+$$
+\displaystyle
+\frac{e_{sx}^{2}}{\frac{1}{v_g^{2}} - \frac{1}{v_x^{2}}}
++ \frac{e_{sy}^{2}}{\frac{1}{v_g^{2}} - \frac{1}{v_y^{2}}}
++ \frac{e_{sz}^{2}}{\frac{1}{v_g^{2}} - \frac{1}{v_z^{2}}}
+= 0
+$$
+
+<p>其中 $<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>e</mi><mrow><mi>s</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>e</mi><mrow><mi>s</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>e</mi><mrow><mi>s</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">e_{sx}, e_{sy}, e_{sz}</annotation></semantics></math></span></span>$ 是能流方向 $\hat{e}_s$ 的方向余弦。展开分母可得</p>
+
+$$
+\displaystyle
+\left$ \frac{1}{v_g^{2}} - \frac{1}{v_y^{2}} \right$
+\left$ \frac{1}{v_g^{2}} - \frac{1}{v_z^{2}} \right$ e_{sx}^{2}
++ \left$ \frac{1}{v_g^{2}} - \frac{1}{v_x^{2}} \right$
+\left$ \frac{1}{v_g^{2}} - \frac{1}{v_z^{2}} \right$ e_{sy}^{2}
++ \left$ \frac{1}{v_g^{2}} - \frac{1}{v_x^{2}} \right$
+\left$ \frac{1}{v_g^{2}} - \frac{1}{v_y^{2}} \right$ e_{sz}^{2}
+= 0
+$$
+
+<p>对单轴晶体，取</p>
+
+$$
+\displaystyle
+v_x = v_y \equiv v_o,
+\qquad
+v_z \equiv v_e
+$$
+
+<p>代入得到</p>
+
+$$
+\displaystyle
+\left$ \frac{1}{v_g^{2}} - \frac{1}{v_o^{2}} \right$
+\left[
+\left$ \frac{1}{v_g^{2}} - \frac{1}{v_o^{2}} \right$$e_{sx}^{2} + e_{sy}^{2}$
++ \left$ \frac{1}{v_g^{2}} - \frac{1}{v_e^{2}} \right$ e_{sz}^{2}
+\right] = 0
+$$
+
+<p>同样有两个解。设 $\theta$ 为能流方向与光轴的夹角，则</p>
+
+$$
+\displaystyle
+e_{sx}^{2} + e_{sy}^{2} = \sin^{2}\theta,
+\qquad
+e_{sz}^{2} = \cos^{2}\theta
+$$
+
+<p>解得</p>
+
+$$
+\displaystyle
+\begin{cases}
+v_{g1}^{2} = v_o^{2}, \\
+\displaystyle \frac{1}{v_{g2}^{2}}
+= \frac{\sin^{2}\theta}{v_e^{2}} + \frac{\cos^{2}\theta}{v_o^{2}}.
+\end{cases}
+$$
+
+<p>再将 e 光群速度写成椭球形式。设 e 光群速度分量为 $<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mrow><mi>g</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>v</mi><mrow><mi>g</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>v</mi><mrow><mi>g</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">v_{gx}, v_{gy}, v_{gz}</annotation></semantics></math></span></span>$，并定义角度 $\alpha$ 使</p>
+
+$$
+\displaystyle
+\frac{v_{gx}^{2} + v_{gy}^{2}}{v_{g2}^{2}} = \sin^{2}\alpha,
+\qquad
+\frac{v_{gz}^{2}}{v_{g2}^{2}} = \cos^{2}\alpha
+$$
+
+<p>代入可得</p>
+
+$$
+\displaystyle
+\frac{v_{gx}^{2} + v_{gy}^{2}}{v_o^{2}}
++ \frac{v_{gz}^{2}}{v_e^{2}} = 1
+$$
+
+<p>这是一张<strong>群速度椭球面</strong>。注意：</p>
+<ul>
+<li>o 光的群速度面是球面 $v_{g1} = v_o$。</li>
+<li>e 光的群速度面是椭球面，其主轴与相速度椭球互为“对偶”。</li>
+</ul>
+<h3 id="相速度与群速度的关系">相速度与群速度的关系</h3>
+<p>对于同一本征态，在给定方向上相速度与群速度满足</p>
+
+$$
+\displaystyle v_p = v_g \cos\alpha
+$$
+
+<p>这里 $\alpha$ 是 $\vec{k}$ 与 $\vec{v}_g$ 的夹角。应当特别区分：</p>
+<ul>
+<li>$\theta$：$\vec{k}$ 或 $\vec{s}$ 与光轴的夹角；</li>
+<li>$\alpha$：$\vec{k}$ 与 $\vec{v}_g$ 的夹角。</li>
+</ul>
+<p>两者并不相同。等频率图给出的是 $\vec{k}$ 的方向，而群速度椭球给出的是 $\vec{v}_g$ 的方向，二者之间的偏离角度 $\alpha$ 正是<strong>能流与相位传播方向分离</strong>的几何来源。</p>
+<h2 id="单轴晶体界面上的折射现象与波片">单轴晶体界面上的折射现象与波片</h2>
+<h3 id="o-光与-e-光折射的基本图像">o 光与 e 光折射的基本图像</h3>
+<p>考虑一侧为空气（或其他各向同性介质），另一侧为单轴各向异性晶体。设界面法线为 $\hat{n}$，入射波矢为 $\vec{k}_i$。</p>
+<ul>
+<li>对于 <strong>o 光</strong>：由于其折射率 $n_o$ 不依赖方向，$\vec{k}$ 与能流 $\vec{s}$（或 $\vec{v}_g$）共线，折射行为严格满足普通的斯涅尔定律，折射光线图像与各向同性介质完全一致。</li>
+<li>对于 <strong>e 光</strong>：$\vec{k}$ 与 $\vec{s}$ 不再共线。
+<ul>
+<li>边界条件要求切向波矢分量守恒，即 $\vec{k}_i$ 与折射波矢 $\vec{k}_t$ 满足“波矢版斯涅尔定律”；</li>
+<li>但实际看到的光线方向对应 $\vec{s}$，因此折射光线的方向一般不会位于入射面内，看起来像是“反常折射”。</li>
+</ul>
+</li>
+</ul>
+<p>在研究工作中，常用<strong>等频率图</strong>在给定 $\omega$ 下作出 $\vec{k}$ 的分布，再从 $\vec{k}$ 的法线方向确定群速度 $\vec{v}_g$ 的方向，即能流方向 $\vec{s}$。这等价于用惠更斯原理画出波前和其包络。之前已经证明：等相位面与群速度曲面之间只差一个尺度因子。</p>
+<details>
+<summary>例一：负单轴晶体中的“反常折射”</summary>
+<p>考虑负单轴晶体 $n_e &lt; n_o$，光轴位于界面平面内。平面波自空气入射，入射面为光轴与法线张成的平面。</p>
+<ol>
+<li>在等频率图上作出空气侧圆（半径 $k_0 = \omega/c$）与晶体侧的 o 光球面和 e 光椭球面。</li>
+<li>保持切向波矢分量守恒，在晶体侧球面与椭球面上分别找到满足条件的交点，得到 $\vec{k}_o$ 与 $\vec{k}_e$。</li>
+<li>在晶体中，对 o 光，$\vec{s}_o \parallel \vec{k}_o$，折射光线满足常规斯涅尔定律。</li>
+<li>对 e 光，由群速度椭球确定 $\vec{v}_{ge}$ 的方向（即 $\vec{s}_e$），一般与 $\vec{k}_e$ 不重合。</li>
+</ol>
+<p>结果：$\vec{k}_e$ 仍满足折射定律，而 $\vec{s}_e$ 的折射角可能“朝界面法线一侧偏折”，表现为与传统折射相反的趋势，称为<strong>反常折射</strong>。</p>
+</details>
+<h3 id="传播时间、相位差与波片">传播时间、相位差与波片</h3>
+<p>再考虑一块单轴晶体波片，厚度为 $d$。设入射波在界面 $B$ 处进入晶体，在界面 $C$ 处出射。在真空中传播同样的几何距离 $d$ 需要时间 $\Delta t = d/c$。在晶体内：</p>
+<p>对于 o 光：</p>
+
+$$
+\displaystyle v_{go} \Delta t = \frac{d}{n_o}
+$$
+
+<p>对于 e 光：</p>
+
+$$
+\displaystyle v_{ge} \Delta t = \frac{d}{n_e}
+$$
+
+<p>更常用的是相位延迟：o 光与 e 光的相位差随传播距离线性累积。对于波长 $\lambda$，相位差为</p>
+
+$$
+\displaystyle
+\Delta\phi
+= \frac{2\pi}{\lambda} $n_e - n_o$ d
+$$
+
+<p>若 $\Delta\phi = \pi/2$ 为 $\lambda/4$ 波片；若 $\Delta\phi = \pi$ 为 $\lambda/2$ 波片。</p>
+<details>
+<summary>例二：设计一块 \$\lambda/4\$ 波片</summary>
+<p>已知某单轴晶体在工作波长 $\lambda$ 处折射率为<br>
+$n_o = 1.50$，$n_e = 1.60$。求制成 $\lambda/4$ 波片所需厚度 $d$。</p>
+<p>令</p>
+
+$$
+\displaystyle
+\Delta\phi
+= \frac{2\pi}{\lambda} $n_e - n_o$ d
+= \frac{\pi}{2}
+$$
+
+<p>解得</p>
+
+$$
+\displaystyle
+d
+= \frac{\lambda}{4 $n_e - n_o$}
+= \frac{\lambda}{4 \times 0.10}
+= \frac{\lambda}{0.4}
+= 2.5\,\lambda
+$$
+
+<p>因此只要切出厚度约为 $2.5\lambda$ 的晶体片，并让光沿适当方向传播，即可得到一块 $\lambda/4$ 波片。</p>
+<p>在实际器件中，通常会选择更大倍数（例如 $d = <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>m</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2m+1</annotation></semantics></math></span></span>\lambda/4<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>e</mi></msub><mo>−</mo><msub><mi>n</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">n_e - n_o</annotation></semantics></math></span></span>$）以便加工。</p>
+</details>
+<h3 id="光轴方向与折射的特殊情形">光轴方向与折射的特殊情形</h3>
+<ul>
+<li>当光轴垂直于界面或平行于入射方向时，两本征态折射率简并，任意偏振的组合都不会改变偏振态，晶体等效为各向同性介质。</li>
+<li>当光轴既不平行于界面又不在入射面内时，e 光的能流方向甚至可以偏离入射面，呈现更多“奇异”的折射轨迹。</li>
+</ul>
+<p>这些现象在实际器件设计（如棱镜、偏振分束器、非线性晶体）中十分重要。</p>
+<h2 id="双轴各向异性晶体的等频率图与圆锥折射">双轴各向异性晶体的等频率图与圆锥折射</h2>
+<h3 id="双轴晶体的一般等频率方程">双轴晶体的一般等频率方程</h3>
+<p>对于双轴晶体（主折射率 $n_x &lt; n_y &lt; n_z$），从麦克斯韦方程或本征值问题出发，可以得到波矢空间中的等频率方程</p>
+
+$$
+\displaystyle
+$k_x^{2} + k_y^{2} + k_z^{2}$
+$k_x^{2} n_x^{2} + k_y^{2} n_y^{2} + k_z^{2} n_z^{2}$
+- \frac{\omega^{2}}{c^{2}}
+\left[
+k_x^{2} n_x^{2}$n_y^{2} + n_z^{2}$
++ k_y^{2} n_y^{2}$n_z^{2} + n_x^{2}$
++ k_z^{2} n_z^{2}$n_x^{2} + n_y^{2}$
+\right]
++ \frac{\omega^{4}}{c^{4}} n_x^{2} n_y^{2} n_z^{2}
+= 0
+$$
+
+<p>这是一个四次方程，对应波矢空间中两层复杂曲面（两个本征态的等频率面）。这两层曲面在某些方向上会相交，形成<strong>简并点</strong>。</p>
+<h3 id="典型截面：-k-y-0-平面">典型截面：$k_y = 0$ 平面</h3>
+<p>令 $k_y = 0$，记</p>
+
+$$
+\displaystyle k^{2} = k_x^{2} + k_z^{2}
+$$
+
+<p>则等频率方程化为</p>
+
+$$
+\displaystyle
+k^{2} $k_x^{2} n_x^{2} + k_z^{2} n_z^{2}$
+- \frac{\omega^{2}}{c^{2}}
+\left[
+k_x^{2} n_x^{2}$n_y^{2} + n_z^{2}$
++ k_z^{2} n_z^{2}$n_x^{2} + n_y^{2}$
+\right]
++ \frac{\omega^{4}}{c^{4}} n_x^{2} n_y^{2} n_z^{2}
+= 0
+$$
+
+<p>通过因式分解，可以将其写成类似</p>
+
+$$
+\displaystyle
+$A k_x^{2} + B k_z^{2} - C k_0^{2}$
+$D k_x^{2} + E k_z^{2} - F k_0^{2}$ = 0
+$$
+
+<p>的形式，其中 $k_0 = \omega/c$，$A,B,C,D,E,F$ 为与折射率有关的常数。对比各项可知，其中一支是圆：</p>
+
+$$
+\displaystyle k_x^{2} + k_z^{2} = n_y^{2} k_0^{2}
+$$
+
+<p>另一支是椭圆。这表明在 $k_y=0$ 平面内，两层等频率曲线分别为<strong>圆与椭圆</strong>。</p>
+<h3 id="其他截面：-k-x-0-与-k-z-0">其他截面：$k_x = 0$ 与 $k_z = 0$</h3>
+<p>由于 $x,y,z$ 在方程中是对称的，对 $k_x = 0$ 与 $k_z = 0$ 也有类似结果：</p>
+<p>在 $k_x = 0$ 平面：</p>
+
+$$
+\displaystyle
+\begin{cases}
+k_y^{2} + k_z^{2} = n_x^{2} k_0^{2}, \\
+\displaystyle \frac{k_y^{2}}{n_z^{2}} + \frac{k_z^{2}}{n_y^{2}} = k_0^{2}.
+\end{cases}
+$$
+
+<p>在 $k_z = 0$ 平面：</p>
+
+$$
+\displaystyle
+\begin{cases}
+k_x^{2} + k_y^{2} = n_z^{2} k_0^{2}, \\
+\displaystyle \frac{k_x^{2}}{n_y^{2}} + \frac{k_y^{2}}{n_x^{2}} = k_0^{2}.
+\end{cases}
+$$
+
+<p>由此可见，两层曲面在三个对称平面上分别对应一圆一椭圆。最重要的是：<strong>圆与椭圆存在四个交点</strong>，每个交点对应一对简并的本征态（同一 $\omega$，不同几何表示）。这四个交点的方向正是双轴晶体折射率椭球的光轴方向，即在这些方向上，垂直平面的折射率椭圆退化为圆。</p>
+<h2 id="圆锥折射与-Dirac-cone、Berry-相">圆锥折射与 Dirac cone、Berry 相</h2>
+<h3 id="简并点附近的线性色散（Dirac-cone）">简并点附近的线性色散（Dirac cone）</h3>
+<p>在高对称轴附近，两个等频率面（对应两个本征态）发生简并并重新分裂。对满足双轴晶体对称群 $D_{2h}$ 的方向，这种简并会产生<strong>四个</strong>对称的交点。</p>
+<p>在这些简并点附近，色散关系可近似写为</p>
+
+$$
+\displaystyle
+\omega$\vec{k}$ \approx \omega_0 \pm v \left| \vec{k} - \vec{k}_0 \right|
+$$
+
+<p>这是典型的线性色散锥结构，被称为 <strong>Dirac cone</strong>。类似的结构在石墨烯的能带中也存在，对应 2010 年诺贝尔物理学奖中的关键物理图像。</p>
+<p>在 Dirac cone 附近，群速度为</p>
+
+$$
+\displaystyle
+\vec{v}_g
+= \nabla_{k} \omega
+\approx \pm v \,\frac{\vec{k} - \vec{k}_0}{\left| \vec{k} - \vec{k}_0 \right|}
+$$
+
+<p>其大小几乎为常数 $v$，方向沿径向指向或远离 $\vec{k}_0$，与 $\left| \vec{k} - \vec{k}_0 \right|$ 的大小无关，这导致了一种非常特殊的能流分布。</p>
+<h3 id="圆锥折射现象">圆锥折射现象</h3>
+<p>在真实空间中，这种锥形色散表现为<strong>圆锥折射现象</strong>（conical refraction）：</p>
+<p>当光沿双轴晶体的光轴方向入射时，出射光不再集中成一条光线，而是在某一截面上形成一个圆环。这个现象最早由 Hamilton 在 19 世纪预测并由实验验证，是经典光学中的著名效应。</p>
+<ul>
+<li>在“外圆锥折射”中，点状入射光在晶体出口附近形成一光环；</li>
+<li>在“内圆锥折射”中，入射光在某些条件下形成“空心光柱”。</li>
+</ul>
+<h3 id="Berry-相与偏振的环绕变化">Berry 相与偏振的环绕变化</h3>
+<p>在圆锥折射形成的光环上，偏振态随着方位角缓慢变化。一圈转完之后，偏振态的变化可以累积一个几何相位，通常为 $\pi$，这与 Dirac cone 中经常讨论的 <strong>Berry 相</strong> 密切相关。</p>
+<ul>
+<li>在圆锥折射环上绕行一圈，偏振矢量可以旋转 $\pi$，对应 Berry 相 $\pi$；</li>
+<li>在类似单轴情形的某些极限中，总相位变化可视为 $2\pi$，可以直观地理解为两个 $\pi$ 的叠加（$2\pi = \pi + \pi$），与拓扑相位的加法规则一致。</li>
+</ul>
+<p>这些现象说明：晶体光学中的等频率图、折射率椭球、群速度椭球与现代拓扑物态物理中的 Dirac cone、Berry 相本质上共享共同的数学结构。</p>
+<h2 id="知识结构小结">知识结构小结</h2>
+<p>这份笔记构成了一个从经典到现代的晶体光学知识链条：</p>
 <ol>
 <li>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>≥</mo><mn>0</mn><mo separator="true">,</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mi>d</mi><mi>x</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">p_X(x) \geq 0, \int_{-\infty}^{+\infty} p_X(x) dx = 1.</annotation></semantics></math></span></span></p>
+<p><strong>菲涅耳方程的两种版本</strong></p>
+<ul>
+<li>波矢（相速度）版本：通过 $\vec{D}$ 与 $\vec{E}$ 的关系得到折射率椭球与等频率图；</li>
+<li>光线（能流）版本：通过 $\vec{D}$ 的分解得到群速度椭球与能流方向分布，与波矢版本一一对应。</li>
+</ul>
 </li>
 <li>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>2</mn></msub><mo>∈</mo><mrow><mi mathvariant="double-struck">R</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">P</mi></mrow><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><mi>X</mi><mo>≤</mo><msub><mi>x</mi><mn>2</mn></msub><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><msub><mi>x</mi><mn>1</mn></msub></mrow><mrow><msub><mi>x</mi><mn>2</mn></msub></mrow></msubsup><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mi>d</mi><mi>x</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">x_1 &lt; x_2 \in \mathbb{R}, \mathbf{P}(x_1 &lt; X \leq x_2) = \int_{x_1}^{x_2} p_X(x) dx.</annotation></semantics></math></span></span></p>
+<p><strong>本征值问题与椭球图像</strong></p>
+<ul>
+<li>折射率椭球描述相速度与折射率在各方向上的分布；</li>
+<li>群速度椭球描述群速度与能流在各方向上的分布，两者在形式上呈“互逆”关系。</li>
+</ul>
 </li>
 <li>
-<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p_X(x)</annotation></semantics></math></span></span> 的连续点（Lebesgue零测集之外），<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>p</mi><mi>X</mi></msub><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>d</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle p_X(x) = \frac{d}{dx} F(x).</annotation></semantics></math></span></span></p>
+<p><strong>等频率图、群速度曲面与等相位面</strong></p>
+<ul>
+<li>$\omega<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span>$ 的等频率图给出 $\vec{k}$ 的分布；</li>
+<li>$\vec{v}_g = \nabla_k \omega$ 给出群速度曲面，其法线方向为 $\vec{k}$；</li>
+<li>等相位面是群速度曲面在时间方向上的放大：$\vec{r} = t \vec{v}_g$。</li>
+</ul>
 </li>
 <li>
-<p>如果 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>X</mi></msub><mo>(</mo><mo>⋅</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">f_X(\cdot)</annotation></semantics></math></span></span> 为非负Lebesgue可积函数，满足 <br> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>≥</mo><mn>0</mn><mo separator="true">,</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mi>d</mi><mi>x</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">
-f(x) \geq 0, \int_{-\infty}^{+\infty} f(x) dx = 1,
-</annotation></semantics></math></span></span> <br> 那么 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span></span> 为一个概率密度函数，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi>x</mi></msubsup><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">G(x) = \int_{-\infty}^x f(t) dt</annotation></semantics></math></span></span> 为某随机变量的分布函数.</p>
+<p><strong>各向异性晶体的分类与单轴晶体中的双折射</strong></p>
+<ul>
+<li>各向同性、单轴、双轴晶体对应不同的折射率椭球；</li>
+<li>单轴晶体中，o 光与 e 光分别对应球面与椭球面的等频率图，双折射源于两本征态折射率的不同；</li>
+<li>界面折射与波片原理可从等频率图与相位差的累积自然解释。</li>
+</ul>
+</li>
+<li>
+<p><strong>双轴晶体、圆锥折射与 Dirac cone</strong></p>
+<ul>
+<li>双轴晶体的等频率方程是高次曲面，在对称平面上可分解为圆与椭圆；</li>
+<li>两层等频率图存在四个简并点，对应折射率椭球的光轴方向；</li>
+<li>简并点附近的色散呈 Dirac cone 形态，导致圆锥折射现象和 Berry 相效应。</li>
+</ul>
 </li>
 </ol>
+<p>这些内容既可以用来理解传统晶体光学教材中的几何图像，也为理解现代拓扑光学、光子晶体和二维材料中的 Dirac 物理打下基础。</p>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/physics/tags/%E6%A6%82%E7%BB%9F/" class="">
-              概统
+            <a href="/physics/tags/%E5%85%89%E5%AD%A6/" class="">
+              光学
             </a>
           
         </div>
@@ -462,7 +1406,7 @@ f(x) \geq 0, \int_{-\infty}^{+\infty} f(x) dx = 1,
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/随机变量的分布函数和密度函数定义/" target="_blank" title="随机变量的分布函数和密度函数定义">https://kotokowa.github.io/physics/随机变量的分布函数和密度函数定义/</a>
+    <a href="/physics/晶体光学与各向异性介质中的几何图像/" target="_blank" title="晶体光学与各向异性介质中的几何图像">https://kotokowa.github.io/physics/晶体光学与各向异性介质中的几何图像/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -484,19 +1428,19 @@ f(x) \geq 0, \int_{-\infty}^{+\infty} f(x) dx = 1,
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/%E8%BE%B9%E9%99%85%E5%88%86%E5%B8%83%EF%BC%8C%E6%9D%A1%E4%BB%B6%E5%88%86%E5%B8%83%EF%BC%8C%E5%AF%86%E5%BA%A6%E4%BC%A0%E9%80%92%EF%BC%8C%E8%81%94%E5%90%88%E5%AF%86%E5%BA%A6/" class="post-nav-link">
+    <a href="/physics/%E5%A4%A7%E5%AD%A6%E8%8B%B1%E8%AF%AD%E6%B5%8B%E8%AF%95%E8%AF%8D%E6%B1%87%E8%A1%A8/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">边际分布，条件分布，密度传递，联合密度</div>
+        <div class="title-text">大学英语测试词汇表</div>
       </div>
       
       <!-- <div class="content">
-        边际分布，条件分布，密度传递，联合密度
-边际（边缘）分布
-需要先学习：随机向量及其分布
-设有二维随机变量(X,Y)(X,
+        A
+1. a.m. (abbreviation) - 上午
+2. a/an (article) - 一个
+3. abac
       </div> -->
     </a>
   </div>
@@ -509,15 +1453,15 @@ f(x) \geq 0, \int_{-\infty}^{+\infty} f(x) dx = 1,
       background-position: center center;">
       <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/%E7%9F%A9%E9%98%B5%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6/" class="post-nav-link">
+    <a href="/physics/%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">矩阵几何光学</div>
+        <div class="title-text">正则变换与哈密顿-雅可比方程</div>
       </div>
       <!-- <div class="content">
-        矩阵几何光学
-矩阵几何光学适用条件是傍轴近似，描述的是光线从一个面到另一个面的变换. 矩阵几何光学的一般形式为：
-[xi
+        正则变换与哈密顿-雅可比方程
+引言
+在哈密顿力学中, 广义坐标 qαq_\alphaq​α​​ 与广义动量 pαp_\a
       </div> -->
     </a>
   </div>
@@ -635,7 +1579,7 @@ f(x) \geq 0, \int_{-\infty}^{+\infty} f(x) dx = 1,
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">随机变量的分布函数和密度函数定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0"><span class="toc-text">分布函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">分布函数的性质</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B1%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E5%8F%AF%E4%BB%A5%E8%AE%A1%E7%AE%97%E6%A6%82%E7%8E%87"><span class="toc-text">由分布函数可以计算概率</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E7%90%86"><span class="toc-text">定理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0"><span class="toc-text">密度函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8B%A5-X-%E4%B8%BA%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="toc-text">若 XXX 为连续型随机变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F-%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%EF%BC%9A%E5%AE%9A%E4%B9%89"><span class="toc-text">连续型随机变量-密度函数：定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%9E%8B%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F-%E5%AF%86%E5%BA%A6%E5%87%BD%E6%95%B0%EF%BC%9A%E6%80%A7%E8%B4%A8"><span class="toc-text">连续型随机变量-密度函数：性质</span></a></li></ol></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">晶体光学与各向异性介质中的几何图像</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%89%E7%BA%BF%EF%BC%88%E8%83%BD%E6%B5%81%EF%BC%89%E7%9A%84%E8%8F%B2%E6%B6%85%E8%80%B3%E6%96%B9%E7%A8%8B"><span class="toc-text">光线（能流）的菲涅耳方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-vec-D-%E4%B8%8E-vec-E-%E7%9A%84%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB%E5%87%BA%E5%8F%91"><span class="toc-text">从 $\vec{D}$ 与 $\vec{E}$ 的几何关系出发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BB%8B%E7%94%B5%E5%BC%A0%E9%87%8F%E5%85%B3%E7%B3%BB%E6%B6%88%E5%8E%BB%E6%AF%94%E4%BE%8B%E5%9B%A0%E5%AD%90"><span class="toc-text">用介电张量关系消去比例因子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E6%B3%A2%E7%9F%A2%E7%89%88%E6%9C%AC%E8%8F%B2%E6%B6%85%E8%80%B3%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%B8%80%E5%AF%B9%E5%BA%94"><span class="toc-text">与波矢版本菲涅耳方程的一一对应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E4%B8%BB%E8%BD%B4%E5%9D%90%E6%A0%87%E4%B8%AD%E7%9A%84%E5%88%86%E9%87%8F%E5%BD%A2%E5%BC%8F"><span class="toc-text">在主轴坐标中的分量形式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98%E4%B8%8E%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83%E3%80%81%E7%BE%A4%E9%80%9F%E5%BA%A6%E6%A4%AD%E7%90%83"><span class="toc-text">本征值问题与折射率椭球、群速度椭球</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E6%B5%81%E6%96%B9%E5%90%91%E7%9A%84%E6%9C%AC%E5%BE%81%E5%80%BC%E6%96%B9%E7%A8%8B"><span class="toc-text">能流方向的本征值方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83%E4%B8%8E%E7%BE%A4%E9%80%9F%E5%BA%A6%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83"><span class="toc-text">折射率椭球与群速度折射率椭球</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BE%A4%E9%80%9F%E5%BA%A6%EF%BC%88%E5%85%89%E7%BA%BF%EF%BC%89%E6%9B%B2%E9%9D%A2%E4%B8%8E%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE%E7%9A%84%E8%81%94%E7%B3%BB"><span class="toc-text">群速度（光线）曲面与等频率图的联系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BD%90%E6%AC%A1%E6%80%A7%E5%81%87%E8%AE%BE%E4%B8%8E-vec-v-g-nabla-k-omega"><span class="toc-text">齐次性假设与 $\vec{v}_g &#x3D; \nabla_k \omega$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E9%80%9F%E5%BA%A6%E6%9B%B2%E9%9D%A2%E7%9A%84%E6%B3%95%E7%BA%BF%E4%B8%8E%E6%B3%A2%E7%9F%A2%E6%96%B9%E5%90%91"><span class="toc-text">群速度曲面的法线与波矢方向</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AD%89%E7%9B%B8%E4%BD%8D%E9%9D%A2%E4%B8%8E%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE"><span class="toc-text">等相位面与等频率图</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E7%9B%B8%E4%BD%8D%E9%9D%A2%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%9B%B8%E9%80%9F%E5%BA%A6"><span class="toc-text">等相位面的定义与相速度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E7%9B%B8%E4%BD%8D%E9%9D%A2%E4%B8%8E%E7%BE%A4%E9%80%9F%E5%BA%A6%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">等相位面与群速度的关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E7%9A%84%E5%88%86%E7%B1%BB%E4%B8%8E%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83"><span class="toc-text">各向异性晶体的分类与折射率椭球</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%84%E5%90%91%E5%90%8C%E6%80%A7%E6%99%B6%E4%BD%93"><span class="toc-text">各向同性晶体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%BD%B4%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93"><span class="toc-text">单轴各向异性晶体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E8%BD%B4%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93"><span class="toc-text">双轴各向异性晶体</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%BD%B4%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E4%B8%AD%E7%9A%84%E7%9B%B8%E9%80%9F%E5%BA%A6%E5%88%86%E5%B8%83"><span class="toc-text">单轴各向异性晶体中的相速度分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B"><span class="toc-text">相速度的基本方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%BD%B4%E6%99%B6%E4%BD%93%E4%B8%AD%E7%9A%84%E7%AE%80%E5%8C%96"><span class="toc-text">单轴晶体中的简化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%BD%B4%E6%99%B6%E4%BD%93%E7%9A%84%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE%E4%B8%8E%E7%BE%A4%E9%80%9F%E5%BA%A6%E5%88%86%E5%B8%83"><span class="toc-text">单轴晶体的等频率图与群速度分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE%EF%BC%9A%E6%B3%A2%E7%9F%A2%E7%A9%BA%E9%97%B4%E4%B8%AD%E7%9A%84%E7%90%83%E9%9D%A2%E4%B8%8E%E6%A4%AD%E7%90%83%E9%9D%A2"><span class="toc-text">等频率图：波矢空间中的球面与椭球面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BE%A4%E9%80%9F%E5%BA%A6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%96%B9%E7%A8%8B%E4%B8%8E%E5%8D%95%E8%BD%B4%E6%83%85%E5%BD%A2"><span class="toc-text">群速度的基本方程与单轴情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E4%B8%8E%E7%BE%A4%E9%80%9F%E5%BA%A6%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">相速度与群速度的关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E8%BD%B4%E6%99%B6%E4%BD%93%E7%95%8C%E9%9D%A2%E4%B8%8A%E7%9A%84%E6%8A%98%E5%B0%84%E7%8E%B0%E8%B1%A1%E4%B8%8E%E6%B3%A2%E7%89%87"><span class="toc-text">单轴晶体界面上的折射现象与波片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#o-%E5%85%89%E4%B8%8E-e-%E5%85%89%E6%8A%98%E5%B0%84%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%9B%BE%E5%83%8F"><span class="toc-text">o 光与 e 光折射的基本图像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E6%92%AD%E6%97%B6%E9%97%B4%E3%80%81%E7%9B%B8%E4%BD%8D%E5%B7%AE%E4%B8%8E%E6%B3%A2%E7%89%87"><span class="toc-text">传播时间、相位差与波片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E8%BD%B4%E6%96%B9%E5%90%91%E4%B8%8E%E6%8A%98%E5%B0%84%E7%9A%84%E7%89%B9%E6%AE%8A%E6%83%85%E5%BD%A2"><span class="toc-text">光轴方向与折射的特殊情形</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E8%BD%B4%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E7%9A%84%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE%E4%B8%8E%E5%9C%86%E9%94%A5%E6%8A%98%E5%B0%84"><span class="toc-text">双轴各向异性晶体的等频率图与圆锥折射</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E8%BD%B4%E6%99%B6%E4%BD%93%E7%9A%84%E4%B8%80%E8%88%AC%E7%AD%89%E9%A2%91%E7%8E%87%E6%96%B9%E7%A8%8B"><span class="toc-text">双轴晶体的一般等频率方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E6%88%AA%E9%9D%A2%EF%BC%9A-k-y-0-%E5%B9%B3%E9%9D%A2"><span class="toc-text">典型截面：$k_y &#x3D; 0$ 平面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E6%88%AA%E9%9D%A2%EF%BC%9A-k-x-0-%E4%B8%8E-k-z-0"><span class="toc-text">其他截面：$k_x &#x3D; 0$ 与 $k_z &#x3D; 0$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%86%E9%94%A5%E6%8A%98%E5%B0%84%E4%B8%8E-Dirac-cone%E3%80%81Berry-%E7%9B%B8"><span class="toc-text">圆锥折射与 Dirac cone、Berry 相</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AE%80%E5%B9%B6%E7%82%B9%E9%99%84%E8%BF%91%E7%9A%84%E7%BA%BF%E6%80%A7%E8%89%B2%E6%95%A3%EF%BC%88Dirac-cone%EF%BC%89"><span class="toc-text">简并点附近的线性色散（Dirac cone）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%86%E9%94%A5%E6%8A%98%E5%B0%84%E7%8E%B0%E8%B1%A1"><span class="toc-text">圆锥折射现象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Berry-%E7%9B%B8%E4%B8%8E%E5%81%8F%E6%8C%AF%E7%9A%84%E7%8E%AF%E7%BB%95%E5%8F%98%E5%8C%96"><span class="toc-text">Berry 相与偏振的环绕变化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A5%E8%AF%86%E7%BB%93%E6%9E%84%E5%B0%8F%E7%BB%93"><span class="toc-text">知识结构小结</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
