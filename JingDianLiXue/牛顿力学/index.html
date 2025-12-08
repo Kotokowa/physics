@@ -1,0 +1,2250 @@
+<!DOCTYPE html><html><!-- meta/link... --><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>牛顿力学 | Hexo</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/physics/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/physics/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/physics/css/style.css">
+
+  
+  
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/physics/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/physics/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+  
+  <!-- 预加载动画 -->
+  
+  
+  <body><div class="preloader_6" id="loader">
+  <div class="loader"></div>
+</div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
+
+  
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer="">
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/physics/js/swiper/swiper.min.js"></script>
+<script src="/physics/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/physics/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/physics/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/physics/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">Hexo</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/physics/" class="logo">Hexo</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/physics/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/physics/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        牛顿力学
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2025-09-17 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>牛顿力学与正交曲线坐标系</h1>
+<hr>
+<h2 id="运动学与动力学">运动学与动力学</h2>
+<ul>
+<li>运动学: 描述质点运动的几何特征, 例如轨迹、速度和加速度.</li>
+<li>动力学: 研究运动与作用力之间的定量关系, 给出运动规律.</li>
+</ul>
+<hr>
+<h2 id="正交曲线坐标系的一般定义">正交曲线坐标系的一般定义</h2>
+<ul>
+<li>在给定参考系中, 用三个广义坐标描述质点位置:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">r</mi></mrow><mo>=</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>(</mo><msub><mi>q</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>q</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>q</mi><mn>3</mn></msub><mo>)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{r} = \mathbf{r}(q_1,q_2,q_3)
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>Lamé 系数与单位基矢:</li>
+</ul>
+
+$
+\displaystyle \mathbf{e}_\alpha(q_1,q_2,q_3) = \frac{1}{h_\alpha(q_1,q_2,q_3)} \frac{\partial \mathbf{r}}{\partial q_\alpha},\quad \alpha = 1,2,3
+$
+
+
+$
+\displaystyle h_\alpha(q_1,q_2,q_3) = \left\lVert \frac{\partial \mathbf{r}}{\partial q_\alpha} \right\rVert
+$
+
+<ul>
+<li>正交条件:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>α</mi></msub><mo>⋅</mo><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>β</mi></msub><mo>=</mo><msub><mi>δ</mi><mrow><mi>α</mi><mi>β</mi></mrow></msub><mo separator="true">,</mo><mspace width="1em"></mspace><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{e}_\alpha \cdot \mathbf{e}_\beta = \delta_{\alpha\beta},\quad \alpha,\beta = 1,2,3
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>基矢叉乘关系:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mrow><mi mathvariant="bold">e</mi></mrow><mn>1</mn></msub><mo>×</mo><msub><mrow><mi mathvariant="bold">e</mi></mrow><mn>2</mn></msub><mo>=</mo><msub><mrow><mi mathvariant="bold">e</mi></mrow><mn>3</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mn>2</mn></msub><mo>×</mo><msub><mrow><mi mathvariant="bold">e</mi></mrow><mn>3</mn></msub><mo>=</mo><msub><mrow><mi mathvariant="bold">e</mi></mrow><mn>1</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mn>3</mn></msub><mo>×</mo><msub><mrow><mi mathvariant="bold">e</mi></mrow><mn>1</mn></msub><mo>=</mo><msub><mrow><mi mathvariant="bold">e</mi></mrow><mn>2</mn></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{e}_1 \times \mathbf{e}_2 = \mathbf{e}_3,\quad \mathbf{e}_2 \times \mathbf{e}_3 = \mathbf{e}_1,\quad \mathbf{e}_3 \times \mathbf{e}_1 = \mathbf{e}_2
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>线元和弧长:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>d</mi><mrow><mi mathvariant="bold">r</mi></mrow><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>α</mi><mo>=</mo><mn>1</mn></mrow><mrow><mn>3</mn></mrow></msubsup><msub><mi>h</mi><mi>α</mi></msub><mspace width="0.16667em"></mspace><mi>d</mi><msub><mi>q</mi><mi>α</mi></msub><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>α</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle d\mathbf{r} = \sum_{\alpha=1}^{3} h_\alpha\,dq_\alpha\,\mathbf{e}_\alpha
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>d</mi><msup><mi>s</mi><mn>2</mn></msup><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>α</mi><mo>=</mo><mn>1</mn></mrow><mrow><mn>3</mn></mrow></msubsup><msubsup><mi>h</mi><mi>α</mi><mn>2</mn></msubsup><mo>(</mo><mi>d</mi><msub><mi>q</mi><mi>α</mi></msub><msup><mo>)</mo><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle ds^2 = \sum_{\alpha=1}^{3} h_\alpha^2 (dq_\alpha)^2
+</annotation></semantics></math></span></span></span></p>
+<hr>
+<h2 id="常用正交坐标系">常用正交坐标系</h2>
+<h3 id="直角坐标系">直角坐标系</h3>
+<ul>
+<li>坐标与位置矢量:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">r</mi></mrow><mo>=</mo><mi>x</mi><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>x</mi></msub><mo>+</mo><mi>y</mi><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>y</mi></msub><mo>+</mo><mi>z</mi><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>z</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{r} = x\mathbf{e}_x + y\mathbf{e}_y + z\mathbf{e}_z
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>Lamé 系数:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>h</mi><mi>x</mi></msub><mo>=</mo><msub><mi>h</mi><mi>y</mi></msub><mo>=</mo><msub><mi>h</mi><mi>z</mi></msub><mo>=</mo><mn>1</mn></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle h_x = h_y = h_z = 1
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>线元:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>d</mi><mrow><mi mathvariant="bold">r</mi></mrow><mo>=</mo><mi>d</mi><mi>x</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>x</mi></msub><mo>+</mo><mi>d</mi><mi>y</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>y</mi></msub><mo>+</mo><mi>d</mi><mi>z</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>z</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle d\mathbf{r} = dx\,\mathbf{e}_x + dy\,\mathbf{e}_y + dz\,\mathbf{e}_z
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>d</mi><msup><mi>s</mi><mn>2</mn></msup><mo>=</mo><mi>d</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>d</mi><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mi>d</mi><msup><mi>z</mi><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle ds^2 = dx^2 + dy^2 + dz^2
+</annotation></semantics></math></span></span></span></p>
+<hr>
+<h3 id="柱坐标系-rho-phi-z">柱坐标系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>ρ</mi><mo separator="true">,</mo><mi>ϕ</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(\rho,\phi,z)</annotation></semantics></math></span></span></h3>
+<ul>
+<li>与直角坐标的关系:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>x</mi><mo>=</mo><mi>ρ</mi><mi>cos</mi><mi>ϕ</mi><mo separator="true">,</mo><mspace width="1em"></mspace><mi>y</mi><mo>=</mo><mi>ρ</mi><mi>sin</mi><mi>ϕ</mi><mo separator="true">,</mo><mspace width="1em"></mspace><mi>z</mi><mo>=</mo><mi>z</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle x = \rho\cos\phi,\quad y = \rho\sin\phi,\quad z = z
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>位置矢量:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">r</mi></mrow><mo>=</mo><mi>ρ</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ρ</mi></msub><mo>+</mo><mi>z</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>z</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{r} = \rho\,\mathbf{e}_\rho + z\,\mathbf{e}_z
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>Lamé 系数:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>h</mi><mi>ρ</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>h</mi><mi>ϕ</mi></msub><mo>=</mo><mi>ρ</mi><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>h</mi><mi>z</mi></msub><mo>=</mo><mn>1</mn></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle h_\rho = 1,\quad h_\phi = \rho,\quad h_z = 1
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>线元:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>d</mi><mrow><mi mathvariant="bold">r</mi></mrow><mo>=</mo><mi>d</mi><mi>ρ</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ρ</mi></msub><mo>+</mo><mi>ρ</mi><mspace width="0.16667em"></mspace><mi>d</mi><mi>ϕ</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ϕ</mi></msub><mo>+</mo><mi>d</mi><mi>z</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>z</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle d\mathbf{r} = d\rho\,\mathbf{e}_\rho + \rho\,d\phi\,\mathbf{e}_\phi + dz\,\mathbf{e}_z
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>d</mi><msup><mi>s</mi><mn>2</mn></msup><mo>=</mo><mi>d</mi><msup><mi>ρ</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ρ</mi><mn>2</mn></msup><mi>d</mi><msup><mi>ϕ</mi><mn>2</mn></msup><mo>+</mo><mi>d</mi><msup><mi>z</mi><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle ds^2 = d\rho^2 + \rho^2 d\phi^2 + dz^2
+</annotation></semantics></math></span></span></span></p>
+<hr>
+<h3 id="球坐标系-r-theta-phi">球坐标系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>θ</mi><mo separator="true">,</mo><mi>ϕ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,\theta,\phi)</annotation></semantics></math></span></span></h3>
+<ul>
+<li>与直角坐标的关系:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>x</mi><mo>=</mo><mi>r</mi><mi>sin</mi><mi>θ</mi><mi>cos</mi><mi>ϕ</mi><mo separator="true">,</mo><mspace width="1em"></mspace><mi>y</mi><mo>=</mo><mi>r</mi><mi>sin</mi><mi>θ</mi><mi>sin</mi><mi>ϕ</mi><mo separator="true">,</mo><mspace width="1em"></mspace><mi>z</mi><mo>=</mo><mi>r</mi><mi>cos</mi><mi>θ</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle x = r\sin\theta\cos\phi,\quad y = r\sin\theta\sin\phi,\quad z = r\cos\theta
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>位置矢量:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">r</mi></mrow><mo>=</mo><mi>r</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>r</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{r} = r\,\mathbf{e}_r
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>Lamé 系数:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>h</mi><mi>r</mi></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>h</mi><mi>θ</mi></msub><mo>=</mo><mi>r</mi><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>h</mi><mi>ϕ</mi></msub><mo>=</mo><mi>r</mi><mi>sin</mi><mi>θ</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle h_r = 1,\quad h_\theta = r,\quad h_\phi = r\sin\theta
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>线元:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>d</mi><mrow><mi mathvariant="bold">r</mi></mrow><mo>=</mo><mi>d</mi><mi>r</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>r</mi></msub><mo>+</mo><mi>r</mi><mspace width="0.16667em"></mspace><mi>d</mi><mi>θ</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>θ</mi></msub><mo>+</mo><mi>r</mi><mi>sin</mi><mi>θ</mi><mspace width="0.16667em"></mspace><mi>d</mi><mi>ϕ</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ϕ</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle d\mathbf{r} = dr\,\mathbf{e}_r + r\,d\theta\,\mathbf{e}_\theta + r\sin\theta\,d\phi\,\mathbf{e}_\phi
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>d</mi><msup><mi>s</mi><mn>2</mn></msup><mo>=</mo><mi>d</mi><msup><mi>r</mi><mn>2</mn></msup><mo>+</mo><msup><mi>r</mi><mn>2</mn></msup><mi>d</mi><msup><mi>θ</mi><mn>2</mn></msup><mo>+</mo><msup><mi>r</mi><mn>2</mn></msup><msup><mi>sin</mi><mn>2</mn></msup><mi>θ</mi><mspace width="0.16667em"></mspace><mi>d</mi><msup><mi>ϕ</mi><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle ds^2 = dr^2 + r^2 d\theta^2 + r^2\sin^2\theta\,d\phi^2
+</annotation></semantics></math></span></span></span></p>
+<hr>
+<h2 id="正交曲线坐标系中的速度与加速度">正交曲线坐标系中的速度与加速度</h2>
+<ul>
+<li>速度矢量:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">v</mi></mrow><mo>=</mo><mover accent="true"><mrow><mrow><mi mathvariant="bold">r</mi></mrow></mrow><mo>˙</mo></mover><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>α</mi><mo>=</mo><mn>1</mn></mrow><mrow><mn>3</mn></mrow></msubsup><msub><mi>h</mi><mi>α</mi></msub><msub><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mi>α</mi></msub><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>α</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{v} = \dot{\mathbf{r}} = \sum_{\alpha=1}^{3} h_\alpha \dot{q}_\alpha\,\mathbf{e}_\alpha
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>速度平方:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>v</mi><mn>2</mn></msup><mo>(</mo><msub><mi>q</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>q</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>q</mi><mn>3</mn></msub><mo separator="true">,</mo><msub><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mn>1</mn></msub><mo separator="true">,</mo><msub><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mn>2</mn></msub><mo separator="true">,</mo><msub><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mn>3</mn></msub><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>α</mi><mo>=</mo><mn>1</mn></mrow><mrow><mn>3</mn></mrow></msubsup><msubsup><mi>h</mi><mi>α</mi><mn>2</mn></msubsup><msubsup><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mi>α</mi><mn>2</mn></msubsup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle v^2(q_1,q_2,q_3,\dot{q}_1,\dot{q}_2,\dot{q}_3) = \sum_{\alpha=1}^{3} h_\alpha^2 \dot{q}_\alpha^2
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>加速度矢量:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">a</mi></mrow><mo>=</mo><mover accent="true"><mrow><mrow><mi mathvariant="bold">r</mi></mrow></mrow><mo>¨</mo></mover><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>α</mi><mo>=</mo><mn>1</mn></mrow><mrow><mn>3</mn></mrow></msubsup><msub><mi>a</mi><mi>α</mi></msub><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>α</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{a} = \ddot{\mathbf{r}} = \sum_{\alpha=1}^{3} a_\alpha\,\mathbf{e}_\alpha
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>加速度分量的一般公式:</li>
+</ul>
+
+$
+\displaystyle a_\alpha = \frac{1}{h_\alpha}\left[\frac{d}{dt}\left(\frac{\partial}{\partial \dot{q}_\alpha}\frac{v^2}{2}\right) - \frac{\partial}{\partial q_\alpha}\frac{v^2}{2}\right],\quad \alpha = 1,2,3
+$
+
+<ul>
+<li>标量场 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>(</mo><msub><mi>q</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>q</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>q</mi><mn>3</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">V(q_1,q_2,q_3)</annotation></semantics></math></span></span> 的梯度:</li>
+</ul>
+
+$
+\displaystyle \nabla V = \sum_{\alpha=1}^{3}\frac{1}{h_\alpha}\frac{\partial V}{\partial q_\alpha}\,\mathbf{e}_\alpha
+$
+
+<hr>
+<h2 id="典型坐标系中的速度与加速度">典型坐标系中的速度与加速度</h2>
+<h3 id="柱坐标系中的速度与加速度">柱坐标系中的速度与加速度</h3>
+<ul>
+<li>速度:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">v</mi></mrow><mo>=</mo><mover accent="true"><mrow><mi>ρ</mi></mrow><mo>˙</mo></mover><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ρ</mi></msub><mo>+</mo><mi>ρ</mi><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>˙</mo></mover><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ϕ</mi></msub><mo>+</mo><mover accent="true"><mrow><mi>z</mi></mrow><mo>˙</mo></mover><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>z</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{v} = \dot{\rho}\,\mathbf{e}_\rho + \rho\dot{\phi}\,\mathbf{e}_\phi + \dot{z}\,\mathbf{e}_z
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>速度平方:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>v</mi><mn>2</mn></msup><mo>=</mo><msup><mover accent="true"><mrow><mi>ρ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup><mo>+</mo><msup><mi>ρ</mi><mn>2</mn></msup><msup><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup><mo>+</mo><msup><mover accent="true"><mrow><mi>z</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle v^2 = \dot{\rho}^2 + \rho^2\dot{\phi}^2 + \dot{z}^2
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>加速度分量:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>a</mi><mi>ρ</mi></msub><mo>=</mo><mover accent="true"><mrow><mi>ρ</mi></mrow><mo>¨</mo></mover><mo>−</mo><mi>ρ</mi><msup><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle a_\rho = \ddot{\rho} - \rho\dot{\phi}^2
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>a</mi><mi>ϕ</mi></msub><mo>=</mo><mi>ρ</mi><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>¨</mo></mover><mo>+</mo><mn>2</mn><mover accent="true"><mrow><mi>ρ</mi></mrow><mo>˙</mo></mover><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>˙</mo></mover></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle a_\phi = \rho\ddot{\phi} + 2\dot{\rho}\dot{\phi}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>a</mi><mi>z</mi></msub><mo>=</mo><mover accent="true"><mrow><mi>z</mi></mrow><mo>¨</mo></mover></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle a_z = \ddot{z}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>加速度矢量:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">a</mi></mrow><mo>=</mo><msub><mi>a</mi><mi>ρ</mi></msub><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ρ</mi></msub><mo>+</mo><msub><mi>a</mi><mi>ϕ</mi></msub><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ϕ</mi></msub><mo>+</mo><msub><mi>a</mi><mi>z</mi></msub><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>z</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{a} = a_\rho\,\mathbf{e}_\rho + a_\phi\,\mathbf{e}_\phi + a_z\,\mathbf{e}_z
+</annotation></semantics></math></span></span></span></p>
+<hr>
+<h3 id="球坐标系中的速度与加速度">球坐标系中的速度与加速度</h3>
+<ul>
+<li>速度:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">v</mi></mrow><mo>=</mo><mover accent="true"><mrow><mi>r</mi></mrow><mo>˙</mo></mover><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>r</mi></msub><mo>+</mo><mi>r</mi><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>θ</mi></msub><mo>+</mo><mi>r</mi><mi>sin</mi><mi>θ</mi><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>˙</mo></mover><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>ϕ</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{v} = \dot{r}\,\mathbf{e}_r + r\dot{\theta}\,\mathbf{e}_\theta + r\sin\theta\dot{\phi}\,\mathbf{e}_\phi
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>速度平方:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>v</mi><mn>2</mn></msup><mo>=</mo><msup><mover accent="true"><mrow><mi>r</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup><mo>+</mo><msup><mi>r</mi><mn>2</mn></msup><msup><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup><mo>+</mo><msup><mi>r</mi><mn>2</mn></msup><msup><mi>sin</mi><mn>2</mn></msup><mi>θ</mi><msup><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle v^2 = \dot{r}^2 + r^2\dot{\theta}^2 + r^2\sin^2\theta\dot{\phi}^2
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>加速度分量:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>a</mi><mi>r</mi></msub><mo>=</mo><mover accent="true"><mrow><mi>r</mi></mrow><mo>¨</mo></mover><mo>−</mo><mi>r</mi><msup><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup><mo>−</mo><mi>r</mi><msup><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup><msup><mi>sin</mi><mn>2</mn></msup><mi>θ</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle a_r = \ddot{r} - r\dot{\theta}^2 - r\dot{\phi}^2\sin^2\theta
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>a</mi><mi>θ</mi></msub><mo>=</mo><mi>r</mi><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¨</mo></mover><mo>+</mo><mn>2</mn><mover accent="true"><mrow><mi>r</mi></mrow><mo>˙</mo></mover><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mo>−</mo><mi>r</mi><msup><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup><mi>sin</mi><mi>θ</mi><mi>cos</mi><mi>θ</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle a_\theta = r\ddot{\theta} + 2\dot{r}\dot{\theta} - r\dot{\phi}^2\sin\theta\cos\theta
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>a</mi><mi>ϕ</mi></msub><mo>=</mo><mi>r</mi><mi>sin</mi><mi>θ</mi><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>¨</mo></mover><mo>+</mo><mn>2</mn><mover accent="true"><mrow><mi>r</mi></mrow><mo>˙</mo></mover><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>˙</mo></mover><mi>sin</mi><mi>θ</mi><mo>+</mo><mn>2</mn><mi>r</mi><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mover accent="true"><mrow><mi>ϕ</mi></mrow><mo>˙</mo></mover><mi>cos</mi><mi>θ</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle a_\phi = r\sin\theta\ddot{\phi} + 2\dot{r}\dot{\phi}\sin\theta + 2r\dot{\theta}\dot{\phi}\cos\theta
+</annotation></semantics></math></span></span></span></p>
+<hr>
+<h3 id="平面极坐标与复数表示">平面极坐标与复数表示</h3>
+<ul>
+<li>平面极坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,\theta)</annotation></semantics></math></span></span> 中的位置、速度、加速度:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">r</mi></mrow><mo>=</mo><mi>r</mi><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>r</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{r} = r\,\mathbf{e}_r
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">v</mi></mrow><mo>=</mo><mover accent="true"><mrow><mi>r</mi></mrow><mo>˙</mo></mover><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>r</mi></msub><mo>+</mo><mi>r</mi><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>θ</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{v} = \dot{r}\,\mathbf{e}_r + r\dot{\theta}\,\mathbf{e}_\theta
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">a</mi></mrow><mo>=</mo><mo>(</mo><mover accent="true"><mrow><mi>r</mi></mrow><mo>¨</mo></mover><mo>−</mo><mi>r</mi><msup><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup><mo>)</mo><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>r</mi></msub><mo>+</mo><mo>(</mo><mi>r</mi><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¨</mo></mover><mo>+</mo><mn>2</mn><mover accent="true"><mrow><mi>r</mi></mrow><mo>˙</mo></mover><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mo>)</mo><mspace width="0.16667em"></mspace><msub><mrow><mi mathvariant="bold">e</mi></mrow><mi>θ</mi></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{a} = (\ddot{r} - r\dot{\theta}^2)\,\mathbf{e}_r + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\,\mathbf{e}_\theta
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>在复平面中的对应 (二维矢量与复数一一对应):</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mrow><mi>r</mi></mrow><mo>~</mo></mover><mo>=</mo><mi>x</mi><mo>+</mo><mrow><mi mathvariant="normal">i</mi></mrow><mi>y</mi><mo>=</mo><mi>r</mi><msup><mrow><mi mathvariant="normal">e</mi></mrow><mrow><mrow><mi mathvariant="normal">i</mi></mrow><mi>θ</mi></mrow></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \tilde{r} = x + \mathrm{i} y = r\mathrm{e}^{\mathrm{i}\theta}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>复数形式的速度与加速度:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mrow><mi>v</mi></mrow><mo>~</mo></mover><mo>=</mo><mover accent="true"><mrow><mover accent="true"><mrow><mi>r</mi></mrow><mo>~</mo></mover></mrow><mo>˙</mo></mover><mo>=</mo><mo>(</mo><mover accent="true"><mrow><mi>r</mi></mrow><mo>˙</mo></mover><mo>+</mo><mrow><mi mathvariant="normal">i</mi></mrow><mi>r</mi><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mo>)</mo><msup><mrow><mi mathvariant="normal">e</mi></mrow><mrow><mrow><mi mathvariant="normal">i</mi></mrow><mi>θ</mi></mrow></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \tilde{v} = \dot{\tilde{r}} = (\dot{r} + \mathrm{i} r\dot{\theta})\mathrm{e}^{\mathrm{i}\theta}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mrow><mi>a</mi></mrow><mo>~</mo></mover><mo>=</mo><mover accent="true"><mrow><mover accent="true"><mrow><mi>r</mi></mrow><mo>~</mo></mover></mrow><mo>¨</mo></mover><mo>=</mo><mo>(</mo><mover accent="true"><mrow><mi>r</mi></mrow><mo>¨</mo></mover><mo>−</mo><mi>r</mi><msup><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup><mo>)</mo><msup><mrow><mi mathvariant="normal">e</mi></mrow><mrow><mrow><mi mathvariant="normal">i</mi></mrow><mi>θ</mi></mrow></msup><mo>+</mo><mo>(</mo><mi>r</mi><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¨</mo></mover><mo>+</mo><mn>2</mn><mover accent="true"><mrow><mi>r</mi></mrow><mo>˙</mo></mover><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mo>)</mo><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">i</mi></mrow><msup><mrow><mi mathvariant="normal">e</mi></mrow><mrow><mrow><mi mathvariant="normal">i</mi></mrow><mi>θ</mi></mrow></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \tilde{a} = \ddot{\tilde{r}} = (\ddot{r} - r\dot{\theta}^2)\mathrm{e}^{\mathrm{i}\theta} + (r\ddot{\theta} + 2\dot{r}\dot{\theta})\,\mathrm{i}\mathrm{e}^{\mathrm{i}\theta}
+</annotation></semantics></math></span></span></span></p>
+<hr>
+<h2 id="自然坐标与曲率">自然坐标与曲率</h2>
+<ul>
+<li>用弧长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span></span> 参数化轨迹:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">r</mi></mrow><mo>=</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>(</mo><mi>s</mi><mo>)</mo><mo separator="true">,</mo><mspace width="1em"></mspace><mi>s</mi><mo>=</mo><mi>s</mi><mo>(</mo><mi>t</mi><mo>)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{r} = \mathbf{r}(s),\quad s = s(t)
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>单位切向矢量:</li>
+</ul>
+
+$
+\displaystyle \boldsymbol{\tau} = \frac{d\mathbf{r}}{ds},\quad \lVert \boldsymbol{\tau}\rVert = 1
+$
+
+<ul>
+<li>速度与弧长的关系:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>v</mi><mo>=</mo><mfrac><mrow><mi>d</mi><mi>s</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle v = \frac{ds}{dt}
+</annotation></semantics></math></span></span></span></p>
+
+$
+\displaystyle \mathbf{v} = v\,\boldsymbol{\tau}
+$
+
+<ul>
+<li>曲率与曲率半径:</li>
+</ul>
+
+$
+\displaystyle \kappa = \left\lVert \frac{d\boldsymbol{\tau}}{ds} \right\rVert = \frac{1}{R}
+$
+
+
+$
+\displaystyle \mathbf{n} = \frac{1}{\kappa}\frac{d\boldsymbol{\tau}}{ds}
+$
+
+<ul>
+<li>副法向单位矢:</li>
+</ul>
+
+$
+\displaystyle \mathbf{b} = \boldsymbol{\tau} \times \mathbf{n}
+$
+
+<ul>
+<li>加速度的自然分解:</li>
+</ul>
+
+$
+\displaystyle \mathbf{a} = \dot{v}\,\boldsymbol{\tau} + \frac{v^2}{R}\,\mathbf{n}
+$
+
+<ul>
+<li>切向加速度与法向加速度:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>a</mi><mi>τ</mi></msub><mo>=</mo><mover accent="true"><mrow><mi>v</mi></mrow><mo>˙</mo></mover><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><msup><mi>v</mi><mn>2</mn></msup></mrow><mrow><mi>R</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle a_\tau = \dot{v},\quad a_n = \frac{v^2}{R}
+</annotation></semantics></math></span></span></span></p>
+<hr>
+<h2 id="质点动力学的基本原理">质点动力学的基本原理</h2>
+<h3 id="质点模型">质点模型</h3>
+<p>忽略物体的几何尺寸和内部结构, 只保留质量与整体位置.<br>
+适用范围: 宏观物体、弱引力场、相对于光速的低速运动.</p>
+<hr>
+<h3 id="牛顿三定律">牛顿三定律</h3>
+<ol>
+<li>
+<p><strong>第一定律 (惯性定律)</strong><br>
+不受外力作用的质点保持静止或匀速直线运动.<br>
+用于:<br>
+定义惯性参考系;<br>
+说明静止与匀速直线运动的等价性.</p>
+</li>
+<li>
+<p><strong>第二定律</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">F</mi></mrow><mo>=</mo><mi>m</mi><mrow><mi mathvariant="bold">a</mi></mrow></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{F} = m\mathbf{a}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">F</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{F}</annotation></semantics></math></span></span> 为合外力, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">a</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{a}</annotation></semantics></math></span></span> 为相对于惯性系的加速度.<br>
+通过加速度刻画惯性与力的大小, 是真正的运动定律.<br>
+只在惯性系中成立.<br>
+力满足矢量叠加原理, 体现其矢量性.</p>
+</li>
+<li>
+<p><strong>第三定律 (作用力与反作用力)</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mrow><mi mathvariant="bold">f</mi></mrow><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mo>−</mo><msub><mrow><mi mathvariant="bold">f</mi></mrow><mrow><mi>j</mi><mi>i</mi></mrow></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{f}_{ij} = -\mathbf{f}_{ji}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mrow><mi mathvariant="bold">r</mi></mrow><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>×</mo><msub><mrow><mi mathvariant="bold">f</mi></mrow><mrow><mi>i</mi><mi>j</mi></mrow></msub><mo>=</mo><mrow><mn mathvariant="bold">0</mn></mrow></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{r}_{ij} \times \mathbf{f}_{ij} = \mathbf{0}
+</annotation></semantics></math></span></span></span></p>
+<p>相互作用力共线, 大小相等, 方向相反.<br>
+适用条件: 相互作用传播速度远大于物体运动速度.<br>
+由此可推出质点系的动量与角动量守恒定理.</p>
+</li>
+</ol>
+<hr>
+<h3 id="基本相互作用">基本相互作用</h3>
+<ul>
+<li>强相互作用、弱相互作用: 只在微观世界起主要作用.</li>
+<li>引力、电磁力: 经典力学中的基本相互作用.</li>
+<li>摩擦力、弹性力等宏观力本质上是电磁力的宏观表现.</li>
+</ul>
+<hr>
+<h2 id="伽利略变换与力学相对性原理">伽利略变换与力学相对性原理</h2>
+<p>惯性系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">S'</annotation></semantics></math></span></span> 之间作匀速平移, 相对速度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="bold">v</mi></mrow><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mathbf{v}_0</annotation></semantics></math></span></span>.</p>
+<ul>
+<li>伽利略变换:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mrow><mi mathvariant="bold">r</mi></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>−</mo><msub><mrow><mi mathvariant="bold">v</mi></mrow><mn>0</mn></msub><mi>t</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{r}' = \mathbf{r} - \mathbf{v}_0 t
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mi>t</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mi>t</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle t' = t
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>速度与加速度变换:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mrow><mi mathvariant="bold">v</mi></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mrow><mi mathvariant="bold">v</mi></mrow><mo>−</mo><msub><mrow><mi mathvariant="bold">v</mi></mrow><mn>0</mn></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{v}' = \mathbf{v} - \mathbf{v}_0
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mrow><mi mathvariant="bold">a</mi></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mrow><mi mathvariant="bold">a</mi></mrow></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{a}' = \mathbf{a}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>假定长度、时间和质量在变换下保持不变, 则力也为不变量:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msup><mrow><mi mathvariant="bold">F</mi></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mrow><mi mathvariant="bold">F</mi></mrow></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{F}' = \mathbf{F}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>因此在所有惯性系中, 牛顿第二定律具有相同形式.<br>
+这就是力学相对性原理: 所有惯性系等价, 不能通过力学实验区分“绝对静止”参考系.</li>
+</ul>
+<hr>
+<h2 id="非惯性系与惯性力">非惯性系与惯性力</h2>
+<ul>
+<li>在非惯性系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">S'</annotation></semantics></math></span></span> 中, 直接使用</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mi mathvariant="bold">F</mi></mrow><mo>=</mo><mi>m</mi><msup><mrow><mi mathvariant="bold">a</mi></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \mathbf{F} = m\mathbf{a}'
+</annotation></semantics></math></span></span></span></p>
+<p>一般不成立.</p>
+<ul>
+<li>设非惯性系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">S'</annotation></semantics></math></span></span> 相对于某惯性系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 的加速度为 \mathbf{a}_{\text{牵连}}, 则质点加速度分解为:</li>
+</ul>
+
+$
+\displaystyle \mathbf{a} = \mathbf{a}_{\text{牵连}} + \mathbf{a}'
+$
+
+<ul>
+<li>为保持与牛顿方程形式一致, 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">S'</annotation></semantics></math></span></span> 中引入惯性力:</li>
+</ul>
+
+$
+\displaystyle \mathbf{F} + \mathbf{F}_{\text{惯}} = m\mathbf{a}'
+$
+
+
+$$
+\displaystyle \mathbf{F}_{\text{惯}} = -m\mathbf{a}_{\text{牵连}}
+$$
+
+<ul>
+<li>惯性力是“虚拟力”, 只在非惯性系中出现, 反映参考系本身的加速度.</li>
+</ul>
+<hr>
+<h2 id="约束体系与牛顿方程示例">约束体系与牛顿方程示例</h2>
+<p><strong>带绳约束的两个质点</strong></p>
+<p>模型: 质量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 的小物块在光滑水平面上以极坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,\theta)</annotation></semantics></math></span></span> 描述, 通过轻绳穿过桌面孔与竖直悬挂的质量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span></span> 相连, 绳长为常数.</p>
+<p>在圆柱坐标系中, 小物块的运动方程 (径向与切向):</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>m</mi><mo>(</mo><mover accent="true"><mrow><mi>r</mi></mrow><mo>¨</mo></mover><mo>−</mo><mi>r</mi><msup><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup><mo>)</mo><mo>=</mo><mo>−</mo><mi>T</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle m(\ddot{r} - r\dot{\theta}^2) = -T
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>m</mi><mo>(</mo><mi>r</mi><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¨</mo></mover><mo>+</mo><mn>2</mn><mover accent="true"><mrow><mi>r</mi></mrow><mo>˙</mo></mover><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mo>)</mo><mo>=</mo><mn>0</mn></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle m(r\ddot{\theta} + 2\dot{r}\dot{\theta}) = 0
+</annotation></semantics></math></span></span></span></p>
+<p>悬挂质量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span></span> 的竖直方向方程:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>M</mi><mover accent="true"><mrow><mi>z</mi></mrow><mo>¨</mo></mover><mo>=</mo><mi>T</mi><mo>−</mo><mi>M</mi><mi>g</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle M\ddot{z} = T - Mg
+</annotation></semantics></math></span></span></span></p>
+<p>约束条件 (绳长不变):</p>
+
+$
+\displaystyle r - z = \text{常数},\quad \ddot{r} = \ddot{z}
+$
+
+<p>消去约束反力 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span> 与不独立坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 后, 得到只含独立坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo separator="true">,</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">r,\theta</annotation></semantics></math></span></span> 的方程:</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>(</mo><mi>m</mi><mo>+</mo><mi>M</mi><mo>)</mo><mover accent="true"><mrow><mi>r</mi></mrow><mo>¨</mo></mover><mo>−</mo><mi>m</mi><mi>r</mi><msup><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mn>2</mn></msup><mo>=</mo><mo>−</mo><mi>M</mi><mi>g</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle (m+M)\ddot{r} - mr\dot{\theta}^2 = -Mg
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>m</mi><mo>(</mo><mi>r</mi><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¨</mo></mover><mo>+</mo><mn>2</mn><mover accent="true"><mrow><mi>r</mi></mrow><mo>˙</mo></mover><mover accent="true"><mrow><mi>θ</mi></mrow><mo>˙</mo></mover><mo>)</mo><mo>=</mo><mn>0</mn></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle m(r\ddot{\theta} + 2\dot{r}\dot{\theta}) = 0
+</annotation></semantics></math></span></span></span></p>
+<p>可以看到, 对约束体系, 使用牛顿方程需要:</p>
+<ul>
+<li>写出所有分量方程;</li>
+<li>引入约束力并同时利用约束方程;</li>
+<li>消去不独立坐标和未知约束力.</li>
+</ul>
+<hr>
+<h2 id="一般质点系与分析力学的动机">一般质点系与分析力学的动机</h2>
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 个质点、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 个约束的体系:</p>
+<ul>
+<li>运动方程 (每个质点 3 个分量):</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>m</mi><mi>i</mi></msub><msub><mover accent="true"><mrow><mrow><mi mathvariant="bold">r</mi></mrow></mrow><mo>¨</mo></mover><mi>i</mi></msub><mo>=</mo><msub><mrow><mi mathvariant="bold">F</mi></mrow><mi>i</mi></msub><mo>+</mo><msub><mrow><mi mathvariant="bold">R</mi></mrow><mi>i</mi></msub><mo separator="true">,</mo><mspace width="1em"></mspace><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>n</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle m_i \ddot{\mathbf{r}}_i = \mathbf{F}_i + \mathbf{R}_i,\quad i = 1,2,\cdots,n
+</annotation></semantics></math></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="bold">R</mi></mrow><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\mathbf{R}_i</annotation></semantics></math></span></span> 为约束力.</p>
+<ul>
+<li>约束方程 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 个:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>R</mi><mi>j</mi></msub><mo>(</mo><msub><mrow><mi mathvariant="bold">r</mi></mrow><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mrow><mi mathvariant="bold">r</mi></mrow><mi>n</mi></msub><mo separator="true">,</mo><mi>t</mi><mo>)</mo><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mspace width="1em"></mspace><mi>j</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>k</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle R_j(\mathbf{r}_1,\cdots,\mathbf{r}_n,t) = 0,\quad j = 1,2,\cdots,k
+</annotation></semantics></math></span></span></span></p>
+<p>约束会同时增加未知量和方程个数, 使牛顿形式求解变得繁琐:</p>
+<ul>
+<li>需要显式写出约束;</li>
+<li>需要显式处理所有约束力.<br>
+因此希望建立与牛顿力学等价的<strong>分析力学形式</strong>, 其特点是:</li>
+<li>直接用少数独立广义坐标描述体系;</li>
+<li>写出不含约束力的运动方程 (如拉格朗日方程).<br>
+分析力学正是解决这一问题的理论框架, 也是后续课程的核心内容.</li>
+</ul>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6/" class="">
+              经典力学
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/JingDianLiXue/牛顿力学/" target="_blank" title="牛顿力学">https://kotokowa.github.io/physics/JingDianLiXue/牛顿力学/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/GaiTong/%E5%8F%A4%E5%85%B8%E6%A6%82%E7%8E%87/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">古典概率</div>
+      </div>
+      
+      <!-- <div class="content">
+        古典概率
+概率定义  $\displaystyle P(A) = \frac{\text{A中样本的个数}}{\text
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/hello-world/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">Hello World</div>
+      </div>
+      <!-- <div class="content">
+        Welcome to Hexo! This is your very first post. Check documen
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">牛顿力学与正交曲线坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E5%8A%A8%E5%AD%A6%E4%B8%8E%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">运动学与动力学</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E6%9B%B2%E7%BA%BF%E5%9D%90%E6%A0%87%E7%B3%BB%E7%9A%84%E4%B8%80%E8%88%AC%E5%AE%9A%E4%B9%89"><span class="toc-text">正交曲线坐标系的一般定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%AD%A3%E4%BA%A4%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">常用正交坐标系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E8%A7%92%E5%9D%90%E6%A0%87%E7%B3%BB"><span class="toc-text">直角坐标系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%B1%E5%9D%90%E6%A0%87%E7%B3%BB-rho-phi-z"><span class="toc-text">柱坐标系 (ρ,ϕ,z)(\rho,\phi,z)(ρ,ϕ,z)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB-r-theta-phi"><span class="toc-text">球坐标系 (r,θ,ϕ)(r,\theta,\phi)(r,θ,ϕ)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E4%BA%A4%E6%9B%B2%E7%BA%BF%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%AD%E7%9A%84%E9%80%9F%E5%BA%A6%E4%B8%8E%E5%8A%A0%E9%80%9F%E5%BA%A6"><span class="toc-text">正交曲线坐标系中的速度与加速度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%AD%E7%9A%84%E9%80%9F%E5%BA%A6%E4%B8%8E%E5%8A%A0%E9%80%9F%E5%BA%A6"><span class="toc-text">典型坐标系中的速度与加速度</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%B1%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%AD%E7%9A%84%E9%80%9F%E5%BA%A6%E4%B8%8E%E5%8A%A0%E9%80%9F%E5%BA%A6"><span class="toc-text">柱坐标系中的速度与加速度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%83%E5%9D%90%E6%A0%87%E7%B3%BB%E4%B8%AD%E7%9A%84%E9%80%9F%E5%BA%A6%E4%B8%8E%E5%8A%A0%E9%80%9F%E5%BA%A6"><span class="toc-text">球坐标系中的速度与加速度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%9E%81%E5%9D%90%E6%A0%87%E4%B8%8E%E5%A4%8D%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-text">平面极坐标与复数表示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%84%B6%E5%9D%90%E6%A0%87%E4%B8%8E%E6%9B%B2%E7%8E%87"><span class="toc-text">自然坐标与曲率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%A8%E7%82%B9%E5%8A%A8%E5%8A%9B%E5%AD%A6%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="toc-text">质点动力学的基本原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A8%E7%82%B9%E6%A8%A1%E5%9E%8B"><span class="toc-text">质点模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%9B%E9%A1%BF%E4%B8%89%E5%AE%9A%E5%BE%8B"><span class="toc-text">牛顿三定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8"><span class="toc-text">基本相互作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%BD%E5%88%A9%E7%95%A5%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%8A%9B%E5%AD%A6%E7%9B%B8%E5%AF%B9%E6%80%A7%E5%8E%9F%E7%90%86"><span class="toc-text">伽利略变换与力学相对性原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E6%83%AF%E6%80%A7%E7%B3%BB%E4%B8%8E%E6%83%AF%E6%80%A7%E5%8A%9B"><span class="toc-text">非惯性系与惯性力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F%E4%BD%93%E7%B3%BB%E4%B8%8E%E7%89%9B%E9%A1%BF%E6%96%B9%E7%A8%8B%E7%A4%BA%E4%BE%8B"><span class="toc-text">约束体系与牛顿方程示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E8%B4%A8%E7%82%B9%E7%B3%BB%E4%B8%8E%E5%88%86%E6%9E%90%E5%8A%9B%E5%AD%A6%E7%9A%84%E5%8A%A8%E6%9C%BA"><span class="toc-text">一般质点系与分析力学的动机</span></a></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E5%9B%9B%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E5%9B%9B%E5%BE%AA%E7%8E%AF/">第四循环</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E4%B8%89%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E4%B8%89%E5%BE%AA%E7%8E%AF/">第三循环</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E4%BA%8C%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E4%BA%8C%E5%BE%AA%E7%8E%AF/">第二循环</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E4%B8%80%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E4%B8%80%E5%BE%AA%E7%8E%AF/">第一循环</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%BA%A6/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-07</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%BA%A6/">不确定度</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script defer="">
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(66, 185, 133, 0.8)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 -  <a target="_blank" rel="noopener" href="https://github.com/kotokowa">kotokowa</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
+  <div class="dark-content">
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
+  </div>
+</div>
+
+<script defer="">
+  $(function() {
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
+    if (isDark) {
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
+    }
+  }
+</script>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer="">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script defer="" src="/physics/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/physics/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js class="" server="netease" type="playlist" id="17453633682" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="none" volume="0.4" list-folded="true">
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script async="">
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
+    
+
+    <script src="/physics/js/utils/index.js"></script>
+    <script src="/physics/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/physics/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/physics/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/physics/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/physics/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/physics/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax="">
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+        <script type="text/javascript">
+  var utteranceComment = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceComment.Theme = 'github-dark';
+    } else {
+      utteranceComment.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceComment.Theme)
+      utterances.setAttribute('repo', 'kotokowa/physics-utterances')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceComment.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+      
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script async="" src="/physics/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>
