@@ -1,0 +1,3644 @@
+<!DOCTYPE html><html><!-- meta/link... --><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>正则变换与哈密顿-雅可比方程2 | Hexo</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/physics/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/physics/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/physics/css/style.css">
+
+  
+  
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/physics/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/physics/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+  
+  <!-- 预加载动画 -->
+  
+  
+  <body><div class="preloader_6" id="loader">
+  <div class="loader"></div>
+</div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
+
+  
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer="">
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/physics/js/swiper/swiper.min.js"></script>
+<script src="/physics/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/physics/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/physics/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/physics/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">Hexo</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/physics/" class="logo">Hexo</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/physics/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/physics/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        正则变换与哈密顿-雅可比方程2
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2025-12-08 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>正则变换与哈密顿-雅可比方程2</h1>
+<p>本文整理了全微分与欧拉定理, 雅可比行列式及其性质, 正则变换的判据与辛结构, 利用正则变换将哈密顿量变为零的思想, 以及哈密顿–雅可比(Hamilton–Jacobi, H–J) 方程及其典型例题, 包括一维谐振子与中心势问题等内容。</p>
+<h2 id="一-全微分与欧拉定理">一 全微分与欧拉定理</h2>
+<h3 id="1-1-欧拉定理与全微分形式">1.1 欧拉定理与全微分形式</h3>
+<p>设标量函数依赖两个自变量:</p>
+
+$$
+\displaystyle z = z(x,y) .
+$$
+
+<p>其全微分为</p>
+
+$$
+\displaystyle \mathrm{d}z = \left( \frac{\partial z}{\partial x} \right)_{y} \mathrm{d}x + \left( \frac{\partial z}{\partial y} \right)_{x} \mathrm{d}y .
+$$
+
+<p>通常记</p>
+
+$$
+\displaystyle \mathrm{d}z = M \,\mathrm{d}x + N \,\mathrm{d}y .
+$$
+
+<p>若存在函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">z(x,y)</annotation></semantics></math></span></span>, 使得上述 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo separator="true">,</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">M,N</annotation></semantics></math></span></span> 来自某个"势函数"的偏导数, 则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">\mathrm{d}z</annotation></semantics></math></span></span> 为全微分, 必须满足<strong>欧拉定理</strong>(混合偏导数交换):</p>
+
+$$
+\displaystyle \left( \frac{\partial M}{\partial y} \right)_{x} = \left( \frac{\partial N}{\partial x} \right)_{y} ,
+$$
+
+<p>也即</p>
+
+$$
+\displaystyle \frac{\partial}{\partial y} \left( \frac{\partial z}{\partial x} \right) = \frac{\partial}{\partial x} \left( \frac{\partial z}{\partial y} \right) ,
+$$
+
+<p>这表明二阶偏导数在满足一定光滑条件时, 求导次序可以交换。</p>
+<p>在正则变换的语境中, 也常把某些一形式写成全微分, 例如</p>
+
+$$
+\displaystyle U_{3} = U_{3}(q,P) ,
+$$
+
+
+$$
+\displaystyle \mathrm{d}U_{3} = p\,\mathrm{d}q + Q\,\mathrm{d}P ,
+$$
+
+<p>这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mn>3</mn></mrow></msub></mrow><annotation encoding="application/x-tex">U_{3}</annotation></semantics></math></span></span> 是第三类母函数, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">p,q,Q,P</annotation></semantics></math></span></span> 为旧广义动量与坐标和新广义动量与坐标。</p>
+<details>
+<summary>例题: 检查一形式是否为全微分</summary>
+<p>考虑一形式</p>
+
+$$
+\displaystyle \omega = (2xy)\,\mathrm{d}x + (x^{2})\,\mathrm{d}y .
+$$
+
+<p>检验它是否为某个函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">z(x,y)</annotation></semantics></math></span></span> 的全微分。</p>
+<p>有</p>
+
+$$
+\displaystyle M(x,y) = 2xy , \quad N(x,y) = x^{2} .
+$$
+
+<p>计算混合偏导:</p>
+
+$$
+\displaystyle \left( \frac{\partial M}{\partial y} \right)_{x} = 2x , \quad \left( \frac{\partial N}{\partial x} \right)_{y} = 2x .
+$$
+
+<p>二者相等, 因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span> 为全微分。求势函数:</p>
+<p>先对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 积分:</p>
+
+$$
+\displaystyle z(x,y) = \int M(x,y)\,\mathrm{d}x = \int 2xy\,\mathrm{d}x = x^{2}y + f(y) .
+$$
+
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 求偏导, 并与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 比较:</p>
+
+$$
+\displaystyle \left( \frac{\partial z}{\partial y} \right)_{x} = x^{2} + f'(y) \stackrel{!}{=} N(x,y) = x^{2} ,
+$$
+
+<p>从而</p>
+
+$$
+\displaystyle f'(y) = 0 \Rightarrow f(y) = \text{常数} .
+$$
+
+<p>因此势函数可以选为</p>
+
+$$
+\displaystyle z(x,y) = x^{2}y .
+$$
+
+</details>
+<h3 id="1-2-麦克斯韦关系的类比">1.2 麦克斯韦关系的类比</h3>
+<p>对于一般形式</p>
+
+$$
+\displaystyle \mathrm{d}z = M(x,y)\,\mathrm{d}x + N(x,y)\,\mathrm{d}y ,
+$$
+
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">\mathrm{d}z</annotation></semantics></math></span></span> 为全微分, 则必有</p>
+
+$$
+\displaystyle \left( \frac{\partial M}{\partial y} \right)_{x} = \left( \frac{\partial N}{\partial x} \right)_{y} ,
+$$
+
+<p>这与热力学中由状态函数的全微分得到的<strong>麦克斯韦关系</strong>形式完全一致。</p>
+<p>将这一思想类比到由母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U_{i}</annotation></semantics></math></span></span> 生成的正则变换, 可以得到如下"麦克斯韦关系":</p>
+<ol>
+<li>
+<p>第一类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mn>1</mn></mrow></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_{1}(q,Q)</annotation></semantics></math></span></span>:</p>
+
+   $$
+   \displaystyle \mathrm{d}U_{1} = p\,\mathrm{d}q - P\,\mathrm{d}Q ,
+   $$
+   
+<p>从而</p>
+
+   $$
+   \displaystyle \left( \frac{\partial p}{\partial Q} \right)_{q} = - \left( \frac{\partial P}{\partial q} \right)_{Q} .
+   $$
+   
+</li>
+<li>
+<p>第二类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mn>2</mn></mrow></msub><mo>(</mo><mi>p</mi><mo separator="true">,</mo><mi>Q</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_{2}(p,Q)</annotation></semantics></math></span></span>:</p>
+
+   $$
+   \displaystyle \mathrm{d}U_{2} = -q\,\mathrm{d}p - P\,\mathrm{d}Q ,
+   $$
+   
+<p>于是</p>
+
+   $$
+   \displaystyle \left( \frac{\partial q}{\partial Q} \right)_{p} = \left( \frac{\partial P}{\partial p} \right)_{Q} .
+   $$
+   
+</li>
+<li>
+<p>第三类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mn>3</mn></mrow></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_{3}(q,P)</annotation></semantics></math></span></span>:</p>
+
+   $$
+   \displaystyle \mathrm{d}U_{3} = p\,\mathrm{d}q + Q\,\mathrm{d}P ,
+   $$
+   
+<p>得到</p>
+
+   $$
+   \displaystyle \left( \frac{\partial p}{\partial P} \right)_{q} = \left( \frac{\partial Q}{\partial q} \right)_{P} .
+   $$
+   
+</li>
+<li>
+<p>第四类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mn>4</mn></mrow></msub><mo>(</mo><mi>p</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_{4}(p,P)</annotation></semantics></math></span></span>:</p>
+
+   $$
+   \displaystyle \mathrm{d}U_{4} = -q\,\mathrm{d}p + Q\,\mathrm{d}P ,
+   $$
+   
+<p>因而</p>
+
+   $$
+   \displaystyle \left( \frac{\partial q}{\partial P} \right)_{p} = - \left( \frac{\partial Q}{\partial p} \right)_{P} .
+   $$
+   
+</li>
+</ol>
+<p>这些关系完全类似热力学中由能量或自由能的全微分导出的麦克斯韦关系, 只是此处自变量换成了正则变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">q,p,Q,P</annotation></semantics></math></span></span>。</p>
+<details>
+<summary>例题: 利用第三类母函数验证麦克斯韦关系</summary>
+<p>考虑一维简单的正则变换, 选取第三类母函数</p>
+
+$$
+\displaystyle U_{3}(q,P) = qP + \frac{1}{2}a q^{2} ,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span> 为常数。</p>
+<p>由第三类母函数的正则变换公式:</p>
+
+$$
+\displaystyle p = \frac{\partial U_{3}}{\partial q} , \quad Q = \frac{\partial U_{3}}{\partial P} ,
+$$
+
+<p>得到</p>
+
+$$
+\displaystyle p = P + a q , \quad Q = q .
+$$
+
+<p>现在计算</p>
+
+$$
+\displaystyle \left( \frac{\partial p}{\partial P} \right)_{q} = 1 , \quad \left( \frac{\partial Q}{\partial q} \right)_{P} = 1 ,
+$$
+
+<p>确有</p>
+
+$$
+\displaystyle \left( \frac{\partial p}{\partial P} \right)_{q} = \left( \frac{\partial Q}{\partial q} \right)_{P} ,
+$$
+
+<p>与由全微分 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><msub><mi>U</mi><mrow><mn>3</mn></mrow></msub><mo>=</mo><mi>p</mi><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">d</mi></mrow><mi>q</mi><mo>+</mo><mi>Q</mi><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">d</mi></mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">\mathrm{d}U_{3} = p\,\mathrm{d}q + Q\,\mathrm{d}P</annotation></semantics></math></span></span> 得到的麦克斯韦关系完全一致。</p>
+</details>
+<h2 id="二-雅可比行列式与坐标变换">二 雅可比行列式与坐标变换</h2>
+<h3 id="2-1-极坐标中的雅可比行列式">2.1 极坐标中的雅可比行列式</h3>
+<p>考虑平面直角坐标与极坐标变换</p>
+
+$$
+\displaystyle
+\begin{cases}
+x = r \cos \theta , \\
+y = r \sin \theta .
+\end{cases}
+$$
+
+<p>二重积分在坐标变换下满足</p>
+
+$$
+\displaystyle \iint_{D} f(x,y)\,\mathrm{d}x \mathrm{d}y 
+= \iint_{D'} f(r\cos\theta, r\sin\theta)\, J \,\mathrm{d}r \mathrm{d}\theta ,
+$$
+
+<p>其中雅可比行列式定义为</p>
+
+$$
+\displaystyle
+J = \frac{\partial(x,y)}{\partial(r,\theta)}
+= \begin{vmatrix}
+\displaystyle \frac{\partial x}{\partial r} &amp; \displaystyle \frac{\partial x}{\partial \theta} \\[4pt]
+\displaystyle \frac{\partial y}{\partial r} &amp; \displaystyle \frac{\partial y}{\partial \theta}
+\end{vmatrix}
+= \frac{\partial x}{\partial r} \frac{\partial y}{\partial \theta}
+- \frac{\partial y}{\partial r} \frac{\partial x}{\partial \theta} .
+$$
+
+<p>代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x,y</annotation></semantics></math></span></span> 的表达式:</p>
+
+$$
+\displaystyle \frac{\partial x}{\partial r} = \cos\theta ,\quad
+\frac{\partial x}{\partial \theta} = -r\sin\theta ,
+$$
+
+
+$$
+\displaystyle \frac{\partial y}{\partial r} = \sin\theta ,\quad
+\frac{\partial y}{\partial \theta} = r\cos\theta ,
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle J = \cos\theta \cdot r\cos\theta - \sin\theta \cdot (-r\sin\theta)
+= r(\cos^{2}\theta + \sin^{2}\theta) = r .
+$$
+
+<p>因此在极坐标中面积元变为</p>
+
+$$
+\displaystyle \mathrm{d}x \mathrm{d}y = r\,\mathrm{d}r \mathrm{d}\theta .
+$$
+
+<details>
+<summary>例题: 用极坐标计算圆的面积</summary>
+<p>求半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span></span> 的圆面积</p>
+
+$$
+\displaystyle x^{2} + y^{2} \leq R^{2} .
+$$
+
+<p>在极坐标中, 积分区域满足</p>
+
+$$
+\displaystyle 0 \leq r \leq R , \quad 0 \leq \theta \leq 2\pi .
+$$
+
+<p>面积为</p>
+
+$$
+\displaystyle S = \iint_{D} \mathrm{d}x \mathrm{d}y
+= \int_{0}^{2\pi} \int_{0}^{R} r\,\mathrm{d}r \mathrm{d}\theta .
+$$
+
+<p>先对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 积分:</p>
+
+$$
+\displaystyle \int_{0}^{R} r\,\mathrm{d}r = \frac{1}{2} R^{2} .
+$$
+
+<p>再对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 积分:</p>
+
+$$
+\displaystyle S = \int_{0}^{2\pi} \frac{1}{2} R^{2}\,\mathrm{d}\theta
+= \frac{1}{2} R^{2} (2\pi)
+= \pi R^{2} .
+$$
+
+<p>由此可见, 极坐标中的雅可比行列式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">J = r</annotation></semantics></math></span></span> 正确地给出了面积元的放缩因子。</p>
+</details>
+<h3 id="2-2-雅可比行列式的性质">2.2 雅可比行列式的性质</h3>
+<p>设变量变换</p>
+
+$$
+\displaystyle (x,y) \longleftrightarrow (u,v) .
+$$
+
+<p>常用性质有:</p>
+<ol>
+<li>
+<p>单位性:</p>
+
+   $$
+   \displaystyle \frac{\partial(x,y)}{\partial(x,y)} = 1 .
+   $$
+   
+</li>
+<li>
+<p>互逆性:</p>
+
+   $$
+   \displaystyle \frac{\partial(x,y)}{\partial(u,v)}
+   = \frac{1}{\dfrac{\partial(u,v)}{\partial(x,y)}} .
+   $$
+   
+</li>
+<li>
+<p>交换行列或列引入负号:</p>
+
+   $$
+   \displaystyle \frac{\partial(x,y)}{\partial(u,v)}
+   = -\frac{\partial(y,x)}{\partial(u,v)}
+   = \frac{\partial(y,x)}{\partial(v,u)} .
+   $$
+   
+</li>
+<li>
+<p>固定一个变量时的简化, 例如</p>
+
+   $$
+   \displaystyle \frac{\partial(x,y)}{\partial(x,z)}
+   = \left( \frac{\partial y}{\partial z} \right)_{x} .
+   $$
+   
+<p>注意这里应当是 “在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 不变时对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 的偏导”, 下标应为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>, 而不是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 自身。</p>
+</li>
+<li>
+<p>链式法则(多维情形):</p>
+
+   $$
+   \displaystyle \frac{\partial(x,y)}{\partial(u,v)}
+   = \frac{\partial(x,y)}{\partial(t,s)} \,
+     \frac{\partial(t,s)}{\partial(u,v)} .
+   $$
+   
+</li>
+</ol>
+<p>这与一维微积分中的链式法则完全类似, 只不过用行列式形式表达。</p>
+<h2 id="三-正则变换的性质">三 正则变换的性质</h2>
+<h3 id="3-1-由母函数生成的正则变换与雅可比行列式">3.1 由母函数生成的正则变换与雅可比行列式</h3>
+<p>一般一维情形下, 正则变换写作</p>
+
+$$
+\displaystyle
+\begin{cases}
+Q = Q(q,p) , \\
+P = P(q,p) .
+\end{cases}
+$$
+
+<p>若该变换由母函数生成, 则其雅可比行列式满足</p>
+
+$$
+\displaystyle \frac{\partial(Q,P)}{\partial(q,p)} = 1 .
+$$
+
+<p>例如, 对第三类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mn>3</mn></mrow></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_{3}(q,P)</annotation></semantics></math></span></span>, 有变换关系</p>
+
+$$
+\displaystyle
+\begin{cases}
+p = \dfrac{\partial U_{3}}{\partial q} , \\
+Q = \dfrac{\partial U_{3}}{\partial P} .
+\end{cases}
+$$
+
+<p>利用雅可比行列式的分解, 可以写出</p>
+
+$$
+\displaystyle
+\frac{\partial(Q,P)}{\partial(q,p)}
+= \frac{\dfrac{\partial(Q,P)}{\partial(q,P)}}{\dfrac{\partial(q,p)}{\partial(q,P)}}
+= \frac{\left( \dfrac{\partial Q}{\partial q} \right)_{P}}{\left( \dfrac{\partial p}{\partial P} \right)_{q}} .
+$$
+
+<p>而由上一节的麦克斯韦关系知</p>
+
+$$
+\displaystyle \left( \frac{\partial p}{\partial P} \right)_{q}
+= \left( \frac{\partial Q}{\partial q} \right)_{P} ,
+$$
+
+<p>从而</p>
+
+$$
+\displaystyle \frac{\partial(Q,P)}{\partial(q,p)} = 1 .
+$$
+
+<p>类似地, 对第一类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mn>1</mn></mrow></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_{1}(q,Q)</annotation></semantics></math></span></span>, 有</p>
+
+$$
+\displaystyle
+\frac{\partial(Q,P)}{\partial(q,p)}
+= \frac{\dfrac{\partial(Q,P)}{\partial(Q,q)}}{\dfrac{\partial(q,p)}{\partial(Q,q)}}
+= \frac{\left( \dfrac{\partial P}{\partial q} \right)_{Q}}{-\left( \dfrac{\partial p}{\partial Q} \right)_{q}}
+= 1 ,
+$$
+
+<p>且</p>
+
+$$
+\displaystyle \left( \frac{\partial p}{\partial Q} \right)_{q}
+= - \left( \frac{\partial P}{\partial q} \right)_{Q} .
+$$
+
+<p>这些关系共同说明: <strong>由母函数生成的变换一定是正则变换</strong>, 且其雅可比行列式等于 1。</p>
+<h3 id="3-2-泊松括号与正则变换判据">3.2 泊松括号与正则变换判据</h3>
+<p>在一维情形下, 定义基本泊松括号</p>
+
+$$
+\displaystyle [Q,P] = \frac{\partial Q}{\partial q} \frac{\partial P}{\partial p}
+- \frac{\partial Q}{\partial p} \frac{\partial P}{\partial q} .
+$$
+
+<p>注意到这是雅可比行列式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><mrow><mi mathvariant="normal">∂</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{\partial(Q,P)}{\partial(q,p)}</annotation></semantics></math></span></span>, 因此</p>
+
+$$
+\displaystyle [Q,P] = \frac{\partial(Q,P)}{\partial(q,p)} = 1
+\quad \Longleftrightarrow \quad \text{变换为正则变换} .
+$$
+
+<p>也就是说, <strong>基本泊松括号保持为 1</strong> 是判定正则变换的一个等价条件。</p>
+<p>更一般地, 对任意两个力学量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo separator="true">,</mo><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\varphi,\psi</annotation></semantics></math></span></span>, 在旧变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)</annotation></semantics></math></span></span> 与新变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 下的泊松括号分别为</p>
+
+$$
+\displaystyle [\varphi,\psi]_{qp}
+= \frac{\partial(\varphi,\psi)}{\partial(q,p)} ,
+$$
+
+
+$$
+\displaystyle [\varphi,\psi]_{QP}
+= \frac{\partial(\varphi,\psi)}{\partial(Q,P)} .
+$$
+
+<p>利用雅可比链式法则:</p>
+
+$$
+\displaystyle
+\frac{\partial(\varphi,\psi)}{\partial(q,p)}
+= \frac{\partial(\varphi,\psi)}{\partial(Q,P)} \,
+  \frac{\partial(Q,P)}{\partial(q,p)} ,
+$$
+
+<p>在正则变换下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><mrow><mi mathvariant="normal">∂</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow></mfrac><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\dfrac{\partial(Q,P)}{\partial(q,p)} = 1</annotation></semantics></math></span></span>, 因而</p>
+
+$$
+\displaystyle [\varphi,\psi]_{qp} = [\varphi,\psi]_{QP} .
+$$
+
+<p>即<strong>正则变换下任意力学量的泊松括号保持不变</strong>。</p>
+<details>
+<summary>例题: 简单正则变换中的泊松括号</summary>
+<p>考虑变换</p>
+
+$$
+\displaystyle Q = q , \quad P = p + f(q) ,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>q</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(q)</annotation></semantics></math></span></span> 为任意光滑函数。检验此变换是否为正则变换。</p>
+<p>有</p>
+
+$$
+\displaystyle \frac{\partial Q}{\partial q} = 1 , \quad
+\frac{\partial Q}{\partial p} = 0 ,
+$$
+
+
+$$
+\displaystyle \frac{\partial P}{\partial q} = f'(q) , \quad
+\frac{\partial P}{\partial p} = 1 .
+$$
+
+<p>故</p>
+
+$$
+\displaystyle [Q,P]
+= \frac{\partial Q}{\partial q} \frac{\partial P}{\partial p}
+- \frac{\partial Q}{\partial p} \frac{\partial P}{\partial q}
+= 1 \cdot 1 - 0 \cdot f'(q) = 1 .
+$$
+
+<p>因此该变换为正则变换, 且任意两个力学量的泊松括号在此变换下保持不变。</p>
+</details>
+<h3 id="3-3-辛结构与刘维尔定理">3.3 辛结构与刘维尔定理</h3>
+<p>在一维相空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)</annotation></semantics></math></span></span> 中, 面积微元可以写作</p>
+
+$$
+\displaystyle \mathrm{d}Q\,\mathrm{d}P
+= \frac{\partial(Q,P)}{\partial(q,p)} \,\mathrm{d}q \mathrm{d}p .
+$$
+
+<p>正则变换满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi mathvariant="normal">∂</mi><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><mrow><mi mathvariant="normal">∂</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow></mfrac><mo>=</mo><mn>1</mn></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dfrac{\partial(Q,P)}{\partial(q,p)} = 1</annotation></semantics></math></span></span>, 因而</p>
+
+$$
+\displaystyle \mathrm{d}Q \mathrm{d}P = \mathrm{d}q \mathrm{d}p .
+$$
+
+<p>用外积表示, 记</p>
+
+$$
+\displaystyle \mathrm{d}q \wedge \mathrm{d}p
+$$
+
+<p>为相空间中的面积形式(辛二形式), 则</p>
+
+$$
+\displaystyle \mathrm{d}Q \wedge \mathrm{d}P
+= \frac{\partial(Q,P)}{\partial(q,p)} \,\mathrm{d}q \wedge \mathrm{d}p
+= \mathrm{d}q \wedge \mathrm{d}p .
+$$
+
+<p>因此, <strong>正则变换保持辛结构不变</strong>, 也保持相空间体积元素(在多维情形为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>s</mi></mrow><annotation encoding="application/x-tex">2s</annotation></semantics></math></span></span> 维体积)不变, 这正是刘维尔定理的几何内容。</p>
+<details>
+<summary>补充：外积的定义</summary>
+<p><strong>外积简介</strong></p>
+<p>外积是在线性代数和微分几何中非常重要的一个运算, 可以用来刻画"有方向的面积"和"有方向的体积"。在经典力学中, 出现的辛形式如</p>
+
+$$
+\displaystyle \mathrm{d}q \wedge \mathrm{d}p
+$$
+
+<p>就是外积的一个典型例子。</p>
+<p>本文从几何直观出发, 介绍向量和一形式上的外积, 以及它与行列式和体积的关系。</p>
+<hr>
+<p><strong>几何直观: 有向面积</strong></p>
+<p>在二维平面中取两个向量</p>
+
+$$
+\displaystyle \boldsymbol{u} , \ \boldsymbol{v} .
+$$
+
+<p>它们张成一个平行四边形。这个平行四边形的面积是</p>
+
+$$
+\displaystyle \text{Area} = \lvert \boldsymbol{u} \rvert \, \lvert \boldsymbol{v} \rvert \sin\theta ,
+$$
+
+<p>其中</p>
+
+$$
+\displaystyle \theta
+$$
+
+<p>是两向量之间的夹角。</p>
+<p>外积刻画的就是这个"面积"和"方向"的信息:</p>
+<ol>
+<li>面积大小来自平行四边形的面积。</li>
+<li>面积的"方向"用符号表示; 交换两个向量会改变符号。</li>
+</ol>
+<hr>
+<p><strong>向量外积的代数定义</strong></p>
+<p>设向量空间</p>
+
+$$
+\displaystyle V
+$$
+
+<p>是一个线性空间, 外积是一个双线性、反对称的运算, 把一对向量变成一个新的对象, 记作</p>
+
+$$
+\displaystyle \boldsymbol{u} \wedge \boldsymbol{v} .
+$$
+
+<p>基本代数性质如下。</p>
+<ol>
+<li>
+<p>反对称性</p>
+ 
+    $$
+    \displaystyle \boldsymbol{u} \wedge \boldsymbol{v}
+    = - \boldsymbol{v} \wedge \boldsymbol{u} .
+    $$
+    
+<p>特别地,</p>
+ 
+    $$
+    \displaystyle \boldsymbol{u} \wedge \boldsymbol{u} = 0 .
+    $$
+    
+</li>
+<li>
+<p>双线性</p>
+ 
+    $$
+    \displaystyle (\boldsymbol{u}_{1} + \boldsymbol{u}_{2}) \wedge \boldsymbol{v}
+    = \boldsymbol{u}_{1} \wedge \boldsymbol{v}
+    + \boldsymbol{u}_{2} \wedge \boldsymbol{v} ,
+    $$
+    
+ 
+    $$
+    \displaystyle \boldsymbol{u} \wedge (\boldsymbol{v}_{1} + \boldsymbol{v}_{2})
+    = \boldsymbol{u} \wedge \boldsymbol{v}_{1}
+    + \boldsymbol{u} \wedge \boldsymbol{v}_{2} ,
+    $$
+    
+ 
+    $$
+    \displaystyle (\lambda \boldsymbol{u}) \wedge \boldsymbol{v}
+    = \lambda (\boldsymbol{u} \wedge \boldsymbol{v}) ,
+    \quad
+    \boldsymbol{u} \wedge (\lambda \boldsymbol{v})
+    = \lambda (\boldsymbol{u} \wedge \boldsymbol{v}) .
+    $$
+    
+<p>几何上, 反对称性对应"交换两条边会改变有向面积的方向", 双线性对应"面积随着边的线性组合线性变化"。</p>
+</li>
+</ol>
+<hr>
+<p><strong>在基底下的表达式</strong></p>
+<p>考虑二维空间, 取标准基</p>
+
+$$
+\displaystyle \boldsymbol{e}_{1} , \ \boldsymbol{e}_{2} .
+$$
+
+<p>任意向量可写作</p>
+
+$$
+\displaystyle \boldsymbol{u}
+= u_{1} \boldsymbol{e}_{1} + u_{2} \boldsymbol{e}_{2} ,
+\quad
+\boldsymbol{v}
+= v_{1} \boldsymbol{e}_{1} + v_{2} \boldsymbol{e}_{2} .
+$$
+
+<p>利用双线性与反对称性可以展开:</p>
+
+$$
+\displaystyle
+\boldsymbol{u} \wedge \boldsymbol{v}
+= (u_{1} v_{2} - u_{2} v_{1}) \, \boldsymbol{e}_{1} \wedge \boldsymbol{e}_{2} .
+$$
+
+<p>系数</p>
+
+$$
+\displaystyle u_{1} v_{2} - u_{2} v_{1}
+$$
+
+<p>恰好是二维行列式</p>
+
+$$
+\displaystyle
+\begin{vmatrix}
+u_{1} &amp; u_{2} \\
+v_{1} &amp; v_{2}
+\end{vmatrix} .
+$$
+
+<p>因此, 在二维空间中, 外积的大小就是由这两个向量构成的平行四边形的有向面积。</p>
+<p>在三维空间中, 取标准基</p>
+
+$$
+\displaystyle \boldsymbol{e}_{1} , \ \boldsymbol{e}_{2} , \ \boldsymbol{e}_{3} ,
+$$
+
+<p>可以写出</p>
+
+$$
+\displaystyle
+\boldsymbol{u} \wedge \boldsymbol{v}
+= \sum_{1 \leq i &lt; j \leq 3} A_{ij} \, \boldsymbol{e}_{i} \wedge \boldsymbol{e}_{j} ,
+$$
+
+<p>其中各系数</p>
+
+$$
+\displaystyle A_{ij}
+$$
+
+<p>是由</p>
+
+$$
+\displaystyle \boldsymbol{u} , \ \boldsymbol{v}
+$$
+
+<p>分量构成的二维行列式。这样得到的对象不再是普通向量, 而是"二阶对象" (二维有向面积元)。</p>
+<details>
+<summary>例题 1: 二维向量外积的系数计算</summary>
+<p>取平面上两个向量:</p>
+
+$$
+\displaystyle \boldsymbol{u} = (1,2) , \quad \boldsymbol{v} = (3,1) .
+$$
+
+<p>在标准基下, 系数为</p>
+
+$$
+\displaystyle u_{1} v_{2} - u_{2} v_{1}
+= 1 \cdot 1 - 2 \cdot 3
+= -5 .
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle
+\boldsymbol{u} \wedge \boldsymbol{v}
+= -5 \, \boldsymbol{e}_{1} \wedge \boldsymbol{e}_{2} .
+$$
+
+<p>几何意义: 外积的大小为</p>
+
+$$
+\displaystyle \lvert -5 \rvert = 5 ,
+$$
+
+<p>等于由这两个向量张成的平行四边形面积; 符号负号表示其方向与</p>
+
+$$
+\displaystyle \boldsymbol{e}_{1} , \ \boldsymbol{e}_{2}
+$$
+
+<p>约定的正向不一致。</p>
+</details>
+<hr>
+<p><strong>一形式上的外积</strong></p>
+<p>在微分形式语言中, 外积最常见的对象是"一形式"。在二维中, 有标准一形式</p>
+
+$$
+\displaystyle \mathrm{d}x , \ \mathrm{d}y ,
+$$
+
+<p>它们对向量的作用是取相应的分量。</p>
+<p>给定两个向量</p>
+
+$$
+\displaystyle \boldsymbol{v} = (v_{x}, v_{y}) , \quad
+\boldsymbol{w} = (w_{x}, w_{y}) ,
+$$
+
+<p>定义一形式的外积</p>
+
+$$
+\displaystyle \mathrm{d}x \wedge \mathrm{d}y
+$$
+
+<p>作用在它们上, 得到一个标量:</p>
+
+$$
+\displaystyle
+(\mathrm{d}x \wedge \mathrm{d}y)(\boldsymbol{v}, \boldsymbol{w})
+= 
+\begin{vmatrix}
+v_{x} &amp; v_{y} \\
+w_{x} &amp; w_{y}
+\end{vmatrix}
+= v_{x} w_{y} - v_{y} w_{x} .
+$$
+
+<p>这恰好就是由</p>
+
+$$
+\displaystyle \boldsymbol{v} , \ \boldsymbol{w}
+$$
+
+<p>构成的平行四边形的有向面积。于是,</p>
+
+$$
+\displaystyle \mathrm{d}x \wedge \mathrm{d}y
+$$
+
+<p>可以理解为"单位有向面积元"。</p>
+<p>一形式外积满足同样的反对称性:</p>
+
+$$
+\displaystyle \mathrm{d}x \wedge \mathrm{d}y = - \mathrm{d}y \wedge \mathrm{d}x ,
+$$
+
+<p>以及</p>
+
+$$
+\displaystyle \mathrm{d}x \wedge \mathrm{d}x = 0 .
+$$
+
+<details>
+<summary>例题 2: 外积和面积计算</summary>
+<p>再看向量</p>
+
+$$
+\displaystyle \boldsymbol{v} = (1,2) , \quad \boldsymbol{w} = (3,1) .
+$$
+
+<p>计算</p>
+
+$$
+\displaystyle
+(\mathrm{d}x \wedge \mathrm{d}y)(\boldsymbol{v}, \boldsymbol{w})
+= 
+\begin{vmatrix}
+1 &amp; 2 \\
+3 &amp; 1
+\end{vmatrix}
+= 1 \cdot 1 - 2 \cdot 3
+= -5 .
+$$
+
+<p>因此这两个向量张成的平行四边形面积为</p>
+
+$$
+\displaystyle 5 ,
+$$
+
+<p>符号负号表示有向面积方向与标准方向不一致。</p>
+</details>
+<hr>
+<p><strong>高维情况与行列式</strong></p>
+<p>在三维空间中, 有标准一形式</p>
+
+$$
+\displaystyle \mathrm{d}x , \ \mathrm{d}y , \ \mathrm{d}z .
+$$
+
+<p>它们的外积</p>
+
+$$
+\displaystyle \mathrm{d}x \wedge \mathrm{d}y \wedge \mathrm{d}z
+$$
+
+<p>是一个"三形式", 作用在三个向量</p>
+
+$$
+\displaystyle \boldsymbol{u}_{1} , \ \boldsymbol{u}_{2} , \ \boldsymbol{u}_{3}
+$$
+
+<p>上, 给出三维行列式:</p>
+
+$$
+\displaystyle
+(\mathrm{d}x \wedge \mathrm{d}y \wedge \mathrm{d}z)
+(\boldsymbol{u}_{1}, \boldsymbol{u}_{2}, \boldsymbol{u}_{3})
+=
+\begin{vmatrix}
+u_{1x} &amp; u_{1y} &amp; u_{1z} \\
+u_{2x} &amp; u_{2y} &amp; u_{2z} \\
+u_{3x} &amp; u_{3y} &amp; u_{3z}
+\end{vmatrix} ,
+$$
+
+<p>也就是由这三个向量张成的平行六面体的有向体积。</p>
+<p>更一般地, 在</p>
+
+$$
+\displaystyle n
+$$
+
+<p>维空间中, 标准一形式为</p>
+
+$$
+\displaystyle \mathrm{d}x_{1} , \ \mathrm{d}x_{2} , \ \ldots , \ \mathrm{d}x_{n} .
+$$
+
+<p>它们的外积</p>
+
+$$
+\displaystyle \mathrm{d}x_{1} \wedge \mathrm{d}x_{2} \wedge \cdots \wedge \mathrm{d}x_{n}
+$$
+
+<p>作用在</p>
+
+$$
+\displaystyle n
+$$
+
+<p>个向量上, 就是</p>
+
+$$
+\displaystyle n \times n
+$$
+
+<p>行列式, 即有向体积。由此可以看出, <strong>外积和行列式在本质上是一回事</strong>: 外积给出抽象的"体积元", 行列式则是具体数值。</p>
+<details>
+<summary>例题 3: 三维中的有向体积</summary>
+<p>设三维空间中有三个向量:</p>
+
+$$
+\displaystyle
+\boldsymbol{u}_{1} = (1,0,0) , \quad
+\boldsymbol{u}_{2} = (0,2,0) , \quad
+\boldsymbol{u}_{3} = (0,0,3) .
+$$
+
+<p>则</p>
+
+$$
+\displaystyle
+(\mathrm{d}x \wedge \mathrm{d}y \wedge \mathrm{d}z)
+(\boldsymbol{u}_{1}, \boldsymbol{u}_{2}, \boldsymbol{u}_{3})
+=
+\begin{vmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 2 &amp; 0 \\
+0 &amp; 0 &amp; 3
+\end{vmatrix}
+= 6 .
+$$
+
+<p>这意味着这三个向量张成的平行六面体体积为</p>
+
+$$
+\displaystyle 6 ,
+$$
+
+<p>方向与标准正向一致。</p>
+</details>
+<hr>
+<p><strong>与三维叉积的关系</strong></p>
+<p>在三维欧氏空间中, 我们熟悉叉积</p>
+
+$$
+\displaystyle \boldsymbol{u} \times \boldsymbol{v} .
+$$
+
+<p>几何上, 叉积的模长也是平行四边形的面积, 方向与</p>
+
+$$
+\displaystyle \boldsymbol{u} , \ \boldsymbol{v}
+$$
+
+<p>张成平面的法向量一致。</p>
+<p>可以这样理解: 在三维空间里, 若固定体积形式</p>
+
+$$
+\displaystyle \mathrm{d}x \wedge \mathrm{d}y \wedge \mathrm{d}z ,
+$$
+
+<p>那么每一个"二维有向面积元"</p>
+
+$$
+\displaystyle \boldsymbol{u} \wedge \boldsymbol{v}
+$$
+
+<p>都可以唯一地对应到一个向量</p>
+
+$$
+\displaystyle \boldsymbol{u} \times \boldsymbol{v} .
+$$
+
+<p>换句话说, 在三维欧氏空间中, 外积对象和向量空间之间可以通过体积形式建立一个一一对应, 这就是叉积存在的原因。但在更高维度中一般没有类似的叉积, 而外积总是可以定义。</p>
+<hr>
+<p><strong>外积的更高阶: k 形式</strong></p>
+<p>在外积的框架下, 可以把"一形式"的外积继续做下去, 得到"二形式"、“三形式"直至"n 形式”。</p>
+<p>例如, 在四维空间中, 有一形式</p>
+
+$$
+\displaystyle \mathrm{d}x_{1} , \ \mathrm{d}x_{2} , \ \mathrm{d}x_{3} , \ \mathrm{d}x_{4} .
+$$
+
+<p>可以考虑二形式</p>
+
+$$
+\displaystyle \mathrm{d}x_{1} \wedge \mathrm{d}x_{2} , \quad
+\mathrm{d}x_{1} \wedge \mathrm{d}x_{3} , \quad
+\mathrm{d}x_{2} \wedge \mathrm{d}x_{4}
+$$
+
+<p>等, 它们分别对应不同的"二维有向面积元"。继续外积可以得到三形式和四形式。整个系统构成所谓"外代数", 是描述体积、面积、流量以及场的积分理论的自然语言。</p>
+<details>
+<summary>例题 4: 二维辛形式中的外积</summary>
+<p>在经典力学的一维相空间中, 有坐标</p>
+
+$$
+\displaystyle q , \ p .
+$$
+
+<p>考虑一形式</p>
+
+$$
+\displaystyle \mathrm{d}q , \ \mathrm{d}p .
+$$
+
+<p>辛结构写作</p>
+
+$$
+\displaystyle \omega = \mathrm{d}q \wedge \mathrm{d}p .
+$$
+
+<p>给定两个相空间向量</p>
+
+$$
+\displaystyle X_{1} = (a_{q}, a_{p}) , \quad
+X_{2} = (b_{q}, b_{p}) ,
+$$
+
+<p>则</p>
+
+$$
+\displaystyle
+\omega(X_{1}, X_{2})
+= (\mathrm{d}q \wedge \mathrm{d}p)(X_{1}, X_{2})
+=
+\begin{vmatrix}
+a_{q} &amp; a_{p} \\
+b_{q} &amp; b_{p}
+\end{vmatrix}
+= a_{q} b_{p} - a_{p} b_{q} .
+$$
+
+<p>这说明辛二形式实际上就是一个有向面积元, 衡量相空间中两个切向量张成的有向面积, 也就是刘维尔定理和相空间体积不变性的微分形式表达。</p>
+</details>
+<hr>
+<p><strong>小结</strong></p>
+<ol>
+<li>
+<p>外积是一个双线性、反对称的运算, 把向量或一形式配对成"有向面积元"或更高维的"有向体积元"。</p>
+</li>
+<li>
+<p>在坐标表达中, 外积的系数就是行列式, 直接给出有向面积或体积。</p>
+</li>
+<li>
+<p>在微分形式语言中,</p>
+
+   $$
+   \displaystyle \mathrm{d}x \wedge \mathrm{d}y , \ \mathrm{d}x \wedge \mathrm{d}y \wedge \mathrm{d}z
+   $$
+   
+<p>等外积就是积分论中的面积元与体积元。</p>
+</li>
+<li>
+<p>在三维空间中, 外积与叉积通过体积形式联系在一起; 在高维空间中, 叉积一般不再存在, 但外积始终成立, 是更一般、更本质的概念。</p>
+</li>
+</ol>
+</details>
+<h3 id="3-4-外微分形式语言">3.4 外微分形式语言</h3>
+<p>外微分具有性质</p>
+
+$$
+\displaystyle \mathrm{d}^{2} f = 0 , \quad
+\mathrm{d}x \wedge \mathrm{d}y = - \mathrm{d}y \wedge \mathrm{d}x , \quad
+\mathrm{d}(x\,\mathrm{d}y) = \mathrm{d}x \wedge \mathrm{d}y .
+$$
+
+<p>各类母函数对应的一形式为</p>
+
+$$
+\displaystyle \mathrm{d}U_{1} = p\,\mathrm{d}q - P\,\mathrm{d}Q ,
+$$
+
+
+$$
+\displaystyle \mathrm{d}U_{2} = -q\,\mathrm{d}p - P\,\mathrm{d}Q ,
+$$
+
+
+$$
+\displaystyle \mathrm{d}U_{3} = p\,\mathrm{d}q + Q\,\mathrm{d}P ,
+$$
+
+
+$$
+\displaystyle \mathrm{d}U_{4} = -q\,\mathrm{d}p + Q\,\mathrm{d}P .
+$$
+
+<p>对它们再做一次外微分, 利用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow><mi mathvariant="normal">d</mi></mrow><mrow><mn>2</mn></mrow></msup><msub><mi>U</mi><mrow><mi>i</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mathrm{d}^{2}U_{i} = 0</annotation></semantics></math></span></span>, 可以得到</p>
+
+$$
+\displaystyle 0 = \mathrm{d}^{2}U_{1} = \mathrm{d}p \wedge \mathrm{d}q - \mathrm{d}P \wedge \mathrm{d}Q ,
+$$
+
+
+$$
+\displaystyle 0 = \mathrm{d}^{2}U_{2} = -\mathrm{d}q \wedge \mathrm{d}p - \mathrm{d}P \wedge \mathrm{d}Q ,
+$$
+
+
+$$
+\displaystyle 0 = \mathrm{d}^{2}U_{3} = \mathrm{d}p \wedge \mathrm{d}q + \mathrm{d}Q \wedge \mathrm{d}P ,
+$$
+
+
+$$
+\displaystyle 0 = \mathrm{d}^{2}U_{4} = -\mathrm{d}q \wedge \mathrm{d}p + \mathrm{d}Q \wedge \mathrm{d}P .
+$$
+
+<p>由这些式子均可推出</p>
+
+$$
+\displaystyle \mathrm{d}Q \wedge \mathrm{d}P = \mathrm{d}q \wedge \mathrm{d}p .
+$$
+
+<p>这表明: 只要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">\mathrm{d}U</annotation></semantics></math></span></span> 为全微分, 则由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span> 生成的正则变换必定保辛结构。常见教材还会把这一结论与热力学中卡诺热机循环在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>−</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">p-V</annotation></semantics></math></span></span> 平面上的面积类比起来, 强调几何图像。</p>
+<h2 id="四-把哈密顿量变成零与相空间静止图像">四 把哈密顿量变成零与相空间静止图像</h2>
+<h3 id="4-1-一般思想-通过正则变换使新哈密顿量为零">4.1 一般思想: 通过正则变换使新哈密顿量为零</h3>
+<p>设旧正则变量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub><mo separator="true">,</mo><msub><mi>p</mi><mrow><mi>α</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(q_{\alpha},p_{\alpha})</annotation></semantics></math></span></span>, 新变量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>Q</mi><mrow><mi>α</mi></mrow></msub><mo separator="true">,</mo><msub><mi>P</mi><mrow><mi>α</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q_{\alpha},P_{\alpha})</annotation></semantics></math></span></span> (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">\alpha = 1,2,\cdots,s</annotation></semantics></math></span></span>), 正则变换的一般形式写为</p>
+
+$$
+\displaystyle (p,q) \longrightarrow (P,Q) .
+$$
+
+<p>若母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U(q,Q,p,P,t)</annotation></semantics></math></span></span> 显含时间, 则新哈密顿量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span></span> 与旧哈密顿量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span></span> 的关系为</p>
+
+$$
+\displaystyle K = H + \frac{\partial U}{\partial t} .
+$$
+
+<p>如果能够选择合适的母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span>, 使得新哈密顿量恒为零:</p>
+
+$$
+\displaystyle K = 0 ,
+$$
+
+<p>则新变量满足</p>
+
+$$
+\displaystyle \dot{Q}_{\alpha} = \frac{\partial K}{\partial P_{\alpha}} = 0 , \quad
+\dot{P}_{\alpha} = -\frac{\partial K}{\partial Q_{\alpha}} = 0 ,
+\quad \alpha = 1,2,\cdots,s ,
+$$
+
+<p>从而</p>
+
+$$
+\displaystyle Q_{\alpha}(t) = C_{\alpha} ,\quad
+P_{\alpha}(t) = D_{\alpha} ,
+$$
+
+<p>皆为常数。原本复杂的动力学问题被"拉直"成在新相空间中的静止点问题, 而全部动力学信息都编码在母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span> 中。</p>
+<h3 id="4-2-哈密顿–雅可比方程的出现">4.2 哈密顿–雅可比方程的出现</h3>
+<p>以第三类母函数 $U_{3}(\boldsymbol{q},\boldsymbol{P},t)$ 为例:</p>
+
+$$
+\displaystyle
+\begin{cases}
+p_{\alpha} = \dfrac{\partial U_{3}}{\partial q_{\alpha}} , \\
+Q_{\alpha} = \dfrac{\partial U_{3}}{\partial P_{\alpha}} ,
+\end{cases}
+\quad \alpha = 1,2,\cdots,s .
+$$
+
+<p>新哈密顿量</p>
+
+$$
+\displaystyle K(\boldsymbol{Q},\boldsymbol{P},t)
+= H(\boldsymbol{q},\boldsymbol{p},t) + \frac{\partial U_{3}}{\partial t} .
+$$
+
+<p>如果要求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi><mo>≡</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">K \equiv 0</annotation></semantics></math></span></span>, 则必须满足</p>
+
+$$
+\displaystyle H\!\left( \boldsymbol{q}, \frac{\partial U_{3}}{\partial \boldsymbol{q}}, t \right)
++ \frac{\partial U_{3}}{\partial t} = 0 .
+$$
+
+<p>把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mn>3</mn></mrow></msub></mrow><annotation encoding="application/x-tex">U_{3}</annotation></semantics></math></span></span> 记作 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span>, 就得到<strong>哈密顿–雅可比方程</strong>:</p>
+
+$$
+\displaystyle H\!\left( \boldsymbol{q}, \frac{\partial S}{\partial \boldsymbol{q}}, t \right)
++ \frac{\partial S}{\partial t} = 0 .
+$$
+
+<p>这是一个一阶偏微分方程。其<strong>全积分</strong> $S(\boldsymbol{q},\boldsymbol{D},t)$ 包含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">s+1</annotation></semantics></math></span></span> 个独立常数 $\boldsymbol{D} = (D_{0},D_{1},\cdots,D_{s})$, 其中一个为相加常数, 不影响正则变换本身, 通常可以略去。</p>
+<p>在全积分中, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mrow><mi>α</mi></mrow></msub></mrow><annotation encoding="application/x-tex">D_{\alpha}</annotation></semantics></math></span></span> 可以看作新广义动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>α</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_{\alpha}</annotation></semantics></math></span></span> 的常数值, 而新广义坐标由</p>
+
+$$
+\displaystyle Q_{\alpha} = \frac{\partial S}{\partial D_{\alpha}}
+$$
+
+<p>给出, 进而反解得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo><mo separator="true">,</mo><msub><mi>p</mi><mrow><mi>α</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q_{\alpha}(t),p_{\alpha}(t)</annotation></semantics></math></span></span>。</p>
+<h3 id="4-3-哈密顿主函数与作用量">4.3 哈密顿主函数与作用量</h3>
+<p>令</p>
+
+$$
+\displaystyle S = S(\boldsymbol{q},\boldsymbol{D},t) ,
+$$
+
+<p>在实际运动轨道上, 对时间求全导数:</p>
+
+$$
+\displaystyle
+\frac{\mathrm{d}S}{\mathrm{d}t}
+= \sum_{\alpha=1}^{s} \frac{\partial S}{\partial q_{\alpha}} \dot{q}_{\alpha}
++ \frac{\partial S}{\partial t}
+= \sum_{\alpha=1}^{s} p_{\alpha} \dot{q}_{\alpha} - H
+= L ,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 为拉格朗日量。因此</p>
+
+$$
+\displaystyle \mathrm{d}S = L\,\mathrm{d}t
+= \sum_{\alpha=1}^{s} p_{\alpha}\,\mathrm{d}q_{\alpha} - H\,\mathrm{d}t .
+$$
+
+<p>沿实际运动从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">t_{0}</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 积分:</p>
+
+$$
+\displaystyle S = \int L\,\mathrm{d}t
+= \int_{t_{0}}^{t} L\,\mathrm{d}t ,
+$$
+
+<p>这就是通常所说的<strong>哈密顿作用量</strong>, 但在这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 被视为 $S(\boldsymbol{q},\boldsymbol{D},t)$ 的一个具体解, 是一个函数, 而不是对路径的泛函。</p>
+<h3 id="4-4-时间不显含的情形与哈密顿特征函数">4.4 时间不显含的情形与哈密顿特征函数</h3>
+<p>若哈密顿量不显含时间:</p>
+
+$$
+\displaystyle H = H(\boldsymbol{q},\boldsymbol{p}) ,\quad
+\frac{\partial H}{\partial t} = 0 ,
+$$
+
+<p>则哈密顿量在运动过程中为一积分常数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span>。此时可对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 作变量分离:</p>
+
+$$
+\displaystyle S(\boldsymbol{q},\boldsymbol{D},t)
+= W(\boldsymbol{q},\boldsymbol{D}) + S_{t}(t,\boldsymbol{D}) ,
+$$
+
+<p>其中 $W(\boldsymbol{q},\boldsymbol{D})$ 称为<strong>哈密顿特征函数</strong>(或简称特征函数), 通常将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mrow><mn>1</mn></mrow></msub><mo>=</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">D_{1} = E</annotation></semantics></math></span></span> 选为能量。</p>
+<p>由于</p>
+
+$$
+\displaystyle \frac{\partial S}{\partial q_{\alpha}} = \frac{\partial W}{\partial q_{\alpha}} , \quad
+\frac{\partial S}{\partial t} = \frac{\mathrm{d}S_{t}}{\mathrm{d}t} ,
+$$
+
+<p>哈密顿–雅可比方程变为</p>
+
+$$
+\displaystyle H\!\left( \boldsymbol{q}, \frac{\partial W}{\partial \boldsymbol{q}} \right)
+= -\frac{\mathrm{d}S_{t}}{\mathrm{d}t} = E ,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 为常数。可以选取</p>
+
+$$
+\displaystyle S(\boldsymbol{q},\boldsymbol{D},t)
+= W(\boldsymbol{q},D_{2},\cdots,D_{s}) - Et ,
+$$
+
+<p>相应地</p>
+
+$$
+\displaystyle H\!\left( \boldsymbol{q}, \frac{\partial W}{\partial \boldsymbol{q}} \right)
+= E ,
+$$
+
+<p>这就是<strong>定态哈密顿–雅可比方程</strong>。</p>
+<h3 id="4-5-分离变量与新广义坐标、动量">4.5 分离变量与新广义坐标、动量</h3>
+<p>若特征函数可以写成</p>
+
+$$
+\displaystyle W = W(\boldsymbol{q},\boldsymbol{D}) ,
+$$
+
+<p>其中新广义动量记为</p>
+
+$$
+\displaystyle \boldsymbol{D} = (E, D_{2},\cdots,D_{s}) .
+$$
+
+<p>新广义坐标由</p>
+
+$$
+\displaystyle C_{1} = \frac{\partial S}{\partial D_{1}}
+= \frac{\partial W(\boldsymbol{q},\boldsymbol{D})}{\partial E} - t ,
+$$
+
+
+$$
+\displaystyle C_{\alpha} = \frac{\partial W(\boldsymbol{q},\boldsymbol{D})}{\partial D_{\alpha}} ,
+\quad \alpha = 2,3,\cdots,s ,
+$$
+
+<p>给出, 它们都是常数。形式上可以写成</p>
+
+$$
+\displaystyle C_{\alpha} = C_{\alpha}(q_{1},\cdots,q_{s}; E,D_{2},\cdots,D_{s}) .
+$$
+
+<p>反过来, 可以从这些关系中解出原广义坐标</p>
+
+$$
+\displaystyle q_{\alpha} = f_{\alpha}(C_{2},\cdots,C_{s}; E,D_{2},\cdots,D_{s}; C_{1} + t) .
+$$
+
+<p>广义动量则由</p>
+
+$$
+\displaystyle p_{\alpha} = \frac{\partial S}{\partial q_{\alpha}}
+= \frac{\partial W(\boldsymbol{q},\boldsymbol{D})}{\partial q_{\alpha}}
+$$
+
+<p>给出。</p>
+<h3 id="4-6-哈密顿–雅可比方程的一般解题步骤">4.6 哈密顿–雅可比方程的一般解题步骤</h3>
+<p>在实际求解问题时, 常按如下步骤进行:</p>
+<ol>
+<li>
+<p>根据系统的哈密顿量 $H(\boldsymbol{q},\boldsymbol{p},t)$, 将广义动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>α</mi></mrow></msub></mrow><annotation encoding="application/x-tex">p_{\alpha}</annotation></semantics></math></span></span> 用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>W</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dfrac{\partial W}{\partial q_{\alpha}}</annotation></semantics></math></span></span> 代替, 写出 H–J 方程。</p>
+</li>
+<li>
+<p>尝试对 H–J 方程作变量分离, 求出特征函数 $W(\boldsymbol{q},\boldsymbol{D})$, 它应包含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span></span> 个积分常数, 其中一个通常是能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span>, 其余对应可遗坐标的动量。</p>
+</li>
+<li>
+<p>根据正则变换公式</p>
+
+   $$
+   \displaystyle C_{\alpha} = \frac{\partial W}{\partial D_{\alpha}} ,
+   $$
+   
+<p>求得新广义坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mrow><mi>α</mi></mrow></msub></mrow><annotation encoding="application/x-tex">C_{\alpha}</annotation></semantics></math></span></span>, 再由这些关系反解出原广义坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q_{\alpha}(t)</annotation></semantics></math></span></span>。</p>
+</li>
+<li>
+<p>根据</p>
+
+   $$
+   \displaystyle p_{\alpha} = \frac{\partial W}{\partial q_{\alpha}} ,
+   $$
+   
+<p>求出广义动量随时间的变化。</p>
+</li>
+<li>
+<p>在很多问题中, 实际只需要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>W</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dfrac{\partial W}{\partial q_{\alpha}}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>W</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>D</mi><mrow><mi>α</mi></mrow></msub></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \dfrac{\partial W}{\partial D_{\alpha}}</annotation></semantics></math></span></span>, 因此<strong>通常并不需要显式积分出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span></span></strong> 本身。</p>
+</li>
+</ol>
+<details>
+<summary>例题: 自由粒子的一维 H–J 方程</summary>
+<p>考虑质量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 的一维自由粒子, 哈密顿量为</p>
+
+$$
+\displaystyle H(q,p) = \frac{p^{2}}{2m} .
+$$
+
+<p>哈密顿–雅可比方程为</p>
+
+$$
+\displaystyle \frac{1}{2m} \left( \frac{\partial S}{\partial q} \right)^{2}
++ \frac{\partial S}{\partial t} = 0 .
+$$
+
+<p>设</p>
+
+$$
+\displaystyle S(q,D,t) = W(q,D) - Et ,
+$$
+
+<p>则</p>
+
+$$
+\displaystyle \frac{1}{2m} \left( \frac{\mathrm{d}W}{\mathrm{d}q} \right)^{2} = E .
+$$
+
+<p>可以取</p>
+
+$$
+\displaystyle \frac{\mathrm{d}W}{\mathrm{d}q} = \pm \sqrt{2mE} \equiv p ,
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle W(q,E) = p q + \text{常数} ,
+$$
+
+<p>即</p>
+
+$$
+\displaystyle S(q,E,t) = p q - Et ,
+\quad E = \frac{p^{2}}{2m} .
+$$
+
+<p>新广义动量可选 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mrow><mn>1</mn></mrow></msub><mo>=</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">D_{1} = E</annotation></semantics></math></span></span>, 对应的新广义坐标</p>
+
+$$
+\displaystyle C = \frac{\partial S}{\partial E}
+= \frac{\partial W}{\partial E} - t
+= \frac{\partial (p q)}{\partial E} - t
+= \frac{\partial p}{\partial E} q - t
+= \frac{m}{p} q - t ,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>p</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>E</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>m</mi></mrow><mrow><mi>p</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{\partial p}{\partial E} = \dfrac{m}{p}</annotation></semantics></math></span></span>。令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 为常数, 可解得</p>
+
+$$
+\displaystyle q(t) = \frac{p}{m} (t + C) ,
+$$
+
+<p>即匀速直线运动, 与牛顿动力学结论一致。</p>
+</details>
+<h2 id="五-一维谐振子的-H–J-方程求解">五 一维谐振子的 H–J 方程求解</h2>
+<h3 id="5-1-写出-H–J-方程">5.1 写出 H–J 方程</h3>
+<p>考虑质量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>, 角频率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span> 的一维谐振子, 哈密顿量为</p>
+
+$$
+\displaystyle H(q,p) = \frac{p^{2}}{2m} + \frac{1}{2} m \omega^{2} q^{2} .
+$$
+
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span></span> 不显含时间, 可以采用分离变量形式</p>
+
+$$
+\displaystyle S(q,D,t) = W(q,E) - Et ,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 为能量常数。定态 H–J 方程为</p>
+
+$$
+\displaystyle H\!\left( q, \frac{\mathrm{d}W}{\mathrm{d}q} \right) = E ,
+$$
+
+<p>即</p>
+
+$$
+\displaystyle \frac{1}{2m} \left( \frac{\mathrm{d}W}{\mathrm{d}q} \right)^{2}
++ \frac{1}{2} m \omega^{2} q^{2} = E .
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle p = \frac{\mathrm{d}W}{\mathrm{d}q}
+= \pm \sqrt{2m \left( E - \frac{1}{2} m \omega^{2} q^{2} \right)}
+= \pm m \omega \sqrt{ \frac{2E}{m\omega^{2}} - q^{2} } .
+$$
+
+<p>原笔记中给出其中一个分支(取负号):</p>
+
+$$
+\displaystyle p = \frac{\mathrm{d}W}{\mathrm{d}q}
+= -m \omega \sqrt{ \frac{2E}{m\omega^{2}} - q^{2} } .
+$$
+
+<p>从而</p>
+
+$$
+\displaystyle W(q,E) = -m\omega \int \sqrt{ \frac{2E}{m\omega^{2}} - q^{2} } \,\mathrm{d}q .
+$$
+
+<h3 id="5-2-新广义动量与坐标">5.2 新广义动量与坐标</h3>
+<p>能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 作为新广义动量, 可写成初态的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mrow><mn>0</mn></mrow></msub><mo separator="true">,</mo><msub><mi>p</mi><mrow><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">q_{0},p_{0}</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle E = \frac{p_{0}^{2}}{2m} + \frac{1}{2} m \omega^{2} q_{0}^{2} .
+$$
+
+<p>新广义坐标由</p>
+
+$$
+\displaystyle C = \frac{\partial W}{\partial E} - t
+$$
+
+<p>给出。由积分表达式可算得</p>
+
+$$
+\displaystyle C
+= -\frac{1}{\omega} \int \frac{\mathrm{d}q}{\sqrt{\dfrac{2E}{m\omega^{2}} - q^{2}}} - t
+= \frac{1}{\omega} \arccos\!\left( \sqrt{\frac{m\omega^{2}}{2E}} \, q \right) - t .
+$$
+
+<p>在初始时刻 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">t_{0}</annotation></semantics></math></span></span>, 有</p>
+
+$$
+\displaystyle C = \frac{1}{\omega} \arccos\!\left( \sqrt{\frac{m\omega^{2}}{2E}} \, q_{0} \right) - t_{0}
+\equiv \frac{\varphi_{0}}{\omega} ,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>φ</mi><mrow><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\varphi_{0}</annotation></semantics></math></span></span> 是相位常数。</p>
+<p>反解出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo separator="true">,</mo><mi>p</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q(t),p(t)</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle
+\begin{cases}
+q(t) = \sqrt{\dfrac{2E}{m\omega^{2}}} \cos(\omega t + \varphi_{0}) , \\
+p(t) = \dfrac{\mathrm{d}W}{\mathrm{d}q}
+= -m\omega \sqrt{\dfrac{2E}{m\omega^{2}} - q^{2}}
+= -\sqrt{2mE} \sin(\omega t + \varphi_{0}) .
+\end{cases}
+$$
+
+<p>这与熟知的一维谐振子解完全一致。可以看出, 在 H–J 方法中, 新广义动量是能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span>, 新广义坐标可以解释为"相位时间" <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>φ</mi><mrow><mn>0</mn></mrow></msub><mi mathvariant="normal">/</mi><mi>ω</mi></mrow><annotation encoding="application/x-tex">\varphi_{0}/\omega</annotation></semantics></math></span></span>。</p>
+<details>
+<summary>补充计算: 积分求出特征函数 W(q,E)</summary>
+<p>设</p>
+
+$$
+\displaystyle a^{2} = \frac{2E}{m\omega^{2}} ,
+$$
+
+<p>则</p>
+
+$$
+\displaystyle W(q,E) = -m\omega \int \sqrt{ a^{2} - q^{2} } \,\mathrm{d}q .
+$$
+
+<p>标准积分</p>
+
+$$
+\displaystyle \int \sqrt{ a^{2} - q^{2} } \,\mathrm{d}q
+= \frac{q}{2} \sqrt{a^{2} - q^{2}}
++ \frac{a^{2}}{2} \arcsin\!\left( \frac{q}{a} \right) + \text{常数} .
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle W(q,E)
+= -m\omega \left[
+\frac{q}{2} \sqrt{a^{2} - q^{2}}
++ \frac{a^{2}}{2} \arcsin\!\left( \frac{q}{a} \right)
+\right] + \text{常数} .
+$$
+
+<p>显然, 在求解运动方程时仅需要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>W</mi></mrow><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>q</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">p = \dfrac{\mathrm{d}W}{\mathrm{d}q}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>W</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>E</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{\partial W}{\partial E}</annotation></semantics></math></span></span>, 并不必显式写出完整的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span></span> 也可以完成计算。</p>
+</details>
+<h2 id="六-通过旋转把谐振子的哈密顿量变成零">六 通过旋转把谐振子的哈密顿量变成零</h2>
+<h3 id="6-1-相空间旋转的正则变换">6.1 相空间旋转的正则变换</h3>
+<p>考虑一维谐振子的哈密顿量</p>
+
+$$
+\displaystyle H = \frac{p^{2}}{2m} + \frac{1}{2} m \omega^{2} q^{2} .
+$$
+
+<p>作如下时间依赖的正则变换:</p>
+
+$$
+\displaystyle
+\begin{cases}
+Q = q \cos\omega t - \dfrac{p}{m\omega} \sin\omega t , \\
+P = m\omega q \sin\omega t + p \cos\omega t .
+\end{cases}
+$$
+
+<p>这可以看作相空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)</annotation></semantics></math></span></span> 向量以角速度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span> 的旋转, 从而使动力学在新坐标中"静止"下来。</p>
+<p>选用第三类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mn>3</mn></mrow></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_{3}(q,P,t)</annotation></semantics></math></span></span>, 满足</p>
+
+$$
+\displaystyle
+\begin{cases}
+p = \dfrac{\partial U_{3}}{\partial q} , \\
+Q = \dfrac{\partial U_{3}}{\partial P} , \\
+K = H + \dfrac{\partial U_{3}}{\partial t} .
+\end{cases}
+$$
+
+<p>由变换关系可写</p>
+
+$$
+\displaystyle p = \frac{P - m\omega q \sin\omega t}{\cos\omega t} .
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle U_{3}(q,P,t)
+= \int \frac{P - m\omega q \sin\omega t}{\cos\omega t} \,\mathrm{d}q + f(P,t)
+= \frac{P q - \dfrac{1}{2} m \omega q^{2} \sin\omega t}{\cos\omega t}
++ f(P,t) .
+$$
+
+<p>另一方面</p>
+
+$$
+\displaystyle Q
+= \frac{\partial U_{3}}{\partial P}
+= \frac{q}{\cos\omega t} + \frac{\partial f}{\partial P} .
+$$
+
+<p>而又有</p>
+
+$$
+\displaystyle Q
+= \frac{m\omega q - P \sin\omega t}{m\omega \cos\omega t} ,
+$$
+
+<p>比较两式可得</p>
+
+$$
+\displaystyle \frac{\partial f}{\partial P}
+= -\frac{P \sin\omega t}{m\omega \cos\omega t} ,
+$$
+
+<p>从而(忽略与变换无关的相加常数)</p>
+
+$$
+\displaystyle f(P,t)
+= -\frac{P^{2} \sin\omega t}{2 m \omega \cos\omega t} .
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle
+U_{3}(q,P,t)
+= -\frac{\left( P^{2} + m^{2} \omega^{2} q^{2} \right) \sin\omega t - 2 m \omega q P}{2 m \omega \cos\omega t} .
+$$
+
+<p>这是写成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,P,t)</annotation></semantics></math></span></span> 的第三类母函数。</p>
+<h3 id="6-2-新哈密顿量-K-变为零">6.2 新哈密顿量 K 变为零</h3>
+<p>计算</p>
+
+$$
+\displaystyle \frac{\partial U_{3}}{\partial t}
+= -\frac{m^{2} \omega^{2} q^{2} + P^{2} - 2m\omega qP \sin\omega t}{2m \cos^{2}\omega t} .
+$$
+
+<p>利用新变量中谐振子的能量形式</p>
+
+$$
+\displaystyle H = \frac{1}{2m} \left[ P^{2} + m^{2} \omega^{2} Q^{2} \right] ,
+$$
+
+<p>以及</p>
+
+$$
+\displaystyle m\omega Q = m\omega q \cos\omega t - p \sin\omega t , \quad
+P = m\omega q \sin\omega t + p \cos\omega t ,
+$$
+
+<p>可以验证</p>
+
+$$
+\displaystyle \frac{\partial U_{3}}{\partial t}
+= -\frac{1}{2m} \left[ P^{2} + m^{2} \omega^{2} Q^{2} \right] = -H .
+$$
+
+<p>于是新哈密顿量</p>
+
+$$
+\displaystyle K = H + \frac{\partial U_{3}}{\partial t} = 0 .
+$$
+
+<p>因此在新坐标下</p>
+
+$$
+\displaystyle Q(t) = Q_{0} , \quad P(t) = P_{0} ,
+$$
+
+<p>完全为常数, 相空间轨迹被"拉直"成一条沿时间方向的直线, 而原来在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)</annotation></semantics></math></span></span> 平面上是椭圆轨道。</p>
+<details>
+<summary>几何图像说明</summary>
+<p>在原相空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)</annotation></semantics></math></span></span> 中, 一维谐振子的轨迹是一条椭圆, 随时间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 旋转。若在三维 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p,t)</annotation></semantics></math></span></span> 空间中描绘轨迹, 它是一条螺旋线或"扭曲的圆柱面"上的封闭曲线。</p>
+<p>通过上述相空间旋转的正则变换, 新相空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 中的轨迹变为时间方向上的一条竖直直线, 即粒子在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 平面中静止不动, 仅沿时间方向"延伸"。这样的图像更清楚地展示了 H–J 方法中"把动力学问题化为几何上的静止"这一思想。</p>
+</details>
+<h2 id="七-中心势问题的-H–J-方程">七 中心势问题的 H–J 方程</h2>
+<h3 id="7-1-建立-H–J-方程">7.1 建立 H–J 方程</h3>
+<p>考虑平面上的中心势问题, 拉格朗日量为</p>
+
+$$
+\displaystyle L
+= \frac{1}{2} \mu \left( \dot{r}^{2} + r^{2} \dot{\theta}^{2} \right) - V(r) ,
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 为约化质量。广义动量为</p>
+
+$$
+\displaystyle p_{r} = \frac{\partial L}{\partial \dot{r}} = \mu \dot{r} , \quad
+p_{\theta} = \frac{\partial L}{\partial \dot{\theta}} = \mu r^{2} \dot{\theta} .
+$$
+
+<p>哈密顿量为</p>
+
+$$
+\displaystyle H
+= \frac{1}{2\mu} \left( p_{r}^{2} + \frac{p_{\theta}^{2}}{r^{2}} \right) + V(r) .
+$$
+
+<p>H–J 方程(定态情形)为</p>
+
+$$
+\displaystyle \frac{1}{2\mu}
+\left[ \left( \frac{\partial W}{\partial r} \right)^{2}
++ \frac{1}{r^{2}} \left( \frac{\partial W}{\partial \theta} \right)^{2} \right]
++ V(r) = E .
+$$
+
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span></span> 不显含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>, 可以尝试写</p>
+
+$$
+\displaystyle W(r,\theta;E,l) = W_{r}(r;E,l) + W_{\theta}(\theta;l) ,
+$$
+
+<p>并令角动量为常数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span>, 即令</p>
+
+$$
+\displaystyle p_{\theta} = \frac{\partial W}{\partial \theta}
+= \frac{\mathrm{d}W_{\theta}}{\mathrm{d}\theta} = l .
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle W_{\theta}(\theta;l) = l \theta .
+$$
+
+<p>将分离形式代回 H–J 方程, 得</p>
+
+$$
+\displaystyle 2\mu r^{2} \left[ E - V(r)
+- \frac{1}{2\mu} \left( \frac{\mathrm{d}W_{r}}{\mathrm{d}r} \right)^{2} \right]
+= \left( \frac{\mathrm{d}W_{\theta}}{\mathrm{d}\theta} \right)^{2}
+= l^{2} .
+$$
+
+<p>从而</p>
+
+$$
+\displaystyle \frac{\mathrm{d}W_{r}}{\mathrm{d}r}
+= \pm \sqrt{ 2\mu \left[ E - U(r;l) \right] } ,
+$$
+
+<p>其中</p>
+
+$$
+\displaystyle U(r;l) = \frac{l^{2}}{2\mu r^{2}} + V(r)
+$$
+
+<p>是包含离心势项的<strong>有效势</strong>。</p>
+<h3 id="7-2-特征函数与新广义坐标">7.2 特征函数与新广义坐标</h3>
+<p>特征函数可以写为</p>
+
+$$
+\displaystyle W(r,\theta;E,l)
+= \pm \int_{r_{0}}^{r} \sqrt{ 2\mu \left[ E - U(r;l) \right] } \,\mathrm{d}r
++ l\theta ,
+$$
+
+<p>相应的主函数为</p>
+
+$$
+\displaystyle S(r,\theta;E,l;t)
+= \pm \int_{r_{0}}^{r} \sqrt{ 2\mu \left[ E - U(r;l) \right] } \,\mathrm{d}r
++ l\theta - Et .
+$$
+
+<p>新广义坐标由</p>
+
+$$
+\displaystyle C_{1} = \frac{\partial W}{\partial E} - t
+$$
+
+<p>与</p>
+
+$$
+\displaystyle C_{2} = \frac{\partial W}{\partial l}
+$$
+
+<p>给出。首先</p>
+
+$$
+\displaystyle C_{1}
+= \pm \sqrt{\frac{\mu}{2}} \int_{r_{0}}^{r}
+\frac{\mathrm{d}r}{\sqrt{E - U(r;l)}} - t
+= -t_{0} ,
+$$
+
+<p>可以看作给出了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">r(t)</annotation></semantics></math></span></span> 的隐式关系。其次</p>
+
+$$
+\displaystyle C_{2}
+= \mp \int_{r_{0}}^{r}
+\frac{l\,\mathrm{d}r}{ r^{2} \sqrt{ 2\mu \left[ E - U(r;l) \right] } }
++ \theta
+= \theta_{0} ,
+$$
+
+<p>给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 的变化关系, 也就确定了轨道形状 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>=</mo><mi>θ</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\theta = \theta(r)</annotation></semantics></math></span></span>。</p>
+<p>广义动量则为</p>
+
+$$
+\displaystyle p_{r} = \frac{\partial W}{\partial r}
+= \pm \sqrt{ 2\mu \left[ E - U(r;l) \right] } , \quad
+p_{\theta} = \frac{\partial W}{\partial \theta} = l .
+$$
+
+<details>
+<summary>例题: 万有引力中心势中的轨道形状(定性)</summary>
+<p>考虑万有引力中心势</p>
+
+$$
+\displaystyle V(r) = -\frac{k}{r} , \quad k &gt; 0 ,
+$$
+
+<p>则有效势为</p>
+
+$$
+\displaystyle U(r;l) = \frac{l^{2}}{2\mu r^{2}} - \frac{k}{r} .
+$$
+
+<p>在给定能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 与角动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 时, 轨道上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 的取值由</p>
+
+$$
+\displaystyle E = \frac{p_{r}^{2}}{2\mu} + U(r;l)
+$$
+
+<p>决定。若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">E &lt; 0</annotation></semantics></math></span></span>, 则允许的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 区间为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>(</mo><mi>r</mi><mo separator="true">;</mo><mi>l</mi><mo>)</mo><mo>≤</mo><mi>E</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">U(r;l) \leq E &lt; 0</annotation></semantics></math></span></span>, 这对应于<strong>束缚轨道</strong>。将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mrow><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">C_{2}</annotation></semantics></math></span></span> 的表达式写成</p>
+
+$$
+\displaystyle \theta - \theta_{0}
+= \pm \int_{r_{0}}^{r}
+\frac{l\,\mathrm{d}r}{ r^{2} \sqrt{ 2\mu \left[ E - U(r;l) \right] } } ,
+$$
+
+<p>可在进一步积分后得到经典的开普勒椭圆轨道方程。H–J 方法在这里给出了轨道形状的积分表达式, 体现了相空间几何方法与常规微分方程求解的等价性。</p>
+</details>
+<hr>
+<p>以上内容系统整理了欧拉定理与麦克斯韦关系、雅可比行列式与正则变换、辛结构不变性、通过正则变换将哈密顿量化为零的思想、以及哈密顿–雅可比方程及其在一维谐振子与中心势问题中的具体应用。配合文中的若干例题, 可以较完整地掌握 H–J 方法在经典力学中的使用。</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6/" class="">
+              经典力学
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/JingDianLiXue/正则变换与哈密顿-雅可比方程2/" target="_blank" title="正则变换与哈密顿-雅可比方程2">https://kotokowa.github.io/physics/JingDianLiXue/正则变换与哈密顿-雅可比方程2/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/DaWuShiYan2/%E7%AC%AC%E4%BA%8C%E5%BE%AA%E7%8E%AF/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">第二循环</div>
+      </div>
+      
+      <!-- <div class="content">
+        干涉，偏振，衍射
+干涉 用菲涅耳双棱镜测量钠光的波长
+实验步骤
+
+
+粗调光路，等高共轴
+光具座上摆放顺序：钠灯，狭缝，双
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/DaWuShiYan2/%E7%AC%AC%E4%B8%80%E5%BE%AA%E7%8E%AF/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">第一循环</div>
+      </div>
+      <!-- <div class="content">
+        密里根油滴实验，布朗运动实验，宇宙线μ子天顶角分布测量实验
+密立根油滴实验
+实验步骤
+实验采用动态法. 先打开密立根油滴
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">正则变换与哈密顿-雅可比方程2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%85%A8%E5%BE%AE%E5%88%86%E4%B8%8E%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86"><span class="toc-text">一 全微分与欧拉定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%E4%B8%8E%E5%85%A8%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="toc-text">1.1 欧拉定理与全微分形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E5%85%B3%E7%B3%BB%E7%9A%84%E7%B1%BB%E6%AF%94"><span class="toc-text">1.2 麦克斯韦关系的类比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F%E4%B8%8E%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="toc-text">二 雅可比行列式与坐标变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%9E%81%E5%9D%90%E6%A0%87%E4%B8%AD%E7%9A%84%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">2.1 极坐标中的雅可比行列式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">2.2 雅可比行列式的性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">三 正则变换的性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E7%94%B1%E6%AF%8D%E5%87%BD%E6%95%B0%E7%94%9F%E6%88%90%E7%9A%84%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">3.1 由母函数生成的正则变换与雅可比行列式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%B3%8A%E6%9D%BE%E6%8B%AC%E5%8F%B7%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E5%88%A4%E6%8D%AE"><span class="toc-text">3.2 泊松括号与正则变换判据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E8%BE%9B%E7%BB%93%E6%9E%84%E4%B8%8E%E5%88%98%E7%BB%B4%E5%B0%94%E5%AE%9A%E7%90%86"><span class="toc-text">3.3 辛结构与刘维尔定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%A4%96%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80"><span class="toc-text">3.4 外微分形式语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E6%8A%8A%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E5%8F%98%E6%88%90%E9%9B%B6%E4%B8%8E%E7%9B%B8%E7%A9%BA%E9%97%B4%E9%9D%99%E6%AD%A2%E5%9B%BE%E5%83%8F"><span class="toc-text">四 把哈密顿量变成零与相空间静止图像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E4%B8%80%E8%88%AC%E6%80%9D%E6%83%B3-%E9%80%9A%E8%BF%87%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%BD%BF%E6%96%B0%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E4%B8%BA%E9%9B%B6"><span class="toc-text">4.1 一般思想: 通过正则变换使新哈密顿量为零</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%93%88%E5%AF%86%E9%A1%BF%E2%80%93%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B%E7%9A%84%E5%87%BA%E7%8E%B0"><span class="toc-text">4.2 哈密顿–雅可比方程的出现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%93%88%E5%AF%86%E9%A1%BF%E4%B8%BB%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BD%9C%E7%94%A8%E9%87%8F"><span class="toc-text">4.3 哈密顿主函数与作用量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E6%97%B6%E9%97%B4%E4%B8%8D%E6%98%BE%E5%90%AB%E7%9A%84%E6%83%85%E5%BD%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0"><span class="toc-text">4.4 时间不显含的情形与哈密顿特征函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F%E4%B8%8E%E6%96%B0%E5%B9%BF%E4%B9%89%E5%9D%90%E6%A0%87%E3%80%81%E5%8A%A8%E9%87%8F"><span class="toc-text">4.5 分离变量与新广义坐标、动量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-%E5%93%88%E5%AF%86%E9%A1%BF%E2%80%93%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E8%88%AC%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4"><span class="toc-text">4.6 哈密顿–雅可比方程的一般解题步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-%E4%B8%80%E7%BB%B4%E8%B0%90%E6%8C%AF%E5%AD%90%E7%9A%84-H%E2%80%93J-%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3"><span class="toc-text">五 一维谐振子的 H–J 方程求解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%86%99%E5%87%BA-H%E2%80%93J-%E6%96%B9%E7%A8%8B"><span class="toc-text">5.1 写出 H–J 方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E6%96%B0%E5%B9%BF%E4%B9%89%E5%8A%A8%E9%87%8F%E4%B8%8E%E5%9D%90%E6%A0%87"><span class="toc-text">5.2 新广义动量与坐标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD-%E9%80%9A%E8%BF%87%E6%97%8B%E8%BD%AC%E6%8A%8A%E8%B0%90%E6%8C%AF%E5%AD%90%E7%9A%84%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E5%8F%98%E6%88%90%E9%9B%B6"><span class="toc-text">六 通过旋转把谐振子的哈密顿量变成零</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E7%9B%B8%E7%A9%BA%E9%97%B4%E6%97%8B%E8%BD%AC%E7%9A%84%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2"><span class="toc-text">6.1 相空间旋转的正则变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E6%96%B0%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F-K-%E5%8F%98%E4%B8%BA%E9%9B%B6"><span class="toc-text">6.2 新哈密顿量 K 变为零</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-%E4%B8%AD%E5%BF%83%E5%8A%BF%E9%97%AE%E9%A2%98%E7%9A%84-H%E2%80%93J-%E6%96%B9%E7%A8%8B"><span class="toc-text">七 中心势问题的 H–J 方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E5%BB%BA%E7%AB%8B-H%E2%80%93J-%E6%96%B9%E7%A8%8B"><span class="toc-text">7.1 建立 H–J 方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0%E4%B8%8E%E6%96%B0%E5%B9%BF%E4%B9%89%E5%9D%90%E6%A0%87"><span class="toc-text">7.2 特征函数与新广义坐标</span></a></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E4%B8%8E%E6%B3%A2%E7%89%87%E3%80%81%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-09</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E4%B8%8E%E6%B3%A2%E7%89%87%E3%80%81%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89/">各向异性与波片、干涉与薄膜干涉</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E5%9B%9B%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E5%9B%9B%E5%BE%AA%E7%8E%AF/">第四循环</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E4%B8%89%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E4%B8%89%E5%BE%AA%E7%8E%AF/">第三循环</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E4%BA%8C%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E4%BA%8C%E5%BE%AA%E7%8E%AF/">第二循环</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/JingDianLiXue/%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B2/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/JingDianLiXue/%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B2/">正则变换与哈密顿-雅可比方程2</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script defer="">
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(66, 185, 133, 0.8)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 -  <a target="_blank" rel="noopener" href="https://github.com/kotokowa">kotokowa</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
+  <div class="dark-content">
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
+  </div>
+</div>
+
+<script defer="">
+  $(function() {
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
+    if (isDark) {
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
+    }
+  }
+</script>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer="">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script defer="" src="/physics/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/physics/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js class="" server="netease" type="playlist" id="17453633682" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="none" volume="0.4" list-folded="true">
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script async="">
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
+    
+
+    <script src="/physics/js/utils/index.js"></script>
+    <script src="/physics/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/physics/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/physics/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/physics/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/physics/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/physics/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax="">
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+        <script type="text/javascript">
+  var utteranceComment = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceComment.Theme = 'github-dark';
+    } else {
+      utteranceComment.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceComment.Theme)
+      utterances.setAttribute('repo', 'kotokowa/physics-utterances')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceComment.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+      
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script async="" src="/physics/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>
