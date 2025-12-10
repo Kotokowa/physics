@@ -1,0 +1,3165 @@
+<!DOCTYPE html><html><!-- meta/link... --><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>参数估计 | Hexo</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/physics/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/physics/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/physics/css/style.css">
+
+  
+  
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/physics/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/physics/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+  
+  <!-- 预加载动画 -->
+  
+  
+  <body><div class="preloader_6" id="loader">
+  <div class="loader"></div>
+</div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
+
+  
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer="">
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/physics/js/swiper/swiper.min.js"></script>
+<script src="/physics/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/physics/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/physics/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/physics/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">Hexo</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/physics/" class="logo">Hexo</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/physics/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/physics/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        参数估计
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2025-12-10 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>参数估计</h1>
+<h2 id="点估计的基本概念">点估计的基本概念</h2>
+<p>设总体随机变量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>，其分布函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo separator="true">;</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x;\theta)</annotation></semantics></math></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 为未知参数。给定一个样本</p>
+
+$$
+\displaystyle X_1,X_2,\cdots,X_n
+$$
+
+<p>观察到的样本值为</p>
+
+$$
+\displaystyle x_1,x_2,\cdots,x_n
+$$
+
+<p>通过样本构造某个统计量</p>
+
+$$
+\displaystyle \hat{\theta} = \hat{\theta}(X_1,X_2,\cdots,X_n)
+$$
+
+<p>并计算其对应的观察值</p>
+
+$$
+\displaystyle \hat{\theta}(x_1,x_2,\cdots,x_n)
+$$
+
+<p>用来近似未知参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>。</p>
+<p>通常约定：</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat{\theta}(X_1,\cdots,X_n)</annotation></semantics></math></span></span> 称为参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的估计量。</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat{\theta}(x_1,\cdots,x_n)</annotation></semantics></math></span></span> 称为参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的估计值。</li>
+<li>估计量与估计值统称为估计。</li>
+</ol>
+<p>点估计就是用一个数（估计值）去“猜测”未知参数的真实取值。</p>
+<h2 id="常见点估计方法概览">常见点估计方法概览</h2>
+<p>构造估计量的常见方法包括：</p>
+<ol>
+<li>矩估计法（Method of Moments）</li>
+<li>最大似然估计法（Maximum Likelihood Estimation，MLE）</li>
+</ol>
+<p>下面分别整理。</p>
+<h2 id="矩估计法">矩估计法</h2>
+<h3 id="总体矩与样本矩">总体矩与样本矩</h3>
+<p>设随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的分布依赖参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>θ</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>θ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\theta_1,\theta_2,\cdots,\theta_k</annotation></semantics></math></span></span>。</p>
+<ol>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 为连续型随机变量，概率密度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo separator="true">;</mo><msub><mi>θ</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>θ</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>θ</mi><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x;\theta_1,\theta_2,\cdots,\theta_k)</annotation></semantics></math></span></span>，则第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 阶原点矩为</li>
+</ol>
+
+$$
+\displaystyle \mu_l = E[X^l] = \int_{-\infty}^{+\infty} x^l f(x;\theta_1,\theta_2,\cdots,\theta_k)\,\mathrm{d}x,\quad 1 \leq l \leq k.
+$$
+
+<ol start="2">
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 为离散型随机变量，分布律为</li>
+</ol>
+
+$$
+\displaystyle P(X=x) = p(x;\theta_1,\theta_2,\cdots,\theta_k),
+$$
+
+<p>则第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 阶原点矩为</p>
+
+$$
+\displaystyle \mu_l = E[X^l] = \sum_{x} x^l p(x;\theta_1,\theta_2,\cdots,\theta_k),\quad 1 \leq l \leq k.
+$$
+
+<p>得到</p>
+
+$$
+\begin{aligned}
+\displaystyle \mu_1 &amp;= \mu_1(\theta_1,\theta_2,\cdots,\theta_k),\\
+\displaystyle \mu_2 &amp;= \mu_2(\theta_1,\theta_2,\cdots,\theta_k),\\
+&amp;\vdots\\
+\displaystyle \mu_k &amp;= \mu_k(\theta_1,\theta_2,\cdots,\theta_k).
+\end{aligned}
+$$
+
+<p>若这组方程可以反解出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\theta_i</annotation></semantics></math></span></span> 关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>μ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\mu_1,\cdots,\mu_k</annotation></semantics></math></span></span> 的函数，则有</p>
+
+$$
+\begin{aligned}
+\displaystyle \theta_1 &amp;= \theta_1(\mu_1,\mu_2,\cdots,\mu_k),\\
+\displaystyle \theta_2 &amp;= \theta_2(\mu_1,\mu_2,\cdots,\mu_k),\\
+&amp;\vdots\\
+\displaystyle \theta_k &amp;= \theta_k(\mu_1,\mu_2,\cdots,\mu_k).
+\end{aligned}
+$$
+
+<p>从样本得到样本矩（原点样本矩）</p>
+
+$$
+\displaystyle A_l = \frac{1}{n}\sum_{i=1}^{n}X_i^l,\quad l=1,2,\cdots,k.
+$$
+
+<p>用样本矩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">A_l</annotation></semantics></math></span></span> 替代总体矩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">\mu_l</annotation></semantics></math></span></span>，得到矩估计量（以及其观察值称为矩估计值）</p>
+
+$$
+\displaystyle \hat{\theta}_i = \theta_i(A_1,A_2,\cdots,A_k),\quad i=1,2,\cdots,k.
+$$
+
+<h3 id="矩估计法的应用：均匀分布-U-a-b">矩估计法的应用：均匀分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">U[a,b]</annotation></semantics></math></span></span></h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>∼</mo><mi>U</mi><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">X\sim U[a,b]</annotation></semantics></math></span></span>，且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math></span></span> 均未知。</p>
+<p>有</p>
+
+$$
+\displaystyle \mu_1 = E[X] = \frac{a+b}{2},\quad
+\mu_2 = E[X^2] = \frac{a^2+ab+b^2}{3}.
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle a+b = 2\mu_1,\quad
+\mu_2 - \mu_1^2 = \operatorname{Var}(X) = \frac{(b-a)^2}{12}.
+$$
+
+<p>故</p>
+
+$$
+\displaystyle b-a = \sqrt{12\bigl(\mu_2-\mu_1^2\bigr)}.
+$$
+
+<p>解得</p>
+
+$$
+\begin{aligned}
+\displaystyle a &amp;= \mu_1 - \sqrt{3\bigl(\mu_2 - \mu_1^2\bigr)},\\
+\displaystyle b &amp;= \mu_1 + \sqrt{3\bigl(\mu_2 - \mu_1^2\bigr)}.
+\end{aligned}
+$$
+
+<p>以样本矩估计总体矩：</p>
+
+$$
+\displaystyle A_1 = \bar{X} = \frac{1}{n}\sum_{i=1}^{n}X_i,\quad
+A_2 = \frac{1}{n}\sum_{i=1}^{n}X_i^2.
+$$
+
+<p>注意</p>
+
+$$
+\displaystyle A_2 - A_1^2 = \frac{1}{n}\sum_{i=1}^{n}(X_i-\bar{X})^2.
+$$
+
+<p>于是矩估计量为</p>
+
+$$
+\begin{aligned}
+\displaystyle \hat{a} &amp;= \bar{X} - \sqrt{\frac{3}{n}\sum_{i=1}^{n}(X_i-\bar{X})^2},\\
+\displaystyle \hat{b} &amp;= \bar{X} + \sqrt{\frac{3}{n}\sum_{i=1}^{n}(X_i-\bar{X})^2}.
+\end{aligned}
+$$
+
+<details>
+<summary>例题：均匀分布矩估计的具体计算</summary>
+<p>已知样本来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">U[a,b]</annotation></semantics></math></span></span>，样本容量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">n=4</annotation></semantics></math></span></span>，样本值为</p>
+
+$$
+\displaystyle 1,\ 3,\ 5,\ 7.
+$$
+
+<p>求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math></span></span> 的矩估计值。</p>
+<p>计算</p>
+
+$$
+\displaystyle \bar{X} = \frac{1+3+5+7}{4} = 4.
+$$
+
+
+$$
+\displaystyle \sum_{i=1}^{4}(X_i-\bar{X})^2 = (1-4)^2+(3-4)^2+(5-4)^2+(7-4)^2 = 9+1+1+9 = 20.
+$$
+
+<p>代入</p>
+
+$$
+\displaystyle \hat{a} = 4 - \sqrt{\frac{3}{4}\cdot 20} = 4 - \sqrt{15},\quad
+\hat{b} = 4 + \sqrt{\frac{3}{4}\cdot 20} = 4 + \sqrt{15}.
+$$
+
+</details>
+<h3 id="矩估计法的应用：正态分布-N-mu-sigma-2">矩估计法的应用：正态分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu,\sigma^2)</annotation></semantics></math></span></span></h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>∼</mo><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">X\sim N(\mu,\sigma^2)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mu,\sigma^2</annotation></semantics></math></span></span> 都未知。</p>
+<p>有</p>
+
+$$
+\displaystyle \mu_1 = E[X] = \mu,\quad
+\mu_2 = E[X^2] = \mu^2 + \sigma^2.
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle \mu = \mu_1,\quad
+\sigma^2 = \mu_2 - \mu_1^2.
+$$
+
+<p>以样本矩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>=</mo><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">A_1=\bar{X}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>2</mn></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>∑</mo><msubsup><mi>X</mi><mi>i</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">A_2=\frac{1}{n}\sum X_i^2</annotation></semantics></math></span></span> 替代总体矩，得到矩估计量</p>
+
+$$
+\displaystyle \hat{\mu} = \bar{X},\quad
+\hat{\sigma}^2 = \frac{1}{n}\sum_{i=1}^{n}(X_i-\bar{X})^2.
+$$
+
+<p>这与正态分布的最大似然估计结果（对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mu,\sigma^2</annotation></semantics></math></span></span>）是一致的。</p>
+<details>
+<summary>例题：正态总体的矩估计</summary>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>∼</mo><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">X\sim N(\mu,\sigma^2)</annotation></semantics></math></span></span>，观察到样本</p>
+
+$$
+\displaystyle 2,\ 4,\ 3.
+$$
+
+<p>求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mu,\sigma^2</annotation></semantics></math></span></span> 的矩估计值。</p>
+<p>先算样本均值</p>
+
+$$
+\displaystyle \bar{X} = \frac{2+4+3}{3} = 3.
+$$
+
+<p>再算</p>
+
+$$
+\displaystyle \sum_{i=1}^{3}(X_i-\bar{X})^2 = (2-3)^2+(4-3)^2+(3-3)^2 = 1+1+0 = 2.
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle \hat{\mu} = \bar{X} = 3,\quad
+\hat{\sigma}^2 = \frac{1}{3}\cdot 2 = \frac{2}{3}.
+$$
+
+</details>
+<h2 id="最大似然估计（MLE）">最大似然估计（MLE）</h2>
+<h3 id="离散型情形">离散型情形</h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 为离散随机变量，分布律为</p>
+
+$$
+\displaystyle P(X=x) = p(x;\theta),\quad \theta\in\Theta.
+$$
+
+<p>样本</p>
+
+$$
+\displaystyle X_1,X_2,\cdots,X_n
+$$
+
+<p>来自该总体，其联合分布律为</p>
+
+$$
+\displaystyle P(X_1 = x_1,\cdots,X_n = x_n;\theta)
+= \prod_{i=1}^{n}p(x_i;\theta).
+$$
+
+<p>定义似然函数</p>
+
+$$
+\displaystyle L(\theta) = L(x_1,x_2,\cdots,x_n;\theta)
+= \prod_{i=1}^{n}p(x_i;\theta),\quad \theta\in\Theta.
+$$
+
+<p>直观思想：实际观测到的这组样本值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_1,\cdots,x_n)</annotation></semantics></math></span></span> 的出现概率作为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的函数，当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 取某个值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math></span></span> 时最大，则认为该 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math></span></span> 最为合理。</p>
+<p>定义最大似然估计值</p>
+
+$$
+\displaystyle \hat{\theta}(x_1,\cdots,x_n)
+= \arg\max_{\theta\in\Theta}L(x_1,\cdots,x_n;\theta).
+$$
+
+<p>相应的统计量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat{\theta}(X_1,\cdots,X_n)</annotation></semantics></math></span></span> 称为参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的最大似然估计量。</p>
+<h3 id="连续型情形">连续型情形</h3>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 为连续型随机变量，概率密度为</p>
+
+$$
+\displaystyle f(x;\theta),\quad \theta\in\Theta,
+$$
+
+<p>样本为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span>，则联合密度为</p>
+
+$$
+\displaystyle f(x_1;\theta)f(x_2;\theta)\cdots f(x_n;\theta)
+= \prod_{i=1}^{n}f(x_i;\theta).
+$$
+
+<p>定义似然函数</p>
+
+$$
+\displaystyle L(\theta)
+= L(x_1,x_2,\cdots,x_n;\theta)
+= \prod_{i=1}^{n}f(x_i;\theta).
+$$
+
+<p>若存在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math></span></span> 使得</p>
+
+$$
+\displaystyle L(x_1,\cdots,x_n;\hat{\theta})
+= \max_{\theta\in\Theta}L(x_1,\cdots,x_n;\theta),
+$$
+
+<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat{\theta}(x_1,\cdots,x_n)</annotation></semantics></math></span></span> 为参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的最大似然估计值，对应的统计量为最大似然估计量。</p>
+<h3 id="求解最大似然估计的一般方法">求解最大似然估计的一般方法</h3>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><mi>x</mi><mo separator="true">;</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p(x;\theta)</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo separator="true">;</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x;\theta)</annotation></semantics></math></span></span> 对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 可微，则通常用以下方法求解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math></span></span>。</p>
+<ol>
+<li>直接对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">L(\theta)</annotation></semantics></math></span></span> 求导数：</li>
+</ol>
+
+$$
+\displaystyle \frac{\mathrm{d}}{\mathrm{d}\theta}L(\theta) = 0.
+$$
+
+<ol start="2">
+<li>更常用的是对数似然函数</li>
+</ol>
+
+$$
+\displaystyle \ell(\theta) = \log L(\theta),
+$$
+
+<p>因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">L(\theta)</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">ℓ</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\ell(\theta)</annotation></semantics></math></span></span> 在同一 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 处取极值。于是解对数似然方程</p>
+
+$$
+\displaystyle \frac{\mathrm{d}}{\mathrm{d}\theta}\log L(\theta) = 0.
+$$
+
+<p>若含有多个参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>θ</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>θ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\theta_1,\theta_2,\cdots,\theta_k</annotation></semantics></math></span></span>，则令</p>
+
+$$
+\displaystyle \frac{\partial}{\partial\theta_i}\log L(\theta_1,\theta_2,\cdots,\theta_k) = 0,\quad i=1,2,\cdots,k,
+$$
+
+<p>解这个方程组得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{\theta}_1,\cdots,\hat{\theta}_k</annotation></semantics></math></span></span> 即各参数的最大似然估计值。</p>
+<details>
+<summary>例题：指数分布参数的最大似然估计</summary>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span> 独立同分布于指数分布，密度为</p>
+
+$$
+\displaystyle f(x;\theta) = \frac{1}{\theta}\exp\!\biggl(-\frac{x}{\theta}\biggr),\quad x&gt;0,\ \theta&gt;0.
+$$
+
+<p>求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的最大似然估计量。</p>
+<p>样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_1,\cdots,x_n</annotation></semantics></math></span></span> 的似然函数为</p>
+
+$$
+\displaystyle L(\theta)
+= \prod_{i=1}^{n}\frac{1}{\theta}\exp\!\biggl(-\frac{x_i}{\theta}\biggr)
+= \theta^{-n}\exp\!\biggl(-\frac{1}{\theta}\sum_{i=1}^{n}x_i\biggr).
+$$
+
+<p>取对数似然</p>
+
+$$
+\displaystyle \ell(\theta) = \log L(\theta)
+= -n\log\theta - \frac{1}{\theta}\sum_{i=1}^{n}x_i.
+$$
+
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 求导并令其为零：</p>
+
+$$
+\displaystyle \frac{\mathrm{d}\ell(\theta)}{\mathrm{d}\theta}
+= -\frac{n}{\theta} + \frac{1}{\theta^2}\sum_{i=1}^{n}x_i = 0.
+$$
+
+<p>解得</p>
+
+$$
+\displaystyle \hat{\theta}
+= \frac{1}{n}\sum_{i=1}^{n}x_i = \bar{x}.
+$$
+
+<p>于是最大似然估计量为</p>
+
+$$
+\displaystyle \hat{\theta}(X_1,\cdots,X_n) = \bar{X}.
+$$
+
+</details>
+<h3 id="最大似然估计的常见例子">最大似然估计的常见例子</h3>
+<h4 id="Bernoulli-分布">Bernoulli 分布</h4>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>∼</mo><mi>b</mi><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">X\sim b(1,p)</annotation></semantics></math></span></span>，即</p>
+
+$$
+\displaystyle P(X=1) = p,\quad P(X=0) = 1-p.
+$$
+
+<p>样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span> 独立同分布于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">b(1,p)</annotation></semantics></math></span></span>。记</p>
+
+$$
+\displaystyle \sum_{i=1}^{n}X_i = S.
+$$
+
+<p>似然函数为</p>
+
+$$
+\displaystyle L(p) = p^{S}(1-p)^{n-S},\quad 0 &lt; p &lt; 1.
+$$
+
+<p>对数似然</p>
+
+$$
+\displaystyle \ell(p) = S\log p + (n-S)\log(1-p).
+$$
+
+<p>求导并令为零：</p>
+
+$$
+\displaystyle \frac{\mathrm{d}\ell(p)}{\mathrm{d}p}
+= \frac{S}{p} - \frac{n-S}{1-p} = 0.
+$$
+
+<p>解得</p>
+
+$$
+\displaystyle \hat{p} = \frac{S}{n} = \bar{X}.
+$$
+
+<p>所以</p>
+
+$$
+\displaystyle \hat{p}(X_1,\cdots,X_n) = \bar{X}
+$$
+
+<p>是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 的最大似然估计量；对于给定样本值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_1,\cdots,x_n</annotation></semantics></math></span></span>，估计值为</p>
+
+$$
+\displaystyle \hat{p} = \frac{1}{n}\sum_{i=1}^{n}x_i = \bar{x}.
+$$
+
+<h4 id="正态分布-N-mu-sigma-2">正态分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu,\sigma^2)</annotation></semantics></math></span></span></h4>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>∼</mo><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">X\sim N(\mu,\sigma^2)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mu,\sigma^2</annotation></semantics></math></span></span> 都未知，样本为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span>。</p>
+<p>通过对数似然求解可得（省略推导）</p>
+
+$$
+\displaystyle \hat{\mu} = \bar{X},\quad
+\hat{\sigma}^2 = \frac{1}{n}\sum_{i=1}^{n}(X_i-\bar{X})^2.
+$$
+
+<p>注意这里的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mrow><mi>σ</mi></mrow><mo>^</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat{\sigma}^2</annotation></semantics></math></span></span> 是最大似然估计量，并不是无偏估计量。</p>
+<h4 id="均匀分布-U-a-b-的最大似然估计">均匀分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">U[a,b]</annotation></semantics></math></span></span> 的最大似然估计</h4>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>∼</mo><mi>U</mi><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">X\sim U[a,b]</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math></span></span> 未知。样本为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span>，对应样本值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_1,\cdots,x_n</annotation></semantics></math></span></span>。</p>
+<p>密度为</p>
+
+$$
+\displaystyle f(x;a,b) =
+\begin{cases}
+\displaystyle \frac{1}{b-a}, &amp; a\leq x\leq b,\\
+\displaystyle 0, &amp; \text{否则}.
+\end{cases}
+$$
+
+<p>则似然函数为</p>
+
+$$
+\displaystyle L(a,b) =
+\begin{cases}
+\displaystyle (b-a)^{-n}, &amp; a \leq \min x_i,\ \max x_i \leq b,\\
+\displaystyle 0, &amp; \text{否则}.
+\end{cases}
+$$
+
+<p>要使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">L(a,b)</annotation></semantics></math></span></span> 最大，就要使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">b-a</annotation></semantics></math></span></span> 尽可能小，同时保持所有样本点位于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math></span></span> 内。于是有</p>
+
+$$
+\displaystyle \hat{a} = \min_{1\leq i\leq n}x_i,\quad
+\hat{b} = \max_{1\leq i\leq n}x_i.
+$$
+
+<details>
+<summary>例题：均匀分布区间的最大似然估计</summary>
+<p>假设某设备的误差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 在区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math></span></span> 上均匀分布，但 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math></span></span> 均未知。抽取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">n=5</annotation></semantics></math></span></span> 次观测，误差值为</p>
+
+$$
+\displaystyle -0.9,\ -0.3,\ 0.2,\ 0.5,\ -0.1.
+$$
+
+<p>根据最大似然估计，有</p>
+
+$$
+\displaystyle \hat{a} = \min\{-0.9,-0.3,0.2,0.5,-0.1\} = -0.9,
+$$
+
+
+$$
+\displaystyle \hat{b} = \max\{-0.9,-0.3,0.2,0.5,-0.1\} = 0.5.
+$$
+
+<p>于是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math></span></span> 的 MLE 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mo>−</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>9</mn><mo separator="true">,</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>5</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">[-0.9,0.5]</annotation></semantics></math></span></span>。</p>
+</details>
+<h3 id="最大似然估计的不变性">最大似然估计的不变性</h3>
+<p>设参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>∈</mo><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">\theta\in\Theta</annotation></semantics></math></span></span>，且关注的量为单调一一函数</p>
+
+$$
+\displaystyle u = u(\theta),
+$$
+
+<p>其反函数为</p>
+
+$$
+\displaystyle \theta = \theta(u),\quad u\in U.
+$$
+
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的最大似然估计，则</p>
+
+$$
+\displaystyle \hat{u} = u(\hat{\theta})
+$$
+
+<p>是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">u(\theta)</annotation></semantics></math></span></span> 的最大似然估计。这称为最大似然估计的不变性。</p>
+<p>理由：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math></span></span> 满足</p>
+
+$$
+\displaystyle L(x_1,\cdots,x_n;\hat{\theta}) = \max_{\theta\in\Theta}L(x_1,\cdots,x_n;\theta),
+$$
+
+<p>令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>u</mi></mrow><mo>^</mo></mover><mo>=</mo><mi>u</mi><mo>(</mo><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat{u} = u(\hat{\theta})</annotation></semantics></math></span></span>，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mo>=</mo><mi>θ</mi><mo>(</mo><mover accent="true"><mrow><mi>u</mi></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat{\theta} = \theta(\hat{u})</annotation></semantics></math></span></span>，于是</p>
+
+$$
+\displaystyle L(x_1,\cdots,x_n;\theta(\hat{u})) = \max_{u\in U}L(x_1,\cdots,x_n;\theta(u)),
+$$
+
+<p>故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>u</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{u}</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">u(\theta)</annotation></semantics></math></span></span> 的最大似然估计。</p>
+<p><strong>例子：标准差的 MLE</strong></p>
+<p>已知正态总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu,\sigma^2)</annotation></semantics></math></span></span> 中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的最大似然估计为</p>
+
+$$
+\displaystyle \hat{\sigma}^2 = \frac{1}{n}\sum_{i=1}^{n}(X_i-\bar{X})^2.
+$$
+
+<p>取函数</p>
+
+$$
+\displaystyle u = u(\sigma^2) = \sqrt{\sigma^2} = \sigma,\quad \sigma^2 = u^2.
+$$
+
+<p>由不变性可知，标准差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span></span> 的最大似然估计为</p>
+
+$$
+\displaystyle \hat{\sigma} = \sqrt{\hat{\sigma}^2}
+= \sqrt{\frac{1}{n}\sum_{i=1}^{n}(X_i-\bar{X})^2}.
+$$
+
+<details>
+<summary>例题：方差与标准差的最大似然估计</summary>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span> 来自 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu,\sigma^2)</annotation></semantics></math></span></span>，且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 未知。观察到样本值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">2,4,3,5</annotation></semantics></math></span></span>。</p>
+<ol>
+<li>求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的最大似然估计值；</li>
+<li>利用不变性求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span></span> 的最大似然估计值。</li>
+</ol>
+<p>解：</p>
+<p>样本均值</p>
+
+$$
+\displaystyle \bar{x} = \frac{2+4+3+5}{4} = 3.5.
+$$
+
+<p>计算</p>
+
+$$
+\displaystyle \sum_{i=1}^{4}(x_i-\bar{x})^2
+= (2-3.5)^2+(4-3.5)^2+(3-3.5)^2+(5-3.5)^2
+= 2.25+0.25+0.25+2.25 = 5.
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle \hat{\sigma}^2 = \frac{1}{4}\cdot 5 = 1.25,
+$$
+
+<p>而</p>
+
+$$
+\displaystyle \hat{\sigma} = \sqrt{1.25}.
+$$
+
+</details>
+<h2 id="估计量的评选标准">估计量的评选标准</h2>
+<h3 id="无偏性">无偏性</h3>
+<p>若估计量</p>
+
+$$
+\displaystyle \hat{\theta} = \hat{\theta}(X_1,X_2,\cdots,X_n)
+$$
+
+<p>的数学期望存在，且</p>
+
+$$
+\displaystyle E[\hat{\theta}] = \theta,
+$$
+
+<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{\theta}</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的无偏估计量。</p>
+<p>差值</p>
+
+$$
+\displaystyle E[\hat{\theta}] - \theta
+$$
+
+<p>称为估计的系统误差。无偏估计意味着系统误差为零，即“平均而言”不偏离真值。</p>
+<h4 id="一些常见无偏估计量">一些常见无偏估计量</h4>
+<p>设总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的分布任意，只要相应矩存在。</p>
+<ol>
+<li>
+<p>样本均值</p>
+
+   $$
+   \displaystyle \bar{X} = \frac{1}{n}\sum_{i=1}^{n}X_i
+   $$
+   
+<p>是总体均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><mi>E</mi><mo>[</mo><mi>X</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">\mu = E[X]</annotation></semantics></math></span></span> 的无偏估计。</p>
+</li>
+<li>
+<p>样本方差</p>
+
+   $$
+   \displaystyle S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2
+   $$
+   
+<p>是总体方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的无偏估计。</p>
+</li>
+<li>
+<p>样本第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 阶原点样本矩</p>
+
+   $$
+   \displaystyle A_k = \frac{1}{n}\sum_{i=1}^{n}X_i^k
+   $$
+   
+<p>是总体第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 阶原点矩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>k</mi></msub><mo>=</mo><mi>E</mi><mo>[</mo><msup><mi>X</mi><mi>k</mi></msup><mo>]</mo></mrow><annotation encoding="application/x-tex">\mu_k = E[X^k]</annotation></semantics></math></span></span> 的无偏估计。</p>
+</li>
+<li>
+<p>估计量</p>
+
+   $$
+   \displaystyle \frac{1}{n}\sum_{i=1}^{n}(X_i-\bar{X})^2
+   $$
+   
+<p>不是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的无偏估计（其期望等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\frac{n-1}{n}\sigma^2</annotation></semantics></math></span></span>）。</p>
+</li>
+</ol>
+<h4 id="指数分布中的无偏估计例子">指数分布中的无偏估计例子</h4>
+<p>设总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 服从参数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的指数分布，密度</p>
+
+$$
+\displaystyle f(x;\theta) = \frac{1}{\theta}\exp\!\biggl(-\frac{x}{\theta}\biggr),\quad x&gt;0.
+$$
+
+<p>此时</p>
+
+$$
+\displaystyle E[X] = \theta.
+$$
+
+<p>若样本为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span>，记</p>
+
+$$
+\displaystyle \bar{X} = \frac{1}{n}\sum_{i=1}^{n}X_i,\quad
+Z = \min\{X_1,\cdots,X_n\}.
+$$
+
+<p>可以证明：</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的无偏估计量；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">nZ</annotation></semantics></math></span></span> 也是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的无偏估计量（因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span> 自身服从参数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\theta/n</annotation></semantics></math></span></span> 的同类指数分布）。</li>
+</ol>
+<details>
+<summary>例题：为什么 $nZ$ 是指数分布参数的无偏估计</summary>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span> 独立同分布于指数分布</p>
+
+$$
+\displaystyle f(x;\theta) = \frac{1}{\theta}\exp\!\biggl(-\frac{x}{\theta}\biggr),\quad x&gt;0.
+$$
+
+<p>记 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mo>=</mo><mi>min</mi><mo>{</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">Z = \min\{X_1,\cdots,X_n\}</annotation></semantics></math></span></span>。</p>
+<p>因为</p>
+
+$$
+\displaystyle P(Z&gt;z) = P(X_1&gt;z,\cdots,X_n&gt;z) = \bigl(P(X_1&gt;z)\bigr)^n 
+= \exp\!\biggl(-\frac{nz}{\theta}\biggr),
+$$
+
+<p>所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span> 的密度为</p>
+
+$$
+\displaystyle f_Z(z) = \frac{n}{\theta}\exp\!\biggl(-\frac{nz}{\theta}\biggr),\quad z&gt;0,
+$$
+
+<p>即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span> 仍是指数分布，但参数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\theta/n</annotation></semantics></math></span></span>。因而</p>
+
+$$
+\displaystyle E[Z] = \frac{\theta}{n}\quad\Longrightarrow\quad E[nZ] = \theta.
+$$
+
+<p>所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">nZ</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的无偏估计量。</p>
+</details>
+<h3 id="相合性">相合性</h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mi>n</mi></msub><mo>=</mo><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat{\theta}_n = \hat{\theta}(X_1,\cdots,X_n)</annotation></semantics></math></span></span> 为参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的一列估计量。若对于任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>∈</mo><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">\theta\in\Theta</annotation></semantics></math></span></span> 以及任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varepsilon&gt;0</annotation></semantics></math></span></span> 都有</p>
+
+$$
+\displaystyle \lim_{n\to\infty}P\bigl(|\hat{\theta}_n - \theta| &lt; \varepsilon\bigr) = 1,
+$$
+
+<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\hat{\theta}_n</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的相合估计量，或称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\hat{\theta}_n</annotation></semantics></math></span></span> 依概率收敛到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>。</p>
+<p>常见结论：</p>
+<ol>
+<li>样本均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math></span></span> 是总体均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的相合估计（由大数定律得到）。</li>
+<li>样本方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">S^2</annotation></semantics></math></span></span> 是总体方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的相合估计。</li>
+<li>样本第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 阶矩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>k</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi></mrow></mfrac><mo>∑</mo><msubsup><mi>X</mi><mi>i</mi><mi>k</mi></msubsup></mrow><annotation encoding="application/x-tex">A_k = \frac{1}{n}\sum X_i^k</annotation></semantics></math></span></span> 是总体第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 阶矩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\mu_k</annotation></semantics></math></span></span> 的相合估计。</li>
+</ol>
+<p><strong>命题（连续映射保持相合性）</strong></p>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mrow><mi>n</mi><mn>1</mn></mrow></msub><mo separator="true">,</mo><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mrow><mi>n</mi><mn>2</mn></mrow></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mrow><mi>n</mi><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\hat{\theta}_{n1},\hat{\theta}_{n2},\cdots,\hat{\theta}_{nk}</annotation></semantics></math></span></span> 分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>θ</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>θ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\theta_1,\theta_2,\cdots,\theta_k</annotation></semantics></math></span></span> 的相合估计，且</p>
+
+$$
+\displaystyle \eta = g(\theta_1,\theta_2,\cdots,\theta_k)
+$$
+
+<p>为连续函数，则</p>
+
+$$
+\displaystyle \hat{\eta}_n = g\bigl(\hat{\theta}_{n1},\hat{\theta}_{n2},\cdots,\hat{\theta}_{nk}\bigr)
+$$
+
+<p>是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>η</mi></mrow><annotation encoding="application/x-tex">\eta</annotation></semantics></math></span></span> 的相合估计。</p>
+<h3 id="有效性">有效性</h3>
+<p>如果两个估计量都是无偏的，则通常通过比较其方差来评判哪个“更好”。</p>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mn>1</mn></msub><mo separator="true">,</mo><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\hat{\theta}_1,\hat{\theta}_2</annotation></semantics></math></span></span> 都是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的无偏估计量。若对于任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>∈</mo><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">\theta\in\Theta</annotation></semantics></math></span></span> 有</p>
+
+$$
+\displaystyle D(\hat{\theta}_1) \leq D(\hat{\theta}_2),
+$$
+
+<p>且至少对某个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 不等号严格成立，则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\hat{\theta}_1</annotation></semantics></math></span></span> 比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>θ</mi></mrow><mo>^</mo></mover><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\hat{\theta}_2</annotation></semantics></math></span></span> 更有效。</p>
+<p><strong>例子：指数分布中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math></span></span> 比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">nZ</annotation></semantics></math></span></span> 更有效</strong></p>
+<p>仍设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 为参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的指数分布，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">nZ</annotation></semantics></math></span></span> 都是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的无偏估计量。可以计算它们的方差：</p>
+<ol>
+<li>
+<p>对于指数分布，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mi>a</mi><mi>r</mi><mo>(</mo><mi>X</mi><mo>)</mo><mo>=</mo><msup><mi>θ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">Var(X) = \theta^2</annotation></semantics></math></span></span>。于是</p>
+
+   $$
+   \displaystyle \operatorname{Var}(\bar{X}) = \frac{\theta^2}{n}.
+   $$
+   
+</li>
+<li>
+<p>前面已知 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span> 服从参数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\theta/n</annotation></semantics></math></span></span> 的指数分布，其方差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>θ</mi><mi mathvariant="normal">/</mi><mi>n</mi><msup><mo>)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(\theta/n)^2</annotation></semantics></math></span></span>。于是</p>
+
+   $$
+   \displaystyle \operatorname{Var}(nZ) = n^2\operatorname{Var}(Z) = n^2\cdot\frac{\theta^2}{n^2} = \theta^2.
+   $$
+   
+</li>
+</ol>
+<p>显然</p>
+
+$$
+\displaystyle \operatorname{Var}(\bar{X}) = \frac{\theta^2}{n}
+&lt; \theta^2 = \operatorname{Var}(nZ),
+$$
+
+<p>故在所有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 上，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math></span></span> 比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">nZ</annotation></semantics></math></span></span> 更有效。</p>
+<details>
+<summary>例题：比较指数分布两个无偏估计量的有效性</summary>
+<p>已知 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span> 独立同分布于指数分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo separator="true">;</mo><mi>θ</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>θ</mi></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi><mi mathvariant="normal">/</mi><mi>θ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">f(x;\theta)=\frac{1}{\theta}e^{-x/\theta}</annotation></semantics></math></span></span>。</p>
+<ol>
+<li>证明 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">nZ</annotation></semantics></math></span></span> 均为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的无偏估计；</li>
+<li>比较其方差，说明哪个更有效。</li>
+</ol>
+<p>提示：第 1 部分可参考前文推导；第 2 部分利用方差性质即可。</p>
+<p>最终结论为：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math></span></span> 更有效。</p>
+</details>
+<h2 id="区间估计与置信区间">区间估计与置信区间</h2>
+<h3 id="区间估计的基本思想">区间估计的基本思想</h3>
+<p>点估计给出的是一个“点”，但没有直接说明估计误差的大小。区间估计则希望给出一个随机区间，以一定的置信水平包含真实参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>。</p>
+<h3 id="置信区间的定义">置信区间的定义</h3>
+<p>设总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的分布函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo separator="true">;</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x;\theta)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>∈</mo><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">\theta\in\Theta</annotation></semantics></math></span></span>。给定显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>∈</mo><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\alpha\in(0,1)</annotation></semantics></math></span></span>，若存在两个统计量</p>
+
+$$
+\displaystyle \underline{\theta} = \underline{\theta}(X_1,\cdots,X_n),\quad
+\bar{\theta} = \bar{\theta}(X_1,\cdots,X_n),
+$$
+
+<p>使得对于任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>∈</mo><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">\theta\in\Theta</annotation></semantics></math></span></span> 有</p>
+
+$$
+\displaystyle P\bigl(\underline{\theta} \leq \theta \leq \bar{\theta}\bigr) \geq 1-\alpha,
+$$
+
+<p>则称随机区间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><munder accentunder="true"><mrow><mi>θ</mi></mrow><mo stretchy="true">‾</mo></munder><mo separator="true">,</mo><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¯</mo></mover><mo>]</mo></mrow><annotation encoding="application/x-tex">[\underline{\theta},\bar{\theta}]</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的置信水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的置信区间。</p>
+<p>这里：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><munder accentunder="true"><mrow><mi>θ</mi></mrow><mo stretchy="true">‾</mo></munder></mrow><annotation encoding="application/x-tex">\underline{\theta}</annotation></semantics></math></span></span> 称为置信下限；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{\theta}</annotation></semantics></math></span></span> 称为置信上限；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 称为置信水平。</li>
+</ul>
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 为连续型随机变量时，通常可以构造“恰好”等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的置信区间。对离散型随机变量，一般只能做到置信度不小于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span>，难以恰好等于。</p>
+<h3 id="构造置信区间的一般步骤（枢轴量法）">构造置信区间的一般步骤（枢轴量法）</h3>
+<ol>
+<li>
+<p>寻找一个关于样本和参数的函数</p>
+
+   $$
+   \displaystyle W = W(X_1,\cdots,X_n;\theta),
+   $$
+   
+<p>其分布不依赖于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 或其他未知参数。这样的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span></span> 称为枢轴量。</p>
+</li>
+<li>
+<p>对于给定置信水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span>，求常数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math></span></span> 使得</p>
+
+   $$
+   \displaystyle P\bigl(a &lt; W(X_1,\cdots,X_n;\theta) &lt; b\bigr) = 1-\alpha.
+   $$
+   
+</li>
+<li>
+<p>将不等式</p>
+
+   $$
+   \displaystyle a &lt; W(X_1,\cdots,X_n;\theta) &lt; b
+   $$
+   
+<p>转化为等价的关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的不等式</p>
+
+   $$
+   \displaystyle \underline{\theta}(X_1,\cdots,X_n) \leq \theta \leq \bar{\theta}(X_1,\cdots,X_n),
+   $$
+   
+<p>则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><munder accentunder="true"><mrow><mi>θ</mi></mrow><mo stretchy="true">‾</mo></munder><mo separator="true">,</mo><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¯</mo></mover><mo>]</mo></mrow><annotation encoding="application/x-tex">[\underline{\theta},\bar{\theta}]</annotation></semantics></math></span></span> 即为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的置信水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的置信区间。</p>
+</li>
+</ol>
+<details>
+<summary>例题：利用枢轴量构造均值的置信区间</summary>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span> 独立同分布于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu,\sigma^2)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 已知，求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 置信区间。</p>
+<p>枢轴量为</p>
+
+$$
+\displaystyle Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} \sim N(0,1).
+$$
+
+<p>取常数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mrow><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">z_{\alpha/2}</annotation></semantics></math></span></span> 使得</p>
+
+$$
+\displaystyle P(-z_{\alpha/2} &lt; Z &lt; z_{\alpha/2}) = 1-\alpha.
+$$
+
+<p>即</p>
+
+$$
+\displaystyle P\Bigl(-z_{\alpha/2} &lt; \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} &lt; z_{\alpha/2}\Bigr) = 1-\alpha.
+$$
+
+<p>化为关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的不等式</p>
+
+$$
+\displaystyle P\Bigl(\bar{X} - \frac{\sigma}{\sqrt{n}}z_{\alpha/2}
+&lt; \mu &lt;
+\bar{X} + \frac{\sigma}{\sqrt{n}}z_{\alpha/2}\Bigr) = 1-\alpha.
+$$
+
+<p>于是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的置信区间为</p>
+
+$$
+\displaystyle \Bigl(\bar{X} - \frac{\sigma}{\sqrt{n}}z_{\alpha/2},\ \bar{X} + \frac{\sigma}{\sqrt{n}}z_{\alpha/2}\Bigr).
+$$
+
+</details>
+<h2 id="单个正态总体-N-mu-sigma-2-的区间估计">单个正态总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu,\sigma^2)</annotation></semantics></math></span></span> 的区间估计</h2>
+<h3 id="均值-mu-的置信区间">均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的置信区间</h3>
+<ol>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 已知</p>
+<p>采用枢轴量</p>
+
+   $$
+   \displaystyle Z = \frac{\bar{X}-\mu}{\sigma/\sqrt{n}} \sim N(0,1).
+   $$
+   
+<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mrow><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">z_{\alpha/2}</annotation></semantics></math></span></span> 为标准正态分布的上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\alpha/2</annotation></semantics></math></span></span> 分位数，有</p>
+
+   $$
+   \displaystyle P\Bigl(-z_{\alpha/2} &lt; \frac{\bar{X}-\mu}{\sigma/\sqrt{n}} &lt; z_{\alpha/2}\Bigr) = 1-\alpha.
+   $$
+   
+<p>等价于</p>
+
+   $$
+   \displaystyle P\Bigl(\bar{X} - \frac{\sigma}{\sqrt{n}}z_{\alpha/2}
+   &lt; \mu &lt;
+   \bar{X} + \frac{\sigma}{\sqrt{n}}z_{\alpha/2}\Bigr) = 1-\alpha.
+   $$
+   
+<p>故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的一个置信水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的置信区间为</p>
+
+   $$
+   \displaystyle \Bigl(\bar{X} - \frac{\sigma}{\sqrt{n}}z_{\alpha/2},\ \bar{X} + \frac{\sigma}{\sqrt{n}}z_{\alpha/2}\Bigr).
+   $$
+   
+<p>特别地，当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 时，一般取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>2</mn><mn>5</mn></mrow></msub><mo>≈</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>9</mn><mn>6</mn></mrow><annotation encoding="application/x-tex">z_{0.025}\approx 1.96</annotation></semantics></math></span></span>，得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mn>5</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">95\%</annotation></semantics></math></span></span> 置信区间</p>
+
+   $$
+   \displaystyle \Bigl(\bar{X} - 1.96\frac{\sigma}{\sqrt{n}},\ \bar{X} + 1.96\frac{\sigma}{\sqrt{n}}\Bigr).
+   $$
+   
+</li>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 未知</p>
+<p>用样本标准差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 替代 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span></span>。当总体为正态时，有</p>
+
+   $$
+   \displaystyle T = \frac{\bar{X}-\mu}{S/\sqrt{n}} \sim t(n-1).
+   $$
+   
+<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">t_{\alpha/2}(n-1)</annotation></semantics></math></span></span> 为自由度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 分布上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\alpha/2</annotation></semantics></math></span></span> 分位数，则</p>
+
+   $$
+   \displaystyle P\Bigl(-t_{\alpha/2}(n-1) &lt; \frac{\bar{X}-\mu}{S/\sqrt{n}} &lt; t_{\alpha/2}(n-1)\Bigr) = 1-\alpha,
+   $$
+   
+<p>等价于</p>
+
+   $$
+   \displaystyle P\Bigl(\bar{X} - \frac{S}{\sqrt{n}}t_{\alpha/2}(n-1)
+   &lt; \mu &lt;
+   \bar{X} + \frac{S}{\sqrt{n}}t_{\alpha/2}(n-1)\Bigr) = 1-\alpha.
+   $$
+   
+<p>故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的一个置信水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的置信区间为</p>
+
+   $$
+   \displaystyle \Bigl(\bar{X} - \frac{S}{\sqrt{n}}t_{\alpha/2}(n-1),\ \bar{X} + \frac{S}{\sqrt{n}}t_{\alpha/2}(n-1)\Bigr).
+   $$
+   
+</li>
+</ol>
+<details>
+<summary>例题：均值的双侧置信区间</summary>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>∼</mo><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">X\sim N(\mu,\sigma^2)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 未知，从中取样 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">n=10</annotation></semantics></math></span></span>，得到样本均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>x</mi></mrow><mo>¯</mo></mover><mo>=</mo><mn>5</mn><mi mathvariant="normal">.</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\bar{x}=5.2</annotation></semantics></math></span></span>，样本标准差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>5</mn></mrow><annotation encoding="application/x-tex">s=1.5</annotation></semantics></math></span></span>。求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mn>5</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">95\%</annotation></semantics></math></span></span> 置信区间。</p>
+<p>解：</p>
+<p>置信水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>9</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">1-\alpha=0.95</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha=0.05</annotation></semantics></math></span></span>，自由度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">n-1=9</annotation></semantics></math></span></span>。查表得</p>
+
+$$
+\displaystyle t_{0.025}(9) \approx 2.262.
+$$
+
+<p>于是置信区间为</p>
+
+$$
+\displaystyle \Bigl(5.2 - \frac{1.5}{\sqrt{10}}\cdot 2.262,\ 5.2 + \frac{1.5}{\sqrt{10}}\cdot 2.262\Bigr).
+$$
+
+<p>可计算得到数值近似。</p>
+</details>
+<h3 id="方差-sigma-2-的置信区间">方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的置信区间</h3>
+<p>对于正态总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu,\sigma^2)</annotation></semantics></math></span></span>，样本方差</p>
+
+$$
+\displaystyle S^2 = \frac{1}{n-1}\sum_{i=1}^{n}(X_i-\bar{X})^2
+$$
+
+<p>满足</p>
+
+$$
+\displaystyle \frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1).
+$$
+
+<p>记 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>χ</mi><mrow><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mn>2</mn></msubsup><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi^2_{\alpha/2}(n-1)</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>χ</mi><mrow><mn>1</mn><mo>−</mo><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mn>2</mn></msubsup><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi^2_{1-\alpha/2}(n-1)</annotation></semantics></math></span></span> 为自由度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n-1</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 分布的下、上分位数，满足</p>
+
+$$
+\displaystyle P\bigl(\chi^2_{\alpha/2}(n-1) &lt; \chi^2 &lt; \chi^2_{1-\alpha/2}(n-1)\bigr) = 1-\alpha.
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle P\bigl(\chi^2_{\alpha/2}(n-1) &lt; \tfrac{(n-1)S^2}{\sigma^2} &lt; \chi^2_{1-\alpha/2}(n-1)\bigr) = 1-\alpha.
+$$
+
+<p>化为关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的不等式</p>
+
+$$
+\displaystyle P\Bigl(\frac{(n-1)S^2}{\chi^2_{1-\alpha/2}(n-1)} &lt; \sigma^2 &lt; \frac{(n-1)S^2}{\chi^2_{\alpha/2}(n-1)}\Bigr) = 1-\alpha.
+$$
+
+<p>因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的一个置信水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的置信区间为</p>
+
+$$
+\displaystyle \Bigl(\frac{(n-1)S^2}{\chi^2_{1-\alpha/2}(n-1)},\ \frac{(n-1)S^2}{\chi^2_{\alpha/2}(n-1)}\Bigr).
+$$
+
+<p>对应地，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span></span> 的区间为</p>
+
+$$
+\displaystyle \Bigl(\sqrt{\frac{(n-1)S^2}{\chi^2_{1-\alpha/2}(n-1)}},\ \sqrt{\frac{(n-1)S^2}{\chi^2_{\alpha/2}(n-1)}}\Bigr).
+$$
+
+<blockquote>
+<p>原笔记中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 分位数次序存在混淆，这里给出标准形式。</p>
+</blockquote>
+<details>
+<summary>例题：方差的置信区间</summary>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>∼</mo><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">X\sim N(\mu,\sigma^2)</annotation></semantics></math></span></span>，从中抽样 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>2</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">n=20</annotation></semantics></math></span></span>，计算得到样本方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mn>2</mn></msup><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">S^2=4</annotation></semantics></math></span></span>。求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mn>5</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">95\%</annotation></semantics></math></span></span> 置信区间。</p>
+<p>解：</p>
+<p>自由度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mo>=</mo><mn>1</mn><mn>9</mn></mrow><annotation encoding="application/x-tex">n-1=19</annotation></semantics></math></span></span>，置信水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>9</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">0.95</annotation></semantics></math></span></span> 对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha=0.05</annotation></semantics></math></span></span>。</p>
+<p>查表得</p>
+
+$$
+\displaystyle \chi^2_{0.025}(19) \approx 8.907,\quad
+\chi^2_{0.975}(19) \approx 32.852.
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle \sigma^2\ \text{的区间为}\ \Bigl(\frac{19\cdot 4}{32.852},\ \frac{19\cdot 4}{8.907}\Bigr).
+$$
+
+</details>
+<h2 id="两个正态总体的区间估计">两个正态总体的区间估计</h2>
+<p>设</p>
+
+$$
+\displaystyle X\sim N(\mu_1,\sigma_1^2),\quad Y\sim N(\mu_2,\sigma_2^2),
+$$
+
+<p>分别抽取独立样本</p>
+
+$$
+\displaystyle X_1,\cdots,X_{n_1},\quad Y_1,\cdots,Y_{n_2},
+$$
+
+<p>样本均值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover><mo separator="true">,</mo><mover accent="true"><mrow><mi>Y</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X},\bar{Y}</annotation></semantics></math></span></span>，样本方差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>S</mi><mn>1</mn><mn>2</mn></msubsup><mo separator="true">,</mo><msubsup><mi>S</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">S_1^2,S_2^2</annotation></semantics></math></span></span>。两样本相互独立。</p>
+<h3 id="均值差-mu-1-mu-2-的置信区间">均值差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mu_1 - \mu_2</annotation></semantics></math></span></span> 的置信区间</h3>
+<ol>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo separator="true">,</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\sigma_1^2,\sigma_2^2</annotation></semantics></math></span></span> 已知</p>
+<p>有</p>
+
+   $$
+   \displaystyle \bar{X} - \bar{Y} \sim N\Bigl(\mu_1-\mu_2,\ \frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}\Bigr).
+   $$
+   
+<p>取枢轴量</p>
+
+   $$
+   \displaystyle Z = \frac{(\bar{X}-\bar{Y}) - (\mu_1-\mu_2)}{\sqrt{\sigma_1^2/n_1 + \sigma_2^2/n_2}} \sim N(0,1).
+   $$
+   
+<p>则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mu_1 - \mu_2</annotation></semantics></math></span></span> 的置信水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的置信区间为</p>
+
+   $$
+   \displaystyle \Bigl((\bar{X}-\bar{Y}) - z_{\alpha/2}\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}},\ (\bar{X}-\bar{Y}) + z_{\alpha/2}\sqrt{\frac{\sigma_1^2}{n_1} + \frac{\sigma_2^2}{n_2}}\Bigr).
+   $$
+   
+</li>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma_1^2=\sigma_2^2=\sigma^2</annotation></semantics></math></span></span> 且未知（方差齐性）</p>
+<p>定义合并方差估计</p>
+
+   $$
+   \displaystyle S_W^2 = \frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1 + n_2 - 2},\quad
+   S_W = \sqrt{S_W^2}.
+   $$
+   
+<p>在正态且方差相同假设下，有</p>
+
+   $$
+   \displaystyle T = \frac{(\bar{X}-\bar{Y}) - (\mu_1-\mu_2)}{S_W\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}} \sim t(n_1 + n_2 - 2).
+   $$
+   
+<p>故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mu_1-\mu_2</annotation></semantics></math></span></span> 的置信水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的置信区间为</p>
+
+   $$
+   \displaystyle \Bigl((\bar{X}-\bar{Y}) - t_{\alpha/2}(n_1+n_2-2)S_W\sqrt{\tfrac{1}{n_1} + \tfrac{1}{n_2}},\ (\bar{X}-\bar{Y}) + t_{\alpha/2}(n_1+n_2-2)S_W\sqrt{\tfrac{1}{n_1} + \tfrac{1}{n_2}}\Bigr).
+   $$
+   
+</li>
+</ol>
+<details>
+<summary>例题：两独立样本均值差的置信区间</summary>
+<p>设</p>
+
+$$
+\displaystyle X\sim N(\mu_1,\sigma^2),\ Y\sim N(\mu_2,\sigma^2),
+$$
+
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 未知，但认为两总体方差相同。分别抽取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn><mn>2</mn></mrow><annotation encoding="application/x-tex">n_1=12</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">n_2=15</annotation></semantics></math></span></span>，计算得到</p>
+
+$$
+\displaystyle \bar{x}=10,\ s_1^2=4;\quad \bar{y}=8,\ s_2^2=5.
+$$
+
+<p>求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mu_1-\mu_2</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mn>5</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">95\%</annotation></semantics></math></span></span> 置信区间。</p>
+<p>解：</p>
+<p>先算合并方差</p>
+
+$$
+\displaystyle S_W^2
+= \frac{(12-1)\cdot 4 + (15-1)\cdot 5}{12+15-2}
+= \frac{11\cdot 4 + 14\cdot 5}{25}
+= \frac{44 + 70}{25}
+= \frac{114}{25}.
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle S_W = \sqrt{\frac{114}{25}}.
+$$
+
+<p>自由度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>+</mo><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>2</mn><mo>=</mo><mn>2</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">n_1+n_2-2=25</annotation></semantics></math></span></span>，查表得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>2</mn><mn>5</mn></mrow></msub><mo>(</mo><mn>2</mn><mn>5</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">t_{0.025}(25)</annotation></semantics></math></span></span> 近似值，代入即可得到区间。</p>
+</details>
+<h3 id="方差比-dfrac-sigma-1-2-sigma-2-2-的置信区间">方差比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup></mrow><mrow><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{\sigma_1^2}{\sigma_2^2}</annotation></semantics></math></span></span> 的置信区间</h3>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>μ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mu_1,\mu_2</annotation></semantics></math></span></span> 未知，但 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo separator="true">,</mo><mi>Y</mi></mrow><annotation encoding="application/x-tex">X,Y</annotation></semantics></math></span></span> 均为正态，总体方差未知且不作相等假设。可利用</p>
+
+$$
+\displaystyle \frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2} \sim F(n_1-1,n_2-1),
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>−</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">F(n_1-1,n_2-1)</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 分布。</p>
+<p>记 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mrow><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>−</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">F_{\alpha/2}(n_1-1,n_2-1)</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mrow><mn>1</mn><mo>−</mo><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>−</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">F_{1-\alpha/2}(n_1-1,n_2-1)</annotation></semantics></math></span></span> 分别为下、上分位数，使得</p>
+
+$$
+\displaystyle P\bigl(F_{\alpha/2}(n_1-1,n_2-1) &lt; F &lt; F_{1-\alpha/2}(n_1-1,n_2-1)\bigr) = 1-\alpha.
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle P\Bigl(F_{\alpha/2} &lt; \frac{S_1^2/\sigma_1^2}{S_2^2/\sigma_2^2} &lt; F_{1-\alpha/2}\Bigr) = 1-\alpha.
+$$
+
+<p>化为关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mi mathvariant="normal">/</mi><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\sigma_1^2/\sigma_2^2</annotation></semantics></math></span></span> 的不等式</p>
+
+$$
+\displaystyle P\Bigl(\frac{S_1^2}{S_2^2}\cdot\frac{1}{F_{1-\alpha/2}} &lt; \frac{\sigma_1^2}{\sigma_2^2} &lt; \frac{S_1^2}{S_2^2}\cdot\frac{1}{F_{\alpha/2}}\Bigr) = 1-\alpha.
+$$
+
+<p>故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mi mathvariant="normal">/</mi><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\sigma_1^2/\sigma_2^2</annotation></semantics></math></span></span> 的一个置信水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的置信区间为</p>
+
+$$
+\displaystyle \Bigl(\frac{S_1^2}{S_2^2}\frac{1}{F_{1-\alpha/2}(n_1-1,n_2-1)},\ \frac{S_1^2}{S_2^2}\frac{1}{F_{\alpha/2}(n_1-1,n_2-1)}\Bigr).
+$$
+
+<blockquote>
+<p>原笔记中方差比区间的分位数次序和取倒数存在混淆，这里给出标准推导结果。</p>
+</blockquote>
+<details>
+<summary>例题：两个正态总体方差比的置信区间</summary>
+<p>从两个正态总体分别抽样，得到</p>
+
+$$
+\displaystyle n_1=10,\ S_1^2=6;\quad n_2=8,\ S_2^2=3.
+$$
+
+<p>求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mi mathvariant="normal">/</mi><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\sigma_1^2/\sigma_2^2</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mn>5</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">95\%</annotation></semantics></math></span></span> 置信区间。</p>
+<p>解：</p>
+<p>自由度分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mo separator="true">,</mo><mn>7</mn></mrow><annotation encoding="application/x-tex">9,7</annotation></semantics></math></span></span>，取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha=0.05</annotation></semantics></math></span></span>，查表得到</p>
+
+$$
+\displaystyle F_{0.025}(9,7),\quad F_{0.975}(9,7).
+$$
+
+<p>代入公式</p>
+
+$$
+\displaystyle \Bigl(\frac{6}{3}\cdot\frac{1}{F_{0.975}(9,7)},\ \frac{6}{3}\cdot\frac{1}{F_{0.025}(9,7)}\Bigr)
+$$
+
+<p>即可。</p>
+</details>
+<h2 id="Bernoulli-分布参数-p-的区间估计（近似）">Bernoulli 分布参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 的区间估计（近似）</h2>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 服从 Bernoulli 分布：</p>
+
+$$
+\displaystyle P(X=1) = p,\quad P(X=0) = 1-p.
+$$
+
+<p>有</p>
+
+$$
+\displaystyle \mu = E[X] = p,\quad \sigma^2 = D(X) = p(1-p).
+$$
+
+<p>抽取样本 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 较大），记样本均值</p>
+
+$$
+\displaystyle \bar{X} = \frac{1}{n}\sum_{i=1}^{n}X_i.
+$$
+
+<p>由中心极限定理可得</p>
+
+$$
+\displaystyle \frac{n\bar{X} - np}{\sqrt{np(1-p)}} \approx N(0,1).
+$$
+
+<p>于是近似有</p>
+
+$$
+\displaystyle P\Bigl(-z_{\alpha/2} &lt; \frac{n\bar{X}-np}{\sqrt{np(1-p)}} &lt; z_{\alpha/2}\Bigr) \approx 1-\alpha.
+$$
+
+<p>将不等式化简，可得到关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 的二次不等式</p>
+
+$$
+\displaystyle (n+z_{\alpha/2}^2)p^2 - (2n\bar{X}+z_{\alpha/2}^2)p + n\bar{X}^2 &lt; 0.
+$$
+
+<p>解这个一元二次不等式得到两个根 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>p</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">p_1&lt;p_2</annotation></semantics></math></span></span>，则得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 的近似置信区间为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>p</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>p</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(p_1,p_2)</annotation></semantics></math></span></span>。这实际上对应著名的 Wilson 近似区间。</p>
+<details>
+<summary>例题：硬币正面概率的近似置信区间</summary>
+<p>一枚硬币抛掷 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mn>0</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">n=100</annotation></semantics></math></span></span> 次，出现正面 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mn>6</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">x=60</annotation></semantics></math></span></span> 次。估计正面概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mn>5</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">95\%</annotation></semantics></math></span></span> 置信区间（使用正态近似）。</p>
+<p>解：</p>
+<p>样本比例</p>
+
+$$
+\displaystyle \hat{p} = \bar{X} = \frac{60}{100} = 0.6.
+$$
+
+<p>简单正态近似下，可使用</p>
+
+$$
+\displaystyle \hat{p} \pm z_{\alpha/2}\sqrt{\frac{\hat{p}(1-\hat{p})}{n}},
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>2</mn><mn>5</mn></mrow></msub><mo>≈</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>9</mn><mn>6</mn></mrow><annotation encoding="application/x-tex">z_{0.025}\approx 1.96</annotation></semantics></math></span></span>。代入即可得到近似区间。</p>
+<p>若采用 Wilson 区间，则需要解二次不等式，得到更精确的区间。</p>
+</details>
+<h2 id="单侧置信区间">单侧置信区间</h2>
+<p>有时只关心参数的“下界”或“上界”，这时需要单侧置信区间。</p>
+<p>给定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>∈</mo><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\alpha\in(0,1)</annotation></semantics></math></span></span>，设样本为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1,\cdots,X_n</annotation></semantics></math></span></span>。</p>
+<ol>
+<li>
+<p>若存在统计量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><munder accentunder="true"><mrow><mi>θ</mi></mrow><mo stretchy="true">‾</mo></munder><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\underline{\theta}(X_1,\cdots,X_n)</annotation></semantics></math></span></span>，对任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>∈</mo><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">\theta\in\Theta</annotation></semantics></math></span></span> 都有</p>
+
+   $$
+   \displaystyle P(\theta &gt; \underline{\theta}) \geq 1-\alpha,
+   $$
+   
+<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><munder accentunder="true"><mrow><mi>θ</mi></mrow><mo stretchy="true">‾</mo></munder><mo separator="true">,</mo><mo>+</mo><mi mathvariant="normal">∞</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(\underline{\theta},+\infty)</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的置信水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的单侧置信区间，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><munder accentunder="true"><mrow><mi>θ</mi></mrow><mo stretchy="true">‾</mo></munder></mrow><annotation encoding="application/x-tex">\underline{\theta}</annotation></semantics></math></span></span> 为单侧置信下限。</p>
+</li>
+<li>
+<p>若存在统计量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¯</mo></mover><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar{\theta}(X_1,\cdots,X_n)</annotation></semantics></math></span></span>，对任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>∈</mo><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">\theta\in\Theta</annotation></semantics></math></span></span> 有</p>
+
+   $$
+   \displaystyle P(\theta &lt; \bar{\theta}) \geq 1-\alpha,
+   $$
+   
+<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mo>−</mo><mi mathvariant="normal">∞</mi><mo separator="true">,</mo><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¯</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">(-\infty,\bar{\theta})</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的置信水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的单侧置信区间，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>θ</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{\theta}</annotation></semantics></math></span></span> 为单侧置信上限。</p>
+</li>
+</ol>
+<h3 id="正态总体-N-mu-sigma-2-的单侧区间（-mu-sigma-2-未知）">正态总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu,\sigma^2)</annotation></semantics></math></span></span> 的单侧区间（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mu,\sigma^2</annotation></semantics></math></span></span> 未知）</h3>
+<ol>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的单侧下限</p>
+<p>已知</p>
+
+   $$
+   \displaystyle T = \frac{\bar{X}-\mu}{S/\sqrt{n}} \sim t(n-1).
+   $$
+   
+<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mi>α</mi></mrow></msub><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">t_{\alpha}(n-1)</annotation></semantics></math></span></span> 使得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>T</mi><mo>&lt;</mo><msub><mi>t</mi><mrow><mi>α</mi></mrow></msub><mo>)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">P(T &lt; t_{\alpha}) = 1-\alpha</annotation></semantics></math></span></span>，则</p>
+
+   $$
+   \displaystyle P\Bigl(\frac{\bar{X}-\mu}{S/\sqrt{n}} &lt; t_{\alpha}(n-1)\Bigr) = 1-\alpha
+   $$
+   
+<p>等价于</p>
+
+   $$
+   \displaystyle P\Bigl(\mu &gt; \bar{X} - \frac{S}{\sqrt{n}}t_{\alpha}(n-1)\Bigr) = 1-\alpha.
+   $$
+   
+<p>故</p>
+
+   $$
+   \displaystyle \Bigl(\bar{X} - \frac{S}{\sqrt{n}}t_{\alpha}(n-1),\ +\infty\Bigr)
+   $$
+   
+<p>是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的置信水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的单侧置信区间，下限为</p>
+
+   $$
+   \displaystyle \underline{\mu} = \bar{X} - \frac{S}{\sqrt{n}}t_{\alpha}(n-1).
+   $$
+   
+</li>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的单侧上限</p>
+<p>对正态总体有</p>
+
+   $$
+   \displaystyle \frac{(n-1)S^2}{\sigma^2} \sim \chi^2(n-1).
+   $$
+   
+<p>若取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>χ</mi><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><mn>2</mn></msubsup><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi^2_{1-\alpha}(n-1)</annotation></semantics></math></span></span> 为上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 分位数，使得</p>
+
+   $$
+   \displaystyle P\Bigl(\frac{(n-1)S^2}{\sigma^2} &gt; \chi^2_{1-\alpha}(n-1)\Bigr) = 1-\alpha,
+   $$
+   
+<p>则等价于</p>
+
+   $$
+   \displaystyle P\Bigl(\sigma^2 &lt; \frac{(n-1)S^2}{\chi^2_{1-\alpha}(n-1)}\Bigr) = 1-\alpha.
+   $$
+   
+<p>因此</p>
+
+   $$
+   \displaystyle \Bigl(0,\ \frac{(n-1)S^2}{\chi^2_{1-\alpha}(n-1)}\Bigr)
+   $$
+   
+<p>是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 的置信水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">1-\alpha</annotation></semantics></math></span></span> 的单侧置信区间，对应的单侧置信上限为</p>
+
+   $$
+   \displaystyle \bar{\sigma}^2 = \frac{(n-1)S^2}{\chi^2_{1-\alpha}(n-1)}.
+   $$
+   
+</li>
+</ol>
+<details>
+<summary>例题：正态总体均值的单侧下限</summary>
+<p>某产品寿命 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 近似服从正态分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu,\sigma^2)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 未知。随机抽取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mn>6</mn></mrow><annotation encoding="application/x-tex">n=16</annotation></semantics></math></span></span> 个产品，得到样本均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>x</mi></mrow><mo>¯</mo></mover><mo>=</mo><mn>1</mn><mn>0</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">\bar{x}=100</annotation></semantics></math></span></span> 小时，样本标准差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">s=8</annotation></semantics></math></span></span> 小时。求在置信水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mn>5</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">95\%</annotation></semantics></math></span></span> 下，寿命均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的单侧下限。</p>
+<p>解：</p>
+<p>置信水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>9</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">1-\alpha=0.95</annotation></semantics></math></span></span> 对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha=0.05</annotation></semantics></math></span></span>。自由度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mo>=</mo><mn>1</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">n-1=15</annotation></semantics></math></span></span>，查表得</p>
+
+$$
+\displaystyle t_{0.05}(15) \approx 1.753.
+$$
+
+<p>单侧下限为</p>
+
+$$
+\displaystyle \underline{\mu} = \bar{x} - \frac{s}{\sqrt{n}}t_{0.05}(15)
+= 100 - \frac{8}{4}\cdot 1.753 \approx 100 - 3.506 = 96.494.
+$$
+
+<p>因此在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><mn>5</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">95\%</annotation></semantics></math></span></span> 的置信水平下，可以认为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>&gt;</mo><mn>9</mn><mn>6</mn><mi mathvariant="normal">.</mi><mn>4</mn><mn>9</mn></mrow><annotation encoding="application/x-tex">\mu &gt; 96.49</annotation></semantics></math></span></span> 小时。</p>
+</details>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E6%A6%82%E7%BB%9F/" class="">
+              概统
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/GaiTong/参数估计/" target="_blank" title="参数估计">https://kotokowa.github.io/physics/GaiTong/参数估计/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/GaiTong/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">假设检验</div>
+      </div>
+      
+      <!-- <div class="content">
+        假设检验
+基本概念与步骤
+假设检验是利用样本信息，对关于总体的假设是否“可拒绝”作出判断的方法。
+
+提出原假设和备择假设
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E4%B8%8E%E6%B3%A2%E7%89%87%E3%80%81%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">各向异性与波片、干涉与薄膜干涉</div>
+      </div>
+      <!-- <div class="content">
+        各向异性与波片、干涉与薄膜干涉
+各向异性晶体与相位延迟片
+相位延迟器的基本概念与 Jones 表示
+各向异性单轴晶体中，
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">参数估计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E4%BC%B0%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">点估计的基本概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E7%82%B9%E4%BC%B0%E8%AE%A1%E6%96%B9%E6%B3%95%E6%A6%82%E8%A7%88"><span class="toc-text">常见点估计方法概览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%A9%E4%BC%B0%E8%AE%A1%E6%B3%95"><span class="toc-text">矩估计法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E4%BD%93%E7%9F%A9%E4%B8%8E%E6%A0%B7%E6%9C%AC%E7%9F%A9"><span class="toc-text">总体矩与样本矩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E4%BC%B0%E8%AE%A1%E6%B3%95%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E5%9D%87%E5%8C%80%E5%88%86%E5%B8%83-U-a-b"><span class="toc-text">矩估计法的应用：均匀分布 U[a,b]U[a,b]U[a,b]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E4%BC%B0%E8%AE%A1%E6%B3%95%E7%9A%84%E5%BA%94%E7%94%A8%EF%BC%9A%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83-N-mu-sigma-2"><span class="toc-text">矩估计法的应用：正态分布 N(μ,σ2)N(\mu,\sigma^2)N(μ,σ​2​​)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%EF%BC%88MLE%EF%BC%89"><span class="toc-text">最大似然估计（MLE）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A6%BB%E6%95%A3%E5%9E%8B%E6%83%85%E5%BD%A2"><span class="toc-text">离散型情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9E%E7%BB%AD%E5%9E%8B%E6%83%85%E5%BD%A2"><span class="toc-text">连续型情形</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%E7%9A%84%E4%B8%80%E8%88%AC%E6%96%B9%E6%B3%95"><span class="toc-text">求解最大似然估计的一般方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%E7%9A%84%E5%B8%B8%E8%A7%81%E4%BE%8B%E5%AD%90"><span class="toc-text">最大似然估计的常见例子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Bernoulli-%E5%88%86%E5%B8%83"><span class="toc-text">Bernoulli 分布</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83-N-mu-sigma-2"><span class="toc-text">正态分布 N(μ,σ2)N(\mu,\sigma^2)N(μ,σ​2​​)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%87%E5%8C%80%E5%88%86%E5%B8%83-U-a-b-%E7%9A%84%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1"><span class="toc-text">均匀分布 U[a,b]U[a,b]U[a,b] 的最大似然估计</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E4%BC%BC%E7%84%B6%E4%BC%B0%E8%AE%A1%E7%9A%84%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-text">最大似然估计的不变性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BC%B0%E8%AE%A1%E9%87%8F%E7%9A%84%E8%AF%84%E9%80%89%E6%A0%87%E5%87%86"><span class="toc-text">估计量的评选标准</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A0%E5%81%8F%E6%80%A7"><span class="toc-text">无偏性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E5%B8%B8%E8%A7%81%E6%97%A0%E5%81%8F%E4%BC%B0%E8%AE%A1%E9%87%8F"><span class="toc-text">一些常见无偏估计量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E6%95%B0%E5%88%86%E5%B8%83%E4%B8%AD%E7%9A%84%E6%97%A0%E5%81%8F%E4%BC%B0%E8%AE%A1%E4%BE%8B%E5%AD%90"><span class="toc-text">指数分布中的无偏估计例子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%90%88%E6%80%A7"><span class="toc-text">相合性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E6%95%88%E6%80%A7"><span class="toc-text">有效性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1%E4%B8%8E%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="toc-text">区间估计与置信区间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text">区间估计的基本思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">置信区间的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E9%80%A0%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4%E7%9A%84%E4%B8%80%E8%88%AC%E6%AD%A5%E9%AA%A4%EF%BC%88%E6%9E%A2%E8%BD%B4%E9%87%8F%E6%B3%95%EF%BC%89"><span class="toc-text">构造置信区间的一般步骤（枢轴量法）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93-N-mu-sigma-2-%E7%9A%84%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="toc-text">单个正态总体 N(μ,σ2)N(\mu,\sigma^2)N(μ,σ​2​​) 的区间估计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%87%E5%80%BC-mu-%E7%9A%84%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="toc-text">均值 μ\muμ 的置信区间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%B7%AE-sigma-2-%E7%9A%84%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="toc-text">方差 σ2\sigma^2σ​2​​ 的置信区间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E7%9A%84%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1"><span class="toc-text">两个正态总体的区间估计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%87%E5%80%BC%E5%B7%AE-mu-1-mu-2-%E7%9A%84%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="toc-text">均值差 μ1−μ2\mu_1 - \mu_2μ​1​​−μ​2​​ 的置信区间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%B7%AE%E6%AF%94-dfrac-sigma-1-2-sigma-2-2-%E7%9A%84%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="toc-text">方差比 σ12σ22\dfrac{\sigma_1^2}{\sigma_2^2}​σ​2​2​​​​σ​1​2​​​​ 的置信区间</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bernoulli-%E5%88%86%E5%B8%83%E5%8F%82%E6%95%B0-p-%E7%9A%84%E5%8C%BA%E9%97%B4%E4%BC%B0%E8%AE%A1%EF%BC%88%E8%BF%91%E4%BC%BC%EF%BC%89"><span class="toc-text">Bernoulli 分布参数 ppp 的区间估计（近似）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E4%BE%A7%E7%BD%AE%E4%BF%A1%E5%8C%BA%E9%97%B4"><span class="toc-text">单侧置信区间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93-N-mu-sigma-2-%E7%9A%84%E5%8D%95%E4%BE%A7%E5%8C%BA%E9%97%B4%EF%BC%88-mu-sigma-2-%E6%9C%AA%E7%9F%A5%EF%BC%89"><span class="toc-text">正态总体 N(μ,σ2)N(\mu,\sigma^2)N(μ,σ​2​​) 的单侧区间（μ,σ2\mu,\sigma^2μ,σ​2​​ 未知）</span></a></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-11</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">假设检验</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-10</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E4%B8%8E%E6%B3%A2%E7%89%87%E3%80%81%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-09</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E4%B8%8E%E6%B3%A2%E7%89%87%E3%80%81%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89/">各向异性与波片、干涉与薄膜干涉</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E5%9B%9B%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E5%9B%9B%E5%BE%AA%E7%8E%AF/">第四循环</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E4%B8%89%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E4%B8%89%E5%BE%AA%E7%8E%AF/">第三循环</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script defer="">
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(66, 185, 133, 0.8)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 -  <a target="_blank" rel="noopener" href="https://github.com/kotokowa">kotokowa</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
+  <div class="dark-content">
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
+  </div>
+</div>
+
+<script defer="">
+  $(function() {
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
+    if (isDark) {
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
+    }
+  }
+</script>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer="">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script defer="" src="/physics/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/physics/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js class="" server="netease" type="playlist" id="17453633682" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="none" volume="0.4" list-folded="true">
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script async="">
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
+    
+
+    <script src="/physics/js/utils/index.js"></script>
+    <script src="/physics/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/physics/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/physics/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/physics/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/physics/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/physics/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax="">
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+        <script type="text/javascript">
+  var utteranceComment = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceComment.Theme = 'github-dark';
+    } else {
+      utteranceComment.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceComment.Theme)
+      utterances.setAttribute('repo', 'kotokowa/physics-utterances')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceComment.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+      
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script async="" src="/physics/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>

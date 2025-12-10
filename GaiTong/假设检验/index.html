@@ -1,0 +1,2936 @@
+<!DOCTYPE html><html><!-- meta/link... --><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>假设检验 | Hexo</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/physics/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/physics/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/physics/css/style.css">
+
+  
+  
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/physics/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/physics/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+  
+  <!-- 预加载动画 -->
+  
+  
+  <body><div class="preloader_6" id="loader">
+  <div class="loader"></div>
+</div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
+
+  
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer="">
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/physics/js/swiper/swiper.min.js"></script>
+<script src="/physics/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/physics/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/physics/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/physics/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">Hexo</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/physics/" class="logo">Hexo</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/physics/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/physics/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        假设检验
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2025-12-11 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>假设检验</h1>
+<h2 id="基本概念与步骤">基本概念与步骤</h2>
+<p>假设检验是利用样本信息，对关于总体的假设是否“可拒绝”作出判断的方法。</p>
+<ol>
+<li>提出原假设和备择假设</li>
+</ol>
+<p>常见的关于正态总体均值的三种形式是（以均值记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span>，给定常数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mu_0</annotation></semantics></math></span></span>）：</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≠</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu = \mu_0,\quad H_1:\ \mu \neq \mu_0</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≤</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>&gt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu \leq \mu_0,\quad H_1:\ \mu &gt; \mu_0</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≥</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>&lt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu \geq \mu_0,\quad H_1:\ \mu &lt; \mu_0</annotation></semantics></math></span></span></p>
+<ol start="2">
+<li>
+<p>选定显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>（通常如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>1</mn><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn><mo separator="true">,</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>1</mn></mrow><annotation encoding="application/x-tex">0.10, 0.05, 0.01</annotation></semantics></math></span></span> 等），并给定或观察到样本容量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>。</p>
+</li>
+<li>
+<p>选择检验统计量及其在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 为真时的抽样分布（例如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 等）。</p>
+</li>
+<li>
+<p>用“在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 为真时拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 的概率不超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>”确定拒绝域 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span>：</p>
+</li>
+</ol>
+
+$$
+\displaystyle P(\text{reject } H_0 \mid H_0 \text{ is true}) \leq \alpha.
+$$
+
+<p>当检验统计量的观测值落在拒绝域 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 中时，拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>；否则“暂不拒绝” <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 的边界点称为临界点。</p>
+<ol start="5">
+<li>抽样并计算检验统计量的观测值，作出决策。此时会涉及两类错误：</li>
+</ol>
+
+$$
+\displaystyle \alpha
+  = P(\text{type I error})
+  = P(\text{reject } H_0 \mid H_0 \text{ is true}),
+$$
+
+
+$$
+\displaystyle \beta
+  = P(\text{type II error})
+  = P(\text{accept } H_0 \mid H_0 \text{ is false}).
+$$
+
+<p>在经典显著性检验中，通常只预先控制第一类错误概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>，而不直接控制第二类错误概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span>。</p>
+<details>
+<summary>例题：区分第一类错误和第二类错误</summary>
+<p>某工厂宣称产品平均寿命不少于 1000 小时。为了检验这一说法，提出</p>
+<ul>
+<li>原假设：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo></mrow><annotation encoding="application/x-tex">H_0:</annotation></semantics></math></span></span> 产品平均寿命为 1000 小时或更高；</li>
+<li>备择假设：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo></mrow><annotation encoding="application/x-tex">H_1:</annotation></semantics></math></span></span> 产品平均寿命低于 1000 小时。</li>
+</ul>
+<p>则</p>
+<ul>
+<li>第一类错误：实际上平均寿命并不低于 1000 小时，却错误地拒绝了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>，认为寿命“达不到”标准。</li>
+<li>第二类错误：实际上平均寿命低于 1000 小时，却没有拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>，错误地认为寿命“达标”。</li>
+</ul>
+<p>在显著性检验中，我们预先控制第一类错误概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>（例如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span>），不让它太大。</p>
+</details>
+<h2 id="正态总体均值的假设检验">正态总体均值的假设检验</h2>
+<h3 id="单个正态总体均值的-Z-检验（方差已知）">单个正态总体均值的 Z 检验（方差已知）</h3>
+<p>设样本来自正态总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu, \sigma^2)</annotation></semantics></math></span></span>，总体方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 已知，样本容量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>，样本均值记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math></span></span>。</p>
+<p>在原假设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu = \mu_0</annotation></semantics></math></span></span> 下，有</p>
+
+$$
+\displaystyle Z = \frac{\bar{X} - \mu_0}{\sigma / \sqrt{n}} \sim N(0, 1).
+$$
+
+<p>为了在双侧检验中控制第一类错误概率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>，要求</p>
+
+$$
+\displaystyle P\!\left( \left| Z \right| \geq k \,\middle|\, H_0 \text{ is true} \right) = \alpha,
+$$
+
+<p>于是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 取为标准正态分布的临界值</p>
+
+$$
+\displaystyle k = z_{\alpha/2}.
+$$
+
+<h4 id="双侧检验">双侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≠</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu = \mu_0,\quad H_1:\ \mu \neq \mu_0</annotation></semantics></math></span></span></p>
+<p>统计量观测值为</p>
+
+$$
+\displaystyle z
+  = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}.
+$$
+
+<p>拒绝域为</p>
+
+$$
+\displaystyle \left| z \right| \geq z_{\alpha/2}.
+$$
+
+<p>若观测到的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><msub><mi>z</mi><mrow><mi>α</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">|z| &lt; z_{\alpha/2}</annotation></semantics></math></span></span>，则在显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 下“暂不拒绝” <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>。</p>
+<h4 id="右侧检验">右侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≤</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>&gt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu \leq \mu_0,\quad H_1:\ \mu &gt; \mu_0</annotation></semantics></math></span></span></p>
+<p>统计量仍为</p>
+
+$$
+\displaystyle z = \frac{\bar{x} - \mu_0}{\sigma / \sqrt{n}}.
+$$
+
+<p>拒绝域为</p>
+
+$$
+\displaystyle z \geq z_{\alpha},
+$$
+
+<p>等价地，用样本均值表示为</p>
+
+$$
+\displaystyle \bar{x} \geq \mu_0 + \frac{\sigma}{\sqrt{n}}\,z_{\alpha}.
+$$
+
+<h4 id="左侧检验">左侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≥</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>&lt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu \geq \mu_0,\quad H_1:\ \mu &lt; \mu_0</annotation></semantics></math></span></span></p>
+<p>拒绝域为</p>
+
+$$
+\displaystyle z \leq -z_{\alpha},
+$$
+
+<p>或等价地</p>
+
+$$
+\displaystyle \bar{x} \leq \mu_0 - \frac{\sigma}{\sqrt{n}}\,z_{\alpha}.
+$$
+
+<details>
+<summary>例题：正态总体均值的 Z 检验</summary>
+<p>某种元件的寿命服从正态分布，已知总体标准差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi><mo>=</mo><mn>2</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">\sigma = 20</annotation></semantics></math></span></span>（小时）。现从大量产品中抽取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mn>0</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">n = 100</annotation></semantics></math></span></span> 个元件进行寿命试验，得到样本平均寿命为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>x</mi></mrow><mo>¯</mo></mover><mo>=</mo><mn>2</mn><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\bar{x} = 205</annotation></semantics></math></span></span> 小时。要检验</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>=</mo><mn>2</mn><mn>0</mn><mn>0</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>&gt;</mo><mn>2</mn><mn>0</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">H_0:\ \mu = 200,\quad H_1:\ \mu &gt; 200</annotation></semantics></math></span></span></p>
+<p>在显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 下，能否认为平均寿命超过 200 小时？</p>
+<p><strong>解：</strong></p>
+<ol>
+<li>
+<p>统计量</p>
+
+   $$
+   \displaystyle Z = \frac{\bar{X} - \mu_0}{\sigma / \sqrt{n}}
+   $$
+   
+<p>观测值为</p>
+
+   $$
+   \displaystyle z
+     = \frac{205 - 200}{20 / \sqrt{100}}
+     = \frac{5}{2}
+     = 2.5.
+   $$
+   
+</li>
+<li>
+<p>拒绝域（右侧检验）</p>
+<p>显著性水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span>，标准正态分布右侧 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">0.05</annotation></semantics></math></span></span> 的临界值约为</p>
+
+   $$
+   \displaystyle z_{0.05} \approx 1.645.
+   $$
+   
+<p>拒绝域为</p>
+
+   $$
+   \displaystyle z \geq z_{0.05} \approx 1.645.
+   $$
+   
+</li>
+<li>
+<p>比较</p>
+<p>由于观测值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>2</mn><mi mathvariant="normal">.</mi><mn>5</mn><mo>&gt;</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>6</mn><mn>4</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">z = 2.5 &gt; 1.645</annotation></semantics></math></span></span>，落入拒绝域，因此在显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 下，拒绝原假设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>，认为总体平均寿命显著大于 200 小时。</p>
+</li>
+</ol>
+</details>
+<h3 id="单个正态总体均值的-t-检验（方差未知）">单个正态总体均值的 t 检验（方差未知）</h3>
+<p>设样本来自正态总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu, \sigma^2)</annotation></semantics></math></span></span>，总体方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 未知。样本容量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>，样本均值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math></span></span>，样本方差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">S^2</annotation></semantics></math></span></span>。</p>
+<p>在原假设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu = \mu_0</annotation></semantics></math></span></span> 下，经典结果给出</p>
+
+$$
+\displaystyle t = \frac{\bar{X} - \mu_0}{S / \sqrt{n}} \sim t(n - 1).
+$$
+
+<h4 id="双侧检验-2">双侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≠</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu = \mu_0,\quad H_1:\ \mu \neq \mu_0</annotation></semantics></math></span></span></p>
+<p>拒绝域形式为</p>
+
+$$
+\displaystyle \left| t \right|
+  = \left| \frac{\bar{x} - \mu_0}{s / \sqrt{n}} \right|
+  \geq k,
+$$
+
+<p>由</p>
+
+$$
+\displaystyle P\!\left( \left| t \right| \geq k \,\middle|\, H_0 \text{ is true} \right)
+  = \alpha
+$$
+
+<p>可得</p>
+
+$$
+\displaystyle k = t_{\alpha/2}(n - 1).
+$$
+
+<p>于是拒绝域为</p>
+
+$$
+\displaystyle
+\left| t \right|
+= \left| \frac{\bar{x} - \mu_0}{s / \sqrt{n}} \right|
+\geq t_{\alpha/2}(n - 1).
+$$
+
+<h4 id="右侧检验-2">右侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≤</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>&gt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu \leq \mu_0,\quad H_1:\ \mu &gt; \mu_0</annotation></semantics></math></span></span></p>
+<p>拒绝域为</p>
+
+$$
+\displaystyle t
+  = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
+  \geq t_{\alpha}(n - 1).
+$$
+
+<h4 id="左侧检验-2">左侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≥</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>&lt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu \geq \mu_0,\quad H_1:\ \mu &lt; \mu_0</annotation></semantics></math></span></span></p>
+<p>拒绝域为</p>
+
+$$
+\displaystyle t
+  = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
+  \leq -t_{\alpha}(n - 1).
+$$
+
+<details>
+<summary>例题：正态总体均值的 t 检验</summary>
+<p>某种材料的抗拉强度被认为平均为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mn>0</mn></msub><mo>=</mo><mn>5</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">\mu_0 = 50</annotation></semantics></math></span></span>（单位可略）。但总体方差未知。现在随机抽取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">n = 9</annotation></semantics></math></span></span> 个样品，测得抗拉强度（单位略）为</p>
+<p>48, 52, 49, 51, 50, 47, 53, 49, 50</p>
+<p>在显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 下，检验</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>=</mo><mn>5</mn><mn>0</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≠</mo><mn>5</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">H_0:\ \mu = 50,\quad H_1:\ \mu \neq 50</annotation></semantics></math></span></span></p>
+<p>是否有证据认为平均强度发生了变化？</p>
+<p><strong>解：</strong></p>
+<ol>
+<li>
+<p>计算样本均值和样本标准差。</p>
+
+   $$
+   \displaystyle
+   \bar{x}
+   = \frac{48 + 52 + 49 + 51 + 50 + 47 + 53 + 49 + 50}{9}
+   = \frac{449}{9}
+   \approx 49.89.
+   $$
+   
+<p>计算样本方差（略去具体每一步，可在正式计算中展开）得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>≈</mo><mn>2</mn><mi mathvariant="normal">.</mi><mn>0</mn></mrow><annotation encoding="application/x-tex">s \approx 2.0</annotation></semantics></math></span></span>（仅作示意）。</p>
+</li>
+<li>
+<p>统计量</p>
+
+   $$
+   \displaystyle
+   t
+   = \frac{\bar{x} - \mu_0}{s / \sqrt{n}}
+   \approx \frac{49.89 - 50}{2.0 / \sqrt{9}}
+   = \frac{-0.11}{2.0 / 3}
+   \approx \frac{-0.11}{0.67}
+   \approx -0.16.
+   $$
+   
+</li>
+<li>
+<p>拒绝域</p>
+<p>自由度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">n - 1 = 8</annotation></semantics></math></span></span>，显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 的双侧检验拒绝域为</p>
+
+   $$
+   \displaystyle
+   \left| t \right| \geq t_{0.025}(8).
+   $$
+   
+<p>查 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 分布表得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>2</mn><mn>5</mn></mrow></msub><mo>(</mo><mn>8</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">t_{0.025}(8)</annotation></semantics></math></span></span> 的数值（约为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span></span> 点多）。</p>
+</li>
+<li>
+<p>决策</p>
+<p>由于观测值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">∣</mo><mi>t</mi><mo fence="true">∣</mo></mrow><mo>≈</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>1</mn><mn>6</mn></mrow><annotation encoding="application/x-tex">\left| t \right| \approx 0.16</annotation></semantics></math></span></span> 明显小于临界值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>2</mn><mn>5</mn></mrow></msub><mo>(</mo><mn>8</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">t_{0.025}(8)</annotation></semantics></math></span></span>，故在显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 下，不能拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>，即没有足够证据认为平均抗拉强度与 50 有显著差异。</p>
+</li>
+</ol>
+</details>
+<h2 id="两个正态总体均值差的检验">两个正态总体均值差的检验</h2>
+<h3 id="两个独立正态总体均值差的-t-检验（方差相等）">两个独立正态总体均值差的 t 检验（方差相等）</h3>
+<p>设</p>
+
+$$
+\displaystyle X_1, X_2, \cdots, X_{n_1} \sim N(\mu_1, \sigma^2),
+$$
+
+
+$$
+\displaystyle Y_1, Y_2, \cdots, Y_{n_2} \sim N(\mu_2, \sigma^2),
+$$
+
+<p>两个样本相互独立，且具有相同但未知的总体方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span>。样本均值分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X}</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>Y</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{Y}</annotation></semantics></math></span></span>，样本方差分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>S</mi><mn>1</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">S_1^2</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>S</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">S_2^2</annotation></semantics></math></span></span>。</p>
+<p>考虑检验</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub><mo>=</mo><mi>δ</mi><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub><mo>≠</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">H_0:\ \mu_1 - \mu_2 = \delta,\quad H_1:\ \mu_1 - \mu_2 \neq \delta</annotation></semantics></math></span></span></p>
+<p>显著性水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>。定义合并样本方差</p>
+
+$$
+\displaystyle
+S_W^2
+= \frac{(n_1 - 1) S_1^2 + (n_2 - 1) S_2^2}{n_1 + n_2 - 2},
+$$
+
+<p>检验统计量为</p>
+
+$$
+\displaystyle
+t
+= \frac{(\bar{X} - \bar{Y}) - \delta}
+       {S_W \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}.
+$$
+
+<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 为真时，有</p>
+
+$$
+\displaystyle
+t \sim t(n_1 + n_2 - 2).
+$$
+
+<h4 id="双侧检验-3">双侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub><mo>=</mo><mi>δ</mi><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub><mo>≠</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">H_0:\ \mu_1 - \mu_2 = \delta,\quad H_1:\ \mu_1 - \mu_2 \neq \delta</annotation></semantics></math></span></span></p>
+<p>拒绝域由</p>
+
+$$
+\displaystyle
+P\!\left(
+  \left| t \right|
+  = \left|
+      \frac{(\bar{X} - \bar{Y}) - \delta}
+           {S_W \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+    \right|
+  \geq k
+  \,\middle|\, H_0 \text{ is true}
+\right) = \alpha
+$$
+
+<p>给出</p>
+
+$$
+\displaystyle
+k = t_{\alpha/2}(n_1 + n_2 - 2),
+$$
+
+<p>因此拒绝域为</p>
+
+$$
+\displaystyle
+\left|
+  \frac{(\bar{x} - \bar{y}) - \delta}
+       {s_w \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+\right|
+\geq t_{\alpha/2}(n_1 + n_2 - 2).
+$$
+
+<h4 id="右侧检验-3">右侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub><mo>≤</mo><mi>δ</mi><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub><mo>&gt;</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">H_0:\ \mu_1 - \mu_2 \leq \delta,\quad H_1:\ \mu_1 - \mu_2 &gt; \delta</annotation></semantics></math></span></span></p>
+<p>拒绝域为</p>
+
+$$
+\displaystyle
+t \geq t_{\alpha}(n_1 + n_2 - 2).
+$$
+
+<h4 id="左侧检验-3">左侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub><mo>≥</mo><mi>δ</mi><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub><mo>&lt;</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">H_0:\ \mu_1 - \mu_2 \geq \delta,\quad H_1:\ \mu_1 - \mu_2 &lt; \delta</annotation></semantics></math></span></span></p>
+<p>拒绝域为</p>
+
+$$
+\displaystyle
+t \leq -t_{\alpha}(n_1 + n_2 - 2).
+$$
+
+<details>
+<summary>例题：两个独立正态总体均值差的 t 检验</summary>
+<p>某教学改革想比较两种教学方法 A 和 B 对考试成绩的影响。随机抽取两组学生，得到如下信息：</p>
+<ul>
+<li>教学方法 A：样本容量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">n_1 = 9</annotation></semantics></math></span></span>，样本均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>x</mi></mrow><mo>¯</mo></mover><mn>1</mn></msub><mo>=</mo><mn>2</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">\bar{x}_1 = 20</annotation></semantics></math></span></span>，样本方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">s_1^2 = 4</annotation></semantics></math></span></span>。</li>
+<li>教学方法 B：样本容量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>2</mn></msub><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">n_2 = 9</annotation></semantics></math></span></span>，样本均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>x</mi></mrow><mo>¯</mo></mover><mn>2</mn></msub><mo>=</mo><mn>2</mn><mn>2</mn></mrow><annotation encoding="application/x-tex">\bar{x}_2 = 22</annotation></semantics></math></span></span>，样本方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">s_2^2 = 5</annotation></semantics></math></span></span>。</li>
+</ul>
+<p>假设两总体均为正态分布，且方差相等。显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span>，检验</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>μ</mi><mn>2</mn></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H_0:\ \mu_1 - \mu_2 = 0,\quad H_1:\ \mu_1 - \mu_2 \neq 0</annotation></semantics></math></span></span></p>
+<p>即两种教学方法的平均成绩是否有显著差异。</p>
+<p><strong>解：</strong></p>
+<ol>
+<li>
+<p>合并样本方差</p>
+
+   $$
+   \displaystyle
+   s_w^2
+   = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1 + n_2 - 2}
+   = \frac{8 \times 4 + 8 \times 5}{16}
+   = \frac{32 + 40}{16}
+   = \frac{72}{16}
+   = 4.5.
+   $$
+   
+</li>
+<li>
+<p>统计量</p>
+
+   $$
+   \displaystyle
+   t
+   = \frac{(\bar{x}_1 - \bar{x}_2) - 0}
+          {s_w \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}
+   = \frac{20 - 22}
+          {\sqrt{4.5} \sqrt{\frac{1}{9} + \frac{1}{9}}}.
+   $$
+   
+<p>计算分母：</p>
+
+   $$
+   \displaystyle
+   \sqrt{\frac{1}{9} + \frac{1}{9}}
+   = \sqrt{\frac{2}{9}}
+   = \frac{\sqrt{2}}{3},
+   \quad
+   s_w = \sqrt{4.5} = \sqrt{\frac{9}{2}} = \frac{3}{\sqrt{2}},
+   $$
+   
+<p>因此</p>
+
+   $$
+   \displaystyle
+   s_w \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}
+   = \frac{3}{\sqrt{2}} \cdot \frac{\sqrt{2}}{3}
+   = 1.
+   $$
+   
+<p>所以</p>
+
+   $$
+   \displaystyle
+   t = \frac{20 - 22}{1} = -2.
+   $$
+   
+</li>
+<li>
+<p>拒绝域（双侧）</p>
+<p>自由度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>+</mo><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>2</mn><mo>=</mo><mn>1</mn><mn>6</mn></mrow><annotation encoding="application/x-tex">n_1 + n_2 - 2 = 16</annotation></semantics></math></span></span>，显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 的双侧检验拒绝域为</p>
+
+   $$
+   \displaystyle
+   \left| t \right| \geq t_{0.025}(16).
+   $$
+   
+</li>
+<li>
+<p>决策</p>
+<p>观测值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">∣</mo><mi>t</mi><mo fence="true">∣</mo></mrow><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\left| t \right| = 2</annotation></semantics></math></span></span>，可与表中临界值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>2</mn><mn>5</mn></mrow></msub><mo>(</mo><mn>1</mn><mn>6</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">t_{0.025}(16)</annotation></semantics></math></span></span> 比较：</p>
+<ul>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>≥</mo><msub><mi>t</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>2</mn><mn>5</mn></mrow></msub><mo>(</mo><mn>1</mn><mn>6</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">2 \geq t_{0.025}(16)</annotation></semantics></math></span></span>，则拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>，认为两种教学方法的平均成绩有显著差异；</li>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>&lt;</mo><msub><mi>t</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>2</mn><mn>5</mn></mrow></msub><mo>(</mo><mn>1</mn><mn>6</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">2 &lt; t_{0.025}(16)</annotation></semantics></math></span></span>，则在该显著性水平下不能拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>。</li>
+</ul>
+<p>实际运算中可查表得到确切结论。</p>
+</li>
+</ol>
+</details>
+<h3 id="成对数据（配对样本）的-t-检验">成对数据（配对样本）的 t 检验</h3>
+<p>成对数据通常来自“前后对比”或“同一样本在两种处理条件下”的情况，例如同一批患者治疗前后的指标。</p>
+<p>设有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 对相互独立的观察值</p>
+
+$$
+\displaystyle (X_1, Y_1), (X_2, Y_2), \cdots, (X_n, Y_n).
+$$
+
+<p>令差值</p>
+
+$$
+\displaystyle D_i = X_i - Y_i,\quad i = 1, 2, \cdots, n.
+$$
+
+<p>假设</p>
+
+$$
+\displaystyle D_1, D_2, \cdots, D_n
+\text{ 相互独立且服从同一正态分布 } N(\mu_D, \sigma_D^2).
+$$
+
+<p>记差值样本的均值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>d</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{d}</annotation></semantics></math></span></span>，样本方差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>s</mi><mi>d</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">s_d^2</annotation></semantics></math></span></span>，则</p>
+
+$$
+\displaystyle
+\bar{d}
+= \frac{1}{n}\sum_{i=1}^{n} D_i,
+\quad
+s_d^2
+= \frac{1}{n-1}\sum_{i=1}^{n} (D_i - \bar{d})^2.
+$$
+
+<p>在许多应用中，需要检验“平均差是否为 0”，即</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mi>D</mi></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mi>D</mi></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H_0:\ \mu_D = 0,\quad H_1:\ \mu_D \neq 0</annotation></semantics></math></span></span></p>
+<p>此时检验统计量为</p>
+
+$$
+\displaystyle
+t
+= \frac{\bar{d} - 0}{s_d / \sqrt{n}}
+= \frac{\bar{d}}{s_d / \sqrt{n}}
+\sim t(n - 1) \quad \text{under } H_0.
+$$
+
+<h4 id="双侧检验-4">双侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mi>D</mi></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mi>D</mi></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H_0:\ \mu_D = 0,\quad H_1:\ \mu_D \neq 0</annotation></semantics></math></span></span></p>
+<p>拒绝域为</p>
+
+$$
+\displaystyle
+\left| t \right|
+= \left| \frac{\bar{d}}{s_d / \sqrt{n}} \right|
+\geq t_{\alpha/2}(n - 1).
+$$
+
+<h4 id="右侧检验-4">右侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mi>D</mi></msub><mo>≤</mo><mn>0</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mi>D</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H_0:\ \mu_D \leq 0,\quad H_1:\ \mu_D &gt; 0</annotation></semantics></math></span></span></p>
+<p>拒绝域为</p>
+
+$$
+\displaystyle
+t
+= \frac{\bar{d}}{s_d / \sqrt{n}}
+\geq t_{\alpha}(n - 1).
+$$
+
+<h4 id="左侧检验-4">左侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mi>D</mi></msub><mo>≥</mo><mn>0</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mi>D</mi></msub><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H_0:\ \mu_D \geq 0,\quad H_1:\ \mu_D &lt; 0</annotation></semantics></math></span></span></p>
+<p>拒绝域为</p>
+
+$$
+\displaystyle
+t
+= \frac{\bar{d}}{s_d / \sqrt{n}}
+\leq -t_{\alpha}(n - 1).
+$$
+
+<details>
+<summary>例题：成对样本 t 检验</summary>
+<p>某种药物用于降低血压，对同一批患者在用药前后测量收缩压（单位略），得到差值（用药前减去用药后）如下：</p>
+
+$$
+\displaystyle D_1 = 2,\ D_2 = 1,\ D_3 = 3,\ D_4 = 2,\ D_5 = 2.
+$$
+
+<p>显然 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">n = 5</annotation></semantics></math></span></span>。在显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 下，检验</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mi>D</mi></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msub><mi>μ</mi><mi>D</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H_0:\ \mu_D = 0,\quad H_1:\ \mu_D &gt; 0</annotation></semantics></math></span></span></p>
+<p>即判断该药物是否有“平均降压效果”。</p>
+<p><strong>解：</strong></p>
+<ol>
+<li>
+<p>差值样本均值</p>
+
+   $$
+   \displaystyle
+   \bar{d}
+   = \frac{2 + 1 + 3 + 2 + 2}{5}
+   = \frac{10}{5}
+   = 2.
+   $$
+   
+</li>
+<li>
+<p>差值样本方差</p>
+<p>计算每个差值与均值之差：</p>
+
+   $$
+   \displaystyle
+   D_1 - \bar{d} = 0,\ D_2 - \bar{d} = -1,\ D_3 - \bar{d} = 1,\ D_4 - \bar{d} = 0,\ D_5 - \bar{d} = 0.
+   $$
+   
+<p>因此</p>
+
+   $$
+   \displaystyle
+   s_d^2
+   = \frac{0^2 + (-1)^2 + 1^2 + 0^2 + 0^2}{5 - 1}
+   = \frac{2}{4}
+   = 0.5,
+   \quad
+   s_d = \sqrt{0.5}.
+   $$
+   
+</li>
+<li>
+<p>统计量</p>
+
+   $$
+   \displaystyle
+   t
+   = \frac{\bar{d}}{s_d / \sqrt{n}}
+   = \frac{2}{\sqrt{0.5} / \sqrt{5}}
+   = \frac{2 \sqrt{5}}{\sqrt{0.5}}
+   = \frac{2 \sqrt{5}}{\sqrt{1/2}}
+   = 2 \sqrt{10}
+   \approx 6.32.
+   $$
+   
+</li>
+<li>
+<p>拒绝域（右侧检验）</p>
+<p>自由度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">n - 1 = 4</annotation></semantics></math></span></span>。显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 的右侧检验拒绝域为</p>
+
+   $$
+   \displaystyle
+   t \geq t_{0.05}(4).
+   $$
+   
+<p>查表可知临界值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow></msub><mo>(</mo><mn>4</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">t_{0.05}(4)</annotation></semantics></math></span></span> 大约为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span></span> 左右。</p>
+</li>
+<li>
+<p>决策</p>
+<p>观测值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>≈</mo><mn>6</mn><mi mathvariant="normal">.</mi><mn>3</mn><mn>2</mn></mrow><annotation encoding="application/x-tex">t \approx 6.32</annotation></semantics></math></span></span> 远大于临界值，落入拒绝域，因此在显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 下，有非常显著的证据认为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>D</mi></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mu_D &gt; 0</annotation></semantics></math></span></span>，即药物具有平均降压效果。</p>
+</li>
+</ol>
+</details>
+<h2 id="正态总体方差的假设检验">正态总体方差的假设检验</h2>
+<h3 id="单个正态总体方差的-chi-2-检验">单个正态总体方差的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 检验</h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_1, X_2, \cdots, X_n</annotation></semantics></math></span></span> 来自正态总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">N(\mu, \sigma^2)</annotation></semantics></math></span></span>，其中均值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 和方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span></span> 均未知。样本方差记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">S^2</annotation></semantics></math></span></span>。</p>
+<p>要检验总体方差是否等于某个给定值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\sigma_0^2</annotation></semantics></math></span></span>，考虑</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msup><mi>σ</mi><mn>2</mn></msup><mo>≠</mo><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">H_0:\ \sigma^2 = \sigma_0^2,\quad H_1:\ \sigma^2 \neq \sigma_0^2</annotation></semantics></math></span></span></p>
+<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 为真时，有经典结果</p>
+
+$$
+\displaystyle
+\chi^2
+= \frac{(n - 1) S^2}{\sigma_0^2}
+\sim \chi^2(n - 1).
+$$
+
+<h4 id="双侧检验-5">双侧检验</h4>
+<p>为了控制第一类错误概率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>，常取两个临界点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>k</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">k_1, k_2</annotation></semantics></math></span></span> 满足</p>
+
+$$
+\displaystyle
+P_{\sigma_0^2}\!\left(
+  \frac{(n - 1) S^2}{\sigma_0^2} \leq k_1
+\right)
+= \frac{\alpha}{2},
+\quad
+P_{\sigma_0^2}\!\left(
+  \frac{(n - 1) S^2}{\sigma_0^2} \geq k_2
+\right)
+= \frac{\alpha}{2}.
+$$
+
+<p>记 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>χ</mi><mrow><mi>γ</mi></mrow><mn>2</mn></msubsup><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi^2_{\gamma}(n - 1)</annotation></semantics></math></span></span> 为自由度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n - 1</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 分布在右侧概率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> 的分位点，则上式等价于</p>
+
+$$
+\displaystyle
+k_1 = \chi^2_{1 - \alpha/2}(n - 1),\quad
+k_2 = \chi^2_{\alpha/2}(n - 1).
+$$
+
+<p>于是拒绝域可写为</p>
+
+$$
+\displaystyle
+s^2 \leq \frac{\sigma_0^2}{n - 1}\,\chi^2_{1 - \alpha/2}(n - 1)
+\quad \text{或} \quad
+s^2 \geq \frac{\sigma_0^2}{n - 1}\,\chi^2_{\alpha/2}(n - 1).
+$$
+
+<p>也可以直接写成关于统计量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 的形式：</p>
+
+$$
+\displaystyle
+\chi^2 \leq \chi^2_{1 - \alpha/2}(n - 1)
+\quad \text{或} \quad
+\chi^2 \geq \chi^2_{\alpha/2}(n - 1).
+$$
+
+<h4 id="右侧检验-5">右侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msup><mi>σ</mi><mn>2</mn></msup><mo>≤</mo><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msup><mi>σ</mi><mn>2</mn></msup><mo>&gt;</mo><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">H_0:\ \sigma^2 \leq \sigma_0^2,\quad H_1:\ \sigma^2 &gt; \sigma_0^2</annotation></semantics></math></span></span></p>
+<p>此时只关心方差“过大”的情形。为了使 P(\text{当 } H_0 \text{ 为真时拒绝 } H_0) \leq \alpha，令</p>
+
+$$
+\displaystyle
+P_{\sigma^2 \leq \sigma_0^2}\!\left( S^2 \geq k \right)
+= \alpha,
+$$
+
+<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\sigma^2 = \sigma_0^2</annotation></semantics></math></span></span> 的边界处，有</p>
+
+$$
+\displaystyle
+P_{\sigma^2 = \sigma_0^2}\!\left(
+  \frac{(n - 1) S^2}{\sigma_0^2}
+  \geq
+  \frac{(n - 1) k}{\sigma_0^2}
+\right)
+= \alpha.
+$$
+
+<p>由于</p>
+
+$$
+\displaystyle
+\frac{(n - 1) S^2}{\sigma_0^2} \sim \chi^2(n - 1),
+$$
+
+<p>取</p>
+
+$$
+\displaystyle
+\frac{(n - 1) k}{\sigma_0^2}
+= \chi^2_{\alpha}(n - 1)
+$$
+
+<p>即可。于是拒绝域为</p>
+
+$$
+\displaystyle
+s^2 \geq \frac{\sigma_0^2}{n - 1}\,\chi^2_{\alpha}(n - 1),
+$$
+
+<p>或等价地</p>
+
+$$
+\displaystyle
+\chi^2
+= \frac{(n - 1) s^2}{\sigma_0^2}
+\geq \chi^2_{\alpha}(n - 1).
+$$
+
+<h4 id="左侧检验-5">左侧检验</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msup><mi>σ</mi><mn>2</mn></msup><mo>≥</mo><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msup><mi>σ</mi><mn>2</mn></msup><mo>&lt;</mo><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">H_0:\ \sigma^2 \geq \sigma_0^2,\quad H_1:\ \sigma^2 &lt; \sigma_0^2</annotation></semantics></math></span></span></p>
+<p>此时拒绝域对应于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>S</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">S^2</annotation></semantics></math></span></span> 过小。类似推导可以得到</p>
+
+$$
+\displaystyle
+s^2 \leq \frac{\sigma_0^2}{n - 1}\,\chi^2_{1 - \alpha}(n - 1),
+$$
+
+<p>或</p>
+
+$$
+\displaystyle
+\chi^2 \leq \chi^2_{1 - \alpha}(n - 1).
+$$
+
+<details>
+<summary>例题：单个正态总体方差的双侧检验</summary>
+<p>某产品的某项指标被要求方差不超过给定的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>σ</mi><mn>0</mn><mn>2</mn></msubsup><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\sigma_0^2 = 4</annotation></semantics></math></span></span>。实际生产中随机抽取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>2</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">n = 25</annotation></semantics></math></span></span> 个产品，测得样本方差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>s</mi><mn>2</mn></msup><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">s^2 = 5</annotation></semantics></math></span></span>。假设总体服从正态分布，显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span>，检验</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msup><mi>σ</mi><mn>2</mn></msup><mo>=</mo><mn>4</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msup><mi>σ</mi><mn>2</mn></msup><mo>≠</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">H_0:\ \sigma^2 = 4,\quad H_1:\ \sigma^2 \neq 4</annotation></semantics></math></span></span></p>
+<p><strong>解：</strong></p>
+<ol>
+<li>
+<p>统计量</p>
+
+   $$
+   \displaystyle
+   \chi^2
+   = \frac{(n - 1) s^2}{\sigma_0^2}
+   = \frac{24 \times 5}{4}
+   = 30.
+   $$
+   
+</li>
+<li>
+<p>分布</p>
+<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 为真时，</p>
+
+   $$
+   \displaystyle
+   \chi^2 \sim \chi^2(24).
+   $$
+   
+</li>
+<li>
+<p>拒绝域（双侧）</p>
+<p>显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 的双侧检验拒绝域为</p>
+
+   $$
+   \displaystyle
+   \chi^2 \leq \chi^2_{1 - 0.025}(24)
+   \quad \text{或} \quad
+   \chi^2 \geq \chi^2_{0.025}(24).
+   $$
+   
+</li>
+<li>
+<p>决策</p>
+<p>将观测值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>=</mo><mn>3</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">\chi^2 = 30</annotation></semantics></math></span></span> 与上述两个临界值比较：</p>
+<ul>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>≤</mo><msubsup><mi>χ</mi><mrow><mn>1</mn><mo>−</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>2</mn><mn>5</mn></mrow><mn>2</mn></msubsup><mo>(</mo><mn>2</mn><mn>4</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi^2 \leq \chi^2_{1 - 0.025}(24)</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>≥</mo><msubsup><mi>χ</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>2</mn><mn>5</mn></mrow><mn>2</mn></msubsup><mo>(</mo><mn>2</mn><mn>4</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi^2 \geq \chi^2_{0.025}(24)</annotation></semantics></math></span></span>，则拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>；</li>
+<li>否则不能拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>。</li>
+</ul>
+<p>实际作题时需要查 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 分布表以得到具体判断。</p>
+</li>
+</ol>
+</details>
+<h3 id="两个正态总体方差比的-F-检验">两个正态总体方差比的 F 检验</h3>
+<p>设</p>
+
+$$
+\displaystyle X_1, X_2, \cdots, X_{n_1} \sim N(\mu_1, \sigma_1^2),
+$$
+
+
+$$
+\displaystyle Y_1, Y_2, \cdots, Y_{n_2} \sim N(\mu_2, \sigma_2^2),
+$$
+
+<p>两个样本相互独立。样本方差分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>S</mi><mn>1</mn><mn>2</mn></msubsup><mo separator="true">,</mo><msubsup><mi>S</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">S_1^2, S_2^2</annotation></semantics></math></span></span>，均值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>X</mi></mrow><mo>¯</mo></mover><mo separator="true">,</mo><mover accent="true"><mrow><mi>Y</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{X}, \bar{Y}</annotation></semantics></math></span></span>。</p>
+<p>常见的检验问题之一是比较两个方差的大小，例如</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>≤</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>&gt;</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">H_0:\ \sigma_1^2 \leq \sigma_2^2,\quad H_1:\ \sigma_1^2 &gt; \sigma_2^2</annotation></semantics></math></span></span></p>
+<p>显著性水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>。取检验统计量</p>
+
+$$
+\displaystyle
+F = \frac{S_1^2}{S_2^2}.
+$$
+
+<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 的边界情形（例如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\sigma_1^2 = \sigma_2^2</annotation></semantics></math></span></span>）下，有</p>
+
+$$
+\displaystyle
+\frac{S_1^2 / \sigma_1^2}{S_2^2 / \sigma_2^2}
+= \frac{S_1^2 / S_2^2}{\sigma_1^2 / \sigma_2^2}
+\sim F(n_1 - 1, n_2 - 1),
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>−</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">F(n_1 - 1, n_2 - 1)</annotation></semantics></math></span></span> 表示自由度分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_1 - 1</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n_2 - 1</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 分布。</p>
+<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>≤</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">H_0:\ \sigma_1^2 \leq \sigma_2^2</annotation></semantics></math></span></span> 下，要使</p>
+
+$$
+\displaystyle
+P_{\sigma_1^2 \leq \sigma_2^2}\!\left( \frac{S_1^2}{S_2^2} \geq k \right)
+\leq \alpha,
+$$
+
+<p>只需满足在边界 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\sigma_1^2 = \sigma_2^2</annotation></semantics></math></span></span> 时</p>
+
+$$
+\displaystyle
+P\!\left(
+  \frac{S_1^2 / S_2^2}{\sigma_1^2 / \sigma_2^2}
+  \geq k
+\right)
+= \alpha.
+$$
+
+<p>由于上式中的比值在边界下服从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>−</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">F(n_1 - 1, n_2 - 1)</annotation></semantics></math></span></span> 分布，因此拒绝域可写为</p>
+
+$$
+\displaystyle
+F
+= \frac{s_1^2}{s_2^2}
+\geq F_{\alpha}(n_1 - 1, n_2 - 1),
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mrow><mi>α</mi></mrow></msub><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>−</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">F_{\alpha}(n_1 - 1, n_2 - 1)</annotation></semantics></math></span></span> 为自由度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>n</mi><mn>1</mn></msub><mo>−</mo><mn>1</mn><mo separator="true">,</mo><msub><mi>n</mi><mn>2</mn></msub><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(n_1 - 1, n_2 - 1)</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 分布在右侧概率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 的临界值。</p>
+<p>在实际使用时，常对检验问题稍作调整，如检验</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>≠</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">H_0:\ \sigma_1^2 = \sigma_2^2,\quad H_1:\ \sigma_1^2 \neq \sigma_2^2</annotation></semantics></math></span></span></p>
+<p>并把样本方差较大的放在分子，以便使用右尾 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 检验。</p>
+<details>
+<summary>例题：两个正态总体方差比的 F 检验</summary>
+<p>某实验对两种生产线的产品尺寸稳定性进行比较，得到数据如下：</p>
+<ul>
+<li>生产线 1：样本容量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn><mn>1</mn></mrow><annotation encoding="application/x-tex">n_1 = 11</annotation></semantics></math></span></span>，样本方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>s</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>2</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">s_1^2 = 0.020</annotation></semantics></math></span></span>。</li>
+<li>生产线 2：样本容量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>2</mn></msub><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">n_2 = 9</annotation></semantics></math></span></span>，样本方差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>s</mi><mn>2</mn><mn>2</mn></msubsup><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>1</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">s_2^2 = 0.010</annotation></semantics></math></span></span>。</li>
+</ul>
+<p>假设两总体均为正态分布，检验在显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 下，是否可以认为生产线 1 的方差大于生产线 2，即</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>≤</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>&gt;</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">H_0:\ \sigma_1^2 \leq \sigma_2^2,\quad H_1:\ \sigma_1^2 &gt; \sigma_2^2</annotation></semantics></math></span></span></p>
+<p><strong>解：</strong></p>
+<ol>
+<li>
+<p>统计量</p>
+
+   $$
+   \displaystyle
+   F
+   = \frac{s_1^2}{s_2^2}
+   = \frac{0.020}{0.010}
+   = 2.
+   $$
+   
+</li>
+<li>
+<p>分布</p>
+<p>在边界情况 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>σ</mi><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><msubsup><mi>σ</mi><mn>2</mn><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\sigma_1^2 = \sigma_2^2</annotation></semantics></math></span></span> 下，</p>
+
+   $$
+   \displaystyle
+   F \sim F(n_1 - 1, n_2 - 1) = F(10, 8).
+   $$
+   
+</li>
+<li>
+<p>拒绝域</p>
+<p>显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 的右侧检验拒绝域为</p>
+
+   $$
+   \displaystyle
+   F \geq F_{0.05}(10, 8).
+   $$
+   
+</li>
+<li>
+<p>决策</p>
+<p>比较观测值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">F = 2</annotation></semantics></math></span></span> 和临界值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow></msub><mo>(</mo><mn>1</mn><mn>0</mn><mo separator="true">,</mo><mn>8</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">F_{0.05}(10, 8)</annotation></semantics></math></span></span>：</p>
+<ul>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>≥</mo><msub><mi>F</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow></msub><mo>(</mo><mn>1</mn><mn>0</mn><mo separator="true">,</mo><mn>8</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">2 \geq F_{0.05}(10, 8)</annotation></semantics></math></span></span> 则拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>，认为生产线 1 的方差显著大于生产线 2；</li>
+<li>否则不能拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>。</li>
+</ul>
+<p>实际解题时需要查 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 分布表得到具体结论。</p>
+</li>
+</ol>
+</details>
+<h2 id="分布拟合检验（-chi-2-拟合优度检验）">分布拟合检验（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 拟合优度检验）</h2>
+<h3 id="检验思想与统计量构造">检验思想与统计量构造</h3>
+<p>设总体随机变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的分布未知，观测到样本值</p>
+
+$$
+\displaystyle x_1, x_2, \cdots, x_n.
+$$
+
+<p>希望检验</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo></mrow><annotation encoding="application/x-tex">H_0:</annotation></semantics></math></span></span> 总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的分布函数为某已知的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span></span>（且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span></span> 不含未知参数）；</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo></mrow><annotation encoding="application/x-tex">H_1:</annotation></semantics></math></span></span> 总体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的分布函数不是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span></span>。</p>
+<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 的所有可能取值的集合 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span></span> 划分为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 个互不相交的子集</p>
+
+$$
+\displaystyle A_1, A_2, \cdots, A_k.
+$$
+
+<p>令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">f_i</annotation></semantics></math></span></span> 为样本观测值落入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span></span> 中的个数（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">i = 1, 2, \cdots, k</annotation></semantics></math></span></span>），则在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 次观测中事件“<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 落入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">A_i</annotation></semantics></math></span></span>”的频率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">f_i / n</annotation></semantics></math></span></span>。</p>
+<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 为真时，由分布函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span></span> 可计算出</p>
+
+$$
+\displaystyle
+p_i = P(A_i),\quad i = 1, 2, \cdots, k,
+$$
+
+<p>并且当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 较大时，频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>i</mi></msub><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">f_i / n</annotation></semantics></math></span></span> 应与相应的概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">p_i</annotation></semantics></math></span></span> 接近。为度量样本与理论分布的吻合程度，可考虑统计量</p>
+
+$$
+\displaystyle
+\sum_{i=1}^{k} C_i \left( \frac{f_i}{n} - p_i \right)^2,
+$$
+
+<p>若取权系数</p>
+
+$$
+\displaystyle
+C_i = \frac{n}{p_i},
+$$
+
+<p>则检验统计量变为著名的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 统计量：</p>
+
+$$
+\displaystyle
+\chi^2
+= \sum_{i=1}^{k} \frac{n}{p_i}
+    \left( \frac{f_i}{n} - p_i \right)^2
+= \sum_{i=1}^{k} \frac{f_i^2}{n p_i} - n.
+$$
+
+<p>在实际应用中，更常用的等价形式是</p>
+
+$$
+\displaystyle
+\chi^2
+= \sum_{i=1}^{k} \frac{(f_i - n p_i)^2}{n p_i},
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">n p_i</annotation></semantics></math></span></span> 是在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 为真时对第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span></span> 类的期望频数。</p>
+<h3 id="chi-2-统计量的近似分布（定理）"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 统计量的近似分布（定理）</h3>
+<p>若样本容量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 足够大（通常要求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≥</mo><mn>5</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">n \geq 50</annotation></semantics></math></span></span>，并且每一类的期望频数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">n p_i</annotation></semantics></math></span></span> 不宜太小，例如都不小于 5），则在原假设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 为真、且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span></span> 不含未知参数的情形下，检验统计量</p>
+
+$$
+\displaystyle
+\chi^2
+= \sum_{i=1}^{k} \frac{(f_i - n p_i)^2}{n p_i}
+$$
+
+<p>近似服从自由度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k - 1</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 分布：</p>
+
+$$
+\displaystyle
+\chi^2 \overset{\text{approx}}{\sim} \chi^2(k - 1).
+$$
+
+<p>（注意：若理论分布中含有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 个未知参数，而这些参数需要由样本估计，则自由度应调整为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>−</mo><mn>1</mn><mo>−</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">k - 1 - m</annotation></semantics></math></span></span>。）</p>
+<h3 id="拒绝域与决策规则">拒绝域与决策规则</h3>
+<p>设显著性水平为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>。若记 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>χ</mi><mrow><mi>α</mi></mrow><mn>2</mn></msubsup><mo>(</mo><mi>k</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi^2_{\alpha}(k - 1)</annotation></semantics></math></span></span> 为自由度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k - 1</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 分布右侧概率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 的临界值，即</p>
+
+$$
+\displaystyle
+P\!\left( \chi^2 \geq \chi^2_{\alpha}(k - 1) \right)
+= \alpha,
+$$
+
+<p>则通常取拒绝域为</p>
+
+$$
+\displaystyle
+\chi^2 \geq \chi^2_{\alpha}(k - 1).
+$$
+
+<p>若观测到的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 落入拒绝域，则在显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 下拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>，认为样本与给定分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span></span> 不相容；否则不能拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>，认为样本与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(x)</annotation></semantics></math></span></span> 在该显著性水平下是“相容的”。</p>
+<details>
+<summary>例题：掷骰子的 $\chi^2$ 拟合优度检验</summary>
+<p>掷一枚六面体骰子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>6</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">n = 60</annotation></semantics></math></span></span> 次，统计到每一面出现的频数如下：</p>
+<ul>
+<li>点数 1：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>=</mo><mn>8</mn></mrow><annotation encoding="application/x-tex">f_1 = 8</annotation></semantics></math></span></span></li>
+<li>点数 2：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>2</mn></msub><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">f_2 = 9</annotation></semantics></math></span></span></li>
+<li>点数 3：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>3</mn></msub><mo>=</mo><mn>1</mn><mn>3</mn></mrow><annotation encoding="application/x-tex">f_3 = 13</annotation></semantics></math></span></span></li>
+<li>点数 4：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>4</mn></msub><mo>=</mo><mn>1</mn><mn>1</mn></mrow><annotation encoding="application/x-tex">f_4 = 11</annotation></semantics></math></span></span></li>
+<li>点数 5：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>5</mn></msub><mo>=</mo><mn>1</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">f_5 = 10</annotation></semantics></math></span></span></li>
+<li>点数 6：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>6</mn></msub><mo>=</mo><mn>9</mn></mrow><annotation encoding="application/x-tex">f_6 = 9</annotation></semantics></math></span></span></li>
+</ul>
+<p>检验该骰子是否可以认为是“均匀”的。显著性水平取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span>。</p>
+<p><strong>解：</strong></p>
+<ol>
+<li>
+<p>假设</p>
+<ul>
+<li>原假设：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo></mrow><annotation encoding="application/x-tex">H_0:</annotation></semantics></math></span></span> 骰子是均匀的，即每一面出现的概率均为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>6</mn></mrow><annotation encoding="application/x-tex">1/6</annotation></semantics></math></span></span>；</li>
+<li>备择假设：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo></mrow><annotation encoding="application/x-tex">H_1:</annotation></semantics></math></span></span> 骰子不是均匀的。</li>
+</ul>
+</li>
+<li>
+<p>理论概率与期望频数</p>
+<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 为真时，各类的概率为</p>
+
+   $$
+   \displaystyle
+   p_i = \frac{1}{6},\quad i = 1, 2, \cdots, 6.
+   $$
+   
+<p>对应的期望频数为</p>
+
+   $$
+   \displaystyle
+   n p_i = 60 \times \frac{1}{6} = 10,\quad i = 1, 2, \cdots, 6.
+   $$
+   
+</li>
+<li>
+<p>计算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 统计量</p>
+
+   $$
+   \displaystyle
+   \chi^2
+   = \sum_{i=1}^{6} \frac{(f_i - n p_i)^2}{n p_i}
+   = \frac{(8 - 10)^2}{10}
+   + \frac{(9 - 10)^2}{10}
+   + \frac{(13 - 10)^2}{10}
+   + \frac{(11 - 10)^2}{10}
+   + \frac{(10 - 10)^2}{10}
+   + \frac{(9 - 10)^2}{10}.
+   $$
+   
+<p>即</p>
+
+   $$
+   \displaystyle
+   \chi^2
+   = \frac{4}{10}
+   + \frac{1}{10}
+   + \frac{9}{10}
+   + \frac{1}{10}
+   + 0
+   + \frac{1}{10}
+   = \frac{16}{10}
+   = 1.6.
+   $$
+   
+</li>
+<li>
+<p>分布与拒绝域</p>
+<p>类别数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mn>6</mn></mrow><annotation encoding="application/x-tex">k = 6</annotation></semantics></math></span></span>，且理论分布中不含未知参数，因此自由度为</p>
+
+   $$
+   \displaystyle
+   k - 1 = 5.
+   $$
+   
+<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 为真时，</p>
+
+   $$
+   \displaystyle
+   \chi^2 \sim \chi^2(5).
+   $$
+   
+<p>显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 的拒绝域为</p>
+
+   $$
+   \displaystyle
+   \chi^2 \geq \chi^2_{0.05}(5).
+   $$
+   
+</li>
+<li>
+<p>决策</p>
+<p>观测值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>6</mn></mrow><annotation encoding="application/x-tex">\chi^2 = 1.6</annotation></semantics></math></span></span>，显然相对较小。查 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup><mo>(</mo><mn>5</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi^2(5)</annotation></semantics></math></span></span> 的表可得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>χ</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><mn>2</mn></msubsup><mo>(</mo><mn>5</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi^2_{0.05}(5)</annotation></semantics></math></span></span> 为一个大于 1.6 的值（实际大约在 11 的量级）。</p>
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">.</mi><mn>6</mn><mo>&lt;</mo><msubsup><mi>χ</mi><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><mn>2</mn></msubsup><mo>(</mo><mn>5</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">1.6 &lt; \chi^2_{0.05}(5)</annotation></semantics></math></span></span>，观测值不在拒绝域内，因此在显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\alpha = 0.05</annotation></semantics></math></span></span> 下，不能拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>。即样本数据与“骰子均匀”的假设在该显著性水平下相容。</p>
+</li>
+</ol>
+</details>
+<h2 id="小结">小结</h2>
+<ol>
+<li>假设检验的核心是：先提出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">H_1</annotation></semantics></math></span></span>，给定显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>，选择合适的检验统计量，确定拒绝域，然后根据样本计算出的统计量观测值是否落入拒绝域来作出“拒绝或不拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>”的决策。</li>
+<li>对正态总体均值：
+<ul>
+<li>方差已知时使用 Z 检验；</li>
+<li>方差未知时使用单样本 t 检验；</li>
+<li>比较两个独立正态总体的均值差时，在方差相等假设下使用“两独立样本 t 检验”（合并方差）；</li>
+<li>对成对数据（如前后差值）使用配对 t 检验。</li>
+</ul>
+</li>
+<li>对正态总体方差：
+<ul>
+<li>单个总体的方差检验使用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 检验；</li>
+<li>两个总体方差比的检验使用 F 检验。</li>
+</ul>
+</li>
+<li>对于分布形式的检验（拟合优度），常用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 拟合检验，将样本频数与理论频数进行比较，构造 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 统计量并利用其近似的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 分布。</li>
+</ol>
+<p>以上内容在整理原始笔记的基础上，对部分概念（例如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>χ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\chi^2</annotation></semantics></math></span></span> 拟合检验的自由度）做了更准确的表述，并补充了配套例题，便于系统复习与理解。</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E6%A6%82%E7%BB%9F/" class="">
+              概统
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/GaiTong/假设检验/" target="_blank" title="假设检验">https://kotokowa.github.io/physics/GaiTong/假设检验/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/GaiTong/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">参数估计</div>
+      </div>
+      <!-- <div class="content">
+        参数估计
+点估计的基本概念
+设总体随机变量为 XXX，其分布函数为 F(x;θ)F(x;\theta)F(x;θ)，其中
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">假设检验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E6%AD%A5%E9%AA%A4"><span class="toc-text">基本概念与步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E5%9D%87%E5%80%BC%E7%9A%84%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-text">正态总体均值的假设检验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E5%9D%87%E5%80%BC%E7%9A%84-Z-%E6%A3%80%E9%AA%8C%EF%BC%88%E6%96%B9%E5%B7%AE%E5%B7%B2%E7%9F%A5%EF%BC%89"><span class="toc-text">单个正态总体均值的 Z 检验（方差已知）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E4%BE%A7%E6%A3%80%E9%AA%8C"><span class="toc-text">双侧检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%B3%E4%BE%A7%E6%A3%80%E9%AA%8C"><span class="toc-text">右侧检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E4%BE%A7%E6%A3%80%E9%AA%8C"><span class="toc-text">左侧检验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E5%9D%87%E5%80%BC%E7%9A%84-t-%E6%A3%80%E9%AA%8C%EF%BC%88%E6%96%B9%E5%B7%AE%E6%9C%AA%E7%9F%A5%EF%BC%89"><span class="toc-text">单个正态总体均值的 t 检验（方差未知）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E4%BE%A7%E6%A3%80%E9%AA%8C-2"><span class="toc-text">双侧检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%B3%E4%BE%A7%E6%A3%80%E9%AA%8C-2"><span class="toc-text">右侧检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E4%BE%A7%E6%A3%80%E9%AA%8C-2"><span class="toc-text">左侧检验</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E5%9D%87%E5%80%BC%E5%B7%AE%E7%9A%84%E6%A3%80%E9%AA%8C"><span class="toc-text">两个正态总体均值差的检验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E7%8B%AC%E7%AB%8B%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E5%9D%87%E5%80%BC%E5%B7%AE%E7%9A%84-t-%E6%A3%80%E9%AA%8C%EF%BC%88%E6%96%B9%E5%B7%AE%E7%9B%B8%E7%AD%89%EF%BC%89"><span class="toc-text">两个独立正态总体均值差的 t 检验（方差相等）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E4%BE%A7%E6%A3%80%E9%AA%8C-3"><span class="toc-text">双侧检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%B3%E4%BE%A7%E6%A3%80%E9%AA%8C-3"><span class="toc-text">右侧检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E4%BE%A7%E6%A3%80%E9%AA%8C-3"><span class="toc-text">左侧检验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%90%E5%AF%B9%E6%95%B0%E6%8D%AE%EF%BC%88%E9%85%8D%E5%AF%B9%E6%A0%B7%E6%9C%AC%EF%BC%89%E7%9A%84-t-%E6%A3%80%E9%AA%8C"><span class="toc-text">成对数据（配对样本）的 t 检验</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E4%BE%A7%E6%A3%80%E9%AA%8C-4"><span class="toc-text">双侧检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%B3%E4%BE%A7%E6%A3%80%E9%AA%8C-4"><span class="toc-text">右侧检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E4%BE%A7%E6%A3%80%E9%AA%8C-4"><span class="toc-text">左侧检验</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E6%96%B9%E5%B7%AE%E7%9A%84%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C"><span class="toc-text">正态总体方差的假设检验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E6%96%B9%E5%B7%AE%E7%9A%84-chi-2-%E6%A3%80%E9%AA%8C"><span class="toc-text">单个正态总体方差的 χ2\chi^2χ​2​​ 检验</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%8C%E4%BE%A7%E6%A3%80%E9%AA%8C-5"><span class="toc-text">双侧检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%B3%E4%BE%A7%E6%A3%80%E9%AA%8C-5"><span class="toc-text">右侧检验</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B7%A6%E4%BE%A7%E6%A3%80%E9%AA%8C-5"><span class="toc-text">左侧检验</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E6%AD%A3%E6%80%81%E6%80%BB%E4%BD%93%E6%96%B9%E5%B7%AE%E6%AF%94%E7%9A%84-F-%E6%A3%80%E9%AA%8C"><span class="toc-text">两个正态总体方差比的 F 检验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E6%8B%9F%E5%90%88%E6%A3%80%E9%AA%8C%EF%BC%88-chi-2-%E6%8B%9F%E5%90%88%E4%BC%98%E5%BA%A6%E6%A3%80%E9%AA%8C%EF%BC%89"><span class="toc-text">分布拟合检验（χ2\chi^2χ​2​​ 拟合优度检验）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E9%AA%8C%E6%80%9D%E6%83%B3%E4%B8%8E%E7%BB%9F%E8%AE%A1%E9%87%8F%E6%9E%84%E9%80%A0"><span class="toc-text">检验思想与统计量构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#chi-2-%E7%BB%9F%E8%AE%A1%E9%87%8F%E7%9A%84%E8%BF%91%E4%BC%BC%E5%88%86%E5%B8%83%EF%BC%88%E5%AE%9A%E7%90%86%EF%BC%89"><span class="toc-text">χ2\chi^2χ​2​​ 统计量的近似分布（定理）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%92%E7%BB%9D%E5%9F%9F%E4%B8%8E%E5%86%B3%E7%AD%96%E8%A7%84%E5%88%99"><span class="toc-text">拒绝域与决策规则</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E7%BB%93"><span class="toc-text">小结</span></a></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-11</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">假设检验</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-10</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E4%B8%8E%E6%B3%A2%E7%89%87%E3%80%81%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-09</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E4%B8%8E%E6%B3%A2%E7%89%87%E3%80%81%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89/">各向异性与波片、干涉与薄膜干涉</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E5%9B%9B%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E5%9B%9B%E5%BE%AA%E7%8E%AF/">第四循环</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E4%B8%89%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E4%B8%89%E5%BE%AA%E7%8E%AF/">第三循环</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script defer="">
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(66, 185, 133, 0.8)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 -  <a target="_blank" rel="noopener" href="https://github.com/kotokowa">kotokowa</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
+  <div class="dark-content">
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
+  </div>
+</div>
+
+<script defer="">
+  $(function() {
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
+    if (isDark) {
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
+    }
+  }
+</script>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer="">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script defer="" src="/physics/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/physics/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js class="" server="netease" type="playlist" id="17453633682" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="none" volume="0.4" list-folded="true">
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script async="">
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
+    
+
+    <script src="/physics/js/utils/index.js"></script>
+    <script src="/physics/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/physics/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/physics/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/physics/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/physics/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/physics/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax="">
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+        <script type="text/javascript">
+  var utteranceComment = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceComment.Theme = 'github-dark';
+    } else {
+      utteranceComment.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceComment.Theme)
+      utterances.setAttribute('repo', 'kotokowa/physics-utterances')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceComment.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+      
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script async="" src="/physics/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>
