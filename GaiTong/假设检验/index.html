@@ -396,13 +396,13 @@
 <h2 id="基本概念与步骤">基本概念与步骤</h2>
 <p>假设检验是利用样本信息，对关于总体的假设是否“可拒绝”作出判断的方法。</p>
 <ol>
-<li>提出原假设和备择假设</li>
-</ol>
+<li>
+<p>提出原假设和备择假设</p>
 <p>常见的关于正态总体均值的三种形式是（以均值记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span>，给定常数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\mu_0</annotation></semantics></math></span></span>）：</p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≠</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu = \mu_0,\quad H_1:\ \mu \neq \mu_0</annotation></semantics></math></span></span></p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≤</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>&gt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu \leq \mu_0,\quad H_1:\ \mu &gt; \mu_0</annotation></semantics></math></span></span></p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>≥</mo><msub><mi>μ</mi><mn>0</mn></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>H</mi><mn>1</mn></msub><mo>:</mo><mtext>&nbsp;</mtext><mi>μ</mi><mo>&lt;</mo><msub><mi>μ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0:\ \mu \geq \mu_0,\quad H_1:\ \mu &lt; \mu_0</annotation></semantics></math></span></span></p>
-<ol start="2">
+</li>
 <li>
 <p>选定显著性水平 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>（通常如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>1</mn><mn>0</mn><mo separator="true">,</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>5</mn><mo separator="true">,</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>1</mn></mrow><annotation encoding="application/x-tex">0.10, 0.05, 0.01</annotation></semantics></math></span></span> 等），并给定或观察到样本容量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>。</p>
 </li>
@@ -411,32 +411,32 @@
 </li>
 <li>
 <p>用“在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 为真时拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span> 的概率不超过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>”确定拒绝域 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span>：</p>
+
+   $$
+   \displaystyle P(\text{reject } H_0 \mid H_0 \text{ is true}) \leq \alpha.
+   $$
+   
+<p>当检验统计量的观测值落在拒绝域 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 中时，拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>；否则“暂不拒绝” <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 的边界点称为临界点。</p>
+</li>
+<li>
+<p>抽样并计算检验统计量的观测值，作出决策。此时会涉及两类错误：</p>
+
+   $$
+   \displaystyle \alpha
+   = P(\text{type I error})
+   = P(\text{reject } H_0 \mid H_0 \text{ is true}),
+   $$
+   
+
+   $$
+   \displaystyle \beta
+   = P(\text{type II error})
+   = P(\text{accept } H_0 \mid H_0 \text{ is false}).
+   $$
+   
+<p>在经典显著性检验中，通常只预先控制第一类错误概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>，而不直接控制第二类错误概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span>。</p>
 </li>
 </ol>
-
-$$
-\displaystyle P(\text{reject } H_0 \mid H_0 \text{ is true}) \leq \alpha.
-$$
-
-<p>当检验统计量的观测值落在拒绝域 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 中时，拒绝 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>；否则“暂不拒绝” <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">H_0</annotation></semantics></math></span></span>。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 的边界点称为临界点。</p>
-<ol start="5">
-<li>抽样并计算检验统计量的观测值，作出决策。此时会涉及两类错误：</li>
-</ol>
-
-$$
-\displaystyle \alpha
-  = P(\text{type I error})
-  = P(\text{reject } H_0 \mid H_0 \text{ is true}),
-$$
-
-
-$$
-\displaystyle \beta
-  = P(\text{type II error})
-  = P(\text{accept } H_0 \mid H_0 \text{ is false}).
-$$
-
-<p>在经典显著性检验中，通常只预先控制第一类错误概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>，而不直接控制第二类错误概率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span>。</p>
 <details>
 <summary>例题：区分第一类错误和第二类错误</summary>
 <p>某工厂宣称产品平均寿命不少于 1000 小时。为了检验这一说法，提出</p>
