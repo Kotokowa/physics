@@ -409,8 +409,8 @@
 <p>误差函数法：定义一个任一电荷e，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>i</mi></msub><mo>=</mo><mi>r</mi><mi>o</mi><mi>u</mi><mi>n</mi><mi>d</mi><mrow><mo fence="true">(</mo><mfrac><mrow><msub><mi>q</mi><mi>i</mi></msub></mrow><mrow><mi>e</mi></mrow></mfrac><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">n_i=round\left(\frac{q_i}{e}\right)</annotation></semantics></math></span></span>，定义误差函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mrow><mo fence="true">(</mo><mi>e</mi><mo fence="true">)</mo></mrow><mo>=</mo><mo>∑</mo><msup><mrow><mo fence="true">(</mo><msub><mi>q</mi><mi>i</mi></msub><mo>−</mo><msub><mi>n</mi><mi>i</mi></msub><mi>e</mi><mo fence="true">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E\left(e\right)=\sum\left(q_i-n_ie\right)^2</annotation></semantics></math></span></span>，用e扫描使得误差函数最小即可.</p>
 <h2 id="布朗运动实验-计算玻尔兹曼常数">布朗运动实验 计算玻尔兹曼常数</h2>
 <h3 id="实验步骤-2">实验步骤</h3>
-<p>显微台上放载玻片，在最大倍率下定标，之后一定要记录软件上的pixel/mm数据：用一小格0.01mm的定标尺. 用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn><mi>μ</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">5\mu L</annotation></semantics></math></span></span>聚苯乙烯微球（用移液枪吸取，枪上可以设置容量，侧边按钮用于吸液，顶部按钮弹出枪头）和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">.</mi><mn>2</mn><mi>m</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">1.2mL</annotation></semantics></math></span></span>去离子水制作稀溶液，然后依次尝试做切片（两滴，盖盖玻片）、圆毛细管、正方形毛细管、长方形毛细管实验. 前三个问题分别是：四周蒸发定向牵引以及液体蒸发太快；有折射；会沉降. 最后用长方形毛细管实验，拍摄1s一张图片，500张.</p>
-<p>程序使用：用J Image分析，ImageType选8byte，找到plugin-TrackMate，一路确认，在选择页面注意观察判断灵敏度是否正确，在追踪上一个页面用套索选择研究范围，然后选追踪，将spots按ID排序，导出csv. 打开BA软件，用Trajectory Analysis功能，导入之前的csv文件，填入之前的mm/pixel数据（要取个倒数）.</p>
+<p>显微台上放载玻片，在最大倍率下定标，之后一定要记录软件上的pixel/mm数据：用一小格0.01mm的定标尺. 用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn><mi>μ</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">5\mu L</annotation></semantics></math></span></span>聚苯乙烯微球（用移液枪吸取，枪上可以设置容量，顶部按钮用于吸液，侧边按钮弹出枪头）和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">.</mi><mn>2</mn><mi>m</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">1.2mL</annotation></semantics></math></span></span>去离子水制作稀溶液，然后依次尝试做切片（两滴，盖盖玻片）、圆毛细管、正方形毛细管、长方形毛细管实验. 前三个问题分别是：四周蒸发定向牵引以及液体蒸发太快；有折射；会沉降. 最后用长方形毛细管实验，拍摄1s一张图片，500张.</p>
+<p>程序使用：用J Image分析，ImageType选8byte，找到plugin-TrackMate，一路确认，在选择页面注意观察判断灵敏度是否正确，在追踪上一个页面用套索选择研究范围，然后选追踪，将tracks按ID排序，导出csv. 打开BA软件，用Trajectory Analysis功能，导入之前的csv文件，填入之前的mm/pixel数据（要取个倒数）.</p>
 <h3 id="拟合与公式">拟合与公式</h3>
 <p>对BA软件分析结果处理：</p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><msup><mi>r</mi><mn>2</mn></msup></mrow><mo stretchy="true">‾</mo></mover><mo>=</mo><mi>m</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\overline{r^2} = mt</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>D</mi><mo>=</mo><mfrac><mrow><mi>m</mi></mrow><mrow><mn>4</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle D = \frac{m}{4}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi mathvariant="normal">/</mi><mn>3</mn><mi>π</mi><mi>η</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">D = k_B T / 3\pi \eta d</annotation></semantics></math></span></span>，粘滞系数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>η</mi><mo>=</mo><mi>A</mi><mo>⋅</mo><mn>1</mn><msup><mn>0</mn><mrow><mfrac><mrow><mi>B</mi></mrow><mrow><mi>T</mi><mo>−</mo><mi>C</mi></mrow></mfrac></mrow></msup></mrow><annotation encoding="application/x-tex">\eta = A\cdot 10^{\frac{B}{T - C}}</annotation></semantics></math></span></span>，其中A = 2.414E-5Pa*s，B = 247.8K，C = 140K.</p>
@@ -481,17 +481,22 @@
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/JingDianLiXue/%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B2/" class="post-nav-link">
+    <a href="/physics/DaWuShiYan2/%E7%AC%AC%E4%BA%8C%E5%BE%AA%E7%8E%AF/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">正则变换与哈密顿-雅可比方程2</div>
+        <div class="title-text">第二循环</div>
       </div>
       
       <!-- <div class="content">
-        正则变换与哈密顿-雅可比方程2
-本文整理了全微分与欧拉定理, 雅可比行列式及其性质, 正则变换的判据与辛结构, 利用正则
+        干涉，偏振，衍射
+干涉 用菲涅耳双棱镜测量钠光的波长
+实验步骤
+
+
+粗调光路，等高共轴
+光具座上摆放顺序：钠灯，狭缝，双
       </div> -->
     </a>
   </div>
@@ -502,19 +507,16 @@
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/DaWuShiYan2/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%BA%A6/" class="post-nav-link">
+    <a href="/physics/JingDianLiXue/%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B2/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">不确定度</div>
+        <div class="title-text">正则变换与哈密顿-雅可比方程2</div>
       </div>
       <!-- <div class="content">
-        一、 直接测量
-
-A类不确定度 (随机误差)
-
-公式：$\displaystyle u_A = S_x / \sqrt{
+        正则变换与哈密顿-雅可比方程2
+本文整理了全微分与欧拉定理, 雅可比行列式及其性质, 正则变换的判据与辛结构, 利用正则
       </div> -->
     </a>
   </div>
@@ -665,6 +667,27 @@ A类不确定度 (随机误差)
             
 
             <div class="post-img-box">
+              <a href="/physics/GaiTong/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-17</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/">方差分析与回归分析</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
               <a href="/physics/GuangXue/%E5%A4%9A%E5%85%89%E6%9D%9F%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%A1%8D%E5%B0%84%E3%80%81%E5%85%89%E6%A0%85/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
@@ -740,27 +763,6 @@ A类不确定度 (随机误差)
                 
               </div>
               <a class="post-title" href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E4%B8%8E%E6%B3%A2%E7%89%87%E3%80%81%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89/">各向异性与波片、干涉与薄膜干涉</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/DaWuShiYan2/%E7%AC%AC%E5%9B%9B%E5%BE%AA%E7%8E%AF/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">12-08</span>
-                
-              </div>
-              <a class="post-title" href="/physics/DaWuShiYan2/%E7%AC%AC%E5%9B%9B%E5%BE%AA%E7%8E%AF/">第四循环</a>
             </div>
           </div>
         
