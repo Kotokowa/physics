@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>Tags | Hexo</title>
+  <title>第四循环 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -341,99 +341,697 @@
 </header>
         <!-- 内容区域 -->
         
-<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-tags" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
+<!-- prismjs 代码高亮 -->
 
-<div class="tags-header" style="background-image:url('https://pic2.zhimg.com/80/v2-bf6c555e7c61a57ba4a1fd95a9a32975_1440w.jpg')">
-    <div class="tags-header-title">
-        tags
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        第四循环
+      </span>
     </div>
-    <div class="tags-header-desc">
     
-        <span class="title" id="tags-header-desc"></span>
-        <script>
-  function typedFn() {
-    const el = '#tags-header-desc';
-    const type = 'tag';
-    let desc = '愿你如风，被人温柔以待'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
     
-    </div>
-    <div class="mask-box"></div>
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2025-12-08 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
 </div>
 
 
-<div id="tags" class="container">
-    <div class="card">
-        <div class="card-content">
-            <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;Article Tags
-            </div>
-            <div class="tag-chips">
-                
-                
-                <a href="/physics/tags/%E5%A4%A7%E7%89%A9%E5%AE%9E%E9%AA%8C/" title="大物实验: 5">
-                    <span class="tag-content" title="大物实验" style="background-color: #F5EEF8;">大物实验
-                        <span class="tag-length">5</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/physics/tags/%E5%A4%A7%E7%89%A9%E5%AE%9E%E9%AA%8C2/" title="大物实验2: 4">
-                    <span class="tag-content" title="大物实验2" style="background-color: #F8C471;">大物实验2
-                        <span class="tag-length">4</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/physics/tags/%E5%85%89%E5%AD%A6/" title="光学: 10">
-                    <span class="tag-content" title="光学" style="background-color: #FEF9E7;">光学
-                        <span class="tag-length">10</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/physics/tags/appendix/" title="appendix: 2">
-                    <span class="tag-content" title="appendix" style="background-color: #F9EBEA;">appendix
-                        <span class="tag-length">2</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/physics/tags/%E6%A6%82%E7%BB%9F/" title="概统: 13">
-                    <span class="tag-content" title="概统" style="background-color: #F9E79F;">概统
-                        <span class="tag-length">13</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/physics/tags/%E7%BA%BF%E4%BB%A3/" title="线代: 14">
-                    <span class="tag-content" title="线代" style="background-color: #F5EEF8;">线代
-                        <span class="tag-length">14</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/physics/tags/%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6/" title="经典力学: 10">
-                    <span class="tag-content" title="经典力学" style="background-color: #E8F8F5;">经典力学
-                        <span class="tag-length">10</span>
-                    </span>
-                </a>
-                
-            </div>
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>透镜相差，光电，热电</h1>
+<h2 id="透镜相差✅">透镜相差✅</h2>
+<p>本实验需要观察：球差、慧差、像散</p>
+<h3 id="原理">原理</h3>
+<p>球差：入射光孔径较大，傍轴近似不成立，非傍轴光像距较小，使得成像在光轴方向不一致.</p>
+<p>慧差：轴外物点发出的对称于主光线的一束光在像方失去对称性，偏向主光线的同一侧，并且在像面处无法聚焦到主光线和像面的交点上. 成像像是彗星的形状.</p>
+<p>像散：轴外物点发出的锥形光束，在通过光学系统后，其子午焦线与弧矢焦线在像面上不重合的现象. 成像为椭圆.</p>
+<h3 id="实验步骤">实验步骤</h3>
+<h4 id="实验仪器">实验仪器</h4>
+<p>面陈相机特性测量及视觉测量综合实验系统，平凸透镜（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϕ</mi><mo>=</mo><mn>4</mn><mn>0</mn><mi>m</mi><mi>m</mi><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mi>f</mi><mo>=</mo><mn>8</mn><mn>0</mn><mi>m</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">\phi = 40 mm,\,f = 80mm</annotation></semantics></math></span></span>），平行光管（红），慧差镜头（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><mn>9</mn><mn>0</mn><mi>m</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">f = 90mm</annotation></semantics></math></span></span>），像散镜头（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><mn>5</mn><mn>5</mn><mi mathvariant="normal">.</mi><mn>6</mn><mi>m</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">f = 55.6mm</annotation></semantics></math></span></span>），计算机，CMOS</p>
+<hr>
+<p>实验中都是从透镜的凸面入射！（使相差较小，便于测量）</p>
+<p>调节光路：用一个光屏辅助观察光线位置，调节平行光管射向CMOS.</p>
+<h4 id="球差">球差</h4>
+<p><strong>Ⅰ. 光路调节</strong><br>
+打开平行光管电源，选择红光，先根据肉眼大致调节平行光管处于水平状态并平行导轨，移除平行光管中的小孔，移动观察屏根据光斑调节平行光管. 借助光屏观察光线位置，调节使透镜和 CMOS 与平行光管等高. 移动 CMOS 使成像清晰. 将小孔插入平行光管，用遮光布盖住成像系统，打开像差全屏观察软件，观察 CMOS 成像调节相机高度使光斑位于视野中心. 转动透镜及 CMOS 相机，使光斑为圆形.<br>
+<strong>Ⅱ 观察球差</strong><br>
+转动 CMOS 鼓轮，前后移动 CMOS，观察洞位置的光斑形状、大小，画5张以上的反映光斑特征的图并以文字说明.<br>
+<strong>Ⅲ 测量球差</strong><br>
+将 CMOS 鼓轮转至读数较小处，移动 CMOS，使视野中呈现较大光斑，光斑过暗时调大 ISO. 曝光时间调为100，在软件中拍照并记录 CMOS 鼓轮读数. 转动 CMOS 远离透镜，观察光斑缩小，拍照并记录鼓轮读数，重复，记10-15组数据. 注意测量过程中需将鼓轮调小，确保圆内侧没有光，是一个清晰的圆环.<br>
+用 spherical aberration 画图拟合，拟合时需要恰当选择r的范围，计算得<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>h</mi></msub></mrow><annotation encoding="application/x-tex">Q_h</annotation></semantics></math></span></span>.<br>
+继续转 CMOS 鼓轮，使 CMOS 远离透镜，至光斑最小. 将 CMOS 曝光时间调为10，光斑明显变暗. 继续转动鼓轮，观察到中心光斑继续变小，随后光斑变模糊. 转动鼓轮，记录光斑变模糊时 CMOS 鼓轮读数，重复5次，计算平均，得<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">Q_0</annotation></semantics></math></span></span>.<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>δ</mi><mrow><mi>S</mi><mi>h</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mi>h</mi></msub><mo>−</mo><msub><mi>Q</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\delta_{Sh} = Q_h - Q_0</annotation></semantics></math></span></span>. 得球差和不确定度.</p>
+<h4 id="慧差和像散">慧差和像散</h4>
+<p>观察慧差和像散时，都需要略微倾斜透镜.</p>
+<p>转动CMOS鼓轮，前后移动CMOS，观察不同位置光斑形状、大小，慧差和像散分别画5张以上反映光斑特征的图并加以文字说明.</p>
+<h3 id="公式">公式</h3>
+<p>对光圈半径-鼓轮示数做线性拟合，x轴截距即为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>h</mi></msub></mrow><annotation encoding="application/x-tex">Q_h</annotation></semantics></math></span></span>. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>δ</mi><mrow><mi>S</mi><mi>h</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mi>h</mi></msub><mo>−</mo><msub><mi>Q</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\delta_{Sh} = Q_h - Q_0</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>(</mo><msub><mi>δ</mi><mrow><mi>S</mi><mi>h</mi></mrow></msub><mo>)</mo><mo>=</mo><msqrt><mrow><mi>u</mi><mo>(</mo><msub><mi>Q</mi><mi>h</mi></msub><msup><mo>)</mo><mn>2</mn></msup><mo>+</mo><mi>u</mi><mo>(</mo><msub><mi>Q</mi><mn>0</mn></msub><msup><mo>)</mo><mn>2</mn></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">u(\delta_{Sh}) = \sqrt{u(Q_h)^2 + u(Q_0)^2}</annotation></semantics></math></span></span></p>
+<h2 id="光电-测普朗克常数✅">光电 测普朗克常数✅</h2>
+<h3 id="原理-2">原理</h3>
+<p>光电方程 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><mi>h</mi><mi>ν</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>m</mi><msubsup><mi>v</mi><mi>m</mi><mn>2</mn></msubsup><mo>+</mo><mi>W</mi><mo>=</mo><mi>e</mi><msub><mi>U</mi><mn>0</mn></msub><mo>+</mo><mi>W</mi><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>U</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">E = h\nu = \frac{1}{2}mv_m^2 + W = eU_0 + W,\quad U_0</annotation></semantics></math></span></span>是遏止电压.</p>
+<h3 id="实验步骤-2">实验步骤</h3>
+<div align="center">
+  <div style="display: flex; justify-content: center; align-items: center; gap: 30px; max-width: 1000px; margin: 0 auto;">
+    <div style="flex: 1; text-align: center;">
+      <img src="https://pic4.zhimg.com/80/v2-5958d2388e5a32be3cc3cf62bde23205_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-5958d2388e5a32be3cc3cf62bde23205_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="max-width: 80%; height: auto;">
+    </div>
+    <div style="flex: 1; text-align: center;">
+      <img src="https://pic4.zhimg.com/80/v2-d3f413914ac0f848a3f4abdfa0987cbd_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-d3f413914ac0f848a3f4abdfa0987cbd_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="max-width: 64%; height: auto;">
+    </div>
+  </div>
+  <p style="margin-top: 20px;">光电效应实验仪</p>
+</div>
+<ol>
+<li>调节单色仪波长定标和确定输出电流零点. （建议完成时间小于15分钟）<br>
+(1)光路调节：打开溴钨灯，设定电压为某一数值，如10V，单色仪鼓轮为5.000mm时，调整透镜位置，使得电流最大.<br>
+(2)单色仪波长定标：关闭光电管电源，分开单色仪和光电管，将观察屏（可用白纸片代替）放置到单色仪的出射缝和光电管之间，调节鼓轮到零刻度附近，当观察屏上出现一清晰明亮的像——零级光谱时，<strong>记下此时鼓轮读数即为鼓轮零点</strong>（注意区分此时是正读数还是负读数）. 鼓轮读数改变1.00mm对应出射光波长改变100nm. 定标完成后须将单色仪和光电管合上，并将鼓轮读数调离鼓轮零点，比如可以调成5.000mm，以避免光电管被单色仪鼓轮处于零点时的复色光照射.<br>
+(3) <strong>确定输出电流零点</strong>：将电压设置为0V，将"电流量程"选择开关置于合适档位，调节挡板遮挡单色仪入射缝，调节调零旋钮使得显示电流读数为零. （注意不同电流量程需要重新进行电流零点确认. ）</li>
+<li>测量<strong>本底光电流</strong>. （建议完成时间小于5分钟）<br>
+分别遮挡透镜和单色仪入射缝，观察电流大小的变化.</li>
+</ol>
+<h4 id="测量暗电流-（建议完成时间小于30分钟）">测量暗电流. （建议完成时间小于30分钟）</h4>
+<p>(1)断开测试仪电流输入电缆线，调节调零旋钮使得显示电流为零.<br>
+(2)遮挡单色仪入射缝，连接电流输入电缆线，<strong>改变电压</strong>（电压档-2V~0V建议从-1.998V开始测量5个数据点左右，<strong>数据可均匀分布</strong>，包含电压为0V的数据点；电压档-1V~+50V建从-1.0V开始测量10个数据点左右，<strong>高电压数据分布稀疏，低电压数据分布密集</strong>）测量暗电流.<br>
+(3) 画出未照光时的光电管的伏安特性曲线.</p>
+<h4 id="测量普朗克常数h-（建议完成时间小于20分钟）">测量普朗克常数h. （建议完成时间小于20分钟）</h4>
+<p>(1) 确定入射光变化范围. 入射光调节范围为400nm-600nm.<br>
+(2) 将电压按键置于-2V——0V档；将"电流量程"选择开关置于10⁻¹³ A档，按照步骤1中方法确定输出电流零点. （测量过程中由于电流零点会漂移，需要多次确定输出电流零点. ）<br>
+(3)测量出射光波长为400nm和600nm时对应的截止电压，调节电压为这两个电压的平均值，再将挡板挡住单色仪入射缝，利用电流调零旋钮重新确定输出电流零点.<br>
+(4)分别<strong>由小到大</strong>和<strong>由大到小</strong>改变出射光的波长，调节范围为400nm-600nm，波长改变步长为40nm,调节电压记录电流读数为0时对应的电压即截止电压. （实验中改变入射光强度是否会对截止电压产生影响？）<br>
+(5)画出截止电压和入射光频率的关系图，拟合并计算普朗克常数h，并计算不确定度.</p>
+<h3 id="公式-2">公式</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi><mi>U</mi><mo>=</mo><mi>h</mi><mi>ν</mi></mrow><annotation encoding="application/x-tex">eU = h\nu</annotation></semantics></math></span></span>，得<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span></span>. 注意计算误差传递.</p>
+<h2 id="热电">热电</h2>
+<h3 id="原理-3">原理</h3>
+<p><img src="https://pica.zhimg.com/80/v2-8fdb1c29113091c7c286dd94efe61480_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-8fdb1c29113091c7c286dd94efe61480_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="实验仪器图"></p>
+<h3 id="实验过程">实验过程</h3>
+<p>实验前需要先给数据采集器、计算机、直流稳压电源通电并开机，数据采集器与计算机用USB连接线连接，并打开相应软件；直流稳压电源则将电流调节顺时针调至最大（以实现在实验过程中能够输出最大电流），并将电压调节旋钮逆时针转到底（0V保护电路）.</p>
+<h4 id="温差发电模块">温差发电模块</h4>
+<img src="https://pic1.zhimg.com/80/v2-76c605992ddfcce994815fa8dd2bd996_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-76c605992ddfcce994815fa8dd2bd996_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width: 60%;">
+软件上选择切换到温差发电模块，实验中测得恰好能够观测到LED发光时其两端电势差为7.45V，通过的电流为3.0(2)E-5A. 
+<h4 id="热电材料模块">热电材料模块</h4>
+<img src="https://pic2.zhimg.com/80/v2-fc0e522eec14324613272158cdee7601_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-fc0e522eec14324613272158cdee7601_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width: 60%;">
+<img src="https://pic2.zhimg.com/80/v2-eb4f896a1b84024d00369ccc753b5717_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-eb4f896a1b84024d00369ccc753b5717_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" style="width: 60%;">
+<p>实验中每次更换测试材料均需要校零，具体操作为：将金属试件连接在信号放大器上，测量选择切换到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mi>B</mi><mi>C</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U_{BC}</annotation></semantics></math></span></span>灯亮，等待温差电势数据稳定后，点击软件的"校零"按钮.</p>
+<ol>
+<li>
+<p>测量康铜的塞贝克系数. 如FIG3.2连接电路，将康铜热电测试材料放入加热台中间，<strong>试件的三点电极面朝下</strong>. 使用测量选择按钮切换到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U_{AB}</annotation></semantics></math></span></span>旁的灯亮起，软件上切换到热电材料模块，实验内容选择康铜材料，点击开始测量，将连接加热台上端（或下端，根据塞贝克效应原理，塞贝克系数与温度梯度方向无关）的直流稳压电源电压调为6.00V，点击开始绘图，等待图像开始平稳时点击清除图像，待温差ΔT约为10℃，并且变化小于0.3℃/min时，在表格上方点击"采集数据"，然后点击"暂停绘图"，并点击"保存图像数据"，导出当前材料的动态数据.</p>
+</li>
+<li>
+<p>测量P型和N型半导体的塞贝克系数. 将P型半导体热电测试材料放入加热台中间，校零，然后重复a中的操作.</p>
+</li>
+</ol>
+<h3 id="验证金属热电偶的两个定律">验证金属热电偶的两个定律</h3>
+<ol>
+<li>验证均质导体定律. 热电偶均质导体定律验证单元内部结构如FIG2.3(a)所示，将热电偶均质导体定律验证单元放入加热台中，<strong>试件的三点电极面朝下</strong>，调节直流稳压电源电压使得ΔT大于15℃，并且变化小于0.3℃/min，待温差电势稳定后采集数据，分别记录<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U_{AB}</annotation></semantics></math></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mi>A</mi><mi>C</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U_{AC}</annotation></semantics></math></span></span>的值.</li>
+<li>验证参考电极定律. 热电偶参考电极定律验证单元内部结构如FIG2.3(b)所示，将热电偶参考电极定律验证单元放入加热台中，<strong>试件的三点电极面朝下</strong>，调节直流稳压电源电压使得ΔT大于15℃，并且变化小于0.2℃/min，待温差电势稳定后采集数据，分别记录<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U_{AB}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mi>B</mi><mi>C</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U_{BC}</annotation></semantics></math></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mi>A</mi><mi>C</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U_{AC}</annotation></semantics></math></span></span>的值，并备注所测的电极.</li>
+</ol>
+<h3 id="公式-3">公式</h3>
+<p>塞贝克效应：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><msub><mi>S</mi><mrow><mi>a</mi><mi>b</mi></mrow></msub><mi mathvariant="normal">Δ</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">E = S_{ab} \Delta T</annotation></semantics></math></span></span>，注意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\Delta T</annotation></semantics></math></span></span>需要减去校零使得偏差.</p>
+<p>均质导体定律：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub><mo>=</mo><msub><mi>U</mi><mrow><mi>A</mi><mi>C</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U_{AB}=U_{AC}</annotation></semantics></math></span></span></p>
+<p>参考电极定律：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mi>A</mi><mi>B</mi></mrow></msub><mo>=</mo><msub><mi>U</mi><mrow><mi>A</mi><mi>C</mi></mrow></msub><mo>+</mo><msub><mi>U</mi><mrow><mi>C</mi><mi>B</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U_{AB}=U_{AC}+U_{CB}</annotation></semantics></math></span></span></p>
+<h3 id="参考结论">参考结论</h3>
+<p>康铜该系数为-41.66uV/K、n型半导体该系数为-191.66(2) uV/K、p型半导体该系数为193(1) uV/K</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E5%A4%A7%E7%89%A9%E5%AE%9E%E9%AA%8C/" class="">
+              大物实验
+            </a>
+          
+            <a href="/physics/tags/%E5%A4%A7%E7%89%A9%E5%AE%9E%E9%AA%8C2/" class="">
+              大物实验2
+            </a>
+          
         </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/DaWuShiYan/第四循环/" target="_blank" title="第四循环">https://kotokowa.github.io/physics/DaWuShiYan/第四循环/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
+    <a href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E4%B8%8E%E6%B3%A2%E7%89%87%E3%80%81%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">各向异性与波片、干涉与薄膜干涉</div>
+      </div>
+      
+      <!-- <div class="content">
+        各向异性与波片、干涉与薄膜干涉
+各向异性晶体与相位延迟片
+相位延迟器的基本概念与 Jones 表示
+各向异性单轴晶体中，
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/DaWuShiYan/%E7%AC%AC%E4%B8%89%E5%BE%AA%E7%8E%AF/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">第三循环</div>
+      </div>
+      <!-- <div class="content">
+        半导体PN结，液氮比汽化热，玻璃折射率温度系数
+半导体 PN 结✅
+原理
+常温下PN结正向电流随正向电压按指数变化.
+P
+      </div> -->
+    </a>
+  </div>
+
 </div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">透镜相差，光电，热电</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%8F%E9%95%9C%E7%9B%B8%E5%B7%AE%E2%9C%85"><span class="toc-text">透镜相差✅</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4"><span class="toc-text">实验步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BB%AA%E5%99%A8"><span class="toc-text">实验仪器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%90%83%E5%B7%AE"><span class="toc-text">球差</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%85%A7%E5%B7%AE%E5%92%8C%E5%83%8F%E6%95%A3"><span class="toc-text">慧差和像散</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F"><span class="toc-text">公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%89%E7%94%B5-%E6%B5%8B%E6%99%AE%E6%9C%97%E5%85%8B%E5%B8%B8%E6%95%B0%E2%9C%85"><span class="toc-text">光电 测普朗克常数✅</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86-2"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%AD%A5%E9%AA%A4-2"><span class="toc-text">实验步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E9%87%8F%E6%9A%97%E7%94%B5%E6%B5%81-%EF%BC%88%E5%BB%BA%E8%AE%AE%E5%AE%8C%E6%88%90%E6%97%B6%E9%97%B4%E5%B0%8F%E4%BA%8E30%E5%88%86%E9%92%9F%EF%BC%89"><span class="toc-text">测量暗电流. （建议完成时间小于30分钟）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E9%87%8F%E6%99%AE%E6%9C%97%E5%85%8B%E5%B8%B8%E6%95%B0h-%EF%BC%88%E5%BB%BA%E8%AE%AE%E5%AE%8C%E6%88%90%E6%97%B6%E9%97%B4%E5%B0%8F%E4%BA%8E20%E5%88%86%E9%92%9F%EF%BC%89"><span class="toc-text">测量普朗克常数h. （建议完成时间小于20分钟）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F-2"><span class="toc-text">公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%AD%E7%94%B5"><span class="toc-text">热电</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86-3"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">实验过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%A9%E5%B7%AE%E5%8F%91%E7%94%B5%E6%A8%A1%E5%9D%97"><span class="toc-text">温差发电模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%AD%E7%94%B5%E6%9D%90%E6%96%99%E6%A8%A1%E5%9D%97"><span class="toc-text">热电材料模块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E9%87%91%E5%B1%9E%E7%83%AD%E7%94%B5%E5%81%B6%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%AE%9A%E5%BE%8B"><span class="toc-text">验证金属热电偶的两个定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F-3"><span class="toc-text">公式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E7%BB%93%E8%AE%BA"><span class="toc-text">参考结论</span></a></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-17</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/">方差分析与回归分析</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GuangXue/%E5%A4%9A%E5%85%89%E6%9D%9F%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%A1%8D%E5%B0%84%E3%80%81%E5%85%89%E6%A0%85/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-16</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GuangXue/%E5%A4%9A%E5%85%89%E6%9D%9F%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%A1%8D%E5%B0%84%E3%80%81%E5%85%89%E6%A0%85/">多光束薄膜干涉与衍射、光栅</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-11</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">假设检验</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-10</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E4%B8%8E%E6%B3%A2%E7%89%87%E3%80%81%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-09</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E4%B8%8E%E6%B3%A2%E7%89%87%E3%80%81%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89/">各向异性与波片、干涉与薄膜干涉</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>
