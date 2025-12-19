@@ -407,12 +407,12 @@
 <p>调节光路：用一个光屏辅助观察光线位置，调节平行光管射向CMOS.</p>
 <h4 id="球差">球差</h4>
 <p><strong>Ⅰ. 光路调节</strong><br>
-打开平行光管电源，选择红光，先根据肉眼大致调节平行光管处于水平状态并平行导轨，移除平行光管中的小孔，移动观察屏根据光斑调节平行光管. 借助光屏观察光线位置，调节使透镜和 CMOS 与平行光管等高. 移动 CMOS 使成像清晰. 将小孔插入平行光管，用遮光布盖住成像系统，打开像差全屏观察软件，观察 CMOS 成像调节相机高度使光斑位于视野中心. 转动透镜及 CMOS 相机，使光斑为圆形.<br>
+打开平行光管电源，选择红光，先根据肉眼大致调节平行光管处于水平状态并平行导轨，移除平行光管中的小孔，移动观察屏根据光斑调节平行光管. 借助光屏观察光线位置，调节使透镜和 CMOS 与平行光管等高. 移动 CMOS 使成像清晰. 将小孔插入平行光管，用遮光布盖住成像系统，打开像差全屏观察软件，观察 CMOS 成像调节相机高度使光斑位于视野中心. 转动透镜及 CMOS 相机，使光斑为圆形. （这里最好把鼓轮调小防止后面测球差时超出量程.<br>
 <strong>Ⅱ 观察球差</strong><br>
 转动 CMOS 鼓轮，前后移动 CMOS，观察洞位置的光斑形状、大小，画5张以上的反映光斑特征的图并以文字说明.<br>
 <strong>Ⅲ 测量球差</strong><br>
 将 CMOS 鼓轮转至读数较小处，移动 CMOS，使视野中呈现较大光斑，光斑过暗时调大 ISO. 曝光时间调为100，在软件中拍照并记录 CMOS 鼓轮读数. 转动 CMOS 远离透镜，观察光斑缩小，拍照并记录鼓轮读数，重复，记10-15组数据. 注意测量过程中需将鼓轮调小，确保圆内侧没有光，是一个清晰的圆环.<br>
-用 spherical aberration 画图拟合，拟合时需要恰当选择r的范围，计算得<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>h</mi></msub></mrow><annotation encoding="application/x-tex">Q_h</annotation></semantics></math></span></span>.<br>
+用 spherical aberration 导入拍摄的数据，画图拟合r，拟合时需要恰当选择r的范围，下面两个para都设置为10（或者10~30），然后选择下一张. 全部拟合完后在右上角输入鼓轮读数，点击输入完成自动计算得<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>h</mi></msub></mrow><annotation encoding="application/x-tex">Q_h</annotation></semantics></math></span></span>.<br>
 继续转 CMOS 鼓轮，使 CMOS 远离透镜，至光斑最小. 将 CMOS 曝光时间调为10，光斑明显变暗. 继续转动鼓轮，观察到中心光斑继续变小，随后光斑变模糊. 转动鼓轮，记录光斑变模糊时 CMOS 鼓轮读数，重复5次，计算平均，得<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">Q_0</annotation></semantics></math></span></span>.<br>
 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>δ</mi><mrow><mi>S</mi><mi>h</mi></mrow></msub><mo>=</mo><msub><mi>Q</mi><mi>h</mi></msub><mo>−</mo><msub><mi>Q</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\delta_{Sh} = Q_h - Q_0</annotation></semantics></math></span></span>. 得球差和不确定度.</p>
 <h4 id="慧差和像散">慧差和像散</h4>
