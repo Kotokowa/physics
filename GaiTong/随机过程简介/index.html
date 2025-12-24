@@ -1,0 +1,2165 @@
+<!DOCTYPE html><html><!-- meta/link... --><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>随机过程简介 | Hexo</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/physics/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/physics/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/physics/css/style.css">
+
+  
+  
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/physics/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/physics/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+  
+  <!-- 预加载动画 -->
+  
+  
+  <body><div class="preloader_6" id="loader">
+  <div class="loader"></div>
+</div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
+
+  
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer="">
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/physics/js/swiper/swiper.min.js"></script>
+<script src="/physics/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/physics/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/physics/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/physics/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">Hexo</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/physics/" class="logo">Hexo</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/physics/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/physics/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        随机过程简介
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2025-12-24 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>随机过程简介</h1>
+<h2 id="随机序列-离散-，随机过程-连续">随机序列(离散)，随机过程(连续)</h2>
+<h3 id="随机序列-离散时间过程-与信息流">随机序列(离散时间过程)与信息流</h3>
+<ul>
+<li>在概率空间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi mathvariant="normal">Ω</mi><mo separator="true">,</mo><mrow><mi mathvariant="script">F</mi></mrow><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(\Omega,\mathcal{F},P)</annotation></semantics></math></span></span>上，随机序列(或离散时间随机过程)可以写成<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>n</mi></msub><mo>=</mo><msub><mi>X</mi><mi>n</mi></msub><mo>(</mo><mi>ω</mi><mo>)</mo><mo>=</mo><mi>X</mi><mo>(</mo><mi>ω</mi><mo separator="true">,</mo><mi>n</mi><mo>)</mo><mo>:</mo><mi mathvariant="normal">Ω</mi><mo>×</mo><mrow><mi mathvariant="double-struck">N</mi></mrow><mo>→</mo><msup><mrow><mi mathvariant="double-struck">R</mi></mrow><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">X_n = X_n(\omega) = X(\omega,n): \Omega \times \mathbb{N} \to \mathbb{R}^d</annotation></semantics></math></span></span>.</li>
+<li>信息流(filtration)<br>
+一族递增的子<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span></span>-代数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mrow><mi mathvariant="script">F</mi></mrow><mi>n</mi></msub><msub><mo>)</mo><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">(\mathcal{F}_n)_{n\ge 0}</annotation></semantics></math></span></span>称为信息流(或过滤族)  
+    $$
+    \mathcal{F}_0 \subset \mathcal{F}_1 \subset \cdots \subset \mathcal{F}_n \subset \mathcal{F}_{n+1} \subset \cdots \subset \mathcal{F}.
+    $$
+    
+直观上，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="script">F</mi></mrow><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal{F}_n</annotation></semantics></math></span></span>表示“到时间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>为止我们能观察到的全部信息”.</li>
+<li>适应(adapted)<br>
+给定信息流<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mrow><mi mathvariant="script">F</mi></mrow><mi>n</mi></msub><msub><mo>)</mo><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">(\mathcal{F}_n)_{n\ge 0}</annotation></semantics></math></span></span>，若对任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>，离散随机过程<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_n</annotation></semantics></math></span></span>都是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="script">F</mi></mrow><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal{F}_n</annotation></semantics></math></span></span>-可测的，则称过程<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>X</mi><mi>n</mi></msub><msub><mo>)</mo><mrow><mi>n</mi><mo>≥</mo><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">(X_n)_{n\ge 0}</annotation></semantics></math></span></span>关于信息流<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="script">G</mi></mrow><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal{G}_n</annotation></semantics></math></span></span>适应.</li>
+</ul>
+<h3 id="随机过程-连续过程-与样本轨道">随机过程(连续过程)与样本轨道</h3>
+<h4 id="定义">定义</h4>
+<p>设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>⊂</mo><msup><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">T\subset \mathbb{R}^+</annotation></semantics></math></span></span>是时间指标集合，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>E</mi><mo separator="true">,</mo><mrow><mi mathvariant="script">E</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">(E,\mathcal{E})</annotation></semantics></math></span></span>是可测空间. 若</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>=</mo><mo>(</mo><msub><mi>X</mi><mi>t</mi></msub><mo separator="true">,</mo><mi>t</mi><mo>∈</mo><mi>T</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">X=(X_t, t\in T)</annotation></semantics></math></span></span>是一族取值于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span>的可测映射族(即对每个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>t</mi></msub><mo>:</mo><mi mathvariant="normal">Ω</mi><mo>→</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">X_t:\Omega\to E</annotation></semantics></math></span></span>可测)，则称<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>为状态空间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>E</mi><mo separator="true">,</mo><mrow><mi mathvariant="script">E</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">(E,\mathcal{E})</annotation></semantics></math></span></span>上的随机过程.</p>
+<h4 id="常见情形">常见情形</h4>
+<p>取<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><msup><mrow><mi mathvariant="double-struck">R</mi></mrow><mi>d</mi></msup></mrow><annotation encoding="application/x-tex">E=\mathbb{R}^d</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">E</mi></mrow><mo>=</mo><mrow><mi mathvariant="script">B</mi></mrow><mo>(</mo><msup><mrow><mi mathvariant="double-struck">R</mi></mrow><mi>d</mi></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{E}=\mathcal{B}(\mathbb{R}^d)</annotation></semantics></math></span></span>. 当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">d=1</annotation></semantics></math></span></span>时称<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span>为实值过程.</p>
+<p>对固定样本点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>∈</mo><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\omega\in\Omega</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi><mi>t</mi><mo>∈</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">\forall t \in T</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>t</mi></msub><mo>(</mo><mi>ω</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">X_t(\omega)</annotation></semantics></math></span></span>为一个随机变量.</p>
+<p>映射<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>↦</mo><msub><mi>X</mi><mi>t</mi></msub><mo>(</mo><mi>ω</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">t\mapsto X_t(\omega)</annotation></semantics></math></span></span>称为该样本点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span>下<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>→</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">T \to E</annotation></semantics></math></span></span>的映射，称为样本轨道(sample path/trajectory).</p>
+<h2 id="Markov-链">Markov 链</h2>
+<p>本节默认马氏链取值于状态空间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span>为有限集或可数集，使用概率空间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi><mo separator="true">,</mo><mrow><mi mathvariant="script">F</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="script">P</mi></mrow></mrow><annotation encoding="application/x-tex">\Omega, \mathcal{F}, \mathcal{P}</annotation></semantics></math></span></span></p>
+<h3 id="定义：离散时间-Markov-链">定义：离散时间 Markov 链</h3>
+<p>随机过程<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>X</mi><mi>n</mi></msub><msub><mo>)</mo><mrow><mi>n</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">N</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">(X_n)_{n\in\mathbb{N}}</annotation></semantics></math></span></span>称为(离散时间)Markov 链，如果对任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>与任意状态<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo separator="true">,</mo><mi>y</mi><mo>∈</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">x_0,\ldots,x_n,y\in E</annotation></semantics></math></span></span>，都有</p>
+
+$$
+P(X_{n+1}=y \mid X_0=x_0,\ldots,X_n=x_n)=P(X_{n+1}=y\mid X_n=x_n).
+$$
+
+<p>直观解释：给定当前状态<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_n</annotation></semantics></math></span></span>后，未来一步<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">X_{n+1}</annotation></semantics></math></span></span>的条件分布与更早历史无关.</p>
+<details>
+<summary>例题：检验一个过程是否为 Markov 链</summary>
+<p>考虑过程<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><msub><mi>X</mi><mi>n</mi></msub><mo>+</mo><msub><mi>ξ</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">X_{n+1}=X_n+\xi_{n+1}</annotation></semantics></math></span></span>，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>ξ</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(\xi_n)</annotation></semantics></math></span></span>独立同分布且与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">X_0</annotation></semantics></math></span></span>独立，状态空间为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><mrow><mi mathvariant="double-struck">Z</mi></mrow></mrow><annotation encoding="application/x-tex">E=\mathbb{Z}</annotation></semantics></math></span></span>. 证明<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>X</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(X_n)</annotation></semantics></math></span></span>是 Markov 链，并写出转移概率.</p>
+<p>解：对任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo separator="true">,</mo><mi>x</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">Z</mi></mrow></mrow><annotation encoding="application/x-tex">y,x\in\mathbb{Z}</annotation></semantics></math></span></span>，有<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>X</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>y</mi><mo>∣</mo><msub><mi>X</mi><mi>n</mi></msub><mo>=</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>ξ</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>y</mi><mo>−</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(X_{n+1}=y\mid X_n=x)=P(\xi_{n+1}=y-x)</annotation></semantics></math></span></span>，它不依赖于更早历史，因此满足 Markov 性.<br>
+转移概率为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>ξ</mi><mn>1</mn></msub><mo>=</mo><mi>y</mi><mo>−</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P_{xy}=P(\xi_1=y-x)</annotation></semantics></math></span></span>.</p>
+</details>
+<h3 id="引理：由递推-独立噪声构造-Markov-链">引理：由递推+独立噪声构造 Markov 链</h3>
+<p>设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo separator="true">,</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">E,F</annotation></semantics></math></span></span>为可数集，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>:</mo><mrow><mi mathvariant="double-struck">N</mi></mrow><mo>×</mo><mi>E</mi><mo>×</mo><mi>F</mi><mo>→</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">f:\mathbb{N}\times E\times F\to E</annotation></semantics></math></span></span>. 取随机变量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>0</mn></msub><mo separator="true">,</mo><msub><mi>Y</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>Y</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>…</mo></mrow><annotation encoding="application/x-tex">X_0,Y_1,Y_2,\ldots</annotation></semantics></math></span></span>相互独立，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">X_0</annotation></semantics></math></span></span>取值于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">Y_n</annotation></semantics></math></span></span>取值于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span>，并定义<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>−</mo></mrow><annotation encoding="application/x-tex">E-</annotation></semantics></math></span></span>过程：</p>
+
+$$
+X_{n+1}=f(n,X_n,Y_{n+1}), \quad n\in\mathbb{N}.
+$$
+
+<p>则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>X</mi><mi>n</mi></msub><mo separator="true">,</mo><mi>n</mi><mo>≥</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(X_n, n\ge 0)</annotation></semantics></math></span></span>是一个 Markov 链.</p>
+<p>直观上：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{n+1}</annotation></semantics></math></span></span>提供“新噪声”，下一步只依赖当前状态和新噪声，因此满足 Markov 性.</p>
+<details>
+<summary>例题：用引理构造一个非线性 Markov 链</summary>
+<p>设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><mrow><mi mathvariant="double-struck">Z</mi></mrow></mrow><annotation encoding="application/x-tex">E=\mathbb{Z}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mo>{</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">F=\{0,1\}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Y</mi><mrow><mi>n</mi></mrow></msub></mrow><annotation encoding="application/x-tex">Y_{n}</annotation></semantics></math></span></span>独立同分布且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>Y</mi><mi>n</mi></msub><mo>=</mo><mn>1</mn><mo>)</mo><mo>=</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">P(Y_n=1)=p</annotation></semantics></math></span></span>. 定义</p>
+
+$$
+X_{n+1}=X_n+\mathbf{1}_{\{Y_{n+1}=1\}}-\mathbf{1}_{\{Y_{n+1}=0\}}.
+$$
+
+<p>(1) 写出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><annotation encoding="application/x-tex">P_{xy}</annotation></semantics></math></span></span>；(2) 说明这是齐次 Markov 链.</p>
+<p>解：因为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>X</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">X_{n+1}-X_n</annotation></semantics></math></span></span>只可能为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\pm 1</annotation></semantics></math></span></span>，所以<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>x</mi><mo separator="true">,</mo><mi>x</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">P_{x,x+1}=p</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>x</mi><mo separator="true">,</mo><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>1</mn><mo>−</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">P_{x,x-1}=1-p</annotation></semantics></math></span></span>，其余为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span>.<br>
+转移概率与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>无关，因此齐次.</p>
+</details>
+<h3 id="转移矩阵、齐次性与初始分布">转移矩阵、齐次性与初始分布</h3>
+<p>对 Markov 链定义一步转移概率</p>
+
+$$
+P_{xy}(n)=P(X_{n+1}=y\mid X_n=x),\quad x,y\in E.
+$$
+
+<p>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P_{xy}(n)</annotation></semantics></math></span></span>独立于常数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>，则称Markov链为<strong>齐次的</strong>，矩阵<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>=</mo><mo>(</mo><msub><mi>P</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">P=(P_{xy})</annotation></semantics></math></span></span>称为转移矩阵.</p>
+<p>链的分布由两部分完全确定：</p>
+<ol>
+<li>初始分布<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>μ</mi><mi>x</mi></msub><mo separator="true">;</mo><mi>x</mi><mo>∈</mo><mi>E</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>X</mi><mn>0</mn></msub><mo>=</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(\mu_x ; x \in E)=P(X_0=x)</annotation></semantics></math></span></span>；</li>
+<li>转移矩阵<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>=</mo><mo>(</mo><msub><mi>P</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">P = (P_{xy})</annotation></semantics></math></span></span>.</li>
+</ol>
+<blockquote>
+<ul>
+<li>补充：递归观点与“无记忆”的对比</li>
+</ul>
+<p>定义确定性递归关系的序列：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>f</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">x_{n+1}=f(n,x_n)</annotation></semantics></math></span></span>.</p>
+<p>相应定义“带记忆”的系统可能依赖全历史：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>f</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo separator="true">,</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo separator="true">,</mo><mo>…</mo><mo separator="true">,</mo><msub><mi>x</mi><mn>0</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">x_{n+1}=f(n,x_n,x_{n-1},\ldots,x_0)</annotation></semantics></math></span></span>.</p>
+<p>Markov 链是介于二者之间的一类：随机性体现在转移概率或独立噪声中，但只“记住”当前状态. 其形式为转移矩阵，也就是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mo>⋅</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">f(n, \cdot)</annotation></semantics></math></span></span>.</p>
+</blockquote>
+<h2 id="不变分布-stationary-invariant-equilibrium-distribution">不变分布(stationary / invariant / equilibrium distribution)</h2>
+<p>测度(或向量)<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi><mo>=</mo><mo>(</mo><msub><mi>γ</mi><mi>x</mi></msub><msub><mo>)</mo><mrow><mi>x</mi><mo>∈</mo><mi>E</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\gamma=(\gamma_x)_{x\in E}</annotation></semantics></math></span></span>称为关于转移矩阵<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span>不变的，如果</p>
+
+$$
+\gamma P=\gamma,
+\quad\text{即}\quad
+\sum_{y\in E}\gamma_yP_{yx}=\gamma_x,\quad x\in E.
+$$
+
+<p>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mo>∑</mo><mrow><mi>x</mi><mo>∈</mo><mi>E</mi></mrow></msub><msub><mi>γ</mi><mi>x</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sum_{x\in E}\gamma_x=1</annotation></semantics></math></span></span>，则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span>是不变概率测度(平稳分布).</p>
+<details>
+<summary>例题：两状态 Markov 链的平稳分布</summary>
+<p>设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><mo>{</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">E=\{0,1\}</annotation></semantics></math></span></span>，转移矩阵</p>
+
+$$
+P=\begin{pmatrix}
+1-a &amp; a \\
+b &amp; 1-b
+\end{pmatrix},\quad a,b\in(0,1).
+$$
+
+<p>求平稳分布<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span>.</p>
+<p>解：解<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi><mi>P</mi><mo>=</mo><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma P=\gamma</annotation></semantics></math></span></span>且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>γ</mi><mn>0</mn></msub><mo>+</mo><msub><mi>γ</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\gamma_0+\gamma_1=1</annotation></semantics></math></span></span>.<br>
+由<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>γ</mi><mn>0</mn></msub><mi>a</mi><mo>=</mo><msub><mi>γ</mi><mn>1</mn></msub><mi>b</mi></mrow><annotation encoding="application/x-tex">\gamma_0a=\gamma_1b</annotation></semantics></math></span></span>得<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>γ</mi><mn>0</mn></msub><mo>=</mo><mfrac><mrow><mi>b</mi></mrow><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\gamma_0=\frac{b}{a+b}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>γ</mi><mn>1</mn></msub><mo>=</mo><mfrac><mrow><mi>a</mi></mrow><mrow><mi>a</mi><mo>+</mo><mi>b</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\gamma_1=\frac{a}{a+b}</annotation></semantics></math></span></span>.</p>
+</details>
+<h2 id="图表示与通信类">图表示与通信类</h2>
+<p>对可数状态空间，可把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>P</mi><mrow><mi>x</mi><mi>y</mi></mrow></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P_{xy}&gt;0</annotation></semantics></math></span></span>看作有向边<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>→</mo><mi>y</mi></mrow><annotation encoding="application/x-tex">x\to y</annotation></semantics></math></span></span>，从而得到有向图表示. 图上“互相可达”的状态构成通信类(等价类).</p>
+<h3 id="例：给定转移矩阵的通信类与不变分布">例：给定转移矩阵的通信类与不变分布</h3>
+<p>设有3个等价类（通信类）<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mn>1</mn><mo separator="true">,</mo><mn>3</mn><mo>}</mo><mo>←</mo><mo>{</mo><mn>2</mn><mo>}</mo><mo separator="true">,</mo><mo>{</mo><mn>4</mn><mo separator="true">,</mo><mn>5</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">\{1, 3\} \leftarrow \{2\}, \{4, 5\}</annotation></semantics></math></span></span>.</p>
+<p>上述符号解释：</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mo>{</mo><mn>1</mn><mo separator="true">,</mo><mn>3</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">C_1=\{1,3\}</annotation></semantics></math></span></span> 为闭通信类(一旦进入不会离开)；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mn>2</mn></msub><mo>=</mo><mo>{</mo><mn>2</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">C_2=\{2\}</annotation></semantics></math></span></span> 为非闭通信类(可到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">1,3</annotation></semantics></math></span></span>，但<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">1,3</annotation></semantics></math></span></span>回不到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span></span>)；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mn>3</mn></msub><mo>=</mo><mo>{</mo><mn>4</mn><mo separator="true">,</mo><mn>5</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">C_3=\{4,5\}</annotation></semantics></math></span></span> 为闭通信类.</li>
+</ol>
+<p>转移矩阵为</p>
+
+$$
+P=\begin{pmatrix}
+\displaystyle \frac{1}{2} &amp; 0 &amp; \displaystyle \frac{1}{2} &amp; 0 &amp; 0 \\
+\displaystyle \frac{1}{4} &amp; \displaystyle \frac{1}{2} &amp; \displaystyle \frac{1}{4} &amp; 0 &amp; 0 \\
+\displaystyle \frac{1}{2} &amp; 0 &amp; \displaystyle \frac{1}{2} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \displaystyle \frac{1}{2} &amp; \displaystyle \frac{1}{2} \\
+0 &amp; 0 &amp; 0 &amp; \displaystyle \frac{1}{2} &amp; \displaystyle \frac{1}{2}
+\end{pmatrix}.
+$$
+
+<p><img src="https://pica.zhimg.com/80/v2-7bfbf0dacf629c08b0d3c43c13b044d4_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-7bfbf0dacf629c08b0d3c43c13b044d4_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="马尔可夫链示意图"></p>
+<details>
+<summary>例题：求上面矩阵的所有平稳分布</summary>
+<p>提示：平稳分布在瞬时(非闭)通信类上必须为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span>，并且可以在不同闭通信类上做凸组合.</p>
+<p>解：在闭类<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mn>1</mn></msub><mo>=</mo><mo>{</mo><mn>1</mn><mo separator="true">,</mo><mn>3</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">C_1=\{1,3\}</annotation></semantics></math></span></span>上，子矩阵为<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></mtd><mtd><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></mtd><mtd><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix}1/2&amp;1/2\\1/2&amp;1/2\end{pmatrix}</annotation></semantics></math></span></span>，其平稳分布为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(1/2,1/2)</annotation></semantics></math></span></span>.<br>
+在闭类<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mn>3</mn></msub><mo>=</mo><mo>{</mo><mn>4</mn><mo separator="true">,</mo><mn>5</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">C_3=\{4,5\}</annotation></semantics></math></span></span>上同理平稳分布为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(1/2,1/2)</annotation></semantics></math></span></span>.<br>
+状态<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn></mrow><annotation encoding="application/x-tex">2</annotation></semantics></math></span></span>为瞬时类，因此平稳分布中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>γ</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\gamma_2=0</annotation></semantics></math></span></span>.</p>
+<p>因此所有平稳分布为</p>
+
+$$
+\gamma^{(\alpha)}=\alpha\Big(\displaystyle \frac{1}{2},0,\displaystyle \frac{1}{2},0,0\Big)
++(1-\alpha)\Big(0,0,0,\displaystyle \frac{1}{2},\displaystyle \frac{1}{2}\Big),
+\quad \alpha\in[0,1].
+$$
+
+</details>
+<h2 id="对称随机游走与布朗运动的模拟">对称随机游走与布朗运动的模拟</h2>
+<h3 id="随机游走与折线过程">随机游走与折线过程</h3>
+<p>在区间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>0</mn><mo separator="true">,</mo><mi>T</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[0,T]</annotation></semantics></math></span></span>上取n部分分割</p>
+
+$$
+0=t_0 &lt; t_1 &lt; \cdots &lt; t_n=T,\quad \delta=t_j-t_{j-1}=\displaystyle \frac{T}{n}.
+$$
+
+<p>在格点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">t_j</annotation></semantics></math></span></span>上定义随机游走</p>
+
+$$
+B_{t_j}^n=X_j^n:=X_{j-1}^n+\sqrt{\delta}\,\xi_j
+=\sqrt{\delta}\sum_{i=1}^j\xi_i.
+$$
+
+<p>其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>ξ</mi><mi>j</mi></msub><msubsup><mo>)</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup></mrow><annotation encoding="application/x-tex">(\xi_j)_{j=1}^n</annotation></semantics></math></span></span>可取为</p>
+<ol>
+<li>对称 Bernoulli序列：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>ξ</mi><mi>j</mi></msub><mo>=</mo><mn>1</mn><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>ξ</mi><mi>j</mi></msub><mo>=</mo><mo>−</mo><mn>1</mn><mo>)</mo><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">P(\xi_j=1)=P(\xi_j=-1)=1/2</annotation></semantics></math></span></span>；</li>
+<li>标准正态：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ξ</mi><mi>j</mi></msub><mo>∼</mo><mi>N</mi><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\xi_j\sim N(0,1)</annotation></semantics></math></span></span>独立同分布r.v. .</li>
+</ol>
+<p>对非格点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>∈</mo><mo>(</mo><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub><mo separator="true">,</mo><msub><mi>t</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">t\in(t_{j-1},t_j)</annotation></semantics></math></span></span>，用线性插值定义<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>B</mi><mi>t</mi><mi>n</mi></msubsup></mrow><annotation encoding="application/x-tex">B_t^n</annotation></semantics></math></span></span>，得到折线过程.</p>
+<h4 id="增量的均值与方差">增量的均值与方差</h4>
+<p>对格点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mi>i</mi></msub><mo>≤</mo><msub><mi>t</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">t_i\le t_j</annotation></semantics></math></span></span>，有</p>
+
+$$
+E[B_{t_j}^n-B_{t_i}^n]=0,
+\quad
+\mathrm{Var}(B_{t_j}^n-B_{t_i}^n)=t_j-t_i=(j-i)\delta=(j-i)T/n.
+$$
+
+<details>
+<summary>例题：计算折线随机游走的协方差</summary>
+<p>在上面的定义下，证明对格点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mi>i</mi></msub><mo>≤</mo><msub><mi>t</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">t_i\le t_j</annotation></semantics></math></span></span>，有<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">v</mi></mrow><mo>(</mo><msubsup><mi>B</mi><mrow><msub><mi>t</mi><mi>i</mi></msub></mrow><mi>n</mi></msubsup><mo separator="true">,</mo><msubsup><mi>B</mi><mrow><msub><mi>t</mi><mi>j</mi></msub></mrow><mi>n</mi></msubsup><mo>)</mo><mo>=</mo><msub><mi>t</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\mathrm{Cov}(B_{t_i}^n,B_{t_j}^n)=t_i</annotation></semantics></math></span></span>.</p>
+<p>解：写<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>B</mi><mrow><msub><mi>t</mi><mi>j</mi></msub></mrow><mi>n</mi></msubsup><mo>=</mo><msqrt><mrow><mi>δ</mi></mrow></msqrt><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>j</mi></msubsup><msub><mi>ξ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">B_{t_j}^n=\sqrt{\delta}\sum_{k=1}^j\xi_k</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>B</mi><mrow><msub><mi>t</mi><mi>i</mi></msub></mrow><mi>n</mi></msubsup><mo>=</mo><msqrt><mrow><mi>δ</mi></mrow></msqrt><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi>i</mi></msubsup><msub><mi>ξ</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">B_{t_i}^n=\sqrt{\delta}\sum_{k=1}^i\xi_k</annotation></semantics></math></span></span>.<br>
+利用独立性与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>[</mo><msub><mi>ξ</mi><mi>k</mi></msub><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">E[\xi_k]=0</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">V</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow><mo>(</mo><msub><mi>ξ</mi><mi>k</mi></msub><mo>)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mathrm{Var}(\xi_k)=1</annotation></semantics></math></span></span>，得到</p>
+
+$$
+\mathrm{Cov}(B_{t_i}^n,B_{t_j}^n)=\delta\sum_{k=1}^i\mathrm{Var}(\xi_k)=i\delta=t_i.
+$$
+
+</details>
+<h3 id="布朗运动-维纳过程">布朗运动(维纳过程)</h3>
+<h4 id="定义：标准一维布朗运动">定义：标准一维布朗运动</h4>
+<p>在概率空间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi mathvariant="normal">Ω</mi><mo separator="true">,</mo><mrow><mi mathvariant="script">F</mi></mrow><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(\Omega,\mathcal{F},P)</annotation></semantics></math></span></span>上，实值过程<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>B</mi><mi>t</mi></msub><mo separator="true">;</mo><mi>t</mi><mo>≥</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(B_t; t\ge 0)</annotation></semantics></math></span></span>称为布朗运动，如果满足：</p>
+<ol>
+<li>初值：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mn>0</mn></msub><mo>(</mo><mi>ω</mi><mo>)</mo><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mi mathvariant="normal">∀</mi><mi>ω</mi></mrow><annotation encoding="application/x-tex">B_0(\omega)=0, \forall \omega</annotation></semantics></math></span></span>；</li>
+<li>路径连续：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∀</mi><mi>ω</mi></mrow><annotation encoding="application/x-tex">\forall \omega</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>↦</mo><msub><mi>B</mi><mi>t</mi></msub><mo>(</mo><mi>ω</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">t\mapsto B_t(\omega)</annotation></semantics></math></span></span>关于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>∈</mo><msup><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">t \in \mathbb{R}^+</annotation></semantics></math></span></span>连续；</li>
+<li>独立增量：对任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo separator="true">,</mo><mi>h</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t,h\ge 0</annotation></semantics></math></span></span>，增量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mrow><mi>t</mi><mo>+</mo><mi>h</mi></mrow></msub><mo>−</mo><msub><mi>B</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">B_{t+h}-B_t</annotation></semantics></math></span></span>与过去<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>B</mi><mi>u</mi></msub><mo>:</mo><mn>0</mn><mo>≤</mo><mi>u</mi><mo>≤</mo><mi>t</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">\{B_u:0\le u\le t\}</annotation></semantics></math></span></span>独立；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mrow><mi>t</mi><mo>+</mo><mi>h</mi></mrow></msub><mo>−</mo><msub><mi>B</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">B_{t+h}-B_t</annotation></semantics></math></span></span> 服从均值为0方差为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span></span>的高斯正态分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mi>h</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">N(0,h)</annotation></semantics></math></span></span>.</li>
+</ol>
+<p>从(3)(4)可推出平稳增量：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mrow><mi>t</mi><mo>+</mo><mi>h</mi></mrow></msub><mo>−</mo><msub><mi>B</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">B_{t+h}-B_t</annotation></semantics></math></span></span>的分布只依赖于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span></span>.</p>
+<details>
+<summary>例题：由定义推出协方差结构</summary>
+<p>证明：若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>B</mi><mi>t</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(B_t)</annotation></semantics></math></span></span>是标准布朗运动，则对任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo separator="true">,</mo><mi>t</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s,t\ge 0</annotation></semantics></math></span></span>，<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>[</mo><msub><mi>B</mi><mi>t</mi></msub><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">E[B_t]=0</annotation></semantics></math></span></span>且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">v</mi></mrow><mo>(</mo><msub><mi>B</mi><mi>s</mi></msub><mo separator="true">,</mo><msub><mi>B</mi><mi>t</mi></msub><mo>)</mo><mo>=</mo><mi>min</mi><mo>(</mo><mi>s</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathrm{Cov}(B_s,B_t)=\min(s,t)</annotation></semantics></math></span></span>.</p>
+<p>解：不失一般性令<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>≤</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">s\le t</annotation></semantics></math></span></span>，则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mi>t</mi></msub><mo>=</mo><msub><mi>B</mi><mi>s</mi></msub><mo>+</mo><mo>(</mo><msub><mi>B</mi><mi>t</mi></msub><mo>−</mo><msub><mi>B</mi><mi>s</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">B_t=B_s+(B_t-B_s)</annotation></semantics></math></span></span>，且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>B</mi><mi>t</mi></msub><mo>−</mo><msub><mi>B</mi><mi>s</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(B_t-B_s)</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">B_s</annotation></semantics></math></span></span>独立，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>[</mo><msub><mi>B</mi><mi>t</mi></msub><mo>−</mo><msub><mi>B</mi><mi>s</mi></msub><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">E[B_t-B_s]=0</annotation></semantics></math></span></span>.<br>
+于是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>[</mo><msub><mi>B</mi><mi>t</mi></msub><mo>]</mo><mo>=</mo><mi>E</mi><mo>[</mo><msub><mi>B</mi><mi>s</mi></msub><mo>]</mo><mo>=</mo><mo>⋯</mo><mo>=</mo><mi>E</mi><mo>[</mo><msub><mi>B</mi><mn>0</mn></msub><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">E[B_t]=E[B_s]=\cdots=E[B_0]=0</annotation></semantics></math></span></span>.<br>
+协方差为<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">v</mi></mrow><mo>(</mo><msub><mi>B</mi><mi>s</mi></msub><mo separator="true">,</mo><msub><mi>B</mi><mi>t</mi></msub><mo>)</mo><mo>=</mo><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">v</mi></mrow><mo>(</mo><msub><mi>B</mi><mi>s</mi></msub><mo separator="true">,</mo><msub><mi>B</mi><mi>s</mi></msub><mo>)</mo><mo>=</mo><mrow><mi mathvariant="normal">V</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi></mrow><mo>(</mo><msub><mi>B</mi><mi>s</mi></msub><mo>)</mo><mo>=</mo><mi>s</mi><mo>=</mo><mi>min</mi><mo>(</mo><mi>s</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathrm{Cov}(B_s,B_t)=\mathrm{Cov}(B_s,B_s)=\mathrm{Var}(B_s)=s=\min(s,t)</annotation></semantics></math></span></span>.</p>
+</details>
+<h4 id="Wiener-存在性定理">Wiener 存在性定理</h4>
+<p>存在一个概率空间，使得其上能构造满足上述(1)-(4)的布朗运动过程<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>B</mi><mi>t</mi></msub><mo separator="true">,</mo><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>T</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">\{B_t, 0\le t \le T\}</annotation></semantics></math></span></span>.</p>
+<h4 id="Donsker-定理-功能型中心极限定理">Donsker 定理(功能型中心极限定理)</h4>
+<p>当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">n\to\infty</annotation></semantics></math></span></span>时，折线随机游走过程<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msubsup><mi>B</mi><mi>t</mi><mi>n</mi></msubsup><msub><mo>)</mo><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>T</mi></mrow></msub></mrow><annotation encoding="application/x-tex">(B_t^n)_{0\le t\le T}</annotation></semantics></math></span></span>在路径空间意义下弱收敛到标准布朗运动<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>B</mi><mi>t</mi></msub><msub><mo>)</mo><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>T</mi></mrow></msub></mrow><annotation encoding="application/x-tex">(B_t)_{0\le t\le T}</annotation></semantics></math></span></span>.</p>
+<p>这给出了“用对称随机游走模拟布朗运动”的理论基础.</p>
+<h3 id="布朗运动的构造与存在性-两种经典思路">布朗运动的构造与存在性(两种经典思路)</h3>
+<h4 id="Wiener-的傅里叶级数构造-在-0-pi-上">Wiener 的傅里叶级数构造(在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>0</mn><mo separator="true">,</mo><mi>π</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[0,\pi]</annotation></semantics></math></span></span> 上)</h4>
+<p>令<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>G</mi><mi>m</mi></msub><msub><mo>)</mo><mrow><mi>m</mi><mo>≥</mo><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">(G_m)_{m\ge 0}</annotation></semantics></math></span></span>为独立的中心化标准<ruby> 高斯随机变量序列 <rp>(</rp><rt>正态随机变量</rt><rp>)</rp></ruby>，则过程</p>
+
+$$
+B_t=\displaystyle \frac{t}{\sqrt{\pi}}G_0
++\sqrt{\displaystyle \frac{2}{\pi}}\sum_{m\ge 1}\frac{\sin(mt)}{m}G_m,
+\quad t\in[0,\pi],
+$$
+
+<p>给出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>0</mn><mo separator="true">,</mo><mi>π</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[0,\pi]</annotation></semantics></math></span></span>上的标准布朗运动(适当意义下收敛并具有所需协方差结构).</p>
+<p><img src="https://pic3.zhimg.com/80/v2-96b512705a94162ac88fb19d0eb04cca_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-96b512705a94162ac88fb19d0eb04cca_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="1d Brownian Motion 图示"></p>
+<details>
+<summary>例题：用级数构造验证二阶矩</summary>
+<p>(思路题) 用独立性与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>[</mo><msub><mi>G</mi><mi>m</mi></msub><msub><mi>G</mi><mi>k</mi></msub><mo>]</mo><mo>=</mo><msub><mrow><mn mathvariant="bold">1</mn></mrow><mrow><mo>{</mo><mi>m</mi><mo>=</mo><mi>k</mi><mo>}</mo></mrow></msub></mrow><annotation encoding="application/x-tex">E[G_mG_k]=\mathbf{1}_{\{m=k\}}</annotation></semantics></math></span></span>，说明上式定义的过程满足<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>[</mo><msub><mi>B</mi><mi>t</mi></msub><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">E[B_t]=0</annotation></semantics></math></span></span>，并能推出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>[</mo><msub><mi>B</mi><mi>s</mi></msub><msub><mi>B</mi><mi>t</mi></msub><mo>]</mo><mo>=</mo><mi>min</mi><mo>(</mo><mi>s</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">E[B_sB_t]=\min(s,t)</annotation></semantics></math></span></span>的形式(需要用到傅里叶级数/正交性工具).</p>
+</details>
+<h4 id="Levy-的二分点递归构造-在-0-1-上">Lévy 的二分点递归构造(在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">[0,1]</annotation></semantics></math></span></span> 上)</h4>
+<ul>
+<li>定义n-阶二分点集  
+    $$
+    \mathbb{D}=\bigcup_{n\ge 0}\mathbb{D}_n,
+    \quad
+    \mathbb{D}_n=\left\{\displaystyle \frac{k}{2^n}:0\le k\le 2^n\right\}.
+    $$
+    
+</li>
+<li>取一族独立同分布随机变量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>Z</mi><mi>d</mi></msub><mo separator="true">,</mo><mi>d</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">D</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">(Z_d, d\in\mathbb{D})</annotation></semantics></math></span></span>，满足<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>d</mi></msub><mo>∼</mo><mi>N</mi><mo>(</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">Z_d\sim N(0,1)</annotation></semantics></math></span></span>. 设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">B_0=0</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mn>1</mn></msub><mo>=</mo><msub><mi>Z</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">B_1=Z_1</annotation></semantics></math></span></span>.</li>
+<li>递归步骤：
+<ul>
+<li>在递归的第n步中，构造<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mi>d</mi></msub><mo separator="true">,</mo><mi>d</mi><mo>∈</mo><msub><mrow><mi mathvariant="double-struck">D</mi></mrow><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">B_d, d\in \mathbb{D}_n</annotation></semantics></math></span></span>，满足<br>
+对于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>&lt;</mo><mi>s</mi><mo>&lt;</mo><mi>t</mi><mo>∈</mo><msub><mrow><mi mathvariant="double-struck">D</mi></mrow><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">r &lt; s &lt; t \in \mathbb{D}_n</annotation></semantics></math></span></span>, 高斯增量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mi>t</mi></msub><mo>−</mo><msub><mi>B</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">B_t - B_s</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mi>s</mi></msub><mo>−</mo><msub><mi>B</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">B_s - B_r</annotation></semantics></math></span></span>独立<br>
+对于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>∈</mo><msub><mrow><mi mathvariant="double-struck">D</mi></mrow><mi>n</mi></msub><mo separator="true">,</mo><msub><mi>B</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">d\in \mathbb{D}_n, B_d</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">Z_d</annotation></semantics></math></span></span>独立，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">D</mi></mrow><mo>∖</mo><msub><mrow><mi mathvariant="double-struck">D</mi></mrow><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">d\in \mathbb{D}\setminus \mathbb{D}_n</annotation></semantics></math></span></span></li>
+<li>假设已在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="double-struck">D</mi></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\mathbb{D}_{n-1}</annotation></semantics></math></span></span>上构造了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>，对新的中点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>∈</mo><msub><mrow><mi mathvariant="double-struck">D</mi></mrow><mi>n</mi></msub><mo>∖</mo><msub><mrow><mi mathvariant="double-struck">D</mi></mrow><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">d\in\mathbb{D}_n\setminus \mathbb{D}_{n-1}</annotation></semantics></math></span></span>，令  
+        $$
+        B_d^n=\displaystyle \frac{1}{2}\big(B_{d^+}+B_{d^-}\big)+2^{-\frac{n+1}{2}}Z_d,
+        $$
+        
+其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>d</mi><mo>+</mo></msup><mo>=</mo><mi>d</mi><mo>+</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">d^+=d+2^{-n}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>d</mi><mo>−</mo></msup><mo>=</mo><mi>d</mi><mo>−</mo><msup><mn>2</mn><mrow><mo>−</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">d^-=d-2^{-n}</annotation></semantics></math></span></span>. 该构造使得相邻增量是高斯且相互独立，并且当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">n\to\infty</annotation></semantics></math></span></span>时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>B</mi><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">B^n</annotation></semantics></math></span></span>一致收敛到布朗运动<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>.</li>
+</ul>
+</li>
+</ul>
+<details>
+<summary>例题：解释递归项的尺度 $2^{-(n+1)/2}$</summary>
+<p>(提示题) 在第<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>层新点之间的网格长度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mi>n</mi></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-n}</annotation></semantics></math></span></span>. 布朗运动增量的方差应与时间间隔成正比，因此在新点处加入的独立高斯扰动标准差应当与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mrow><msup><mn>2</mn><mrow><mo>−</mo><mi>n</mi></mrow></msup></mrow></msqrt></mrow><annotation encoding="application/x-tex">\sqrt{2^{-n}}</annotation></semantics></math></span></span>同阶，从而出现<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mi>n</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-n/2}</annotation></semantics></math></span></span>的尺度；常数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2^{-1/2}</annotation></semantics></math></span></span>来自对“取平均后仍保持正确方差”的校准.</p>
+</details>
+<h3 id="Poisson-点过程与计数过程">Poisson 点过程与计数过程</h3>
+<h4 id="点过程-到达时刻，等待时间">点过程(到达时刻，等待时间)</h4>
+<p>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="double-struck">R</mi></mrow><mo>+</mo></msub></mrow><annotation encoding="application/x-tex">\mathbb{R}_+</annotation></semantics></math></span></span>上的点过程可由递增随机变量序列表示：</p>
+
+$$
+0 &lt; T_1 &lt; T_2 &lt; \cdots &lt; T_n &lt; \cdots,\quad T_n\in\mathbb{R}_+.
+$$
+
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">T_n</annotation></semantics></math></span></span>表示第<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>次事件发生的时刻. 等待时间(相邻到达间隔)定义为</p>
+
+$$
+S_1=T_1,\quad S_2=T_2-T_1,\quad \ldots,\quad S_n=T_n-T_{n-1},\quad\ldots
+$$
+
+<h4 id="计数过程">计数过程</h4>
+<p>与点过程等价的计数过程（随机计数函数）定义为</p>
+
+$$
+N_t=\sup\{n:T_n\le t\}=\sum_{j\ge 1}\mathbf{1}_{\{T_j\le t\}},\quad t\ge 0.
+$$
+
+<p>其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>t</mi></msub></mrow><annotation encoding="application/x-tex">N_t</annotation></semantics></math></span></span>表示时刻<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>之前(含<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>)发生的事件总数. 显然<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">T_1&gt;0</annotation></semantics></math></span></span>且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">N_0=0</annotation></semantics></math></span></span>.</p>
+<p>对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><mi>s</mi><mo>&lt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">0\le s&lt;t</annotation></semantics></math></span></span>，增量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>t</mi></msub><mo>−</mo><msub><mi>N</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">N_t-N_s</annotation></semantics></math></span></span>表示区间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>s</mi><mo separator="true">,</mo><mi>t</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[s,t]</annotation></semantics></math></span></span>内事件发生的数量.</p>
+<p>点过程与计数过程信息等价，常用关系包括：</p>
+
+$
+\{N_t\ge n\}=\{T_n\le t\},$
+<br>
+$
+\{N_t=n\}=\{T_n\le t &lt; T_{n+1}\},$
+<br>
+$
+\{N_s &lt; n\le N_t\}=\{s&lt;  T_n\le t\}.
+$
+
+<details>
+<summary>例题：用 $N_t$ 表示 $T_n$ 的分布函数</summary>
+<p>证明：对任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t\ge 0</annotation></semantics></math></span></span>，有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>T</mi><mi>n</mi></msub><mo>≤</mo><mi>t</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><msub><mi>N</mi><mi>t</mi></msub><mo>≥</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(T_n\le t)=P(N_t\ge n)</annotation></semantics></math></span></span>.</p>
+<p>解：由定义<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>t</mi></msub><mo>=</mo><mi>sup</mi><mo>{</mo><mi>k</mi><mo>:</mo><msub><mi>T</mi><mi>k</mi></msub><mo>≤</mo><mi>t</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">N_t=\sup\{k:T_k\le t\}</annotation></semantics></math></span></span>，事件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>N</mi><mi>t</mi></msub><mo>≥</mo><mi>n</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">\{N_t\ge n\}</annotation></semantics></math></span></span>等价于“至少发生了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>次事件且第<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>次发生在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>之前”，即<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>T</mi><mi>n</mi></msub><mo>≤</mo><mi>t</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">\{T_n\le t\}</annotation></semantics></math></span></span>.</p>
+</details>
+<h3 id="Poisson-过程">Poisson 过程</h3>
+<h4 id="定义：泊松过程-计数过程观点">定义：泊松过程(计数过程观点)</h4>
+<p>称点过程<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>T</mi><mi>n</mi></msub><mo separator="true">,</mo><mi>n</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">N</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">(T_n, n\in \mathbb{N})</annotation></semantics></math></span></span>或它的计数函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>N</mi><mi>t</mi></msub><mo separator="true">,</mo><mi>t</mi><mo>≥</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(N_t, t\ge 0)</annotation></semantics></math></span></span>为泊松过程，如果满足：</p>
+<ol>
+<li>独立增量：对任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>=</mo><msub><mi>t</mi><mn>0</mn></msub><mo>&lt;</mo><msub><mi>t</mi><mn>1</mn></msub><mo>&lt;</mo><mo>⋯</mo><mo>&lt;</mo><msub><mi>t</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">0=t_0&lt;t_1&lt;\cdots&lt;t_n</annotation></semantics></math></span></span>，增量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>N</mi><mrow><msub><mi>t</mi><mi>j</mi></msub></mrow></msub><mo>−</mo><msub><mi>N</mi><mrow><msub><mi>t</mi><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></msub><msubsup><mo>)</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup></mrow><annotation encoding="application/x-tex">(N_{t_j}-N_{t_{j-1}})_{j=1}^n</annotation></semantics></math></span></span>相互独立；</li>
+<li>平稳增量：对任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><mi>s</mi><mo>&lt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">0\le s&lt;t</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>t</mi></msub><mo>−</mo><msub><mi>N</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">N_t-N_s</annotation></semantics></math></span></span>的分布只依赖于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>−</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">t-s</annotation></semantics></math></span></span>而不依赖<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo separator="true">,</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">t, s</annotation></semantics></math></span></span>本身.</li>
+</ol>
+<blockquote>
+<p>补充(标准版本常见的“简单性”条件)：还常要求小区间内至多发生一次事件的概率为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>−</mo><mi>o</mi><mo>(</mo><mi>h</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">1-o(h)</annotation></semantics></math></span></span>，例如<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><msub><mi>N</mi><mrow><mi>t</mi><mo>+</mo><mi>h</mi></mrow></msub><mo>−</mo><msub><mi>N</mi><mi>t</mi></msub><mo>≥</mo><mn>2</mn><mo>)</mo><mo>=</mo><mi>o</mi><mo>(</mo><mi>h</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(N_{t+h}-N_t\ge 2)=o(h)</annotation></semantics></math></span></span>. 在计数过程语境下，这可排除“成批到达”，确保得到的是(非复合的)泊松过程.</p>
+</blockquote>
+<h4 id="性质：增量为-Poisson-分布与速率-密度-参数">性质：增量为 Poisson 分布与速率(密度)参数</h4>
+<p>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>N</mi><mi>t</mi></msub><mo separator="true">,</mo><mi>t</mi><mo>≥</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(N_t, t\ge 0)</annotation></semantics></math></span></span>是泊松过程的计数函数，存在密度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda&gt;0</annotation></semantics></math></span></span>使得，对任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><mi>s</mi><mo>&lt;</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">0\le s&lt;t</annotation></semantics></math></span></span>，有</p>
+
+$$
+P(N_t-N_s=k)=e^{-\lambda(t-s)}\displaystyle \frac{[\lambda(t-s)]^k}{k!},
+\quad k\in\mathbb{N}.
+$$
+
+<p>（参数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>(</mo><mi>t</mi><mo>−</mo><mi>s</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\lambda (t-s)</annotation></semantics></math></span></span>的泊松分布）</p>
+<p>则定义<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>称为泊松过程的密度(或速率)，等于单位时间内平均事件数：</p>
+
+$$
+E[N_{t+1}-N_t]=\lambda.
+$$
+
+<h4 id="首次到达时间与无记忆性">首次到达时间与无记忆性</h4>
+<p>记第一次事件发生时间为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">T_1</annotation></semantics></math></span></span>，则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">T_1</annotation></semantics></math></span></span>服从参数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>的指数分布，即密度函数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\lambda e^{-\lambda t}</annotation></semantics></math></span></span>. 等价地</p>
+
+$$
+P(T_1&gt;t)=e^{-\lambda t},\quad t\ge 0.
+$$
+
+<p>并且对任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s&gt;0</annotation></semantics></math></span></span>，在时刻<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span></span>之后“下一次事件”的等待时间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><msub><mi>N</mi><mi>s</mi></msub><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">T_{N_s+1}-s</annotation></semantics></math></span></span>仍服从参数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>的指数分布(体现无记忆性).</p>
+<details>
+<summary>例题：由 Poisson 增量推出 $T_1$ 的分布</summary>
+<p>设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>N</mi><mi>t</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(N_t)</annotation></semantics></math></span></span>是速率<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>的泊松过程. 证明<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">T_1</annotation></semantics></math></span></span>服从指数分布，并写出其密度.</p>
+<p>解：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>T</mi><mn>1</mn></msub><mo>&gt;</mo><mi>t</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">\{T_1&gt;t\}</annotation></semantics></math></span></span>等价于“在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>0</mn><mo separator="true">,</mo><mi>t</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[0,t]</annotation></semantics></math></span></span>内没有事件”，即<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>N</mi><mi>t</mi></msub><mo>=</mo><mn>0</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">\{N_t=0\}</annotation></semantics></math></span></span>.<br>
+因此</p>
+
+$$
+P(T_1&gt;t)=P(N_t=0)=e^{-\lambda t}.
+$$
+
+<p>对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>求导得密度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mrow><msub><mi>T</mi><mn>1</mn></msub></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mi>λ</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">f_{T_1}(t)=\lambda e^{-\lambda t}</annotation></semantics></math></span></span>.</p>
+</details>
+<details>
+<summary>例题：计算“下一次到达的等待时间”</summary>
+<p>令<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s&gt;0</annotation></semantics></math></span></span>，证明<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><msub><mi>N</mi><mi>s</mi></msub><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">T_{N_s+1}-s</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="script">F</mi></mrow><mi>s</mi></msub><mo>=</mo><mi>σ</mi><mo>(</mo><msub><mi>N</mi><mi>u</mi></msub><mo>:</mo><mn>0</mn><mo>≤</mo><mi>u</mi><mo>≤</mo><mi>s</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{F}_s=\sigma(N_u:0\le u\le s)</annotation></semantics></math></span></span>独立且服从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">E</mi><mi mathvariant="normal">x</mi><mi mathvariant="normal">p</mi></mrow><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathrm{Exp}(\lambda)</annotation></semantics></math></span></span>.</p>
+<p>说明：这是泊松过程的强 Markov 性与平稳独立增量的典型结论.<br>
+一种直观推导是：对任意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">h\ge 0</annotation></semantics></math></span></span>，</p>
+
+$$
+\{T_{N_s+1}-s&gt;h\}\iff \{N_{s+h}-N_s=0\}.
+$$
+
+<p>右侧与过去<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="script">F</mi></mrow><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal{F}_s</annotation></semantics></math></span></span>独立，且其概率为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>h</mi></mrow></msup></mrow><annotation encoding="application/x-tex">e^{-\lambda h}</annotation></semantics></math></span></span>，因此等待时间为指数分布并与过去独立.</p>
+</details>
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E6%A6%82%E7%BB%9F/" class="">
+              概统
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/GaiTong/随机过程简介/" target="_blank" title="随机过程简介">https://kotokowa.github.io/physics/GaiTong/随机过程简介/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/GaiTong/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">方差分析与回归分析</div>
+      </div>
+      <!-- <div class="content">
+        方差分析与回归分析
+单因素方差分析（One-way ANOVA）
+实验背景与基本概念
+在实验中：
+
+被观测的量称为实验指
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">随机过程简介</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%BA%8F%E5%88%97-%E7%A6%BB%E6%95%A3-%EF%BC%8C%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B-%E8%BF%9E%E7%BB%AD"><span class="toc-text">随机序列(离散)，随机过程(连续)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E5%BA%8F%E5%88%97-%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4%E8%BF%87%E7%A8%8B-%E4%B8%8E%E4%BF%A1%E6%81%AF%E6%B5%81"><span class="toc-text">随机序列(离散时间过程)与信息流</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B-%E8%BF%9E%E7%BB%AD%E8%BF%87%E7%A8%8B-%E4%B8%8E%E6%A0%B7%E6%9C%AC%E8%BD%A8%E9%81%93"><span class="toc-text">随机过程(连续过程)与样本轨道</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%83%85%E5%BD%A2"><span class="toc-text">常见情形</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Markov-%E9%93%BE"><span class="toc-text">Markov 链</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A%E7%A6%BB%E6%95%A3%E6%97%B6%E9%97%B4-Markov-%E9%93%BE"><span class="toc-text">定义：离散时间 Markov 链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E7%90%86%EF%BC%9A%E7%94%B1%E9%80%92%E6%8E%A8-%E7%8B%AC%E7%AB%8B%E5%99%AA%E5%A3%B0%E6%9E%84%E9%80%A0-Markov-%E9%93%BE"><span class="toc-text">引理：由递推+独立噪声构造 Markov 链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AC%E7%A7%BB%E7%9F%A9%E9%98%B5%E3%80%81%E9%BD%90%E6%AC%A1%E6%80%A7%E4%B8%8E%E5%88%9D%E5%A7%8B%E5%88%86%E5%B8%83"><span class="toc-text">转移矩阵、齐次性与初始分布</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E5%8F%98%E5%88%86%E5%B8%83-stationary-invariant-equilibrium-distribution"><span class="toc-text">不变分布(stationary &#x2F; invariant &#x2F; equilibrium distribution)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E8%A1%A8%E7%A4%BA%E4%B8%8E%E9%80%9A%E4%BF%A1%E7%B1%BB"><span class="toc-text">图表示与通信类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9A%E7%BB%99%E5%AE%9A%E8%BD%AC%E7%A7%BB%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%9A%E4%BF%A1%E7%B1%BB%E4%B8%8E%E4%B8%8D%E5%8F%98%E5%88%86%E5%B8%83"><span class="toc-text">例：给定转移矩阵的通信类与不变分布</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E4%B8%8E%E5%B8%83%E6%9C%97%E8%BF%90%E5%8A%A8%E7%9A%84%E6%A8%A1%E6%8B%9F"><span class="toc-text">对称随机游走与布朗运动的模拟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E4%B8%8E%E6%8A%98%E7%BA%BF%E8%BF%87%E7%A8%8B"><span class="toc-text">随机游走与折线过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A2%9E%E9%87%8F%E7%9A%84%E5%9D%87%E5%80%BC%E4%B8%8E%E6%96%B9%E5%B7%AE"><span class="toc-text">增量的均值与方差</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E6%9C%97%E8%BF%90%E5%8A%A8-%E7%BB%B4%E7%BA%B3%E8%BF%87%E7%A8%8B"><span class="toc-text">布朗运动(维纳过程)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A%E6%A0%87%E5%87%86%E4%B8%80%E7%BB%B4%E5%B8%83%E6%9C%97%E8%BF%90%E5%8A%A8"><span class="toc-text">定义：标准一维布朗运动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Wiener-%E5%AD%98%E5%9C%A8%E6%80%A7%E5%AE%9A%E7%90%86"><span class="toc-text">Wiener 存在性定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Donsker-%E5%AE%9A%E7%90%86-%E5%8A%9F%E8%83%BD%E5%9E%8B%E4%B8%AD%E5%BF%83%E6%9E%81%E9%99%90%E5%AE%9A%E7%90%86"><span class="toc-text">Donsker 定理(功能型中心极限定理)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%83%E6%9C%97%E8%BF%90%E5%8A%A8%E7%9A%84%E6%9E%84%E9%80%A0%E4%B8%8E%E5%AD%98%E5%9C%A8%E6%80%A7-%E4%B8%A4%E7%A7%8D%E7%BB%8F%E5%85%B8%E6%80%9D%E8%B7%AF"><span class="toc-text">布朗运动的构造与存在性(两种经典思路)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Wiener-%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0%E6%9E%84%E9%80%A0-%E5%9C%A8-0-pi-%E4%B8%8A"><span class="toc-text">Wiener 的傅里叶级数构造(在 [0,π][0,\pi][0,π] 上)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Levy-%E7%9A%84%E4%BA%8C%E5%88%86%E7%82%B9%E9%80%92%E5%BD%92%E6%9E%84%E9%80%A0-%E5%9C%A8-0-1-%E4%B8%8A"><span class="toc-text">Lévy 的二分点递归构造(在 [0,1][0,1][0,1] 上)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Poisson-%E7%82%B9%E8%BF%87%E7%A8%8B%E4%B8%8E%E8%AE%A1%E6%95%B0%E8%BF%87%E7%A8%8B"><span class="toc-text">Poisson 点过程与计数过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%82%B9%E8%BF%87%E7%A8%8B-%E5%88%B0%E8%BE%BE%E6%97%B6%E5%88%BB%EF%BC%8C%E7%AD%89%E5%BE%85%E6%97%B6%E9%97%B4"><span class="toc-text">点过程(到达时刻，等待时间)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%A1%E6%95%B0%E8%BF%87%E7%A8%8B"><span class="toc-text">计数过程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Poisson-%E8%BF%87%E7%A8%8B"><span class="toc-text">Poisson 过程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A%E6%B3%8A%E6%9D%BE%E8%BF%87%E7%A8%8B-%E8%AE%A1%E6%95%B0%E8%BF%87%E7%A8%8B%E8%A7%82%E7%82%B9"><span class="toc-text">定义：泊松过程(计数过程观点)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%A7%E8%B4%A8%EF%BC%9A%E5%A2%9E%E9%87%8F%E4%B8%BA-Poisson-%E5%88%86%E5%B8%83%E4%B8%8E%E9%80%9F%E7%8E%87-%E5%AF%86%E5%BA%A6-%E5%8F%82%E6%95%B0"><span class="toc-text">性质：增量为 Poisson 分布与速率(密度)参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A6%96%E6%AC%A1%E5%88%B0%E8%BE%BE%E6%97%B6%E9%97%B4%E4%B8%8E%E6%97%A0%E8%AE%B0%E5%BF%86%E6%80%A7"><span class="toc-text">首次到达时间与无记忆性</span></a></li></ol></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%AE%80%E4%BB%8B/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-24</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%AE%80%E4%BB%8B/">随机过程简介</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-17</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/">方差分析与回归分析</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GuangXue/%E5%A4%9A%E5%85%89%E6%9D%9F%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%A1%8D%E5%B0%84%E3%80%81%E5%85%89%E6%A0%85/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-16</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GuangXue/%E5%A4%9A%E5%85%89%E6%9D%9F%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%A1%8D%E5%B0%84%E3%80%81%E5%85%89%E6%A0%85/">多光束薄膜干涉与衍射、光栅</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-11</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">假设检验</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-10</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E5%8F%82%E6%95%B0%E4%BC%B0%E8%AE%A1/">参数估计</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script defer="">
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(66, 185, 133, 0.8)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 -  <a target="_blank" rel="noopener" href="https://github.com/kotokowa">kotokowa</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
+  <div class="dark-content">
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
+  </div>
+</div>
+
+<script defer="">
+  $(function() {
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
+    if (isDark) {
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
+    }
+  }
+</script>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer="">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script defer="" src="/physics/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/physics/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js class="" server="netease" type="playlist" id="17453633682" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="none" volume="0.4" list-folded="true">
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script async="">
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
+    
+
+    <script src="/physics/js/utils/index.js"></script>
+    <script src="/physics/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/physics/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/physics/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/physics/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/physics/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/physics/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax="">
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+        <script type="text/javascript">
+  var utteranceComment = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceComment.Theme = 'github-dark';
+    } else {
+      utteranceComment.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceComment.Theme)
+      utterances.setAttribute('repo', 'kotokowa/physics-utterances')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceComment.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+      
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script async="" src="/physics/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>
