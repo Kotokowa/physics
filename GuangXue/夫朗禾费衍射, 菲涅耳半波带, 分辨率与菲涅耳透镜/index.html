@@ -1,0 +1,2556 @@
+<!DOCTYPE html><html><!-- meta/link... --><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>夫朗禾费衍射, 菲涅耳半波带, 分辨率与菲涅耳透镜 | Hexo</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/physics/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/physics/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/physics/css/style.css">
+
+  
+  
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/physics/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/physics/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+  
+  <!-- 预加载动画 -->
+  
+  
+  <body><div class="preloader_6" id="loader">
+  <div class="loader"></div>
+</div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
+
+  
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer="">
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/physics/js/swiper/swiper.min.js"></script>
+<script src="/physics/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/physics/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/physics/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/physics/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">Hexo</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/physics/" class="logo">Hexo</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/physics/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/physics/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        夫朗禾费衍射, 菲涅耳半波带, 分辨率与菲涅耳透镜
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2025-12-23 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>衍射与成像中的傅里叶观点: 夫朗禾费衍射, 菲涅耳半波带, 分辨率与菲涅耳透镜</h1>
+<p>这份笔记围绕一个核心链条展开: 物理空间中的孔径/结构 -&gt; 通过传播(衍射积分)映射到频谱空间 -&gt; 在屏上形成强度图样 -&gt; 图样的主瓣尺度决定分辨率上限.<br>
+图示部分我用文字把关键几何关系补全, 便于在没有插图时仍能跟上推导.</p>
+<h2 id="标量衍射积分与傍轴近似">标量衍射积分与傍轴近似</h2>
+<h3 id="二维情况的积分形式-子波源观点">二维情况的积分形式(子波源观点)</h3>
+<p>把孔径面(或某个积分曲面)上每个微元看作子波源, 到观察点叠加, 得到复振幅(复振幅而非强度):</p>
+<p>(对应原笔记的括号解释: 子波源, 球面波传播因子, 倾斜因子)</p>
+
+$$
+\displaystyle \widetilde{U}_P \propto \oint_{\Sigma} \widetilde{U}_0 \, d\Sigma \, \frac{e^{ikr}}{r} \, f(\theta)
+$$
+
+<p>这里:<br>
+(1) \widetilde{U}_0 是积分面上各点的复振幅(一般包含幅与相位).<br>
+(2) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>k</mi><mi>r</mi></mrow></msup></mrow><mrow><mi>r</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{e^{ikr}}{r}</annotation></semantics></math></span></span> 是球面波传播核.<br>
+(3) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(\theta)</annotation></semantics></math></span></span> 是倾斜因子(obliquity factor), 一般形式较复杂.<br>
+(4) 这个积分通常难以解析计算, 常见做法是数值计算或在特定几何下引入特殊函数.</p>
+<h3 id="傍轴近似的要点">傍轴近似的要点</h3>
+<p>我们只考虑小角度传播(傍轴, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>∼</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\theta \sim 0</annotation></semantics></math></span></span>). 在这种情况下:</p>
+<p>(1) 不同子波源到观察点的倾角差异很小, 倾斜因子可近似为常数:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>θ</mi><mo>)</mo><mo>∼</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(\theta) \sim 1</annotation></semantics></math></span></span>.</p>
+<p>(2) 重要提醒(对应原笔记强调): 我们在衍射里讨论的是复振幅叠加. 若把相位变化也一起忽略, 那么积分只剩常数乘面积, 就不会出现角向变化, 也就没有干涉/衍射图样.</p>
+<h2 id="一维夫朗禾费衍射-单缝的-sinc-图样">一维夫朗禾费衍射: 单缝的 sinc 图样</h2>
+<h3 id="几何与近似-对应插图文字化">几何与近似(对应插图文字化)</h3>
+<p>图示(坐标系与变量):<br>
+(1) 缝沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 方向无限长, 只考虑 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 方向宽度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>.<br>
+(2) 观察方向与光轴夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>.<br>
+(3) 缝中一点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 到远处观察点的距离近似为:</p>
+
+$$
+\displaystyle r \approx r_0 - x\sin\theta
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r_0</annotation></semantics></math></span></span> 是从缝中心到观察点的距离(或等效常量距离).</p>
+<h3 id="复振幅积分与结果">复振幅积分与结果</h3>
+<p>孔内振幅近似均匀, 孔外为 0(透射函数/孔径函数的思想). 于是:</p>
+
+$$
+\displaystyle \widetilde{U}_P \approx \frac{\widetilde{U}_0}{r_0}\int_{-b/2}^{b/2} e^{ik(r_0-x\sin\theta)}\,dx
+$$
+
+<p>把与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 无关的常量并入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle C=\frac{\widetilde{U}_0}{r_0}e^{ikr_0}
+$$
+
+<p>得到:</p>
+
+$$
+\displaystyle \widetilde{U}_P = C\int_{-b/2}^{b/2} e^{-ikx\sin\theta}\,dx
+$$
+
+<p>直接积分:</p>
+
+$$
+\displaystyle \widetilde{U}_P
+= C\,\frac{\sin\left(\frac{1}{2}kb\sin\theta\right)}{\frac{1}{2}k\sin\theta}
+$$
+
+<p>令</p>
+
+$$
+\displaystyle \beta=\frac{1}{2}kb\sin\theta
+$$
+
+<p>并把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">Cb</annotation></semantics></math></span></span> 记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">A_0</annotation></semantics></math></span></span>, 得到经典 sinc 形式:</p>
+
+$$
+\displaystyle \widetilde{U}_P = A_0\frac{\sin\beta}{\beta}
+$$
+
+<p>强度为:</p>
+
+$$
+\displaystyle I(\theta)=I_0\left(\frac{\sin\beta}{\beta}\right)^2
+$$
+
+<p>图样要点(对应原笔记"注意这里是没有光"):<br>
+当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mi>m</mi><mi>π</mi></mrow><annotation encoding="application/x-tex">\beta=m\pi</annotation></semantics></math></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m\neq 0</annotation></semantics></math></span></span> 时, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>β</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sin\beta=0</annotation></semantics></math></span></span>, 出现暗纹(严格为 0 光强).<br>
+对应角位置由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>k</mi><mi>b</mi><mi>sin</mi><mi>θ</mi><mo>=</mo><mi>m</mi><mi>π</mi></mrow><annotation encoding="application/x-tex">\frac{1}{2}kb\sin\theta=m\pi</annotation></semantics></math></span></span> 给出.</p>
+<h2 id="透镜焦平面与傅里叶变换形式-一维到二维">透镜焦平面与傅里叶变换形式(一维到二维)</h2>
+<h3 id="真实实验中用屏坐标表示角度">真实实验中用屏坐标表示角度</h3>
+<p>图示(透镜后焦平面坐标):<br>
+屏上位置记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ξ</mi></mrow><annotation encoding="application/x-tex">\xi</annotation></semantics></math></span></span>, 透镜焦距为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>. 在傍轴条件下:</p>
+
+$$
+\displaystyle \sin\theta \approx \tan\theta \approx \frac{\xi}{f}
+$$
+
+<p>代回单缝积分:</p>
+
+$$
+\displaystyle \widetilde{U}_P \approx C\int_{-b/2}^{b/2} e^{-ik\frac{\xi}{f}x}\,dx
+$$
+
+<p>把指数改写成傅里叶变换标准形式. 令:</p>
+
+$$
+\displaystyle k=\frac{2\pi}{\lambda},\quad p=\frac{\xi}{\lambda f}
+$$
+
+<p>则:</p>
+
+$$
+\displaystyle \widetilde{U}_P \approx C\int_{-b/2}^{b/2} e^{-i2\pi p x}\,dx
+$$
+
+<p>这已经是孔径函数的傅里叶变换雏形.</p>
+<h3 id="一般孔径函数与逆问题">一般孔径函数与逆问题</h3>
+<p>若孔内复振幅分布不是常数, 用孔径函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span></span> 统一描述(孔外为 0):</p>
+
+$$
+\displaystyle \widetilde{U}_P \approx C\int_{-\infty}^{\infty} f(x)\,e^{-i2\pi p x}\,dx
+$$
+
+<p>形式上, 这是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span></span> 的傅里叶变换. 因而也存在形式上的逆变换(在理想条件下讨论):</p>
+
+$$
+\displaystyle f(x)\propto \int_{-\infty}^{\infty} \widetilde{U}_P(p)\,e^{i2\pi p x}\,dp
+$$
+
+<p>这条"逆问题"思路在成像与衍射反演里很重要: 屏上的复振幅(或其可测部分)包含了孔径/物体的空间频率信息.</p>
+<h3 id="二维推广与矩形孔-可分离变量">二维推广与矩形孔(可分离变量)</h3>
+<p>二维情况下, 焦平面坐标用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>ξ</mi><mo separator="true">,</mo><mi>η</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(\xi,\eta)</annotation></semantics></math></span></span>, 定义:</p>
+
+$$
+\displaystyle p=\frac{\xi}{\lambda f},\quad q=\frac{\eta}{\lambda f}
+$$
+
+<p>夫朗禾费衍射给出:</p>
+
+$$
+\displaystyle U_P = C\iint_{\Sigma} f(x,y)\,e^{-2\pi i(xp+yq)}\,dx\,dy
+$$
+
+<p>对矩形孔, 若孔径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>∈</mo><mo>[</mo><mo>−</mo><mi>a</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo separator="true">,</mo><mi>a</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">x\in[-a/2,a/2]</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>∈</mo><mo>[</mo><mo>−</mo><mi>b</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo separator="true">,</mo><mi>b</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>]</mo></mrow><annotation encoding="application/x-tex">y\in[-b/2,b/2]</annotation></semantics></math></span></span>, 且孔内为常数, 则分离变量后:</p>
+
+$$
+\displaystyle U_P
+= C'\,\frac{\sin(\pi a p)}{\pi a p}\,\frac{\sin(\pi b q)}{\pi b q}
+$$
+
+<p>图样要点(对应原笔记强调"没有光"):<br>
+当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>(</mo><mi>π</mi><mi>a</mi><mi>p</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sin(\pi a p)=0</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>(</mo><mi>π</mi><mi>b</mi><mi>q</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sin(\pi b q)=0</annotation></semantics></math></span></span> (且分母不同时为 0) 时, 出现成排暗线, 形成二维 sinc 乘积的棋盘式暗纹结构.</p>
+<h2 id="圆孔夫朗禾费衍射-Airy-斑与分辨率">圆孔夫朗禾费衍射: Airy 斑与分辨率</h2>
+<h3 id="Airy-图样的结构与第一极小">Airy 图样的结构与第一极小</h3>
+<p>圆孔半径 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span></span>, 直径 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mo>=</mo><mn>2</mn><mi>R</mi></mrow><annotation encoding="application/x-tex">D=2R</annotation></semantics></math></span></span>. 由于几何对称性, 衍射图样旋转对称. 精确积分会引入第一类贝塞尔函数(这是原笔记提到的"特殊函数").</p>
+<p>关键结论: 第一暗环(第一极小)满足:</p>
+
+$$
+\displaystyle kR\sin\theta_{\min}=1.22\pi
+$$
+
+<p>因此:</p>
+
+$$
+\displaystyle \theta_{\min}\approx 1.22\frac{\lambda}{D}
+$$
+
+<p>对应焦平面(或屏上)半径(原笔记用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 表示屏上距离):</p>
+
+$$
+\displaystyle p\approx f\theta_{\min}\approx 1.22\frac{\lambda f}{D}
+$$
+
+<p>趋势(对应原笔记):<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span> 增大或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span> 变小, 主极大变窄, 光斑更小, 分辨能力更强.</p>
+<h3 id="没有孔还有-Airy-吗-的补全解释">"没有孔还有 Airy 吗"的补全解释</h3>
+<p>原笔记提出: 没有孔也可能出现类似的"滤波"效应. 更精确的表述是:</p>
+<p>(1) 产生严格 Airy 点扩散函数(PSF)需要一个等效的圆形截止(圆形孔径/瞳孔), 这通常来自透镜的有限口径或系统的有限数值孔径.<br>
+(2) 从频谱角度看, 传播与成像系统会限制可传递的空间频率(高频对应更大角度或更高横向波矢). 这等效于在频谱空间做低通滤波, 从而不可避免地产生有限分辨率与扩散斑.</p>
+<p>因此, “孔"既可以是实际的屏上开孔, 也可以是成像系统的"有效孔径”(瞳孔, NA 限制). 这也呼应了后面关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span> 是"空间滤波范围"的理解.</p>
+<h2 id="分辨率-数值孔径-光刻中的最小线宽">分辨率, 数值孔径, 光刻中的最小线宽</h2>
+<h3 id="Rayleigh-判据与屏上分辨极限">Rayleigh 判据与屏上分辨极限</h3>
+<p>图示(两个非相干点源经圆孔成像/衍射):<br>
+当一个点的主极大与另一个点的第一极小大致重合时, 认为"刚好可分辨"(Rayleigh 判据).<br>
+因此两点在屏上的最小可分辨间距可取:</p>
+
+$$
+\displaystyle \delta p \gtrsim 1.22\frac{\lambda f}{D}
+$$
+
+<p>把分辨率写成"空间频率意义"的形式:</p>
+
+$$
+\displaystyle \frac{1}{\delta p}\sim \frac{D}{1.22\,\lambda f}
+$$
+
+<h3 id="D-的更本质含义-空间频率滤波范围"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span> 的更本质含义: 空间频率滤波范围</h3>
+<p>原笔记强调: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span> 不只是"屏上的洞洞", 更是系统允许通过的空间频率范围(等效低通滤波器的截止).<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span> 越小, 截止越低, 高频信息丢失越多, 成像越模糊, 分辨率越差.<br>
+反过来, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span> 越大, 可通过更高空间频率, 细节保留更多, 分辨率更好.</p>
+<h3 id="折射率与真空波长表示">折射率与真空波长表示</h3>
+<p>若介质折射率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>, 介质内波长:</p>
+
+$$
+\displaystyle \lambda=\frac{\lambda_0}{n}
+$$
+
+<p>则:</p>
+
+$$
+\displaystyle \frac{1}{\delta p}\sim \frac{D}{1.22\,(\lambda_0/n)\,f}=\frac{nD}{1.22\,\lambda_0 f}
+$$
+
+<h3 id="数值孔径-NA-的引入">数值孔径 NA 的引入</h3>
+<p>小角近似下, 若有效孔径直径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span>, 焦距为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>, 则几何上:</p>
+
+$$
+\displaystyle \mathrm{NA}\approx n\sin\theta\approx \frac{nD}{2f}
+$$
+
+<p>把上式代入分辨率, 得到常见形式:</p>
+
+$$
+\displaystyle \frac{1}{\delta p}\sim \frac{2}{1.22}\frac{\mathrm{NA}}{\lambda_0}
+$$
+
+<h3 id="光刻中的-Critical-Dimension-CD">光刻中的 Critical Dimension (CD)</h3>
+<p>原笔记给出光刻最小线宽的经验形式(常写作 Rayleigh 公式):</p>
+
+$$
+\displaystyle \mathrm{CD}=k_1\frac{\lambda_0}{\mathrm{NA}}
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">k_1</annotation></semantics></math></span></span> 是与照明相干性, 工艺, 掩模等相关的过程因子. 原笔记提到典型量级: 相干照明下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">k_1</annotation></semantics></math></span></span> 可在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>6</mn></mrow><annotation encoding="application/x-tex">0.6</annotation></semantics></math></span></span> 左右, 非相干/部分相干可到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>3</mn></mrow><annotation encoding="application/x-tex">0.3</annotation></semantics></math></span></span> 左右(具体取值依系统与工艺而变).</p>
+<h2 id="巴比涅原理-Babinet-与互补结构的衍射">巴比涅原理(Babinet)与互补结构的衍射</h2>
+<h3 id="原理与夫朗禾费条件下的简化">原理与夫朗禾费条件下的简化</h3>
+<p>对互补的两种遮挡/开孔结构(记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>h</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">h'</annotation></semantics></math></span></span>), 在同一入射场下, 出射复振幅满足:</p>
+
+$$
+\displaystyle U_h+U_{h'}=U_0
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">U_0</annotation></semantics></math></span></span> 表示"无任何遮挡"时的场.</p>
+<p>在夫朗禾费衍射的观察方向中, 除了入射光直通方向附近, 常可近似 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>0</mn></msub><mo>≈</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">U_0\approx 0</annotation></semantics></math></span></span>, 因而:</p>
+
+$$
+\displaystyle U_h\approx -U_{h'}
+$$
+
+<p>强度图样满足:</p>
+
+$$
+\displaystyle |U_h|^2=|U_{h'}|^2
+$$
+
+<p>对应原笔记的图示补全:<br>
+(1) 对互补结构, 除入射方向的直通光(那里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>0</mn></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">U_0\neq 0</annotation></semantics></math></span></span>)以外, 远场衍射图样一致.<br>
+(2) 这也是解释"圆盘与圆孔在远场除中心外图样相同"的关键工具.</p>
+<h2 id="菲涅耳衍射与半波带-圆对称情形">菲涅耳衍射与半波带(圆对称情形)</h2>
+<p>接下来进入近场衍射(菲涅耳衍射). 原笔记从子波源积分出发, 重点讨论圆对称情况下的半波带构造与叠加规律.</p>
+<h3 id="半波带的构造-对应插图文字化">半波带的构造(对应插图文字化)</h3>
+<p>固定观察点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span>, 选取从某参考点到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 的最短距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r_0</annotation></semantics></math></span></span>. 以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 为球心做同心球面:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>r</mi><mn>0</mn></msub><mo>+</mo><mfrac><mrow><mi>λ</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo separator="true">,</mo><mtext>&nbsp;</mtext><msub><mi>r</mi><mn>0</mn></msub><mo>+</mo><mi>λ</mi><mo separator="true">,</mo><mtext>&nbsp;</mtext><msub><mi>r</mi><mn>0</mn></msub><mo>+</mo><mfrac><mrow><mn>3</mn><mi>λ</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo separator="true">,</mo><mtext>&nbsp;</mtext><msub><mi>r</mi><mn>0</mn></msub><mo>+</mo><mn>2</mn><mi>λ</mi><mo separator="true">,</mo><mtext>&nbsp;</mtext><mo>⋯</mo></mrow><annotation encoding="application/x-tex">r=r_0+\frac{\lambda}{2},\ r_0+\lambda,\ r_0+\frac{3\lambda}{2},\ r_0+2\lambda,\ \cdots</annotation></semantics></math></span></span></p>
+<p>这些球面与某个积分曲面(或波前)的交线在该曲面上形成同心圆环. 每相邻两环对应的光程差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda/2</annotation></semantics></math></span></span>, 称为菲涅耳半波带.</p>
+<h3 id="计算环带面积元-d-Sigma-对应推导补全">计算环带面积元 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">d\Sigma</annotation></semantics></math></span></span>(对应推导补全)</h3>
+<p>原笔记选择了一个具有良好对称性的球面几何来算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">d\Sigma</annotation></semantics></math></span></span>.<br>
+设球面半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span></span>, 取极角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span></span>, 则球面环带面积元:</p>
+
+$$
+\displaystyle d\Sigma = 2\pi R^2\sin\varphi\,d\varphi
+$$
+
+<p>几何关系(用余弦定理表达球面上一点到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 的距离 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span>):</p>
+
+$$
+\displaystyle r^2=R^2+(R+r_0)^2-2R(R+r_0)\cos\varphi
+$$
+
+<p>微分得到:</p>
+
+$$
+\displaystyle 2r\,dr=2R(R+r_0)\sin\varphi\,d\varphi
+$$
+
+<p>代回可把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">d\Sigma</annotation></semantics></math></span></span> 写成关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo separator="true">,</mo><mi>d</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">r,dr</annotation></semantics></math></span></span> 的形式:</p>
+
+$$
+\displaystyle d\Sigma
+=2\pi R^2\sin\varphi\,d\varphi
+=\frac{2\pi R r}{R+r_0}\,dr
+$$
+
+<p>这一步的意义: 半波带按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 的范围分段时, 可以直接积分.</p>
+<h3 id="单个半波带对-P-点复振幅的贡献">单个半波带对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 点复振幅的贡献</h3>
+<p>球面上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">d\Sigma</annotation></semantics></math></span></span> 处的入射球面波(原笔记写作 \widetilde{U}_0):</p>
+
+$$
+\displaystyle \widetilde{U}_0=\frac{A}{R}e^{ikR}
+$$
+
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 点的微元贡献:</p>
+
+$$
+\displaystyle d\widetilde{U}_P=\frac{A}{R}e^{ikR}\frac{e^{ikr}}{r}f(\theta)\,d\Sigma
+$$
+
+<p>把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi mathvariant="normal">Σ</mi></mrow><annotation encoding="application/x-tex">d\Sigma</annotation></semantics></math></span></span> 代入并对第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 个半波带积分(该带对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>+</mo><mo>(</mo><mi>m</mi><mo>−</mo><mn>1</mn><mo>)</mo><mfrac><mrow><mi>λ</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">r_0+(m-1)\frac{\lambda}{2}</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>+</mo><mi>m</mi><mfrac><mrow><mi>λ</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">r_0+m\frac{\lambda}{2}</annotation></semantics></math></span></span>).<br>
+在一个半波带内, 角度与光程变化很小, 可把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(\theta)</annotation></semantics></math></span></span> 视作常数:</p>
+
+$$
+\displaystyle U_{Pm}
+=\frac{2\pi A e^{ikR}f(\theta)}{R+r_0}
+\int_{r_0+(m-1)\frac{\lambda}{2}}^{r_0+m\frac{\lambda}{2}} e^{ikr}\,dr
+$$
+
+<p>积分结果(把关键结构保留为"交替符号 + 幅值"):</p>
+
+$$
+\displaystyle U_{Pm}=2i\lambda(-1)^{m+1}f(\theta)\frac{A e^{ik(R+r_0)}}{R+r_0}
+$$
+
+<p>并定义:</p>
+
+$$
+\displaystyle U_{Pm}=(-1)^{m+1}a_m
+$$
+
+<p>原笔记提出两个理解点, 这里补全解释:</p>
+<p>(1) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mo>−</mo><mn>1</mn><msup><mo>)</mo><mrow><mi>m</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">(-1)^{m+1}</annotation></semantics></math></span></span> 的交替符号: 相邻半波带的光程差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda/2</annotation></semantics></math></span></span>, 相位差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span></span>, 因而贡献方向相反.<br>
+(2) 出现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span></span> 的原因: 来自对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>k</mi><mi>r</mi></mrow></msup></mrow><annotation encoding="application/x-tex">e^{ikr}</annotation></semantics></math></span></span> 的积分系数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mo>(</mo><mi>i</mi><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">1/(ik)</annotation></semantics></math></span></span>, 同时半波带宽度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda/2</annotation></semantics></math></span></span> 使得积分端点差产生固定的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\pi/2</annotation></semantics></math></span></span> 相位结构. 这不是"额外物理相位", 而是复指数积分的数学结果.</p>
+<h3 id="半波带求和与-a-1-2-结论">半波带求和与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">a_1/2</annotation></semantics></math></span></span> 结论</h3>
+<p>总场为各带叠加:</p>
+
+$$
+\displaystyle \widetilde{U}_P=\sum_{m=1}^{\infty}U_{Pm}=a_1-a_2+a_3-a_4+a_5-\cdots
+$$
+
+<p>同时原笔记指出: 随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 增大, 倾斜因子与几何因子使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">a_m</annotation></semantics></math></span></span> 逐渐减小, 并在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">m\to\infty</annotation></semantics></math></span></span> 时趋于 0.</p>
+<p>用"相邻幅值近似相等"的思想(矢量振幅法/相量图), 可把交替级数近似得到:</p>
+<p>(1) 若截到奇数带 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>, 近似 \widetilde{U}_P\approx \frac{a_1}{2}+\frac{a_m}{2}.<br>
+(2) 若截到偶数带 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>, 近似 \widetilde{U}_P\approx \frac{a_1}{2}-\frac{a_m}{2}.</p>
+<p>在无任何阻挡时, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">m\to\infty</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>m</mi></msub><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_m\to 0</annotation></semantics></math></span></span>, 得:</p>
+
+$$
+\displaystyle \widetilde{U}_P\approx \frac{a_1}{2}
+$$
+
+<p>因此强度:</p>
+
+$$
+\displaystyle I_P\approx \frac{a_1^2}{4}=\frac{I_1}{4}
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>I</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">I_1</annotation></semantics></math></span></span> 表示"只开放第一半波带"时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 点的强度.</p>
+<h3 id="矢量振幅法-对应原插图的文字化理解">矢量振幅法(对应原插图的文字化理解)</h3>
+<p>原笔记用同心圆环(标 1,2,3,…)配合箭头图来帮助理解:</p>
+<p>(1) 每个半波带贡献一个相量(长度约为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">a_m</annotation></semantics></math></span></span>, 方向相差约 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span></span>).<br>
+(2) 把这些相量首尾相接会形成一条逐渐收敛的折线/螺线.<br>
+(3) 全开放时, 大量相互抵消, 最终剩下约第一带的一半.<br>
+(4) 当遮挡某些带(例如挡住中心或挡住外侧), 相量和就会改变, 于是中心点可能更亮或更暗.</p>
+<h2 id="圆盘-圆环与泊松亮斑-菲涅耳衍射图像化讨论">圆盘, 圆环与泊松亮斑(菲涅耳衍射图像化讨论)</h2>
+<p>原笔记讨论的实验方式是: 固定观察点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span>(通常取屏中央), 改变遮挡形状(圆盘或圆环)的尺寸, 观察 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 点亮暗如何变化.</p>
+<h3 id="圆盘-遮挡中心一部分-与中心亮度">圆盘(遮挡中心一部分)与中心亮度</h3>
+<p>(1) 挡住中心区域会移除最前面的若干半波带贡献, 使得剩余带的交替和改变.<br>
+(2) 因为半波带贡献交替抵消, 适当遮挡可能让中心点变亮或变暗.<br>
+(3) 原笔记强调: “中心亮点不是最亮"并不矛盾, 因为中心点亮度取决于剩余相量的和, 不是简单的"有没有直通光”.</p>
+<h3 id="泊松亮斑-Arago-spot-的核心解释">泊松亮斑(Arago spot)的核心解释</h3>
+<p>原笔记提到: 当挡住外面或改变圆盘尺寸时, 中心点可出现明显亮斑, 最终呈现泊松亮斑.</p>
+<p>更稳健的解释路径是结合巴比涅原理:</p>
+<p>(1) 圆盘(不透明)与同尺寸圆孔(透明)互为互补结构.<br>
+(2) 在同一入射场下, 两者衍射场之和等于无障碍传播场 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">U_0</annotation></semantics></math></span></span>.<br>
+(3) 因而即便在几何阴影中心, 仍可能出现由衍射叠加产生的亮点.</p>
+<h3 id="圆环-同时挡住内外一部分">圆环(同时挡住内外一部分)</h3>
+<p>原笔记的同心圆环示意图标注了"亮, 一般, 暗"三种情况. 用半波带语言说就是:</p>
+<p>(1) 圆环透过若干连续半波带时, 贡献近似为这些带相量的部分和.<br>
+(2) 若恰好保留的带数使相量和接近 0, 中心暗.<br>
+(3) 若恰好保留的带数使相量和接近某一大值, 中心亮.<br>
+(4) 因此中心亮暗随圆环尺寸呈振荡变化.</p>
+<h2 id="如何画半波带-以及菲涅耳与夫朗禾费的关系">如何画半波带, 以及菲涅耳与夫朗禾费的关系</h2>
+<h3 id="如何画-lambda-2-半波带-平面波入射情形">如何画 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda/2</annotation></semantics></math></span></span> 半波带(平面波入射情形)</h3>
+<p>原笔记指出: 若入射为平面波, 可取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">R\to\infty</annotation></semantics></math></span></span>.<br>
+在常见的"平面波照明 + 屏到观察点距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span>"近似下, 第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 个半波带半径(在孔径平面上, 以光轴为中心的径向坐标记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ρ</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">\rho_m</annotation></semantics></math></span></span>)满足近似:</p>
+
+$$
+\displaystyle \rho_m^2\approx m\lambda z
+$$
+
+<p>这来自路径差的二次近似: 边缘点到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 的距离比轴上多出约 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>ρ</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mo>(</mo><mn>2</mn><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\rho^2/(2z)</annotation></semantics></math></span></span>, 令其等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>λ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">m\lambda/2</annotation></semantics></math></span></span> 得到上式.</p>
+<p>图示补全(对应原笔记的"S R P"球面示意):<br>
+(1) 以观察点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 为中心的等光程球面与孔径平面相交得到同心环.<br>
+(2) 相邻环对应额外光程 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\lambda/2</annotation></semantics></math></span></span>.</p>
+<h3 id="从菲涅耳到夫朗禾费-远场极限">从菲涅耳到夫朗禾费(远场极限)</h3>
+<p>原笔记给出关键词: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\theta\to 0</annotation></semantics></math></span></span>, 且距离趋于很大. 更标准的说法:</p>
+<p>(1) 菲涅耳衍射保留到二次相位项, 适用于近场或中等距离.<br>
+(2) 当传播距离足够大, 二次项在观测区域内变化缓慢, 近似可忽略, 相位退化为线性项, 于是菲涅耳衍射进一步简化为夫朗禾费衍射(即傅里叶变换关系).<br>
+(3) 常用判据是菲涅耳数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mfrac><mrow><msup><mi>a</mi><mn>2</mn></msup></mrow><mrow><mi>λ</mi><mi>z</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">F=\frac{a^2}{\lambda z}</annotation></semantics></math></span></span>. 当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">F\ll 1</annotation></semantics></math></span></span> 时更接近夫朗禾费区域(这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span> 是孔径特征尺度).</p>
+<h3 id="从夫朗禾费回到菲涅耳-近场观察">从夫朗禾费回到菲涅耳(近场观察)</h3>
+<p>当观察距离不够远, 或观察点偏离轴线(原笔记提到对称性被破坏, 并引用 Hecht 的图), 二次相位不可忽略, 需要用菲涅耳形式描述. 这时图样会呈现更复杂的近场结构, 且随距离变化明显.</p>
+<h3 id="菲涅耳衍射下的巴比涅原理">菲涅耳衍射下的巴比涅原理</h3>
+<p>原笔记用红(圆盘遮挡), 蓝(圆孔), 黑(无阻挡)三种区域示意.<br>
+结论仍是:</p>
+
+$$
+\displaystyle U_{\mathrm{disk}}+U_{\mathrm{hole}}=U_0
+$$
+
+<p>但在菲涅耳区域, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">U_0</annotation></semantics></math></span></span> 往往不能近似为 0, 因此不能直接推出两者强度处处相等, 需要保留 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">U_0</annotation></semantics></math></span></span> 的贡献来比较.</p>
+<h2 id="菲涅耳透镜-更准确说-菲涅耳区板-Zone-Plate-与成像公式">菲涅耳透镜(更准确说: 菲涅耳区板/Zone Plate)与成像公式</h2>
+<p>原笔记在这里的结构是: “如果我们挡住所有奇数或偶数环, 就得到类似透镜的聚焦”. 这对应典型的菲涅耳区板(振幅型 zone plate).</p>
+<h3 id="聚焦-成像条件与推导修正">聚焦/成像条件与推导修正</h3>
+<p>设:<br>
+(1) 区板平面上某一环边界半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span>.<br>
+(2) 物点到区板中心距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi></mrow><annotation encoding="application/x-tex">u</annotation></semantics></math></span></span>, 像点到区板中心距离为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span></span>.<br>
+(3) 从物点到该环边界的距离记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span></span>, 从该边界到像点距离记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span>.</p>
+<p>几何近似(原笔记用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>≪</mo><mi>u</mi><mo separator="true">,</mo><mi>a</mi><mo>≪</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">a\ll u, a\ll v</annotation></semantics></math></span></span> 展开):</p>
+
+$$
+\displaystyle R=\sqrt{u^2+a^2}\approx u+\frac{a^2}{2u}
+$$
+
+
+$$
+\displaystyle r=\sqrt{v^2+a^2}\approx v+\frac{a^2}{2v}
+$$
+
+<p>若要求该边界相对轴上路径满足半波带条件(相邻区带相位差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span></span>), 则路径差满足:</p>
+
+$$
+\displaystyle (R+r)-(u+v)=\frac{m\lambda}{2}
+$$
+
+<p>代入展开式得到:</p>
+
+$$
+\displaystyle \frac{a^2}{2}\left(\frac{1}{u}+\frac{1}{v}\right)=\frac{m\lambda}{2}
+$$
+
+<p>因此得到区板的成像关系(原笔记写出的关键式):</p>
+
+$$
+\displaystyle \frac{1}{u}+\frac{1}{v}=\frac{m\lambda}{a^2}
+$$
+
+<p>定义等效焦距:</p>
+
+$$
+\displaystyle \frac{1}{f}=\frac{m\lambda}{a^2},\quad f=\frac{a^2}{m\lambda}
+$$
+
+<p>原笔记里对符号(出现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mo>=</mo><mo>−</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">v=-f</annotation></semantics></math></span></span>)的疑惑, 本质来自符号约定(实像/虚像, 光传播方向)的选取. 若取常见成像约定并讨论平面波入射(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">u\to\infty</annotation></semantics></math></span></span>), 则主焦点在区板之后的距离约为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mo>≈</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">v\approx f</annotation></semantics></math></span></span>.</p>
+<p>重要提醒(对原笔记最后两条性质做纠正与补全):<br>
+(1) 区板/衍射型"菲涅耳透镜"不需要厚透镜材料, 因而在材料吸收强的波段也可能实现聚焦(这点原笔记说法是对的).<br>
+(2) 但它的焦距满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>∝</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">f\propto 1/\lambda</annotation></semantics></math></span></span>, 因而色散非常强(严格来说不是低色散). 原笔记的"低色散"更适合用在某些折射型 Fresnel lens 的工程语境中, 不适合直接套到区板.</p>
+<h3 id="多个焦点-次焦点">多个焦点(次焦点)</h3>
+<p>原笔记提到屏靠近时出现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mi mathvariant="normal">/</mi><mn>3</mn><mo separator="true">,</mo><mi>f</mi><mi mathvariant="normal">/</mi><mn>5</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">f/3, f/5,\cdots</annotation></semantics></math></span></span> 等次焦点. 对振幅型区板, 确实存在多个衍射级次的焦点(奇数级较典型), 可理解为"多环带相当于多缝干涉", 在不同距离处满足不同的相位匹配.</p>
+<h2 id="例题与练习-都带解答">例题与练习(都带解答)</h2>
+<details>
+<summary>例题: 单缝第一暗纹角位置</summary>
+<p>已知单缝宽度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>2</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">b=0.20\,\mathrm{mm}</annotation></semantics></math></span></span>, 波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>6</mn><mn>3</mn><mn>2</mn><mi mathvariant="normal">.</mi><mn>8</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">\lambda=632.8\,\mathrm{nm}</annotation></semantics></math></span></span>. 求第一暗纹(最靠近中心的暗纹)角度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">\theta_1</annotation></semantics></math></span></span> 的近似值.</p>
+<p>解:</p>
+<p>第一暗纹满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">\beta=\pi</annotation></semantics></math></span></span>, 即:</p>
+
+$$
+\displaystyle \frac{1}{2}kb\sin\theta_1=\pi
+$$
+
+<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>λ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">k=\frac{2\pi}{\lambda}</annotation></semantics></math></span></span> 得:</p>
+
+$$
+\displaystyle \frac{\pi b}{\lambda}\sin\theta_1=\pi
+$$
+
+<p>因此:</p>
+
+$$
+\displaystyle \sin\theta_1\approx \frac{\lambda}{b}
+$$
+
+<p>代入数值:</p>
+
+$$
+\displaystyle \sin\theta_1\approx \frac{632.8\times 10^{-9}}{0.20\times 10^{-3}}=3.164\times 10^{-3}
+$$
+
+<p>傍轴下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>≈</mo><mn>3</mn><mi mathvariant="normal">.</mi><mn>1</mn><mn>6</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow></mrow><annotation encoding="application/x-tex">\theta_1\approx 3.16\times 10^{-3}\,\mathrm{rad}</annotation></semantics></math></span></span>.</p>
+</details>
+<details>
+<summary>例题: 单缝中心到第二暗纹的屏上距离(透镜焦平面)</summary>
+<p>透镜焦距 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><mn>2</mn><mn>0</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">f=200\,\mathrm{mm}</annotation></semantics></math></span></span>, 单缝宽度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>1</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">b=0.10\,\mathrm{mm}</annotation></semantics></math></span></span>, 波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>5</mn><mn>0</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">\lambda=500\,\mathrm{nm}</annotation></semantics></math></span></span>. 求第二暗纹在焦平面上的位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ξ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\xi_2</annotation></semantics></math></span></span>.</p>
+<p>解:</p>
+<p>第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 个暗纹满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><msub><mi>θ</mi><mi>m</mi></msub><mo>≈</mo><mi>m</mi><mi>λ</mi><mi mathvariant="normal">/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">\sin\theta_m\approx m\lambda/b</annotation></semantics></math></span></span>. 傍轴下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ξ</mi><mi>m</mi></msub><mo>≈</mo><mi>f</mi><msub><mi>θ</mi><mi>m</mi></msub><mo>≈</mo><mi>f</mi><mi>sin</mi><msub><mi>θ</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">\xi_m\approx f\theta_m\approx f\sin\theta_m</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle \xi_2\approx f\frac{2\lambda}{b}
+$$
+
+<p>代入:</p>
+
+$$
+\displaystyle \xi_2\approx 0.200\times \frac{2\times 500\times 10^{-9}}{0.10\times 10^{-3}}
+=2.0\times 10^{-3}\,\mathrm{m}=2.0\,\mathrm{mm}
+$$
+
+</details>
+<details>
+<summary>例题: 从傅里叶观点推导双缝图样(单缝包络 + 干涉条纹)</summary>
+<p>设孔径函数为两条宽度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 的狭缝, 中心间距为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span></span>, 且孔内振幅为 1. 写出远场复振幅随空间频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 的形式(忽略常数因子), 并给出强度结构.</p>
+<p>解:</p>
+<p>单个狭缝的傅里叶变换给出 sinc 因子:</p>
+
+$$
+\displaystyle \widetilde{U}_1(p)\propto b\,\frac{\sin(\pi b p)}{\pi b p}
+$$
+
+<p>两条狭缝相当于把孔径函数平移叠加, 频域中引入相位因子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mo>∓</mo><mi>i</mi><mn>2</mn><mi>π</mi><mi>p</mi><mi>d</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">e^{\mp i2\pi p d/2}</annotation></semantics></math></span></span>, 因而总振幅:</p>
+
+$$
+\displaystyle \widetilde{U}(p)\propto b\,\frac{\sin(\pi b p)}{\pi b p}\left(e^{-i\pi p d}+e^{i\pi p d}\right)
+$$
+
+<p>括号化简为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>cos</mi><mo>(</mo><mi>π</mi><mi>p</mi><mi>d</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">2\cos(\pi p d)</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle \widetilde{U}(p)\propto 2b\,\frac{\sin(\pi b p)}{\pi b p}\cos(\pi p d)
+$$
+
+<p>强度:</p>
+
+$$
+\displaystyle I(p)\propto \left(\frac{\sin(\pi b p)}{\pi b p}\right)^2\cos^2(\pi p d)
+$$
+
+<p>解释: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>sin</mi><mo>(</mo><mi>π</mi><mi>b</mi><mi>p</mi><mo>)</mo></mrow><mrow><mi>π</mi><mi>b</mi><mi>p</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\left(\frac{\sin(\pi b p)}{\pi b p}\right)^2</annotation></semantics></math></span></span> 是单缝衍射包络, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>cos</mi><mn>2</mn></msup><mo>(</mo><mi>π</mi><mi>p</mi><mi>d</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos^2(\pi p d)</annotation></semantics></math></span></span> 是双缝干涉条纹.</p>
+</details>
+<details>
+<summary>例题: 矩形孔第一条暗线在焦平面的位置</summary>
+<p>矩形孔尺寸为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>×</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a\times b</annotation></semantics></math></span></span> (沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 方向长度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span>, 沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 方向为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>). 透镜焦距 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>. 求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 方向第一条暗线对应的屏坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ξ</mi><mrow><mi>x</mi><mo separator="true">,</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\xi_{x,1}</annotation></semantics></math></span></span>.</p>
+<p>解:</p>
+<p>矩形孔远场振幅含因子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>sin</mi><mo>(</mo><mi>π</mi><mi>a</mi><mi>p</mi><mo>)</mo></mrow><mrow><mi>π</mi><mi>a</mi><mi>p</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\sin(\pi a p)}{\pi a p}</annotation></semantics></math></span></span>, 暗线满足:</p>
+
+$$
+\displaystyle \sin(\pi a p)=0,\quad p\neq 0
+$$
+
+<p>第一条暗线为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">p=1/a</annotation></semantics></math></span></span>. 又 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mi>ξ</mi><mi mathvariant="normal">/</mi><mo>(</mo><mi>λ</mi><mi>f</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">p=\xi/(\lambda f)</annotation></semantics></math></span></span>, 得:</p>
+
+$$
+\displaystyle \xi_{x,1}=\frac{\lambda f}{a}
+$$
+
+<p>同理 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 方向第一条暗线为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>η</mi><mrow><mi>y</mi><mo separator="true">,</mo><mn>1</mn></mrow></msub><mo>=</mo><mfrac><mrow><mi>λ</mi><mi>f</mi></mrow><mrow><mi>b</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\eta_{y,1}=\frac{\lambda f}{b}</annotation></semantics></math></span></span>.</p>
+</details>
+<details>
+<summary>例题: Airy 斑半径与孔径的关系</summary>
+<p>波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>5</mn><mn>5</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">\lambda=550\,\mathrm{nm}</annotation></semantics></math></span></span>, 圆孔直径 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mo>=</mo><mn>5</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">D=5\,\mathrm{mm}</annotation></semantics></math></span></span>, 透镜焦距 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><mn>1</mn><mn>0</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">f=100\,\mathrm{mm}</annotation></semantics></math></span></span>. 求第一暗环半径 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>.</p>
+<p>解:</p>
+
+$$
+\displaystyle p\approx 1.22\frac{\lambda f}{D}
+$$
+
+<p>代入:</p>
+
+$$
+\displaystyle p\approx 1.22\times \frac{550\times 10^{-9}\times 0.100}{5\times 10^{-3}}
+=1.34\times 10^{-5}\,\mathrm{m}=13.4\,\mu\mathrm{m}
+$$
+
+</details>
+<details>
+<summary>例题: 由分辨率要求反推所需孔径(或有效瞳孔直径)</summary>
+<p>希望在焦平面分辨两点间距 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>p</mi><mo>=</mo><mn>2</mn><mi mathvariant="normal">.</mi><mn>0</mn><mspace width="0.16667em"></mspace><mi>μ</mi><mrow><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">\delta p=2.0\,\mu\mathrm{m}</annotation></semantics></math></span></span>, 使用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>5</mn><mn>0</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">\lambda=500\,\mathrm{nm}</annotation></semantics></math></span></span>, 焦距 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><mn>5</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">f=50\,\mathrm{mm}</annotation></semantics></math></span></span>. 估算所需有效孔径直径 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span>.</p>
+<p>解:</p>
+<p>Rayleigh 判据近似:</p>
+
+$$
+\displaystyle \delta p\approx 1.22\frac{\lambda f}{D}
+$$
+
+<p>解得:</p>
+
+$$
+\displaystyle D\approx 1.22\frac{\lambda f}{\delta p}
+$$
+
+<p>代入:</p>
+
+$$
+\displaystyle D\approx 1.22\times \frac{500\times 10^{-9}\times 0.050}{2.0\times 10^{-6}}
+=1.53\times 10^{-2}\,\mathrm{m}=15.3\,\mathrm{mm}
+$$
+
+</details>
+<details>
+<summary>例题: 由 NA 估算横向分辨率</summary>
+<p>在空气中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math></span></span>, 物镜 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">A</mi></mrow><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>5</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">\mathrm{NA}=0.50</annotation></semantics></math></span></span>, 真空波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>λ</mi><mn>0</mn></msub><mo>=</mo><mn>5</mn><mn>5</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">\lambda_0=550\,\mathrm{nm}</annotation></semantics></math></span></span>. 估算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">\delta p</annotation></semantics></math></span></span> 的量级.</p>
+<p>解:</p>
+<p>用:</p>
+
+$$
+\displaystyle \frac{1}{\delta p}\sim \frac{2}{1.22}\frac{\mathrm{NA}}{\lambda_0}
+$$
+
+<p>因此:</p>
+
+$$
+\displaystyle \delta p\sim \frac{1.22}{2}\frac{\lambda_0}{\mathrm{NA}}
+$$
+
+<p>代入:</p>
+
+$$
+\displaystyle \delta p\sim \frac{1.22}{2}\frac{550\times 10^{-9}}{0.50}
+=6.71\times 10^{-7}\,\mathrm{m}=0.67\,\mu\mathrm{m}
+$$
+
+</details>
+<details>
+<summary>例题: 光刻 CD 估算</summary>
+<p>使用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>λ</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mn>9</mn><mn>3</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">\lambda_0=193\,\mathrm{nm}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">N</mi><mi mathvariant="normal">A</mi></mrow><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>3</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">\mathrm{NA}=1.35</annotation></semantics></math></span></span>, 取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>3</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">k_1=0.35</annotation></semantics></math></span></span>. 估算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">C</mi><mi mathvariant="normal">D</mi></mrow></mrow><annotation encoding="application/x-tex">\mathrm{CD}</annotation></semantics></math></span></span>.</p>
+<p>解:</p>
+
+$$
+\displaystyle \mathrm{CD}=k_1\frac{\lambda_0}{\mathrm{NA}}
+$$
+
+<p>代入:</p>
+
+$$
+\displaystyle \mathrm{CD}=0.35\times \frac{193}{1.35}\,\mathrm{nm}\approx 50.0\,\mathrm{nm}
+$$
+
+</details>
+<details>
+<summary>例题: 平面波入射时菲涅耳半波带半径计算</summary>
+<p>平面波照明, 观察点在孔径平面后方距离 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">z=1.0\,\mathrm{m}</annotation></semantics></math></span></span>. 波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>5</mn><mn>0</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">\lambda=500\,\mathrm{nm}</annotation></semantics></math></span></span>. 求前 3 个半波带半径 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ρ</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>ρ</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>ρ</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">\rho_1,\rho_2,\rho_3</annotation></semantics></math></span></span>.</p>
+<p>解:</p>
+
+$$
+\displaystyle \rho_m\approx \sqrt{m\lambda z}
+$$
+
+<p>代入:</p>
+
+$$
+\displaystyle \rho_1\approx \sqrt{1\times 500\times 10^{-9}\times 1.0}=7.07\times 10^{-4}\,\mathrm{m}
+$$
+
+
+$$
+\displaystyle \rho_2\approx \sqrt{2}\rho_1\approx 1.00\times 10^{-3}\,\mathrm{m}
+$$
+
+
+$$
+\displaystyle \rho_3\approx \sqrt{3}\rho_1\approx 1.22\times 10^{-3}\,\mathrm{m}
+$$
+
+</details>
+<details>
+<summary>例题: 半波带交替求和为什么趋于 a1/2</summary>
+<p>在粗略近似下设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>≈</mo><msub><mi>a</mi><mn>2</mn></msub><mo>≈</mo><msub><mi>a</mi><mn>3</mn></msub><mo>≈</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">a_1\approx a_2\approx a_3\approx \cdots</annotation></semantics></math></span></span>, 讨论 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>−</mo><msub><mi>a</mi><mn>2</mn></msub><mo>+</mo><msub><mi>a</mi><mn>3</mn></msub><mo>−</mo><msub><mi>a</mi><mn>4</mn></msub><mo>+</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">a_1-a_2+a_3-a_4+\cdots</annotation></semantics></math></span></span> 的极限为何约为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">a_1/2</annotation></semantics></math></span></span>.</p>
+<p>解:</p>
+<p>把级数按两项分组:</p>
+
+$$
+\displaystyle (a_1-a_2)+(a_3-a_4)+\cdots
+$$
+
+<p>若严格相等则每组为 0, 这说明必须保留"随 m 增大而逐渐减小"这一物理事实.<br>
+更合理的近似是: 相邻两项几乎相等但略有差异, 且序列缓慢递减. 这时可把前几项重写为:</p>
+
+$$
+\displaystyle \left(\frac{a_1}{2}+\frac{a_1}{2}\right)-a_2+\left(\frac{a_3}{2}+\frac{a_3}{2}\right)-a_4+\cdots
+$$
+
+<p>把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{a_1}{2}</annotation></semantics></math></span></span> 单独拿出, 其余部分按"邻近项近似抵消"得到趋近于 0, 最终留下约 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{a_1}{2}</annotation></semantics></math></span></span>.<br>
+这就是矢量振幅法所表达的几何直观: 相量首尾相接逐渐收敛到第一段的一半附近.</p>
+</details>
+<details>
+<summary>例题: 菲涅耳区板(Zone Plate)主焦距计算与次焦点</summary>
+<p>某振幅型区板最外圈边界半径为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mn>2</mn><mi mathvariant="normal">.</mi><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">a=2.0\,\mathrm{mm}</annotation></semantics></math></span></span>, 设计波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>5</mn><mn>0</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">\lambda=500\,\mathrm{nm}</annotation></semantics></math></span></span>, 取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=1</annotation></semantics></math></span></span>. 求主焦距 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>, 并写出原笔记提到的次焦点位置.</p>
+<p>解:</p>
+<p>主焦距:</p>
+
+$$
+\displaystyle f=\frac{a^2}{m\lambda}
+$$
+
+<p>代入:</p>
+
+$$
+\displaystyle f=\frac{(2.0\times 10^{-3})^2}{1\times 500\times 10^{-9}}=8.0\,\mathrm{m}
+$$
+
+<p>振幅型区板常见的次焦点(奇级)在:</p>
+
+$$
+\displaystyle f,\ \frac{f}{3},\ \frac{f}{5},\ \cdots
+$$
+
+<p>因此本例次焦点约为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi mathvariant="normal">.</mi><mn>6</mn><mn>7</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">2.67\,\mathrm{m}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">.</mi><mn>6</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">1.60\,\mathrm{m}</annotation></semantics></math></span></span>, 等.</p>
+</details>
+<details>
+<summary>例题: 有限物距 u 下区板成像距离 v</summary>
+<p>仍取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mn>2</mn><mi mathvariant="normal">.</mi><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">a=2.0\,\mathrm{mm}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>5</mn><mn>0</mn><mn>0</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">\lambda=500\,\mathrm{nm}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=1</annotation></semantics></math></span></span>. 若物距 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>=</mo><mn>1</mn><mn>2</mn><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">m</mi></mrow></mrow><annotation encoding="application/x-tex">u=12\,\mathrm{m}</annotation></semantics></math></span></span>, 求像距 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span></span>.</p>
+<p>解:</p>
+<p>成像关系:</p>
+
+$$
+\displaystyle \frac{1}{u}+\frac{1}{v}=\frac{m\lambda}{a^2}
+$$
+
+<p>先算右侧:</p>
+
+$$
+\displaystyle \frac{m\lambda}{a^2}=\frac{500\times 10^{-9}}{(2.0\times 10^{-3})^2}=0.125\,\mathrm{m}^{-1}
+$$
+
+<p>左侧:</p>
+
+$$
+\displaystyle \frac{1}{v}=0.125-\frac{1}{12}=0.125-0.08333=0.04167\,\mathrm{m}^{-1}
+$$
+
+<p>因此:</p>
+
+$$
+\displaystyle v\approx 24\,\mathrm{m}
+$$
+
+</details>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E5%85%89%E5%AD%A6/" class="">
+              光学
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/GuangXue/夫朗禾费衍射, 菲涅耳半波带, 分辨率与菲涅耳透镜/" target="_blank" title="夫朗禾费衍射, 菲涅耳半波带, 分辨率与菲涅耳透镜">https://kotokowa.github.io/physics/GuangXue/夫朗禾费衍射, 菲涅耳半波带, 分辨率与菲涅耳透镜/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/GaiTong/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%AE%80%E4%BB%8B/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">随机过程简介</div>
+      </div>
+      
+      <!-- <div class="content">
+        随机过程简介
+随机序列(离散)，随机过程(连续)
+随机序列(离散时间过程)与信息流
+
+在概率空间(Ω,F,P)(\Ome
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/GaiTong/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">方差分析与回归分析</div>
+      </div>
+      <!-- <div class="content">
+        方差分析与回归分析
+单因素方差分析（One-way ANOVA）
+实验背景与基本概念
+在实验中：
+
+被观测的量称为实验指
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">衍射与成像中的傅里叶观点: 夫朗禾费衍射, 菲涅耳半波带, 分辨率与菲涅耳透镜</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E9%87%8F%E8%A1%8D%E5%B0%84%E7%A7%AF%E5%88%86%E4%B8%8E%E5%82%8D%E8%BD%B4%E8%BF%91%E4%BC%BC"><span class="toc-text">标量衍射积分与傍轴近似</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%83%85%E5%86%B5%E7%9A%84%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F-%E5%AD%90%E6%B3%A2%E6%BA%90%E8%A7%82%E7%82%B9"><span class="toc-text">二维情况的积分形式(子波源观点)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%82%8D%E8%BD%B4%E8%BF%91%E4%BC%BC%E7%9A%84%E8%A6%81%E7%82%B9"><span class="toc-text">傍轴近似的要点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84-%E5%8D%95%E7%BC%9D%E7%9A%84-sinc-%E5%9B%BE%E6%A0%B7"><span class="toc-text">一维夫朗禾费衍射: 单缝的 sinc 图样</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E4%B8%8E%E8%BF%91%E4%BC%BC-%E5%AF%B9%E5%BA%94%E6%8F%92%E5%9B%BE%E6%96%87%E5%AD%97%E5%8C%96"><span class="toc-text">几何与近似(对应插图文字化)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%8C%AF%E5%B9%85%E7%A7%AF%E5%88%86%E4%B8%8E%E7%BB%93%E6%9E%9C"><span class="toc-text">复振幅积分与结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%8F%E9%95%9C%E7%84%A6%E5%B9%B3%E9%9D%A2%E4%B8%8E%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E5%BD%A2%E5%BC%8F-%E4%B8%80%E7%BB%B4%E5%88%B0%E4%BA%8C%E7%BB%B4"><span class="toc-text">透镜焦平面与傅里叶变换形式(一维到二维)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F%E5%AE%9E%E5%AE%9E%E9%AA%8C%E4%B8%AD%E7%94%A8%E5%B1%8F%E5%9D%90%E6%A0%87%E8%A1%A8%E7%A4%BA%E8%A7%92%E5%BA%A6"><span class="toc-text">真实实验中用屏坐标表示角度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E5%AD%94%E5%BE%84%E5%87%BD%E6%95%B0%E4%B8%8E%E9%80%86%E9%97%AE%E9%A2%98"><span class="toc-text">一般孔径函数与逆问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E7%BB%B4%E6%8E%A8%E5%B9%BF%E4%B8%8E%E7%9F%A9%E5%BD%A2%E5%AD%94-%E5%8F%AF%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F"><span class="toc-text">二维推广与矩形孔(可分离变量)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%86%E5%AD%94%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84-Airy-%E6%96%91%E4%B8%8E%E5%88%86%E8%BE%A8%E7%8E%87"><span class="toc-text">圆孔夫朗禾费衍射: Airy 斑与分辨率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Airy-%E5%9B%BE%E6%A0%B7%E7%9A%84%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AC%AC%E4%B8%80%E6%9E%81%E5%B0%8F"><span class="toc-text">Airy 图样的结构与第一极小</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B2%A1%E6%9C%89%E5%AD%94%E8%BF%98%E6%9C%89-Airy-%E5%90%97-%E7%9A%84%E8%A1%A5%E5%85%A8%E8%A7%A3%E9%87%8A"><span class="toc-text">&quot;没有孔还有 Airy 吗&quot;的补全解释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E8%BE%A8%E7%8E%87-%E6%95%B0%E5%80%BC%E5%AD%94%E5%BE%84-%E5%85%89%E5%88%BB%E4%B8%AD%E7%9A%84%E6%9C%80%E5%B0%8F%E7%BA%BF%E5%AE%BD"><span class="toc-text">分辨率, 数值孔径, 光刻中的最小线宽</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Rayleigh-%E5%88%A4%E6%8D%AE%E4%B8%8E%E5%B1%8F%E4%B8%8A%E5%88%86%E8%BE%A8%E6%9E%81%E9%99%90"><span class="toc-text">Rayleigh 判据与屏上分辨极限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#D-%E7%9A%84%E6%9B%B4%E6%9C%AC%E8%B4%A8%E5%90%AB%E4%B9%89-%E7%A9%BA%E9%97%B4%E9%A2%91%E7%8E%87%E6%BB%A4%E6%B3%A2%E8%8C%83%E5%9B%B4"><span class="toc-text">DDD 的更本质含义: 空间频率滤波范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%98%E5%B0%84%E7%8E%87%E4%B8%8E%E7%9C%9F%E7%A9%BA%E6%B3%A2%E9%95%BF%E8%A1%A8%E7%A4%BA"><span class="toc-text">折射率与真空波长表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E5%80%BC%E5%AD%94%E5%BE%84-NA-%E7%9A%84%E5%BC%95%E5%85%A5"><span class="toc-text">数值孔径 NA 的引入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E5%88%BB%E4%B8%AD%E7%9A%84-Critical-Dimension-CD"><span class="toc-text">光刻中的 Critical Dimension (CD)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%B4%E6%AF%94%E6%B6%85%E5%8E%9F%E7%90%86-Babinet-%E4%B8%8E%E4%BA%92%E8%A1%A5%E7%BB%93%E6%9E%84%E7%9A%84%E8%A1%8D%E5%B0%84"><span class="toc-text">巴比涅原理(Babinet)与互补结构的衍射</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%90%86%E4%B8%8E%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E6%9D%A1%E4%BB%B6%E4%B8%8B%E7%9A%84%E7%AE%80%E5%8C%96"><span class="toc-text">原理与夫朗禾费条件下的简化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8F%B2%E6%B6%85%E8%80%B3%E8%A1%8D%E5%B0%84%E4%B8%8E%E5%8D%8A%E6%B3%A2%E5%B8%A6-%E5%9C%86%E5%AF%B9%E7%A7%B0%E6%83%85%E5%BD%A2"><span class="toc-text">菲涅耳衍射与半波带(圆对称情形)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E6%B3%A2%E5%B8%A6%E7%9A%84%E6%9E%84%E9%80%A0-%E5%AF%B9%E5%BA%94%E6%8F%92%E5%9B%BE%E6%96%87%E5%AD%97%E5%8C%96"><span class="toc-text">半波带的构造(对应插图文字化)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E7%AE%97%E7%8E%AF%E5%B8%A6%E9%9D%A2%E7%A7%AF%E5%85%83-d-Sigma-%E5%AF%B9%E5%BA%94%E6%8E%A8%E5%AF%BC%E8%A1%A5%E5%85%A8"><span class="toc-text">计算环带面积元 dΣd\SigmadΣ(对应推导补全)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E4%B8%AA%E5%8D%8A%E6%B3%A2%E5%B8%A6%E5%AF%B9-P-%E7%82%B9%E5%A4%8D%E6%8C%AF%E5%B9%85%E7%9A%84%E8%B4%A1%E7%8C%AE"><span class="toc-text">单个半波带对 PPP 点复振幅的贡献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E6%B3%A2%E5%B8%A6%E6%B1%82%E5%92%8C%E4%B8%8E-a-1-2-%E7%BB%93%E8%AE%BA"><span class="toc-text">半波带求和与 a1&#x2F;2a_1&#x2F;2a​1​​&#x2F;2 结论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A2%E9%87%8F%E6%8C%AF%E5%B9%85%E6%B3%95-%E5%AF%B9%E5%BA%94%E5%8E%9F%E6%8F%92%E5%9B%BE%E7%9A%84%E6%96%87%E5%AD%97%E5%8C%96%E7%90%86%E8%A7%A3"><span class="toc-text">矢量振幅法(对应原插图的文字化理解)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%86%E7%9B%98-%E5%9C%86%E7%8E%AF%E4%B8%8E%E6%B3%8A%E6%9D%BE%E4%BA%AE%E6%96%91-%E8%8F%B2%E6%B6%85%E8%80%B3%E8%A1%8D%E5%B0%84%E5%9B%BE%E5%83%8F%E5%8C%96%E8%AE%A8%E8%AE%BA"><span class="toc-text">圆盘, 圆环与泊松亮斑(菲涅耳衍射图像化讨论)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%86%E7%9B%98-%E9%81%AE%E6%8C%A1%E4%B8%AD%E5%BF%83%E4%B8%80%E9%83%A8%E5%88%86-%E4%B8%8E%E4%B8%AD%E5%BF%83%E4%BA%AE%E5%BA%A6"><span class="toc-text">圆盘(遮挡中心一部分)与中心亮度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%8A%E6%9D%BE%E4%BA%AE%E6%96%91-Arago-spot-%E7%9A%84%E6%A0%B8%E5%BF%83%E8%A7%A3%E9%87%8A"><span class="toc-text">泊松亮斑(Arago spot)的核心解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%86%E7%8E%AF-%E5%90%8C%E6%97%B6%E6%8C%A1%E4%BD%8F%E5%86%85%E5%A4%96%E4%B8%80%E9%83%A8%E5%88%86"><span class="toc-text">圆环(同时挡住内外一部分)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%94%BB%E5%8D%8A%E6%B3%A2%E5%B8%A6-%E4%BB%A5%E5%8F%8A%E8%8F%B2%E6%B6%85%E8%80%B3%E4%B8%8E%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">如何画半波带, 以及菲涅耳与夫朗禾费的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E7%94%BB-lambda-2-%E5%8D%8A%E6%B3%A2%E5%B8%A6-%E5%B9%B3%E9%9D%A2%E6%B3%A2%E5%85%A5%E5%B0%84%E6%83%85%E5%BD%A2"><span class="toc-text">如何画 λ&#x2F;2\lambda&#x2F;2λ&#x2F;2 半波带(平面波入射情形)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E8%8F%B2%E6%B6%85%E8%80%B3%E5%88%B0%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9-%E8%BF%9C%E5%9C%BA%E6%9E%81%E9%99%90"><span class="toc-text">从菲涅耳到夫朗禾费(远场极限)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E5%9B%9E%E5%88%B0%E8%8F%B2%E6%B6%85%E8%80%B3-%E8%BF%91%E5%9C%BA%E8%A7%82%E5%AF%9F"><span class="toc-text">从夫朗禾费回到菲涅耳(近场观察)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8F%B2%E6%B6%85%E8%80%B3%E8%A1%8D%E5%B0%84%E4%B8%8B%E7%9A%84%E5%B7%B4%E6%AF%94%E6%B6%85%E5%8E%9F%E7%90%86"><span class="toc-text">菲涅耳衍射下的巴比涅原理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8F%B2%E6%B6%85%E8%80%B3%E9%80%8F%E9%95%9C-%E6%9B%B4%E5%87%86%E7%A1%AE%E8%AF%B4-%E8%8F%B2%E6%B6%85%E8%80%B3%E5%8C%BA%E6%9D%BF-Zone-Plate-%E4%B8%8E%E6%88%90%E5%83%8F%E5%85%AC%E5%BC%8F"><span class="toc-text">菲涅耳透镜(更准确说: 菲涅耳区板&#x2F;Zone Plate)与成像公式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%81%9A%E7%84%A6-%E6%88%90%E5%83%8F%E6%9D%A1%E4%BB%B6%E4%B8%8E%E6%8E%A8%E5%AF%BC%E4%BF%AE%E6%AD%A3"><span class="toc-text">聚焦&#x2F;成像条件与推导修正</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E4%B8%AA%E7%84%A6%E7%82%B9-%E6%AC%A1%E7%84%A6%E7%82%B9"><span class="toc-text">多个焦点(次焦点)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%E4%B8%8E%E7%BB%83%E4%B9%A0-%E9%83%BD%E5%B8%A6%E8%A7%A3%E7%AD%94"><span class="toc-text">例题与练习(都带解答)</span></a></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%AE%80%E4%BB%8B/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-24</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%AE%80%E4%BB%8B/">随机过程简介</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GuangXue/%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84,%20%E8%8F%B2%E6%B6%85%E8%80%B3%E5%8D%8A%E6%B3%A2%E5%B8%A6,%20%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8E%E8%8F%B2%E6%B6%85%E8%80%B3%E9%80%8F%E9%95%9C/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-23</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GuangXue/%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84,%20%E8%8F%B2%E6%B6%85%E8%80%B3%E5%8D%8A%E6%B3%A2%E5%B8%A6,%20%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8E%E8%8F%B2%E6%B6%85%E8%80%B3%E9%80%8F%E9%95%9C/">夫朗禾费衍射, 菲涅耳半波带, 分辨率与菲涅耳透镜</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-17</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90%E4%B8%8E%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/">方差分析与回归分析</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GuangXue/%E5%A4%9A%E5%85%89%E6%9D%9F%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%A1%8D%E5%B0%84%E3%80%81%E5%85%89%E6%A0%85/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-16</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GuangXue/%E5%A4%9A%E5%85%89%E6%9D%9F%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%A1%8D%E5%B0%84%E3%80%81%E5%85%89%E6%A0%85/">多光束薄膜干涉与衍射、光栅</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-11</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C/">假设检验</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script defer="">
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(66, 185, 133, 0.8)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 -  <a target="_blank" rel="noopener" href="https://github.com/kotokowa">kotokowa</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
+  <div class="dark-content">
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
+  </div>
+</div>
+
+<script defer="">
+  $(function() {
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
+    if (isDark) {
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
+    }
+  }
+</script>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer="">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script defer="" src="/physics/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/physics/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js class="" server="netease" type="playlist" id="17453633682" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="none" volume="0.4" list-folded="true">
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script async="">
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <!-- 背景彩带 -->
+    
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
+    
+
+    <script src="/physics/js/utils/index.js"></script>
+    <script src="/physics/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/physics/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/physics/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/physics/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/physics/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/physics/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax="">
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+        <script type="text/javascript">
+  var utteranceComment = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceComment.Theme = 'github-dark';
+    } else {
+      utteranceComment.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceComment.Theme)
+      utterances.setAttribute('repo', 'kotokowa/physics-utterances')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceComment.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+      
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script async="" src="/physics/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>
