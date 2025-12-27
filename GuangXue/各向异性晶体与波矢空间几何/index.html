@@ -394,13 +394,9 @@
       <div class="post-content">
         <h1>各向异性晶体与波矢空间几何</h1>
 <h2 id="各向性与各向异性材料">各向性与各向异性材料</h2>
-<p>在之前的讨论中, 默认的材料都是<strong>各向同性材料</strong>:<br>
-电场在不同方向上, 材料的极化等电学性质相同。</p>
-<p>但上一节出现过的<strong>偏振片</strong>已经给出反例:<br>
-不同电场方向下, 偏振片对光的影响不同, 说明材料对电场方向敏感。</p>
-<p>自然界中存在大量这样的材料, 其极化等性质<strong>强烈依赖外加电场方向</strong>。<br>
-在无损耗条件下, 如果材料对光的响应随入射光电场方向而变, 这类材料称为<strong>各向异性材料</strong>。</p>
-<p>典型各向异性材料是各种晶体, 具有特定的原子周期结构, 常见晶系包括:</p>
+<p>在之前的讨论中，默认的材料都是<strong>各向同性材料</strong>：电场在不同方向上，材料的极化等电学性质相同. 但上一节出现过的<strong>偏振片</strong>已经给出反例：不同电场方向下，偏振片对光的影响不同，说明材料对电场方向敏感.</p>
+<p>自然界中存在大量这样的材料，其极化等性质<strong>强烈依赖外加电场方向</strong>. 在无损耗条件下，如果材料对光的响应随入射光电场方向而变，这类材料称为<strong>各向异性材料</strong>.</p>
+<p>典型各向异性材料是各种晶体，具有特定的原子周期结构，常见晶系包括：</p>
 <ul>
 <li>三角晶系</li>
 <li>六角晶系</li>
@@ -409,30 +405,30 @@
 <li>单斜晶系</li>
 <li>三斜晶系</li>
 </ul>
-<p>下面从电磁学出发, 讨论如何定量描述各向异性。</p>
+<p>下面从电磁学出发，讨论如何定量描述各向异性. 这里的讨论一律不考虑磁的相应即<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>r</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu_r = 1</annotation></semantics></math></span></span>.</p>
 <h2 id="介电张量的引入">介电张量的引入</h2>
-<p>在各向同性介质中, 有极化矢量</p>
+<p>在各向同性介质中，有极化矢量</p>
 
 $$
 \displaystyle \vec{P} = \varepsilon_0 \chi \vec{E},
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>χ</mi></mrow><annotation encoding="application/x-tex">\chi</annotation></semantics></math></span></span> 是标量电极化率。</p>
-<p>在各向异性介质中, 极化随方向不同而不同, 故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>χ</mi></mrow><annotation encoding="application/x-tex">\chi</annotation></semantics></math></span></span> 不再是标量, 而是<strong>二阶张量</strong>:</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>χ</mi></mrow><annotation encoding="application/x-tex">\chi</annotation></semantics></math></span></span> 是标量电极化率.</p>
+<p>在各向异性介质中，极化随方向不同而不同，故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>χ</mi></mrow><annotation encoding="application/x-tex">\chi</annotation></semantics></math></span></span> 不再是标量，而是<strong>二阶张量</strong>：</p>
 
 $$
 \displaystyle \vec{P} = \varepsilon_0 \,\overset{\leftrightarrow}{\chi}\, \vec{E},
 $$
 
-<p>于是位移矢量</p>
+<p>于是电位移矢量</p>
 
 $$
 \displaystyle \vec{D} = \varepsilon_0 \vec{E} + \vec{P}
 = \varepsilon_0 \left( I + \overset{\leftrightarrow}{\chi} \right) \vec{E}
-= \varepsilon_0 \,\overset{\leftrightarrow}{\varepsilon}_r\, \vec{E},
+= \varepsilon_0 \,\overset{\leftrightarrow}{\varepsilon_r}\, \vec{E},
 $$
 
-<p>这里 $\overset{\leftrightarrow}{\varepsilon}_r$ 是相对介电常数张量。</p>
+<p>这里 $\overset{\leftrightarrow}{\varepsilon_r}$ 是相对介电常数张量.</p>
 <p>一般直接写介电张量为</p>
 
 $$
@@ -445,14 +441,14 @@ $$
 \end{pmatrix},
 $$
 
-<p>不写成矩阵形式时, 分量关系为</p>
+<p>不写成矩阵形式时，分量关系为</p>
 
 $$
 \displaystyle D_k = \varepsilon_0 \sum_{l} \varepsilon_{kl} E_l,
 \quad k,l \in \{x,y,z\}.
 $$
 
-<p>接下来我们将从<strong>能量守恒</strong>出发, 证明 $\overset{\leftrightarrow}{\varepsilon}$ 是一个<strong>对称张量</strong>。</p>
+<p>接下来我们将从<strong>能量守恒</strong>出发，证明 $\overset{\leftrightarrow}{\varepsilon}$ 是一个<strong>对称张量</strong>.</p>
 <h2 id="能量密度与介电张量的对称性">能量密度与介电张量的对称性</h2>
 <p>总电磁能量密度为</p>
 
@@ -466,10 +462,10 @@ $$
 $$
 \displaystyle \frac{dW}{dt} + \nabla \cdot \vec{S} = 0,
 \quad
-\vec{S} = \vec{E} \times \vec{H}.
+\vec{S} \equiv \vec{E} \times \vec{H}.
 $$
 
-<p>考虑无磁各向异性材料, 取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>r</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu_r = 1</annotation></semantics></math></span></span>, 则</p>
+<p>考虑无磁相应各向异性材料，取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>r</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu_r = 1</annotation></semantics></math></span></span>，则</p>
 
 $$
 \displaystyle
@@ -478,7 +474,7 @@ W = \frac{1}{2} \sum_k D_k E_k + \frac{1}{2} \mu_0 \mu_r H^2
 + \frac{1}{2} \mu_0 \mu_r H^2.
 $$
 
-<p>对时间求导:</p>
+<p>对时间求导：</p>
 
 $$
 \displaystyle
@@ -488,7 +484,7 @@ $$
 + \mu_0 \mu_r H \frac{dH}{dt}.
 $$
 
-<p>交换求和指标, 可化为</p>
+<p>交换求和指标，可化为</p>
 
 $$
 \displaystyle
@@ -497,7 +493,7 @@ $$
 + \mu_0 \mu_r H \frac{dH}{dt}.
 $$
 
-<p>另一方面, 由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo>×</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S} = \vec{E} \times \vec{H}</annotation></semantics></math></span></span>:</p>
+<p>另一方面，由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo>×</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S} = \vec{E} \times \vec{H}</annotation></semantics></math></span></span>：</p>
 
 $$
 \displaystyle
@@ -507,7 +503,7 @@ $$
 - \vec{E} \cdot (\nabla \times \vec{H}).
 $$
 
-<p>由 Maxwell 方程 (无源情况):</p>
+<p>由 Maxwell 方程 (无源情况)：</p>
 
 $$
 \displaystyle
@@ -516,16 +512,16 @@ $$
 \nabla \times \vec{H} = \frac{\partial \vec{D}}{\partial t},
 $$
 
-<p>注意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>B</mi></mrow><mo>⃗</mo></mover><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><msub><mi>μ</mi><mi>r</mi></msub><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{B} = \mu_0 \mu_r \vec{H}</annotation></semantics></math></span></span>, $\vec{D} = \varepsilon_0 \overset{\leftrightarrow}{\varepsilon} \vec{E}$, 得</p>
+<p>注意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>B</mi></mrow><mo>⃗</mo></mover><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><msub><mi>μ</mi><mi>r</mi></msub><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{B} = \mu_0 \mu_r \vec{H}</annotation></semantics></math></span></span>，$\vec{D} = \varepsilon_0 \overset{\leftrightarrow}{\varepsilon} \vec{E}$，得</p>
 
 $$
 \displaystyle
-\nabla \cdot \vec{S}
+\nabla \cdot \vec{S} = -\vec{H} \cdot \frac{\partial \vec{B}}{\partial t} - \vec{E} \cdot \frac{\partial \vec{D}}{\partial t}
 = - \mu_0 \mu_r \vec{H} \cdot \frac{\partial \vec{H}}{\partial t}
 - \sum_{k,l} \varepsilon_0 \varepsilon_{kl} E_k \frac{dE_l}{dt}.
 $$
 
-<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>d</mi><mi>W</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{dW}{dt}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∇</mi><mo>⋅</mo><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\nabla \cdot \vec{S}</annotation></semantics></math></span></span> 代入能量守恒:</p>
+<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>d</mi><mi>W</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{dW}{dt}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∇</mi><mo>⋅</mo><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\nabla \cdot \vec{S}</annotation></semantics></math></span></span> 代入能量守恒：</p>
 
 $$
 \displaystyle
@@ -538,7 +534,7 @@ $$
 E_k \frac{dE_l}{dt} = 0.
 $$
 
-<p>对任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>d</mi><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{d\vec{E}}{dt}</annotation></semantics></math></span></span>, 上式要恒成立, 则</p>
+<p>对任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>d</mi><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{d\vec{E}}{dt}</annotation></semantics></math></span></span>，上式要恒成立，则</p>
 
 $$
 \displaystyle
@@ -547,21 +543,23 @@ $$
 \varepsilon_{kl} = \varepsilon_{lk}.
 $$
 
-<p><strong>结论:</strong></p>
+<p><strong>结论：</strong></p>
 <ul>
-<li>在能量守恒条件下, 介电张量 $\overset{\leftrightarrow}{\varepsilon}$ 必须是<strong>对称张量</strong>。</li>
-<li>对称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3 \times 3</annotation></semantics></math></span></span> 矩阵只有 6 个独立分量。</li>
+<li>在能量守恒条件下，介电张量 $\overset{\leftrightarrow}{\varepsilon}$ 必须是<strong>对称张量</strong>.</li>
+<li>对称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3 \times 3</annotation></semantics></math></span></span> 矩阵只有 6 个独立分量.</li>
 </ul>
-<p>晶体除平移对称外, 还可能有旋转、镜面等对称性, 会进一步减少自由度。<br>
-常见晶系中, 介电张量的独立自由度为:</p>
+<p>晶体除平移对称外，还可能有旋转、镜面等对称性，会进一步减少自由度.<br>
+常见晶系中，介电张量的独立自由度为：</p>
 <ul>
-<li>立方晶系: 1 个自由度 → 各向同性</li>
-<li>三角、六角、四方晶系: 2 个自由度</li>
-<li>正交晶系: 3 个自由度</li>
-<li>单斜晶系: 4 个自由度</li>
-<li>三斜晶系: 6 个自由度</li>
+<li>立方晶系： 1 个自由度 → 各向同性</li>
+<li>三角、六角、四方晶系： 2 个自由度</li>
+<li>正交晶系： 3 个自由度</li>
+<li>单斜晶系： 4 个自由度</li>
+<li>三斜晶系： 6 个自由度</li>
 </ul>
 <h2 id="由电场能量到折射率椭球">由电场能量到折射率椭球</h2>
+<h3 id="折射率椭球的定义">折射率椭球的定义</h3>
+<p>各向异性晶体中，不同电场方向下光相应不同，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span></span> 是一个张量。用一个形象的图像直观体现不同<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span>方向的折射率或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span></span>，这就是折射率椭球.</p>
 <h3 id="从电场能量密度角度">从电场能量密度角度</h3>
 <p>电场能量密度为</p>
 
@@ -588,7 +586,7 @@ W_e = \frac{1}{2} \varepsilon_0
 \Big).
 $$
 
-<p>将上式各项除以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><msub><mi>W</mi><mi>e</mi></msub><mi mathvariant="normal">/</mi><msub><mi>ε</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">2 W_e / \varepsilon_0</annotation></semantics></math></span></span>, 得</p>
+<p>将上式各项除以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><msub><mi>W</mi><mi>e</mi></msub><mi mathvariant="normal">/</mi><msub><mi>ε</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">2 W_e / \varepsilon_0</annotation></semantics></math></span></span>，得</p>
 
 $$
 \displaystyle
@@ -601,7 +599,7 @@ $$
 = 1.
 $$
 
-<p>定义一组与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 同向的“能量归一化坐标”:</p>
+<p>定义一组与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 同向的“能量归一化坐标”：</p>
 
 $$
 \displaystyle
@@ -610,6 +608,7 @@ y_e = \sqrt{\frac{\varepsilon_0}{2 W_e}} E_y,\quad
 z_e = \sqrt{\frac{\varepsilon_0}{2 W_e}} E_z.
 $$
 
+<p>显然有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>e</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_e, y_e, z_e)</annotation></semantics></math></span></span> 与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 方向相同.</p>
 <p>于是上式化为</p>
 
 $$
@@ -623,9 +622,9 @@ $$
 = 1.
 $$
 
-<p>这就是所谓的<strong>光率体 (index body)</strong> 的一般方程。</p>
+<p>这就是所谓的 <strong>光率体 (index body)/折射率椭球</strong> 的一般方程.</p>
 <h3 id="对角化与主轴系">对角化与主轴系</h3>
-<p>可通过适当选择新的坐标系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>e</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_e, y_e, z_e)</annotation></semantics></math></span></span>, 使上式成为一标准椭球。对应地, 介电张量可以对角化为</p>
+<p>可通过适当选择新的坐标系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>e</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_e, y_e, z_e)</annotation></semantics></math></span></span>，使上式成为一标准椭球. 对应地，介电张量可以对角化为</p>
 
 $$
 \displaystyle
@@ -637,7 +636,7 @@ $$
 \end{pmatrix},
 $$
 
-<p>在这个<strong>主轴系</strong>下, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的关系为</p>
+<p>在这个<strong>主轴系</strong>下，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的关系为</p>
 
 $$
 \displaystyle
@@ -646,32 +645,30 @@ D_y = \varepsilon_0 \varepsilon_{yy} E_y,\quad
 D_z = \varepsilon_0 \varepsilon_{zz} E_z.
 $$
 
-<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>z</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\varepsilon_{xx}, \varepsilon_{yy}, \varepsilon_{zz}</annotation></semantics></math></span></span> 一般互不相等, 重要结论是:</p>
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>z</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\varepsilon_{xx}, \varepsilon_{yy}, \varepsilon_{zz}</annotation></semantics></math></span></span> 一般互不相等，重要结论是：</p>
 <blockquote>
-<p>在各向异性晶体中, <strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 一般不共线</strong>。<br>
-只有当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 平行于某一主轴 (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">x_e, y_e, z_e</annotation></semantics></math></span></span>) 时, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 才与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 同向。</p>
+<p>在各向异性晶体中，<strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 一般不共线</strong>.<br>
+只有当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 平行于某一主轴 (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">x_e, y_e, z_e</annotation></semantics></math></span></span>) 时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 才与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 同向.</p>
 </blockquote>
-<p>电场能量密度可写成两种形式:</p>
-<ul>
-<li>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 表示:
-  $$\displaystyle
-  W_e = \frac{1}{2} \varepsilon_0
-  \left(
-  \varepsilon_{xx} E_x^2 + \varepsilon_{yy} E_y^2 + \varepsilon_{zz} E_z^2
-  \right),
-  $$
-  
-</li>
-<li>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 表示:
-  $$\displaystyle
-  W_e = \frac{1}{2} \frac{D_x^2}{\varepsilon_0 \varepsilon_{xx}}
-  + \frac{1}{2} \frac{D_y^2}{\varepsilon_0 \varepsilon_{yy}}
-  + \frac{1}{2} \frac{D_z^2}{\varepsilon_0 \varepsilon_{zz}}.
-  $$
-  
-</li>
-</ul>
-<p>在讨论折射率椭球时, 约定<strong>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 的方向为参数</strong>来定义折射率, 因为后面许多几何构造 (如波法线面) 都是围绕 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 展开的。</p>
+<p>进而电场能量密度可写成两种形式：</p>
+<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 表示：</p>
+
+$$\displaystyle
+W_e = \frac{1}{2} \varepsilon_0
+\left(
+\varepsilon_{xx} E_x^2 + \varepsilon_{yy} E_y^2 + \varepsilon_{zz} E_z^2
+\right),
+$$
+
+<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 表示：</p>
+
+$$\displaystyle
+W_e = \frac{1}{2} \frac{D_x^2}{\varepsilon_0 \varepsilon_{xx}}
++ \frac{1}{2} \frac{D_y^2}{\varepsilon_0 \varepsilon_{yy}}
++ \frac{1}{2} \frac{D_z^2}{\varepsilon_0 \varepsilon_{zz}}.
+$$
+
+<p>在讨论折射率椭球时，约定<strong>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 的方向为参数</strong>来定义折射率，因为后面许多几何构造 (如波法线面) 都是围绕 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 展开的.</p>
 <h3 id="从电位移矢量角度">从电位移矢量角度</h3>
 <p>从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 出发的能量密度写成</p>
 
@@ -721,7 +718,7 @@ $$
 = 1.
 $$
 
-<p>大多教材中所说的折射率椭球, 指的就是这一方程。</p>
+<p>大多教材中所说的折射率椭球，指的就是这一方程. <strong>注意这个方程中的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>d</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>d</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">x_d, y_d, z_d</annotation></semantics></math></span></span> 与之前 光率体 一般方程中的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">x_e, y_e, z_e</annotation></semantics></math></span></span> 不一样！</strong></p>
 <p>定义</p>
 
 $$
@@ -730,7 +727,7 @@ r_d = \sqrt{x_d^2 + y_d^2 + z_d^2}
 = \frac{D}{\sqrt{2 W_e \varepsilon_0}},
 $$
 
-<p>这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mo>=</mo><mi mathvariant="normal">∣</mi><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">D = |\vec{D}|</annotation></semantics></math></span></span>。另一方面有</p>
+<p>这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mo>=</mo><mi mathvariant="normal">∣</mi><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">D = |\vec{D}|</annotation></semantics></math></span></span>. 另一方面有</p>
 
 $$
 \displaystyle
@@ -738,10 +735,10 @@ W_e = \frac{1}{2} \vec{D} \cdot \vec{E}
 = \frac{1}{2} D E_d,
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">E_d</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 方向上的分量。</p>
-<p>接下来利用平面波在介质中传播时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的关系。</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">E_d</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 方向上的分量.</p>
+<p>接下来利用平面波在介质中传播时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的关系.</p>
 <h2 id="平面波中-vec-D-与-vec-E-的关系">平面波中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的关系</h2>
-<p>从 Maxwell 方程出发 (连续介质, 无自由电荷电流), 可推导出对于平面波</p>
+<p>从 Maxwell 方程出发 (连续介质，无自由电荷电流)，可推导出对于平面波</p>
 
 $$
 \boxed{\displaystyle
@@ -753,8 +750,8 @@ $$
 }
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub><mo>=</mo><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mi mathvariant="normal">/</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">\hat{e}_k = \vec{k} / k</annotation></semantics></math></span></span> 是波矢方向单位矢量。</p>
-<p>在真空 (或取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu = 1</annotation></semantics></math></span></span>) 情况下, 得</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub><mo>=</mo><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mi mathvariant="normal">/</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">\hat{e}_k = \vec{k} / k</annotation></semantics></math></span></span> 是波矢方向单位矢量.</p>
+<p>在真空 (或取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu = 1</annotation></semantics></math></span></span>) 情况下，得</p>
 
 $$
 \displaystyle
@@ -765,20 +762,20 @@ $$
 \right],
 $$
 
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\vec{E}_k</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 方向上的分量。</p>
-<p>平面波传播时还可以证明:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\vec{E}_k</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 方向上的分量.</p>
+<p>平面波传播时还可以证明：</p>
 <ul>
 <li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D} \perp \vec{k}</annotation></semantics></math></span></span>,</li>
 <li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E} \perp \vec{S}</annotation></semantics></math></span></span>,</li>
 </ul>
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 是 Poynting 矢量。于是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 只与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 方向上的分量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">E_d</annotation></semantics></math></span></span> 有关:</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 是 Poynting 矢量. 于是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 只与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 方向上的分量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">E_d</annotation></semantics></math></span></span> 有关：</p>
 
 $$
 \displaystyle
 D = \frac{k^2}{\mu \mu_0 \omega^2} E_d.
 $$
 
-<p>利用折射率定义 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>=</mo><mo>(</mo><mi>c</mi><mi mathvariant="normal">/</mi><mi>n</mi><mo>)</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\omega = (c/n) k</annotation></semantics></math></span></span>, 得</p>
+<p>利用折射率定义 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>=</mo><mo>(</mo><mi>c</mi><mi mathvariant="normal">/</mi><mi>n</mi><mo>)</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\omega = (c/n) k</annotation></semantics></math></span></span>，得</p>
 
 $$
 \displaystyle
@@ -798,20 +795,20 @@ D = n^2 \varepsilon_0 E_d,
 W_e = \frac{D^2}{2 n^2 \varepsilon_0}.
 $$
 
-<p>将其代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>d</mi></msub><mo>=</mo><mi>D</mi><mi mathvariant="normal">/</mi><msqrt><mrow><mn>2</mn><msub><mi>W</mi><mi>e</mi></msub><msub><mi>ε</mi><mn>0</mn></msub></mrow></msqrt></mrow><annotation encoding="application/x-tex">r_d = D / \sqrt{2 W_e \varepsilon_0}</annotation></semantics></math></span></span> 中, 得</p>
+<p>将其代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>d</mi></msub><mo>=</mo><mi>D</mi><mi mathvariant="normal">/</mi><msqrt><mrow><mn>2</mn><msub><mi>W</mi><mi>e</mi></msub><msub><mi>ε</mi><mn>0</mn></msub></mrow></msqrt></mrow><annotation encoding="application/x-tex">r_d = D / \sqrt{2 W_e \varepsilon_0}</annotation></semantics></math></span></span> 中，得</p>
 
 $$
 \displaystyle
 r_d = n.
 $$
 
-<p><strong>物理含义:</strong></p>
+<p><strong>物理含义：</strong></p>
 <blockquote>
-<p>折射率椭球上某一点的矢径长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">r_d</annotation></semantics></math></span></span>, 就是<strong>沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 方向的折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span></strong>。</p>
+<p>折射率椭球上某一点的矢径长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">r_d</annotation></semantics></math></span></span>，就是<strong>沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 方向的折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span></strong>.</p>
 </blockquote>
 <details>
-<summary>例题: 利用折射率椭球求任意方向折射率</summary>
-<p>考虑一个各向异性晶体, 主折射率为</p>
+<summary>例题： 利用折射率椭球求任意方向折射率</summary>
+<p>考虑一个各向异性晶体，主折射率为</p>
 
 $$
 \displaystyle n_x = 1.5,\quad n_y = 1.6,\quad n_z = 1.7.
@@ -822,10 +819,10 @@ $$
 $$
 \displaystyle
 \hat{d} = (\cos\alpha,\cos\beta,\cos\gamma)
-= \left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0 \right).
+= \left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}，0 \right).
 $$
 
-<p>问: 沿该方向的折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>(</mo><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">n(\hat{d})</annotation></semantics></math></span></span> 为多少?</p>
+<p>问： 沿该方向的折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>(</mo><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">n(\hat{d})</annotation></semantics></math></span></span> 为多少?</p>
 <p>折射率椭球方程</p>
 
 $$
@@ -836,7 +833,7 @@ $$
 = 1
 $$
 
-<p>对固定方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{d}</annotation></semantics></math></span></span> 上的点, 有</p>
+<p>对固定方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{d}</annotation></semantics></math></span></span> 上的点，有</p>
 
 $$
 \displaystyle
@@ -856,7 +853,7 @@ r_d^2 \left(
 \right) = 1.
 $$
 
-<p>又 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>d</mi></msub><mo>=</mo><mi>n</mi><mo>(</mo><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">r_d = n(\hat{d})</annotation></semantics></math></span></span>, 故</p>
+<p>又 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>d</mi></msub><mo>=</mo><mi>n</mi><mo>(</mo><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">r_d = n(\hat{d})</annotation></semantics></math></span></span>，故</p>
 
 $$
 \displaystyle
@@ -866,7 +863,7 @@ $$
 + \frac{\cos^2\gamma}{n_z^2}.
 $$
 
-<p>代入数据:</p>
+<p>代入数据：</p>
 
 $$
 \displaystyle
@@ -876,18 +873,18 @@ $$
 + 0.
 $$
 
-<p>数值计算可得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>(</mo><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">n(\hat{d})</annotation></semantics></math></span></span>, 即该方向上的折射率。</p>
+<p>数值计算可得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>(</mo><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">n(\hat{d})</annotation></semantics></math></span></span>，即该方向上的折射率.</p>
 </details>
 <h2 id="自由度数与主轴的物理含义">自由度数与主轴的物理含义</h2>
-<p>在单斜或三斜晶体中, 介电张量一般有 4 至 6 个自由度。<br>
-但对角化后只剩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>z</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\varepsilon_{xx}, \varepsilon_{yy}, \varepsilon_{zz}</annotation></semantics></math></span></span> 三个数, 看似少了自由度。实际上并不矛盾:</p>
+<p>在单斜或三斜晶体中，介电张量一般有 4 至 6 个自由度.<br>
+但对角化后只剩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>z</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\varepsilon_{xx}, \varepsilon_{yy}, \varepsilon_{zz}</annotation></semantics></math></span></span> 三个数，看似少了自由度. 实际上并不矛盾：</p>
 <ul>
-<li>对角化过程中选择的新坐标轴方向本身就包含了<strong>三个自由度</strong> (即主轴的空间取向)。</li>
-<li>对于自由度较少的晶体 (如三角、四方等), 主轴往往与晶体对称轴自然对齐, 几乎不需要“选择”。</li>
-<li>对于单斜、三斜晶体, 主轴方向与晶体几何轴不同, “选轴”的过程体现出那多出来的自由度。</li>
+<li>对角化过程中选择的新坐标轴方向本身就包含了<strong>三个自由度</strong> (即主轴的空间取向).</li>
+<li>对于自由度较少的晶体 (如三角、四方等)，主轴往往与晶体对称轴自然对齐，几乎不需要“选择”.</li>
+<li>对于单斜、三斜晶体，主轴方向与晶体几何轴不同，“选轴”的过程体现出那多出来的自由度.</li>
 </ul>
 <h2 id="各向异性晶体中的平面波与矢量关系">各向异性晶体中的平面波与矢量关系</h2>
-<p>考虑各向异性晶体中的平面波, 忽略源项, 取</p>
+<p>考虑各向异性晶体中的平面波，忽略源项，取</p>
 
 $$
 \displaystyle
@@ -900,7 +897,7 @@ $$
 \vec{H} = \vec{H}_0 \, e^{i(\vec{k} \cdot \vec{r} - \omega t)}.
 $$
 
-<p>代入 Maxwell 方程 (无源):</p>
+<p>代入 Maxwell 方程 (无源)：</p>
 
 $$
 \displaystyle
@@ -922,7 +919,7 @@ $$
 \nabla \cdot \to i \vec{k} \cdot.
 $$
 
-<p>于是得到代数形式:</p>
+<p>于是得到代数形式：</p>
 
 $$
 \displaystyle
@@ -935,11 +932,11 @@ $$
 \vec{k} \times \vec{H} = - \omega \vec{D}.
 $$
 
-<p>由此得到:</p>
+<p>由此得到：</p>
 <ul>
 <li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k} \perp \vec{D}</annotation></semantics></math></span></span>,</li>
 <li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k} \perp \vec{H}</annotation></semantics></math></span></span>,</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover><mo separator="true">,</mo><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mo separator="true">,</mo><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{H}, \vec{k}, \vec{D}</annotation></semantics></math></span></span> 右手关系。</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover><mo separator="true">,</mo><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mo separator="true">,</mo><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{H}, \vec{k}, \vec{D}</annotation></semantics></math></span></span> 右手关系.</li>
 </ul>
 <p>又因</p>
 
@@ -948,17 +945,17 @@ $$
 \vec{S} = \vec{E} \times \vec{H},
 $$
 
-<p>所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S} \perp \vec{E}</annotation></semantics></math></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S} \perp \vec{H}</annotation></semantics></math></span></span>,<br>
-同时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E} \perp \vec{H}</annotation></semantics></math></span></span> 对平面波仍成立, 因此</p>
+<p>所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S} \perp \vec{E}</annotation></semantics></math></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S} \perp \vec{H}</annotation></semantics></math></span></span>，<br>
+同时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E} \perp \vec{H}</annotation></semantics></math></span></span> 对平面波仍成立，因此</p>
 <blockquote>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo separator="true">,</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover><mo separator="true">,</mo><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}, \vec{H}, \vec{S}</annotation></semantics></math></span></span> 也组成一组右手系。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo separator="true">,</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover><mo separator="true">,</mo><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}, \vec{H}, \vec{S}</annotation></semantics></math></span></span> 也组成一组右手系.</p>
 </blockquote>
-<p>之前已经看到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 一般不共线,<br>
-下面将从<strong>相速度</strong>与<strong>群速度</strong>的角度理解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 的不共线性。</p>
+<p>之前已经看到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 一般不共线，<br>
+下面将从<strong>相速度</strong>与<strong>群速度</strong>的角度理解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 的不共线性.</p>
 <h2 id="相速度、群速度与折射率">相速度、群速度与折射率</h2>
 <h3 id="相速度与群速度的定义">相速度与群速度的定义</h3>
 <ul>
-<li><strong>相速度</strong>:
+<li><strong>相速度</strong>：
   $$\displaystyle
   v_p = \frac{\omega}{k},
   \quad
@@ -974,14 +971,14 @@ $$
   
 </li>
 </ul>
-<p>在各向异性、无色散介质中, <strong>能量传播速度</strong>往往也可记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">v_g</annotation></semantics></math></span></span>, 定义为</p>
+<p>在各向异性、无色散介质中，<strong>能量传播速度</strong>往往也可记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">v_g</annotation></semantics></math></span></span>，定义为</p>
 
 $$
 \displaystyle
 v_g \equiv \frac{S}{w},
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span></span> 是瞬时能量密度。</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span></span> 是瞬时能量密度.</p>
 <h3 id="用-Maxwell-方程求能量密度">用 Maxwell 方程求能量密度</h3>
 <p>有</p>
 
@@ -1000,7 +997,7 @@ $$
 \vec{k} \times \vec{E} = \omega \vec{B},
 $$
 
-<p>可将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover><mo>⋅</mo><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D} \cdot \vec{E}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>B</mi></mrow><mo>⃗</mo></mover><mo>⋅</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{B} \cdot \vec{H}</annotation></semantics></math></span></span> 写成与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 相关的形式:</p>
+<p>可将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover><mo>⋅</mo><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D} \cdot \vec{E}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>B</mi></mrow><mo>⃗</mo></mover><mo>⋅</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{B} \cdot \vec{H}</annotation></semantics></math></span></span> 写成与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 相关的形式：</p>
 
 $$
 \displaystyle
@@ -1009,7 +1006,7 @@ w
 + \frac{1}{2} \left( \frac{1}{\omega} (\vec{k} \times \vec{E}) \cdot \vec{H} \right).
 $$
 
-<p>用三重积公式化简, 得</p>
+<p>用三重积公式化简，得</p>
 
 $$
 \displaystyle
@@ -1018,8 +1015,8 @@ w = \frac{1}{\omega} (\vec{E} \times \vec{H}) \cdot \vec{k}
 = \frac{S k \cos\alpha}{\omega},
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 之间的夹角。</p>
-<p>注意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub><mo>=</mo><mi>ω</mi><mi mathvariant="normal">/</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">v_p = \omega / k</annotation></semantics></math></span></span>, 故</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 之间的夹角.</p>
+<p>注意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub><mo>=</mo><mi>ω</mi><mi mathvariant="normal">/</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">v_p = \omega / k</annotation></semantics></math></span></span>，故</p>
 
 $$
 \displaystyle
@@ -1028,13 +1025,13 @@ w = \frac{1}{v_p} S \cos\alpha
 v_p = v_g \cos\alpha,
 $$
 
-<p>这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>g</mi></msub><mo>=</mo><mi>S</mi><mi mathvariant="normal">/</mi><mi>w</mi></mrow><annotation encoding="application/x-tex">v_g = S / w</annotation></semantics></math></span></span>。</p>
-<p><strong>结论:</strong></p>
+<p>这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>g</mi></msub><mo>=</mo><mi>S</mi><mi mathvariant="normal">/</mi><mi>w</mi></mrow><annotation encoding="application/x-tex">v_g = S / w</annotation></semantics></math></span></span>.</p>
+<p><strong>结论：</strong></p>
 <ul>
-<li>一般而言, 在各向异性晶体中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>v</mi></mrow><mo>⃗</mo></mover><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\vec{v}_p</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>v</mi></mrow><mo>⃗</mo></mover><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">\vec{v}_g</annotation></semantics></math></span></span> 不共线。</li>
-<li>只有在特殊方向 (比如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 位于主轴方向, 使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 共线) 时, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 才可能重合。</li>
+<li>一般而言，在各向异性晶体中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>v</mi></mrow><mo>⃗</mo></mover><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\vec{v}_p</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>v</mi></mrow><mo>⃗</mo></mover><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">\vec{v}_g</annotation></semantics></math></span></span> 不共线.</li>
+<li>只有在特殊方向 (比如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 位于主轴方向，使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 共线) 时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 才可能重合.</li>
 </ul>
-<p>如果仍用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mi>c</mi><mi mathvariant="normal">/</mi><msub><mi>v</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">n = c / v_p</annotation></semantics></math></span></span> 定义折射率, 同理可定义<strong>群速度折射率</strong></p>
+<p>如果仍用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mi>c</mi><mi mathvariant="normal">/</mi><msub><mi>v</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">n = c / v_p</annotation></semantics></math></span></span> 定义折射率，同理可定义<strong>群速度折射率</strong></p>
 
 $$
 \displaystyle
@@ -1051,27 +1048,27 @@ $$
 n \cos\alpha = n_g.
 $$
 
-<p>因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mi>α</mi></mrow><annotation encoding="application/x-tex">\cos\alpha</annotation></semantics></math></span></span> 可以为负, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">n_g</annotation></semantics></math></span></span> 在几何上可以取负值, 对能量传播而言, 看起来好像出现了“<strong>负折射</strong>”的现象 (从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 的角度看)。</p>
-<p>应特别注意:</p>
+<p>因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mi>α</mi></mrow><annotation encoding="application/x-tex">\cos\alpha</annotation></semantics></math></span></span> 可以为负，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">n_g</annotation></semantics></math></span></span> 在几何上可以取负值，对能量传播而言，看起来好像出现了“<strong>负折射</strong>”的现象 (从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 的角度看).</p>
+<p>应特别注意：</p>
 <ul>
-<li>若默认 Snell 定律对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">v_p</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 仍然成立, 则对能量折射而言, 需要考虑 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">n_g</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 的关系。</li>
-<li>实际实验中我们“看到”的通常是能量传播方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> (即光线), 而不是相位前沿本身。</li>
+<li>若默认 Snell 定律对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">v_p</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 仍然成立，则对能量折射而言，需要考虑 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">n_g</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 的关系.</li>
+<li>实际实验中我们“看到”的通常是能量传播方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> (即光线)，而不是相位前沿本身.</li>
 </ul>
 <details>
-<summary>例题: 相速度、群速度与有效折射率</summary>
-<p>设某各向异性晶体中, 某一方向上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 的夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>6</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\alpha = 60^\circ</annotation></semantics></math></span></span>,<br>
+<summary>例题： 相速度、群速度与有效折射率</summary>
+<p>设某各向异性晶体中，某一方向上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 的夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>6</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\alpha = 60^\circ</annotation></semantics></math></span></span>，<br>
 相速度折射率为</p>
 
 $$
 \displaystyle n = 1.5.
 $$
 
-<p>求:</p>
+<p>求：</p>
 <ol>
 <li>群速度折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">n_g</annotation></semantics></math></span></span>;</li>
-<li>若真空光速 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span></span> 取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mi mathvariant="normal">.</mi><mn>0</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>8</mn></msup><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">s</mi></mtext></mrow><annotation encoding="application/x-tex">3.0 \times 10^8 \,\text{m/s}</annotation></semantics></math></span></span>, 求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">v_p</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">v_g</annotation></semantics></math></span></span>。</li>
+<li>若真空光速 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span></span> 取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mi mathvariant="normal">.</mi><mn>0</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>8</mn></msup><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">s</mi></mtext></mrow><annotation encoding="application/x-tex">3.0 \times 10^8 \,\text{m/s}</annotation></semantics></math></span></span>，求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">v_p</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">v_g</annotation></semantics></math></span></span>.</li>
 </ol>
-<p>解:</p>
+<p>解：</p>
 <p>由关系式</p>
 
 $$
@@ -1100,11 +1097,11 @@ v_g = \frac{c}{n_g}
 = 4.0 \times 10^8 \,\text{m/s}.
 $$
 
-<p>可以看到, 在各向异性、无色散的情形下, 以此定义的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">n_g</annotation></semantics></math></span></span> 允许 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>g</mi></msub><mo>&gt;</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">v_g &gt; c</annotation></semantics></math></span></span>。<br>
-这并不意味着超光速传输信息, 而是几何意义上的能流速度, 需要结合完整的场论加以理解。</p>
+<p>可以看到，在各向异性、无色散的情形下，以此定义的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">n_g</annotation></semantics></math></span></span> 允许 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>g</mi></msub><mo>&gt;</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">v_g &gt; c</annotation></semantics></math></span></span>.<br>
+这并不意味着超光速传输信息，而是几何意义上的能流速度，需要结合完整的场论加以理解.</p>
 </details>
 <h2 id="波法线-相位-的菲涅尔方程">波法线 (相位) 的菲涅尔方程</h2>
-<p>在实验上, 常常能测得晶体的<strong>主介电常数</strong></p>
+<p>在实验上，常常能测得晶体的<strong>主介电常数</strong></p>
 
 $$
 \displaystyle
@@ -1120,13 +1117,13 @@ n_y^2 = \varepsilon_{yy},\quad
 n_z^2 = \varepsilon_{zz}.
 $$
 
-<p>问题:<br>
-<strong>已知 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>z</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\varepsilon_{xx}, \varepsilon_{yy}, \varepsilon_{zz}</annotation></semantics></math></span></span>, 在给定波矢方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span> 下, 该平面波“感受到”的折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 是多少?</strong></p>
-<p>注意到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k} \perp \vec{D}</annotation></semantics></math></span></span>, 因此确定了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 也就确定了允许的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 所在平面。<br>
-但这一平面与折射率椭球的交线一般不是圆, 因此对应的折射率并不简单。</p>
-<p>为此需要用到<strong>波法线菲涅尔方程</strong>。</p>
+<p>问题：<br>
+<strong>已知 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>z</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\varepsilon_{xx}, \varepsilon_{yy}, \varepsilon_{zz}</annotation></semantics></math></span></span>，在给定波矢方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span> 下，该平面波“感受到”的折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 是多少?</strong></p>
+<p>注意到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k} \perp \vec{D}</annotation></semantics></math></span></span>，因此确定了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 也就确定了允许的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 所在平面.<br>
+但这一平面与折射率椭球的交线一般不是圆，因此对应的折射率并不简单.</p>
+<p>为此需要用到<strong>波法线菲涅尔方程</strong>.</p>
 <h3 id="从-Maxwell-方程推导">从 Maxwell 方程推导</h3>
-<p>利用平面波条件和 Maxwell 方程:</p>
+<p>利用平面波条件和 Maxwell 方程：</p>
 
 $$
 \displaystyle
@@ -1134,7 +1131,7 @@ $$
 \vec{k} \times \vec{H} = - \omega \vec{D}.
 $$
 
-<p>消去 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{H}</annotation></semantics></math></span></span>:</p>
+<p>消去 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{H}</annotation></semantics></math></span></span>：</p>
 
 $$
 \displaystyle
@@ -1145,7 +1142,7 @@ $$
 $$
 
 <p>用向量恒等式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>a</mi></mrow><mo>⃗</mo></mover><mo>×</mo><mo>(</mo><mover accent="true"><mrow><mi>b</mi></mrow><mo>⃗</mo></mover><mo>×</mo><mover accent="true"><mrow><mi>c</mi></mrow><mo>⃗</mo></mover><mo>)</mo><mo>=</mo><mover accent="true"><mrow><mi>b</mi></mrow><mo>⃗</mo></mover><mo>(</mo><mover accent="true"><mrow><mi>a</mi></mrow><mo>⃗</mo></mover><mo>⋅</mo><mover accent="true"><mrow><mi>c</mi></mrow><mo>⃗</mo></mover><mo>)</mo><mo>−</mo><mover accent="true"><mrow><mi>c</mi></mrow><mo>⃗</mo></mover><mo>(</mo><mover accent="true"><mrow><mi>a</mi></mrow><mo>⃗</mo></mover><mo>⋅</mo><mover accent="true"><mrow><mi>b</mi></mrow><mo>⃗</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">\vec{a} \times (\vec{b} \times \vec{c})
-= \vec{b} (\vec{a} \cdot \vec{c}) - \vec{c} (\vec{a} \cdot \vec{b})</annotation></semantics></math></span></span>, 得</p>
+= \vec{b} (\vec{a} \cdot \vec{c}) - \vec{c} (\vec{a} \cdot \vec{b})</annotation></semantics></math></span></span>，得</p>
 
 $$
 \displaystyle
@@ -1156,7 +1153,7 @@ $$
 \big[ \vec{E} - (\hat{e}_k \cdot \vec{E}) \hat{e}_k \big].
 $$
 
-<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu = 1</annotation></semantics></math></span></span>, 利用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mi mathvariant="normal">/</mi><mi>ω</mi><mo>=</mo><mi>n</mi><mi mathvariant="normal">/</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">k / \omega = n / c</annotation></semantics></math></span></span> 得</p>
+<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu = 1</annotation></semantics></math></span></span>，利用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mi mathvariant="normal">/</mi><mi>ω</mi><mo>=</mo><mi>n</mi><mi mathvariant="normal">/</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">k / \omega = n / c</annotation></semantics></math></span></span> 得</p>
 
 $$
 \displaystyle
@@ -1164,12 +1161,12 @@ $$
 = n^2 \varepsilon_0 \big[ \vec{E} - (\hat{e}_k \cdot \vec{E}) \hat{e}_k \big].
 $$
 
-<p>另一方面, 在对角化后的主轴系中, 有</p>
+<p>另一方面，在对角化后的主轴系中，有</p>
 
 $$
 \displaystyle
 D_i = \varepsilon_0 \varepsilon_{ii} E_i,
-\quad i = x, y, z.
+\quad i = x，y，z.
 $$
 
 <p>于是分量形式为</p>
@@ -1181,7 +1178,7 @@ D_i = \varepsilon_0 \varepsilon_{ii} E_i
 \left( E_i - \hat{e}_{ki} (\hat{e}_k \cdot \vec{E}) \right).
 $$
 
-<p>写成关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的方程, 并记 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mrow><mi>i</mi><mi>i</mi></mrow></msub><mo>=</mo><msubsup><mi>n</mi><mi>i</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\varepsilon_{ii} = n_i^2</annotation></semantics></math></span></span>:</p>
+<p>写成关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的方程，并记 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mrow><mi>i</mi><mi>i</mi></mrow></msub><mo>=</mo><msubsup><mi>n</mi><mi>i</mi><mn>2</mn></msubsup></mrow><annotation encoding="application/x-tex">\varepsilon_{ii} = n_i^2</annotation></semantics></math></span></span>：</p>
 
 $$
 \displaystyle
@@ -1189,11 +1186,11 @@ E_i = \frac{n^2}{n_i^2}
 \left( E_i - \hat{e}_{ki} (\hat{e}_k \cdot \vec{E}) \right).
 $$
 
-<p>这就是<strong>波法线菲涅尔方程</strong>, 描述了折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 与波矢方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span> 的关系。</p>
+<p>这就是<strong>波法线菲涅尔方程</strong>，描述了折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 与波矢方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span> 的关系.</p>
 <p><strong>这个方程有重要意义</strong>，具此可以推导出：</p>
 <h3 id="本征值问题与偏振本征态">本征值问题与偏振本征态</h3>
-<p>从更一般的形式出发, 不必假定 $\overset{\leftrightarrow}{\varepsilon}$ 已对角化。</p>
-<p>回忆:</p>
+<p>从更一般的形式出发，不必假定 $\overset{\leftrightarrow}{\varepsilon}$ 已对角化.</p>
+<p>回忆：</p>
 
 $$
 \displaystyle
@@ -1202,7 +1199,7 @@ $$
 \big[ \vec{E} - (\hat{e}_k \cdot \vec{E}) \hat{e}_k \big],
 $$
 
-<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu = 1</annotation></semantics></math></span></span>, 记相速度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub><mo>=</mo><mi>ω</mi><mi mathvariant="normal">/</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">v_p = \omega / k</annotation></semantics></math></span></span>, 则</p>
+<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu = 1</annotation></semantics></math></span></span>，记相速度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub><mo>=</mo><mi>ω</mi><mi mathvariant="normal">/</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">v_p = \omega / k</annotation></semantics></math></span></span>，则</p>
 
 $$
 \displaystyle
@@ -1259,10 +1256,10 @@ P \, \overset{\leftrightarrow}{\varepsilon}^{-1} \vec{D}
 = \frac{1}{n^2} \vec{D}.
 $$
 
-<p>这是关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 的<strong>本征值问题</strong>:</p>
+<p>这是关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 的<strong>本征值问题</strong>：</p>
 <ul>
 <li>本征值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">1 / n^2</annotation></semantics></math></span></span>,</li>
-<li>本征矢为对应的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 方向。</li>
+<li>本征矢为对应的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 方向.</li>
 </ul>
 <p>同时还要满足约束</p>
 
@@ -1271,15 +1268,15 @@ $$
 \vec{k} \cdot \vec{D} = 0,
 $$
 
-<p>意味着 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 只能存在于垂直于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 的二维子空间中。<br>
-因此, 尽管上述矩阵为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3 \times 3</annotation></semantics></math></span></span>, 真正的物理解只对应<strong>两个本征态</strong>, 即:</p>
+<p>意味着 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 只能存在于垂直于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 的二维子空间中.<br>
+因此，尽管上述矩阵为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3 \times 3</annotation></semantics></math></span></span>，真正的物理解只对应<strong>两个本征态</strong>，即：</p>
 <blockquote>
-<p>对于给定波矢方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span>, 在各向异性晶体中只有两种偏振本征态能够在传播中保持偏振不变。</p>
+<p>对于给定波矢方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span>，在各向异性晶体中只有两种偏振本征态能够在传播中保持偏振不变.</p>
 </blockquote>
-<p>在后续讨论单轴晶体时, 这两个本征态对应于常光 (o 光) 与非常光 (e 光)。</p>
+<p>在后续讨论单轴晶体时，这两个本征态对应于常光 (o 光) 与非常光 (e 光).</p>
 <details>
-<summary>例题: 单轴晶体中的本征态个数</summary>
-<p>考虑光轴沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 方向的单轴晶体, 其介电张量在主轴系中为</p>
+<summary>例题： 单轴晶体中的本征态个数</summary>
+<p>考虑光轴沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 方向的单轴晶体，其介电张量在主轴系中为</p>
 
 $$
 \displaystyle
@@ -1292,35 +1289,35 @@ $$
 \end{pmatrix},
 $$
 
-<p>对应折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>n</mi><mi>o</mi><mn>2</mn></msubsup><mo>=</mo><msub><mi>ε</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">n_o^2 = \varepsilon_o</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>n</mi><mi>e</mi><mn>2</mn></msubsup><mo>=</mo><msub><mi>ε</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">n_e^2 = \varepsilon_e</annotation></semantics></math></span></span>。</p>
-<p>设波矢方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span> 不与光轴重合, 问:</p>
+<p>对应折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>n</mi><mi>o</mi><mn>2</mn></msubsup><mo>=</mo><msub><mi>ε</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">n_o^2 = \varepsilon_o</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>n</mi><mi>e</mi><mn>2</mn></msubsup><mo>=</mo><msub><mi>ε</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">n_e^2 = \varepsilon_e</annotation></semantics></math></span></span>.</p>
+<p>设波矢方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span> 不与光轴重合，问：</p>
 <ol>
 <li>一共有多少个不同的折射率解?</li>
 <li>每个折射率解对应的偏振态物理意义是什么?</li>
 </ol>
-<p>答:</p>
+<p>答：</p>
 <ul>
-<li>由上文的本征值问题可知, 在垂直于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span> 的二维子空间中, 算符 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><msup><mi>ε</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">P \varepsilon^{-1}</annotation></semantics></math></span></span> 有两个本征值, 因而给出<strong>两个折射率解</strong>。</li>
-<li>对应的两个本征矢 (即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 的方向) 就是两种保持偏振形状不变的本征偏振态。在单轴晶体中, 这两个态分别称为:
+<li>由上文的本征值问题可知，在垂直于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span> 的二维子空间中，算符 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><msup><mi>ε</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">P \varepsilon^{-1}</annotation></semantics></math></span></span> 有两个本征值，因而给出<strong>两个折射率解</strong>.</li>
+<li>对应的两个本征矢 (即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 的方向) 就是两种保持偏振形状不变的本征偏振态. 在单轴晶体中，这两个态分别称为：
 <ul>
-<li>常光 (ordinary wave, o 光), 折射率不随方向变化, 始终为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">n_o</annotation></semantics></math></span></span>;</li>
-<li>非常光 (extraordinary wave, e 光), 折射率与传播方向有关, 一般记作 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>e</mi></msub><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">n_e(\theta)</annotation></semantics></math></span></span>。</li>
+<li>寻常光 (ordinary wave，o 光)，折射率不随方向变化，始终为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">n_o</annotation></semantics></math></span></span>;</li>
+<li>非常光 (extraordinary wave，e 光)，折射率与传播方向有关，一般记作 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>e</mi></msub><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">n_e(\theta)</annotation></semantics></math></span></span>.</li>
 </ul>
 </li>
 </ul>
-<p>这也解释了为什么单轴晶体在斜入射时会产生两束偏折不同的出射光。</p>
+<p>这也解释了为什么单轴晶体在斜入射时会产生两束偏折不同的出射光.</p>
 </details>
 <h3 id="色散关系与等频率图">色散关系与等频率图</h3>
 <h4 id="从菲涅尔方程到色散关系">从菲涅尔方程到色散关系</h4>
-<p>为了得到更直观的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>(</mo><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">\omega(\vec{k})</annotation></semantics></math></span></span> 关系, 希望避免显式写出 $\overset{\leftrightarrow}{\varepsilon}^{-1}$,<br>
-而是直接处理 “正的” 方程:</p>
+<p>为了得到更直观的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>(</mo><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">\omega(\vec{k})</annotation></semantics></math></span></span> 关系，希望避免显式写出 $\overset{\leftrightarrow}{\varepsilon}^{-1}$，<br>
+而是直接处理 “正的” 方程：</p>
 
 $$
 \displaystyle
 \big( n^2 (I - \hat{e}_k \hat{e}_k^\mathrm{T}) - \overset{\leftrightarrow}{\varepsilon} \big) \vec{E} = 0.
 $$
 
-<p>要存在非零解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\vec{E} \neq 0</annotation></semantics></math></span></span>, 必须满足行列式为零:</p>
+<p>要存在非零解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\vec{E} \neq 0</annotation></semantics></math></span></span>，必须满足行列式为零：</p>
 
 $$
 \displaystyle
@@ -1328,7 +1325,7 @@ $$
 - \overset{\leftrightarrow}{\varepsilon} \big) = 0.
 $$
 
-<p>将方向投影 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub><msubsup><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi><mrow><mi mathvariant="normal">T</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">\hat{e}_k \hat{e}_k^\mathrm{T}</annotation></semantics></math></span></span> 改写为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 的大小与方向, 为记号清晰, 用</p>
+<p>将方向投影 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub><msubsup><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi><mrow><mi mathvariant="normal">T</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">\hat{e}_k \hat{e}_k^\mathrm{T}</annotation></semantics></math></span></span> 改写为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 的大小与方向，为记号清晰，用</p>
 
 $$
 \displaystyle
@@ -1357,47 +1354,47 @@ $$
 \right) = 0.
 $$
 
-<p>这是各向异性介质中平面波的<strong>色散关系</strong>。<br>
-对于给定频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span>, 所有满足该方程的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 的集合称为<strong>等频率图</strong> (isofrequency surface)。</p>
+<p>这是各向异性介质中平面波的<strong>色散关系</strong>.<br>
+对于给定频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span>，所有满足该方程的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 的集合称为<strong>等频率图</strong> (isofrequency surface).</p>
 <ul>
-<li>各向同性介质中, 等频率图为<strong>球面</strong> (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mi>n</mi><mi>ω</mi><mi mathvariant="normal">/</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">k = n\omega/c</annotation></semantics></math></span></span> 常数)。</li>
-<li>各向异性介质中, 等频率图通常是<strong>椭球面</strong>或更复杂的二维曲面, 且常常有<strong>两层</strong> (对应两种偏振本征态)。</li>
+<li>各向同性介质中，等频率图为<strong>球面</strong> (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mi>n</mi><mi>ω</mi><mi mathvariant="normal">/</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">k = n\omega/c</annotation></semantics></math></span></span> 常数).</li>
+<li>各向异性介质中，等频率图通常是<strong>椭球面</strong>或更复杂的二维曲面，且常常有<strong>两层</strong> (对应两种偏振本征态).</li>
 </ul>
-<p>等频率图有若干重要性质:</p>
+<p>等频率图有若干重要性质：</p>
 <ol>
 <li>
-<p>它给出了所有允许波矢方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 的集合。</p>
+<p>它给出了所有允许波矢方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 的集合.</p>
 </li>
 <li>
-<p><strong>群速度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>v</mi></mrow><mo>⃗</mo></mover><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">\vec{v}_g</annotation></semantics></math></span></span> 与能流方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 正比, 并与等频率面的法线平行</strong>:</p>
+<p><strong>群速度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>v</mi></mrow><mo>⃗</mo></mover><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">\vec{v}_g</annotation></semantics></math></span></span> 与能流方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 正比，并与等频率面的法线平行</strong>：</p>
 
    $$\displaystyle
    \vec{v}_g \propto \nabla_{\vec{k}} \omega(\vec{k}),
    $$
    
-<p>在固定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span> 的等频面上, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">∇</mi><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow></msub><mi>ω</mi></mrow><annotation encoding="application/x-tex">\nabla_{\vec{k}} \omega</annotation></semantics></math></span></span> 垂直于等频面,<br>
-故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 与等频面法线方向平行。</p>
+<p>在固定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span> 的等频面上，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">∇</mi><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow></msub><mi>ω</mi></mrow><annotation encoding="application/x-tex">\nabla_{\vec{k}} \omega</annotation></semantics></math></span></span> 垂直于等频面，<br>
+故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 与等频面法线方向平行.</p>
 </li>
 <li>
-<p>在实际问题中, 常通过在某一截面上画出等频曲线, 然后从曲线的法线方向获得能流方向, 用来分析折射、反射等问题。</p>
+<p>在实际问题中，常通过在某一截面上画出等频曲线，然后从曲线的法线方向获得能流方向，用来分析折射、反射等问题.</p>
 </li>
 </ol>
 <blockquote>
-<p>注: 原笔记中提到“切向方向是能流方向”是不准确的, 正确的是<strong>法线方向 (normal)</strong> 对应能流或群速度方向。</p>
+<p>注： 原笔记中提到“切向方向是能流方向”是不准确的，正确的是<strong>法线方向 (normal)</strong> 对应能流或群速度方向.</p>
 </blockquote>
 <h4 id="等频率图的常见几何形状">等频率图的常见几何形状</h4>
 <ul>
-<li>各向同性介质:<br>
-等频率图为单个球面, 所有方向上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|\vec{k}|</annotation></semantics></math></span></span> 相同, 能流与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 重合。</li>
-<li>一般各向异性介质:<br>
-对同一频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span>, 等频率图可能为两个相互嵌套或相交的椭球面。<br>
-从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 的角度看, 对应不同的主介电常数;<br>
-从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 的角度看, 某些几何构型上看起来像“负折射”。</li>
-<li>在棱镜或斜界面问题中, 常画出等相位面 (与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 垂直) 与等频率图,<br>
-通过几何作图得到折射光线方向与能流方向。</li>
+<li>各向同性介质：<br>
+等频率图为单个球面，所有方向上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|\vec{k}|</annotation></semantics></math></span></span> 相同，能流与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 重合.</li>
+<li>一般各向异性介质：<br>
+对同一频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span>，等频率图可能为两个相互嵌套或相交的椭球面.<br>
+从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 的角度看，对应不同的主介电常数;<br>
+从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 的角度看，某些几何构型上看起来像“负折射”.</li>
+<li>在棱镜或斜界面问题中，常画出等相位面 (与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 垂直) 与等频率图，<br>
+通过几何作图得到折射光线方向与能流方向.</li>
 </ul>
 <h3 id="波法线菲涅尔方程的常用形式">波法线菲涅尔方程的常用形式</h3>
-<p>前面得到的波法线菲涅尔方程, 经适当代数变形, 在许多论文或教材中常写为</p>
+<p>前面得到的波法线菲涅尔方程，经适当代数变形，在许多论文或教材中常写为</p>
 
 $$
 \displaystyle
@@ -1407,11 +1404,11 @@ $$
 = \frac{1}{n^2},
 $$
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>e</mi><mrow><mi>k</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>e</mi><mrow><mi>k</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>e</mi><mrow><mi>k</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">e_{kx}, e_{ky}, e_{kz}</annotation></semantics></math></span></span> 是波矢单位向量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span> 的方向余弦:</p>
+<p>其中 e_{kx}，e_{ky}，e_{kz} 是波矢单位向量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span> 的方向余弦：</p>
 
 $$
 \displaystyle
-\hat{e}_k = (e_{kx}, e_{ky}, e_{kz}),
+\hat{e}_k = (e_{kx}，e_{ky}，e_{kz}),
 \quad
 e_{kx}^2 + e_{ky}^2 + e_{kz}^2 = 1,
 $$
@@ -1422,7 +1419,7 @@ n_y^2 = \varepsilon_{yy},\quad
 n_z^2 = \varepsilon_{zz}.
 $$
 
-<p>将两边乘以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span></span> 并减去 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>e</mi><mrow><mi>k</mi><mi>x</mi></mrow><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>e</mi><mrow><mi>k</mi><mi>y</mi></mrow><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>e</mi><mrow><mi>k</mi><mi>z</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">e_{kx}^2 + e_{ky}^2 + e_{kz}^2 = 1</annotation></semantics></math></span></span>, 可得到等价形式</p>
+<p>将两边乘以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span></span> 并减去 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>e</mi><mrow><mi>k</mi><mi>x</mi></mrow><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>e</mi><mrow><mi>k</mi><mi>y</mi></mrow><mn>2</mn></msubsup><mo>+</mo><msubsup><mi>e</mi><mrow><mi>k</mi><mi>z</mi></mrow><mn>2</mn></msubsup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">e_{kx}^2 + e_{ky}^2 + e_{kz}^2 = 1</annotation></semantics></math></span></span>，可得到等价形式</p>
 
 $$
 \displaystyle
@@ -1432,7 +1429,7 @@ $$
 = 0.
 $$
 
-<p>有时这一形式在波动、延时或“等群速度图”等讨论中出现较多, 只要记得它源于上面的菲涅尔方程即可。</p>
+<p>有时这一形式在波动、延时或“等群速度图”等讨论中出现较多，只要记得它源于上面的菲涅尔方程即可.</p>
 <h3 id="相速度的分布与波前图">相速度的分布与波前图</h3>
 <p>记</p>
 
@@ -1452,7 +1449,7 @@ $$
 = \frac{v_p^2 - v_x^2}{c^2},
 $$
 
-<p>可将上式写为常用的“相速度形式”:</p>
+<p>可将上式写为常用的“相速度形式”：</p>
 
 $$
 \displaystyle
@@ -1462,34 +1459,34 @@ $$
 = 0.
 $$
 
-<p>注意:</p>
+<p>注意：</p>
 <ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>v</mi></mrow><mo>⃗</mo></mover><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\vec{v}_p</annotation></semantics></math></span></span> 的方向与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 相同。</li>
-<li>因此, 对于每一个波矢方向, 上式都给出了相速度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">v_p</annotation></semantics></math></span></span> 的可能值 (一般为两支)。</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>v</mi></mrow><mo>⃗</mo></mover><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\vec{v}_p</annotation></semantics></math></span></span> 的方向与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 相同.</li>
+<li>因此，对于每一个波矢方向，上式都给出了相速度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">v_p</annotation></semantics></math></span></span> 的可能值 (一般为两支).</li>
 </ul>
-<p>通过在三维空间中将不同方向上的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub><mo>(</mo><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">v_p(\hat{e}_k)</annotation></semantics></math></span></span> 标到相应方向上, 所扫出的曲面称为<strong>波前面图</strong>:</p>
+<p>通过在三维空间中将不同方向上的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub><mo>(</mo><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">v_p(\hat{e}_k)</annotation></semantics></math></span></span> 标到相应方向上，所扫出的曲面称为<strong>波前面图</strong>：</p>
 <blockquote>
-<p>波前图的形状恰好给出了<strong>平面波等相位面在各向异性介质中的形状</strong>,<br>
-即惠更斯原理中二次波在各向异性介质内“膨胀”的几何外包面。</p>
+<p>波前图的形状恰好给出了<strong>平面波等相位面在各向异性介质中的形状</strong>，<br>
+即惠更斯原理中二次波在各向异性介质内“膨胀”的几何外包面.</p>
 </blockquote>
-<p>特点:</p>
+<p>特点：</p>
 <ul>
-<li>若波前图越偏离球面, 说明不同方向上的相速度差异越大。</li>
-<li>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">v_p</annotation></semantics></math></span></span> 较大的方向, 由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub><mo>=</mo><mi>ω</mi><mi mathvariant="normal">/</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">v_p = \omega / k</annotation></semantics></math></span></span>, 同频率下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 较小。</li>
-<li>由于本征值问题给出两个本征态, 对应的等频率图与波前图通常也是<strong>两层</strong>的, 对应两种偏振本征态。</li>
+<li>若波前图越偏离球面，说明不同方向上的相速度差异越大.</li>
+<li>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">v_p</annotation></semantics></math></span></span> 较大的方向，由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>p</mi></msub><mo>=</mo><mi>ω</mi><mi mathvariant="normal">/</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">v_p = \omega / k</annotation></semantics></math></span></span>，同频率下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 较小.</li>
+<li>由于本征值问题给出两个本征态，对应的等频率图与波前图通常也是<strong>两层</strong>的，对应两种偏振本征态.</li>
 </ul>
-<p>需要强调:</p>
+<p>需要强调：</p>
 <ul>
-<li>等频率图 (在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 空间) 与波前图 (在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>v</mi></mrow><mo>⃗</mo></mover><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\vec{v}_p</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">1/n</annotation></semantics></math></span></span> 空间) 虽然来源公式类似, 但<strong>含义不同</strong>:
+<li>等频率图 (在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 空间) 与波前图 (在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>v</mi></mrow><mo>⃗</mo></mover><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\vec{v}_p</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">1/n</annotation></semantics></math></span></span> 空间) 虽然来源公式类似，但<strong>含义不同</strong>：
 <ul>
-<li>等频率图: 给出在固定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span> 下所有允许的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span>;</li>
-<li>波前图: 给出不同方向上的相速度大小, 直接反映等相位面的几何形状。</li>
+<li>等频率图： 给出在固定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span> 下所有允许的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span>;</li>
+<li>波前图： 给出不同方向上的相速度大小，直接反映等相位面的几何形状.</li>
 </ul>
 </li>
 </ul>
 <details>
-<summary>例题: 单轴晶体的 o 光与 e 光折射率方向依赖</summary>
-<p>考虑单轴晶体, 主折射率为</p>
+<summary>例题： 单轴晶体的 o 光与 e 光折射率方向依赖</summary>
+<p>考虑单轴晶体，主折射率为</p>
 
 $$
 \displaystyle
@@ -1497,15 +1494,15 @@ n_x = n_y = n_o,\quad
 n_z = n_e.
 $$
 
-<p>设波矢方向与光轴 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>, 即</p>
+<p>设波矢方向与光轴 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>，即</p>
 
 $$
 \displaystyle
 \hat{e}_k = (\sin\theta \cos\phi,\, \sin\theta \sin\phi,\, \cos\theta),
 $$
 
-<p>由于绕 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 轴旋转对称, 结果与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span></span> 无关。</p>
-<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>x</mi></msub><mo>=</mo><msub><mi>n</mi><mi>y</mi></msub><mo>=</mo><msub><mi>n</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">n_x = n_y = n_o</annotation></semantics></math></span></span> 代入波法线菲涅尔方程:</p>
+<p>由于绕 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 轴旋转对称，结果与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span></span> 无关.</p>
+<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>x</mi></msub><mo>=</mo><msub><mi>n</mi><mi>y</mi></msub><mo>=</mo><msub><mi>n</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">n_x = n_y = n_o</annotation></semantics></math></span></span> 代入波法线菲涅尔方程：</p>
 
 $$
 \displaystyle
@@ -1532,10 +1529,10 @@ $$
 = \frac{1}{n^2}.
 $$
 
-<p>这是关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span></span> 的二次方程, 有两个解:</p>
+<p>这是关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span></span> 的二次方程，有两个解：</p>
 <ul>
-<li>一个解恒为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><msub><mi>n</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">n = n_o</annotation></semantics></math></span></span>, 对应 <strong>o 光</strong>, 折射率与方向无关;</li>
-<li>另一个解给出方向相关的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><msub><mi>n</mi><mi>e</mi></msub><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">n = n_e(\theta)</annotation></semantics></math></span></span>, 对应 <strong>e 光</strong>。</li>
+<li>一个解恒为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><msub><mi>n</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">n = n_o</annotation></semantics></math></span></span>，对应 <strong>o 光</strong>，折射率与方向无关;</li>
+<li>另一个解给出方向相关的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><msub><mi>n</mi><mi>e</mi></msub><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">n = n_e(\theta)</annotation></semantics></math></span></span>，对应 <strong>e 光</strong>.</li>
 </ul>
 <p>解出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>e</mi></msub><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">n_e(\theta)</annotation></semantics></math></span></span> 的标准形式为</p>
 
@@ -1545,7 +1542,7 @@ $$
 = \frac{\cos^2\theta}{n_o^2} + \frac{\sin^2\theta}{n_e^2}.
 $$
 
-<p>这直接反映了 e 光折射率对传播方向的依赖。</p>
+<p>这直接反映了 e 光折射率对传播方向的依赖.</p>
 </details>
 
       </div>
@@ -1744,7 +1741,7 @@ $$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">各向异性晶体与波矢空间几何</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%90%91%E6%80%A7%E4%B8%8E%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%9D%90%E6%96%99"><span class="toc-text">各向性与各向异性材料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%94%B5%E5%BC%A0%E9%87%8F%E7%9A%84%E5%BC%95%E5%85%A5"><span class="toc-text">介电张量的引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E4%B8%8E%E4%BB%8B%E7%94%B5%E5%BC%A0%E9%87%8F%E7%9A%84%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-text">能量密度与介电张量的对称性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B1%E7%94%B5%E5%9C%BA%E8%83%BD%E9%87%8F%E5%88%B0%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83"><span class="toc-text">由电场能量到折射率椭球</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%94%B5%E5%9C%BA%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E8%A7%92%E5%BA%A6"><span class="toc-text">从电场能量密度角度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%A7%92%E5%8C%96%E4%B8%8E%E4%B8%BB%E8%BD%B4%E7%B3%BB"><span class="toc-text">对角化与主轴系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%94%B5%E4%BD%8D%E7%A7%BB%E7%9F%A2%E9%87%8F%E8%A7%92%E5%BA%A6"><span class="toc-text">从电位移矢量角度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B3%A2%E4%B8%AD-vec-D-%E4%B8%8E-vec-E-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">平面波中 D⃗\vec{D}​D​⃗​​ 与 E⃗\vec{E}​E​⃗​​ 的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E5%BA%A6%E6%95%B0%E4%B8%8E%E4%B8%BB%E8%BD%B4%E7%9A%84%E7%89%A9%E7%90%86%E5%90%AB%E4%B9%89"><span class="toc-text">自由度数与主轴的物理含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E4%B8%AD%E7%9A%84%E5%B9%B3%E9%9D%A2%E6%B3%A2%E4%B8%8E%E7%9F%A2%E9%87%8F%E5%85%B3%E7%B3%BB"><span class="toc-text">各向异性晶体中的平面波与矢量关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E3%80%81%E7%BE%A4%E9%80%9F%E5%BA%A6%E4%B8%8E%E6%8A%98%E5%B0%84%E7%8E%87"><span class="toc-text">相速度、群速度与折射率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E4%B8%8E%E7%BE%A4%E9%80%9F%E5%BA%A6%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">相速度与群速度的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8-Maxwell-%E6%96%B9%E7%A8%8B%E6%B1%82%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6"><span class="toc-text">用 Maxwell 方程求能量密度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF-%E7%9B%B8%E4%BD%8D-%E7%9A%84%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">波法线 (相位) 的菲涅尔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-Maxwell-%E6%96%B9%E7%A8%8B%E6%8E%A8%E5%AF%BC"><span class="toc-text">从 Maxwell 方程推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98%E4%B8%8E%E5%81%8F%E6%8C%AF%E6%9C%AC%E5%BE%81%E6%80%81"><span class="toc-text">本征值问题与偏振本征态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB%E4%B8%8E%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE"><span class="toc-text">色散关系与等频率图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E5%88%B0%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB"><span class="toc-text">从菲涅尔方程到色散关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE%E7%9A%84%E5%B8%B8%E8%A7%81%E5%87%A0%E4%BD%95%E5%BD%A2%E7%8A%B6"><span class="toc-text">等频率图的常见几何形状</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BD%A2%E5%BC%8F"><span class="toc-text">波法线菲涅尔方程的常用形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E7%9A%84%E5%88%86%E5%B8%83%E4%B8%8E%E6%B3%A2%E5%89%8D%E5%9B%BE"><span class="toc-text">相速度的分布与波前图</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">各向异性晶体与波矢空间几何</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%90%91%E6%80%A7%E4%B8%8E%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%9D%90%E6%96%99"><span class="toc-text">各向性与各向异性材料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%94%B5%E5%BC%A0%E9%87%8F%E7%9A%84%E5%BC%95%E5%85%A5"><span class="toc-text">介电张量的引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E4%B8%8E%E4%BB%8B%E7%94%B5%E5%BC%A0%E9%87%8F%E7%9A%84%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-text">能量密度与介电张量的对称性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B1%E7%94%B5%E5%9C%BA%E8%83%BD%E9%87%8F%E5%88%B0%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83"><span class="toc-text">由电场能量到折射率椭球</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">折射率椭球的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%94%B5%E5%9C%BA%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E8%A7%92%E5%BA%A6"><span class="toc-text">从电场能量密度角度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%A7%92%E5%8C%96%E4%B8%8E%E4%B8%BB%E8%BD%B4%E7%B3%BB"><span class="toc-text">对角化与主轴系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%94%B5%E4%BD%8D%E7%A7%BB%E7%9F%A2%E9%87%8F%E8%A7%92%E5%BA%A6"><span class="toc-text">从电位移矢量角度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B3%A2%E4%B8%AD-vec-D-%E4%B8%8E-vec-E-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">平面波中 D⃗\vec{D}​D​⃗​​ 与 E⃗\vec{E}​E​⃗​​ 的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E5%BA%A6%E6%95%B0%E4%B8%8E%E4%B8%BB%E8%BD%B4%E7%9A%84%E7%89%A9%E7%90%86%E5%90%AB%E4%B9%89"><span class="toc-text">自由度数与主轴的物理含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E4%B8%AD%E7%9A%84%E5%B9%B3%E9%9D%A2%E6%B3%A2%E4%B8%8E%E7%9F%A2%E9%87%8F%E5%85%B3%E7%B3%BB"><span class="toc-text">各向异性晶体中的平面波与矢量关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E3%80%81%E7%BE%A4%E9%80%9F%E5%BA%A6%E4%B8%8E%E6%8A%98%E5%B0%84%E7%8E%87"><span class="toc-text">相速度、群速度与折射率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E4%B8%8E%E7%BE%A4%E9%80%9F%E5%BA%A6%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">相速度与群速度的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8-Maxwell-%E6%96%B9%E7%A8%8B%E6%B1%82%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6"><span class="toc-text">用 Maxwell 方程求能量密度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF-%E7%9B%B8%E4%BD%8D-%E7%9A%84%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">波法线 (相位) 的菲涅尔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-Maxwell-%E6%96%B9%E7%A8%8B%E6%8E%A8%E5%AF%BC"><span class="toc-text">从 Maxwell 方程推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98%E4%B8%8E%E5%81%8F%E6%8C%AF%E6%9C%AC%E5%BE%81%E6%80%81"><span class="toc-text">本征值问题与偏振本征态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB%E4%B8%8E%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE"><span class="toc-text">色散关系与等频率图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E5%88%B0%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB"><span class="toc-text">从菲涅尔方程到色散关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE%E7%9A%84%E5%B8%B8%E8%A7%81%E5%87%A0%E4%BD%95%E5%BD%A2%E7%8A%B6"><span class="toc-text">等频率图的常见几何形状</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BD%A2%E5%BC%8F"><span class="toc-text">波法线菲涅尔方程的常用形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E7%9A%84%E5%88%86%E5%B8%83%E4%B8%8E%E6%B3%A2%E5%89%8D%E5%9B%BE"><span class="toc-text">相速度的分布与波前图</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
