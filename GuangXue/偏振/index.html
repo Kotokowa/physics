@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>friends | Hexo</title>
+  <title>偏振 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,17 +355,27 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        friends
+        偏振
       </span>
     </div>
     
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2025-11-18 |
+        </span>
+      
+
+      
+
+      
     
   </div>
   
@@ -382,9 +392,577 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1>偏振</h1>
+<h2 id="偏振态">偏振态</h2>
+<h3 id="偏振的基本概念">偏振的基本概念</h3>
+<p>在电磁波理论中，平面波满足</p>
+<ul>
+<li>电场 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 与磁场 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>B</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{B}</annotation></semantics></math></span></span> 都垂直于传播方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span>；</li>
+<li>常见教科书中将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>B</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{B}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 画成互相垂直的一组矢量，这种画法实际上只对应于<strong>线偏振</strong>的一种特殊情况。</li>
+</ul>
+<p>从线性代数与傅里叶展开的观点看：</p>
+<ul>
+<li>通过选择一组正交完备的基，可以构造出该空间中任意的状态；</li>
+<li>光的所有偏振态都可以由一组正交的线偏振作为基来线性叠加得到。</li>
+</ul>
+<p>关于“正交”，在不同背景下含义略有区别：</p>
+<ul>
+<li>几何上：向量彼此垂直；</li>
+<li>微积分中：内积为零；</li>
+<li>线性代数中：厄米内积为零；</li>
+<li>物理上：彼此无耦合（如两个正交偏振态在自由空间中不会相互转化）。</li>
+</ul>
+<p>特别地：<strong>两个正交方向的线偏振光在自由空间传播时互不转换</strong>，这是正交偏振态的重要物理体现。</p>
+<h3 id="偏振态的数学描述（Jones-矢量）">偏振态的数学描述（Jones 矢量）</h3>
+<p>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>x</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{x}</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>y</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{y}</annotation></semantics></math></span></span> 两个正交线偏振为基，考虑沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 方向传播的单色平面波（前提：<strong>单色平面波</strong>），电场可以写成</p>
+
+$$
+\vec{E}(x, t)
+= \hat{x} E_{x0}\, e^{i(kx - \omega t)}
++ \hat{y} E_{y0}\, e^{i(kx - \omega t + \varphi)}.
+$$
+
+<p>将公共因子提出：</p>
+
+$$
+\vec{E}(x, t)
+= \big( \hat{x} E_{x0} + \hat{y} E_{y0} e^{i\varphi} \big)\, e^{i(kx - \omega t)}.
+$$
+
+<p>其中：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>x</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{x}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>y</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{y}</annotation></semantics></math></span></span> 方向电场的<strong>相位差</strong>；</li>
+<li>向量<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><msub><mi>E</mi><mrow><mi>x</mi><mn>0</mn></mrow></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>E</mi><mrow><mi>y</mi><mn>0</mn></mrow></msub><msup><mi>e</mi><mrow><mi>i</mi><mi>φ</mi></mrow></msup></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} E_{x0} \\ E_{y0} e^{i\varphi} \end{pmatrix}</annotation></semantics></math></span></span><br>
+就是偏振态的 <strong>Jones 矢量</strong>。</li>
+</ul>
+<p><strong>重要提醒</strong></p>
+<ul>
+<li>偏振态由这个<strong>复数矢量</strong>本身表示；</li>
+<li>不能简单地“对每一分量取模”或“只取实部”来理解偏振态（这些操作只对<strong>整体电场</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的物理量有效）。</li>
+</ul>
+<p>从线性代数角度，可以反过来认为：</p>
+<ul>
+<li>线偏振基对应的 Jones 矢量为<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 \\ 0 \end{pmatrix}</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><mn>0</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>1</mn></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 0 \\ 1 \end{pmatrix}</annotation></semantics></math></span></span>；</li>
+<li>任意偏振态都可以写成这两个基的线性组合。</li>
+</ul>
+<p>要观察偏振态，有两种典型方式：</p>
+<ol>
+<li>固定时间，观察电场在空间中的分布；</li>
+<li>固定空间位置，观察电场随时间的变化。</li>
+</ol>
+<p>讨论偏振通常采用第二种方式：在某个固定位置（例如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x = 0</annotation></semantics></math></span></span>）观察 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\vec{E}(t)</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math></span></span> 平面上的轨迹。</p>
+<h3 id="三种典型偏振态">三种典型偏振态</h3>
+<h4 id="线偏振">线偏振</h4>
+<p>当相位差为</p>
+
+$$
+\varphi = n\pi, \qquad n = 0, 1, 2, \cdots
+$$
+
+<p>在某一固定位置（例如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x = 0</annotation></semantics></math></span></span>）处有</p>
+
+$$
+\vec{E}(t)
+= \big( \hat{x} E_{x0} \pm \hat{y} E_{y0} \big) e^{-i \omega t}.
+$$
+
+<p>此时：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 方向和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 方向电场<strong>同相或反相</strong>；</li>
+<li>它们的大小比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>y</mi><mn>0</mn></mrow></msub><mi mathvariant="normal">/</mi><msub><mi>E</mi><mrow><mi>x</mi><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">E_{y0}/E_{x0}</annotation></semantics></math></span></span> 决定了合成电场的方向；</li>
+<li>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math></span></span> 平面上，电场端点沿着一条<strong>固定直线</strong>往复振动，这就是线偏振。</li>
+</ul>
+<p>若定义偏振方向与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 轴的夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>，则有</p>
+
+$$
+\tan\theta = \pm \frac{E_{y0}}{E_{x0}}.
+$$
+
+<blockquote>
+<p>图示：在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>–<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 坐标系中，一条通过原点的直线与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 轴夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>，电场端点在这条直线上往返振动。</p>
+</blockquote>
+<h4 id="圆偏振">圆偏振</h4>
+<p>当相位差为</p>
+
+$$
+\varphi = \frac{(2n + 1)\pi}{2},
+\qquad n = 0, 1, 2, \cdots
+$$
+
+<p>且振幅满足</p>
+
+$$
+\big|E_{x0}\big| = \big|E_{y0}\big|,
+$$
+
+<p>即两正交分量振幅相等时，偏振态为<strong>圆偏振</strong>。</p>
+<p>这时电场可以写成</p>
+
+$$
+\vec{E}(t)
+= (\hat{x} E_{x0} \pm i \hat{y} E_{x0}) e^{-i\omega t}
+= (\hat{x} \pm i \hat{y}) E_0 e^{-i\omega t},
+$$
+
+<p>Jones 矢量为</p>
+
+$$
+\begin{pmatrix} 1 \\ \pm i \end{pmatrix} E_0 e^{-i\omega t}.
+$$
+
+<p>取实部即可得到物理电场：</p>
+
+$$
+\begin{aligned}
+\vec{E}(t)
+&amp;= \Re\Big[ (\hat{x} \pm i \hat{y}) E_0 e^{-i\omega t} \Big] \\[4pt]
+&amp;= E_0 \cos(\omega t)\, \hat{x} \pm E_0 \sin(\omega t)\, \hat{y}.
+\end{aligned}
+$$
+
+<p>显然有</p>
+
+$$
+E_x^2 + E_y^2
+= E_0^2 \cos^2\omega t + E_0^2 \sin^2\omega t
+= E_0^2,
+$$
+
+<p>因此电场端点在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math></span></span> 平面上描绘的是一个<strong>圆</strong>，这就是圆偏振。</p>
+<blockquote>
+<p>图示：在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span>–<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 平面上，电场端点绕着圆轨迹旋转；对于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>i</mi></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 \\ i \end{pmatrix}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mi>i</mi></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 \\ -i \end{pmatrix}</annotation></semantics></math></span></span> 分别对应两个相反方向（顺时针与逆时针）的旋转。实际讨论“左旋”与“右旋”时，还要约定是沿着<strong>传播方向看过去</strong>，还是沿着反方向看过来。</p>
+</blockquote>
+<p>关于正交性：左右旋圆偏振也可以作为一组正交基。<br>
+例如，对应 Jones 矢量</p>
+
+$$
+\begin{pmatrix} 1 \\ i \end{pmatrix},
+\qquad
+\begin{pmatrix} 1 \\ -i \end{pmatrix},
+$$
+
+<p>在复内积（前者取共轭）的意义下，</p>
+
+$$
+\begin{pmatrix} 1 &amp; -i \end{pmatrix}
+\begin{pmatrix} 1 \\ -i \end{pmatrix}
+= 1 - 1 = 0,
+$$
+
+<p>说明它们在 Jones 空间中是正交的。</p>
+<blockquote>
+<p>这里把第一个矢量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>i</mi></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 \\ i \end{pmatrix}</annotation></semantics></math></span></span> 共轭后得到行向量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><mn>1</mn></mrow></mtd><mtd><mrow><mo>−</mo><mi>i</mi></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 &amp; -i \end{pmatrix}</annotation></semantics></math></span></span>，再与第二个矢量相乘，这是标准的厄米内积写法。</p>
+</blockquote>
+<p>不仅线偏振可以作为基，<strong>圆偏振态也可以作为一组基</strong>。<br>
+虽然经典光学中的“左旋/右旋圆偏振”与电子自旋并不完全相同，但仍有很多类比，例如泡利矩阵、光的自旋–轨道耦合等概念。</p>
+<h4 id="椭圆偏振">椭圆偏振</h4>
+<p>最一般的情况是：</p>
+<ul>
+<li>相位差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span></span> 不等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\pi/2</annotation></semantics></math></span></span>（以及它们的整数倍），即<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>≠</mo><mi>n</mi><mi>π</mi><mo separator="true">,</mo><mfrac><mrow><mo>(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mi>π</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\varphi \neq n\pi, \frac{(2n+1)\pi}{2}</annotation></semantics></math></span></span>；</li>
+<li>或者即便 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>=</mo><mfrac><mrow><mi>π</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\varphi = \frac{\pi}{2}</annotation></semantics></math></span></span>，但 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>x</mi><mn>0</mn></mrow></msub><mo>≠</mo><msub><mi>E</mi><mrow><mi>y</mi><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">E_{x0} \neq E_{y0}</annotation></semantics></math></span></span>。</li>
+</ul>
+<p>这两种情形都会导致电场端点在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">xy</annotation></semantics></math></span></span> 平面上画出一个<strong>椭圆</strong>，称为<strong>椭圆偏振</strong>。</p>
+<p>一般的 Jones 矢量为</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><msub><mi>E</mi><mrow><mi>x</mi><mn>0</mn></mrow></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>E</mi><mrow><mi>y</mi><mn>0</mn></mrow></msub><msup><mi>e</mi><mrow><mi>i</mi><mi>φ</mi></mrow></msup></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} E_{x0} \\ E_{y0} e^{i\varphi} \end{pmatrix}</annotation></semantics></math></span></span>，</p>
+<p>其中：</p>
+<ul>
+<li>线偏振和圆偏振只是椭圆偏振的两个极端特例；</li>
+<li>改变振幅比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>y</mi><mn>0</mn></mrow></msub><mi mathvariant="normal">/</mi><msub><mi>E</mi><mrow><mi>x</mi><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">E_{y0}/E_{x0}</annotation></semantics></math></span></span> 和相位差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span></span>，可以连续地遍历所有椭圆偏振态。</li>
+</ul>
+<details>
+<summary>例题：从 Jones 矢量判断偏振类型</summary>
+<p><strong>题目</strong></p>
+<p>已知某光的 Jones 矢量（忽略整体相位与归一化）</p>
+
+$$
+\vec{V} =
+\begin{pmatrix}
+1 \\
+\frac{1}{2} e^{i\pi/2}
+\end{pmatrix},
+$$
+
+<p>判断该偏振态是线偏振、圆偏振还是椭圆偏振，并说明理由。</p>
+<p><strong>解答</strong></p>
+<p>写成分量形式：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>x</mi><mn>0</mn></mrow></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">E_{x0} = 1</annotation></semantics></math></span></span>；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mi>y</mi><mn>0</mn></mrow></msub><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">E_{y0} = 1/2</annotation></semantics></math></span></span>，相位差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>=</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\varphi = \pi/2</annotation></semantics></math></span></span>。</li>
+</ul>
+<p>与三种典型情形比较：</p>
+<ol>
+<li><strong>线偏振</strong>：要求相位差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>=</mo><mi>n</mi><mi>π</mi></mrow><annotation encoding="application/x-tex">\varphi = n\pi</annotation></semantics></math></span></span>，此处 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>=</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\varphi = \pi/2</annotation></semantics></math></span></span>，不满足；</li>
+<li><strong>圆偏振</strong>：要求
+<ul>
+<li>相位差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>=</mo><mo>(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\varphi = (2n+1)\pi/2</annotation></semantics></math></span></span>（本例满足），</li>
+<li>且振幅相等 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>E</mi><mrow><mi>x</mi><mn>0</mn></mrow></msub><mi mathvariant="normal">∣</mi><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>E</mi><mrow><mi>y</mi><mn>0</mn></mrow></msub><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|E_{x0}| = |E_{y0}|</annotation></semantics></math></span></span>，但本例中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≠</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1 \neq 1/2</annotation></semantics></math></span></span>，不满足；</li>
+</ul>
+</li>
+<li>因此是一般的<strong>椭圆偏振</strong>。</li>
+</ol>
+<p>如果固定空间位置，看电场随时间的轨迹，可以写出</p>
+
+$$
+\begin{aligned}
+E_x(t) &amp;= \Re\{ e^{-i\omega t} \} = \cos\omega t,\\
+E_y(t) &amp;= \Re\{ \tfrac{1}{2} i e^{-i\omega t} \}
+= \tfrac{1}{2} \sin\omega t.
+\end{aligned}
+$$
+
+<p>消去时间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 得到椭圆方程</p>
+
+$$
+\left(\frac{E_x}{1}\right)^2 + \left(\frac{E_y}{1/2}\right)^2 = \cos^2\omega t + \sin^2\omega t = 1,
+$$
+
+<p>显然是长短轴分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">1/2</annotation></semantics></math></span></span> 的椭圆。</p>
+<p><strong>结论</strong>：该 Jones 矢量对应一束椭圆偏振光，椭圆长轴沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 方向，短轴沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 方向。</p>
+</details>
+<h3 id="庞加莱球（Poincare-Sphere）">庞加莱球（Poincaré Sphere）</h3>
+<p>为了更直观地描述所有可能的偏振态，可以引入<strong>庞加莱球</strong>的几何表示。<br>
+在量子力学中，你会接触到与之非常相似的 <strong>Bloch 球</strong>。</p>
+<p>在庞加莱球上：</p>
+<ul>
+<li>球面上的<strong>每一个点</strong>对应一种确定的偏振态；</li>
+<li><strong>赤道</strong>上的点对应<strong>线偏振态</strong>；</li>
+<li><strong>南北极</strong>分别对应两个互为正交的<strong>圆偏振态</strong>（左旋与右旋）；</li>
+<li>介于赤道与两极之间的点则对应不同椭圆率的<strong>椭圆偏振态</strong>；</li>
+<li>任意一对<strong>对跖点</strong>（球面上相对的两个点）表示一对正交偏振态，可以选作一组基，不一定非要选线偏振或者圆偏振。</li>
+</ul>
+<blockquote>
+<p>图示：一个球体，赤道上标出不同方向的线偏振；北极和南极分别标出两种圆偏振；南北半球的任意点对应不同手征和椭圆率的椭圆偏振。沿着球面上的闭合路径演化偏振态时，会出现类似傅科摆的几何相位（Berry 相位）效应，反映出偏振态空间的“紧致性”和几何结构。</p>
+</blockquote>
+<h2 id="偏振片与各向异性吸收">偏振片与各向异性吸收</h2>
+<p>偏振是光的重要自由度，可以用来携带和调制信息。因此，各种能够<strong>调制偏振</strong>或<strong>选择偏振</strong>的光学元件非常重要，其中最基本的一类就是<strong>偏振片（polarizer）</strong>。</p>
+<h3 id="偏振片的基本功能：马吕斯定律">偏振片的基本功能：马吕斯定律</h3>
+<p>偏振片的主要功能：在透射或反射方向上<strong>过滤出某一固定方向的线偏振光</strong>。</p>
+<p>设：</p>
+<ul>
+<li>入射光的电场为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\vec{E}_0</annotation></semantics></math></span></span>；</li>
+<li>偏振片的透射轴与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\vec{E}_0</annotation></semantics></math></span></span> 之间夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>。</li>
+</ul>
+<p>则透射电场的幅度为</p>
+
+$$
+E' = E_0 \cos\theta.
+$$
+
+<p>由于强度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>∝</mo><msup><mi>E</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">I \propto E^2</annotation></semantics></math></span></span>，透射强度为</p>
+
+$$
+\frac{I'}{I_0}
+= \frac{E'^2}{E_0^2}
+= \cos^2\theta,
+\qquad
+I' = I_0 \cos^2\theta,
+$$
+
+<p>这就是著名的<strong>马吕斯定律（Malus’ law）</strong>。</p>
+<p>对于完全非偏振光（所有线偏振取向均匀分布），经过理想线偏振片后，平均强度为</p>
+
+$$
+I' = \frac{I_0}{2},
+$$
+
+<p>这一性质使得偏振片可以用来控制光强。</p>
+<blockquote>
+<p>图示：入射光 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\vec{E}_0</annotation></semantics></math></span></span> 与偏振片透射轴夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>，透射光 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\vec{E}'</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\vec{E}_0</annotation></semantics></math></span></span> 在透射轴方向上的投影；偏振片内部的结构（例如分子拉伸方向或微结构）决定了透射轴的方向。</p>
+</blockquote>
+<h3 id="二色性（Dichroism）与金属线栅偏振片">二色性（Dichroism）与金属线栅偏振片</h3>
+<h4 id="二色性与各向异性吸收">二色性与各向异性吸收</h4>
+<p><strong>二色性（dichroism）</strong>：材料对不同偏振方向的光具有不同的吸收系数，从而实现偏振选择。许多偏振元件（包括高分子偏振片）都是基于各向异性吸收原理工作的。</p>
+<h4 id="金属线栅偏振片">金属线栅偏振片</h4>
+<p>考虑周期和线宽远小于波长的<strong>金属线栅</strong>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>≪</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">L \ll \lambda</annotation></semantics></math></span></span>）。当光入射到这样的结构上，不同偏振方向的电场会有不同的响应：</p>
+<ul>
+<li>若电场方向<strong>平行于金属线</strong>，自由电子可以沿着金属线方向自由运动：
+<ul>
+<li>金属电子被驱动产生电流；</li>
+<li>对应的等离子振荡频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ω</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\omega_p</annotation></semantics></math></span></span> 很高，只要工作频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>&lt;</mo><msub><mi>ω</mi><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\omega &lt; \omega_p</annotation></semantics></math></span></span>，光大多被反射或吸收，<strong>几乎不透射</strong>。</li>
+</ul>
+</li>
+<li>若电场方向<strong>垂直于金属线</strong>，电子不能在这个方向上自由运动：
+<ul>
+<li>电子在这个方向上是“束缚”的，等效表现更接近普通介质；</li>
+<li>这部分偏振可以较好地透射过去。</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>图示：一组平行金属细线构成的线栅。<br>
+当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 垂直于线栅时，电子在该方向不能在各条线之间自由流动，结构的响应类似介质，可以透光；<br>
+当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 平行于线栅时，电子可以在金属线中自由运动，形成强反射或吸收，从而阻挡该偏振。</p>
+</blockquote>
+<p>因此，金属线栅可以选择性地透射某一偏振方向，是最直观的偏振片模型之一。</p>
+<h3 id="Polaroid-高分子偏振片">Polaroid 高分子偏振片</h3>
+<p>著名的 <strong>Polaroid 偏振片</strong> 由 Edwin Land 在 1938 年发明（PVA 高分子软性偏振片）：</p>
+<ul>
+<li>Land 是哈佛大学的辍学生，却发明了广泛应用的偏振眼镜和相机等；</li>
+<li>其专利数量一度仅次于爱迪生。</li>
+</ul>
+<p>Polaroid 偏振片通常通过：</p>
+<ul>
+<li>高分子链在一个方向上被拉伸；</li>
+<li>同时在该方向上具有较强的吸收（例如掺杂特定染料）；</li>
+<li>从而对某一方向的线偏振呈强吸收，对垂直方向的偏振透射较好，形成类似“分子级线栅”的结构。</li>
+</ul>
+<blockquote>
+<p>图示：一个椭圆形区域代表偏振片，有一组优选吸收方向的“等效线栅”。电场在某一方向上的分量被强烈吸收或反射（以红色箭头表示），与之垂直的分量则可以通过（黑色箭头）。<br>
+这一图示与一些高中课本中用“电流通过导线栅”的示意图不同，更接近真实情况。</p>
+</blockquote>
+<h3 id="其他各向异性吸收与布鲁斯特角">其他各向异性吸收与布鲁斯特角</h3>
+<p>除了金属线栅和高分子偏振片外，还可以通过其他方式引入<strong>各向异性吸收</strong>，例如：</p>
+<ul>
+<li>各向异性晶体（某些方向的吸收更强）；</li>
+<li>含各向异性染料的薄膜等。</li>
+</ul>
+<p>另一个重要机制是**布鲁斯特角(Brewster angle)**所引起的偏振：</p>
+<ul>
+<li>当光从一种介质入射到另一种介质，在某一特定入射角（布鲁斯特角）时，
+<ul>
+<li>平行于入射面方向的偏振（p 偏振）反射光强度可以为零；</li>
+<li>反射光几乎完全为垂直于入射面的偏振（s 偏振）。</li>
+</ul>
+</li>
+<li>利用多次在布鲁斯特角附近反射，可以得到接近线偏振的反射光。</li>
+</ul>
+<blockquote>
+<p>图示：入射光在介质表面以布鲁斯特角入射，反射光中某一偏振分量被极大地抑制，剩下的反射光接近线偏振。</p>
+</blockquote>
+<h2 id="偏振片的-Jones-矩阵方法">偏振片的 Jones 矩阵方法</h2>
+<p>偏振态可以用 Jones 矢量表示，因此任何线性偏振器件都可以用一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo>×</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">2 \times 2</annotation></semantics></math></span></span> 的矩阵来表示其作用：</p>
+
+$$
+\vec{V}_{\text{out}} = M\, \vec{V}_{\text{in}},
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>V</mi></mrow><mo>⃗</mo></mover><mo>=</mo><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><msub><mi>E</mi><mi>x</mi></msub></mrow></mtd></mtr><mtr><mtd><mrow><msub><mi>E</mi><mi>y</mi></msub></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\vec{V} = \begin{pmatrix} E_x \\ E_y \end{pmatrix}</annotation></semantics></math></span></span> 是 Jones 矢量。</p>
+<h3 id="理想偏振片的-Jones-矩阵">理想偏振片的 Jones 矩阵</h3>
+<p>对于一块透射轴沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 方向的理想偏振片：</p>
+<ul>
+<li>入射为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 方向线偏振（Jones 矢量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><mtable><mtr><mtd><mrow><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn></mrow></mtd></mtr></mtable><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\begin{pmatrix} 1 \\ 0 \end{pmatrix}</annotation></semantics></math></span></span>）时，透射仍为该方向；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 方向偏振被完全吸收。</li>
+</ul>
+<p>其 Jones 矩阵可以写为</p>
+
+$$
+M =
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 0
+\end{pmatrix}.
+$$
+
+<p>若偏振片的透射轴与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 轴成角度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>，则可以通过<strong>旋转矩阵</strong>构造出相应的 Jones 矩阵。</p>
+<h3 id="旋转矩阵与一般方向的偏振片">旋转矩阵与一般方向的偏振片</h3>
+<p>二维旋转矩阵为</p>
+
+$$
+R(\theta) =
+\begin{pmatrix}
+\cos\theta &amp; -\sin\theta \\
+\sin\theta &amp; \cos\theta
+\end{pmatrix}.
+$$
+
+<p>透射轴与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 轴成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的偏振片，其 Jones 矩阵为</p>
+
+$$
+M(\theta)
+= R(\theta)\,
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; 0
+\end{pmatrix}
+R(-\theta)
+=
+\begin{pmatrix}
+\cos^2\theta &amp; \cos\theta \sin\theta \\
+\cos\theta \sin\theta &amp; \sin^2\theta
+\end{pmatrix}.
+$$
+
+<p>这个矩阵是一个秩为 1 的投影算符，满足</p>
+
+$$
+M(\theta)^2 = M(\theta),
+$$
+
+<p>反映出“<strong>两块完全平行的理想偏振片叠加，等效于一块偏振片</strong>”。</p>
+<h2 id="马吕斯定律的矩阵验证与多偏振片">马吕斯定律的矩阵验证与多偏振片</h2>
+<h3 id="使用-Jones-矩阵验证马吕斯定律">使用 Jones 矩阵验证马吕斯定律</h3>
+<p>设入射光为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 方向线偏振，对应 Jones 矢量</p>
+
+$$
+\vec{V}_{\text{in}} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}.
+$$
+
+<p>通过透射轴与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 轴夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的偏振片后，输出为</p>
+
+$$
+\vec{V}_{\text{out}}
+= M(\theta)\, \vec{V}_{\text{in}}
+=
+\begin{pmatrix}
+\cos^2\theta &amp; \cos\theta \sin\theta \\
+\cos\theta \sin\theta &amp; \sin^2\theta
+\end{pmatrix}
+\begin{pmatrix}
+1 \\ 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+\cos^2\theta \\
+\cos\theta \sin\theta
+\end{pmatrix}.
+$$
+
+<p>输出强度与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mover accent="true"><mrow><mi>V</mi></mrow><mo>⃗</mo></mover><mrow><mtext><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mtext></mrow></msub><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|\vec{V}_{\text{out}}|^2</annotation></semantics></math></span></span> 成正比，而入射强度与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mover accent="true"><mrow><mi>V</mi></mrow><mo>⃗</mo></mover><mrow><mtext><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mtext></mrow></msub><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|\vec{V}_{\text{in}}|^2</annotation></semantics></math></span></span> 成正比，因此</p>
+
+$$
+\frac{I'}{I_0}
+= \frac{\big| \vec{V}_{\text{out}} \big|^2}{\big| \vec{V}_{\text{in}} \big|^2}
+= \cos^4\theta + \cos^2\theta \sin^2\theta
+= \cos^2\theta,
+$$
+
+<p>这与前面几何投影得到的马吕斯定律完全一致。</p>
+<h3 id="两块及多块偏振片">两块及多块偏振片</h3>
+<p>若光依次经过多块偏振片，其 Jones 矢量可以依次左乘每一块的矩阵：</p>
+
+$$
+\vec{V}_{\text{out}}
+= M(\theta_n)\, M(\theta_{n-1}) \cdots M(\theta_1)\, \vec{V}_{\text{in}}.
+$$
+
+<p>特别地：</p>
+<ul>
+<li>当两块偏振片的透射轴<strong>相同</strong>时，有<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo>(</mo><mi>θ</mi><msup><mo>)</mo><mn>2</mn></msup><mo>=</mo><mi>M</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">M(\theta)^2 = M(\theta)</annotation></semantics></math></span></span>，系统等效于一块偏振片；</li>
+<li>当两块偏振片透射轴之间有夹角时，可以得到
+<ul>
+<li>更复杂的强度变化；</li>
+<li>以及偏振态在不同基之间的逐步投影，这种情形在偏振干涉、波片分析中非常常见。</li>
+</ul>
+</li>
+</ul>
+<details>
+<summary>例题：三块偏振片的透射强度</summary>
+<p><strong>题目</strong></p>
+<p>入射光为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 方向线偏振：</p>
+
+$$
+\vec{V}_{\text{in}} = \begin{pmatrix} 1 \\ 0 \end{pmatrix}.
+$$
+
+<p>光依次通过三块理想偏振片，其透射轴与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 轴的夹角分别为</p>
+
+$$
+\theta_1 = 0^\circ, \quad
+\theta_2 = 45^\circ, \quad
+\theta_3 = 90^\circ.
+$$
+
+<p>求最终透射强度与初始强度之比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>I</mi><mrow><mtext><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mtext></mrow></msub><mi mathvariant="normal">/</mi><msub><mi>I</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">I_{\text{out}}/I_0</annotation></semantics></math></span></span>。</p>
+<p><strong>解答</strong></p>
+<p>第一块偏振片与入射偏振方向一致（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">0^\circ</annotation></semantics></math></span></span>），故不改变偏振态和强度：</p>
+
+$$
+\vec{V}_1 = M(0^\circ)\, \vec{V}_{\text{in}} = \vec{V}_{\text{in}}.
+$$
+
+<p>第二块偏振片：</p>
+
+$$
+M(45^\circ) =
+\begin{pmatrix}
+\cos^2 45^\circ &amp; \cos45^\circ\sin45^\circ \\
+\cos45^\circ\sin45^\circ &amp; \sin^2 45^\circ
+\end{pmatrix}
+=
+\frac{1}{2}
+\begin{pmatrix}
+1 &amp; 1 \\[2pt]
+1 &amp; 1
+\end{pmatrix}.
+$$
+
+<p>因此</p>
+
+$$
+\vec{V}_2 = M(45^\circ)\, \vec{V}_1
+= \frac{1}{2}
+\begin{pmatrix}
+1 &amp; 1 \\
+1 &amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+1 \\ 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{1}{2} \\[2pt]
+\frac{1}{2}
+\end{pmatrix}.
+$$
+
+<p>第三块偏振片（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">90^\circ</annotation></semantics></math></span></span>）对应矩阵</p>
+
+$$
+M(90^\circ) =
+\begin{pmatrix}
+0 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix},
+$$
+
+<p>故</p>
+
+$$
+\vec{V}_3 = M(90^\circ)\, \vec{V}_2
+=
+\begin{pmatrix}
+0 &amp; 0 \\
+0 &amp; 1
+\end{pmatrix}
+\begin{pmatrix}
+\frac{1}{2} \\[2pt]
+\frac{1}{2}
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\[2pt]
+\frac{1}{2}
+\end{pmatrix}.
+$$
+
+<p>入射强度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∝</mo><mi mathvariant="normal">∣</mi><msub><mover accent="true"><mrow><mi>V</mi></mrow><mo>⃗</mo></mover><mrow><mtext><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi></mtext></mrow></msub><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\propto |\vec{V}_{\text{in}}|^2 = 1</annotation></semantics></math></span></span>，<br>
+最终强度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∝</mo><mi mathvariant="normal">∣</mi><msub><mover accent="true"><mrow><mi>V</mi></mrow><mo>⃗</mo></mover><mn>3</mn></msub><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mo>=</mo><mo>(</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn><msup><mo>)</mo><mn>2</mn></msup><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">\propto |\vec{V}_3|^2 = (1/2)^2 = 1/4</annotation></semantics></math></span></span>，因此</p>
+
+$$
+\frac{I_{\text{out}}}{I_0} = \frac{1}{4}.
+$$
+
+<p><strong>对比</strong></p>
+<ul>
+<li>若只用第一块和第三块（互相垂直），则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>I</mi><mrow><mtext><mi mathvariant="normal">o</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">t</mi></mtext></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">I_{\text{out}} = 0</annotation></semantics></math></span></span>；</li>
+<li>中间插入一块 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>4</mn><msup><mn>5</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">45^\circ</annotation></semantics></math></span></span> 的偏振片后，反而可以有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>4</mn></mrow><annotation encoding="application/x-tex">1/4</annotation></semantics></math></span></span> 的强度透射，这是偏振基底“逐步旋转”的经典例子。</li>
+</ul>
+</details>
+
       </div>
       <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E5%85%89%E5%AD%A6/" class="">
+              光学
+            </a>
+          
+        </div>
         
       </div>
       
@@ -395,7 +973,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/friends/index.html" target="_blank" title="friends">https://kotokowa.github.io/physics/friends/index.html</a>
+    <a href="/physics/GuangXue/偏振/" target="_blank" title="偏振">https://kotokowa.github.io/physics/GuangXue/偏振/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -413,7 +991,53 @@
 
 
 
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/GaiTong/%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">随机变量的收敛性</div>
+      </div>
+      
+      <!-- <div class="content">
+        随机变量的收敛性
+大数定律与中心极限定理
+随机变量的收敛
 
+
+几乎必然收敛(a.s.收敛): 
+$X_n \xright
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/GuangXue/%E5%82%85%E9%87%8C%E5%8F%B6%E5%85%89%E5%AD%A6/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">傅里叶光学</div>
+      </div>
+      <!-- <div class="content">
+        傅里叶光学
+位移–相移定理
+我们已经知道：
+
+在动量空间（kkk 空间）中加入相位梯度，对应于实空间中的位移；
+在实空间
+      </div> -->
+    </a>
+  </div>
 
 </div>
 
@@ -516,27 +1140,29 @@
   <div class="layout_sticky">    
     
       
-        
+<section class="widget side_toc">
   
-      
-      
-        
-<section class="widget side_tagcloud">
-    
   <header>
     
-      <a style="color: " href="/tags/"><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class="name">热门标签</span></a>
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
     
   </header>
 
 
-    <div class="content">
-    <a href="/physics/tags/appendix/" style="font-size: 14px; color: #999">appendix</a> <a href="/physics/tags/%E5%85%89%E5%AD%A6/" style="font-size: 22px; color: #636363">光学</a> <a href="/physics/tags/%E5%A4%A7%E7%89%A9%E5%AE%9E%E9%AA%8C/" style="font-size: 18px; color: #7e7e7e">大物实验</a> <a href="/physics/tags/%E5%A4%A7%E7%89%A9%E5%AE%9E%E9%AA%8C2/" style="font-size: 16px; color: #8b8b8b">大物实验2</a> <a href="/physics/tags/%E6%A6%82%E7%BB%9F/" style="font-size: 24px; color: #555">概统</a> <a href="/physics/tags/%E7%BA%BF%E4%BB%A3/" style="font-size: 24px; color: #555">线代</a> <a href="/physics/tags/%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6/" style="font-size: 20px; color: #707070">经典力学</a>
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">偏振</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%8F%E6%8C%AF%E6%80%81"><span class="toc-text">偏振态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%8F%E6%8C%AF%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">偏振的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%8F%E6%8C%AF%E6%80%81%E7%9A%84%E6%95%B0%E5%AD%A6%E6%8F%8F%E8%BF%B0%EF%BC%88Jones-%E7%9F%A2%E9%87%8F%EF%BC%89"><span class="toc-text">偏振态的数学描述（Jones 矢量）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E5%85%B8%E5%9E%8B%E5%81%8F%E6%8C%AF%E6%80%81"><span class="toc-text">三种典型偏振态</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%BF%E5%81%8F%E6%8C%AF"><span class="toc-text">线偏振</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%86%E5%81%8F%E6%8C%AF"><span class="toc-text">圆偏振</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A4%AD%E5%9C%86%E5%81%8F%E6%8C%AF"><span class="toc-text">椭圆偏振</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%9E%E5%8A%A0%E8%8E%B1%E7%90%83%EF%BC%88Poincare-Sphere%EF%BC%89"><span class="toc-text">庞加莱球（Poincaré Sphere）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%8F%E6%8C%AF%E7%89%87%E4%B8%8E%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E5%90%B8%E6%94%B6"><span class="toc-text">偏振片与各向异性吸收</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%8F%E6%8C%AF%E7%89%87%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%EF%BC%9A%E9%A9%AC%E5%90%95%E6%96%AF%E5%AE%9A%E5%BE%8B"><span class="toc-text">偏振片的基本功能：马吕斯定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E8%89%B2%E6%80%A7%EF%BC%88Dichroism%EF%BC%89%E4%B8%8E%E9%87%91%E5%B1%9E%E7%BA%BF%E6%A0%85%E5%81%8F%E6%8C%AF%E7%89%87"><span class="toc-text">二色性（Dichroism）与金属线栅偏振片</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E8%89%B2%E6%80%A7%E4%B8%8E%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E5%90%B8%E6%94%B6"><span class="toc-text">二色性与各向异性吸收</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%87%91%E5%B1%9E%E7%BA%BF%E6%A0%85%E5%81%8F%E6%8C%AF%E7%89%87"><span class="toc-text">金属线栅偏振片</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Polaroid-%E9%AB%98%E5%88%86%E5%AD%90%E5%81%8F%E6%8C%AF%E7%89%87"><span class="toc-text">Polaroid 高分子偏振片</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E5%90%B8%E6%94%B6%E4%B8%8E%E5%B8%83%E9%B2%81%E6%96%AF%E7%89%B9%E8%A7%92"><span class="toc-text">其他各向异性吸收与布鲁斯特角</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%8F%E6%8C%AF%E7%89%87%E7%9A%84-Jones-%E7%9F%A9%E9%98%B5%E6%96%B9%E6%B3%95"><span class="toc-text">偏振片的 Jones 矩阵方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E6%83%B3%E5%81%8F%E6%8C%AF%E7%89%87%E7%9A%84-Jones-%E7%9F%A9%E9%98%B5"><span class="toc-text">理想偏振片的 Jones 矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5%E4%B8%8E%E4%B8%80%E8%88%AC%E6%96%B9%E5%90%91%E7%9A%84%E5%81%8F%E6%8C%AF%E7%89%87"><span class="toc-text">旋转矩阵与一般方向的偏振片</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A9%AC%E5%90%95%E6%96%AF%E5%AE%9A%E5%BE%8B%E7%9A%84%E7%9F%A9%E9%98%B5%E9%AA%8C%E8%AF%81%E4%B8%8E%E5%A4%9A%E5%81%8F%E6%8C%AF%E7%89%87"><span class="toc-text">马吕斯定律的矩阵验证与多偏振片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-Jones-%E7%9F%A9%E9%98%B5%E9%AA%8C%E8%AF%81%E9%A9%AC%E5%90%95%E6%96%AF%E5%AE%9A%E5%BE%8B"><span class="toc-text">使用 Jones 矩阵验证马吕斯定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E5%9D%97%E5%8F%8A%E5%A4%9A%E5%9D%97%E5%81%8F%E6%8C%AF%E7%89%87"><span class="toc-text">两块及多块偏振片</span></a></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
     </div>
+  </div>
 </section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
 
-  
-      
       
   <section class="widget side_recent_post">
     
@@ -662,129 +1288,6 @@
     </div>
   </section>
 
-      
-  <section class="widget side_archives">
-    
-    <header><a style="color: red" href="/physics/archives/"><i class="fas fa-archive fa-fw" aria-hidden="true"></i><span class="name">归档</span></a></header><div class="content"><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/12/"><span class="card-archive-list-date">December 2025</span><span class="card-archive-list-count">15</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/11/"><span class="card-archive-list-date">November 2025</span><span class="card-archive-list-count">12</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/10/"><span class="card-archive-list-date">October 2025</span><span class="card-archive-list-count">11</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2025/09/"><span class="card-archive-list-date">September 2025</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2024/12/"><span class="card-archive-list-date">December 2024</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2024/11/"><span class="card-archive-list-date">November 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2024/10/"><span class="card-archive-list-date">October 2024</span><span class="card-archive-list-count">4</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/physics/archives/2024/09/"><span class="card-archive-list-date">September 2024</span><span class="card-archive-list-count">3</span></a></li></ul></div>
-  </section>
-
-      <section class="widget side_webinfo">
-  
-  <header>
-    
-      <i style="color: " class="fas fa-chart-line fa-fw" aria-hidden="true"></i><span class="name" style="color: ">站点信息</span>
-    
-  </header>
-
-
-  <div class="content">
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>58 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2025/10/01'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="busuanzi_value_site_uv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="busuanzi_value_site_pv"><i class="fas fa-fan fa-spin fa-fw" aria-hidden="true"></i></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Sat Dec 27 2025 19:56:15 GMT+0800 (China Standard Time)</div>
-            <div id="last-update-show">2025-12-27 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2025-12-27 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-      
     
   </div>
 </aside>
@@ -911,6 +1414,59 @@
 		height: 100%;
 	}
 </style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
 
