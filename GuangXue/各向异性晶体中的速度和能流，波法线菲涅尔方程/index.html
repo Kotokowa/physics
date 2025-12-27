@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>各向异性晶体与波矢空间几何 | Hexo</title>
+  <title>各向异性晶体中的速度和能流，波法线菲涅尔方程 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,14 +355,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        各向异性晶体与波矢空间几何
+        各向异性晶体中的速度和能流，波法线菲涅尔方程
       </span>
     </div>
     
@@ -392,497 +392,7 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1>各向异性晶体与波矢空间几何</h1>
-<h2 id="各向性与各向异性材料">各向性与各向异性材料</h2>
-<p>在之前的讨论中，默认的材料都是<strong>各向同性材料</strong>：电场在不同方向上，材料的极化等电学性质相同. 但上一节出现过的<strong>偏振片</strong>已经给出反例：不同电场方向下，偏振片对光的影响不同，说明材料对电场方向敏感.</p>
-<p>自然界中存在大量这样的材料，其极化等性质<strong>强烈依赖外加电场方向</strong>. 在无损耗条件下，如果材料对光的响应随入射光电场方向而变，这类材料称为<strong>各向异性材料</strong>.</p>
-<p>典型各向异性材料是各种晶体，具有特定的原子周期结构，常见晶系包括：</p>
-<ul>
-<li>三角晶系</li>
-<li>六角晶系</li>
-<li>四方晶系 (非立方晶系)</li>
-<li>正交晶系 (a ≠ b ≠ c)</li>
-<li>单斜晶系</li>
-<li>三斜晶系</li>
-</ul>
-<p>下面从电磁学出发，讨论如何定量描述各向异性. 这里的讨论一律不考虑磁的相应即<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>r</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu_r = 1</annotation></semantics></math></span></span>.</p>
-<h2 id="介电张量的引入">介电张量的引入</h2>
-<p>在各向同性介质中，有极化矢量</p>
-
-$$
-\displaystyle \vec{P} = \varepsilon_0 \chi \vec{E},
-$$
-
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>χ</mi></mrow><annotation encoding="application/x-tex">\chi</annotation></semantics></math></span></span> 是标量电极化率.</p>
-<p>在各向异性介质中，极化随方向不同而不同，故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>χ</mi></mrow><annotation encoding="application/x-tex">\chi</annotation></semantics></math></span></span> 不再是标量，而是<strong>二阶张量</strong>：</p>
-
-$$
-\displaystyle \vec{P} = \varepsilon_0 \,\overset{\leftrightarrow}{\chi}\, \vec{E},
-$$
-
-<p>于是电位移矢量</p>
-
-$$
-\displaystyle \vec{D} = \varepsilon_0 \vec{E} + \vec{P}
-= \varepsilon_0 \left( I + \overset{\leftrightarrow}{\chi} \right) \vec{E}
-= \varepsilon_0 \,\overset{\leftrightarrow}{\varepsilon_r}\, \vec{E},
-$$
-
-<p>这里 $\overset{\leftrightarrow}{\varepsilon_r}$ 是相对介电常数张量.</p>
-<p>一般直接写介电张量为</p>
-
-$$
-\displaystyle
-\overset{\leftrightarrow}{\varepsilon} \equiv
-\begin{pmatrix}
-\varepsilon_{xx} &amp; \varepsilon_{xy} &amp; \varepsilon_{xz} \\
-\varepsilon_{yx} &amp; \varepsilon_{yy} &amp; \varepsilon_{yz} \\
-\varepsilon_{zx} &amp; \varepsilon_{zy} &amp; \varepsilon_{zz}
-\end{pmatrix},
-$$
-
-<p>不写成矩阵形式时，分量关系为</p>
-
-$$
-\displaystyle D_k = \varepsilon_0 \sum_{l} \varepsilon_{kl} E_l,
-\quad k,l \in \{x,y,z\}.
-$$
-
-<p>接下来我们将从<strong>能量守恒</strong>出发，证明 $\overset{\leftrightarrow}{\varepsilon}$ 是一个<strong>对称张量</strong>.</p>
-<h2 id="能量密度与介电张量的对称性">能量密度与介电张量的对称性</h2>
-<p>总电磁能量密度为</p>
-
-$$
-\displaystyle W = W_e + W_m
-= \frac{1}{2} \vec{D} \cdot \vec{E} + \frac{1}{2} \vec{B} \cdot \vec{H}.
-$$
-
-<p>能量守恒律 (Poynting 定理) 为</p>
-
-$$
-\displaystyle \frac{dW}{dt} + \nabla \cdot \vec{S} = 0,
-\quad
-\vec{S} \equiv \vec{E} \times \vec{H}.
-$$
-
-<p>考虑无磁相应各向异性材料，取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>r</mi></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu_r = 1</annotation></semantics></math></span></span>，则</p>
-
-$$
-\displaystyle
-W = \frac{1}{2} \sum_k D_k E_k + \frac{1}{2} \mu_0 \mu_r H^2
-= \frac{1}{2} \sum_k \left( \varepsilon_0 \sum_l \varepsilon_{kl} E_l \right) E_k
-+ \frac{1}{2} \mu_0 \mu_r H^2.
-$$
-
-<p>对时间求导：</p>
-
-$$
-\displaystyle
-\frac{dW}{dt}
-= \frac{1}{2} \sum_{k,l} \varepsilon_0 \varepsilon_{kl} E_l \frac{dE_k}{dt}
-+ \frac{1}{2} \sum_{k,l} \varepsilon_0 \varepsilon_{kl} E_k \frac{dE_l}{dt}
-+ \mu_0 \mu_r H \frac{dH}{dt}.
-$$
-
-<p>交换求和指标，可化为</p>
-
-$$
-\displaystyle
-\frac{dW}{dt}
-= \frac{1}{2} \sum_{k,l} \varepsilon_0 (\varepsilon_{lk} + \varepsilon_{kl}) E_k \frac{dE_l}{dt}
-+ \mu_0 \mu_r H \frac{dH}{dt}.
-$$
-
-<p>另一方面，由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo>×</mo><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S} = \vec{E} \times \vec{H}</annotation></semantics></math></span></span>：</p>
-
-$$
-\displaystyle
-\nabla \cdot \vec{S}
-= \nabla \cdot (\vec{E} \times \vec{H})
-= \vec{H} \cdot (\nabla \times \vec{E})
-- \vec{E} \cdot (\nabla \times \vec{H}).
-$$
-
-<p>由 Maxwell 方程 (无源情况)：</p>
-
-$$
-\displaystyle
-\nabla \times \vec{E} = - \frac{\partial \vec{B}}{\partial t},
-\quad
-\nabla \times \vec{H} = \frac{\partial \vec{D}}{\partial t},
-$$
-
-<p>注意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>B</mi></mrow><mo>⃗</mo></mover><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><msub><mi>μ</mi><mi>r</mi></msub><mover accent="true"><mrow><mi>H</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{B} = \mu_0 \mu_r \vec{H}</annotation></semantics></math></span></span>，$\vec{D} = \varepsilon_0 \overset{\leftrightarrow}{\varepsilon} \vec{E}$，得</p>
-
-$$
-\displaystyle
-\nabla \cdot \vec{S} = -\vec{H} \cdot \frac{\partial \vec{B}}{\partial t} - \vec{E} \cdot \frac{\partial \vec{D}}{\partial t}
-= - \mu_0 \mu_r \vec{H} \cdot \frac{\partial \vec{H}}{\partial t}
-- \sum_{k,l} \varepsilon_0 \varepsilon_{kl} E_k \frac{dE_l}{dt}.
-$$
-
-<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>d</mi><mi>W</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{dW}{dt}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∇</mi><mo>⋅</mo><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\nabla \cdot \vec{S}</annotation></semantics></math></span></span> 代入能量守恒：</p>
-
-$$
-\displaystyle
-\frac{dW}{dt} + \nabla \cdot \vec{S} = 0
-\quad \Longrightarrow \quad
-\sum_{k,l} \varepsilon_0
-\left[
-\frac{1}{2} (\varepsilon_{lk} + \varepsilon_{kl}) - \varepsilon_{kl}
-\right]
-E_k \frac{dE_l}{dt} = 0.
-$$
-
-<p>对任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>d</mi><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{d\vec{E}}{dt}</annotation></semantics></math></span></span>，上式要恒成立，则</p>
-
-$$
-\displaystyle
-\frac{1}{2} \varepsilon_{lk} + \frac{1}{2} \varepsilon_{kl} - \varepsilon_{kl} = 0
-\quad \Longrightarrow \quad
-\varepsilon_{kl} = \varepsilon_{lk}.
-$$
-
-<p><strong>结论：</strong></p>
-<ul>
-<li>在能量守恒条件下，介电张量 $\overset{\leftrightarrow}{\varepsilon}$ 必须是<strong>对称张量</strong>.</li>
-<li>对称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><mo>×</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">3 \times 3</annotation></semantics></math></span></span> 矩阵只有 6 个独立分量.</li>
-</ul>
-<p>晶体除平移对称外，还可能有旋转、镜面等对称性，会进一步减少自由度.<br>
-常见晶系中，介电张量的独立自由度为：</p>
-<ul>
-<li>立方晶系： 1 个自由度 → 各向同性</li>
-<li>三角、六角、四方晶系： 2 个自由度</li>
-<li>正交晶系： 3 个自由度</li>
-<li>单斜晶系： 4 个自由度</li>
-<li>三斜晶系： 6 个自由度</li>
-</ul>
-<h2 id="由电场能量到折射率椭球">由电场能量到折射率椭球</h2>
-<h3 id="折射率椭球的定义">折射率椭球的定义</h3>
-<p>各向异性晶体中，不同电场方向下光相应不同，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span></span> 是一个张量。用一个形象的图像直观体现不同<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span>方向的折射率或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span></span>，这就是折射率椭球.</p>
-<h3 id="从电场能量密度角度">从电场能量密度角度</h3>
-<p>电场能量密度为</p>
-
-$$
-\displaystyle
-W_e = \frac{1}{2} \vec{D} \cdot \vec{E}
-= \frac{1}{2} \sum_{k,l} \varepsilon_0 \varepsilon_{kl} E_k E_l,
-\quad k,l \in \{x,y,z\},
-\quad \varepsilon_{kl} = \varepsilon_{lk}.
-$$
-
-<p>展开为</p>
-
-$$
-\displaystyle
-W_e = \frac{1}{2} \varepsilon_0
-\Big(
-\varepsilon_{xx} E_x^2
-+ \varepsilon_{yy} E_y^2
-+ \varepsilon_{zz} E_z^2
-+ 2 \varepsilon_{xy} E_x E_y
-+ 2 \varepsilon_{xz} E_x E_z
-+ 2 \varepsilon_{yz} E_y E_z
-\Big).
-$$
-
-<p>将上式各项除以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><msub><mi>W</mi><mi>e</mi></msub><mi mathvariant="normal">/</mi><msub><mi>ε</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">2 W_e / \varepsilon_0</annotation></semantics></math></span></span>，得</p>
-
-$$
-\displaystyle
-\frac{\varepsilon_0 E_x^2}{2 W_e} \varepsilon_{xx}
-+ \frac{\varepsilon_0 E_y^2}{2 W_e} \varepsilon_{yy}
-+ \frac{\varepsilon_0 E_z^2}{2 W_e} \varepsilon_{zz}
-+ \frac{\varepsilon_0 E_x E_y}{2 W_e} 2 \varepsilon_{xy}
-+ \frac{\varepsilon_0 E_x E_z}{2 W_e} 2 \varepsilon_{xz}
-+ \frac{\varepsilon_0 E_y E_z}{2 W_e} 2 \varepsilon_{yz}
-= 1.
-$$
-
-<p>定义一组与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 同向的“能量归一化坐标”：</p>
-
-$$
-\displaystyle
-x_e = \sqrt{\frac{\varepsilon_0}{2 W_e}} E_x,\quad
-y_e = \sqrt{\frac{\varepsilon_0}{2 W_e}} E_y,\quad
-z_e = \sqrt{\frac{\varepsilon_0}{2 W_e}} E_z.
-$$
-
-<p>显然有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>e</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_e, y_e, z_e)</annotation></semantics></math></span></span> 与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 方向相同.</p>
-<p>于是上式化为</p>
-
-$$
-\displaystyle
-\varepsilon_{xx} x_e^2
-+ \varepsilon_{yy} y_e^2
-+ \varepsilon_{zz} z_e^2
-+ 2 \varepsilon_{xy} x_e y_e
-+ 2 \varepsilon_{xz} x_e z_e
-+ 2 \varepsilon_{yz} y_e z_e
-= 1.
-$$
-
-<p>这就是所谓的 <strong>光率体 (index body)/折射率椭球</strong> 的一般方程.</p>
-<h3 id="对角化与主轴系">对角化与主轴系</h3>
-<p>可通过适当选择新的坐标系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>e</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_e, y_e, z_e)</annotation></semantics></math></span></span>，使上式成为一标准椭球. 对应地，介电张量可以对角化为</p>
-
-$$
-\displaystyle
-\overset{\leftrightarrow}{\varepsilon} \to
-\begin{pmatrix}
-\varepsilon_{xx} &amp; 0 &amp; 0 \\
-0 &amp; \varepsilon_{yy} &amp; 0 \\
-0 &amp; 0 &amp; \varepsilon_{zz}
-\end{pmatrix},
-$$
-
-<p>在这个<strong>主轴系</strong>下，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的关系为</p>
-
-$$
-\displaystyle
-D_x = \varepsilon_0 \varepsilon_{xx} E_x,\quad
-D_y = \varepsilon_0 \varepsilon_{yy} E_y,\quad
-D_z = \varepsilon_0 \varepsilon_{zz} E_z.
-$$
-
-<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>z</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\varepsilon_{xx}, \varepsilon_{yy}, \varepsilon_{zz}</annotation></semantics></math></span></span> 一般互不相等，重要结论是：</p>
-<blockquote>
-<p>在各向异性晶体中，<strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 一般不共线</strong>.<br>
-只有当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 平行于某一主轴 (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">x_e, y_e, z_e</annotation></semantics></math></span></span>) 时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 才与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 同向.</p>
-</blockquote>
-<p>进而电场能量密度可写成两种形式：</p>
-<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 表示：</p>
-
-$$\displaystyle
-W_e = \frac{1}{2} \varepsilon_0
-\left(
-\varepsilon_{xx} E_x^2 + \varepsilon_{yy} E_y^2 + \varepsilon_{zz} E_z^2
-\right),
-$$
-
-<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 表示：</p>
-
-$$\displaystyle
-W_e = \frac{1}{2} \frac{D_x^2}{\varepsilon_0 \varepsilon_{xx}}
-+ \frac{1}{2} \frac{D_y^2}{\varepsilon_0 \varepsilon_{yy}}
-+ \frac{1}{2} \frac{D_z^2}{\varepsilon_0 \varepsilon_{zz}}.
-$$
-
-<p>在讨论折射率椭球时，约定<strong>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 的方向为参数</strong>来定义折射率，因为后面许多几何构造 (如波法线面) 都是围绕 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 展开的.</p>
-<h3 id="从电位移矢量角度">从电位移矢量角度</h3>
-<p>从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 出发的能量密度写成</p>
-
-$$
-\displaystyle
-\frac{D_x^2}{2 W_e \varepsilon_0 \varepsilon_{xx}}
-+ \frac{D_y^2}{2 W_e \varepsilon_0 \varepsilon_{yy}}
-+ \frac{D_z^2}{2 W_e \varepsilon_0 \varepsilon_{zz}}
-= 1.
-$$
-
-<p>定义</p>
-
-$$
-\displaystyle
-x_d = \sqrt{\frac{1}{2 W_e \varepsilon_0}} D_x,\quad
-y_d = \sqrt{\frac{1}{2 W_e \varepsilon_0}} D_y,\quad
-z_d = \sqrt{\frac{1}{2 W_e \varepsilon_0}} D_z.
-$$
-
-<p>可得</p>
-
-$$
-\displaystyle
-\frac{x_d^2}{\varepsilon_{xx}}
-+ \frac{y_d^2}{\varepsilon_{yy}}
-+ \frac{z_d^2}{\varepsilon_{zz}}
-= 1.
-$$
-
-<p>记主折射率</p>
-
-$$
-\displaystyle
-\varepsilon_{xx} = n_x^2,\quad
-\varepsilon_{yy} = n_y^2,\quad
-\varepsilon_{zz} = n_z^2,
-$$
-
-<p>于是得到<strong>折射率椭球</strong>方程</p>
-
-$$
-\displaystyle
-\frac{x_d^2}{n_x^2}
-+ \frac{y_d^2}{n_y^2}
-+ \frac{z_d^2}{n_z^2}
-= 1.
-$$
-
-<p>大多教材中所说的折射率椭球，指的就是这一方程. <strong>注意这个方程中的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>d</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>d</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">x_d, y_d, z_d</annotation></semantics></math></span></span> 与之前 光率体 一般方程中的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>e</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">x_e, y_e, z_e</annotation></semantics></math></span></span> 不一样！</strong></p>
-<p>定义</p>
-
-$$
-\displaystyle
-r_d = \sqrt{x_d^2 + y_d^2 + z_d^2}
-= \frac{D}{\sqrt{2 W_e \varepsilon_0}},
-$$
-
-<p>这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mo>=</mo><mi mathvariant="normal">∣</mi><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">D = |\vec{D}|</annotation></semantics></math></span></span>. 另一方面有</p>
-
-$$
-\displaystyle
-W_e = \frac{1}{2} \vec{D} \cdot \vec{E}
-= \frac{1}{2} D E_d,
-$$
-
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">E_d</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 方向上的分量.</p>
-<p>接下来利用平面波在介质中传播时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的关系.</p>
-<h2 id="平面波中-vec-D-与-vec-E-的关系">平面波中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的关系</h2>
-<p>从 Maxwell 方程出发 (连续介质，无自由电荷电流)，可推导出对于平面波</p>
-
-$$
-\boxed{\displaystyle
-\vec{D}
-= \frac{k^2}{\mu \mu_0 \omega^2}
-\left[
-\vec{E} - (\hat{e}_k \cdot \vec{E}) \hat{e}_k
-\right],
-}
-$$
-
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub><mo>=</mo><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover><mi mathvariant="normal">/</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">\hat{e}_k = \vec{k} / k</annotation></semantics></math></span></span> 是波矢方向单位矢量.</p>
-<p>在真空 (或取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu = 1</annotation></semantics></math></span></span>) 情况下，得</p>
-
-$$
-\displaystyle
-\vec{D}
-= \frac{k^2}{\mu_0 \omega^2}
-\left[
-\vec{E} - \vec{E}_k
-\right],
-$$
-
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\vec{E}_k</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 方向上的分量.</p>
-<p>平面波传播时还可以证明：</p>
-<ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D} \perp \vec{k}</annotation></semantics></math></span></span>,</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo>⊥</mo><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E} \perp \vec{S}</annotation></semantics></math></span></span>,</li>
-</ul>
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>S</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{S}</annotation></semantics></math></span></span> 是 Poynting 矢量. 于是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 只与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 方向上的分量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">E_d</annotation></semantics></math></span></span> 有关：</p>
-
-$$
-\displaystyle
-D = \frac{k^2}{\mu \mu_0 \omega^2} E_d.
-$$
-
-<p>利用折射率定义 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>=</mo><mo>(</mo><mi>c</mi><mi mathvariant="normal">/</mi><mi>n</mi><mo>)</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">\omega = (c/n) k</annotation></semantics></math></span></span>，得</p>
-
-$$
-\displaystyle
-\frac{k^2}{\omega^2} = \frac{n^2}{c^2}
-= n^2 \mu_0 \varepsilon_0,
-\quad \Longrightarrow \quad
-\frac{k^2}{\mu \mu_0 \omega^2} = n^2 \varepsilon_0
-\quad (\mu = 1).
-$$
-
-<p>故</p>
-
-$$
-\displaystyle
-D = n^2 \varepsilon_0 E_d,
-\quad
-W_e = \frac{D^2}{2 n^2 \varepsilon_0}.
-$$
-
-<p>将其代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>d</mi></msub><mo>=</mo><mi>D</mi><mi mathvariant="normal">/</mi><msqrt><mrow><mn>2</mn><msub><mi>W</mi><mi>e</mi></msub><msub><mi>ε</mi><mn>0</mn></msub></mrow></msqrt></mrow><annotation encoding="application/x-tex">r_d = D / \sqrt{2 W_e \varepsilon_0}</annotation></semantics></math></span></span> 中，得</p>
-
-$$
-\displaystyle
-r_d = n.
-$$
-
-<p><strong>物理含义：</strong></p>
-<blockquote>
-<p>折射率椭球上某一点的矢径长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">r_d</annotation></semantics></math></span></span>，就是<strong>沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 方向的折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span></strong>.</p>
-</blockquote>
-<details>
-<summary>例题： 利用折射率椭球求任意方向折射率</summary>
-<p>考虑一个各向异性晶体，主折射率为</p>
-
-$$
-\displaystyle n_x = 1.5,\quad n_y = 1.6,\quad n_z = 1.7.
-$$
-
-<p>设某一电位移方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 的方向余弦为</p>
-
-$$
-\displaystyle
-\hat{d} = (\cos\alpha,\cos\beta,\cos\gamma)
-= \left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}，0 \right).
-$$
-
-<p>问： 沿该方向的折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>(</mo><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">n(\hat{d})</annotation></semantics></math></span></span> 为多少?</p>
-<p>折射率椭球方程</p>
-
-$$
-\displaystyle
-\frac{x_d^2}{n_x^2}
-+ \frac{y_d^2}{n_y^2}
-+ \frac{z_d^2}{n_z^2}
-= 1
-$$
-
-<p>对固定方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat{d}</annotation></semantics></math></span></span> 上的点，有</p>
-
-$$
-\displaystyle
-x_d = r_d \cos\alpha,\quad
-y_d = r_d \cos\beta,\quad
-z_d = r_d \cos\gamma,
-$$
-
-<p>代入得到</p>
-
-$$
-\displaystyle
-r_d^2 \left(
-\frac{\cos^2\alpha}{n_x^2}
-+ \frac{\cos^2\beta}{n_y^2}
-+ \frac{\cos^2\gamma}{n_z^2}
-\right) = 1.
-$$
-
-<p>又 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>d</mi></msub><mo>=</mo><mi>n</mi><mo>(</mo><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">r_d = n(\hat{d})</annotation></semantics></math></span></span>，故</p>
-
-$$
-\displaystyle
-\frac{1}{n^2(\hat{d})}
-= \frac{\cos^2\alpha}{n_x^2}
-+ \frac{\cos^2\beta}{n_y^2}
-+ \frac{\cos^2\gamma}{n_z^2}.
-$$
-
-<p>代入数据：</p>
-
-$$
-\displaystyle
-\frac{1}{n^2(\hat{d})}
-= \frac{\tfrac{1}{2}}{1.5^2}
-+ \frac{\tfrac{1}{2}}{1.6^2}
-+ 0.
-$$
-
-<p>数值计算可得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>(</mo><mover accent="true"><mrow><mi>d</mi></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">n(\hat{d})</annotation></semantics></math></span></span>，即该方向上的折射率.</p>
-</details>
-<h2 id="自由度数与主轴的物理含义">自由度数与主轴的物理含义</h2>
-<p>在单斜或三斜晶体中，介电张量一般有 4 至 6 个自由度.<br>
-但对角化后只剩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mrow><mi>x</mi><mi>x</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>y</mi><mi>y</mi></mrow></msub><mo separator="true">,</mo><msub><mi>ε</mi><mrow><mi>z</mi><mi>z</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\varepsilon_{xx}, \varepsilon_{yy}, \varepsilon_{zz}</annotation></semantics></math></span></span> 三个数，看似少了自由度. 实际上并不矛盾：</p>
-<ul>
-<li>对角化过程中选择的新坐标轴方向本身就包含了<strong>三个自由度</strong> (即主轴的空间取向).</li>
-<li>对于自由度较少的晶体 (如三角、四方等)，主轴往往与晶体对称轴自然对齐，几乎不需要“选择”.</li>
-<li>对于单斜、三斜晶体，主轴方向与晶体几何轴不同，“选轴”的过程体现出那多出来的自由度.</li>
-</ul>
+        <h1>各向异性晶体中的速度和能流，波法线菲涅尔方程</h1>
 <h2 id="各向异性晶体中的平面波与矢量关系">各向异性晶体中的平面波与矢量关系</h2>
 <p>考虑各向异性晶体中的平面波，忽略源项，取</p>
 
@@ -1565,7 +1075,7 @@ $$
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/GuangXue/各向异性晶体与波矢空间几何/" target="_blank" title="各向异性晶体与波矢空间几何">https://kotokowa.github.io/physics/GuangXue/各向异性晶体与波矢空间几何/</a>
+    <a href="/physics/GuangXue/各向异性晶体中的速度和能流，波法线菲涅尔方程/" target="_blank" title="各向异性晶体中的速度和能流，波法线菲涅尔方程">https://kotokowa.github.io/physics/GuangXue/各向异性晶体中的速度和能流，波法线菲涅尔方程/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -1612,18 +1122,17 @@ $$
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/JingDianLiXue/%E5%93%88%E5%AF%86%E9%A1%BF%E5%8E%9F%E7%90%86%E4%B8%8E%E5%8A%9B%E5%AD%A6%E5%8F%98%E5%88%86%E5%8E%9F%E7%90%86/" class="post-nav-link">
+    <a href="/physics/GuangXue/%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E4%B8%8E%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">哈密顿原理与力学变分原理</div>
+        <div class="title-text">各向异性晶体与折射率椭球</div>
       </div>
       <!-- <div class="content">
-        哈密顿原理与力学变分原理
-变分原理与泛函的整体图景
-哈密顿原理与作用量
-哈密顿原理（最小作用量原理）的核心表述是：实际运
+        各向异性晶体与折射率椭球
+各向性与各向异性材料
+在之前的讨论中，默认的材料都是各向同性材料：电场在不同方向上，材料的极化
       </div> -->
     </a>
   </div>
@@ -1741,7 +1250,7 @@ $$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">各向异性晶体与波矢空间几何</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%90%91%E6%80%A7%E4%B8%8E%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%9D%90%E6%96%99"><span class="toc-text">各向性与各向异性材料</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%94%B5%E5%BC%A0%E9%87%8F%E7%9A%84%E5%BC%95%E5%85%A5"><span class="toc-text">介电张量的引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E4%B8%8E%E4%BB%8B%E7%94%B5%E5%BC%A0%E9%87%8F%E7%9A%84%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-text">能量密度与介电张量的对称性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B1%E7%94%B5%E5%9C%BA%E8%83%BD%E9%87%8F%E5%88%B0%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83"><span class="toc-text">由电场能量到折射率椭球</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">折射率椭球的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%94%B5%E5%9C%BA%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6%E8%A7%92%E5%BA%A6"><span class="toc-text">从电场能量密度角度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%A7%92%E5%8C%96%E4%B8%8E%E4%B8%BB%E8%BD%B4%E7%B3%BB"><span class="toc-text">对角化与主轴系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%94%B5%E4%BD%8D%E7%A7%BB%E7%9F%A2%E9%87%8F%E8%A7%92%E5%BA%A6"><span class="toc-text">从电位移矢量角度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B3%A2%E4%B8%AD-vec-D-%E4%B8%8E-vec-E-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">平面波中 D⃗\vec{D}​D​⃗​​ 与 E⃗\vec{E}​E​⃗​​ 的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E5%BA%A6%E6%95%B0%E4%B8%8E%E4%B8%BB%E8%BD%B4%E7%9A%84%E7%89%A9%E7%90%86%E5%90%AB%E4%B9%89"><span class="toc-text">自由度数与主轴的物理含义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E4%B8%AD%E7%9A%84%E5%B9%B3%E9%9D%A2%E6%B3%A2%E4%B8%8E%E7%9F%A2%E9%87%8F%E5%85%B3%E7%B3%BB"><span class="toc-text">各向异性晶体中的平面波与矢量关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E3%80%81%E7%BE%A4%E9%80%9F%E5%BA%A6%E4%B8%8E%E6%8A%98%E5%B0%84%E7%8E%87"><span class="toc-text">相速度、群速度与折射率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E4%B8%8E%E7%BE%A4%E9%80%9F%E5%BA%A6%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">相速度与群速度的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8-Maxwell-%E6%96%B9%E7%A8%8B%E6%B1%82%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6"><span class="toc-text">用 Maxwell 方程求能量密度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF-%E7%9B%B8%E4%BD%8D-%E7%9A%84%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">波法线 (相位) 的菲涅尔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-Maxwell-%E6%96%B9%E7%A8%8B%E6%8E%A8%E5%AF%BC"><span class="toc-text">从 Maxwell 方程推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98%E4%B8%8E%E5%81%8F%E6%8C%AF%E6%9C%AC%E5%BE%81%E6%80%81"><span class="toc-text">本征值问题与偏振本征态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB%E4%B8%8E%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE"><span class="toc-text">色散关系与等频率图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E5%88%B0%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB"><span class="toc-text">从菲涅尔方程到色散关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE%E7%9A%84%E5%B8%B8%E8%A7%81%E5%87%A0%E4%BD%95%E5%BD%A2%E7%8A%B6"><span class="toc-text">等频率图的常见几何形状</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BD%A2%E5%BC%8F"><span class="toc-text">波法线菲涅尔方程的常用形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E7%9A%84%E5%88%86%E5%B8%83%E4%B8%8E%E6%B3%A2%E5%89%8D%E5%9B%BE"><span class="toc-text">相速度的分布与波前图</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">各向异性晶体中的速度和能流，波法线菲涅尔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E4%B8%AD%E7%9A%84%E5%B9%B3%E9%9D%A2%E6%B3%A2%E4%B8%8E%E7%9F%A2%E9%87%8F%E5%85%B3%E7%B3%BB"><span class="toc-text">各向异性晶体中的平面波与矢量关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E3%80%81%E7%BE%A4%E9%80%9F%E5%BA%A6%E4%B8%8E%E6%8A%98%E5%B0%84%E7%8E%87"><span class="toc-text">相速度、群速度与折射率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E4%B8%8E%E7%BE%A4%E9%80%9F%E5%BA%A6%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">相速度与群速度的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8-Maxwell-%E6%96%B9%E7%A8%8B%E6%B1%82%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6"><span class="toc-text">用 Maxwell 方程求能量密度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF-%E7%9B%B8%E4%BD%8D-%E7%9A%84%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">波法线 (相位) 的菲涅尔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-Maxwell-%E6%96%B9%E7%A8%8B%E6%8E%A8%E5%AF%BC"><span class="toc-text">从 Maxwell 方程推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98%E4%B8%8E%E5%81%8F%E6%8C%AF%E6%9C%AC%E5%BE%81%E6%80%81"><span class="toc-text">本征值问题与偏振本征态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB%E4%B8%8E%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE"><span class="toc-text">色散关系与等频率图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E5%88%B0%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB"><span class="toc-text">从菲涅尔方程到色散关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE%E7%9A%84%E5%B8%B8%E8%A7%81%E5%87%A0%E4%BD%95%E5%BD%A2%E7%8A%B6"><span class="toc-text">等频率图的常见几何形状</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BD%A2%E5%BC%8F"><span class="toc-text">波法线菲涅尔方程的常用形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E7%9A%84%E5%88%86%E5%B8%83%E4%B8%8E%E6%B3%A2%E5%89%8D%E5%9B%BE"><span class="toc-text">相速度的分布与波前图</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
