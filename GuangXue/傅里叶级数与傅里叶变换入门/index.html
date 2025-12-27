@@ -394,14 +394,14 @@
       <div class="post-content">
         <h1>傅里叶级数与傅里叶变换入门</h1>
 <h2 id="波的叠加与傅里叶思想">波的叠加与傅里叶思想</h2>
-<p>在波动问题中, 一个复杂的波形可以看成很多简谐波在时间和空间上的叠加。<br>
+<p>在波动问题中, 相同频率的波，如果时间频率<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span>相同，在时间上就是简谐的波；如果空间频率(波矢)$\overrightarrow{k}$相同，波在空间上就是简谐的波。一个复杂的波形可以看成很多简谐波在时间和空间上的叠加。<br>
 对于空间一维的标量波, 常用空间频率</p>
 
 $$
 \displaystyle k = \frac{2\pi}{\lambda}
 $$
 
-<p>来描述其“波长”信息。<br>
+<p>来描述其“波长”信息(空间分布。显见这可以直接推广到时间域，对应于光脉冲)。<br>
 傅里叶级数告诉我们: <strong>任何一个满足一定条件的周期函数, 都可以展开成不同空间频率的正弦、余弦波的叠加</strong>。</p>
 <h2 id="一维实函数的傅里叶级数形式">一维实函数的傅里叶级数形式</h2>
 <p>设实函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span></span> 的最小空间周期为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>λ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\lambda_0</annotation></semantics></math></span></span>, 对应的<strong>基频</strong>为</p>
@@ -855,12 +855,12 @@ $$
 <p>在量子力学中, 这对应于共轭量之间的不确定关系, 常写为</p>
 
 $$
-\displaystyle \Delta x\,\Delta k \gtrsim \frac{1}{2}
+\displaystyle \Delta x\,\Delta k \gtrsim \hbar
 $$
 
 
 $$
-\displaystyle \Delta t\,\Delta\omega \gtrsim \frac{1}{2}
+\displaystyle \Delta t\,\Delta\omega \gtrsim \hbar
 $$
 
 <p>在光学中, 对有限时长波列, 常引入<strong>相干时间</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\Delta t</annotation></semantics></math></span></span> 与<strong>相干长度</strong></p>
