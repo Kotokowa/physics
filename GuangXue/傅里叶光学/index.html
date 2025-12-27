@@ -732,21 +732,19 @@ $$
 <p>利用卷积定理，</p>
 
 $$
+\begin{aligned}
 \mathcal{F}[h(x)]
-= \mathcal{F}\!\left[\sum_{n=-\infty}^{\infty} \delta(x - n \lambda_0)\right]\,
-\mathcal{F}[\operatorname{rect}(x)]
-= k_0 \sum_{m=-\infty}^{\infty} \delta(k - m k_0)\,
-\frac{2 I_0}{k}\, \sin\!\left( \frac{k \lambda_0}{a} \right).
+&amp;= \mathcal{F}\!\left[\sum_{n=-\infty}^{\infty} \delta(x - n \lambda_0)\right]\,
+\mathcal{F}[\operatorname{rect}(x)] \\[4pt]
+&amp;= k_0 \sum_{m=-\infty}^{\infty} \delta(k - m k_0)\,
+\frac{2 I_0}{k}\, \sin\!\left( \frac{k \lambda_0}{a} \right) \\[4pt]
+&amp;= \sum_{m=-\infty}^{\infty} \frac{2 I_0 k_0}{mk_0} \sin\!\left( \frac{mk_0 \lambda_0}{a} \right) \\[4pt]
+&amp;= \sum_{m=-\infty}^{\infty} \frac{2 I_0 }{m} \operatorname{sinc}\!\left( \frac{m 2 \pi}{a} \right) \\[4pt]
+&amp;= \sum_{m=-\infty}^{\infty} \frac{4\pi I_0}{a} \operatorname{sinc}\!\left( \frac{2\pi m}{a} \right). 
+\end{aligned}
 $$
 
-<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mi>m</mi><msub><mi>k</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">k = m k_0</annotation></semantics></math></span></span> 处的谱线强度与</p>
-
-$$
-\sin\!\left( \frac{m k_0 \lambda_0}{a} \right) \big/ (m k_0)
-= \operatorname{sinc}\!\left( \frac{2\pi m}{a} \right)
-$$
-
-<p>成正比，因此可以写为</p>
+<p>一般记</p>
 
 $$
 C_m = \frac{4\pi I_0}{a}\, \operatorname{sinc}\!\left( \frac{2\pi m}{a} \right),
@@ -755,6 +753,12 @@ $$
 
 <p>即<strong>单个方波的 sinc 傅里叶谱，在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>0</mn></msub><mo separator="true">,</mo><mn>2</mn><msub><mi>k</mi><mn>0</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>n</mi><msub><mi>k</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">k_0, 2k_0, \cdots, n k_0</annotation></semantics></math></span></span> 等离散点被“抽样”出来，就构成了周期性方波的傅里叶级数系数。</strong></p>
 <p>对每一个谐波系数都可以用上述方法求得，其形式完全类似，只是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 不同而已。</p>
+<p>由此显见，周期性方波</p>
+
+$$
+\delta \otimes g = f(\mathcal{F}[h(x)]) = \frac{1}{2\pi} \int_{-\infty}^{\infty} \sum_{m=-\infty}^{\infty} \frac{4\pi I_0}{a} \operatorname{sinc}\!\left( \frac{2\pi m}{a} \right) e^{ikx} \,dk
+$$
+
 <details>
 <summary>例题：利用公式求周期方波的前几阶谐波</summary>
 <p><strong>题目</strong></p>
