@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>各向异性晶体中的速度和能流，波法线菲涅尔方程 | Hexo</title>
+  <title>各向异性晶体中的速度和能流，菲涅尔方程 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,14 +355,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        各向异性晶体中的速度和能流，波法线菲涅尔方程
+        各向异性晶体中的速度和能流，菲涅尔方程
       </span>
     </div>
     
@@ -392,7 +392,7 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1>各向异性晶体中的速度和能流，波法线菲涅尔方程</h1>
+        <h1>各向异性晶体中的速度和能流，菲涅尔方程</h1>
 <h2 id="各向异性晶体中的平面波与矢量关系">各向异性晶体中的平面波与矢量关系</h2>
 <p>考虑各向异性晶体中的平面波，忽略源项，取</p>
 
@@ -1042,6 +1042,228 @@ $$
 
 <p>这直接反映了 e 光折射率对传播方向的依赖.</p>
 </details>
+<h2 id="光线（能流）的菲涅耳方程">光线（能流）的菲涅耳方程</h2>
+<p>在各向异性晶体中，波矢方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 与能流方向（或群速度方向）<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>s</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{s}</annotation></semantics></math></span></span> 一般不一致，但两者之间存在一一对应关系，因此可以从能流方向出发，重写与传统菲涅耳方程等价的“光线版本”。</p>
+<h3 id="从-vec-D-与-vec-E-的几何关系出发">从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的几何关系出发</h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_s</annotation></semantics></math></span></span> 为光线（能流）方向的单位矢量，将位移矢量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 分解到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_s</annotation></semantics></math></span></span> 方向和平行于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的方向：</p>
+
+$$
+\displaystyle \vec{D}_s = \hat{e}_s \left( \vec{D} \cdot \hat{e}_s \right)
+$$
+
+
+$$
+\displaystyle \vec{D}_e = \vec{D} - \hat{e}_s \left( \vec{D} \cdot \hat{e}_s \right)
+= \frac{\vec{D} \cdot \vec{E}}{E} \,\frac{\vec{E}}{E}
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">\vec{D}_e</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 共线。由此可以凑出一个与波矢方向版本完全类似、只需将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_k</annotation></semantics></math></span></span> 替换为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_s</annotation></semantics></math></span></span> 的关系式：</p>
+
+$$
+\displaystyle \vec{E} = \frac{E^{2}}{\vec{D} \cdot \vec{E}} \left[ \vec{D} - \hat{e}_s \left( \vec{D} \cdot \hat{e}_s \right) \right]
+$$
+
+<p>下面的目标是消去前面的比例因子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>E</mi><mrow><mn>2</mn></mrow></msup><mi mathvariant="normal">/</mi><mo>(</mo><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover><mo>⋅</mo><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">E^{2}/(\vec{D}\cdot\vec{E})</annotation></semantics></math></span></span>。</p>
+<h3 id="用介电张量关系消去比例因子">用介电张量关系消去比例因子</h3>
+<p>线性各向异性介质中有关系$\vec{D} = \varepsilon_0 \overleftrightarrow{\varepsilon}\,\vec{E}$。在波矢版本的推导中，已有</p>
+
+$$
+\displaystyle \vec{D} 
+= \frac{k^{2}}{\mu_0 \omega^{2}} \left[ \vec{E} - \hat{e}_p \left( \hat{e}_p \cdot \vec{E} \right) \right]
+= \frac{k^{2}}{\mu_0 \omega^{2}} \vec{E}_d
+= \frac{1}{v_p^{2}\mu_0} \vec{E}_d
+= \frac{n^{2}}{c^{2}\mu_0} \vec{E}_d
+= n^{2} \varepsilon_0 \vec{E}_d
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">\vec{E}_d</annotation></semantics></math></span></span> 是与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 相对应的“有效场”。于是</p>
+
+$$
+\displaystyle \vec{E}_d = \frac{\vec{D}}{n^{2}\varepsilon_0}
+$$
+
+<p>又因为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover><mi>d</mi></msub></mrow><annotation encoding="application/x-tex">\vec{E}_d</annotation></semantics></math></span></span> 共线，有</p>
+
+$$
+\displaystyle \vec{D} \cdot \vec{E}
+= D\,E_d
+= \frac{D^{2}}{n^{2}\varepsilon_0}
+$$
+
+<p>另一方面，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 之间的夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>，则</p>
+
+$$
+\displaystyle \vec{D} \cdot \vec{E} = D E \cos\alpha
+$$
+
+<p>由此得到大小关系</p>
+
+$$
+\displaystyle \frac{D^{2}}{n^{2}\varepsilon_0} = D E \cos\alpha
+\quad \Rightarrow \quad
+E = \frac{D}{n^{2}\varepsilon_0 \cos\alpha}
+$$
+
+<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 代入前面的比例因子：</p>
+
+$$
+\displaystyle \frac{E^{2}}{\vec{D} \cdot \vec{E}}
+= \frac{E \left( D/(n^{2}\varepsilon_0 \cos\alpha) \right)}{D E \cos\alpha}
+= \frac{1}{\varepsilon_0 n^{2} \cos^{2}\alpha}
+$$
+
+<p>回忆定义群折射率</p>
+
+$$
+\displaystyle n_g = n \cos\alpha
+$$
+
+<p>于是比例因子化简为</p>
+
+$$
+\displaystyle \frac{E^{2}}{\vec{D} \cdot \vec{E}}
+= \frac{1}{\varepsilon_0 n_g^{2}}
+$$
+
+<p>将其代回即可得到<strong>光线（能流）版本的菲涅耳方程</strong>：</p>
+
+$$
+\displaystyle \vec{E} = \frac{1}{\varepsilon_0 n_g^{2}} 
+\left[ \vec{D} - \hat{e}_s \left( \vec{D} \cdot \hat{e}_s \right) \right]
+$$
+
+<h3 id="与波矢版本菲涅耳方程的一一对应">与波矢版本菲涅耳方程的一一对应</h3>
+<p>波矢方向（相速度方向）上的菲涅耳方程为</p>
+
+$$
+\displaystyle \vec{D} = n^{2} \varepsilon_0 
+\left[ \vec{E} - \hat{e}_p \left( \vec{E} \cdot \hat{e}_p \right) \right]
+$$
+
+<p>两者之间存在清晰的对应关系：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover><mo>↔</mo><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D} \leftrightarrow \vec{E}</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><msub><mi>n</mi><mi>g</mi></msub><mo>↔</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">1/n_g \leftrightarrow n</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><msub><mi>ε</mi><mn>0</mn></msub><mo>↔</mo><msub><mi>ε</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">1/\varepsilon_0 \leftrightarrow \varepsilon_0</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>s</mi></msub><mo>↔</mo><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>p</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_s \leftrightarrow \hat{e}_p</annotation></semantics></math></span></span></li>
+<li>主折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mrow><mi>i</mi><mi>i</mi></mrow></msub><mo>↔</mo><mn>1</mn><mi mathvariant="normal">/</mi><msub><mi>n</mi><mrow><mi>i</mi><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">n_{ii} \leftrightarrow 1/n_{ii}</annotation></semantics></math></span></span></li>
+</ul>
+<p>也就是说，在能流描述中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span>、折射率与群折射率出现了一种“对偶”关系。</p>
+<h3 id="在主轴坐标中的分量形式">在主轴坐标中的分量形式</h3>
+<p>在介质主轴坐标系中，</p>
+
+$$
+\displaystyle D_i = \varepsilon_0 \varepsilon_{ii} E_i
+= \varepsilon_0 n_{ii}^{2} E_i
+$$
+
+<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 的光线版菲涅耳方程逐分量代入：</p>
+
+$$
+\displaystyle \varepsilon_0 \varepsilon_{ii} E_i
+= \frac{1}{\varepsilon_0 n_g^{2}} \varepsilon_0 \varepsilon_{ii}
+\left( D_i - e_{si} \, \vec{D} \cdot \hat{e}_s \right)
+$$
+
+<p>得到对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 的约束：</p>
+
+$$
+\displaystyle D_i
+= \frac{\varepsilon_{ii}}{n_g^{2}}
+\left( D_i - e_{si} \, \vec{D} \cdot \hat{e}_s \right)
+= \frac{n_{ii}^{2}}{n_g^{2}}
+\left( D_i - e_{si} \, \vec{D} \cdot \hat{e}_s \right)
+$$
+
+<p>这给出了在给定能流方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_s</annotation></semantics></math></span></span> 时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 各分量之间的约束关系，是能流方向本征值问题的出发点。</p>
+<h3 id="本征值问题与折射率椭球、群速度椭球">本征值问题与折射率椭球、群速度椭球</h3>
+<h4 id="能流方向的本征值方程">能流方向的本征值方程</h4>
+<p>从光线版菲涅耳方程出发：</p>
+
+$$
+\displaystyle \vec{E}
+= \frac{1}{\varepsilon_0 n_g^{2}} 
+\left( \varepsilon_0 \overleftrightarrow{\varepsilon} \vec{E}
+- \hat{e}_s \left[ \hat{e}_s \cdot \varepsilon_0 \overleftrightarrow{\varepsilon} \vec{E} \right] \right)
+$$
+
+<p>记</p>
+
+$$
+\displaystyle \Gamma_s = I - \hat{e}_s \hat{e}_s^{\top},
+\qquad
+\overleftrightarrow{n} \propto \overleftrightarrow{\varepsilon}
+$$
+
+<p>则有</p>
+
+$$
+\displaystyle \vec{E} = \frac{1}{n_g^{2}} 
+\Gamma_s \,\overleftrightarrow{n}\, \vec{E}
+\quad \Rightarrow \quad
+n_g^{2} \vec{E} = \Gamma_s \,\overleftrightarrow{n}\, \vec{E}
+$$
+
+<p>并且必须满足横向条件</p>
+
+$$
+\displaystyle \vec{E} \cdot \hat{e}_s = 0
+$$
+
+<p>因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>E</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{E}</annotation></semantics></math></span></span> 在给定能流方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mrow><mi>e</mi></mrow><mo>^</mo></mover><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\hat{e}_s</annotation></semantics></math></span></span> 下有两个本征态，对应两个不同的群折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">n_g</annotation></semantics></math></span></span>，这与经典相速度问题中的“双折射两本征态”是一致的。非平凡解要求</p>
+
+$$
+\displaystyle \det\!\left( n_g^{2} I - \Gamma_s \,\overleftrightarrow{n} \right) = 0
+$$
+
+<p>这给出了群折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">n_g</annotation></semantics></math></span></span> 在不同能流方向上的分布，形成所谓的“群速度椭球”（或群折射率椭球）。</p>
+<h4 id="折射率椭球与群速度折射率椭球">折射率椭球与群速度折射率椭球</h4>
+<p>在介质主轴坐标系下，折射率椭球的常见形式为</p>
+
+$$
+\displaystyle \frac{x_d^{2}}{n_{x}^{2}}
++ \frac{y_d^{2}}{n_{y}^{2}}
++ \frac{z_d^{2}}{n_{z}^{2}} = 1
+$$
+
+<p>这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>x</mi><mi>d</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>d</mi></msub><mo separator="true">,</mo><msub><mi>z</mi><mi>d</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(x_d, y_d, z_d)</annotation></semantics></math></span></span> 是与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>D</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{D}</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>⃗</mo></mover></mrow><annotation encoding="application/x-tex">\vec{k}</annotation></semantics></math></span></span> 相关的几何坐标，描述相速度（或折射率）在各方向上的分布。</p>
+<p>另一方面，从能流角度出发，可以定义群速度（或群折射率）椭球。例如用能量密度的形式写：</p>
+
+$$
+\displaystyle
+\frac{D_x^{2}}{2\omega \varepsilon_0 \varepsilon_{xx}}
++ \frac{D_y^{2}}{2\omega \varepsilon_0 \varepsilon_{yy}}
++ \frac{D_z^{2}}{2\omega \varepsilon_0 \varepsilon_{zz}}
+= 1
+$$
+
+<p>或者等价地，用电场的能量密度来写群速度椭球：</p>
+
+$$
+\displaystyle
+\frac{\varepsilon_0 E_x^{2}}{2\omega \varepsilon_{xx}}
++ \frac{\varepsilon_0 E_y^{2}}{2\omega \varepsilon_{yy}}
++ \frac{\varepsilon_0 E_z^{2}}{2\omega \varepsilon_{zz}}
+= 1
+$$
+
+<p>在适当的坐标变换下，群速度椭球可以写成类似</p>
+
+$$
+\displaystyle x_e^{2} n_{x}^{2} 
++ y_e^{2} n_{y}^{2}
++ z_e^{2} n_{z}^{2} = 1
+$$
+
+<p>或者</p>
+
+$$
+\displaystyle \frac{x_e^{2}}{n_{x}^{2}} 
++ \frac{y_e^{2}}{n_{y}^{2}}
++ \frac{z_e^{2}}{n_{z}^{2}} = 1
+$$
+
+<p>这两种写法本质上是对同一几何体在不同缩放坐标下的表示，表明折射率椭球与群速度椭球之间存在一种“互逆”关系：一个用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mrow><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">n_{i}</annotation></semantics></math></span></span> 做分母，另一个可以用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mrow><mi>i</mi></mrow></msub></mrow><annotation encoding="application/x-tex">n_{i}</annotation></semantics></math></span></span> 做分子或通过坐标缩放转换为相同形式。</p>
 
       </div>
       <div class="post-tags-categories">
@@ -1063,7 +1285,7 @@ $$
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/GuangXue/各向异性晶体中的速度和能流，波法线菲涅尔方程/" target="_blank" title="各向异性晶体中的速度和能流，波法线菲涅尔方程">https://kotokowa.github.io/physics/GuangXue/各向异性晶体中的速度和能流，波法线菲涅尔方程/</a>
+    <a href="/physics/GuangXue/各向异性晶体中的速度和能流，菲涅尔方程/" target="_blank" title="各向异性晶体中的速度和能流，菲涅尔方程">https://kotokowa.github.io/physics/GuangXue/各向异性晶体中的速度和能流，菲涅尔方程/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -1238,7 +1460,7 @@ $$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">各向异性晶体中的速度和能流，波法线菲涅尔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E4%B8%AD%E7%9A%84%E5%B9%B3%E9%9D%A2%E6%B3%A2%E4%B8%8E%E7%9F%A2%E9%87%8F%E5%85%B3%E7%B3%BB"><span class="toc-text">各向异性晶体中的平面波与矢量关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E3%80%81%E7%BE%A4%E9%80%9F%E5%BA%A6%E4%B8%8E%E6%8A%98%E5%B0%84%E7%8E%87"><span class="toc-text">相速度、群速度与折射率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E4%B8%8E%E7%BE%A4%E9%80%9F%E5%BA%A6%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">相速度与群速度的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8-Maxwell-%E6%96%B9%E7%A8%8B%E6%B1%82%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6"><span class="toc-text">用 Maxwell 方程求能量密度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF-%E7%9B%B8%E4%BD%8D%EF%BC%8C-vec-k-%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">波法线 (相位，k⃗\vec{k}​k​⃗​​) 菲涅尔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-Maxwell-%E6%96%B9%E7%A8%8B%E6%8E%A8%E5%AF%BC"><span class="toc-text">从 Maxwell 方程推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98%E4%B8%8E%E5%81%8F%E6%8C%AF%E6%9C%AC%E5%BE%81%E6%80%81"><span class="toc-text">本征值问题与偏振本征态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB-%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE"><span class="toc-text">色散关系(等频率图)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E5%88%B0%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB"><span class="toc-text">从菲涅尔方程到色散关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE%E7%9A%84%E5%B8%B8%E8%A7%81%E5%87%A0%E4%BD%95%E5%BD%A2%E7%8A%B6"><span class="toc-text">等频率图的常见几何形状</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BD%A2%E5%BC%8F"><span class="toc-text">波法线菲涅尔方程的常用形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E7%9A%84%E5%88%86%E5%B8%83%E4%B8%8E%E6%B3%A2%E5%89%8D%E5%9B%BE"><span class="toc-text">相速度的分布与波前图</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">各向异性晶体中的速度和能流，菲涅尔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%90%91%E5%BC%82%E6%80%A7%E6%99%B6%E4%BD%93%E4%B8%AD%E7%9A%84%E5%B9%B3%E9%9D%A2%E6%B3%A2%E4%B8%8E%E7%9F%A2%E9%87%8F%E5%85%B3%E7%B3%BB"><span class="toc-text">各向异性晶体中的平面波与矢量关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E3%80%81%E7%BE%A4%E9%80%9F%E5%BA%A6%E4%B8%8E%E6%8A%98%E5%B0%84%E7%8E%87"><span class="toc-text">相速度、群速度与折射率</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E4%B8%8E%E7%BE%A4%E9%80%9F%E5%BA%A6%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">相速度与群速度的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8-Maxwell-%E6%96%B9%E7%A8%8B%E6%B1%82%E8%83%BD%E9%87%8F%E5%AF%86%E5%BA%A6"><span class="toc-text">用 Maxwell 方程求能量密度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF-%E7%9B%B8%E4%BD%8D%EF%BC%8C-vec-k-%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">波法线 (相位，k⃗\vec{k}​k​⃗​​) 菲涅尔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-Maxwell-%E6%96%B9%E7%A8%8B%E6%8E%A8%E5%AF%BC"><span class="toc-text">从 Maxwell 方程推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98%E4%B8%8E%E5%81%8F%E6%8C%AF%E6%9C%AC%E5%BE%81%E6%80%81"><span class="toc-text">本征值问题与偏振本征态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB-%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE"><span class="toc-text">色散关系(等频率图)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8E%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E5%88%B0%E8%89%B2%E6%95%A3%E5%85%B3%E7%B3%BB"><span class="toc-text">从菲涅尔方程到色散关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E9%A2%91%E7%8E%87%E5%9B%BE%E7%9A%84%E5%B8%B8%E8%A7%81%E5%87%A0%E4%BD%95%E5%BD%A2%E7%8A%B6"><span class="toc-text">等频率图的常见几何形状</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E6%B3%95%E7%BA%BF%E8%8F%B2%E6%B6%85%E5%B0%94%E6%96%B9%E7%A8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BD%A2%E5%BC%8F"><span class="toc-text">波法线菲涅尔方程的常用形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E9%80%9F%E5%BA%A6%E7%9A%84%E5%88%86%E5%B8%83%E4%B8%8E%E6%B3%A2%E5%89%8D%E5%9B%BE"><span class="toc-text">相速度的分布与波前图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%89%E7%BA%BF%EF%BC%88%E8%83%BD%E6%B5%81%EF%BC%89%E7%9A%84%E8%8F%B2%E6%B6%85%E8%80%B3%E6%96%B9%E7%A8%8B"><span class="toc-text">光线（能流）的菲涅耳方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E-vec-D-%E4%B8%8E-vec-E-%E7%9A%84%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB%E5%87%BA%E5%8F%91"><span class="toc-text">从 D⃗\vec{D}​D​⃗​​ 与 E⃗\vec{E}​E​⃗​​ 的几何关系出发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BB%8B%E7%94%B5%E5%BC%A0%E9%87%8F%E5%85%B3%E7%B3%BB%E6%B6%88%E5%8E%BB%E6%AF%94%E4%BE%8B%E5%9B%A0%E5%AD%90"><span class="toc-text">用介电张量关系消去比例因子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E6%B3%A2%E7%9F%A2%E7%89%88%E6%9C%AC%E8%8F%B2%E6%B6%85%E8%80%B3%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E4%B8%80%E5%AF%B9%E5%BA%94"><span class="toc-text">与波矢版本菲涅耳方程的一一对应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E4%B8%BB%E8%BD%B4%E5%9D%90%E6%A0%87%E4%B8%AD%E7%9A%84%E5%88%86%E9%87%8F%E5%BD%A2%E5%BC%8F"><span class="toc-text">在主轴坐标中的分量形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC%E9%97%AE%E9%A2%98%E4%B8%8E%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83%E3%80%81%E7%BE%A4%E9%80%9F%E5%BA%A6%E6%A4%AD%E7%90%83"><span class="toc-text">本征值问题与折射率椭球、群速度椭球</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%BD%E6%B5%81%E6%96%B9%E5%90%91%E7%9A%84%E6%9C%AC%E5%BE%81%E5%80%BC%E6%96%B9%E7%A8%8B"><span class="toc-text">能流方向的本征值方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83%E4%B8%8E%E7%BE%A4%E9%80%9F%E5%BA%A6%E6%8A%98%E5%B0%84%E7%8E%87%E6%A4%AD%E7%90%83"><span class="toc-text">折射率椭球与群速度折射率椭球</span></a></li></ol></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
