@@ -395,7 +395,7 @@
         <h1>衍射与光栅</h1>
 <h2 id="衍射总论：惠更斯-菲涅耳到远场-夫朗禾费">衍射总论：惠更斯-菲涅耳到远场(夫朗禾费)</h2>
 <h3 id="惠更斯-菲涅耳积分形式">惠更斯-菲涅耳积分形式</h3>
-<p>实际的“双缝”或“单缝”都有有限宽度，缝口上的每个微元都可视作二次波源，远处点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 的复振幅是这些子波的叠加。你的笔记写作</p>
+<p>实际的“双缝”或“单缝”都有有限宽度，在讨论光的传播时选择一个波前，上面每个微元都可视作二次波源，认为光场是标量场，各点偏振都一样，远处点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 的复振幅是这些子波的叠加：</p>
 
 
 $$
@@ -409,12 +409,12 @@ f(\theta)
 $$
 
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(\theta)</annotation></semantics></math></span></span> 是倾斜因子，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 为微元到观察点距离。常见近似是：孔径内 $\widetilde{U}_0$ 取入射波在孔径处的截取，孔径很小或边界效应可忽略。</p>
+<p>其中 $\widetilde{U}_0$ 是振幅在波前的分布，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(\theta)</annotation></semantics></math></span></span> 是倾斜因子，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 为微元到观察点距离。</p>
 <h3 id="菲涅尔衍射与夫朗禾费衍射">菲涅尔衍射与夫朗禾费衍射</h3>
 <p>直观区分：观察距离或等效传播距离与孔径尺度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 的相对大小决定了是否可以把二次相位项忽略。</p>
 <ol>
 <li>菲涅尔(近场)：需要保留波前曲率，图样随传播距离变化明显。</li>
-<li>夫朗禾费(远场)：可把相位近似为线性函数，图样基本与距离无关(只做尺度放缩)。笔记给了条件示意，如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">s\to\infty</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">d\to\infty</annotation></semantics></math></span></span>。</li>
+<li>夫朗禾费(远场)：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">s\to\infty</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">d\to\infty</annotation></semantics></math></span></span>。可把相位近似为线性函数，图样基本与距离无关(只做尺度放缩)。</li>
 </ol>
 <p>更实用的“远场”判据是</p>
 
@@ -424,7 +424,7 @@ $$
 $$
 
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 是从孔径到屏的距离。你笔记中写 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>&gt;</mo><mfrac><mrow><msup><mi>b</mi><mn>2</mn></msup></mrow><mrow><mi>λ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">L&gt;\frac{b^2}{\lambda}</annotation></semantics></math></span></span>，并强调当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>≫</mo><mfrac><mrow><msup><mi>b</mi><mn>2</mn></msup></mrow><mrow><mi>λ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">L\gg \frac{b^2}{\lambda}</annotation></semantics></math></span></span> 时图样稳定。</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 是从孔径到屏的距离。</p>
 <p>另外，典型衍射角宽度量级是</p>
 
 
@@ -434,6 +434,7 @@ $$
 
 
 <p>这在小角近似下非常好用。</p>
+<p>另外，有时将 $l \theta \sim b$ 作为判据，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 是屏到单缝的距离，小于这个距离时为近场，大于时为远场。这其实和上面两个公式是等价的。</p>
 <details>
 <summary>例题 4：判断是否处于夫朗禾费远场</summary>
 <p>单缝宽度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>2</mn><mn>0</mn><mtext><mtext>&nbsp;</mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">b=0.20\text{ mm}</annotation></semantics></math></span></span>，波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>6</mn><mn>3</mn><mn>2</mn><mi mathvariant="normal">.</mi><mn>8</mn><mtext><mtext>&nbsp;</mtext><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">\lambda=632.8\text{ nm}</annotation></semantics></math></span></span>。估算远场距离尺度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>F</mi></msub><mo>∼</mo><mfrac><mrow><msup><mi>b</mi><mn>2</mn></msup></mrow><mrow><mi>λ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">L_F\sim \frac{b^2}{\lambda}</annotation></semantics></math></span></span>。</p>
@@ -453,9 +454,9 @@ $$
 
 <p>所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 达到数十厘米量级时远场近似已经相当好；若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 只有几厘米，则图样会随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 明显变化。</p>
 </details>
-<h2 id="单缝夫朗禾费衍射：傅里叶变换与-sinc">单缝夫朗禾费衍射：傅里叶变换与 sinc</h2>
+<h2 id="单缝夫朗禾费衍射">单缝夫朗禾费衍射</h2>
 <h3 id="相位差与定义">相位差与定义</h3>
-<p>对宽度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 的单缝，观察方向与光轴夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>。缝上下边缘的光程差约为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>sin</mi><mi>θ</mi></mrow><annotation encoding="application/x-tex">b\sin\theta</annotation></semantics></math></span></span>，对应相位差</p>
+<p>假设缝上各点振幅一样，无相位差。对宽度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 的单缝，观察方向与光轴夹角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>。缝上下边缘的光程差约为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>sin</mi><mi>θ</mi></mrow><annotation encoding="application/x-tex">b\sin\theta</annotation></semantics></math></span></span>，对应相位差</p>
 
 
 $$
@@ -479,7 +480,6 @@ $$
 $$
 
 
-<p>这就是你笔记采用的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span>。</p>
 <h3 id="振幅与光强">振幅与光强</h3>
 <p>在夫朗禾费近似下，单缝远场振幅正比于孔径函数的傅里叶变换，结果是 sinc 形状：</p>
 
@@ -504,7 +504,25 @@ $$
 
 
 <p>中心方向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\theta=0</annotation></semantics></math></span></span> 时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta\to 0</annotation></semantics></math></span></span>，利用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>β</mi><mo>∼</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\sin\beta\sim \beta</annotation></semantics></math></span></span> 得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>(</mo><mn>0</mn><mo>)</mo><mo>=</mo><msub><mi>U</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">U(0)=U_0</annotation></semantics></math></span></span>。</p>
-<p>为了避免在数学模式中引入不常见的宏，这里把 $\operatorname{sinc}$ 只作为概念说明：$\operatorname{sinc}(x)=\sin x/x$。</p>
+<p>这里傅里叶变换和衍射有惊人的相似之处：分别对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>c</mi><mi>t</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">rect(1)</annotation></semantics></math></span></span> 做 FFT 变换；对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mi>e</mi><mi>c</mi><mi>t</mi><mo>(</mo><mi>b</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">rect(b)</annotation></semantics></math></span></span> 做衍射计算，分别得到：</p>
+
+$$
+\displaystyle
+\text{FFT: } A(k) = \text{sinc}(\frac{1}{2}k)
+$$
+$$
+\displaystyle
+\text{衍射: } U_P = U_0 \text{sinc} \beta,\quad 
+\beta = \frac{\delta}{2}
+= \frac{\pi b \sin\theta}{\lambda}. 
+$$
+
+<p>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>k</mi><mo>∼</mo><mi>β</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{1}{2} k \sim \beta</annotation></semantics></math></span></span>。</p>
+<p>能发现有 $\displaystyle k \sim \frac{2 \pi}{\lambda} \sin \theta$。</p>
+<hr>
+<p>这里不用傅里叶变换也能推导：单缝就是一段连续的相位变化，反映在矢量图上就是一段圆弧，弧长定义为中心条纹的幅，也就是整个缝上光强的线性相加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">U_0</annotation></semantics></math></span></span>。圆弧对圆心张角为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span></span>，由此易见 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>U</mi><mo>(</mo><mi>θ</mi><mo>)</mo><mo>=</mo><msub><mi>U</mi><mn>0</mn></msub><mfrac><mrow><mi>sin</mi><mi>β</mi></mrow><mrow><mi>β</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle U(\theta)=U_0 \frac{\sin\beta}{\beta}</annotation></semantics></math></span></span>。</p>
+<h3 id="极端情况">极端情况</h3>
+<p>考虑 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda \to 0</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>≫</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">b \gg \lambda</annotation></semantics></math></span></span>，此时屏上稍偏离中心点，就能找到满足相位相消的条件（也就是仅傍轴才有像），过渡到几何光学。</p>
 <h3 id="暗纹位置与主瓣宽度">暗纹位置与主瓣宽度</h3>
 <p>暗纹来自分子为零：</p>
 
@@ -519,7 +537,7 @@ b\sin\theta_m=m\lambda
 $$
 
 
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">Z</mi></mrow><mo>∖</mo><mo>{</mo><mn>0</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">m\in\mathbb{Z}\setminus\{0\}</annotation></semantics></math></span></span>。第一次暗纹满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>sin</mi><msub><mi>θ</mi><mn>1</mn></msub><mo>=</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">b\sin\theta_1=\lambda</annotation></semantics></math></span></span>，小角近似下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>≈</mo><mi>λ</mi><mi mathvariant="normal">/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">\theta_1\approx \lambda/b</annotation></semantics></math></span></span>，主瓣角宽度约</p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">Z</mi></mrow><mo>∖</mo><mo>{</mo><mn>0</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">m\in\mathbb{Z}\setminus\{0\}</annotation></semantics></math></span></span> ，注意和双缝干涉恰恰相反，这里相位差为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>m</mi><mi>π</mi></mrow><annotation encoding="application/x-tex">2m\pi</annotation></semantics></math></span></span> 时为极小。第一次暗纹满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>sin</mi><msub><mi>θ</mi><mn>1</mn></msub><mo>=</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">b\sin\theta_1=\lambda</annotation></semantics></math></span></span>，小角近似下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>≈</mo><mi>λ</mi><mi mathvariant="normal">/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">\theta_1\approx \lambda/b</annotation></semantics></math></span></span>，主瓣角宽度约</p>
 
 
 $$
@@ -528,14 +546,8 @@ $$
 $$
 
 
-<p>这与你笔记对“明暗角”和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>θ</mi></mrow><annotation encoding="application/x-tex">\Delta\theta</annotation></semantics></math></span></span> 的总结一致。</p>
-<h3 id="次极大位置-纠错">次极大位置(纠错)</h3>
-<p>你笔记写了两条信息：</p>
-<ol>
-<li>极小由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>β</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sin\beta=0</annotation></semantics></math></span></span> 给出。</li>
-<li>次极大满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mi>cos</mi><mi>β</mi><mo>−</mo><mi>sin</mi><mi>β</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta\cos\beta-\sin\beta=0</annotation></semantics></math></span></span>，也就是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>tan</mi><mi>β</mi><mo>=</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\tan\beta=\beta</annotation></semantics></math></span></span>，并给了数值根。</li>
-</ol>
-<p>其中“单缝次极大对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>sin</mi><mn>2</mn></msup><mi>β</mi><mi mathvariant="normal">/</mi><msup><mi>β</mi><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sin^2\beta/\beta^2=0</annotation></semantics></math></span></span>”这句容易误解：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>sin</mi><mn>2</mn></msup><mi>β</mi><mi mathvariant="normal">/</mi><msup><mi>β</mi><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sin^2\beta/\beta^2=0</annotation></semantics></math></span></span> 描述的是极小(暗纹)，不是次极大。真正的次极大位置要解 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>tan</mi><mi>β</mi><mo>=</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\tan\beta=\beta</annotation></semantics></math></span></span>，例如</p>
+<h3 id="次极大位置">次极大位置</h3>
+<p>次极大满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mi>cos</mi><mi>β</mi><mo>−</mo><mi>sin</mi><mi>β</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\beta\cos\beta-\sin\beta=0</annotation></semantics></math></span></span>，也就是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>tan</mi><mi>β</mi><mo>=</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\tan\beta=\beta</annotation></semantics></math></span></span>。这个式子没有整数解，较小的几个解如</p>
 
 
 $$
@@ -544,7 +556,6 @@ $$
 $$
 
 
-<p>与笔记一致。</p>
 <details>
 <summary>例题 5：由单缝暗纹测缝宽</summary>
 <p>单色光波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>5</mn><mn>0</mn><mn>0</mn><mtext><mtext>&nbsp;</mtext><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">\lambda=500\text{ nm}</annotation></semantics></math></span></span>。测得第一次暗纹角位置约为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>0</mn><mn>2</mn><mn>5</mn><mtext><mtext>&nbsp;</mtext><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mtext></mrow><annotation encoding="application/x-tex">\theta_1=0.0025\text{ rad}</annotation></semantics></math></span></span>。估算缝宽 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>。</p>
@@ -566,7 +577,7 @@ $$
 </details>
 <details>
 <summary>例题 6：为什么远场图样与距离无关(平移孔径也不改变强度)</summary>
-<p>你的笔记提出：在入射方向不变时，把单缝在透镜平面内平移，屏上图样是否变化？</p>
+<p>在入射方向不变时，把单缝在透镜平面内平移，屏上图样是否变化？</p>
 <p>在夫朗禾费衍射中，远场振幅是孔径函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">A(x)</annotation></semantics></math></span></span> 的傅里叶变换 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">F</mi></mrow><mo>{</mo><mi>A</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>}</mo></mrow><annotation encoding="application/x-tex">\mathcal{F}\{A(x)\}</annotation></semantics></math></span></span>。若把孔径平移 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">x_0</annotation></semantics></math></span></span>，孔径函数变为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">A(x-x_0)</annotation></semantics></math></span></span>，则傅里叶变换只多一个线性相位因子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><msub><mi>k</mi><mi>x</mi></msub><msub><mi>x</mi><mn>0</mn></msub></mrow></msup></mrow><annotation encoding="application/x-tex">e^{-ik_x x_0}</annotation></semantics></math></span></span>，即</p>
 
 
@@ -578,10 +589,10 @@ e^{-ik_x x_0}\mathcal{F}\{A(x)\}
 $$
 
 
-<p>因此强度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mrow><mi mathvariant="script">F</mi></mrow><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|\mathcal{F}|^2</annotation></semantics></math></span></span> 不变。也就是说，平移孔径不会改变屏上强度分布，只改变远场的相位分布，这正对应你笔记提到的“傅里叶变换的位移定理”直觉。</p>
+<p>因此强度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mrow><mi mathvariant="script">F</mi></mrow><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|\mathcal{F}|^2</annotation></semantics></math></span></span> 不变。也就是说，平移孔径不会改变屏上强度分布，只改变远场的相位分布，这和位移-相移定理相互验证。</p>
 </details>
-<h2 id="白光衍射与空间相干性">白光衍射与空间相干性</h2>
-<p>单缝第一个暗纹由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>sin</mi><msub><mi>θ</mi><mn>0</mn></msub><mo>=</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">b\sin\theta_0=\lambda</annotation></semantics></math></span></span> 决定。白光包含多波长，暗纹角位置随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span> 变化，因此不同颜色在远离中心处“暗/亮”位置不同，形成色散：红光(长波长)衍射角更大，蓝光更小。</p>
+<h3 id="白光衍射与空间相干性">白光衍射与空间相干性</h3>
+<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\theta = 0</annotation></semantics></math></span></span> 处所有波长的光都增强，是白光。单缝第一个暗纹由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>sin</mi><msub><mi>θ</mi><mn>0</mn></msub><mo>=</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">b\sin\theta_0=\lambda</annotation></semantics></math></span></span> 决定。白光包含多波长，暗纹角位置随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span> 变化，因此不同颜色在远离中心处“暗/亮”位置不同，形成色散：红光(长波长)衍射角更大，蓝光更小。</p>
 <p>若路径差超过相干长度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>c</mi></msub><mo>=</mo><mi>c</mi><mi>τ</mi></mrow><annotation encoding="application/x-tex">L_c=c\tau</annotation></semantics></math></span></span>，不同波长(或同一波长的不同频率分量)之间不能稳定干涉，条纹会被平均掉，只在靠近中心、路径差很小的区域还能看到较清晰的白光干涉/衍射结构。</p>
 <details>
 <summary>例题 7：用白光观察到条纹的条件(数量级估算)</summary>
@@ -602,8 +613,10 @@ $$
 <p>即角度量级为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mi mathvariant="normal">.</mi><mn>0</mn><mn>4</mn><mtext><mtext>&nbsp;</mtext><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mtext></mrow><annotation encoding="application/x-tex">0.04\text{ rad}</annotation></semantics></math></span></span>。超过该角度，条纹会被白光的有限相干性洗掉。</p>
 </details>
 <h2 id="双缝干涉衍射：干涉被单缝包络调制">双缝干涉衍射：干涉被单缝包络调制</h2>
+<h3 id="位移-相移定理">位移-相移定理</h3>
+<p>考虑双缝衍射就要先弄明白：前面的单缝都是对准几何中心，和屏上的中心对齐。现在如果拓展光源和屏都不动，上下移动单缝，屏上的像<strong>不会移动</strong>！实际缝的移动产生了实空间位移，在相空间反映为相移。</p>
 <h3 id="基本结果">基本结果</h3>
-<p>设每条缝宽为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>，两缝中心距为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span></span>。单缝贡献的振幅因子仍为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>sin</mi><mi>β</mi></mrow><mrow><mi>β</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\sin\beta}{\beta}</annotation></semantics></math></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mfrac><mrow><mi>π</mi><mi>b</mi><mi>sin</mi><mi>θ</mi></mrow><mrow><mi>λ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\beta=\frac{\pi b\sin\theta}{\lambda}</annotation></semantics></math></span></span>。两缝之间额外相位差</p>
+<p>设每条缝宽为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>，两缝中心距为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span></span>。单缝贡献的振幅因子仍为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>sin</mi><mi>β</mi></mrow><mrow><mi>β</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\sin\beta}{\beta}</annotation></semantics></math></span></span>，其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mfrac><mrow><mi>π</mi><mi>b</mi><mi>sin</mi><mi>θ</mi></mrow><mrow><mi>λ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\beta=\frac{\pi b\sin\theta}{\lambda}</annotation></semantics></math></span></span>。双缝干涉因子是两缝之间额外相位差</p>
 
 
 $$
@@ -640,7 +653,6 @@ I(\theta)
 $$
 
 
-<p>与笔记完全一致：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>sin</mi><mi>β</mi></mrow><mrow><mi>β</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\sin\beta}{\beta}</annotation></semantics></math></span></span> 是包络，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>(</mo><mi>δ</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(\delta/2)</annotation></semantics></math></span></span> 是干涉调制。</p>
 <h3 id="缺级-缺线-现象">缺级(缺线)现象</h3>
 <p>干涉主极大满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">\delta=2\pi m</annotation></semantics></math></span></span>，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>sin</mi><mi>θ</mi><mo>=</mo><mi>m</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">d\sin\theta=m\lambda</annotation></semantics></math></span></span>。单缝暗纹满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi>sin</mi><mi>θ</mi><mo>=</mo><mi>n</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">b\sin\theta=n\lambda</annotation></semantics></math></span></span>。若二者同时满足，则该干涉级次被包络“压成零”，发生缺级：</p>
 
@@ -653,12 +665,14 @@ m=\frac{d}{b}n
 $$
 
 
-<p>因此当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi mathvariant="normal">/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">d/b</annotation></semantics></math></span></span> 为整数时，会系统性地缺失某些干涉级。你的笔记用“当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>(</mo><mi>δ</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(\delta/2)</annotation></semantics></math></span></span> 极大时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>β</mi><mi mathvariant="normal">/</mi><mi>β</mi></mrow><annotation encoding="application/x-tex">\sin\beta/\beta</annotation></semantics></math></span></span> 可能为零”描述的正是这个现象。</p>
+<p>因此当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi mathvariant="normal">/</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">d/b</annotation></semantics></math></span></span> 为整数时，会系统性地缺失某些干涉级。</p>
 <details>
 <summary>例题 8：判断缺级发生在哪些级次</summary>
 <p>双缝宽 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>1</mn><mn>0</mn><mtext><mtext>&nbsp;</mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">b=0.10\text{ mm}</annotation></semantics></math></span></span>，中心距 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>5</mn><mn>0</mn><mtext><mtext>&nbsp;</mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">d=0.50\text{ mm}</annotation></semantics></math></span></span>。问：哪些干涉级会缺失？</p>
 <p>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi mathvariant="normal">/</mi><mi>b</mi><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">d/b=5</annotation></semantics></math></span></span>。缺级条件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mo>(</mo><mi>d</mi><mi mathvariant="normal">/</mi><mi>b</mi><mo>)</mo><mi>n</mi><mo>=</mo><mn>5</mn><mi>n</mi></mrow><annotation encoding="application/x-tex">m=(d/b)n=5n</annotation></semantics></math></span></span>，因此所有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mo>±</mo><mn>5</mn><mo separator="true">,</mo><mo>±</mo><mn>1</mn><mn>0</mn><mo separator="true">,</mo><mo>±</mo><mn>1</mn><mn>5</mn><mo separator="true">,</mo></mrow><annotation encoding="application/x-tex">m=\pm 5,\pm 10,\pm 15,</annotation></semantics></math></span></span> 级干涉亮纹会落在单缝暗纹处而消失。</p>
 </details>
+<h3 id="补充：矢量图">补充：矢量图</h3>
+<p>对于双缝衍射矢量图的绘制要注意在单缝衍射的“圆弧”基础上增加一个双缝干涉的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span></span> 旋转。用这种方法还可以讨论双缝不一样宽的情况（定性）。</p>
 <h2 id="多缝衍射与光栅：从有限-N-到-N-to-infty">多缝衍射与光栅：从有限 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">N\to\infty</annotation></semantics></math></span></span></h2>
 <h3 id="N-条窄缝的干涉因子"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 条窄缝的干涉因子</h3>
 <p>忽略单缝宽度(或取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mi mathvariant="normal">/</mi><mi>λ</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b/\lambda\to 0</annotation></semantics></math></span></span>)，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 条等间距为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span> 的缝，其相邻缝相位差</p>
@@ -672,7 +686,7 @@ $$
 $$
 
 
-<p>总振幅为几何级数求和：</p>
+<p>总振幅为几何级数求和（用欧拉指数形式，或者画矢量图）：</p>
 
 
 $$
@@ -696,7 +710,8 @@ I_0\,
 $$
 
 
-<p>并且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N=2</annotation></semantics></math></span></span> 时回到双缝：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>=</mo><mn>2</mn><msub><mi>A</mi><mn>0</mn></msub><mi>cos</mi><mo>(</mo><mi>δ</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">A=2A_0\cos(\delta/2)</annotation></semantics></math></span></span>。主极大位置不变但随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 增大变得更尖锐，次极大数目为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N-2</annotation></semantics></math></span></span>。</p>
+<p>并且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N=2</annotation></semantics></math></span></span> 时回到双缝：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>=</mo><mn>2</mn><msub><mi>A</mi><mn>0</mn></msub><mi>cos</mi><mo>(</mo><mi>δ</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">A=2A_0\cos(\delta/2)</annotation></semantics></math></span></span>。主极大位置不变但随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 增大变得更尖锐，次极大数目为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>−</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">N-2</annotation></semantics></math></span></span>，由此产生更多的零点，零点共有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">N-1</annotation></semantics></math></span></span> 个。</p>
+<p>如果想要突出主极大，减小次级大和旁边其他极大，就要减小 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span>，增大 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span>。</p>
 <h3 id="加上单缝包络：真实光栅">加上单缝包络：真实光栅</h3>
 <p>每条缝宽为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 时，单缝包络乘上多缝干涉因子：</p>
 
@@ -742,12 +757,12 @@ $$
 <p>第一零点满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>N</mi><mi>ϵ</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>=</mo><mo>±</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">\frac{N\epsilon}{2}=\pm\pi</annotation></semantics></math></span></span>，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi><mo>≈</mo><mo>±</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>N</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\epsilon\approx \pm \frac{2\pi}{N}</annotation></semantics></math></span></span>。而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>a</mi></mrow><mrow><mi>λ</mi></mrow></mfrac><mi>sin</mi><mi>θ</mi></mrow><annotation encoding="application/x-tex">\delta=\frac{2\pi a}{\lambda}\sin\theta</annotation></semantics></math></span></span>，所以主瓣角宽度量级随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 约按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">1/N</annotation></semantics></math></span></span> 变窄。</p>
 </details>
 <h3 id="光栅方程：动量-倒格矢观点">光栅方程：动量/倒格矢观点</h3>
-<p>把光栅看作周期 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 的结构，它提供倒格矢 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>p</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">G=\frac{2\pi}{p}</annotation></semantics></math></span></span>。在一维情况下，平行于光栅方向的波矢分量满足“动量守恒到一个倒格矢”：</p>
+<p>把光栅看作周期 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 的结构，它提供动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>p</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">G=\frac{2\pi}{p}</annotation></semantics></math></span></span>。在一维情况下，平行于光栅方向的波矢分量满足“动量守恒到一个倒格矢”：</p>
 
 
 $$
 \displaystyle
-k\sin\theta_m
+k_\parallel = k_0\sin\theta_m
 =
 k\sin\theta_i
 +
@@ -764,7 +779,8 @@ p(\sin\theta_m-\sin\theta_i)=m\lambda
 $$
 
 
-<p>你的笔记用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>λ</mi></mrow></mfrac><mi>sin</mi><mi>β</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>λ</mi></mrow></mfrac><mi>sin</mi><mi>θ</mi><mo>+</mo><mi>m</mi><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>p</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{2\pi}{\lambda}\sin\beta=\frac{2\pi}{\lambda}\sin\theta+m\frac{2\pi}{p}</annotation></semantics></math></span></span> 表达了同一思想(只是把入射角记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span>)。</p>
+<p>或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>λ</mi></mrow></mfrac><mi>sin</mi><msub><mi>θ</mi><mi>m</mi></msub><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>λ</mi></mrow></mfrac><mi>sin</mi><msub><mi>θ</mi><mi>i</mi></msub><mo>+</mo><mi>m</mi><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>p</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{2\pi}{\lambda}\sin\theta_m=\frac{2\pi}{\lambda}\sin\theta_i +m\frac{2\pi}{p}</annotation></semantics></math></span></span>。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 称为光栅阶数。</p>
 <details>
 <summary>例题 10：正入射下的一阶衍射角</summary>
 <p>光栅周期 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>0</mn><mtext>&nbsp;</mtext><mi>μ</mi><mtext><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">p=1.0\ \mu\text{m}</annotation></semantics></math></span></span>，波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>5</mn><mn>0</mn><mn>0</mn><mtext><mtext>&nbsp;</mtext><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">\lambda=500\text{ nm}</annotation></semantics></math></span></span>，正入射 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mi>i</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\theta_i=0</annotation></semantics></math></span></span>。求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\pm 1</annotation></semantics></math></span></span> 级衍射角。</p>
@@ -785,9 +801,88 @@ $$
 
 
 </details>
-<h2 id="光栅与傅里叶变换：comb-与-rect-的结构化理解">光栅与傅里叶变换：comb 与 rect 的结构化理解</h2>
-<h3 id="透射函数：振幅型与相位型">透射函数：振幅型与相位型</h3>
-<p>你笔记区分了两类典型光栅：</p>
+<details>
+<summary>补充：闪耀光栅</summary>
+闪耀光栅的核心目的是通过锯齿状刻槽结构，将衍射光能从无用的零级主极大转移到特定的非零级次上，从而大幅提升特定波长的能量利用率。
+<ol>
+<li><strong>基本原理</strong><br>
+<strong>光栅方程与槽面干涉</strong>：光栅的宏观周期 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span></span> 决定了干涉极大的位置（由光栅方程决定）。<br>
+<strong>闪耀作用</strong>：每个刻槽的微观反射面（槽面）与光栅平面成一定角度，称为<strong>闪耀角</strong>(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">\theta_b</annotation></semantics></math></span></span>)。槽面反射决定了单缝衍射包络的中心位置。<br>
+<strong>能量集中</strong>：通过设计 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">\theta_b</annotation></semantics></math></span></span>，使单缝衍射的主极大（峰值光强）方向与光栅干涉的某一级次（如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=1</annotation></semantics></math></span></span>）重合，实现该级次的“闪耀”。</li>
+<li><strong>核心公式</strong><br>
+<strong>光栅方程</strong>（决定干涉极大值方向）： $$d (\sin \alpha + \sin \beta) = m \lambda$$
+其中：<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span></span>：光栅常数<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>：入射角（相对于光栅法线）<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span>：衍射角（相对于光栅法线）<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>：衍射级次<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>：波长<br>
+<strong>闪耀条件（Littrow结构，效率最高）</strong>：<br>
+当入射光沿着槽面法线方向入射，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><msub><mi>θ</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">\alpha = \theta_b</annotation></semantics></math></span></span> 时，衍射光沿原路返回(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mi>α</mi><mo>=</mo><msub><mi>θ</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">\beta = \alpha = \theta_b</annotation></semantics></math></span></span>)，此时闪耀波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>λ</mi><mi>b</mi></msub></mrow><annotation encoding="application/x-tex">\lambda_b</annotation></semantics></math></span></span> 满足： $$m \lambda_b = 2d \sin \theta_b$$
+<strong>一般闪耀条件</strong>：<br>
+无论入射角如何，只要相对于<strong>槽面法线</strong>，入射角 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>θ</mi><mi>i</mi><mrow><mi mathvariant="normal">′</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">\theta_i'</annotation></semantics></math></span></span> 和衍射角 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>θ</mi><mi>m</mi><mrow><mi mathvariant="normal">′</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">\theta_m'</annotation></semantics></math></span></span> 满足反射定律(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>θ</mi><mi>i</mi><mrow><mi mathvariant="normal">′</mi></mrow></msubsup><mo>=</mo><mo>−</mo><msubsup><mi>θ</mi><mi>m</mi><mrow><mi mathvariant="normal">′</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">\theta_i' = -\theta_m'</annotation></semantics></math></span></span>)，即可获得最大衍射效率。</li>
+</ol>
+</details>
+<details>
+<summary>推导余弦光栅的衍射</summary>
+余弦光栅是振幅透射率按余弦函数变化的光栅，其衍射特性非常直观，也是理解傅里叶光学频谱分析的基础。
+以下是利用傅里叶变换方法进行的推导过程：
+<ol>
+<li>
+<p>定义振幅透射率函数<br>
+设光栅沿 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 轴方向周期性变化，空间周期为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span></span>（空间频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">f_0 = 1/d</annotation></semantics></math></span></span>）。其复振幅透射率函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">t(x)</annotation></semantics></math></span></span> 可表示为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><msub><mi>t</mi><mn>1</mn></msub><mi>cos</mi><mo>(</mo><mn>2</mn><mi>π</mi><msub><mi>f</mi><mn>0</mn></msub><mi>x</mi><mo>)</mo><mo>=</mo><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><msub><mi>t</mi><mn>1</mn></msub><mi>cos</mi><mrow><mo fence="true">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>d</mi></mrow></mfrac><mi>x</mi><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">t(x) = t_0 + t_1 \cos(2\pi f_0 x) = t_0 + t_1 \cos\left(\frac{2\pi}{d}x\right)
+</annotation></semantics></math></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">t_0</annotation></semantics></math></span></span> 是平均透射率，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">t_1</annotation></semantics></math></span></span> 是调制幅度。假设光栅是无限大的（或暂时忽略有限宽度的影响）。</p>
+</li>
+<li>
+<p>利用欧拉公式展开<br>
+为了便于积分（傅里叶变换），将余弦项写成指数形式：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mrow><mo fence="true">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>d</mi></mrow></mfrac><mi>x</mi><mo fence="true">)</mo></mrow><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mrow><mo fence="true">(</mo><msup><mi>e</mi><mrow><mi>i</mi><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>d</mi></mrow></mfrac><mi>x</mi></mrow></msup><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>d</mi></mrow></mfrac><mi>x</mi></mrow></msup><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\cos\left(\frac{2\pi}{d}x\right) = \frac{1}{2}\left(e^{i\frac{2\pi}{d}x} + e^{-i\frac{2\pi}{d}x}\right)
+</annotation></semantics></math></span></span></span></p>
+<p>代入透射率函数：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><mfrac><mrow><msub><mi>t</mi><mn>1</mn></msub></mrow><mrow><mn>2</mn></mrow></mfrac><msup><mi>e</mi><mrow><mi>i</mi><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>d</mi></mrow></mfrac><mi>x</mi></mrow></msup><mo>+</mo><mfrac><mrow><msub><mi>t</mi><mn>1</mn></msub></mrow><mrow><mn>2</mn></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>d</mi></mrow></mfrac><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">t(x) = t_0 + \frac{t_1}{2}e^{i\frac{2\pi}{d}x} + \frac{t_1}{2}e^{-i\frac{2\pi}{d}x}
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p>夫琅禾费衍射积分<br>
+设单位振幅的单色平面波垂直入射。在夫琅禾费近似下，衍射场 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U(\theta)</annotation></semantics></math></span></span> 正比于透射率函数的傅里叶变换，即：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>(</mo><mi>θ</mi><mo>)</mo><mo>∝</mo><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>t</mi><mo>(</mo><mi>x</mi><mo>)</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><mi>k</mi><mi>sin</mi><mi>θ</mi><mi>x</mi></mrow></msup><mspace width="0.16667em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">U(\theta) \propto \int_{-\infty}^{\infty} t(x) e^{-ik \sin\theta x} \, dx
+</annotation></semantics></math></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi mathvariant="normal">/</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">k = 2\pi/\lambda</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 为衍射角。</p>
+</li>
+<li>
+<p>逐项积分与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span></span> 函数<br>
+将展开后的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">t(x)</annotation></semantics></math></span></span> 代入积分公式，利用积分公式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msup><mi>e</mi><mrow><mi>i</mi><mi>a</mi><mi>x</mi></mrow></msup><mi>d</mi><mi>x</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi>δ</mi><mo>(</mo><mi>a</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty} e^{iax} dx = 2\pi \delta(a)</annotation></semantics></math></span></span>：</p>
+ $$ \begin{aligned} U(\theta) &amp;\propto \int_{-\infty}^{\infty} \left[ t_0 + \frac{t_1}{2}e^{i\frac{2\pi}{d}x} + \frac{t_1}{2}e^{-i\frac{2\pi}{d}x} \right] e^{-ik\sin\theta x} \, dx \\ &amp;= t_0 \int e^{-ik\sin\theta x} dx + \frac{t_1}{2} \int e^{i(\frac{2\pi}{d} - k\sin\theta)x} dx + \frac{t_1}{2} \int e^{-i(\frac{2\pi}{d} + k\sin\theta)x} dx \end{aligned} $$
+<p>根据 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span></span> 函数的性质，上述积分只有在指数项为 0 时才不为零。这对应了三个特定的衍射方向：<br>
+<strong>零级衍射 (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m=0</annotation></semantics></math></span></span>)</strong>：<br>
+由第一项 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>t</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">t_0</annotation></semantics></math></span></span> 决定。当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mi>k</mi><mi>sin</mi><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">-k\sin\theta = 0</annotation></semantics></math></span></span> 时取得极大值，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><msub><mi>θ</mi><mn>0</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sin\theta_0 = 0</annotation></semantics></math></span></span>。<br>
+方向：沿光轴直线传播。<br>
+<strong>+1 级衍射 (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=+1</annotation></semantics></math></span></span>)</strong>：<br>
+由第二项决定。当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>d</mi></mrow></mfrac><mo>−</mo><mi>k</mi><mi>sin</mi><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\frac{2\pi}{d} - k\sin\theta = 0</annotation></semantics></math></span></span> 时取得极大值。<br>
+$$ \sin\theta_{+1} = \frac{\lambda}{d} $$<br>
+方向：向上偏折。<br>
+<strong>-1 级衍射 (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=-1</annotation></semantics></math></span></span>)</strong>：<br>
+由第三项决定。当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>d</mi></mrow></mfrac><mo>−</mo><mi>k</mi><mi>sin</mi><mi>θ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">-\frac{2\pi}{d} - k\sin\theta = 0</annotation></semantics></math></span></span> 时取得极大值。<br>
+$$ \sin\theta_{-1} = -\frac{\lambda}{d} $$<br>
+方向：向下偏折。</p>
+</li>
+<li>
+<p>考虑光栅的有限宽度（物理修正）<br>
+实际光栅宽度有限，设为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span>。根据卷积定理，有限宽度的矩形函数（aperture）会与无限余弦光栅的频谱进行卷积。<br>
+积分结果中的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span></span> 函数将扩展为 <strong>sinc 函数</strong>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mtext><mo>(</mo><mi>β</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>sin</mi><mi>β</mi></mrow><mrow><mi>β</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\text{sinc}(\beta) = \frac{\sin\beta}{\beta}</annotation></semantics></math></span></span>）。<br>
+最终的光强分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">I(\theta)</annotation></semantics></math></span></span> 近似为三个受 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mtext></mrow><annotation encoding="application/x-tex">\text{sinc}</annotation></semantics></math></span></span> 函数包络调制的主极大：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>(</mo><mi>θ</mi><mo>)</mo><mo>∝</mo><msup><mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">c</mi></mtext><mn>2</mn></msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>k</mi><mi>L</mi><mi>sin</mi><mi>θ</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo fence="true">)</mo></mrow><mo>∗</mo><mrow><mo fence="true">[</mo><msub><mi>t</mi><mn>0</mn></msub><mi>δ</mi><mo>(</mo><mi>sin</mi><mi>θ</mi><mo>)</mo><mo>+</mo><mfrac><mrow><msub><mi>t</mi><mn>1</mn></msub></mrow><mrow><mn>2</mn></mrow></mfrac><mi>δ</mi><mo>(</mo><mi>sin</mi><mi>θ</mi><mo>−</mo><mfrac><mrow><mi>λ</mi></mrow><mrow><mi>d</mi></mrow></mfrac><mo>)</mo><mo>+</mo><mfrac><mrow><msub><mi>t</mi><mn>1</mn></msub></mrow><mrow><mn>2</mn></mrow></mfrac><mi>δ</mi><mo>(</mo><mi>sin</mi><mi>θ</mi><mo>+</mo><mfrac><mrow><mi>λ</mi></mrow><mrow><mi>d</mi></mrow></mfrac><mo>)</mo><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">I(\theta) \propto \text{sinc}^2\left( \frac{kL\sin\theta}{2} \right) * \left[ t_0 \delta(\sin\theta) + \frac{t_1}{2}\delta(\sin\theta - \frac{\lambda}{d}) + \frac{t_1}{2}\delta(\sin\theta + \frac{\lambda}{d}) \right] 
+</annotation></semantics></math></span></span></span></p>
+</li>
+</ol>
+<p>结论<br>
+余弦光栅的衍射谱中<strong>只有三个离散的频率分量</strong>：0级、+1级和-1级，不存在更高级次的衍射斑。这是因为它只包含基频（直流分量和一个空间频率）。</p>
+</details>
+<h3 id="具体的光栅衍射问题">具体的光栅衍射问题</h3>
+<h4 id="透射函数：振幅型与相位型">透射函数：振幅型与相位型</h4>
+<p>一般分为两类典型光栅：</p>
 <ol>
 <li>振幅型(例如金属栅)：透射率在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span></span> 之间开关，本质是“截断”光场。</li>
 <li>相位型(例如二元相位栅)：透射幅度近似为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span></span>，但在相邻区域引入相位差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\Delta\phi</annotation></semantics></math></span></span>。若材料折射率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>、厚度台阶为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span></span>，则</li>
@@ -803,52 +898,7 @@ $$
 
 
 <p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>=</mo><mfrac><mrow><mi>λ</mi></mrow><mrow><mn>2</mn><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">d=\frac{\lambda}{2(n-1)}</annotation></semantics></math></span></span> 时得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ϕ</mi><mo>=</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">\Delta\phi=\pi</annotation></semantics></math></span></span>，这类 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span></span> 相位栅常用于抑制零级衍射。</p>
-<h3 id="comb-函数描述周期阵列">comb 函数描述周期阵列</h3>
-<p>周期结构可写成“单元结构与 comb 的卷积”。例如一维 comb 定义为</p>
-
-
-$$
-\displaystyle
-\operatorname{comb}\left(\frac{x}{p}\right)
-=
-\sum_{m=-\infty}^{\infty}
-\delta_D\left(\frac{x}{p}-m\right)
-$$
-
-
-<p>(你的笔记里用的是周期 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>b</mi></mrow><annotation encoding="application/x-tex">2b</annotation></semantics></math></span></span> 的写法)。</p>
-<p>若单个周期的透射函数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span></span>，整体透射函数可写成 $f(x)\otimes \operatorname{comb}(x/p)$。夫朗禾费衍射振幅与透射函数的傅里叶变换成正比，所以</p>
-
-
-$$
-\displaystyle
-\mathcal{F}\left\{
-f(x)\otimes \operatorname{comb}\left(\frac{x}{p}\right)
-\right\}
-=
-\mathcal{F}\{f(x)\}\cdot
-\mathcal{F}\left\{
-\operatorname{comb}\left(\frac{x}{p}\right)
-\right\}
-$$
-
-
-<p>这就是你笔记强调的卷积/乘积关系。</p>
-<h3 id="rect-的傅里叶变换给出-sinc-包络">rect 的傅里叶变换给出 sinc 包络</h3>
-<p>矩形孔径(rect)的傅里叶变换是 sinc，这是单缝结果的函数语言版本。你的笔记写作</p>
-
-
-$$
-\displaystyle
-\mathcal{F}\{\operatorname{rect}(x)\}
-=
-\operatorname{sinc}\left(\frac{k}{2}\right)
-=
-\frac{\sin\left(\frac{k}{2}\right)}{\frac{k}{2}}
-$$
-
-
-<p>并用相似定理、位移定理得到缩放与相位因子。</p>
+<p>下面讨论这种光栅的夫琅禾费衍射。</p>
 <details>
 <summary>例题 11：求 $\pi$ 相位二元光栅的台阶厚度</summary>
 <p>折射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>5</mn><mn>0</mn></mrow><annotation encoding="application/x-tex">n=1.50</annotation></semantics></math></span></span>，希望在波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>6</mn><mn>3</mn><mn>3</mn><mtext><mtext>&nbsp;</mtext><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">\lambda=633\text{ nm}</annotation></semantics></math></span></span> 下实现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ϕ</mi><mo>=</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">\Delta\phi=\pi</annotation></semantics></math></span></span>。求台阶高度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi></mrow><annotation encoding="application/x-tex">d</annotation></semantics></math></span></span>。</p>
@@ -872,7 +922,7 @@ $$
 <p>即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>≈</mo><mn>6</mn><mn>3</mn><mn>3</mn><mtext><mtext>&nbsp;</mtext><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">d\approx 633\text{ nm}</annotation></semantics></math></span></span>。</p>
 </details>
 <details>
-<summary>例题 12：$\pi$ 相位栅的一阶效率 $4/\pi^2$ 的来历(与笔记对应)</summary>
+<summary>例题 12：$\pi$ 相位栅的一阶效率 $4/\pi^2$ 的来历</summary>
 <p>对占空比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn><mn>0</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">50\%</annotation></semantics></math></span></span> 的二元 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span></span> 相位栅，其透射函数相当于周期方波在相位上取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span></span>，因此其傅里叶级数只有奇次谐波，且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\pm 1</annotation></semantics></math></span></span> 级的振幅系数量级为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mi>π</mi></mrow><annotation encoding="application/x-tex">2/\pi</annotation></semantics></math></span></span>，故一阶强度(效率)量级为</p>
 
 
@@ -888,7 +938,6 @@ $$
 $$
 
 
-<p>这正对应你笔记最后得到的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><msub><mi>I</mi><mn>1</mn></msub></mrow><mrow><msub><mi>I</mi><mn>0</mn></msub></mrow></mfrac><mo>∼</mo><mfrac><mrow><mn>4</mn></mrow><mrow><msup><mi>π</mi><mn>2</mn></msup></mrow></mfrac><mo>≈</mo><mn>4</mn><mn>0</mn><mi mathvariant="normal">.</mi><mn>5</mn><mi mathvariant="normal">%</mi></mrow><annotation encoding="application/x-tex">\frac{I_1}{I_0}\sim \frac{4}{\pi^2}\approx 40.5\%</annotation></semantics></math></span></span>。</p>
 </details>
 
       </div>
@@ -1089,7 +1138,7 @@ $$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">衍射与光栅</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8D%E5%B0%84%E6%80%BB%E8%AE%BA%EF%BC%9A%E6%83%A0%E6%9B%B4%E6%96%AF-%E8%8F%B2%E6%B6%85%E8%80%B3%E5%88%B0%E8%BF%9C%E5%9C%BA-%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9"><span class="toc-text">衍射总论：惠更斯-菲涅耳到远场(夫朗禾费)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%A0%E6%9B%B4%E6%96%AF-%E8%8F%B2%E6%B6%85%E8%80%B3%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="toc-text">惠更斯-菲涅耳积分形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8F%B2%E6%B6%85%E5%B0%94%E8%A1%8D%E5%B0%84%E4%B8%8E%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84"><span class="toc-text">菲涅尔衍射与夫朗禾费衍射</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E7%BC%9D%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84%EF%BC%9A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%B8%8E-sinc"><span class="toc-text">单缝夫朗禾费衍射：傅里叶变换与 sinc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D%E5%B7%AE%E4%B8%8E%E5%AE%9A%E4%B9%89"><span class="toc-text">相位差与定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%AF%E5%B9%85%E4%B8%8E%E5%85%89%E5%BC%BA"><span class="toc-text">振幅与光强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%97%E7%BA%B9%E4%BD%8D%E7%BD%AE%E4%B8%8E%E4%B8%BB%E7%93%A3%E5%AE%BD%E5%BA%A6"><span class="toc-text">暗纹位置与主瓣宽度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A1%E6%9E%81%E5%A4%A7%E4%BD%8D%E7%BD%AE-%E7%BA%A0%E9%94%99"><span class="toc-text">次极大位置(纠错)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BD%E5%85%89%E8%A1%8D%E5%B0%84%E4%B8%8E%E7%A9%BA%E9%97%B4%E7%9B%B8%E5%B9%B2%E6%80%A7"><span class="toc-text">白光衍射与空间相干性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E7%BC%9D%E5%B9%B2%E6%B6%89%E8%A1%8D%E5%B0%84%EF%BC%9A%E5%B9%B2%E6%B6%89%E8%A2%AB%E5%8D%95%E7%BC%9D%E5%8C%85%E7%BB%9C%E8%B0%83%E5%88%B6"><span class="toc-text">双缝干涉衍射：干涉被单缝包络调制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%9C"><span class="toc-text">基本结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%BA%A7-%E7%BC%BA%E7%BA%BF-%E7%8E%B0%E8%B1%A1"><span class="toc-text">缺级(缺线)现象</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E7%BC%9D%E8%A1%8D%E5%B0%84%E4%B8%8E%E5%85%89%E6%A0%85%EF%BC%9A%E4%BB%8E%E6%9C%89%E9%99%90-N-%E5%88%B0-N-to-infty"><span class="toc-text">多缝衍射与光栅：从有限 NNN 到 N→∞N\to\inftyN→∞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#N-%E6%9D%A1%E7%AA%84%E7%BC%9D%E7%9A%84%E5%B9%B2%E6%B6%89%E5%9B%A0%E5%AD%90"><span class="toc-text">NNN 条窄缝的干涉因子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E4%B8%8A%E5%8D%95%E7%BC%9D%E5%8C%85%E7%BB%9C%EF%BC%9A%E7%9C%9F%E5%AE%9E%E5%85%89%E6%A0%85"><span class="toc-text">加上单缝包络：真实光栅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E6%A0%85%E6%96%B9%E7%A8%8B%EF%BC%9A%E5%8A%A8%E9%87%8F-%E5%80%92%E6%A0%BC%E7%9F%A2%E8%A7%82%E7%82%B9"><span class="toc-text">光栅方程：动量&#x2F;倒格矢观点</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%89%E6%A0%85%E4%B8%8E%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%EF%BC%9Acomb-%E4%B8%8E-rect-%E7%9A%84%E7%BB%93%E6%9E%84%E5%8C%96%E7%90%86%E8%A7%A3"><span class="toc-text">光栅与傅里叶变换：comb 与 rect 的结构化理解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%8F%E5%B0%84%E5%87%BD%E6%95%B0%EF%BC%9A%E6%8C%AF%E5%B9%85%E5%9E%8B%E4%B8%8E%E7%9B%B8%E4%BD%8D%E5%9E%8B"><span class="toc-text">透射函数：振幅型与相位型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#comb-%E5%87%BD%E6%95%B0%E6%8F%8F%E8%BF%B0%E5%91%A8%E6%9C%9F%E9%98%B5%E5%88%97"><span class="toc-text">comb 函数描述周期阵列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rect-%E7%9A%84%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E7%BB%99%E5%87%BA-sinc-%E5%8C%85%E7%BB%9C"><span class="toc-text">rect 的傅里叶变换给出 sinc 包络</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">衍射与光栅</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8D%E5%B0%84%E6%80%BB%E8%AE%BA%EF%BC%9A%E6%83%A0%E6%9B%B4%E6%96%AF-%E8%8F%B2%E6%B6%85%E8%80%B3%E5%88%B0%E8%BF%9C%E5%9C%BA-%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9"><span class="toc-text">衍射总论：惠更斯-菲涅耳到远场(夫朗禾费)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%83%A0%E6%9B%B4%E6%96%AF-%E8%8F%B2%E6%B6%85%E8%80%B3%E7%A7%AF%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="toc-text">惠更斯-菲涅耳积分形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8F%B2%E6%B6%85%E5%B0%94%E8%A1%8D%E5%B0%84%E4%B8%8E%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84"><span class="toc-text">菲涅尔衍射与夫朗禾费衍射</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E7%BC%9D%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84"><span class="toc-text">单缝夫朗禾费衍射</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D%E5%B7%AE%E4%B8%8E%E5%AE%9A%E4%B9%89"><span class="toc-text">相位差与定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%AF%E5%B9%85%E4%B8%8E%E5%85%89%E5%BC%BA"><span class="toc-text">振幅与光强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E7%AB%AF%E6%83%85%E5%86%B5"><span class="toc-text">极端情况</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9A%97%E7%BA%B9%E4%BD%8D%E7%BD%AE%E4%B8%8E%E4%B8%BB%E7%93%A3%E5%AE%BD%E5%BA%A6"><span class="toc-text">暗纹位置与主瓣宽度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A1%E6%9E%81%E5%A4%A7%E4%BD%8D%E7%BD%AE"><span class="toc-text">次极大位置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BD%E5%85%89%E8%A1%8D%E5%B0%84%E4%B8%8E%E7%A9%BA%E9%97%B4%E7%9B%B8%E5%B9%B2%E6%80%A7"><span class="toc-text">白光衍射与空间相干性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E7%BC%9D%E5%B9%B2%E6%B6%89%E8%A1%8D%E5%B0%84%EF%BC%9A%E5%B9%B2%E6%B6%89%E8%A2%AB%E5%8D%95%E7%BC%9D%E5%8C%85%E7%BB%9C%E8%B0%83%E5%88%B6"><span class="toc-text">双缝干涉衍射：干涉被单缝包络调制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8D%E7%A7%BB-%E7%9B%B8%E7%A7%BB%E5%AE%9A%E7%90%86"><span class="toc-text">位移-相移定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%9C"><span class="toc-text">基本结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BC%BA%E7%BA%A7-%E7%BC%BA%E7%BA%BF-%E7%8E%B0%E8%B1%A1"><span class="toc-text">缺级(缺线)现象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%EF%BC%9A%E7%9F%A2%E9%87%8F%E5%9B%BE"><span class="toc-text">补充：矢量图</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E7%BC%9D%E8%A1%8D%E5%B0%84%E4%B8%8E%E5%85%89%E6%A0%85%EF%BC%9A%E4%BB%8E%E6%9C%89%E9%99%90-N-%E5%88%B0-N-to-infty"><span class="toc-text">多缝衍射与光栅：从有限 NNN 到 N→∞N\to\inftyN→∞</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#N-%E6%9D%A1%E7%AA%84%E7%BC%9D%E7%9A%84%E5%B9%B2%E6%B6%89%E5%9B%A0%E5%AD%90"><span class="toc-text">NNN 条窄缝的干涉因子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A0%E4%B8%8A%E5%8D%95%E7%BC%9D%E5%8C%85%E7%BB%9C%EF%BC%9A%E7%9C%9F%E5%AE%9E%E5%85%89%E6%A0%85"><span class="toc-text">加上单缝包络：真实光栅</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E6%A0%85%E6%96%B9%E7%A8%8B%EF%BC%9A%E5%8A%A8%E9%87%8F-%E5%80%92%E6%A0%BC%E7%9F%A2%E8%A7%82%E7%82%B9"><span class="toc-text">光栅方程：动量&#x2F;倒格矢观点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E7%9A%84%E5%85%89%E6%A0%85%E8%A1%8D%E5%B0%84%E9%97%AE%E9%A2%98"><span class="toc-text">具体的光栅衍射问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%8F%E5%B0%84%E5%87%BD%E6%95%B0%EF%BC%9A%E6%8C%AF%E5%B9%85%E5%9E%8B%E4%B8%8E%E7%9B%B8%E4%BD%8D%E5%9E%8B"><span class="toc-text">透射函数：振幅型与相位型</span></a></li></ol></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1143,9 +1192,9 @@ $$
             
 
             <div class="post-img-box">
-              <a href="/physics/GuangXue/%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84,%20%E8%8F%B2%E6%B6%85%E8%80%B3%E5%8D%8A%E6%B3%A2%E5%B8%A6,%20%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8E%E8%8F%B2%E6%B6%85%E8%80%B3%E9%80%8F%E9%95%9C/" class="post-img " style="background-size: cover; 
+              <a href="/physics/GuangXue/%E4%BA%8C%E7%BB%B4%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84,%20%E8%8F%B2%E6%B6%85%E8%80%B3%E5%8D%8A%E6%B3%A2%E5%B8%A6,%20%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8E%E8%8F%B2%E6%B6%85%E8%80%B3%E9%80%8F%E9%95%9C/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -1154,7 +1203,7 @@ $$
                   <span class="post-date">12-23</span>
                 
               </div>
-              <a class="post-title" href="/physics/GuangXue/%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84,%20%E8%8F%B2%E6%B6%85%E8%80%B3%E5%8D%8A%E6%B3%A2%E5%B8%A6,%20%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8E%E8%8F%B2%E6%B6%85%E8%80%B3%E9%80%8F%E9%95%9C/">夫朗禾费衍射, 菲涅耳半波带, 分辨率与菲涅耳透镜</a>
+              <a class="post-title" href="/physics/GuangXue/%E4%BA%8C%E7%BB%B4%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84,%20%E8%8F%B2%E6%B6%85%E8%80%B3%E5%8D%8A%E6%B3%A2%E5%B8%A6,%20%E5%88%86%E8%BE%A8%E7%8E%87%E4%B8%8E%E8%8F%B2%E6%B6%85%E8%80%B3%E9%80%8F%E9%95%9C/">二维夫朗禾费衍射, 菲涅耳半波带, 分辨率与菲涅耳透镜</a>
             </div>
           </div>
         
