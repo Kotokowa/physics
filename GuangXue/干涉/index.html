@@ -1377,7 +1377,240 @@ $$
 
 <p>实验中只需精确测量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>d</mi></mrow><annotation encoding="application/x-tex">\Delta d</annotation></semantics></math></span></span> 与条纹变化数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span>，即可得到高精度的波长测量结果。</p>
 </details>
+<h2 id="多光束薄膜干涉">多光束薄膜干涉</h2>
+<h3 id="为什么要考虑多次反射">为什么要考虑多次反射</h3>
+<p>在薄膜干涉中，如果界面反射较弱，常常只保留上下表面各一次反射的两束干涉近似。但当反射率较大时，薄膜内部会产生多次往返反射，许多相互平行的出射光束在远场(或经透镜汇聚到焦平面)叠加，需要做“多光束干涉”的几何级数求和。</p>
+<h3 id="场的几何级数求和-反射端">场的几何级数求和(反射端)</h3>
+<p>设入射复振幅为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">E_0</annotation></semantics></math></span></span>。用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo separator="true">,</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">r,t</annotation></semantics></math></span></span> 表示从入射侧看到的反射/透射振幅系数，用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>r</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo separator="true">,</mo><msup><mi>t</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">r',t'</annotation></semantics></math></span></span> 表示从薄膜内部返回到入射侧界面的反射/透射振幅系数(它们一般是复数)。一般把多次反射汇聚（用透镜）的场写成</p>
 
+
+$$
+\displaystyle E_r
+=
+E_{0r}
++
+E_0 t r' t' e^{i(\beta-\theta)}
++
+E_0 t r'^3 t' e^{i2(\beta-\theta)}
++
+E_0 t r'^5 t' e^{i3(\beta-\theta)}
++\cdots
+$$
+
+
+<p>其中相邻两束之间多出一次“往返传播+一次内部反射对”的因子，这里假设介质上下表面反射率相同，都是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>r</mi><mi mathvariant="normal">′</mi></msup></mrow><annotation encoding="application/x-tex">r^\prime</annotation></semantics></math></span></span> 。</p>
+<p>把“每一次往返”的相位增量定义为</p>
+
+
+$$
+\displaystyle \delta
+=
+\frac{2\pi}{\lambda_0}\,2 n_f h \cos\alpha_f
+=
+\frac{4\pi n_f h \cos\alpha_f}{\lambda_0}
+$$
+
+
+<p>这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span></span> 是膜厚，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">n_f</annotation></semantics></math></span></span> 是薄膜折射率，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>λ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\lambda_0</annotation></semantics></math></span></span> 是真空波长，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_f</annotation></semantics></math></span></span> 是薄膜内的折射角(与入射角通过斯涅尔定律联系)。有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>−</mo><mi>θ</mi><mo>=</mo><mi>δ</mi></mrow><annotation encoding="application/x-tex">\beta - \theta = \delta</annotation></semantics></math></span></span>。</p>
+<p>把第一束反射写为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mrow><mn>0</mn><mi>r</mi></mrow></msub><mo>=</mo><msub><mi>E</mi><mn>0</mn></msub><mi>r</mi></mrow><annotation encoding="application/x-tex">E_{0r}=E_0 r</annotation></semantics></math></span></span>，并把后续各束写成以公共比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo>=</mo><msup><mi>r</mi><mrow><mi mathvariant="normal">′</mi><mn>2</mn></mrow></msup><msup><mi>e</mi><mrow><mi>i</mi><mi>δ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">q=r^{\prime 2} e^{i\delta}</annotation></semantics></math></span></span> 的几何级数(要求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>q</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|q|&lt;1</annotation></semantics></math></span></span> 才收敛，对应无增益腔)，可得</p>
+
+
+$$
+\displaystyle
+E_r
+=
+E_0\left[
+r
++
+\frac{t t' r' e^{i\delta}}{1-r'^2 e^{i\delta}}
+\right]
+$$
+
+
+<h3 id="斯托克斯关系-无吸收界面">斯托克斯关系(无吸收界面)</h3>
+<p>对无吸收、满足互易性的单界面，振幅系数满足斯托克斯关系</p>
+
+
+$$
+\displaystyle t t' - r r' = 1
+$$
+
+
+<p>而对同一对介质从反向入射，反射系数满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>r</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mo>−</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">r'=-r</annotation></semantics></math></span></span>。于是</p>
+
+
+$$
+\displaystyle t t' = 1-r^2. 
+$$
+
+
+<h3 id="Airy-公式：反射-透射强度与能量守恒">Airy 公式：反射/透射强度与能量守恒</h3>
+<p>在对称、无吸收薄膜(或Fabry–Pérot腔)情况下，利用上面的关系可把反射端电场写成</p>
+
+
+$$
+\displaystyle
+E_r
+=
+E_{0r}\,
+\frac{1-e^{i\delta}}{1-r^2 e^{i\delta}}
+$$
+
+
+<p>可观测量是光强 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>∝</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mi>E</mi><msup><mi>E</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">I\propto \tfrac12 E E^*</annotation></semantics></math></span></span>。</p>
+<p>有反射光强：</p>
+
+$$
+\begin{aligned}
+\displaystyle
+I_r &amp;\propto \frac{1}{2} E_r E_r^* = \frac{E_0^2 |r|^2}{2} \frac{2(1 - \cos \delta)}{(1 + |r|^4) - 2|r|^2 \cos \delta} \\
+&amp;= I_0 \frac{2|r|^2 (1 - \cos \delta)}{(1 + |r|^4) - 2|r|^2 \cos \delta}
+\end{aligned}
+$$
+
+<p>透射光强：</p>
+
+$$
+\displaystyle
+I_t = I_0 \frac{(tt^\prime)^2}{(1 + |r|^4) - 2|r|^2 \cos \delta}
+$$
+
+<p>令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>=</mo><mi mathvariant="normal">∣</mi><mi>r</mi><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">R=|r|^2</annotation></semantics></math></span></span>，引入</p>
+
+
+$$
+\displaystyle F=\frac{4R}{(1-R)^2}
+$$
+
+
+<p>则标准 Airy 结果为</p>
+
+
+$$
+\displaystyle
+\frac{I_t}{I_i}
+=
+\frac{1}{1+F\sin^2\left(\frac{\delta}{2}\right)},
+\qquad
+\frac{I_r}{I_i}
+=
+\frac{F\sin^2\left(\frac{\delta}{2}\right)}{1+F\sin^2\left(\frac{\delta}{2}\right)}
+$$
+
+
+<p>从而立刻得到能量守恒</p>
+
+
+$$
+\displaystyle I_r+I_t=I_i
+$$
+
+
+<h3 id="“对称薄膜”下的极限情况-反射增强-反射为零">“对称薄膜”下的极限情况(反射增强/反射为零)</h3>
+<p>对无吸收对称结构：</p>
+<ol>
+<li>共振透射(反射最小)：当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">\delta=2\pi m</annotation></semantics></math></span></span> 时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>(</mo><mi>δ</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sin(\delta/2)=0</annotation></semantics></math></span></span>，有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>I</mi><mi>t</mi></msub><mo>=</mo><msub><mi>I</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">I_t=I_i</annotation></semantics></math></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>I</mi><mi>r</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">I_r=0</annotation></semantics></math></span></span>。这对应“多束完全相消于反射端”。</li>
+<li>反射最强：当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mo>=</mo><mo>(</mo><mn>2</mn><mi>m</mi><mo>+</mo><mn>1</mn><mo>)</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">\delta=(2m+1)\pi</annotation></semantics></math></span></span> 时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>(</mo><mi>δ</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\sin^2(\delta/2)=1</annotation></semantics></math></span></span>，反射增强，反射光强可显著大于单次反射(但仍不超过入射总能量，因为透射被抑制)。</li>
+</ol>
+<p>用图可以更加直观地得到上述结论：</p>
+<p><img src="https://pic2.zhimg.com/v2-667e11ffb5a1695ca876e8bb3be23d43_1440w.jpg" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/v2-667e11ffb5a1695ca876e8bb3be23d43_1440w.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="向量法求解多光束干涉"></p>
+<details>
+<summary>例题 1：给定反射率，计算Fabry–Pérot的透射谱</summary>
+<p>设两镜强度反射率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>=</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>8</mn></mrow><annotation encoding="application/x-tex">R=0.8</annotation></semantics></math></span></span>，无吸收且对称。求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mo>=</mo><mi>π</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\delta=\pi/2</annotation></semantics></math></span></span> 时的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>I</mi><mi>t</mi></msub><mi mathvariant="normal">/</mi><msub><mi>I</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">I_t/I_i</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>I</mi><mi>r</mi></msub><mi mathvariant="normal">/</mi><msub><mi>I</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">I_r/I_i</annotation></semantics></math></span></span>。</p>
+
+
+$$
+\displaystyle
+F=\frac{4R}{(1-R)^2}
+=
+\frac{4\times 0.8}{(0.2)^2}
+=
+\frac{3.2}{0.04}
+=80
+$$
+
+
+
+
+$$
+\displaystyle
+\sin^2\left(\frac{\delta}{2}\right)
+=
+\sin^2\left(\frac{\pi}{4}\right)
+=
+\frac{1}{2}
+$$
+
+
+
+
+$$
+\displaystyle
+\frac{I_t}{I_i}
+=
+\frac{1}{1+80\times \frac{1}{2}}
+=
+\frac{1}{41},
+\qquad
+\frac{I_r}{I_i}
+=
+1-\frac{1}{41}
+=
+\frac{40}{41}
+$$
+
+
+<p>物理图像：反射率很高时，除非接近共振 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mo>=</mo><mn>2</mn><mi>π</mi><mi>m</mi></mrow><annotation encoding="application/x-tex">\delta=2\pi m</annotation></semantics></math></span></span>，否则透射被强烈压制。</p>
+</details>
+<details>
+<summary>例题 2：由几何关系写出薄膜相位差</summary>
+<p>真空中波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>λ</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\lambda_0</annotation></semantics></math></span></span> 的光以入射角 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\alpha_0</annotation></semantics></math></span></span> 入射到折射率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">n_f</annotation></semantics></math></span></span>、厚度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span></span> 的薄膜中。写出往返相位差 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span></span> 的表达式，并指出小角近似下它如何随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\alpha_0</annotation></semantics></math></span></span> 变化。</p>
+<p>解：薄膜内折射角 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_f</annotation></semantics></math></span></span> 满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>0</mn></msub><mi>sin</mi><msub><mi>α</mi><mn>0</mn></msub><mo>=</mo><msub><mi>n</mi><mi>f</mi></msub><mi>sin</mi><msub><mi>α</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">n_0\sin\alpha_0=n_f\sin\alpha_f</annotation></semantics></math></span></span>。往返光程为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><msub><mi>n</mi><mi>f</mi></msub><mi>h</mi><mi>cos</mi><msub><mi>α</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">2n_f h\cos\alpha_f</annotation></semantics></math></span></span>，故</p>
+
+
+$$
+\displaystyle
+\delta
+=
+\frac{2\pi}{\lambda_0}\,2n_f h\cos\alpha_f
+$$
+
+
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\alpha_0</annotation></semantics></math></span></span> 很小，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">\alpha_f</annotation></semantics></math></span></span> 也小，有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><msub><mi>α</mi><mi>f</mi></msub><mo>≈</mo><mn>1</mn><mo>−</mo><msubsup><mi>α</mi><mi>f</mi><mn>2</mn></msubsup><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">\cos\alpha_f\approx 1-\alpha_f^2/2</annotation></semantics></math></span></span>，所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span></span> 随角度增大而减小(共振条件会向更短波长或更小厚度偏移)。</p>
+</details>
+<h3 id="周期多层膜：从“散射动量”到带隙">周期多层膜：从“散射动量”到带隙</h3>
+<p>光在多层膜传播过程中会受到界面散射。此时，散射就是动量改变。那么，多层膜散射可以提供的散射动量是多少？</p>
+<p>把周期性多层膜(一维光子晶体)看成具有周期 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span> 的结构，它可以向传播波提供倒格矢</p>
+
+
+$$
+\displaystyle G=\frac{2\pi}{a}
+$$
+
+
+<p>界面散射导致波矢改变 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>k</mi><mo>=</mo><mi>n</mi><mi>G</mi></mrow><annotation encoding="application/x-tex">\Delta k = nG</annotation></semantics></math></span></span>。</p>
+<p>在近似 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mn>1</mn></msub><mo>≈</mo><msub><mi>n</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">n_1\approx n_2</annotation></semantics></math></span></span>、正入射时，如果没有周期调制，色散近似线性；一旦引入周期界面，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>±</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">k\pm G</annotation></semantics></math></span></span> 的模式会在布里渊区边界处强耦合(近似满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>k</mi><mo>≈</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">2k\approx G</annotation></semantics></math></span></span>，即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>≈</mo><mi>π</mi><mi mathvariant="normal">/</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">k\approx \pi/a</annotation></semantics></math></span></span>)，从而打开带隙：该频段内“无传播态”，表现为高反射。这里也是能带的由来：coupled oscilator。</p>
+<details>
+<summary>例题 3：估算一维周期结构的第一带隙中心位置(正入射)</summary>
+<p>把带隙中心近似取在布拉格条件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>k</mi><mo>=</mo><mi>G</mi></mrow><annotation encoding="application/x-tex">2k=G</annotation></semantics></math></span></span>。若介质等效折射率近似为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>n</mi></mrow><mrow><msub><mi>λ</mi><mn>0</mn></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">k=\frac{2\pi n}{\lambda_0}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>a</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">G=\frac{2\pi}{a}</annotation></semantics></math></span></span>。</p>
+
+
+$$
+\displaystyle
+2k=G
+\implies
+2\cdot \frac{2\pi n}{\lambda_0}
+=
+\frac{2\pi}{a}
+\implies
+\lambda_0
+=
+2na
+$$
+
+
+<p>因此第一带隙大致出现在真空波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>λ</mi><mn>0</mn></msub><mo>≈</mo><mn>2</mn><mi>n</mi><mi>a</mi></mrow><annotation encoding="application/x-tex">\lambda_0\approx 2na</annotation></semantics></math></span></span> 附近(更精确的带隙宽度需要考虑折射率对比与层厚比例)。</p>
+</details>
       </div>
       <div class="post-tags-categories">
         
@@ -1571,7 +1804,7 @@ $$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">干涉</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E5%85%89%E6%B3%A2%E5%8F%A0%E5%8A%A0%E4%B8%8E%E5%B9%B2%E6%B6%89%E7%9A%84%E4%B8%80%E8%88%AC%E7%90%86%E8%AE%BA"><span class="toc-text">两光波叠加与干涉的一般理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%8C%AF%E5%B9%85%E5%8F%A0%E5%8A%A0%E4%B8%8E%E5%BC%BA%E5%BA%A6"><span class="toc-text">复振幅叠加与强度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E4%BE%8B%EF%BC%9A%E5%BC%BA%E5%BA%A6%E8%8C%83%E5%9B%B4"><span class="toc-text">特例：强度范围</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E6%83%85%E5%BD%A2%E4%B8%8B%E7%9A%84%E5%B9%B2%E6%B6%89"><span class="toc-text">不同情形下的干涉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%9B%B8%E5%B9%B2%E6%80%A7%E4%B8%8E%E7%9B%B8%E5%B9%B2%E9%95%BF%E5%BA%A6"><span class="toc-text">时间相干性与相干长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E7%9B%B8%E5%B9%B2%E6%80%A7"><span class="toc-text">空间相干性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Young-%E5%8F%8C%E7%BC%9D%E5%B9%B2%E6%B6%89%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="toc-text">Young 双缝干涉与空间滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%8F%8C%E7%BC%9D%E8%A3%85%E7%BD%AE%E4%B8%8E%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB"><span class="toc-text">经典双缝装置与几何关系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%8E%E6%9A%97%E6%9D%A1%E7%BA%B9%E4%BD%8D%E7%BD%AE"><span class="toc-text">明暗条纹位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E5%BA%A6%E5%88%86%E5%B8%83"><span class="toc-text">强度分布</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%8F%E9%95%9C%E8%81%9A%E7%84%A6%E4%B8%8E%E5%82%85%E9%87%8C%E5%8F%B6%E8%A7%86%E8%A7%92"><span class="toc-text">透镜聚焦与傅里叶视角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E5%8A%A8%E9%87%8F%E8%A7%86%E8%A7%92%E5%86%8D%E7%9C%8B%E5%8F%8C%E7%BC%9D%E5%B9%B2%E6%B6%89"><span class="toc-text">从动量视角再看双缝干涉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%A8%E8%AE%BA"><span class="toc-text">一些讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E7%9B%B8%E4%BD%8D%E5%B7%AE-Delta-varphi-0-%E4%B8%8D%E4%B8%BA%E9%9B%B6%E6%97%B6"><span class="toc-text">初始相位差 Δφ0\Delta\varphi_0Δφ​0​​ 不为零时</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%9D%E7%9A%84%E5%AE%BD%E5%BA%A6"><span class="toc-text">缝的宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theta-%E8%BE%83%E5%A4%A7-%E7%A6%BB%E5%B1%8F%E4%B8%AD%E5%BF%83%E8%BE%83%E8%BF%9C-%E6%97%B6%EF%BC%8C%E8%BF%91%E4%BC%BC%E5%A4%B1%E6%95%88"><span class="toc-text">θ\thetaθ 较大(离屏中心较远)时，近似失效</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Young-%E5%B9%B2%E6%B6%89%E4%BB%AA%E6%9C%AC%E8%BA%AB%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">Young 干涉仪本身的问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lloyd-%E9%95%9C%E4%B8%8E%E7%AD%89%E6%95%88%E5%8F%8C%E7%BC%9D"><span class="toc-text">Lloyd 镜与等效双缝</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89"><span class="toc-text">薄膜干涉</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%85%89%E7%A8%8B%E5%B7%AE%E7%9A%84%E6%8E%A8%E5%AF%BC"><span class="toc-text">几何光程差的推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D%E5%B7%AE%E4%B8%8E%E5%8F%8D%E5%B0%84%E7%9B%B8%E7%A7%BB"><span class="toc-text">相位差与反射相移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E5%85%89%E7%9A%84%E6%98%8E%E6%9A%97%E6%9D%A1%E4%BB%B6"><span class="toc-text">反射光的明暗条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%85%E5%BD%A2-1%EF%BC%9A%E4%B8%8A%E4%B8%8B%E7%95%8C%E9%9D%A2%E7%9B%B8%E4%BD%8D%E5%B7%AE%E4%B8%BA-pi"><span class="toc-text">情形 1：上下界面相位差为 π\piπ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%85%E5%BD%A2-2%EF%BC%9A%E4%B8%8A%E4%B8%8B%E7%95%8C%E9%9D%A2%E6%97%A0%E5%8F%8D%E5%B0%84%E7%9B%B8%E4%BD%8D%E5%B7%AE"><span class="toc-text">情形 2：上下界面无反射相位差</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E5%80%BE%E5%B9%B2%E6%B6%89-equal-inclination"><span class="toc-text">等倾干涉 (equal inclination)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E5%8E%9A%E5%B9%B2%E6%B6%89-equal-thickness-%E4%B8%8E%E6%A5%94%E5%BD%A2%E8%86%9C"><span class="toc-text">等厚干涉 (equal thickness) 与楔形膜</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%9B%E9%A1%BF%E7%8E%AF-Newton%E2%80%99s-rings"><span class="toc-text">牛顿环 (Newton’s rings)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%88%E5%85%8B%E5%B0%94%E9%80%8A%E5%B9%B2%E6%B6%89%E4%BB%AA-Michelson-interferometer"><span class="toc-text">迈克尔逊干涉仪 (Michelson interferometer)</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">干涉</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E5%85%89%E6%B3%A2%E5%8F%A0%E5%8A%A0%E4%B8%8E%E5%B9%B2%E6%B6%89%E7%9A%84%E4%B8%80%E8%88%AC%E7%90%86%E8%AE%BA"><span class="toc-text">两光波叠加与干涉的一般理论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%8D%E6%8C%AF%E5%B9%85%E5%8F%A0%E5%8A%A0%E4%B8%8E%E5%BC%BA%E5%BA%A6"><span class="toc-text">复振幅叠加与强度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E4%BE%8B%EF%BC%9A%E5%BC%BA%E5%BA%A6%E8%8C%83%E5%9B%B4"><span class="toc-text">特例：强度范围</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E6%83%85%E5%BD%A2%E4%B8%8B%E7%9A%84%E5%B9%B2%E6%B6%89"><span class="toc-text">不同情形下的干涉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%9B%B8%E5%B9%B2%E6%80%A7%E4%B8%8E%E7%9B%B8%E5%B9%B2%E9%95%BF%E5%BA%A6"><span class="toc-text">时间相干性与相干长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E7%9B%B8%E5%B9%B2%E6%80%A7"><span class="toc-text">空间相干性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Young-%E5%8F%8C%E7%BC%9D%E5%B9%B2%E6%B6%89%E4%B8%8E%E7%A9%BA%E9%97%B4%E6%BB%A4%E6%B3%A2"><span class="toc-text">Young 双缝干涉与空间滤波</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%8F%8C%E7%BC%9D%E8%A3%85%E7%BD%AE%E4%B8%8E%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB"><span class="toc-text">经典双缝装置与几何关系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%8E%E6%9A%97%E6%9D%A1%E7%BA%B9%E4%BD%8D%E7%BD%AE"><span class="toc-text">明暗条纹位置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E5%BA%A6%E5%88%86%E5%B8%83"><span class="toc-text">强度分布</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%8F%E9%95%9C%E8%81%9A%E7%84%A6%E4%B8%8E%E5%82%85%E9%87%8C%E5%8F%B6%E8%A7%86%E8%A7%92"><span class="toc-text">透镜聚焦与傅里叶视角</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E5%8A%A8%E9%87%8F%E8%A7%86%E8%A7%92%E5%86%8D%E7%9C%8B%E5%8F%8C%E7%BC%9D%E5%B9%B2%E6%B6%89"><span class="toc-text">从动量视角再看双缝干涉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E8%AE%A8%E8%AE%BA"><span class="toc-text">一些讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9D%E5%A7%8B%E7%9B%B8%E4%BD%8D%E5%B7%AE-Delta-varphi-0-%E4%B8%8D%E4%B8%BA%E9%9B%B6%E6%97%B6"><span class="toc-text">初始相位差 Δφ0\Delta\varphi_0Δφ​0​​ 不为零时</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%9D%E7%9A%84%E5%AE%BD%E5%BA%A6"><span class="toc-text">缝的宽度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theta-%E8%BE%83%E5%A4%A7-%E7%A6%BB%E5%B1%8F%E4%B8%AD%E5%BF%83%E8%BE%83%E8%BF%9C-%E6%97%B6%EF%BC%8C%E8%BF%91%E4%BC%BC%E5%A4%B1%E6%95%88"><span class="toc-text">θ\thetaθ 较大(离屏中心较远)时，近似失效</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Young-%E5%B9%B2%E6%B6%89%E4%BB%AA%E6%9C%AC%E8%BA%AB%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">Young 干涉仪本身的问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lloyd-%E9%95%9C%E4%B8%8E%E7%AD%89%E6%95%88%E5%8F%8C%E7%BC%9D"><span class="toc-text">Lloyd 镜与等效双缝</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89"><span class="toc-text">薄膜干涉</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E5%85%89%E7%A8%8B%E5%B7%AE%E7%9A%84%E6%8E%A8%E5%AF%BC"><span class="toc-text">几何光程差的推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BD%8D%E5%B7%AE%E4%B8%8E%E5%8F%8D%E5%B0%84%E7%9B%B8%E7%A7%BB"><span class="toc-text">相位差与反射相移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84%E5%85%89%E7%9A%84%E6%98%8E%E6%9A%97%E6%9D%A1%E4%BB%B6"><span class="toc-text">反射光的明暗条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%85%E5%BD%A2-1%EF%BC%9A%E4%B8%8A%E4%B8%8B%E7%95%8C%E9%9D%A2%E7%9B%B8%E4%BD%8D%E5%B7%AE%E4%B8%BA-pi"><span class="toc-text">情形 1：上下界面相位差为 π\piπ</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%83%85%E5%BD%A2-2%EF%BC%9A%E4%B8%8A%E4%B8%8B%E7%95%8C%E9%9D%A2%E6%97%A0%E5%8F%8D%E5%B0%84%E7%9B%B8%E4%BD%8D%E5%B7%AE"><span class="toc-text">情形 2：上下界面无反射相位差</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E5%80%BE%E5%B9%B2%E6%B6%89-equal-inclination"><span class="toc-text">等倾干涉 (equal inclination)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E5%8E%9A%E5%B9%B2%E6%B6%89-equal-thickness-%E4%B8%8E%E6%A5%94%E5%BD%A2%E8%86%9C"><span class="toc-text">等厚干涉 (equal thickness) 与楔形膜</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%9B%E9%A1%BF%E7%8E%AF-Newton%E2%80%99s-rings"><span class="toc-text">牛顿环 (Newton’s rings)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%88%E5%85%8B%E5%B0%94%E9%80%8A%E5%B9%B2%E6%B6%89%E4%BB%AA-Michelson-interferometer"><span class="toc-text">迈克尔逊干涉仪 (Michelson interferometer)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E5%85%89%E6%9D%9F%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89"><span class="toc-text">多光束薄膜干涉</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E8%80%83%E8%99%91%E5%A4%9A%E6%AC%A1%E5%8F%8D%E5%B0%84"><span class="toc-text">为什么要考虑多次反射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%BA%E7%9A%84%E5%87%A0%E4%BD%95%E7%BA%A7%E6%95%B0%E6%B1%82%E5%92%8C-%E5%8F%8D%E5%B0%84%E7%AB%AF"><span class="toc-text">场的几何级数求和(反射端)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%AF%E6%89%98%E5%85%8B%E6%96%AF%E5%85%B3%E7%B3%BB-%E6%97%A0%E5%90%B8%E6%94%B6%E7%95%8C%E9%9D%A2"><span class="toc-text">斯托克斯关系(无吸收界面)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Airy-%E5%85%AC%E5%BC%8F%EF%BC%9A%E5%8F%8D%E5%B0%84-%E9%80%8F%E5%B0%84%E5%BC%BA%E5%BA%A6%E4%B8%8E%E8%83%BD%E9%87%8F%E5%AE%88%E6%81%92"><span class="toc-text">Airy 公式：反射&#x2F;透射强度与能量守恒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C%E5%AF%B9%E7%A7%B0%E8%96%84%E8%86%9C%E2%80%9D%E4%B8%8B%E7%9A%84%E6%9E%81%E9%99%90%E6%83%85%E5%86%B5-%E5%8F%8D%E5%B0%84%E5%A2%9E%E5%BC%BA-%E5%8F%8D%E5%B0%84%E4%B8%BA%E9%9B%B6"><span class="toc-text">“对称薄膜”下的极限情况(反射增强&#x2F;反射为零)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%A8%E6%9C%9F%E5%A4%9A%E5%B1%82%E8%86%9C%EF%BC%9A%E4%BB%8E%E2%80%9C%E6%95%A3%E5%B0%84%E5%8A%A8%E9%87%8F%E2%80%9D%E5%88%B0%E5%B8%A6%E9%9A%99"><span class="toc-text">周期多层膜：从“散射动量”到带隙</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -1667,9 +1900,9 @@ $$
             
 
             <div class="post-img-box">
-              <a href="/physics/GuangXue/%E5%A4%9A%E5%85%89%E6%9D%9F%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%A1%8D%E5%B0%84%E3%80%81%E5%85%89%E6%A0%85/" class="post-img " style="background-size: cover; 
+              <a href="/physics/GuangXue/%E8%A1%8D%E5%B0%84%E4%B8%8E%E5%85%89%E6%A0%85/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -1678,7 +1911,7 @@ $$
                   <span class="post-date">12-16</span>
                 
               </div>
-              <a class="post-title" href="/physics/GuangXue/%E5%A4%9A%E5%85%89%E6%9D%9F%E8%96%84%E8%86%9C%E5%B9%B2%E6%B6%89%E4%B8%8E%E8%A1%8D%E5%B0%84%E3%80%81%E5%85%89%E6%A0%85/">多光束薄膜干涉与衍射、光栅</a>
+              <a class="post-title" href="/physics/GuangXue/%E8%A1%8D%E5%B0%84%E4%B8%8E%E5%85%89%E6%A0%85/">衍射与光栅</a>
             </div>
           </div>
         
