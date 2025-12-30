@@ -442,7 +442,7 @@ q_\alpha \mapsto Q_\alpha = Q_\alpha(q,t),
 \alpha = 1,2,\cdots,s
 $$
 
-<p>若把新坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">Q_\alpha</annotation></semantics></math></span></span> 看作旧坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>β</mi></msub></mrow><annotation encoding="application/x-tex">q_\beta</annotation></semantics></math></span></span> 的函数, 则有链式法则</p>
+<p>若把新坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Q</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">Q_\alpha</annotation></semantics></math></span></span> 看作旧坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>β</mi></msub></mrow><annotation encoding="application/x-tex">q_\beta</annotation></semantics></math></span></span> 的函数, 则有链式法则（把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span></span> 互换也成立）</p>
 
 $$
 \displaystyle
@@ -488,6 +488,26 @@ $$
 P_\alpha = \frac{\partial L}{\partial \dot{Q}_\alpha}.
 $$
 
+<details>
+<summary>点变换成立证明</summary>
+$$
+q_{\alpha} = q_{\alpha}(\boldsymbol{Q}, t) \quad \dot{q}_{\alpha} = \sum_{\beta=1}^{s} \frac{\partial q_{\alpha}}{\partial Q_{\beta}} \dot{Q}_{\beta} + \frac{\partial q_{\alpha}}{\partial t} \quad \frac{\partial \dot{q}_{\alpha}}{\partial \dot{Q}_{\beta}} = \frac{\partial q_{\alpha}}{\partial Q_{\beta}}
+$$
+$$
+\frac{\partial L}{\partial \dot{Q}_{\alpha}} = \sum_{\beta=1}^{s} \left( \frac{\partial L}{\partial q_{\beta}} \frac{\partial q_{\beta}}{\partial Q_{\alpha}} + \frac{\partial L}{\partial \dot{q}_{\beta}} \frac{\partial \dot{q}_{\beta}}{\partial \dot{Q}_{\alpha}} \right) = \sum_{\beta=1}^{s} \frac{\partial L}{\partial \dot{q}_{\beta}} \frac{\partial q_{\beta}}{\partial Q_{\alpha}}
+$$
+$$
+\frac{\partial L}{\partial Q_{\alpha}} = \sum_{\beta=1}^{s} \left( \frac{\partial L}{\partial q_{\beta}} \frac{\partial q_{\beta}}{\partial Q_{\alpha}} + \frac{\partial L}{\partial \dot{q}_{\beta}} \frac{\partial \dot{q}_{\beta}}{\partial Q_{\alpha}} \right)
+$$
+$$
+\begin{aligned}
+\frac{\mathrm{d}}{\mathrm{d} t} \frac{\partial L}{\partial \dot{Q}_{\alpha}} - \frac{\partial L}{\partial Q_{\alpha}} &amp;= \frac{\mathrm{d}}{\mathrm{d} t} \left( \sum_{\beta=1}^{s} \frac{\partial L}{\partial \dot{q}_{\beta}} \frac{\partial q_{\beta}}{\partial Q_{\alpha}} \right) - \left( \sum_{\beta=1}^{s} \frac{\partial L}{\partial q_{\beta}} \frac{\partial q_{\beta}}{\partial Q_{\alpha}} + \sum_{\beta=1}^{s} \frac{\partial L}{\partial \dot{q}_{\beta}} \frac{\partial \dot{q}_{\beta}}{\partial Q_{\alpha}} \right) \\
+&amp;= \sum_{\beta=1}^{s} \left[ \frac{\partial L}{\partial \dot{q}_{\beta}} \frac{\mathrm{d}}{\mathrm{d} t} \left( \frac{\partial q_{\beta}}{\partial Q_{\alpha}} \right) + \frac{\mathrm{d}}{\mathrm{d} t} \left( \frac{\partial L}{\partial \dot{q}_{\beta}} \right) \frac{\partial q_{\beta}}{\partial Q_{\alpha}} - \frac{\partial L}{\partial q_{\beta}} \frac{\partial q_{\beta}}{\partial Q_{\alpha}} - \frac{\partial L}{\partial \dot{q}_{\beta}} \frac{\partial \dot{q}_{\beta}}{\partial Q_{\alpha}} \right] \\
+&amp;= \sum_{\beta=1}^{s} \left\{ \frac{\partial q_{\beta}}{\partial Q_{\alpha}} \left[ \frac{\mathrm{d}}{\mathrm{d} t} \left( \frac{\partial L}{\partial \dot{q}_{\beta}} \right) - \frac{\partial L}{\partial q_{\beta}} \right] + \frac{\partial L}{\partial \dot{q}_{\beta}} \left[ \frac{\mathrm{d}}{\mathrm{d} t} \left( \frac{\partial q_{\beta}}{\partial Q_{\alpha}} \right) - \frac{\partial \dot{q}_{\beta}}{\partial Q_{\alpha}} \right] \right\} \\
+&amp;= 0
+\end{aligned}
+$$
+</details>
 <details>
 <summary>例: 直角坐标到柱坐标的点变换</summary>
 <p>考虑三维空间中质点的位置可以用直角坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y,z)</annotation></semantics></math></span></span> 或柱坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>θ</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,\theta,z)</annotation></semantics></math></span></span> 描述。变换关系为</p>
@@ -546,7 +566,7 @@ $$
 <p>这说明在点变换 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo><mo>↦</mo><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>θ</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(x,y,z)\mapsto(r,\theta,z)</annotation></semantics></math></span></span> 下, 拉格朗日形式保持不变, 只是具体的表达由直角坐标改写成了柱坐标。</p>
 </details>
 <h2 id="正则变换与哈密顿方程">正则变换与哈密顿方程</h2>
-<h3 id="哈密顿方程">哈密顿方程</h3>
+<h3 id="哈密顿正则方程">哈密顿正则方程</h3>
 <p>在哈密顿形式中, 体系由广义坐标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">q_\alpha</annotation></semantics></math></span></span> 与共轭动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">p_\alpha</annotation></semantics></math></span></span> 描述, 哈密顿量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(q,p,t)</annotation></semantics></math></span></span> 给出正则方程</p>
 
 $$
@@ -586,6 +606,7 @@ $$
 <h2 id="正则变换的作用量条件与母函数">正则变换的作用量条件与母函数</h2>
 <h3 id="作用量的等价条件">作用量的等价条件</h3>
 <p>对同一个力学体系, 若在不同正则变量下写出的作用量只相差一个关于时间的全导数, 则它们给出完全相同的动力学。</p>
+<p>或者说，正则变换前后两个函数的变分等价。</p>
 <p>旧变量下的拉格朗日函数 (哈密顿形式) 为</p>
 
 $$
@@ -682,6 +703,7 @@ H
 \frac{\partial U_1}{\partial t}.
 $$
 
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mo separator="true">,</mo><mi>P</mi></mrow><annotation encoding="application/x-tex">Q, P</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">q, p, t</annotation></semantics></math></span></span> 的函数；<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo separator="true">,</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">q, p</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>t</mi></mrow><annotation encoding="application/x-tex">Q, P, t</annotation></semantics></math></span></span> 的函数</p>
 <p>给定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_1(q,Q,t)</annotation></semantics></math></span></span>, 由上式可以解出新旧变量之间的关系。</p>
 <h4 id="第二类母函数-U-2-U-2-p-Q-t">第二类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>2</mn></msub><mo>=</mo><msub><mi>U</mi><mn>2</mn></msub><mo>(</mo><mi>p</mi><mo separator="true">,</mo><mi>Q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_2 = U_2(p,Q,t)</annotation></semantics></math></span></span></h4>
 <p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">U_1</annotation></semantics></math></span></span> 作对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi></mrow><annotation encoding="application/x-tex">q</annotation></semantics></math></span></span> 的勒让德变换</p>
@@ -735,7 +757,7 @@ K = H + \frac{\partial U_2}{\partial t}.
 $$
 
 <h4 id="第三类母函数-U-3-U-3-q-P-t">第三类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>3</mn></msub><mo>=</mo><msub><mi>U</mi><mn>3</mn></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_3 = U_3(q,P,t)</annotation></semantics></math></span></span></h4>
-<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">U_1</annotation></semantics></math></span></span> 作对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span> 的勒让德变换也可以得到第三类母函数, 更常见的形式是</p>
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">U_1</annotation></semantics></math></span></span> 作对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span> 的勒让德变换也可以得到第三类母函数</p>
 
 $$
 \displaystyle
@@ -743,7 +765,7 @@ U_3(q,P,t)
 =
 U_1(q,Q,t)
 +
-\sum_{\alpha=1}^s p_\alpha q_\alpha,
+\sum_{\alpha=1}^s P_\alpha Q_\alpha,
 $$
 
 <p>其微分形式为</p>
@@ -814,6 +836,21 @@ $$
 \left(K - H\right)\mathrm{d}t.
 $$
 
+<p>再写为</p>
+
+$$
+\displaystyle
+\mathrm{d}U_4
+=
+\sum_{\alpha=1}^s
+\frac{\partial U_4}{\partial p_\alpha}\,\mathrm{d}p_\alpha
++
+\sum_{\alpha=1}^s
+\frac{\partial U_4}{\partial P_\alpha}\,\mathrm{d}P_\alpha
++
+\frac{\partial U_4}{\partial t}\,\mathrm{d}t,
+$$
+
 <p>比较系数得到</p>
 
 $$
@@ -846,7 +883,108 @@ $$
 [U] = [H]\,[t] = [S] = [p_\alpha q_\alpha].
 $$
 
-<h2 id="常见正则变换的母函数表示">常见正则变换的母函数表示</h2>
+<hr>
+<p>另外有：<a href="#%E4%BB%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%88%B0%E5%93%88%E5%AF%86%E9%A1%BF%EF%BC%9A%E6%AD%A3%E5%88%99%E7%82%B9%E5%8F%98%E6%8D%A2%E5%8F%8A%E9%AA%8C%E8%AF%81">一种点变换获得的正则变量及证明</a></p>
+<h3 id="热力学中的四类母函数（特性函数）">热力学中的四类母函数（特性函数）</h3>
+<p>在热力学中, 通过对状态函数做勒让德变换得到的若干特性函数, 形式上与哈密顿力学中的四类母函数高度相似。</p>
+<h4 id="内能函数-U-U-S-V">内能函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mi>U</mi><mo>(</mo><mi>S</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U = U(S,V)</annotation></semantics></math></span></span></h4>
+
+$$
+\displaystyle
+\mathrm{d}U
+=
+T\,\mathrm{d}S
+-
+p\,\mathrm{d}V
+$$
+
+<p>由此得到</p>
+
+$$
+\displaystyle
+T
+=
+\frac{\partial U}{\partial S},
+\quad
+p
+=
+-\frac{\partial U}{\partial V}.
+$$
+
+<h4 id="自由能函数-F-F-T-V-U-T-S">自由能函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>F</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo><mo>=</mo><mi>U</mi><mo>−</mo><mi>T</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">F = F(T,V) = U - T S</annotation></semantics></math></span></span></h4>
+
+$$
+\displaystyle
+\mathrm{d}F
+=
+-S\,\mathrm{d}T
+-
+p\,\mathrm{d}V
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle
+S
+=
+-\frac{\partial F}{\partial T},
+\quad
+p
+=
+-\frac{\partial F}{\partial V}.
+$$
+
+<h4 id="焓函数-H-H-S-p-U-pV">焓函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>=</mo><mi>H</mi><mo>(</mo><mi>S</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mi>U</mi><mo>+</mo><mi>p</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">H = H(S,p) = U + pV</annotation></semantics></math></span></span></h4>
+
+$$
+\displaystyle
+\mathrm{d}H
+=
+T\,\mathrm{d}S
++
+V\,\mathrm{d}p
+$$
+
+<p>于是</p>
+
+$$
+\displaystyle
+T
+=
+\frac{\partial H}{\partial S},
+\quad
+V
+=
+\frac{\partial H}{\partial p}.
+$$
+
+<h4 id="自由焓函数-G-G-T-p-H-T-S-F-pV">自由焓函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mo>=</mo><mi>G</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mi>H</mi><mo>−</mo><mi>T</mi><mi>S</mi><mo>=</mo><mi>F</mi><mo>+</mo><mi>p</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">G = G(T,p) = H - T S = F + pV</annotation></semantics></math></span></span></h4>
+
+$$
+\displaystyle
+\mathrm{d}G
+=
+-S\,\mathrm{d}T
++
+V\,\mathrm{d}p
+$$
+
+<p>从而</p>
+
+$$
+\displaystyle
+S
+=
+-\frac{\partial G}{\partial T},
+\quad
+V
+=
+\frac{\partial G}{\partial p}.
+$$
+
+<p>可以看出, 不同热力学势之间通过对变量的勒让德变换相互联系, 与母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>U</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>U</mi><mn>3</mn></msub><mo separator="true">,</mo><msub><mi>U</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">U_1,U_2,U_3,U_4</annotation></semantics></math></span></span> 之间的关系完全类似。</p>
+<h3 id="常见正则变换的母函数表示">常见正则变换的母函数表示</h3>
 <p>本节通过若干例子说明上述四类母函数的具体用法。</p>
 <details>
 <summary>例: 恒等变换</summary>
@@ -1076,7 +1214,7 @@ $$
 
 <p>这与点变换从拉格朗日形式出发得到的结果完全一致。</p>
 </details>
-<h2 id="一维谐振子的正则变换解法">一维谐振子的正则变换解法</h2>
+<h3 id="一维谐振子的正则变换解法">一维谐振子的正则变换解法</h3>
 <p>考虑质量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>, 角频率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span> 的一维谐振子, 其哈密顿量为</p>
 
 $$
@@ -1098,7 +1236,7 @@ K(Q,P)
 $$
 
 <p>这样 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 将是常数, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span> 只做匀速演化, 求解大为简化。</p>
-<h3 id="变换的构造思路">变换的构造思路</h3>
+<h4 id="变换的构造思路">变换的构造思路</h4>
 <p>希望新变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 满足</p>
 
 $$
@@ -1181,7 +1319,7 @@ p
 \frac{\partial U_1}{\partial q}.
 $$
 
-<p>另一方面由几何构造得</p>
+<p>另一方面由上述极坐标形式几何构造得</p>
 
 $$
 \displaystyle
@@ -1222,19 +1360,7 @@ P
 =
 -
 \frac{\partial U_1}{\partial Q}
-$$
-
-<p>得到</p>
-
-$$
-\displaystyle
-P
-=
--\left(
--\frac{1}{2}m\omega q^2\sec^2 Q
-\right)
-=
-\frac{m\omega q^2}{2\cos^2 Q}.
+= \frac{m\omega q^2}{2\cos^2 Q}
 $$
 
 <p>解出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo separator="true">,</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">q,p</annotation></semantics></math></span></span> 关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 的表示:</p>
@@ -1410,117 +1536,7 @@ $$
 
 <p>因此该变换是正则变换。几何上可以把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)</annotation></semantics></math></span></span> 平面上的网格映射成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 平面上弯曲的网格, 但相面积保持不变。</p>
 </details>
-<h2 id="热力学中的四类“母函数”-特性函数">热力学中的四类“母函数” (特性函数)</h2>
-<p>在热力学中, 通过对状态函数做勒让德变换得到的若干特性函数, 形式上与哈密顿力学中的四类母函数高度相似。</p>
-<h3 id="四个基本热力学势及其微分形式">四个基本热力学势及其微分形式</h3>
-<ol>
-<li>
-<p>内能函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mi>U</mi><mo>(</mo><mi>S</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U = U(S,V)</annotation></semantics></math></span></span></p>
-
-   $$
-   \displaystyle
-   \mathrm{d}U
-   =
-   T\,\mathrm{d}S
-   -
-   p\,\mathrm{d}V
-   $$
-   
-<p>由此得到</p>
-
-   $$
-   \displaystyle
-   T
-   =
-   \frac{\partial U}{\partial S},
-   \quad
-   p
-   =
-   -\frac{\partial U}{\partial V}.
-   $$
-   
-</li>
-<li>
-<p>自由能函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>F</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo><mo>=</mo><mi>U</mi><mo>−</mo><mi>T</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">F = F(T,V) = U - T S</annotation></semantics></math></span></span></p>
-
-   $$
-   \displaystyle
-   \mathrm{d}F
-   =
-   -S\,\mathrm{d}T
-   -
-   p\,\mathrm{d}V
-   $$
-   
-<p>因此</p>
-
-   $$
-   \displaystyle
-   S
-   =
-   -\frac{\partial F}{\partial T},
-   \quad
-   p
-   =
-   -\frac{\partial F}{\partial V}.
-   $$
-   
-</li>
-<li>
-<p>焓函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>=</mo><mi>H</mi><mo>(</mo><mi>S</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mi>U</mi><mo>+</mo><mi>p</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">H = H(S,p) = U + pV</annotation></semantics></math></span></span></p>
-
-   $$
-   \displaystyle
-   \mathrm{d}H
-   =
-   T\,\mathrm{d}S
-   +
-   V\,\mathrm{d}p
-   $$
-   
-<p>于是</p>
-
-   $$
-   \displaystyle
-   T
-   =
-   \frac{\partial H}{\partial S},
-   \quad
-   V
-   =
-   \frac{\partial H}{\partial p}.
-   $$
-   
-</li>
-<li>
-<p>自由焓函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi><mo>=</mo><mi>G</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mi>H</mi><mo>−</mo><mi>T</mi><mi>S</mi><mo>=</mo><mi>F</mi><mo>+</mo><mi>p</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">G = G(T,p) = H - T S = F + pV</annotation></semantics></math></span></span></p>
-
-   $$
-   \displaystyle
-   \mathrm{d}G
-   =
-   -S\,\mathrm{d}T
-   +
-   V\,\mathrm{d}p
-   $$
-   
-<p>从而</p>
-
-   $$
-   \displaystyle
-   S
-   =
-   -\frac{\partial G}{\partial T},
-   \quad
-   V
-   =
-   \frac{\partial G}{\partial p}.
-   $$
-   
-</li>
-</ol>
-<p>可以看出, 不同热力学势之间通过对变量的勒让德变换相互联系, 与母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>U</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>U</mi><mn>3</mn></msub><mo separator="true">,</mo><msub><mi>U</mi><mn>4</mn></msub></mrow><annotation encoding="application/x-tex">U_1,U_2,U_3,U_4</annotation></semantics></math></span></span> 之间的关系完全类似。</p>
-<h2 id="从拉格朗日到哈密顿-点变换的验证">从拉格朗日到哈密顿: 点变换的验证</h2>
+<h2 id="从拉格朗日到哈密顿：正则点变换及验证">从拉格朗日到哈密顿：正则点变换及验证</h2>
 <p>最后从拉格朗日力学的角度验证: 由点变换 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mi>α</mi></msub><mo>↦</mo><msub><mi>Q</mi><mi>α</mi></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q_\alpha\mapsto Q_\alpha(q,t)</annotation></semantics></math></span></span> 得到的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 确实给出一组正则变量, 新哈密顿量为</p>
 
 $$
@@ -1822,7 +1838,7 @@ $$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">正则变换与哈密顿-雅可比方程1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E5%8F%98%E6%8D%A2%E4%B8%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%BD%A2%E5%BC%8F%E7%9A%84%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-text">点变换与拉格朗日形式的不变性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B%E4%B8%8E%E7%82%B9%E5%8F%98%E6%8D%A2"><span class="toc-text">拉格朗日方程与点变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF%E6%96%B9%E7%A8%8B"><span class="toc-text">正则变换与哈密顿方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E6%96%B9%E7%A8%8B"><span class="toc-text">哈密顿方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">正则变换的定义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E4%BD%9C%E7%94%A8%E9%87%8F%E6%9D%A1%E4%BB%B6%E4%B8%8E%E6%AF%8D%E5%87%BD%E6%95%B0"><span class="toc-text">正则变换的作用量条件与母函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E9%87%8F%E7%9A%84%E7%AD%89%E4%BB%B7%E6%9D%A1%E4%BB%B6"><span class="toc-text">作用量的等价条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">四类母函数的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-1-U-1-q-Q-t"><span class="toc-text">第一类母函数 U1&#x3D;U1(q,Q,t)U_1 &#x3D; U_1(q,Q,t)U​1​​&#x3D;U​1​​(q,Q,t)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-2-U-2-p-Q-t"><span class="toc-text">第二类母函数 U2&#x3D;U2(p,Q,t)U_2 &#x3D; U_2(p,Q,t)U​2​​&#x3D;U​2​​(p,Q,t)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-3-U-3-q-P-t"><span class="toc-text">第三类母函数 U3&#x3D;U3(q,P,t)U_3 &#x3D; U_3(q,P,t)U​3​​&#x3D;U​3​​(q,P,t)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-4-U-4-p-P-t"><span class="toc-text">第四类母函数 U4&#x3D;U4(p,P,t)U_4 &#x3D; U_4(p,P,t)U​4​​&#x3D;U​4​​(p,P,t)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E6%AF%8D%E5%87%BD%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-text">常见正则变换的母函数表示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E8%B0%90%E6%8C%AF%E5%AD%90%E7%9A%84%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E8%A7%A3%E6%B3%95"><span class="toc-text">一维谐振子的正则变换解法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E6%8D%A2%E7%9A%84%E6%9E%84%E9%80%A0%E6%80%9D%E8%B7%AF"><span class="toc-text">变换的构造思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B1%E6%AF%8D%E5%87%BD%E6%95%B0-U-1-q-Q-%E6%B1%82%E5%87%BA%E5%8F%98%E6%8D%A2"><span class="toc-text">由母函数 U1(q,Q)U_1(q,Q)U​1​​(q,Q) 求出变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E5%87%A0%E4%BD%95%E5%9B%BE%E5%83%8F%E4%B8%8E%E6%B3%8A%E6%9D%BE%E6%8B%AC%E5%8F%B7"><span class="toc-text">正则变换的几何图像与泊松括号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9B%9B%E7%B1%BB%E2%80%9C%E6%AF%8D%E5%87%BD%E6%95%B0%E2%80%9D-%E7%89%B9%E6%80%A7%E5%87%BD%E6%95%B0"><span class="toc-text">热力学中的四类“母函数” (特性函数)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AA%E5%9F%BA%E6%9C%AC%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%8A%BF%E5%8F%8A%E5%85%B6%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="toc-text">四个基本热力学势及其微分形式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%88%B0%E5%93%88%E5%AF%86%E9%A1%BF-%E7%82%B9%E5%8F%98%E6%8D%A2%E7%9A%84%E9%AA%8C%E8%AF%81"><span class="toc-text">从拉格朗日到哈密顿: 点变换的验证</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">正则变换与哈密顿-雅可比方程1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E5%8F%98%E6%8D%A2%E4%B8%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%BD%A2%E5%BC%8F%E7%9A%84%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-text">点变换与拉格朗日形式的不变性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E6%96%B9%E7%A8%8B%E4%B8%8E%E7%82%B9%E5%8F%98%E6%8D%A2"><span class="toc-text">拉格朗日方程与点变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF%E6%96%B9%E7%A8%8B"><span class="toc-text">正则变换与哈密顿方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E6%AD%A3%E5%88%99%E6%96%B9%E7%A8%8B"><span class="toc-text">哈密顿正则方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">正则变换的定义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E4%BD%9C%E7%94%A8%E9%87%8F%E6%9D%A1%E4%BB%B6%E4%B8%8E%E6%AF%8D%E5%87%BD%E6%95%B0"><span class="toc-text">正则变换的作用量条件与母函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E9%87%8F%E7%9A%84%E7%AD%89%E4%BB%B7%E6%9D%A1%E4%BB%B6"><span class="toc-text">作用量的等价条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">四类母函数的定义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-1-U-1-q-Q-t"><span class="toc-text">第一类母函数 U1&#x3D;U1(q,Q,t)U_1 &#x3D; U_1(q,Q,t)U​1​​&#x3D;U​1​​(q,Q,t)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-2-U-2-p-Q-t"><span class="toc-text">第二类母函数 U2&#x3D;U2(p,Q,t)U_2 &#x3D; U_2(p,Q,t)U​2​​&#x3D;U​2​​(p,Q,t)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-3-U-3-q-P-t"><span class="toc-text">第三类母函数 U3&#x3D;U3(q,P,t)U_3 &#x3D; U_3(q,P,t)U​3​​&#x3D;U​3​​(q,P,t)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0-U-4-U-4-p-P-t"><span class="toc-text">第四类母函数 U4&#x3D;U4(p,P,t)U_4 &#x3D; U_4(p,P,t)U​4​​&#x3D;U​4​​(p,P,t)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E5%9B%9B%E7%B1%BB%E6%AF%8D%E5%87%BD%E6%95%B0%EF%BC%88%E7%89%B9%E6%80%A7%E5%87%BD%E6%95%B0%EF%BC%89"><span class="toc-text">热力学中的四类母函数（特性函数）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%83%BD%E5%87%BD%E6%95%B0-U-U-S-V"><span class="toc-text">内能函数 U&#x3D;U(S,V)U &#x3D; U(S,V)U&#x3D;U(S,V)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E8%83%BD%E5%87%BD%E6%95%B0-F-F-T-V-U-T-S"><span class="toc-text">自由能函数 F&#x3D;F(T,V)&#x3D;U−TSF &#x3D; F(T,V) &#x3D; U - T SF&#x3D;F(T,V)&#x3D;U−TS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%84%93%E5%87%BD%E6%95%B0-H-H-S-p-U-pV"><span class="toc-text">焓函数 H&#x3D;H(S,p)&#x3D;U+pVH &#x3D; H(S,p) &#x3D; U + pVH&#x3D;H(S,p)&#x3D;U+pV</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E7%84%93%E5%87%BD%E6%95%B0-G-G-T-p-H-T-S-F-pV"><span class="toc-text">自由焓函数 G&#x3D;G(T,p)&#x3D;H−TS&#x3D;F+pVG &#x3D; G(T,p) &#x3D; H - T S &#x3D; F + pVG&#x3D;G(T,p)&#x3D;H−TS&#x3D;F+pV</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E6%AF%8D%E5%87%BD%E6%95%B0%E8%A1%A8%E7%A4%BA"><span class="toc-text">常见正则变换的母函数表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E8%B0%90%E6%8C%AF%E5%AD%90%E7%9A%84%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E8%A7%A3%E6%B3%95"><span class="toc-text">一维谐振子的正则变换解法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E6%8D%A2%E7%9A%84%E6%9E%84%E9%80%A0%E6%80%9D%E8%B7%AF"><span class="toc-text">变换的构造思路</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B1%E6%AF%8D%E5%87%BD%E6%95%B0-U-1-q-Q-%E6%B1%82%E5%87%BA%E5%8F%98%E6%8D%A2"><span class="toc-text">由母函数 U1(q,Q)U_1(q,Q)U​1​​(q,Q) 求出变换</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E5%87%A0%E4%BD%95%E5%9B%BE%E5%83%8F%E4%B8%8E%E6%B3%8A%E6%9D%BE%E6%8B%AC%E5%8F%B7"><span class="toc-text">正则变换的几何图像与泊松括号</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E6%8B%89%E6%A0%BC%E6%9C%97%E6%97%A5%E5%88%B0%E5%93%88%E5%AF%86%E9%A1%BF%EF%BC%9A%E6%AD%A3%E5%88%99%E7%82%B9%E5%8F%98%E6%8D%A2%E5%8F%8A%E9%AA%8C%E8%AF%81"><span class="toc-text">从拉格朗日到哈密顿：正则点变换及验证</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
