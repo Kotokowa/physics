@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>哈密顿力学1 | Hexo</title>
+  <title>哈密顿力学1 正则方程 | Hexo</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,14 +355,14 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-5309be9f08b1404293b5fa867d1a84d3_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        哈密顿力学1
+        哈密顿力学1 正则方程
       </span>
     </div>
     
@@ -392,7 +392,7 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1>哈密顿力学1</h1>
+        <h1>哈密顿力学1 正则方程</h1>
 <h2 id="定义">定义</h2>
 <p>广义动量 $\displaystyle p_{\alpha}:=\frac{\partial L}{\partial \dot{q}_{\alpha}}$</p>
 <p>广义能量 $\displaystyle H(\boldsymbol{q},\dot{\boldsymbol{q}},t):=\sum_{\alpha=1}^{s} p_{\alpha}(\boldsymbol{q},\dot{\boldsymbol{q}},t)\dot{q}_{\alpha}-L(\boldsymbol{q},\dot{\boldsymbol{q}},t)$</p>
@@ -520,9 +520,21 @@ $$
 <p>已知：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>=</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f = f(x,y)</annotation></semantics></math></span></span>， <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mi>y</mi></mrow><annotation encoding="application/x-tex">x,\,y</annotation></semantics></math></span></span>为独立变量</p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>f</mi><mo>=</mo><mi>u</mi><mi>d</mi><mi>x</mi><mo>+</mo><mi>v</mi><mi>d</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">df = udx + vdy</annotation></semantics></math></span></span>，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>u</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mi>v</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle u = \frac{\partial f}{\partial x},\,v = \frac{\partial f}{\partial y}</annotation></semantics></math></span></span></p>
 <p>现有：令<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>=</mo><mi>v</mi><mi>y</mi><mo>−</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">g = vy -f</annotation></semantics></math></span></span></p>
-<p>则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>g</mi><mo>=</mo><mi>d</mi><mo>(</mo><mi>v</mi><mi>y</mi><mo>)</mo><mo>−</mo><mi>d</mi><mi>f</mi><mo>=</mo><mi>y</mi><mi>d</mi><mi>v</mi><mo>+</mo><mi>v</mi><mi>d</mi><mi>y</mi><mo>−</mo><mi>u</mi><mi>d</mi><mi>x</mi><mo>−</mo><mi>v</mi><mi>d</mi><mi>y</mi><mo>=</mo><mi>y</mi><mi>d</mi><mi>v</mi><mo>−</mo><mi>u</mi><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">dg = d(vy) - df = ydv+vdy-udx-vdy = ydv - udx</annotation></semantics></math></span></span>，其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>y</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>g</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>v</mi></mrow></mfrac><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mo>−</mo><mi>u</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>g</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle y = \frac{\partial g}{\partial v},\,-u = \frac{\partial g}{\partial x}.</annotation></semantics></math></span></span></p>
+<p>则</p>
+
+$$
+dg = d(vy) - df = ydv+vdy-udx-vdy = ydv - udx, 
+$$
+
+<p>其中<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>y</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>g</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>v</mi></mrow></mfrac><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mo>−</mo><mi>u</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>g</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mi mathvariant="normal">.</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle y = \frac{\partial g}{\partial v},\,-u = \frac{\partial g}{\partial x}.</annotation></semantics></math></span></span></p>
 <p>这是$f(x,y) \implies g(x,v)$的勒让德变换.</p>
-<p>一般的，对于多变量函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x_1,x_2,\cdots,x_n)</annotation></semantics></math></span></span>有勒让德变换 $\displaystyle g(p_1,p_2,\cdots,p_n) = \sum_{i = 1}^{n} p_i x_i - f(x_1,x_2,\cdots,x_n)$</p>
+<p>一般的，对于多变量函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x_1,x_2,\cdots,x_n)</annotation></semantics></math></span></span>有勒让德变换</p>
+
+$$
+\displaystyle 
+g(p_1,p_2,\cdots,p_n) = \sum_{i = 1}^{n} p_i x_i - f(x_1,x_2,\cdots,x_n)$$
+
+<hr>
 <p>下面以勒让德变换解释哈密顿量：</p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mi>L</mi><mo>(</mo><msub><mi>q</mi><mi>α</mi></msub><mo separator="true">,</mo><msub><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mi>α</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">L = L(q_\alpha,\dot{q}_\alpha)</annotation></semantics></math></span></span></p>
 $\displaystyle dL = \sum_\alpha \frac{\partial L}{\partial q_\alpha}dq_\alpha + \sum_\alpha \frac{\partial L}{\partial \dot{q}_\alpha} d\dot{q}_\alpha = \sum_\alpha \dot{p}_\alpha dq_\alpha + \sum_\alpha p_\alpha d\dot{q}_\alpha$
@@ -546,7 +558,7 @@ $\displaystyle \left\{\begin{array}{ll}
 <p>所以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(p)</annotation></semantics></math></span></span>即为负截距.</p>
 $v,L(v) \Leftrightarrow p,H(p)$
 <h3 id="对合性">对合性</h3>
-<p>拉格朗日量和哈密顿量互为勒让德变换.</p>
+<p>拉格朗日量和哈密顿量<strong>互为</strong>勒让德变换.</p>
 <h3 id="能量守恒">能量守恒</h3>
 <p>有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(q, p, t)</annotation></semantics></math></span></span></p>
 
@@ -574,14 +586,14 @@ $$
 </annotation></semantics></math></span></span></span></p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>q</mi><mo separator="true">,</mo><mi>p</mi></mrow><annotation encoding="application/x-tex">q, p</annotation></semantics></math></span></span> 正则变量</p>
 <p>相应有 <strong>哈密顿正则方程</strong></p>
-<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mrow><msub><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mrow><mi>α</mi></mrow></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>H</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>p</mi><mrow><mi>α</mi></mrow></msub></mrow></mfrac></mrow></mtd></mtr><mtr><mtd><mrow><msub><mover accent="true"><mrow><mi>p</mi></mrow><mo>˙</mo></mover><mrow><mi>α</mi></mrow></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>H</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub></mrow></mfrac></mrow></mtd></mtr></mtable></mrow><mspace width="2em"></mspace><mi>α</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>s</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mo fence="true">{</mo><mtable><mtr><mtd><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mover accent="true"><mrow><mi>q</mi></mrow><mo>˙</mo></mover><mrow><mi>α</mi></mrow></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>H</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>p</mi><mrow><mi>α</mi></mrow></msub></mrow></mfrac></mstyle></mrow></mtd></mtr><mtr><mtd><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mover accent="true"><mrow><mi>p</mi></mrow><mo>˙</mo></mover><mrow><mi>α</mi></mrow></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>H</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub></mrow></mfrac></mstyle></mrow></mtd></mtr></mtable></mrow><mspace width="2em"></mspace><mi>α</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>s</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle
 \begin{cases}
-\dot{q}_{\alpha} = \frac{\partial H}{\partial p_{\alpha}} \\
-\dot{p}_{\alpha} = - \frac{\partial H}{\partial q_{\alpha}}
+\displaystyle \dot{q}_{\alpha} = \frac{\partial H}{\partial p_{\alpha}} \\
+\displaystyle \dot{p}_{\alpha} = - \frac{\partial H}{\partial q_{\alpha}}
 \end{cases}
 \qquad \alpha = 1, 2, \cdots, s
 </annotation></semantics></math></span></span></span></p>
-<p>正则 Canon</p>
+<p>(正则 Canon)</p>
 <h3 id="相空间">相空间</h3>
 <h4 id="定义-3">定义</h4>
 <ul>
@@ -1028,7 +1040,7 @@ $$
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/JingDianLiXue/哈密顿力学1/" target="_blank" title="哈密顿力学1">https://kotokowa.github.io/physics/JingDianLiXue/哈密顿力学1/</a>
+    <a href="/physics/JingDianLiXue/哈密顿力学1_正则方程/" target="_blank" title="哈密顿力学1 正则方程">https://kotokowa.github.io/physics/JingDianLiXue/哈密顿力学1_正则方程/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -1203,7 +1215,7 @@ E[X]
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">哈密顿力学1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%BE%AE%E5%88%86%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-text">全微分不变性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2"><span class="toc-text">勒让德变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E6%96%B9%E7%A8%8B"><span class="toc-text">正则方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E4%B8%8A%E7%90%86%E8%A7%A3%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2"><span class="toc-text">几何上理解勒让德变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%90%88%E6%80%A7"><span class="toc-text">对合性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E9%87%8F%E5%AE%88%E6%81%92"><span class="toc-text">能量守恒</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%8A%9B%E5%AD%A6-%E7%9B%B8%E7%A9%BA%E9%97%B4"><span class="toc-text">哈密顿力学 相空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%87%BD%E6%95%B0"><span class="toc-text">哈密顿函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E7%A9%BA%E9%97%B4"><span class="toc-text">相空间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-3"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E6%B5%81-%E5%93%88%E5%AF%86%E9%A1%BF%E7%9F%A2%E9%87%8F%E5%9C%BA"><span class="toc-text">相流 哈密顿矢量场</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%81%97%E5%9D%90%E6%A0%87-%E5%AE%88%E6%81%92%E5%AE%9A%E5%BE%8B"><span class="toc-text">可遗坐标 守恒定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E6%96%B9%E7%A8%8B%E7%9A%84%E7%9F%A9%E9%98%B5%E5%BD%A2%E5%BC%8F"><span class="toc-text">正则方程的矩阵形式</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">哈密顿力学1 正则方程</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%BE%AE%E5%88%86%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="toc-text">全微分不变性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2"><span class="toc-text">勒让德变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E6%96%B9%E7%A8%8B"><span class="toc-text">正则方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E4%B8%8A%E7%90%86%E8%A7%A3%E5%8B%92%E8%AE%A9%E5%BE%B7%E5%8F%98%E6%8D%A2"><span class="toc-text">几何上理解勒让德变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%90%88%E6%80%A7"><span class="toc-text">对合性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E9%87%8F%E5%AE%88%E6%81%92"><span class="toc-text">能量守恒</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%8A%9B%E5%AD%A6-%E7%9B%B8%E7%A9%BA%E9%97%B4"><span class="toc-text">哈密顿力学 相空间</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E5%87%BD%E6%95%B0"><span class="toc-text">哈密顿函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E7%A9%BA%E9%97%B4"><span class="toc-text">相空间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-3"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E6%B5%81-%E5%93%88%E5%AF%86%E9%A1%BF%E7%9F%A2%E9%87%8F%E5%9C%BA"><span class="toc-text">相流 哈密顿矢量场</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E9%81%97%E5%9D%90%E6%A0%87-%E5%AE%88%E6%81%92%E5%AE%9A%E5%BE%8B"><span class="toc-text">可遗坐标 守恒定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E6%96%B9%E7%A8%8B%E7%9A%84%E7%9F%A9%E9%98%B5%E5%BD%A2%E5%BC%8F"><span class="toc-text">正则方程的矩阵形式</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
