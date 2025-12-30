@@ -394,8 +394,8 @@
       <div class="post-content">
         <h1>正则变换与哈密顿-雅可比方程2</h1>
 <p>本文整理了全微分与欧拉定理, 雅可比行列式及其性质, 正则变换的判据与辛结构, 利用正则变换将哈密顿量变为零的思想, 以及哈密顿–雅可比(Hamilton–Jacobi, H–J) 方程及其典型例题, 包括一维谐振子与中心势问题等内容。</p>
-<h2 id="一-全微分与欧拉定理">一 全微分与欧拉定理</h2>
-<h3 id="1-1-欧拉定理与全微分形式">1.1 欧拉定理与全微分形式</h3>
+<h2 id="全微分与欧拉定理">全微分与欧拉定理</h2>
+<h3 id="欧拉定理与全微分形式">欧拉定理与全微分形式</h3>
 <p>设标量函数依赖两个自变量:</p>
 
 $$
@@ -486,7 +486,7 @@ $$
 $$
 
 </details>
-<h3 id="1-2-麦克斯韦关系的类比">1.2 麦克斯韦关系的类比</h3>
+<h3 id="麦克斯韦关系的类比">麦克斯韦关系的类比</h3>
 <p>对于一般形式</p>
 
 $$
@@ -595,8 +595,8 @@ $$
 
 <p>与由全微分 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><msub><mi>U</mi><mrow><mn>3</mn></mrow></msub><mo>=</mo><mi>p</mi><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">d</mi></mrow><mi>q</mi><mo>+</mo><mi>Q</mi><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">d</mi></mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">\mathrm{d}U_{3} = p\,\mathrm{d}q + Q\,\mathrm{d}P</annotation></semantics></math></span></span> 得到的麦克斯韦关系完全一致。</p>
 </details>
-<h2 id="二-雅可比行列式与坐标变换">二 雅可比行列式与坐标变换</h2>
-<h3 id="2-1-极坐标中的雅可比行列式">2.1 极坐标中的雅可比行列式</h3>
+<h2 id="雅可比行列式与坐标变换">雅可比行列式与坐标变换</h2>
+<h3 id="极坐标中的雅可比行列式">极坐标中的雅可比行列式</h3>
 <p>考虑平面直角坐标与极坐标变换</p>
 
 $$
@@ -690,7 +690,7 @@ $$
 
 <p>由此可见, 极坐标中的雅可比行列式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mo>=</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">J = r</annotation></semantics></math></span></span> 正确地给出了面积元的放缩因子。</p>
 </details>
-<h3 id="2-2-雅可比行列式的性质">2.2 雅可比行列式的性质</h3>
+<h3 id="雅可比行列式的性质">雅可比行列式的性质</h3>
 <p>设变量变换</p>
 
 $$
@@ -748,31 +748,15 @@ $$
 </li>
 </ol>
 <p>这与一维微积分中的链式法则完全类似, 只不过用行列式形式表达。</p>
-<h2 id="三-正则变换的性质">三 正则变换的性质</h2>
-<h3 id="3-1-由母函数生成的正则变换与雅可比行列式">3.1 由母函数生成的正则变换与雅可比行列式</h3>
-<p>一般一维情形下, 正则变换写作</p>
+<h2 id="正则变换的性质">正则变换的性质</h2>
+<h3 id="由母函数生成的正则变换与雅可比行列式">由母函数生成的正则变换与雅可比行列式</h3>
+<p>一般一维情形下, 由母函数生成的正则变换写作</p>
 
 $$
 \displaystyle
 \begin{cases}
 Q = Q(q,p) , \\
 P = P(q,p) .
-\end{cases}
-$$
-
-<p>若该变换由母函数生成, 则其雅可比行列式满足</p>
-
-$$
-\displaystyle \frac{\partial(Q,P)}{\partial(q,p)} = 1 .
-$$
-
-<p>例如, 对第三类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mn>3</mn></mrow></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_{3}(q,P)</annotation></semantics></math></span></span>, 有变换关系</p>
-
-$$
-\displaystyle
-\begin{cases}
-p = \dfrac{\partial U_{3}}{\partial q} , \\
-Q = \dfrac{\partial U_{3}}{\partial P} .
 \end{cases}
 $$
 
@@ -783,6 +767,16 @@ $$
 \frac{\partial(Q,P)}{\partial(q,p)}
 = \frac{\dfrac{\partial(Q,P)}{\partial(q,P)}}{\dfrac{\partial(q,p)}{\partial(q,P)}}
 = \frac{\left( \dfrac{\partial Q}{\partial q} \right)_{P}}{\left( \dfrac{\partial p}{\partial P} \right)_{q}} .
+$$
+
+<p>对第三类母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mrow><mn>3</mn></mrow></msub><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U_{3}(q,P)</annotation></semantics></math></span></span>, 有变换关系（好像没用到）</p>
+
+$$
+\displaystyle
+\begin{cases}
+p = \dfrac{\partial U_{3}}{\partial q} , \\
+Q = \dfrac{\partial U_{3}}{\partial P} .
+\end{cases}
 $$
 
 <p>而由上一节的麦克斯韦关系知</p>
@@ -816,7 +810,7 @@ $$
 $$
 
 <p>这些关系共同说明: <strong>由母函数生成的变换一定是正则变换</strong>, 且其雅可比行列式等于 1。</p>
-<h3 id="3-2-泊松括号与正则变换判据">3.2 泊松括号与正则变换判据</h3>
+<h3 id="泊松括号与正则变换判据">泊松括号与正则变换判据</h3>
 <p>在一维情形下, 定义基本泊松括号</p>
 
 $$
@@ -894,7 +888,7 @@ $$
 
 <p>因此该变换为正则变换, 且任意两个力学量的泊松括号在此变换下保持不变。</p>
 </details>
-<h3 id="3-3-辛结构与刘维尔定理">3.3 辛结构与刘维尔定理</h3>
+<h3 id="辛结构与刘维尔定理">辛结构与刘维尔定理</h3>
 <p>在一维相空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)</annotation></semantics></math></span></span> 中, 面积微元可以写作</p>
 
 $$
@@ -1435,7 +1429,7 @@ $$
 </li>
 </ol>
 </details>
-<h3 id="3-4-外微分形式语言">3.4 外微分形式语言</h3>
+<h3 id="外微分性质">外微分性质</h3>
 <p>外微分具有性质</p>
 
 $$
@@ -1493,8 +1487,8 @@ $$
 $$
 
 <p>这表明: 只要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">\mathrm{d}U</annotation></semantics></math></span></span> 为全微分, 则由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span> 生成的正则变换必定保辛结构。常见教材还会把这一结论与热力学中卡诺热机循环在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>−</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">p-V</annotation></semantics></math></span></span> 平面上的面积类比起来, 强调几何图像。</p>
-<h2 id="四-把哈密顿量变成零与相空间静止图像">四 把哈密顿量变成零与相空间静止图像</h2>
-<h3 id="4-1-一般思想-通过正则变换使新哈密顿量为零">4.1 一般思想: 通过正则变换使新哈密顿量为零</h3>
+<h2 id="把哈密顿量变成零与相空间静止图像">把哈密顿量变成零与相空间静止图像</h2>
+<h3 id="一般思想-通过正则变换使新哈密顿量为零">一般思想: 通过正则变换使新哈密顿量为零</h3>
 <p>设旧正则变量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub><mo separator="true">,</mo><msub><mi>p</mi><mrow><mi>α</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(q_{\alpha},p_{\alpha})</annotation></semantics></math></span></span>, 新变量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>Q</mi><mrow><mi>α</mi></mrow></msub><mo separator="true">,</mo><msub><mi>P</mi><mrow><mi>α</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q_{\alpha},P_{\alpha})</annotation></semantics></math></span></span> (<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">\alpha = 1,2,\cdots,s</annotation></semantics></math></span></span>), 正则变换的一般形式写为</p>
 
 $$
@@ -1529,7 +1523,58 @@ P_{\alpha}(t) = D_{\alpha} ,
 $$
 
 <p>皆为常数。原本复杂的动力学问题被"拉直"成在新相空间中的静止点问题, 而全部动力学信息都编码在母函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span> 中。</p>
-<h3 id="4-2-哈密顿–雅可比方程的出现">4.2 哈密顿–雅可比方程的出现</h3>
+<details>
+<summary id="hamiltonian-example0">例题：把哈密顿量化为零</summary>
+$$H = \frac{p^2}{2m} + \frac{m\omega^2 q^2}{2}$$
+正则变换：
+$$
+\begin{cases}
+\displaystyle Q = q\cos\omega t - \frac{p}{m\omega}\sin\omega t \\
+\displaystyle P = m\omega q\sin\omega t + p\cos\omega t
+\end{cases}
+$$
+取第三类母函数
+$$
+\begin{cases}
+\displaystyle P_a = \frac{\partial U_3}{\partial q_a} \\
+\displaystyle Q_a = \frac{\partial U_3}{\partial P_a} \\
+\displaystyle K = H + \frac{\partial U_3}{\partial t}
+\end{cases}
+$$
+$$
+U_3 = \int \frac{P - m\omega q\sin\omega t}{\cos\omega t}dq + f(P) = \frac{Pq - \frac{1}{2}m\omega q^2\sin\omega t}{\cos\omega t} + f(P)
+$$
+$$
+\begin{cases}
+\displaystyle p = \frac{P - m\omega q\sin\omega t}{\cos\omega t} = \frac{\partial U_3}{\partial q} \\
+\displaystyle Q = \frac{m\omega q - P\sin\omega t}{m\omega\cos\omega t} = \frac{\partial U_3}{\partial P}
+\end{cases}
+$$
+$$
+\frac{\partial U_3}{\partial P} = \frac{q}{\cos\omega t} + f'(P), \quad f(P) = -\frac{P^2\sin\omega t}{2m\omega\cos\omega t}
+$$
+$$
+U_3 = -\frac{(P^2 + m^2\omega^2 q^2)\sin\omega t - 2m\omega q P}{2m\omega\cos\omega t}
+$$
+写成$(q, P)$的函数
+$$
+\frac{\partial U_3}{\partial t} = -\frac{m^2\omega^3 q^2 + P^2 - 2m\omega q P\sin\omega t}{2m\cos^2\omega t} = -\frac{1}{2m}\left[P^2 + \left(\frac{m\omega q - P\sin\omega t}{\cos\omega t}\right)^2\right]
+$$
+$$
+\frac{\partial U_3}{\partial t} = -\frac{1}{2m}\left[P^2 + m^2\omega^2 Q^2\right]
+$$
+$$
+\begin{cases}
+\displaystyle m\omega Q = m\omega q\cos\omega t - p\sin\omega t \\
+\displaystyle P = m\omega q\sin\omega t + p\cos\omega t
+\end{cases}
+$$
+$$
+H = \frac{p^2}{2m} + \frac{m\omega^2 q^2}{2} = \frac{1}{2m}\left[P^2 + m^2\omega^2 Q^2\right]
+$$
+$$K = H + \frac{\partial U_3}{\partial t} = 0 \implies Q(t) = Q_0, \ P(t) = P_0$$
+</details>
+<h3 id="哈密顿–雅可比方程">哈密顿–雅可比方程</h3>
 <p>以第三类母函数 $U_{3}(\boldsymbol{q},\boldsymbol{P},t)$ 为例:</p>
 
 $$
@@ -1570,7 +1615,7 @@ $$
 $$
 
 <p>给出, 进而反解得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mrow><mi>α</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo><mo separator="true">,</mo><msub><mi>p</mi><mrow><mi>α</mi></mrow></msub><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">q_{\alpha}(t),p_{\alpha}(t)</annotation></semantics></math></span></span>。</p>
-<h3 id="4-3-哈密顿主函数与作用量">4.3 哈密顿主函数与作用量</h3>
+<h3 id="哈密顿主函数与作用量">哈密顿主函数与作用量</h3>
 <p>令</p>
 
 $$
@@ -1603,7 +1648,7 @@ $$
 $$
 
 <p>这就是通常所说的<strong>哈密顿作用量</strong>, 但在这里 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 被视为 $S(\boldsymbol{q},\boldsymbol{D},t)$ 的一个具体解, 是一个函数, 而不是对路径的泛函。</p>
-<h3 id="4-4-时间不显含的情形与哈密顿特征函数">4.4 时间不显含的情形与哈密顿特征函数</h3>
+<h3 id="时间不显含的情形与哈密顿特征函数">时间不显含的情形与哈密顿特征函数</h3>
 <p>若哈密顿量不显含时间:</p>
 
 $$
@@ -1648,7 +1693,7 @@ $$
 $$
 
 <p>这就是<strong>定态哈密顿–雅可比方程</strong>。</p>
-<h3 id="4-5-分离变量与新广义坐标、动量">4.5 分离变量与新广义坐标、动量</h3>
+<h3 id="分离变量与新广义坐标、动量">分离变量与新广义坐标、动量</h3>
 <p>若特征函数可以写成</p>
 
 $$
@@ -1694,7 +1739,7 @@ $$
 $$
 
 <p>给出。</p>
-<h3 id="4-6-哈密顿–雅可比方程的一般解题步骤">4.6 哈密顿–雅可比方程的一般解题步骤</h3>
+<h3 id="哈密顿–雅可比方程的一般解题步骤">哈密顿–雅可比方程的一般解题步骤</h3>
 <p>在实际求解问题时, 常按如下步骤进行:</p>
 <ol>
 <li>
@@ -1789,8 +1834,9 @@ $$
 
 <p>即匀速直线运动, 与牛顿动力学结论一致。</p>
 </details>
-<h2 id="五-一维谐振子的-H–J-方程求解">五 一维谐振子的 H–J 方程求解</h2>
-<h3 id="5-1-写出-H–J-方程">5.1 写出 H–J 方程</h3>
+<h2 id="三个例题">三个例题</h2>
+<h3 id="例：一维谐振子的-H–J-方程求解">例：一维谐振子的 H–J 方程求解</h3>
+<h4 id="写出-H–J-方程">写出 H–J 方程</h4>
 <p>考虑质量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>, 角频率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span> 的一维谐振子, 哈密顿量为</p>
 
 $$
@@ -1824,20 +1870,13 @@ $$
 = \pm m \omega \sqrt{ \frac{2E}{m\omega^{2}} - q^{2} } .
 $$
 
-<p>原笔记中给出其中一个分支(取负号):</p>
-
-$$
-\displaystyle p = \frac{\mathrm{d}W}{\mathrm{d}q}
-= -m \omega \sqrt{ \frac{2E}{m\omega^{2}} - q^{2} } .
-$$
-
 <p>从而</p>
 
 $$
 \displaystyle W(q,E) = -m\omega \int \sqrt{ \frac{2E}{m\omega^{2}} - q^{2} } \,\mathrm{d}q .
 $$
 
-<h3 id="5-2-新广义动量与坐标">5.2 新广义动量与坐标</h3>
+<h4 id="新广义动量与坐标">新广义动量与坐标</h4>
 <p>能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 作为新广义动量, 可写成初态的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>q</mi><mrow><mn>0</mn></mrow></msub><mo separator="true">,</mo><msub><mi>p</mi><mrow><mn>0</mn></mrow></msub></mrow><annotation encoding="application/x-tex">q_{0},p_{0}</annotation></semantics></math></span></span>:</p>
 
 $$
@@ -1913,8 +1952,9 @@ $$
 
 <p>显然, 在求解运动方程时仅需要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>W</mi></mrow><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>q</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">p = \dfrac{\mathrm{d}W}{\mathrm{d}q}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>W</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>E</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{\partial W}{\partial E}</annotation></semantics></math></span></span>, 并不必显式写出完整的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span></span> 也可以完成计算。</p>
 </details>
-<h2 id="六-通过旋转把谐振子的哈密顿量变成零">六 通过旋转把谐振子的哈密顿量变成零</h2>
-<h3 id="6-1-相空间旋转的正则变换">6.1 相空间旋转的正则变换</h3>
+<h3 id="通过旋转把谐振子的哈密顿量变成零">通过旋转把谐振子的哈密顿量变成零</h3>
+<p>这里写的较啰嗦，可以看<a href="#hamiltonian-example0">通过旋转把哈密顿量化零</a></p>
+<h4 id="相空间旋转的正则变换">相空间旋转的正则变换</h4>
 <p>考虑一维谐振子的哈密顿量</p>
 
 $$
@@ -1996,7 +2036,7 @@ U_{3}(q,P,t)
 $$
 
 <p>这是写成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>P</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,P,t)</annotation></semantics></math></span></span> 的第三类母函数。</p>
-<h3 id="6-2-新哈密顿量-K-变为零">6.2 新哈密顿量 K 变为零</h3>
+<h4 id="新哈密顿量-K-变为零">新哈密顿量 K 变为零</h4>
 <p>计算</p>
 
 $$
@@ -2042,8 +2082,8 @@ $$
 <p>在原相空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p)</annotation></semantics></math></span></span> 中, 一维谐振子的轨迹是一条椭圆, 随时间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span> 旋转。若在三维 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>q</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(q,p,t)</annotation></semantics></math></span></span> 空间中描绘轨迹, 它是一条螺旋线或"扭曲的圆柱面"上的封闭曲线。</p>
 <p>通过上述相空间旋转的正则变换, 新相空间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 中的轨迹变为时间方向上的一条竖直直线, 即粒子在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>Q</mi><mo separator="true">,</mo><mi>P</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(Q,P)</annotation></semantics></math></span></span> 平面中静止不动, 仅沿时间方向"延伸"。这样的图像更清楚地展示了 H–J 方法中"把动力学问题化为几何上的静止"这一思想。</p>
 </details>
-<h2 id="七-中心势问题的-H–J-方程">七 中心势问题的 H–J 方程</h2>
-<h3 id="7-1-建立-H–J-方程">7.1 建立 H–J 方程</h3>
+<h3 id="例：中心势问题的-H–J-方程">例：中心势问题的 H–J 方程</h3>
+<h4 id="建立-H–J-方程">建立 H–J 方程</h4>
 <p>考虑平面上的中心势问题, 拉格朗日量为</p>
 
 $$
@@ -2116,7 +2156,7 @@ $$
 $$
 
 <p>是包含离心势项的<strong>有效势</strong>。</p>
-<h3 id="7-2-特征函数与新广义坐标">7.2 特征函数与新广义坐标</h3>
+<h4 id="特征函数与新广义坐标">特征函数与新广义坐标</h4>
 <p>特征函数可以写为</p>
 
 $$
@@ -2250,8 +2290,8 @@ $$
 <p>(2) 波线与波面正交, 其切向量平行于 $\nabla \varphi = \boldsymbol{k}$, 所以波线是平行于 $\boldsymbol{k}$ 的直线族。</p>
 <p>(3) 若介质均匀, 相速度方向与波线一致, 即沿 $\boldsymbol{k}$ 方向传播。</p>
 </details>
-<h2 id="粒子运动的波动图像-哈密顿-雅可比形式">粒子运动的波动图像: 哈密顿-雅可比形式</h2>
-<h3 id="单粒子哈密顿量与-HJ-方程">单粒子哈密顿量与 HJ 方程</h3>
+<h3 id="粒子运动的波动图像-哈密顿-雅可比形式">粒子运动的波动图像: 哈密顿-雅可比形式</h3>
+<h4 id="单粒子哈密顿量与-HJ-方程">单粒子哈密顿量与 HJ 方程</h4>
 <p>对单粒子</p>
 
 $$
@@ -2271,7 +2311,7 @@ S(\boldsymbol{r},D,t) = W(\boldsymbol{r},D) - Et,
 $$
 
 <p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span> 表示其它积分常数(用于给出全积分族), <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span></span> 是缩短作用量(时间无关部分)。</p>
-<h3 id="作用量的微分关系与几何含义">作用量的微分关系与几何含义</h3>
+<h4 id="作用量的微分关系与几何含义">作用量的微分关系与几何含义</h4>
 <p>基本微分关系:</p>
 
 $$
@@ -2326,8 +2366,8 @@ $$
 
 <p>动量方向恒定, 轨道为直线运动。</p>
 </details>
-<h2 id="作用波面与粒子轨道">作用波面与粒子轨道</h2>
-<p>守恒情形下</p>
+<h4 id="作用波面与粒子轨道">作用波面与粒子轨道</h4>
+<p>于是，有守恒情形下</p>
 
 $$
 S(\boldsymbol{r},t) = W(\boldsymbol{r}) - Et.
@@ -2365,14 +2405,12 @@ $$
 <p>变小是一致的。</p>
 </details>
 <h2 id="从波动光学到几何光学">从波动光学到几何光学</h2>
-<h3 id="介质中的电磁波方程">介质中的电磁波方程</h3>
-<p>在折射率 $n(\boldsymbol{r})$ 空间缓变(相对光波波长)的介质中, 电磁场任一分量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">\Phi</annotation></semantics></math></span></span> 满足</p>
+<p>在折射率 $n(\boldsymbol{r})$ 空间缓变(相对光波波长)的介质中, 电磁场任一分量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Φ</mi></mrow><annotation encoding="application/x-tex">\Phi</annotation></semantics></math></span></span> 满足介质电磁波方程</p>
 
 $$
 \nabla^2 \Phi - \frac{n^2(\boldsymbol{r})}{c^2}\frac{\partial^2 \Phi}{\partial t^2} = 0.
 $$
 
-<h3 id="单色波与亥姆霍兹方程">单色波与亥姆霍兹方程</h3>
 <p>取单色形式</p>
 
 $$
@@ -2385,13 +2423,13 @@ $$
 \nabla^2 \varphi + k^2(\boldsymbol{r})\varphi = 0,
 $$
 
-<p>其中</p>
+<p>其中 波矢</p>
 
 $$
 k(\boldsymbol{r}) \equiv \frac{n(\boldsymbol{r})\omega}{c} = n(\boldsymbol{r})k_0,
 $$
 
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">k_0</annotation></semantics></math></span></span> 为真空中同频波数。</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">k_0</annotation></semantics></math></span></span> 为真空中同频波数（波矢）。</p>
 <p>等相位面可写为</p>
 
 $$
@@ -2416,7 +2454,7 @@ $$
 
 <p>说明波长随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 改变, 为几何光学的折射(弯曲光线)提供了基础。</p>
 </details>
-<h2 id="短波长极限与程函-程函方程-测地线观点">短波长极限与程函(程函方程/测地线观点)</h2>
+<h3 id="短波长极限与程函-程函方程-测地线观点">短波长极限与程函(程函方程/测地线观点)</h3>
 <p>令</p>
 
 $$
@@ -2453,7 +2491,7 @@ $$
 \nabla^2 \theta + 2\,\nabla \theta \cdot \nabla \ln A = 0.
 $$
 
-<p>在短波长极限 $\omega\to\infty$ (等价于波长很短, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 的变化相对缓慢), 忽略振幅梯度相关项, 得到几何光学的程函(亥姆霍兹的 eikonal)方程:</p>
+<p>在短波长极限 $\omega\to\infty$ (等价于波长很短, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 的变化相对缓慢), 忽略振幅 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 的梯度相关项, 得到几何光学的程函(亥姆霍兹的 eikonal)方程:</p>
 
 $$
 (\nabla \theta)^2 = k^2(\boldsymbol{r}),
@@ -2471,7 +2509,7 @@ $$
 
 <p>结合 $|\nabla \theta|=k(\boldsymbol{r})$, 可将光线视为在空间折射率场中被"导引"的轨道。</p>
 </details>
-<h2 id="光的微粒说与波动说的统一-哈密顿对应">光的微粒说与波动说的统一: 哈密顿对应</h2>
+<h3 id="光的微粒说与波动说的统一-哈密顿对应">光的微粒说与波动说的统一: 哈密顿对应</h3>
 <p>短波长极限下, 波面正交曲线族(光线)可以看作"光微粒"的轨道。HJ 理论与几何光学之间存在一一对应:</p>
 <p>用</p>
 
@@ -2483,35 +2521,37 @@ $$
 
 <p>类比可得:</p>
 <ol>
-<li>程函方程与 HJ 的对应</li>
+<li>
+<p>程函方程与 HJ 的对应</p>
+
+   $$
+   |\nabla \theta| = k
+   \quad\leftrightarrow\quad
+   |\nabla W| = p.
+   $$
+   
+</li>
+<li>
+<p>物理量对应</p>
+
+   $$
+   \phi \leftrightarrow S,
+   \quad
+   \omega \leftrightarrow E,
+   \quad
+   \boldsymbol{k} \leftrightarrow \boldsymbol{p}.
+   $$
+   
+</li>
+<li>
+<p>折射率与粒子能量差的关系(作为类比量纲上只需关注函数形式):</p>
+
+   $$
+   n(\boldsymbol{r}) \propto \sqrt{2m\left[E - V(\boldsymbol{r})\right]}.
+   $$
+   
+</li>
 </ol>
-
-$$
-|\nabla \theta| = k
-\quad\leftrightarrow\quad
-|\nabla W| = p.
-$$
-
-<ol start="2">
-<li>物理量对应</li>
-</ol>
-
-$$
-\phi \leftrightarrow S,
-\quad
-\omega \leftrightarrow E,
-\quad
-\boldsymbol{k} \leftrightarrow \boldsymbol{p}.
-$$
-
-<ol start="3">
-<li>折射率与粒子能量差的关系(作为类比量纲上只需关注函数形式):</li>
-</ol>
-
-$$
-n(\boldsymbol{r}) \propto \sqrt{2m\left[E - V(\boldsymbol{r})\right]}.
-$$
-
 <p>这说明: 光的"微粒说"与"波动说"在短波长极限下统一。</p>
 <details>
 <summary>例题: 用类比解释折射(定性)</summary>
@@ -2726,7 +2766,7 @@ $$
 </ol>
 </details>
 <hr>
-<p>以上内容系统整理了欧拉定理与麦克斯韦关系、雅可比行列式与正则变换、辛结构不变性、通过正则变换将哈密顿量化为零的思想、以及哈密顿–雅可比方程及其在一维谐振子与中心势问题中的具体应用。配合文中的若干例题, 可以较完整地掌握 H–J 方法在经典力学中的使用。</p>
+<p>以上内容系统整理了欧拉定理与麦克斯韦关系、雅可比行列式与正则变换、辛结构不变性、通过正则变换将哈密顿量化为零的思想、以及哈密顿–雅可比方程及其在一维谐振子与中心势问题中的具体应用。</p>
 
       </div>
       <div class="post-tags-categories">
@@ -2770,22 +2810,19 @@ $$
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/DaWuShiYan/%E7%AC%AC%E4%BA%8C%E5%BE%AA%E7%8E%AF/" class="post-nav-link">
+    <a href="/physics/DaWuShiYan/%E7%AC%AC%E4%B8%80%E5%BE%AA%E7%8E%AF/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">第二循环</div>
+        <div class="title-text">第一循环</div>
       </div>
       
       <!-- <div class="content">
-        干涉，偏振，衍射
-干涉 用菲涅耳双棱镜测量钠光的波长✅
+        密里根油滴实验，布朗运动实验，宇宙线μ子天顶角分布测量实验
+密立根油滴实验✅
 实验步骤
-
-
-粗调光路，等高共轴
-光具座上摆放顺序：钠灯，狭缝，
+实验采用动态法. 先打开密立根油
       </div> -->
     </a>
   </div>
@@ -2796,18 +2833,19 @@ $$
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/DaWuShiYan/%E7%AC%AC%E4%B8%80%E5%BE%AA%E7%8E%AF/" class="post-nav-link">
+    <a href="/physics/DaWuShiYan/%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%BA%A6/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">第一循环</div>
+        <div class="title-text">不确定度</div>
       </div>
       <!-- <div class="content">
-        密里根油滴实验，布朗运动实验，宇宙线μ子天顶角分布测量实验
-密立根油滴实验✅
-实验步骤
-实验采用动态法. 先打开密立根油
+        一、 直接测量
+
+A类不确定度 (随机误差)
+
+公式：$\displaystyle u_A = S_x / \sqrt{
       </div> -->
     </a>
   </div>
@@ -2925,7 +2963,7 @@ $$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">正则变换与哈密顿-雅可比方程2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80-%E5%85%A8%E5%BE%AE%E5%88%86%E4%B8%8E%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86"><span class="toc-text">一 全微分与欧拉定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%E4%B8%8E%E5%85%A8%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="toc-text">1.1 欧拉定理与全微分形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E5%85%B3%E7%B3%BB%E7%9A%84%E7%B1%BB%E6%AF%94"><span class="toc-text">1.2 麦克斯韦关系的类比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C-%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F%E4%B8%8E%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="toc-text">二 雅可比行列式与坐标变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-%E6%9E%81%E5%9D%90%E6%A0%87%E4%B8%AD%E7%9A%84%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">2.1 极坐标中的雅可比行列式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">2.2 雅可比行列式的性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89-%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">三 正则变换的性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-%E7%94%B1%E6%AF%8D%E5%87%BD%E6%95%B0%E7%94%9F%E6%88%90%E7%9A%84%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">3.1 由母函数生成的正则变换与雅可比行列式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E6%B3%8A%E6%9D%BE%E6%8B%AC%E5%8F%B7%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E5%88%A4%E6%8D%AE"><span class="toc-text">3.2 泊松括号与正则变换判据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-%E8%BE%9B%E7%BB%93%E6%9E%84%E4%B8%8E%E5%88%98%E7%BB%B4%E5%B0%94%E5%AE%9A%E7%90%86"><span class="toc-text">3.3 辛结构与刘维尔定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-%E5%A4%96%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F%E8%AF%AD%E8%A8%80"><span class="toc-text">3.4 外微分形式语言</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B-%E6%8A%8A%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E5%8F%98%E6%88%90%E9%9B%B6%E4%B8%8E%E7%9B%B8%E7%A9%BA%E9%97%B4%E9%9D%99%E6%AD%A2%E5%9B%BE%E5%83%8F"><span class="toc-text">四 把哈密顿量变成零与相空间静止图像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-%E4%B8%80%E8%88%AC%E6%80%9D%E6%83%B3-%E9%80%9A%E8%BF%87%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%BD%BF%E6%96%B0%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E4%B8%BA%E9%9B%B6"><span class="toc-text">4.1 一般思想: 通过正则变换使新哈密顿量为零</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-%E5%93%88%E5%AF%86%E9%A1%BF%E2%80%93%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B%E7%9A%84%E5%87%BA%E7%8E%B0"><span class="toc-text">4.2 哈密顿–雅可比方程的出现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-%E5%93%88%E5%AF%86%E9%A1%BF%E4%B8%BB%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BD%9C%E7%94%A8%E9%87%8F"><span class="toc-text">4.3 哈密顿主函数与作用量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-%E6%97%B6%E9%97%B4%E4%B8%8D%E6%98%BE%E5%90%AB%E7%9A%84%E6%83%85%E5%BD%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0"><span class="toc-text">4.4 时间不显含的情形与哈密顿特征函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F%E4%B8%8E%E6%96%B0%E5%B9%BF%E4%B9%89%E5%9D%90%E6%A0%87%E3%80%81%E5%8A%A8%E9%87%8F"><span class="toc-text">4.5 分离变量与新广义坐标、动量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-%E5%93%88%E5%AF%86%E9%A1%BF%E2%80%93%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E8%88%AC%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4"><span class="toc-text">4.6 哈密顿–雅可比方程的一般解题步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94-%E4%B8%80%E7%BB%B4%E8%B0%90%E6%8C%AF%E5%AD%90%E7%9A%84-H%E2%80%93J-%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3"><span class="toc-text">五 一维谐振子的 H–J 方程求解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-%E5%86%99%E5%87%BA-H%E2%80%93J-%E6%96%B9%E7%A8%8B"><span class="toc-text">5.1 写出 H–J 方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-%E6%96%B0%E5%B9%BF%E4%B9%89%E5%8A%A8%E9%87%8F%E4%B8%8E%E5%9D%90%E6%A0%87"><span class="toc-text">5.2 新广义动量与坐标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD-%E9%80%9A%E8%BF%87%E6%97%8B%E8%BD%AC%E6%8A%8A%E8%B0%90%E6%8C%AF%E5%AD%90%E7%9A%84%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E5%8F%98%E6%88%90%E9%9B%B6"><span class="toc-text">六 通过旋转把谐振子的哈密顿量变成零</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-%E7%9B%B8%E7%A9%BA%E9%97%B4%E6%97%8B%E8%BD%AC%E7%9A%84%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2"><span class="toc-text">6.1 相空间旋转的正则变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-%E6%96%B0%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F-K-%E5%8F%98%E4%B8%BA%E9%9B%B6"><span class="toc-text">6.2 新哈密顿量 K 变为零</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83-%E4%B8%AD%E5%BF%83%E5%8A%BF%E9%97%AE%E9%A2%98%E7%9A%84-H%E2%80%93J-%E6%96%B9%E7%A8%8B"><span class="toc-text">七 中心势问题的 H–J 方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-%E5%BB%BA%E7%AB%8B-H%E2%80%93J-%E6%96%B9%E7%A8%8B"><span class="toc-text">7.1 建立 H–J 方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0%E4%B8%8E%E6%96%B0%E5%B9%BF%E4%B9%89%E5%9D%90%E6%A0%87"><span class="toc-text">7.2 特征函数与新广义坐标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E7%B2%92%E5%AD%90%E5%88%B0%E6%B3%A2%E5%8A%A8%E7%9A%84%E5%87%A0%E4%BD%95%E5%9B%BE%E5%83%8F"><span class="toc-text">从粒子到波动的几何图像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E9%9D%A2-%E6%B3%A2%E7%BA%BF%E4%B8%8E%E6%B3%A2%E7%9F%A2"><span class="toc-text">波面, 波线与波矢</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%92%E5%AD%90%E8%BF%90%E5%8A%A8%E7%9A%84%E6%B3%A2%E5%8A%A8%E5%9B%BE%E5%83%8F-%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94%E5%BD%A2%E5%BC%8F"><span class="toc-text">粒子运动的波动图像: 哈密顿-雅可比形式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%B2%92%E5%AD%90%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E4%B8%8E-HJ-%E6%96%B9%E7%A8%8B"><span class="toc-text">单粒子哈密顿量与 HJ 方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E9%87%8F%E7%9A%84%E5%BE%AE%E5%88%86%E5%85%B3%E7%B3%BB%E4%B8%8E%E5%87%A0%E4%BD%95%E5%90%AB%E4%B9%89"><span class="toc-text">作用量的微分关系与几何含义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E6%B3%A2%E9%9D%A2%E4%B8%8E%E7%B2%92%E5%AD%90%E8%BD%A8%E9%81%93"><span class="toc-text">作用波面与粒子轨道</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E6%B3%A2%E5%8A%A8%E5%85%89%E5%AD%A6%E5%88%B0%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6"><span class="toc-text">从波动光学到几何光学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E8%B4%A8%E4%B8%AD%E7%9A%84%E7%94%B5%E7%A3%81%E6%B3%A2%E6%96%B9%E7%A8%8B"><span class="toc-text">介质中的电磁波方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E8%89%B2%E6%B3%A2%E4%B8%8E%E4%BA%A5%E5%A7%86%E9%9C%8D%E5%85%B9%E6%96%B9%E7%A8%8B"><span class="toc-text">单色波与亥姆霍兹方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9F%AD%E6%B3%A2%E9%95%BF%E6%9E%81%E9%99%90%E4%B8%8E%E7%A8%8B%E5%87%BD-%E7%A8%8B%E5%87%BD%E6%96%B9%E7%A8%8B-%E6%B5%8B%E5%9C%B0%E7%BA%BF%E8%A7%82%E7%82%B9"><span class="toc-text">短波长极限与程函(程函方程&#x2F;测地线观点)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%89%E7%9A%84%E5%BE%AE%E7%B2%92%E8%AF%B4%E4%B8%8E%E6%B3%A2%E5%8A%A8%E8%AF%B4%E7%9A%84%E7%BB%9F%E4%B8%80-%E5%93%88%E5%AF%86%E9%A1%BF%E5%AF%B9%E5%BA%94"><span class="toc-text">光的微粒说与波动说的统一: 哈密顿对应</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E5%87%A0%E4%BD%95%E5%8A%9B%E5%AD%A6%E5%88%B0%E6%B3%A2%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">从几何力学到波动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%B7%E5%B8%83%E7%BD%97%E6%84%8F%E7%89%A9%E8%B4%A8%E6%B3%A2%E5%81%87%E8%AF%B4"><span class="toc-text">德布罗意物质波假说</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E4%BA%A5%E5%A7%86%E9%9C%8D%E5%85%B9%E5%BD%A2%E5%BC%8F%E5%88%B0%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">从亥姆霍兹形式到薛定谔方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E8%B4%A8%E6%B3%A2%E4%B8%8E%E5%85%89%E6%B3%A2%E7%9A%84%E5%AF%B9%E5%BA%94%E5%8F%8A%E7%BB%8F%E5%85%B8%E6%9E%81%E9%99%90"><span class="toc-text">物质波与光波的对应及经典极限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E6%B3%A2%E9%9D%A2%E4%B8%8E%E7%AD%89%E7%9B%B8%E4%BD%8D%E9%9D%A2%E7%9A%84%E7%BB%9F%E4%B8%80"><span class="toc-text">作用波面与等相位面的统一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E7%9B%B8%E4%BD%8D%E4%B8%8E%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6"><span class="toc-text">波函数相位与概率密度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E6%9E%81%E9%99%90-%E4%BB%8E%E8%96%9B%E5%AE%9A%E8%B0%94%E5%88%B0%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94"><span class="toc-text">经典极限: 从薛定谔到哈密顿-雅可比</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">正则变换与哈密顿-雅可比方程2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%A8%E5%BE%AE%E5%88%86%E4%B8%8E%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86"><span class="toc-text">全微分与欧拉定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%E4%B8%8E%E5%85%A8%E5%BE%AE%E5%88%86%E5%BD%A2%E5%BC%8F"><span class="toc-text">欧拉定理与全微分形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BA%A6%E5%85%8B%E6%96%AF%E9%9F%A6%E5%85%B3%E7%B3%BB%E7%9A%84%E7%B1%BB%E6%AF%94"><span class="toc-text">麦克斯韦关系的类比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F%E4%B8%8E%E5%9D%90%E6%A0%87%E5%8F%98%E6%8D%A2"><span class="toc-text">雅可比行列式与坐标变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%81%E5%9D%90%E6%A0%87%E4%B8%AD%E7%9A%84%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">极坐标中的雅可比行列式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">雅可比行列式的性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-text">正则变换的性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B1%E6%AF%8D%E5%87%BD%E6%95%B0%E7%94%9F%E6%88%90%E7%9A%84%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%B8%8E%E9%9B%85%E5%8F%AF%E6%AF%94%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="toc-text">由母函数生成的正则变换与雅可比行列式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%8A%E6%9D%BE%E6%8B%AC%E5%8F%B7%E4%B8%8E%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E5%88%A4%E6%8D%AE"><span class="toc-text">泊松括号与正则变换判据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%9B%E7%BB%93%E6%9E%84%E4%B8%8E%E5%88%98%E7%BB%B4%E5%B0%94%E5%AE%9A%E7%90%86"><span class="toc-text">辛结构与刘维尔定理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E5%BE%AE%E5%88%86%E6%80%A7%E8%B4%A8"><span class="toc-text">外微分性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%8A%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E5%8F%98%E6%88%90%E9%9B%B6%E4%B8%8E%E7%9B%B8%E7%A9%BA%E9%97%B4%E9%9D%99%E6%AD%A2%E5%9B%BE%E5%83%8F"><span class="toc-text">把哈密顿量变成零与相空间静止图像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E6%80%9D%E6%83%B3-%E9%80%9A%E8%BF%87%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2%E4%BD%BF%E6%96%B0%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E4%B8%BA%E9%9B%B6"><span class="toc-text">一般思想: 通过正则变换使新哈密顿量为零</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E2%80%93%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B"><span class="toc-text">哈密顿–雅可比方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E4%B8%BB%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BD%9C%E7%94%A8%E9%87%8F"><span class="toc-text">哈密顿主函数与作用量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E4%B8%8D%E6%98%BE%E5%90%AB%E7%9A%84%E6%83%85%E5%BD%A2%E4%B8%8E%E5%93%88%E5%AF%86%E9%A1%BF%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0"><span class="toc-text">时间不显含的情形与哈密顿特征函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%A6%BB%E5%8F%98%E9%87%8F%E4%B8%8E%E6%96%B0%E5%B9%BF%E4%B9%89%E5%9D%90%E6%A0%87%E3%80%81%E5%8A%A8%E9%87%8F"><span class="toc-text">分离变量与新广义坐标、动量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%88%E5%AF%86%E9%A1%BF%E2%80%93%E9%9B%85%E5%8F%AF%E6%AF%94%E6%96%B9%E7%A8%8B%E7%9A%84%E4%B8%80%E8%88%AC%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4"><span class="toc-text">哈密顿–雅可比方程的一般解题步骤</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E4%BE%8B%E9%A2%98"><span class="toc-text">三个例题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9A%E4%B8%80%E7%BB%B4%E8%B0%90%E6%8C%AF%E5%AD%90%E7%9A%84-H%E2%80%93J-%E6%96%B9%E7%A8%8B%E6%B1%82%E8%A7%A3"><span class="toc-text">例：一维谐振子的 H–J 方程求解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%99%E5%87%BA-H%E2%80%93J-%E6%96%B9%E7%A8%8B"><span class="toc-text">写出 H–J 方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%B9%BF%E4%B9%89%E5%8A%A8%E9%87%8F%E4%B8%8E%E5%9D%90%E6%A0%87"><span class="toc-text">新广义动量与坐标</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E6%97%8B%E8%BD%AC%E6%8A%8A%E8%B0%90%E6%8C%AF%E5%AD%90%E7%9A%84%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E5%8F%98%E6%88%90%E9%9B%B6"><span class="toc-text">通过旋转把谐振子的哈密顿量变成零</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%B8%E7%A9%BA%E9%97%B4%E6%97%8B%E8%BD%AC%E7%9A%84%E6%AD%A3%E5%88%99%E5%8F%98%E6%8D%A2"><span class="toc-text">相空间旋转的正则变换</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B0%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F-K-%E5%8F%98%E4%B8%BA%E9%9B%B6"><span class="toc-text">新哈密顿量 K 变为零</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%EF%BC%9A%E4%B8%AD%E5%BF%83%E5%8A%BF%E9%97%AE%E9%A2%98%E7%9A%84-H%E2%80%93J-%E6%96%B9%E7%A8%8B"><span class="toc-text">例：中心势问题的 H–J 方程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B-H%E2%80%93J-%E6%96%B9%E7%A8%8B"><span class="toc-text">建立 H–J 方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E5%87%BD%E6%95%B0%E4%B8%8E%E6%96%B0%E5%B9%BF%E4%B9%89%E5%9D%90%E6%A0%87"><span class="toc-text">特征函数与新广义坐标</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E7%B2%92%E5%AD%90%E5%88%B0%E6%B3%A2%E5%8A%A8%E7%9A%84%E5%87%A0%E4%BD%95%E5%9B%BE%E5%83%8F"><span class="toc-text">从粒子到波动的几何图像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E9%9D%A2-%E6%B3%A2%E7%BA%BF%E4%B8%8E%E6%B3%A2%E7%9F%A2"><span class="toc-text">波面, 波线与波矢</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%92%E5%AD%90%E8%BF%90%E5%8A%A8%E7%9A%84%E6%B3%A2%E5%8A%A8%E5%9B%BE%E5%83%8F-%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94%E5%BD%A2%E5%BC%8F"><span class="toc-text">粒子运动的波动图像: 哈密顿-雅可比形式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E7%B2%92%E5%AD%90%E5%93%88%E5%AF%86%E9%A1%BF%E9%87%8F%E4%B8%8E-HJ-%E6%96%B9%E7%A8%8B"><span class="toc-text">单粒子哈密顿量与 HJ 方程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E9%87%8F%E7%9A%84%E5%BE%AE%E5%88%86%E5%85%B3%E7%B3%BB%E4%B8%8E%E5%87%A0%E4%BD%95%E5%90%AB%E4%B9%89"><span class="toc-text">作用量的微分关系与几何含义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E6%B3%A2%E9%9D%A2%E4%B8%8E%E7%B2%92%E5%AD%90%E8%BD%A8%E9%81%93"><span class="toc-text">作用波面与粒子轨道</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E6%B3%A2%E5%8A%A8%E5%85%89%E5%AD%A6%E5%88%B0%E5%87%A0%E4%BD%95%E5%85%89%E5%AD%A6"><span class="toc-text">从波动光学到几何光学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%AD%E6%B3%A2%E9%95%BF%E6%9E%81%E9%99%90%E4%B8%8E%E7%A8%8B%E5%87%BD-%E7%A8%8B%E5%87%BD%E6%96%B9%E7%A8%8B-%E6%B5%8B%E5%9C%B0%E7%BA%BF%E8%A7%82%E7%82%B9"><span class="toc-text">短波长极限与程函(程函方程&#x2F;测地线观点)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E7%9A%84%E5%BE%AE%E7%B2%92%E8%AF%B4%E4%B8%8E%E6%B3%A2%E5%8A%A8%E8%AF%B4%E7%9A%84%E7%BB%9F%E4%B8%80-%E5%93%88%E5%AF%86%E9%A1%BF%E5%AF%B9%E5%BA%94"><span class="toc-text">光的微粒说与波动说的统一: 哈密顿对应</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E5%87%A0%E4%BD%95%E5%8A%9B%E5%AD%A6%E5%88%B0%E6%B3%A2%E5%8A%A8%E5%8A%9B%E5%AD%A6"><span class="toc-text">从几何力学到波动力学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%B7%E5%B8%83%E7%BD%97%E6%84%8F%E7%89%A9%E8%B4%A8%E6%B3%A2%E5%81%87%E8%AF%B4"><span class="toc-text">德布罗意物质波假说</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E4%BA%A5%E5%A7%86%E9%9C%8D%E5%85%B9%E5%BD%A2%E5%BC%8F%E5%88%B0%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">从亥姆霍兹形式到薛定谔方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E8%B4%A8%E6%B3%A2%E4%B8%8E%E5%85%89%E6%B3%A2%E7%9A%84%E5%AF%B9%E5%BA%94%E5%8F%8A%E7%BB%8F%E5%85%B8%E6%9E%81%E9%99%90"><span class="toc-text">物质波与光波的对应及经典极限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E7%94%A8%E6%B3%A2%E9%9D%A2%E4%B8%8E%E7%AD%89%E7%9B%B8%E4%BD%8D%E9%9D%A2%E7%9A%84%E7%BB%9F%E4%B8%80"><span class="toc-text">作用波面与等相位面的统一</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E7%9B%B8%E4%BD%8D%E4%B8%8E%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6"><span class="toc-text">波函数相位与概率密度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E6%9E%81%E9%99%90-%E4%BB%8E%E8%96%9B%E5%AE%9A%E8%B0%94%E5%88%B0%E5%93%88%E5%AF%86%E9%A1%BF-%E9%9B%85%E5%8F%AF%E6%AF%94"><span class="toc-text">经典极限: 从薛定谔到哈密顿-雅可比</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
