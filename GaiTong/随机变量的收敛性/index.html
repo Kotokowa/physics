@@ -493,6 +493,15 @@ $$
 \displaystyle P\left(a &lt; \frac{S_n - n\mu}{\sqrt{n}\sigma} &lt; b\right) \to \frac{1}{\sqrt{2\pi}} \int_a^b e^{-\frac{x^2}{2}} dx = \Phi(b) - \Phi(a). 
 $$
 
+<blockquote>
+<p>在概率论和数理统计中，\varPhi(x) 专门用来指代<strong>标准正态分布的累积分布函数（CDF）</strong>。<br>
+它的数学定义是标准正态变量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span> 小于等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 的概率：</p>
+ $$\displaystyle \varPhi(x) = P(Z \le x) = \int_{-\infty}^x \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} dt $$
+<p>也就是说，利用中心极限定理把统计量标准化后，算出来的那个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 值，代入 \varPhi(z) 得到的就是对应的概率（即曲线下的面积）。</p>
+<p>另外，在纯数学或统计课程里大家习惯用 \varPhi，但在很多物理场景（比如热力学统计物理、误差分析）中，更常看到的可能是<strong>误差函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">f</mi></mtext><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\text{erf}(x)</annotation></semantics></math></span></span></strong>。<br>
+这两者本质上是描述同一件事，只是定义的系数稍有不同。它们之间的换算关系是：</p>
+$$\displaystyle \varPhi(x) = \frac{1}{2} \left[ 1 + \text{erf}\left(\frac{x}{\sqrt{2}}\right) \right] $$
+</blockquote>
 <h4 id="de-Moivre定理：中心极限定理">de Moivre定理：中心极限定理</h4>
 <p>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>f</mi><mi>A</mi><mi>n</mi></msubsup></mrow><annotation encoding="application/x-tex">f_A^n</annotation></semantics></math></span></span>和前面定义一样，则当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">n \to \infty</annotation></semantics></math></span></span> 时，$\displaystyle \frac{f_A^n - np}{\sqrt{np(1-p)}} \xrightarrow{d} N(0,1)$.</p>
 <p>则任取实数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> ，有</p>
