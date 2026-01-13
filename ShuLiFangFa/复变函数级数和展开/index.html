@@ -1,0 +1,2556 @@
+<!DOCTYPE html><html><!-- meta/link... --><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>复变函数级数和展开 | tianyi</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/physics/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/physics/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/physics/css/style.css">
+
+  
+  
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/physics/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/physics/atom.xml" title="tianyi" type="application/atom+xml">
+</head>
+
+  
+  <!-- 预加载动画 -->
+  
+  
+  <body><div class="preloader_6" id="loader">
+  <div class="loader"></div>
+</div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
+
+  
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer="">
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/physics/js/swiper/swiper.min.js"></script>
+<script src="/physics/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/physics/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/physics/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/physics/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">tianyi</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/physics/" class="logo">tianyi</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/physics/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/physics/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        复变函数级数和展开
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2026-01-12 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>复变函数级数和展开</h1>
+<p>级数展开，解析延拓，孤立奇点分类</p>
+<h2 id="复变函数级数和解析函数级数">复变函数级数和解析函数级数</h2>
+<h3 id="定义">定义</h3>
+<p>这里的级数收敛和数学分析中实变函数收敛完全相同，只做整理。</p>
+<p>复变函数级数表示为</p>
+
+$$
+\sum_{k=1}^\infty u_k(z) = u_1(z) + u_2(z) + \cdots + u_k(z) + \cdots
+$$
+
+<p>部分和</p>
+
+$$
+S_n(z) = \sum_{k=1}^n u_k(z)
+$$
+
+<h3 id="级数收敛">级数收敛</h3>
+<p><strong>级数收敛</strong>定义为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></msub><msub><mi>S</mi><mi>n</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\lim_{n\to \infty}S_n(z)</annotation></semantics></math></span></span> 存在，要求其实部和虚部都收敛。</p>
+<p>有：级数收敛的<strong>必要条件</strong>是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></msub><msub><mi>u</mi><mi>n</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lim_{n\to\infty} u_n (z) = 0</annotation></semantics></math></span></span>，<strong>充要条件</strong>是 $\forall \epsilon, p &gt; 0, \exists N_\epsilon, \forall n &gt; N_\epsilon$，振幅 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>S</mi><mrow><mi>n</mi><mo>+</mo><mi>p</mi></mrow></msub><mo>(</mo><mi>z</mi><mo>)</mo><mo>−</mo><msub><mi>S</mi><mi>n</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mi>ϵ</mi><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">| S_{n+p}(z) - S_n(z) | &lt; \epsilon.</annotation></semantics></math></span></span> 这称为柯西收敛判据。</p>
+<p><strong>绝对收敛</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></msubsup><mi mathvariant="normal">∣</mi><msub><mi>u</mi><mi>k</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">\sum_{k=1}^\infty |u_k(z)|</annotation></semantics></math></span></span> 收敛；</p>
+<p><strong>一致收敛</strong>：即级数收敛时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>ϵ</mi></msub></mrow><annotation encoding="application/x-tex">N_\epsilon</annotation></semantics></math></span></span> 无关</p>
+<p><strong>复变函数级数的一些基本性质：</strong></p>
+<ol>
+<li>
+<p>如果级数绝对收敛，则级数收敛。</p>
+</li>
+<li>
+<p>两个绝对收敛级数的乘积也绝对收敛。</p>
+</li>
+<li>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>u</mi><mi>k</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">u_k(z)</annotation></semantics></math></span></span> 在区域D内连续，级数一致收敛，则级数连续。</p>
+</li>
+<li>
+<p>把上述区域D换成曲线 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span>，仍然成立，且有</p>
+ 
+    $$
+    \displaystyle \int_l S(z)\,dz = \int_l \sum_{k=1}^\infty u_k(z)\,dz = \sum_{k=1}^\infty \int_l u_k(z)\,dz
+    $$
+    
+<p>即：求和和积分可以交换次序</p>
+</li>
+<li>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>u</mi><mi>k</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo><mi mathvariant="normal">∣</mi><mo>≤</mo><msub><mi>a</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">|u_k(z)| \leq a_k</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">a_k</annotation></semantics></math></span></span> 是常数且级数收敛，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></msubsup><msub><mi>u</mi><mi>k</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\sum_{k=1}^\infty u_k(z)</annotation></semantics></math></span></span> 绝对收敛且一致收敛。</p>
+</li>
+<li>
+<p>对于解析函数级数，还有 Weierstrass 定理</p>
+<p>如果 $ u_k(z) \ (k = 1,2,3,\cdots) $ 在闭区域 $ \overline{D} $ 上是单值解析的，且 $ \sum\limits_{k=1}^{\infty} u_k(z) $ 在 $ D $ 的境界线 $ l $ 上是一致收敛的，则<br>
+(i) $ \sum\limits_{k=1}^{\infty} u_k(z) $ 在 $ \overline{D} $ 上一致收敛；<br>
+(ii) 级数的和 $ S(z) $ 在 $ D $ 内是解析的；<br>
+(iii) 在 $ D $ 内有</p>
+ 
+    $$S^{(n)}(z) = \frac{\mathrm{d}^n}{\mathrm{d}z^n} \sum\limits_{k=1}^{\infty} u_k(z) = \sum\limits_{k=1}^{\infty} u_k^{(n)}(z) \quad (n = 1,2,3\cdots),$$
+      
+<p>而且级数(3.8)在 $ D $ 内的任何闭区域上都一致收敛。</p>
+</li>
+</ol>
+<blockquote>
+<p>这个不是 Bolzano-Weierstrass 定理（有界数列必有收敛子列）</p>
+</blockquote>
+<p><strong>几个常用的级数绝对收敛判别法</strong></p>
+<ol>
+<li>
+<p>达朗贝尔判别法：<br>
+若（至少当 $ n $ 充分大时）$ \left| \frac{u_{n+1}}{u_n} \right| \leq q &lt; 1 $（其中 $ q $ 为常数），则级数 $ \sum_{k=1}^{\infty} u_k $ 绝对收敛；<br>
+若（至少当 $ n $ 充分大时）$ \left| \frac{u_{n+1}}{u_n} \right| \geq 1 $，则 $ \sum_{k=1}^{\infty} |u_k| $ 发散。</p>
+</li>
+<li>
+<p>柯西判别法：<br>
+若（至少当 $ n $ 充分大时）$ \sqrt[n]{|u_n|} \leq q &lt; 1 $（其中 $ q $ 为常数），则级数 $ \sum_{k=1}^{\infty} u_k $ 绝对收敛；<br>
+若（至少当 $ n $ 充分大时）$ \sqrt[n]{|u_n|} \geq 1 $，则 $ \sum_{k=1}^{\infty} |u_k| $ 发散。</p>
+</li>
+<li>
+<p>高斯（Gauss）判别法：<br>
+若（至少当 $ n $ 充分大时）$ \left| \frac{u_n}{u_{n+1}} \right| = 1 + \frac{\mu}{n} + o\left( \frac{1}{n} \right) $（其中 $ \mu $ 为常数，公式编号为 (3.9)），则：</p>
+</li>
+</ol>
+<ul>
+<li>当 $ \mu &gt; 1 $ 时，级数 $ \sum_{k=1}^{\infty} u_k $ 绝对收敛；</li>
+<li>当 $ \mu \leq 1 $ 时，$ \sum_{k=1}^{\infty} |u_k| $ 发散。</li>
+</ul>
+<p>柯西判别法比达朗贝尔判别法“更强”，但计算上更复杂；高斯判别法比达朗贝尔判别法更细致、更强，是很有用的判别法。</p>
+<h3 id="幂级数收敛">幂级数收敛</h3>
+<p>幂级数：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>a</mi><mi>k</mi></msub><mo>(</mo><mi>z</mi><mo>−</mo><mi>b</mi><msup><mo>)</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{k=0}^{\infty} a_k (z-b)^k</annotation></semantics></math></span></span>。</p>
+<hr>
+<p><strong>阿贝尔(Abel)定理</strong>：若幂级数 
+$$\sum_{k=0}^{\infty} a_k (z-b)^k$$
+ 在某点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><msub><mi>z</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">z=z_0</annotation></semantics></math></span></span> 收敛，则在圆域 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mi mathvariant="normal">∣</mi><msub><mi>z</mi><mn>0</mn></msub><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|z-b|&lt;|z_0-b|</annotation></semantics></math></span></span> 内<strong>绝对收敛</strong>，并且在该圆域内任意闭圆域上<strong>一致收敛</strong>。</p>
+<ul>
+<li>证明核心思路（简）：由收敛必要条件得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub><mo>(</mo><msub><mi>z</mi><mn>0</mn></msub><mo>−</mo><mi>b</mi><msup><mo>)</mo><mi>k</mi></msup><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_k(z_0-b)^k\to 0</annotation></semantics></math></span></span>，从而存在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span></span> 使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>a</mi><mi>k</mi></msub><mo>(</mo><msub><mi>z</mi><mn>0</mn></msub><mo>−</mo><mi>b</mi><msup><mo>)</mo><mi>k</mi></msup><mi mathvariant="normal">∣</mi><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">|a_k(z_0-b)^k|\le M</annotation></semantics></math></span></span>。对任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>ρ</mi><mo>&lt;</mo><mi mathvariant="normal">∣</mi><msub><mi>z</mi><mn>0</mn></msub><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">0&lt;\rho&lt;|z_0-b|</annotation></semantics></math></span></span>，当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>≤</mo><mi>ρ</mi></mrow><annotation encoding="application/x-tex">|z-b|\le \rho</annotation></semantics></math></span></span>：
+$$
+    |a_k(z-b)^k|=|a_k(z_0-b)^k|\left|\frac{z-b}{z_0-b}\right|^k \le M\left(\frac{\rho}{|z_0-b|}\right)^k,
+    $$
+
+右侧由几何级数控制，于是绝对收敛且一致收敛。</li>
+</ul>
+<p><strong>推论一（外部必发散）</strong>：若该幂级数在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><msub><mi>z</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">z=z_1</annotation></semantics></math></span></span> 发散，则在圆外 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>&gt;</mo><mi mathvariant="normal">∣</mi><msub><mi>z</mi><mn>1</mn></msub><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|z-b|&gt;|z_1-b|</annotation></semantics></math></span></span> <strong>处处发散</strong>。</p>
+<p><strong>推论二（收敛半径存在）</strong>：存在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">R\ge 0</annotation></semantics></math></span></span>，使得</p>
+<ul>
+<li>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|z-b|&lt;R</annotation></semantics></math></span></span>：级数处处收敛；</li>
+<li>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>&gt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|z-b|&gt;R</annotation></semantics></math></span></span>：级数处处发散。</li>
+<li>特别说明：对边界 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|z-b|=R</annotation></semantics></math></span></span> 上是否收敛，上述结论<strong>不给信息</strong>，需要逐点判断。</li>
+</ul>
+<hr>
+<p>圆 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|z-b|=R</annotation></semantics></math></span></span> 称为<strong>收敛圆</strong>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span></span> 称为<strong>收敛半径</strong>。</p>
+<p><strong>逐项积分/求导定理</strong>：在收敛圆内，幂级数可以<strong>逐项积分</strong>或<strong>逐项求导</strong>任意次，并且<strong>收敛半径不变</strong>。</p>
+<p>对应形式：</p>
+
+$$
+\int_b^z \sum_{k=0}^{\infty} a_k(\zeta-b)^k,d\zeta
+=\sum_{k=0}^{\infty}\frac{a_k}{k+1}(z-b)^{k+1},
+$$
+
+
+$$
+\frac{d}{dz}\sum_{k=0}^{\infty} a_k(z-b)^k
+=\sum_{k=1}^{\infty}k a_k(z-b)^{k-1}.
+$$
+ 
+<p>边界收敛性可能改变：一般逐项积分“更容易收敛”，逐项求导“更容易发散”。例如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msup><mi>z</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{k=0}^{\infty} z^k</annotation></semantics></math></span></span> 的收敛半径是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span></span>，在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mi mathvariant="normal">∣</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|z|=1</annotation></semantics></math></span></span> 上处处发散；但逐项积分后的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mfrac><mrow><mn>1</mn></mrow><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></mfrac><msup><mi>z</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\sum_{k=0}^{\infty}\frac{1}{k+1}z^{k+1}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z=-1</annotation></semantics></math></span></span> 处可收敛。</p>
+<hr>
+<p><strong>收敛半径的两个常用公式（取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">b=0</annotation></semantics></math></span></span>，且相应极限存在时）</strong>：</p>
+<ol>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></msub><mrow><mo fence="true">∣</mo><mfrac><mrow><msub><mi>a</mi><mi>n</mi></msub></mrow><mrow><msub><mi>a</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></mfrac><mo fence="true">∣</mo></mrow></mrow><annotation encoding="application/x-tex">\lim_{n\to\infty}\left|\frac{a_n}{a_{n+1}}\right|</annotation></semantics></math></span></span> 存在，则
+$$
+     R=\lim_{n\to\infty}\left|\frac{a_n}{a_{n+1}}\right|.
+     $$
+
+</li>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>n</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></msub><mroot><mrow><mi mathvariant="normal">∣</mi><msub><mi>a</mi><mi>n</mi></msub><mi mathvariant="normal">∣</mi></mrow><mrow><mi>n</mi></mrow></mroot></mrow><annotation encoding="application/x-tex">\lim_{n\to\infty}\sqrt[n]{|a_n|}</annotation></semantics></math></span></span> 存在，则
+$$
+     R=\lim_{n\to\infty}\frac{1}{\sqrt[n]{|a_n|}}.
+     $$
+
+</li>
+</ol>
+<h2 id="解析函数的展开">解析函数的展开</h2>
+<h3 id="泰勒级数展开">泰勒级数展开</h3>
+<h4 id="泰勒定理">泰勒定理</h4>
+<p>设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math></span></span>在圆域<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|z-b|&lt;R</annotation></semantics></math></span></span>内解析，则在此圆域内可展开为绝对收敛且一致收敛的幂级数，并且展开唯一：</p>
+
+$$
+f(z)=\sum_{k=0}^{\infty}\frac{f^{(k)}(b)}{k!}(z-b)^k. \qquad (1)
+$$
+
+<p><strong>证明（柯西公式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 幂级数）</strong>：</p>
+<p><strong>一致收敛的含义</strong>：这里“在圆域内一致收敛”指在任意闭圆域<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>≤</mo><msub><mi>R</mi><mn>1</mn></msub><mo>&lt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">|z-b|\le R_1&lt;R</annotation></semantics></math></span></span>上一致收敛。</p>
+<p>取<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mn>1</mn></msub><mo>&lt;</mo><msubsup><mi>R</mi><mn>1</mn><mrow><mi mathvariant="normal">′</mi></mrow></msubsup><mo>&lt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">R_1&lt;R_1'&lt;R</annotation></semantics></math></span></span>，对圆<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mrow><msubsup><mi>R</mi><mn>1</mn><mrow><mi mathvariant="normal">′</mi></mrow></msubsup></mrow></msub><mo>:</mo><mtext>&nbsp;</mtext><mi mathvariant="normal">∣</mi><mi>ζ</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>=</mo><msubsup><mi>R</mi><mn>1</mn><mrow><mi mathvariant="normal">′</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">C_{R_1'}:\ |\zeta-b|=R_1'</annotation></semantics></math></span></span>用柯西公式：</p>
+
+$$
+f(z)=\frac{1}{2\pi i}\oint_{C_{R_1'}}\frac{f(\zeta)}{\zeta-z},d\zeta. \qquad (2)
+$$
+
+<p>注意到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">∣</mo><mfrac><mrow><mi>z</mi><mo>−</mo><mi>b</mi></mrow><mrow><mi>ζ</mi><mo>−</mo><mi>b</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>≤</mo><mfrac><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><mrow><msubsup><mi>R</mi><mn>1</mn><mrow><mi mathvariant="normal">′</mi></mrow></msubsup></mrow></mfrac><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\left|\dfrac{z-b}{\zeta-b}\right|\le\dfrac{R_1}{R_1'}&lt;1</annotation></semantics></math></span></span>，于是核函数可作几何级数展开：</p>
+
+$$
+\frac{1}{\zeta-z}
+=\frac{1}{\zeta-b}\cdot\frac{1}{1-\frac{z-b}{\zeta-b}}
+=\sum_{k=0}^{\infty}\frac{(z-b)^k}{(\zeta-b)^{k+1}}. \qquad (3)
+$$
+
+<p>将(3)代入(2)，并交换求和与积分：</p>
+
+$$
+f(z)=\sum_{k=0}^{\infty}\left[\frac{1}{2\pi i}\oint_{C_{R_1'}}\frac{f(\zeta)}{(\zeta-b)^{k+1}},d\zeta\right](z-b)^k.
+$$
+
+<p>再用解析函数高阶导数的柯西公式：</p>
+
+$$
+f^{(k)}(b)=\frac{k!}{2\pi i}\oint_{C_{R_1'}}\frac{f(\zeta)}{(\zeta-b)^{k+1}},d\zeta. \qquad (4)
+$$
+
+<p>代回即可得到(1)。</p>
+<h4 id="收敛性估计（柯西不等式）">收敛性估计（柯西不等式）</h4>
+<p>因<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>ζ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(\zeta)</annotation></semantics></math></span></span>连续，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>f</mi><mo>(</mo><mi>ζ</mi><mo>)</mo><mi mathvariant="normal">∣</mi><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">|f(\zeta)|\le M</annotation></semantics></math></span></span>，由柯西不等式可得：<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi mathvariant="normal">∣</mi><msup><mi>f</mi><mrow><mo>(</mo><mi>k</mi><mo>)</mo></mrow></msup><mrow><mo fence="true">(</mo><mi>b</mi><mo fence="true">)</mo></mrow><mi mathvariant="normal">∣</mi><mo>≤</mo><mfrac><mrow><mi>k</mi><mo>!</mo><mi>M</mi></mrow><mrow><mo>(</mo><msubsup><mi>R</mi><mn>1</mn><mrow><mi mathvariant="normal">′</mi></mrow></msubsup><msup><mo>)</mo><mi>k</mi></msup></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle |f^{(k)}\left(b\right)|\le\dfrac{k!M}{(R_1')^k}</annotation></semantics></math></span></span>，从而<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mo fence="true">∣</mo><mfrac><mrow><msup><mi>f</mi><mrow><mo>(</mo><mi>k</mi><mo>)</mo></mrow></msup><mo>(</mo><mi>b</mi><mo>)</mo></mrow><mrow><mi>k</mi><mo>!</mo></mrow></mfrac><mo>(</mo><mi>z</mi><mo>−</mo><mi>b</mi><msup><mo>)</mo><mi>k</mi></msup><mo fence="true">∣</mo></mrow><mo>≤</mo><mi>M</mi><msup><mrow><mo fence="true">(</mo><mfrac><mrow><msub><mi>R</mi><mn>1</mn></msub></mrow><mrow><msubsup><mi>R</mi><mn>1</mn><mrow><mi mathvariant="normal">′</mi></mrow></msubsup></mrow></mfrac><mo fence="true">)</mo></mrow><mi>k</mi></msup></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \left|\dfrac{f^{(k)}(b)}{k!}(z-b)^k\right|\le M\left(\dfrac{R_1}{R_1'}\right)^k</annotation></semantics></math></span></span>，与几何级数比较即可推出在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>≤</mo><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">|z-b|\le R_1</annotation></semantics></math></span></span>绝对且一致收敛。</p>
+<h4 id="唯一性与收敛半径">唯一性与收敛半径</h4>
+<ul>
+<li><strong>唯一性</strong>：若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>a</mi><mi>k</mi></msub><mo>(</mo><mi>z</mi><mo>−</mo><mi>b</mi><msup><mo>)</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">f(z)=\sum_{k=0}^{\infty}a_k(z-b)^k</annotation></semantics></math></span></span>一致收敛，则可逐项求导并令<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">z=b</annotation></semantics></math></span></span>，得到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>=</mo><mfrac><mrow><msup><mi>f</mi><mrow><mo>(</mo><mi>n</mi><mo>)</mo></mrow></msup><mo>(</mo><mi>b</mi><mo>)</mo></mrow><mrow><mi>n</mi><mo>!</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_n=\dfrac{f^{(n)}(b)}{n!}</annotation></semantics></math></span></span>，故展开唯一。</li>
+<li><strong>收敛半径</strong>：幂级数在收敛圆内解析，因此<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>的奇点只能在收敛圆上或之外；并且收敛半径等于展开中心到最近奇点的距离。</li>
+</ul>
+<h4 id="常见展开（z-0为中心）">常见展开（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z=0</annotation></semantics></math></span></span>为中心）</h4>
+<p>几何级数：</p>
+
+$$
+\frac{1}{1-z}=\sum_{k=0}^{\infty}z^k,\quad |z|&lt;1. \qquad (5)
+$$
+
+<p>以及</p>
+
+$$
+e^z=\sum_{k=0}^{\infty}\frac{z^k}{k!},\qquad
+\sin z=\sum_{n=0}^{\infty}(-1)^n\frac{z^{2n+1}}{(2n+1)!},\qquad
+\cos z=\sum_{n=0}^{\infty}(-1)^n\frac{z^{2n}}{(2n)!}.
+$$
+
+<details>
+<summary><b>例1（原题）</b>：证明 $e^{z_1}\cdot e^{z_2}=e^{z_1+z_2}$</summary>
+<p><strong>解题过程</strong></p>
+<p>由<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><msub><mi>z</mi><mn>1</mn></msub></mrow></msup><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mfrac><mrow><msubsup><mi>z</mi><mn>1</mn><mi>k</mi></msubsup></mrow><mrow><mi>k</mi><mo>!</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">e^{z_1}=\sum_{k=0}^{\infty}\dfrac{z_1^k}{k!}</annotation></semantics></math></span></span>，<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><msub><mi>z</mi><mn>2</mn></msub></mrow></msup><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>l</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mfrac><mrow><msubsup><mi>z</mi><mn>2</mn><mi>l</mi></msubsup></mrow><mrow><mi>l</mi><mo>!</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">e^{z_2}=\sum_{l=0}^{\infty}\dfrac{z_2^l}{l!}</annotation></semantics></math></span></span>，<br>
+两级数可相乘并得</p>
+
+$$
+e^{z_1}\cdot e^{z_2}=\sum_{k=0}^{\infty}\sum_{l=0}^{\infty}\frac{1}{k!,l!}z_1^k z_2^l.
+$$
+
+<p>引入<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mi>k</mi><mo>+</mo><mi>l</mi></mrow><annotation encoding="application/x-tex">n=k+l</annotation></semantics></math></span></span>代替<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span>（此时<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≥</mo><mi>k</mi></mrow><annotation encoding="application/x-tex">n\ge k</annotation></semantics></math></span></span>），交换求和次序（此时<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">0\le k\le n</annotation></semantics></math></span></span>），则</p>
+
+$$
+e^{z_1}\cdot e^{z_2}
+=\sum_{n=0}^{\infty}\left[\sum_{k=0}^{n}\frac{1}{k!(n-k)!}z_1^k z_2^{,n-k}\right]
+=\sum_{n=0}^{\infty}\frac{1}{n!}\left[\sum_{k=0}^{n}\frac{n!}{k!(n-k)!}z_1^k z_2^{,n-k}\right].
+$$
+
+<p>由二项式定理，方括号内为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>z</mi><mn>1</mn></msub><mo>+</mo><msub><mi>z</mi><mn>2</mn></msub><msup><mo>)</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">(z_1+z_2)^n</annotation></semantics></math></span></span>，从而</p>
+
+$$
+e^{z_1}\cdot e^{z_2}
+=\sum_{n=0}^{\infty}\frac{(z_1+z_2)^n}{n!}
+=e^{z_1+z_2}.
+$$
+
+</details>
+<details>
+<summary><b>例2（原题）</b>：证明 $e^{iz}=\cos z+i\sin z$</summary>
+<p><strong>解题过程</strong></p>
+<p>由指数函数展开</p>
+
+$$
+e^{iz}=\sum_{n=0}^{\infty}\frac{(iz)^n}{n!}
+=\sum_{k=0}^{\infty}\frac{(iz)^{2k}}{(2k)!}+\sum_{k=0}^{\infty}\frac{(iz)^{2k+1}}{(2k+1)!},
+$$
+
+<p>分别化简奇偶次幂</p>
+
+$$
+e^{iz}
+=\sum_{k=0}^{\infty}(-1)^k\frac{z^{2k}}{(2k)!}
++i\sum_{k=0}^{\infty}(-1)^k\frac{z^{2k+1}}{(2k+1)!}.
+$$
+
+<p>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mi>z</mi><mo separator="true">,</mo><mi>sin</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\cos z,\sin z</annotation></semantics></math></span></span>的泰勒展开逐项对比，即得<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>z</mi></mrow></msup><mo>=</mo><mi>cos</mi><mi>z</mi><mo>+</mo><mi>i</mi><mi>sin</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">e^{iz}=\cos z+i\sin z</annotation></semantics></math></span></span>。特别取<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi>x</mi><mo>∈</mo><mi mathvariant="double-struck">R</mi></mrow><annotation encoding="application/x-tex">z=x\in\mathbb R</annotation></semantics></math></span></span>，有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>x</mi></mrow></msup><mo>=</mo><mi>cos</mi><mi>x</mi><mo>+</mo><mi>i</mi><mi>sin</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">e^{ix}=\cos x+i\sin x</annotation></semantics></math></span></span>。</p>
+</details>
+<h4 id="多值函数的泰勒级数">多值函数的泰勒级数</h4>
+<p>多值函数在复平面上函数值未规定时无法展开；只有在黎曼面上或先确定单值分支后，才可像单值函数一样作泰勒展开（展开区域需避开支点与割线）。</p>
+<details>
+<summary><b>例3（原题）</b>：将 $\ln(1+z)$ 在 $z=0$ 的邻域内展开为泰勒级数</summary>
+<p><strong>解题过程</strong></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mo>(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\ln(1+z)</annotation></semantics></math></span></span>的支点为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z=-1</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z=\infty</annotation></semantics></math></span></span>。为确定单值分支，沿负实轴从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span></span>到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span></span>作割线（为使收敛区域尽可能大，割线不应与该圆域相交，更不能通过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z=0</annotation></semantics></math></span></span>）。取单值分支使</p>
+
+$$
+z=-1+\rho e^{i\varphi},\quad (-\pi&lt;\varphi&lt;\pi).
+$$
+
+<p>此时原点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn><mo>=</mo><mo>−</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>⋅</mo><msup><mi>e</mi><mrow><mi>i</mi><mn>0</mn></mrow></msup></mrow><annotation encoding="application/x-tex">z=0=-1+1\cdot e^{i0}</annotation></semantics></math></span></span>，因此<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mo>(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo>)</mo><mo fence="false">∣</mo><mo>∗</mo><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><mo>=</mo><mi>ln</mi><mo>(</mo><mn>1</mn><mo>⋅</mo><msup><mi>e</mi><mrow><mi>i</mi><mn>0</mn></mrow></msup><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\ln(1+z)\big|*{z=0}=\ln(1\cdot e^{i0})=0</annotation></semantics></math></span></span>。并且对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">n=1,2,3,\cdots</annotation></semantics></math></span></span>有</p>
+
+$$
+\left.\frac{d^n}{dz^n}\ln(1+z)\right|*{z=0}=(-1)^{n-1}(n-1)!.
+$$
+
+<p>代入泰勒公式(1)，得到</p>
+
+$$
+\ln(1+z)=\sum_{n=1}^{\infty}(-1)^{n-1}\frac{z^n}{n},\quad (|z|&lt;1).
+$$
+
+<p>收敛半径为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span></span>，因为除无穷远点外<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mo>(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\ln(1+z)</annotation></semantics></math></span></span>在复平面上只有一个奇点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z=-1</annotation></semantics></math></span></span>，且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mn>0</mn><mo>−</mo><mo>(</mo><mo>−</mo><mn>1</mn><mo>)</mo><mi mathvariant="normal">∣</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|0-(-1)|=1</annotation></semantics></math></span></span>。</p>
+<p>若改取另一单值分支</p>
+
+$$
+z=-1+\rho e^{i\varphi},\quad (\pi&lt;\varphi&lt;3\pi),
+$$
+
+<p>则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn><mo>=</mo><mo>−</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>⋅</mo><msup><mi>e</mi><mrow><mi>i</mi><mn>2</mn><mi>π</mi></mrow></msup></mrow><annotation encoding="application/x-tex">z=0=-1+1\cdot e^{i2\pi}</annotation></semantics></math></span></span>，从而<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mo>(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo>)</mo><mo fence="false">∣</mo><mo>∗</mo><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><mo>=</mo><mn>2</mn><mi>π</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">\ln(1+z)\big|*{z=0}=2\pi i</annotation></semantics></math></span></span>，而上面的导数公式仍成立，于是</p>
+
+$$
+\ln(1+z)=2\pi i+\sum*{n=1}^{\infty}(-1)^{n-1}\frac{z^n}{n},\quad (|z|&lt;1).
+$$
+
+<p>其余单值分支可作类似展开。</p>
+</details>
+<details>
+<summary><b>例4（原题）</b>：将 $(1+z)^m$（$m$为非整数）在 $z=0$ 的邻域内展开为泰勒级数</summary>
+<p><strong>解题过程</strong></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo>+</mo><mi>z</mi><msup><mo>)</mo><mi>m</mi></msup><mo>=</mo><msup><mi>e</mi><mrow><mi>m</mi><mi>ln</mi><mo>(</mo><mn>1</mn><mo>+</mo><mi>z</mi><mo>)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">(1+z)^m=e^{m\ln(1+z)}</annotation></semantics></math></span></span>的支点同样为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z=-1</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z=\infty</annotation></semantics></math></span></span>。取与例3相同的割线与单值分支（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mi>π</mi><mo>&lt;</mo><mi>φ</mi><mo>&lt;</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">-\pi&lt;\varphi&lt;\pi</annotation></semantics></math></span></span>），则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo>+</mo><mi>z</mi><msup><mo>)</mo><mi>m</mi></msup><mo fence="false">∣</mo><mo>∗</mo><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">(1+z)^m\big|*{z=0}=1</annotation></semantics></math></span></span>，并且</p>
+
+$$
+\left.\frac{d^n}{dz^n}(1+z)^m\right|*{z=0}
+=m(m-1)\cdots(m-n+1)\qquad(n=1,2,3,\cdots).
+$$
+
+<p>代入泰勒公式(1)得</p>
+
+$$
+(1+z)^m
+=1+\sum_{n=1}^{\infty}\frac{m(m-1)\cdots(m-n+1)}{n!}z^n,\quad (|z|&lt;1).
+$$
+
+<p>若取另一单值分支（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi><mo>&lt;</mo><mi>φ</mi><mo>&lt;</mo><mn>3</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi&lt;\varphi&lt;3\pi</annotation></semantics></math></span></span>），则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>1</mn><mo>+</mo><mi>z</mi><msup><mo>)</mo><mi>m</mi></msup><mo fence="false">∣</mo><mo>∗</mo><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><mo>=</mo><msup><mi>e</mi><mrow><mn>2</mn><mi>π</mi><mi>m</mi><mi>i</mi></mrow></msup></mrow><annotation encoding="application/x-tex">(1+z)^m\big|*{z=0}=e^{2\pi mi}</annotation></semantics></math></span></span>，且各阶导数多出同样因子<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mn>2</mn><mi>π</mi><mi>m</mi><mi>i</mi></mrow></msup></mrow><annotation encoding="application/x-tex">e^{2\pi mi}</annotation></semantics></math></span></span>，因此</p>
+
+$$
+(1+z)^m
+=e^{2\pi mi}\left[1+\sum*{n=1}^{\infty}\frac{m(m-1)\cdots(m-n+1)}{n!}z^n\right],\quad (|z|&lt;1).
+$$
+
+<p>其余单值分支可类似处理。</p>
+</details>
+<h3 id="洛朗级数展开">洛朗级数展开</h3>
+<h4 id="洛朗定理">洛朗定理</h4>
+<p>设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math></span></span>在环域<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub><mo>&lt;</mo><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">R_2&lt;|z-b|&lt;R_1</annotation></semantics></math></span></span>内单值解析，则可展开为绝对收敛且一致收敛的级数：</p>
+
+$$
+f(z)=\sum_{k=-\infty}^{\infty}a_k(z-b)^k. \qquad (6)
+$$
+
+<p>其中系数由</p>
+
+$$
+a_k=\frac{1}{2\pi i}\oint_l\frac{f(\zeta)}{(\zeta-b)^{k+1}},d\zeta, \qquad (7)
+$$
+
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span>为环域内绕<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>一周的任意闭曲线；展开唯一。</p>
+<p><strong>证明（外圈给正幂，内圈给负幂）</strong>：</p>
+<p>在外圆<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mrow><msubsup><mi>R</mi><mn>1</mn><mrow><mi mathvariant="normal">′</mi><mi mathvariant="normal">′</mi></mrow></msubsup></mrow></msub></mrow><annotation encoding="application/x-tex">C_{R_1''}</annotation></semantics></math></span></span>与内圆<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mrow><msubsup><mi>R</mi><mn>2</mn><mrow><mi mathvariant="normal">′</mi><mi mathvariant="normal">′</mi></mrow></msubsup></mrow></msub></mrow><annotation encoding="application/x-tex">C_{R_2''}</annotation></semantics></math></span></span>围成的闭复通区域上用柯西公式：</p>
+
+$$
+f(z)=\frac{1}{2\pi i}\oint_{C_{R_1''}}\frac{f(\zeta)}{\zeta-z},d\zeta
+-\frac{1}{2\pi i}\oint_{C_{R_2''}}\frac{f(\zeta)}{\zeta-z},d\zeta. \qquad (8)
+$$
+
+<ul>
+<li>当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ζ</mi><mo>∈</mo><msub><mi>C</mi><mrow><msubsup><mi>R</mi><mn>1</mn><mrow><mi mathvariant="normal">′</mi><mi mathvariant="normal">′</mi></mrow></msubsup></mrow></msub></mrow><annotation encoding="application/x-tex">\zeta\in C_{R_1''}</annotation></semantics></math></span></span>时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">∣</mo><mfrac><mrow><mi>z</mi><mo>−</mo><mi>b</mi></mrow><mrow><mi>ζ</mi><mo>−</mo><mi>b</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\left|\dfrac{z-b}{\zeta-b}\right|&lt;1</annotation></semantics></math></span></span>，从而
+$$
+  \frac{1}{\zeta-z}=\sum_{k=0}^{\infty}\frac{(z-b)^k}{(\zeta-b)^{k+1}}. \qquad (9)
+  $$
+
+</li>
+<li>当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ζ</mi><mo>∈</mo><msub><mi>C</mi><mrow><msubsup><mi>R</mi><mn>2</mn><mrow><mi mathvariant="normal">′</mi><mi mathvariant="normal">′</mi></mrow></msubsup></mrow></msub></mrow><annotation encoding="application/x-tex">\zeta\in C_{R_2''}</annotation></semantics></math></span></span>时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">∣</mo><mfrac><mrow><mi>ζ</mi><mo>−</mo><mi>b</mi></mrow><mrow><mi>z</mi><mo>−</mo><mi>b</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\left|\dfrac{\zeta-b}{z-b}\right|&lt;1</annotation></semantics></math></span></span>，从而
+$$
+  \frac{1}{\zeta-z}
+  =-\sum_{l=0}^{\infty}\frac{(\zeta-b)^l}{(z-b)^{l+1}}
+  =-\sum_{k=-1}^{-\infty}\frac{(z-b)^k}{(\zeta-b)^{k+1}}. \qquad (10)
+  $$
+
+</li>
+</ul>
+<p>把(9)(10)代回(8)，并用柯西定理把积分曲线统一替换为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span>，即可整理成(6)(7)。</p>
+<h4 id="唯一性与常见误解提醒">唯一性与常见误解提醒</h4>
+<p>若另有展开<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mo>∑</mo><msub><mi>c</mi><mi>k</mi></msub><mo>(</mo><mi>z</mi><mo>−</mo><mi>b</mi><msup><mo>)</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">f(z)=\sum c_k(z-b)^k</annotation></semantics></math></span></span>，两端除以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>π</mi><mi>i</mi><mo>(</mo><mi>z</mi><mo>−</mo><mi>b</mi><msup><mo>)</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">2\pi i(z-b)^{n+1}</annotation></semantics></math></span></span>并沿<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span>积分，利用</p>
+
+$$
+\oint_l (z-b)^{k-n-1},dz=
+\begin{cases}
+2\pi i,&amp; k=n,\\
+0,&amp; k\ne n,
+\end{cases}
+\qquad (11)
+$$
+
+<p>即可推出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mi>n</mi></msub><mo>=</mo><msub><mi>a</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">c_n=a_n</annotation></semantics></math></span></span>，故唯一。</p>
+<p><strong>提醒</strong>：即便<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">k=0,1,2,\cdots</annotation></semantics></math></span></span>，由(7)得到的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">a_k</annotation></semantics></math></span></span>也不一定等于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><msup><mi>f</mi><mrow><mo>(</mo><mi>k</mi><mo>)</mo></mrow></msup><mo>(</mo><mi>b</mi><mo>)</mo></mrow><mrow><mi>k</mi><mo>!</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{f^{(k)}(b)}{k!}</annotation></semantics></math></span></span>；另外“出现负幂”并不等价于“<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>点一定是奇点”，因为洛朗定理并不要求<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span>所围内部（例如<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>≤</mo><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">|z-b|\le R_2</annotation></semantics></math></span></span>）解析。</p>
+<h3 id="常用展开方法与例题（洛朗-泰勒通用）">常用展开方法与例题（洛朗/泰勒通用）</h3>
+<p><strong>常用方法：</strong></p>
+<ul>
+<li><strong>用几何级数(5)</strong>（最常用）</li>
+<li><strong>用已知初等函数的展开</strong>（如<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mi>z</mi></msup><mo separator="true">,</mo><mi>sin</mi><mi>z</mi><mo separator="true">,</mo><mi>cos</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">e^z,\sin z,\cos z</annotation></semantics></math></span></span>）</li>
+<li><strong>级数逐项求导/逐项积分</strong></li>
+<li><strong>两个级数相乘或相除</strong></li>
+</ul>
+<details>
+<summary><b>例1（原题）</b>：将 $\dfrac{1}{1-z^2}$ 在环域 $1&lt;|z|&lt;\infty$ 内展开为洛朗级数</summary>
+<p><strong>解题过程</strong></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mi mathvariant="normal">∣</mi><mo>&gt;</mo><mn>1</mn><mo>⇒</mo><mrow><mo fence="true">∣</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>z</mi><mn>2</mn></msup></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|z|&gt;1\Rightarrow\left|\dfrac{1}{z^2}\right|&lt;1</annotation></semantics></math></span></span>，利用几何级数(5)：</p>
+
+$$
+\frac{1}{1-z^2}
+=-\frac{1}{z^2}\cdot\frac{1}{1-\frac{1}{z^2}}
+=-\sum_{k=0}^{\infty}\frac{1}{z^{2k+2}},\quad (|z|&gt;1).
+$$
+
+</details>
+<details>
+<summary><b>例2（原题）</b>：将 $\dfrac{1}{z(z+1)}$ 分别在 $D_1:1&lt;|z-i|&lt;\sqrt2$ 与 $D_2:\sqrt2&lt;|z-i|&lt;\infty$ 展开为洛朗级数</summary>
+<p><strong>解题过程</strong></p>
+<p>先作部分分式并改写成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>z</mi><mo>−</mo><mi>i</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(z-i)</annotation></semantics></math></span></span>形式：</p>
+
+$$
+\frac{1}{z(z+1)}=\frac{1}{z}-\frac{1}{z+1}
+=\frac{1}{(z-i)+i}-\frac{1}{(z-i)+(1+i)}.
+$$
+
+<p><strong>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">D_1</annotation></semantics></math></span></span>内</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>i</mi><mi mathvariant="normal">∣</mi><mo>&gt;</mo><mn>1</mn><mo>⇒</mo><mrow><mo fence="true">∣</mo><mfrac><mrow><mi>i</mi></mrow><mrow><mi>z</mi><mo>−</mo><mi>i</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|z-i|&gt;1\Rightarrow\left|\dfrac{i}{z-i}\right|&lt;1</annotation></semantics></math></span></span>；且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>i</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><msqrt><mn>2</mn></msqrt><mo>⇒</mo><mrow><mo fence="true">∣</mo><mfrac><mrow><mi>z</mi><mo>−</mo><mi>i</mi></mrow><mrow><mn>1</mn><mo>+</mo><mi>i</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|z-i|&lt;\sqrt2\Rightarrow\left|\dfrac{z-i}{1+i}\right|&lt;1</annotation></semantics></math></span></span>。<br>
+于是</p>
+
+$$
+\frac{1}{(z-i)+i}
+=\frac{1}{z-i}\cdot\frac{1}{1+\frac{i}{z-i}}
+=\sum_{n=0}^{\infty}(-i)^n(z-i)^{-n-1}
+=\sum_{k=-1}^{-\infty} i^{k+1}(z-i)^k,
+$$
+
+<p>以及</p>
+
+$$
+\frac{1}{(z-i)+(1+i)}
+=\frac{1}{1+i}\cdot\frac{1}{1+\frac{z-i}{1+i}}
+=\sum_{k=0}^{\infty}\frac{(-1)^k}{(1+i)^{k+1}}(z-i)^k.
+$$
+
+<p>代回得</p>
+
+$$
+\frac{1}{z(z+1)}
+=\sum_{k=-1}^{-\infty} i^{k+1}(z-i)^k
+-\sum_{k=0}^{\infty}\frac{(-1)^k}{(1+i)^{k+1}}(z-i)^k.
+$$
+
+<p><strong>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">D_2</annotation></semantics></math></span></span>内</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">∣</mo><mfrac><mrow><mi>i</mi></mrow><mrow><mi>z</mi><mo>−</mo><mi>i</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\left|\dfrac{i}{z-i}\right|&lt;1</annotation></semantics></math></span></span>且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">∣</mo><mfrac><mrow><mn>1</mn><mo>+</mo><mi>i</mi></mrow><mrow><mi>z</mi><mo>−</mo><mi>i</mi></mrow></mfrac><mo fence="true">∣</mo></mrow><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\left|\dfrac{1+i}{z-i}\right|&lt;1</annotation></semantics></math></span></span>。第一项同上；第二项改写为</p>
+
+$$
+\frac{1}{(z-i)+(1+i)}
+=\frac{1}{z-i}\cdot\frac{1}{1+\frac{1+i}{z-i}}
+=\sum_{n=0}^{\infty}\frac{(-1-i)^n}{(z-i)^{n+1}}.
+$$
+
+<p>因此</p>
+
+$$
+\frac{1}{z(z+1)}
+=\sum_{n=1}^{\infty}\frac{(-i)^n-(-1-i)^n}{(z-i)^{n+1}}.
+$$
+
+</details>
+<details>
+<summary><b>例3（原题）</b>：将 $\dfrac{z(z+1)}{(z-1)^3}$ 在环域 $1&lt;|z|&lt;\infty$ 内展开为洛朗级数</summary>
+<p><strong>解题过程</strong></p>
+<p>先拆开：</p>
+
+$$
+\frac{z(z+1)}{(z-1)^3}=\frac{z^2}{(z-1)^3}+\frac{z}{(z-1)^3}.
+$$
+
+<p>只需展开<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mo>(</mo><mi>z</mi><mo>−</mo><mn>1</mn><msup><mo>)</mo><mn>3</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{1}{(z-1)^3}</annotation></semantics></math></span></span>。由</p>
+
+$$
+\frac{1}{z-1}=\sum_{k=0}^{\infty}\frac{1}{z^{k+1}},\quad (|z|&gt;1),
+$$
+
+<p>对其求导两次，得</p>
+
+$$
+\frac{1}{(z-1)^3}
+=\frac{1}{2}\sum_{k=0}^{\infty}\frac{(k+1)(k+2)}{z^{k+3}},\quad (|z|&gt;1).
+$$
+
+<p>代回并分别作指标代换<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mi>k</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=k+1</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mi>k</mi><mo>+</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n=k+2</annotation></semantics></math></span></span>，整理得到</p>
+
+$$
+\frac{z(z+1)}{(z-1)^3}
+=\frac{1}{2}\left[\sum_{n=1}^{\infty}\frac{n(n+1)}{z^n}+\sum_{n=2}^{\infty}\frac{n(n-1)}{z^n}\right]
+=\sum_{n=1}^{\infty}\frac{n^2}{z^n}.
+$$
+
+</details>
+<details>
+<summary><b>例4（原题）</b>：将 $\cot z$ 在环域 $0&lt;|z|&lt;\pi$ 内展开为洛朗级数</summary>
+<p><strong>解题过程</strong></p>
+<p>利用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cot</mi><mi>z</mi><mo>=</mo><mfrac><mrow><mi>cos</mi><mi>z</mi></mrow><mrow><mi>sin</mi><mi>z</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\cot z=\dfrac{\cos z}{\sin z}</annotation></semantics></math></span></span>，并注意<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cot</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\cot z</annotation></semantics></math></span></span>为奇函数且最低幂次为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span></span>，设</p>
+
+$$
+\cot z=\sum_{l=0}^{\infty}b_l z^{2l-1}.
+$$
+
+<p>将<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>z</mi><mo separator="true">,</mo><mi>cos</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\sin z,\cos z</annotation></semantics></math></span></span>的泰勒级数以及上式代入恒等式并移去分母，得到系数关系</p>
+
+$$
+\frac{1}{(2m)!}=\sum_{l=0}^{m}(-1)^l\frac{b_l}{(2m-2l+1)!}\quad (m=0,1,2,\cdots).
+$$
+
+<p>依次令<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">m=0,1,2,3</annotation></semantics></math></span></span>可求得<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>b</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mtext>&nbsp;</mtext><msub><mi>b</mi><mn>1</mn></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>3</mn></mrow></mfrac><mo separator="true">,</mo><mtext>&nbsp;</mtext><msub><mi>b</mi><mn>2</mn></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn><mn>5</mn></mrow></mfrac><mo separator="true">,</mo><mtext>&nbsp;</mtext><msub><mi>b</mi><mn>3</mn></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mn>2</mn></mrow><mrow><mn>9</mn><mn>4</mn><mn>5</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">b_0=1,\ b_1=-\dfrac{1}{3},\ b_2=-\dfrac{1}{45},\ b_3=-\dfrac{2}{945}</annotation></semantics></math></span></span>，于是</p>
+
+$$
+\cot z=\frac{1}{z}-\frac{1}{3}z-\frac{1}{45}z^3-\frac{2}{945}z^5+\cdots,\quad (0&lt;|z|&lt;\pi).
+$$
+
+</details>
+<h2 id="解析延拓">解析延拓</h2>
+<h3 id="解析函数的唯一性">解析函数的唯一性</h3>
+<h4 id="解析延拓的想法与定义">解析延拓的想法与定义</h4>
+<p>很多函数的某种表达只在特定区域内解析，超过该区域就失效；若能找到另一种表达，使函数在更大区域内仍解析，这个“扩大定义域”的过程称为<strong>解析延拓</strong>。例如：积分形式在$\operatorname{Re}z&gt;0$解析，但可延拓为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">f(z)=1/z</annotation></semantics></math></span></span>并在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z\neq 0</annotation></semantics></math></span></span>处解析。</p>
+<h4 id="唯一性定理">唯一性定理</h4>
+<p><strong>解析函数的唯一性定理</strong>：若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">f_1,f_2</annotation></semantics></math></span></span>在区域<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span>内解析，且在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span>内某点列<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><msub><mi>z</mi><mi>k</mi></msub></mrow></mrow><annotation encoding="application/x-tex">{z_k}</annotation></semantics></math></span></span>上满足<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>(</mo><msub><mi>z</mi><mi>k</mi></msub><mo>)</mo><mo>=</mo><msub><mi>f</mi><mn>2</mn></msub><mo>(</mo><msub><mi>z</mi><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">f_1(z_k)=f_2(z_k)</annotation></semantics></math></span></span>，并且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><msub><mi>z</mi><mi>k</mi></msub></mrow></mrow><annotation encoding="application/x-tex">{z_k}</annotation></semantics></math></span></span>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span>内至少有一个极限点，则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>≡</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">f_1\equiv f_2</annotation></semantics></math></span></span>于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span>。</p>
+<p><strong>证明思路（抓主线即可）</strong>：</p>
+<ul>
+<li>在极限点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span>附近作小圆域<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>⊂</mo><mi>D</mi></mrow><annotation encoding="application/x-tex">C\subset D</annotation></semantics></math></span></span>，把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">f_1,f_2</annotation></semantics></math></span></span>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span>内作泰勒展开，利用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>(</mo><msub><mi>z</mi><mi>k</mi></msub><mo>)</mo><mo>=</mo><msub><mi>f</mi><mn>2</mn></msub><mo>(</mo><msub><mi>z</mi><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">f_1(z_k)=f_2(z_k)</annotation></semantics></math></span></span>逐次比较系数，推出两者在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span>内相等。</li>
+<li>再用一串相交小圆域沿曲线把“相等性”从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span>传递到任意点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>。</li>
+</ul>
+<p><strong>推论一（常用）</strong>：若两解析函数在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span>内某点邻域（或某段曲线）相等，则在整个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span>内恒等。并可用来说明：把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mi>x</mi></msup><mo separator="true">,</mo><mi>sin</mi><mi>x</mi><mo separator="true">,</mo><mi>cos</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">e^x,\sin x,\cos x</annotation></semantics></math></span></span>等实轴取值“唯一”推广到复平面。</p>
+<p><strong>推论二（用导数刻画）</strong>：若在一点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span>处有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>(</mo><mi>a</mi><mo>)</mo><mo>=</mo><msub><mi>f</mi><mn>2</mn></msub><mo>(</mo><mi>a</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f_1(a)=f_2(a)</annotation></semantics></math></span></span>且对一切<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\ge 1</annotation></semantics></math></span></span>有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>f</mi><mn>1</mn><mrow><mo>(</mo><mi>n</mi><mo>)</mo></mrow></msubsup><mo>(</mo><mi>a</mi><mo>)</mo><mo>=</mo><msubsup><mi>f</mi><mn>2</mn><mrow><mo>(</mo><mi>n</mi><mo>)</mo></mrow></msubsup><mo>(</mo><mi>a</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f_1^{(n)}(a)=f_2^{(n)}(a)</annotation></semantics></math></span></span>，则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>≡</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">f_1\equiv f_2</annotation></semantics></math></span></span>于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi></mrow><annotation encoding="application/x-tex">D</annotation></semantics></math></span></span>。</p>
+<blockquote>
+<p><strong>要点</strong>：唯一性是解析延拓“可以做且只能做成一个”的理论依据。</p>
+</blockquote>
+<h3 id="用泰勒级数进行解析延拓">用泰勒级数进行解析延拓</h3>
+<h4 id="方法核心">方法核心</h4>
+<p>在已知解析函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>的某个解析区域内，选取一点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span>，用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>f</mi><mrow><mo>(</mo><mi>n</mi><mo>)</mo></mrow></msup><mo>(</mo><mi>a</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f^{(n)}(a)</annotation></semantics></math></span></span>构造以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span>为中心的新泰勒级数，从而得到在新收敛圆内的解析表达；若新旧区域有交集，则由唯一性保证两表达在交集中相同，于是拼接得到更大解析域。</p>
+<details>
+<summary><strong>例：延拓 $f_1(z)=\sum_{k=0}^{\infty}z^k$</strong></summary>
+<ul>
+<li>
+<p>原函数</p>
+
+$$
+  f_1(z)=\sum_{k=0}^{\infty}z^k,\quad D_1:\ |z|&lt;1
+  $$
+
+</li>
+<li>
+<p>取<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mrow><mi mathvariant="normal">i</mi></mrow><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">z=\mathrm{i}/2</annotation></semantics></math></span></span>，计算各阶导数并在该点展开得到新级数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">f_2</annotation></semantics></math></span></span>，其收敛域为</p>
+
+$$
+  D_2:\ \left|z-\frac{\mathrm{i}}{2}\right|&lt;\left|1-\frac{\mathrm{i}}{2}\right|=\frac{\sqrt5}{2}
+  $$
+
+</li>
+<li>
+<p>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mn>1</mn></msub><mo>∩</mo><msub><mi>D</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">D_1\cap D_2</annotation></semantics></math></span></span>上由推论二得<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>=</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">f_1=f_2</annotation></semantics></math></span></span>，从而把解析域扩到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mn>1</mn></msub><mo>∪</mo><msub><mi>D</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">D_1\cup D_2</annotation></semantics></math></span></span>。</p>
+</li>
+<li>
+<p>再取<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mrow><mi mathvariant="normal">i</mi></mrow></mrow><annotation encoding="application/x-tex">z=\mathrm{i}</annotation></semantics></math></span></span>继续构造<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">f_3</annotation></semantics></math></span></span>，其解析域为</p>
+
+$$
+  D_3:\ |z-\mathrm{i}|&lt;|1-\mathrm{i}|=\sqrt2
+  $$
+
+</li>
+<li>
+<p><strong>关键观察</strong>：无论怎么延拓，始终不能把解析域包含<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z=1</annotation></semantics></math></span></span>，因为该点是奇点（级数发散），奇点会限制每次泰勒展开的收敛半径。</p>
+</li>
+</ul>
+</details>
+<h3 id="利用函数关系式进行解析延拓：-Gamma函数">利用函数关系式进行解析延拓：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi></mrow><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math></span></span>函数</h3>
+<h4 id="定义与解析域起点">定义与解析域起点</h4>
+<p>对复变量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span>定义</p>
+
+$$
+\Gamma(z)=\int_0^{\infty}e^{-t}t^{z-1},dt
+$$
+
+<p>约定正实轴上<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>arg</mi><mi>t</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\arg t=0</annotation></semantics></math></span></span>；可证明当$\operatorname{Re}z&gt;0$时<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\Gamma(z)</annotation></semantics></math></span></span>解析。</p>
+<h4 id="由函数方程把-Gamma延拓到左半平面">由函数方程把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi></mrow><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math></span></span>延拓到左半平面</h4>
+<p>对实<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x&gt;0</annotation></semantics></math></span></span>分部积分得</p>
+
+$$
+\Gamma(x+1)=x\Gamma(x)
+$$
+
+<p>由解析函数唯一性（推论一）推广到复域（在$\operatorname{Re}z&gt;0$先成立）：</p>
+
+$$
+\Gamma(z+1)=z\Gamma(z)
+$$
+
+<p>于是可写成</p>
+
+$$
+\Gamma(z)=\frac{\Gamma(z+1)}{z}
+$$ 
+<p>右端在更大区域（如$\operatorname{Re}z&gt;-1$且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z\neq 0</annotation></semantics></math></span></span>）解析，从而把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi></mrow><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math></span></span>延拓过去，并看出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z=0</annotation></semantics></math></span></span>出现单极点。</p>
+<p>进一步迭代可得到一般形式（思路：反复把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span>换成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">z+1</annotation></semantics></math></span></span>）：</p>
+<ul>
+<li>结论：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\Gamma(z)</annotation></semantics></math></span></span>可延拓为在全复平面除<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mo>−</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">z=0,-1,-2,\cdots</annotation></semantics></math></span></span>外解析的函数；这些点都是<strong>单极点</strong>。</li>
+<li>并且在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>≠</mo><mn>0</mn><mo separator="true">,</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mo>−</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">z\neq 0,-1,-2,\cdots</annotation></semantics></math></span></span>处恒有
+$$
+  \Gamma(z+1)=z\Gamma(z)
+  $$
+
+</li>
+</ul>
+<blockquote>
+<p><strong>理解</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mo>=</mo><mi>n</mi><mo>!</mo></mrow><annotation encoding="application/x-tex">\Gamma(n+1)=n!</annotation></semantics></math></span></span>可以看作阶乘函数在复平面上的解析延拓（严格说是“亚纯”而非全纯）。</p>
+</blockquote>
+<h4 id="两个重要恒等式（掌握结论-证明套路）">两个重要恒等式（掌握结论+证明套路）</h4>
+<ul>
+<li><strong>反射公式</strong>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span>不是整数）：
+$$
+  \Gamma(z)\Gamma(1-z)=\frac{\pi}{\sin(\pi z)}
+  $$
+
+</li>
+</ul>
+<p>证明套路：先在实区间<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">0&lt;x&lt;1</annotation></semantics></math></span></span>把积分化到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mfrac><mrow><msup><mi>η</mi><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><mrow><mn>1</mn><mo>+</mo><mi>η</mi></mrow></mfrac><mo separator="true">,</mo><mi>d</mi><mi>η</mi></mrow><annotation encoding="application/x-tex">\int_0^\infty \frac{\eta^{x-1}}{1+\eta},d\eta</annotation></semantics></math></span></span>算出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>π</mi></mrow><mrow><mi>sin</mi><mi>π</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\pi}{\sin\pi x}</annotation></semantics></math></span></span>，再用唯一性把等式从实轴区间推广到复域。</p>
+<ul>
+<li>特例：取<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><annotation encoding="application/x-tex">z=\tfrac12</annotation></semantics></math></span></span>得  
+    $$
+    \Gamma!\left(\frac12\right)=\sqrt{\pi}
+    $$
+    
+</li>
+</ul>
+<h3 id="B函数（Beta函数）"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>函数（Beta函数）</h3>
+<h4 id="定义-2">定义</h4>
+<p>当$\operatorname{Re}p&gt;0,\operatorname{Re}q&gt;0$时，定义复参数的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>函数：</p>
+
+$$
+B(p,q)=\int_0^1 t^{p-1}(1-t)^{q-1},dt
+$$
+
+<p>并规定正实轴上<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>arg</mi><mi>t</mi><mo>=</mo><mi>arg</mi><mo>(</mo><mn>1</mn><mo>−</mo><mi>t</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\arg t=\arg(1-t)=0</annotation></semantics></math></span></span>。</p>
+<h4 id="与-Gamma函数的关系（核心公式）">与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi></mrow><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math></span></span>函数的关系（核心公式）</h4>
+
+$$
+B(p,q)=\frac{\Gamma(p)\Gamma(q)}{\Gamma(p+q)}
+$$
+
+<p>证明思路（结构化记忆）：</p>
+<ul>
+<li>从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi><mo>(</mo><mi>p</mi><mo>)</mo><mi mathvariant="normal">Γ</mi><mo>(</mo><mi>q</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\Gamma(p)\Gamma(q)</annotation></semantics></math></span></span>的二重积分出发；</li>
+<li>代换<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>=</mo><msup><mi>u</mi><mn>2</mn></msup><mo separator="true">,</mo><mi>t</mi><mo>=</mo><msup><mi>v</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">s=u^2,t=v^2</annotation></semantics></math></span></span>后转极坐标，再令<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ξ</mi><mo>=</mo><msup><mi>ρ</mi><mn>2</mn></msup><mo separator="true">,</mo><mi>η</mi><mo>=</mo><msup><mi>cos</mi><mn>2</mn></msup><mi>φ</mi></mrow><annotation encoding="application/x-tex">\xi=\rho^2,\eta=\cos^2\varphi</annotation></semantics></math></span></span>，把积分拆成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi><mo>(</mo><mi>p</mi><mo>+</mo><mi>q</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\Gamma(p+q)</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mo>(</mo><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">B(p,q)</annotation></semantics></math></span></span>的乘积。</li>
+</ul>
+<h4 id="解析延拓结论">解析延拓结论</h4>
+<p>利用上式与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi></mrow><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math></span></span>的亚纯性，可将 $B(p,q)$从$\operatorname{Re}p&gt;0,\operatorname{Re}q&gt;0$ 解析延拓到除<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo separator="true">,</mo><mi>q</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mo>−</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">p,q=0,-1,-2,\cdots</annotation></semantics></math></span></span>外的更大范围。</p>
+<h4 id="备注：两种延拓方法的对比">备注：两种延拓方法的对比</h4>
+<p>泰勒级数法更偏“理论证明”，计算繁琐；借助函数关系式（如<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi></mrow><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math></span></span>的递推、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Γ</mi></mrow><annotation encoding="application/x-tex">\Gamma</annotation></semantics></math></span></span>关系）更常用、更实用。</p>
+<h2 id="孤立奇点分类">孤立奇点分类</h2>
+<h3 id="§3-0-孤立奇点：基本框架">§3.0 孤立奇点：基本框架</h3>
+<p><strong>定义</strong>：若单值函数在点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 的任意小邻域内除 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 外都解析（即邻域内没有其它奇点），则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 是孤立奇点。反例：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mi>sin</mi><mfrac><mrow><mn>1</mn></mrow><mrow><mi>z</mi></mrow></mfrac></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{1}{\sin\frac{1}{z}}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z=0</annotation></semantics></math></span></span> 附近还有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>n</mi><mi>z</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{1}{nz}</annotation></semantics></math></span></span> 等奇点，因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span> 不是孤立奇点。</p>
+<p><strong>洛朗展开（以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 为中心）</strong>：在穿心去点邻域 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>&lt;</mo><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">0&lt;|z-b|&lt;R_1</annotation></semantics></math></span></span> 内可展开为</p>
+
+$$
+f(z)=\sum_{k=-\infty}^{\infty} a_k (z-b)^k .
+$$
+ 
+<p>系数由环路积分给出</p>
+
+$$
+a_k=\frac{1}{2\pi i}\oint_l \frac{f(\zeta)}{(\zeta-b)^{k+1}},d\zeta\quad (k=0,\pm1,\pm2,\cdots).
+$$
+ 
+<p><strong>解析部分与主要部分</strong>：正幂项 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>a</mi><mi>k</mi></msub><mo>(</mo><mi>z</mi><mo>−</mo><mi>b</mi><msup><mo>)</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{k=0}^{\infty} a_k (z-b)^k</annotation></semantics></math></span></span> 为解析部分；负幂项 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>a</mi><mi>k</mi></msub><mo>(</mo><mi>z</mi><mo>−</mo><mi>b</mi><msup><mo>)</mo><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{k=-1}^{-\infty} a_k (z-b)^k</annotation></semantics></math></span></span> 为主要部分；奇点类型由主要部分决定。</p>
+<hr>
+<h4 id="可去奇点">可去奇点</h4>
+<p><strong>等价刻画</strong></p>
+<ul>
+<li><strong>洛朗角度</strong>：主要部分不存在，即只有非负幂项。</li>
+<li><strong>极限角度</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>z</mi><mo>→</mo><mi>b</mi></mrow></msub><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\lim_{z\to b} f(z)=a_0</annotation></semantics></math></span></span> 为有限复数。</li>
+</ul>
+<p><strong>有界性推出“无负幂项”</strong>：若在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 的去心邻域内 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mi mathvariant="normal">∣</mi><mo>≤</mo><mi>M</mi></mrow><annotation encoding="application/x-tex">|f(z)|\le M</annotation></semantics></math></span></span>，则可推出所有负幂系数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub><mo>(</mo><mi>k</mi><mo>=</mo><mo>−</mo><mn>1</mn><mo separator="true">,</mo><mo>−</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_k(k=-1,-2,\cdots)=0</annotation></semantics></math></span></span>，因此为可去奇点。</p>
+<p><strong>“补定义”得到真正解析函数</strong>：定义</p>
+
+$$
+F(z)=
+\begin{cases}
+f(z), &amp; z\neq b,\\
+\lim_{z\to b} f(z), &amp; z=b,
+\end{cases}
+$$
+
+<p>则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mo>−</mo><mi>b</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><msub><mi>R</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">|z-b|&lt;R_1</annotation></semantics></math></span></span> 内解析，并且其泰勒系数与积分定义的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">a_k</annotation></semantics></math></span></span> 一致。</p>
+<details>
+<summary>例：$\dfrac{\sin z}{z}$ 在 $z=0$</summary>
+<p>没有负幂项：</p>
+
+$$
+\frac{\sin z}{z}=\sum_{k=0}^{\infty}(-1)^k\frac{1}{(2k+1)!},z^{2k},
+$$
+
+<p>且</p>
+
+$$
+\lim_{z\to 0}\frac{\sin z}{z}=1,
+$$
+
+<p>所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span> 为可去奇点。</p>
+</details>
+<hr>
+<h4 id="极点">极点</h4>
+<p><strong>定义（洛朗角度）</strong>：主要部分只有有限项，存在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m\ge1</annotation></semantics></math></span></span> 使得最低次负幂为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mo>(</mo><mi>m</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">-(m)</annotation></semantics></math></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mrow><mo>−</mo><mi>m</mi></mrow></msub><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_{-m}\neq0</annotation></semantics></math></span></span>；此时称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 阶极点（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">m=1</annotation></semantics></math></span></span> 为单极点）。</p>
+<p><strong>等价刻画（极限角度）</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>z</mi><mo>→</mo><mi>b</mi></mrow></msub><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\lim_{z\to b} f(z)=\infty</annotation></semantics></math></span></span>。</p>
+<p><strong>用倒函数刻画阶数</strong>：令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi(z)=1/f(z)</annotation></semantics></math></span></span>，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>z</mi><mo>→</mo><mi>b</mi></mrow></msub><mi>φ</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lim_{z\to b}\varphi(z)=0</annotation></semantics></math></span></span>，并可写成</p>
+
+$$
+\varphi(z)=(z-b)^m\psi(z),\qquad \psi(b)\ne 0,
+$$
+
+<p>从而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>φ</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(z)=1/\varphi(z)</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 处为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 阶极点。</p>
+<p><strong>阶数的实用判别</strong>：对自然数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>，考察极限 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>z</mi><mo>→</mo><mi>b</mi></mrow></msub><mo>(</mo><mi>z</mi><mo>−</mo><mi>b</mi><msup><mo>)</mo><mi>n</mi></msup><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\lim_{z\to b}(z-b)^n f(z)</annotation></semantics></math></span></span>：当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>&lt;</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n&lt;m</annotation></semantics></math></span></span> 发散到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span></span>，当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n=m</annotation></semantics></math></span></span> 为非零有限数，当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>&gt;</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n&gt;m</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span>；因此使该极限取非零有限数的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 就是极点阶数。</p>
+<details>
+<summary>例1：$\dfrac{z}{\sin^2 z}$ 的极点与阶数</summary>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi>n</mi><mi>π</mi></mrow><annotation encoding="application/x-tex">z=n\pi</annotation></semantics></math></span></span> 是极点（函数值趋于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span></span>）。并且</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n=0</annotation></semantics></math></span></span>：
+$$\lim_{z\to 0}(z)\frac{z}{\sin^2 z}=1,$$
+ 所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span> 为单极点；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\ge1</annotation></semantics></math></span></span>：
+$$\lim_{z\to n\pi}(z-n\pi)\frac{z}{\sin^2 z}=\infty,$$
+ 但
+$$\lim_{z\to n\pi}(z-n\pi)^2\frac{z}{\sin^2 z}=n\pi,$$
+
+所以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>π</mi></mrow><annotation encoding="application/x-tex">n\pi</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n\ge1</annotation></semantics></math></span></span>）为二阶极点。</li>
+</ul>
+</details>
+<details>
+<summary>例2：$\dfrac{1}{z\cosh\sqrt z}$ 的其它极点</summary>
+<p>除 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z=0</annotation></semantics></math></span></span> 为单极点外，由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cosh</mi><msqrt><mi>z</mi></msqrt><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\cosh\sqrt z=0</annotation></semantics></math></span></span> 得</p>
+
+$$
+z=-\frac{(2n+1)^2\pi^2}{4}\quad (n=0,1,2,\cdots),
+$$
+
+<p>这些点也都是极点，且均为单极点。</p>
+</details>
+<hr>
+<h4 id="本性奇点">本性奇点</h4>
+<p><strong>定义（洛朗角度）</strong>：主要部分含无限多个负幂项。</p>
+<p><strong>等价刻画（极限角度）</strong>：在孤立奇点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 处，若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>z</mi><mo>→</mo><mi>b</mi></mrow></msub><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\lim_{z\to b} f(z)</annotation></semantics></math></span></span> 不存在（既不收敛到有限值，也不趋于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span></span>），则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 为本性奇点。</p>
+<details>
+<summary>例：$\mathrm e^{1/z}$ 在 $z=0$</summary>
+<p>其洛朗展开含无限多个负幂项，因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z=0</annotation></semantics></math></span></span> 为本性奇点。</p>
+</details>
+<hr>
+<h4 id="无穷远点-z-infty">无穷远点 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z=\infty</annotation></semantics></math></span></span></h4>
+<p><strong>洛朗展开（无穷远邻域）</strong>：若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span></span> 的邻域内解析，则存在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">R_2</annotation></semantics></math></span></span> 使得在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mn>2</mn></msub><mo>&lt;</mo><mi mathvariant="normal">∣</mi><mi>z</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">R_2&lt;|z|&lt;\infty</annotation></semantics></math></span></span> 有</p>
+
+$$
+f(z)=\sum_{k=-\infty}^{\infty} a_k z^k .
+$$
+ 
+<p>系数同样由环路积分给出：</p>
+
+$$
+a_k=\frac{1}{2\pi i}\oint_l \frac{f(\zeta)}{\zeta^{k+1}},d\zeta.
+$$
+ 
+<p><strong>“主要部分”的位置改变</strong>：此时由正幂项 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∑</mo><mrow><mi>k</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msub><mi>a</mi><mi>k</mi></msub><msup><mi>z</mi><mi>k</mi></msup></mrow><annotation encoding="application/x-tex">\sum_{k=1}^{\infty} a_k z^k</annotation></semantics></math></span></span> 决定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z=\infty</annotation></semantics></math></span></span> 的类型；据此可将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z=\infty</annotation></semantics></math></span></span> 分为可去奇点 / 极点 / 本性奇点（对应正幂项不存在 / 有限项 / 无限项）。</p>
+<p><strong>与极限定义的对应（代换 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ζ</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\zeta=1/z</annotation></semantics></math></span></span>）</strong>：令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ζ</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\zeta=1/z</annotation></semantics></math></span></span>，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>ζ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(1/\zeta)</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ζ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\zeta=0</annotation></semantics></math></span></span> 的邻域内解析，且</p>
+
+$$
+\lim_{\zeta\to 0} f!\left(\frac{1}{\zeta}\right)=\lim_{z\to\infty} f(z).
+$$
+
+<p>因此也可用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>lim</mi><mrow><mi>z</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow></msub><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\lim_{z\to\infty} f(z)</annotation></semantics></math></span></span> 取有限值 / 趋于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span></span> / 不存在来定义 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z=\infty</annotation></semantics></math></span></span> 的三种类型。</p>
+<details>
+<summary>例：常见函数在 $z=\infty$ 的类型</summary>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z=\infty</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>1</mn><mo>−</mo><msup><mi>z</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{1}{1-z^2}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi mathvariant="normal">e</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>z</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\mathrm e^{1/z}</annotation></semantics></math></span></span> 的可去奇点；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 次多项式在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z=\infty</annotation></semantics></math></span></span> 处是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 阶极点；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi mathvariant="normal">e</mi><mrow><mi>z</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\mathrm e^{z}</annotation></semantics></math></span></span> 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z=\infty</annotation></semantics></math></span></span> 处是本性奇点。</li>
+</ul>
+</details>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E6%B3%95/" class="">
+              数学物理方法
+            </a>
+          
+            <a href="/physics/tags/%E9%A2%84%E4%B9%A0/" class="">
+              预习
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/ShuLiFangFa/复变函数级数和展开/" target="_blank" title="复变函数级数和展开">https://kotokowa.github.io/physics/ShuLiFangFa/复变函数级数和展开/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">复变函数及其积分</div>
+      </div>
+      <!-- <div class="content">
+        复变函数及其积分
+复数的基本概念
+复数的表示形式
+定义 −1=i\sqrt{-1} = i√​−1​​​=i
+
+
+代数式
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">复变函数级数和展开</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E7%BA%A7%E6%95%B0%E5%92%8C%E8%A7%A3%E6%9E%90%E5%87%BD%E6%95%B0%E7%BA%A7%E6%95%B0"><span class="toc-text">复变函数级数和解析函数级数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%A7%E6%95%B0%E6%94%B6%E6%95%9B"><span class="toc-text">级数收敛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%82%E7%BA%A7%E6%95%B0%E6%94%B6%E6%95%9B"><span class="toc-text">幂级数收敛</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%E5%87%BD%E6%95%B0%E7%9A%84%E5%B1%95%E5%BC%80"><span class="toc-text">解析函数的展开</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0%E5%B1%95%E5%BC%80"><span class="toc-text">泰勒级数展开</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%B0%E5%8B%92%E5%AE%9A%E7%90%86"><span class="toc-text">泰勒定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%B6%E6%95%9B%E6%80%A7%E4%BC%B0%E8%AE%A1%EF%BC%88%E6%9F%AF%E8%A5%BF%E4%B8%8D%E7%AD%89%E5%BC%8F%EF%BC%89"><span class="toc-text">收敛性估计（柯西不等式）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%94%AF%E4%B8%80%E6%80%A7%E4%B8%8E%E6%94%B6%E6%95%9B%E5%8D%8A%E5%BE%84"><span class="toc-text">唯一性与收敛半径</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%B1%95%E5%BC%80%EF%BC%88z-0%E4%B8%BA%E4%B8%AD%E5%BF%83%EF%BC%89"><span class="toc-text">常见展开（z&#x3D;0z&#x3D;0z&#x3D;0为中心）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E5%80%BC%E5%87%BD%E6%95%B0%E7%9A%84%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0"><span class="toc-text">多值函数的泰勒级数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%9B%E6%9C%97%E7%BA%A7%E6%95%B0%E5%B1%95%E5%BC%80"><span class="toc-text">洛朗级数展开</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B4%9B%E6%9C%97%E5%AE%9A%E7%90%86"><span class="toc-text">洛朗定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%94%AF%E4%B8%80%E6%80%A7%E4%B8%8E%E5%B8%B8%E8%A7%81%E8%AF%AF%E8%A7%A3%E6%8F%90%E9%86%92"><span class="toc-text">唯一性与常见误解提醒</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%B1%95%E5%BC%80%E6%96%B9%E6%B3%95%E4%B8%8E%E4%BE%8B%E9%A2%98%EF%BC%88%E6%B4%9B%E6%9C%97-%E6%B3%B0%E5%8B%92%E9%80%9A%E7%94%A8%EF%BC%89"><span class="toc-text">常用展开方法与例题（洛朗&#x2F;泰勒通用）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%E5%BB%B6%E6%8B%93"><span class="toc-text">解析延拓</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%E5%87%BD%E6%95%B0%E7%9A%84%E5%94%AF%E4%B8%80%E6%80%A7"><span class="toc-text">解析函数的唯一性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%E5%BB%B6%E6%8B%93%E7%9A%84%E6%83%B3%E6%B3%95%E4%B8%8E%E5%AE%9A%E4%B9%89"><span class="toc-text">解析延拓的想法与定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%94%AF%E4%B8%80%E6%80%A7%E5%AE%9A%E7%90%86"><span class="toc-text">唯一性定理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%B3%B0%E5%8B%92%E7%BA%A7%E6%95%B0%E8%BF%9B%E8%A1%8C%E8%A7%A3%E6%9E%90%E5%BB%B6%E6%8B%93"><span class="toc-text">用泰勒级数进行解析延拓</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E6%A0%B8%E5%BF%83"><span class="toc-text">方法核心</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E5%87%BD%E6%95%B0%E5%85%B3%E7%B3%BB%E5%BC%8F%E8%BF%9B%E8%A1%8C%E8%A7%A3%E6%9E%90%E5%BB%B6%E6%8B%93%EF%BC%9A-Gamma%E5%87%BD%E6%95%B0"><span class="toc-text">利用函数关系式进行解析延拓：Γ\GammaΓ函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%A7%A3%E6%9E%90%E5%9F%9F%E8%B5%B7%E7%82%B9"><span class="toc-text">定义与解析域起点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B1%E5%87%BD%E6%95%B0%E6%96%B9%E7%A8%8B%E6%8A%8A-Gamma%E5%BB%B6%E6%8B%93%E5%88%B0%E5%B7%A6%E5%8D%8A%E5%B9%B3%E9%9D%A2"><span class="toc-text">由函数方程把Γ\GammaΓ延拓到左半平面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%A4%E4%B8%AA%E9%87%8D%E8%A6%81%E6%81%92%E7%AD%89%E5%BC%8F%EF%BC%88%E6%8E%8C%E6%8F%A1%E7%BB%93%E8%AE%BA-%E8%AF%81%E6%98%8E%E5%A5%97%E8%B7%AF%EF%BC%89"><span class="toc-text">两个重要恒等式（掌握结论+证明套路）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#B%E5%87%BD%E6%95%B0%EF%BC%88Beta%E5%87%BD%E6%95%B0%EF%BC%89"><span class="toc-text">BBB函数（Beta函数）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-2"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E-Gamma%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%88%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F%EF%BC%89"><span class="toc-text">与Γ\GammaΓ函数的关系（核心公式）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90%E5%BB%B6%E6%8B%93%E7%BB%93%E8%AE%BA"><span class="toc-text">解析延拓结论</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%87%E6%B3%A8%EF%BC%9A%E4%B8%A4%E7%A7%8D%E5%BB%B6%E6%8B%93%E6%96%B9%E6%B3%95%E7%9A%84%E5%AF%B9%E6%AF%94"><span class="toc-text">备注：两种延拓方法的对比</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%A4%E7%AB%8B%E5%A5%87%E7%82%B9%E5%88%86%E7%B1%BB"><span class="toc-text">孤立奇点分类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%C2%A73-0-%E5%AD%A4%E7%AB%8B%E5%A5%87%E7%82%B9%EF%BC%9A%E5%9F%BA%E6%9C%AC%E6%A1%86%E6%9E%B6"><span class="toc-text">§3.0 孤立奇点：基本框架</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E5%8E%BB%E5%A5%87%E7%82%B9"><span class="toc-text">可去奇点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%81%E7%82%B9"><span class="toc-text">极点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E6%80%A7%E5%A5%87%E7%82%B9"><span class="toc-text">本性奇点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A0%E7%A9%B7%E8%BF%9C%E7%82%B9-z-infty"><span class="toc-text">无穷远点 z&#x3D;∞z&#x3D;\inftyz&#x3D;∞</span></a></li></ol></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E7%BA%A7%E6%95%B0%E5%92%8C%E5%B1%95%E5%BC%80/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-12</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E7%BA%A7%E6%95%B0%E5%92%8C%E5%B1%95%E5%BC%80/">复变函数级数和展开</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/">复变函数及其积分</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ShuLiFangFa/%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-08</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ShuLiFangFa/%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86/">留数定理</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GaiTong/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%AE%80%E4%BB%8B/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-24</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GaiTong/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%AE%80%E4%BB%8B/">随机过程简介</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/GuangXue/%E4%BA%8C%E7%BB%B4%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84,%20%E5%88%86%E8%BE%A8%E7%8E%87,%20%E8%8F%B2%E6%B6%85%E8%80%B3%E5%8D%8A%E6%B3%A2%E5%B8%A6%E4%B8%8E%E8%8F%B2%E6%B6%85%E8%80%B3%E9%80%8F%E9%95%9C/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">12-23</span>
+                
+              </div>
+              <a class="post-title" href="/physics/GuangXue/%E4%BA%8C%E7%BB%B4%E5%A4%AB%E6%9C%97%E7%A6%BE%E8%B4%B9%E8%A1%8D%E5%B0%84,%20%E5%88%86%E8%BE%A8%E7%8E%87,%20%E8%8F%B2%E6%B6%85%E8%80%B3%E5%8D%8A%E6%B3%A2%E5%B8%A6%E4%B8%8E%E8%8F%B2%E6%B6%85%E8%80%B3%E9%80%8F%E9%95%9C/">二维夫朗禾费衍射，分辨率，菲涅耳半波带与菲涅耳透镜</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script defer="">
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(76, 213, 153, 0.6)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 -  <a target="_blank" rel="noopener" href="https://github.com/kotokowa">kotokowa</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
+  <div class="dark-content">
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
+  </div>
+</div>
+
+<script defer="">
+  $(function() {
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
+    if (isDark) {
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
+    }
+  }
+</script>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer="">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script defer="" src="/physics/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/physics/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js class="" server="netease" type="playlist" id="17453633682" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="none" volume="0.4" list-folded="true">
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <!-- 背景彩带 -->
+    
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
+    
+
+    <script src="/physics/js/utils/index.js"></script>
+    <script src="/physics/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/physics/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/physics/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/physics/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/physics/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/physics/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax="">
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+        <script type="text/javascript">
+  var utteranceComment = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceComment.Theme = 'github-dark';
+    } else {
+      utteranceComment.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceComment.Theme)
+      utterances.setAttribute('repo', 'kotokowa/physics-utterances')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceComment.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+      
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script async="" src="/physics/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>
