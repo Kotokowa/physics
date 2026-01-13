@@ -369,7 +369,7 @@
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2026-01-08 |
+          <i class="fas fa-calendar"></i> Published in：2026-01-14 |
         </span>
       
 
@@ -392,7 +392,160 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1>留数定理</h1>
+<p>留数定理和留数求法，利用留数定理计算实变函数定积分</p>
+<h3 id="留数定理和留数求法">留数定理和留数求法</h3>
+<h4 id="留数与留数定理">留数与留数定理</h4>
+<p><strong>留数</strong>：若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math></span></span>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">z=b_k</annotation></semantics></math></span></span>邻域可作洛朗展开<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msubsup><mi>a</mi><mi>n</mi><mrow><mo>(</mo><mi>k</mi><mo>)</mo></mrow></msubsup><mo>(</mo><mi>z</mi><mo>−</mo><msub><mi>b</mi><mi>k</mi></msub><msup><mo>)</mo><mi>n</mi></msup></mrow><annotation encoding="application/x-tex">f(z)=\sum_{n=-\infty}^{\infty}a_n^{(k)}(z-b_k)^n</annotation></semantics></math></span></span>，则<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow><mrow><mo>(</mo><mi>k</mi><mo>)</mo></mrow></msubsup></mrow><annotation encoding="application/x-tex">a_{-1}^{(k)}</annotation></semantics></math></span></span>称为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">b_k</annotation></semantics></math></span></span>处的留数，记 $\operatorname{Res}f(b_k)$。<br>
+<strong>留数定理</strong>：若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math></span></span>在闭曲线<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span>所围区域内除有限个孤立奇点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">b_k</annotation></semantics></math></span></span>外解析，且在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span>上解析，则</p>
+
+$$
+\oint_l f(z),\mathrm{d}z = 2\pi i \sum_{k=1}^m \operatorname{Res} f(b_k).
+$$
+
+<p><strong>无穷远点留数（了解）</strong>：定义$\operatorname{Res}f(\infty)=-a_{-1}$（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span></span>的洛朗展开系数），并有“全平面（含<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">\infty</annotation></semantics></math></span></span>）留数和为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span>”：</p>
+
+$$
+\sum_{k=1}^m \operatorname{Res}f(b_k)+\operatorname{Res}f(\infty)=0.
+$$
+
+<h4 id="留数的常用求法">留数的常用求法</h4>
+<p><strong>可去奇点</strong>：留数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span>。<br>
+<strong>单极点（简单极点）</strong>：若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">z=b</annotation></semantics></math></span></span>为单极点，则</p>
+
+$$
+\operatorname{Res}f(b)=\lim_{z\to b}(z-b)f(z).
+$$
+
+<p><strong>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><mrow><mi>Q</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">f(z)=\dfrac{P(z)}{Q(z)}</annotation></semantics></math></span></span>，且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>b</mi><mo>)</mo><mo>≠</mo><mn>0</mn><mo separator="true">,</mo><mtext>&nbsp;</mtext><mi>Q</mi><mo>(</mo><mi>b</mi><mo>)</mo><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mtext>&nbsp;</mtext><msup><mi>Q</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>b</mi><mo>)</mo><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">P(b)\neq 0,\ Q(b)=0,\ Q'(b)\neq 0</annotation></semantics></math></span></span></strong>，则</p>
+
+$$
+\operatorname{Res}f(b)=\frac{P(b)}{Q'(b)}.
+$$
+
+<p><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>阶极点（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>≥</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">m\ge 2</annotation></semantics></math></span></span>）</strong>：若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">z=b</annotation></semantics></math></span></span>为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span>阶极点，则</p>
+
+$$
+\operatorname{Res}f(b)=\lim_{z\to b}\frac{1}{(m-1)!}\frac{\mathrm{d}^{m-1}}{\mathrm{d}z^{m-1}}\Big[(z-b)^m f(z)\Big].
+$$
+
+<p><strong>本性奇点</strong>：一般需把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>在该点作洛朗展开，直接取<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>z</mi><mo>−</mo><mi>b</mi><msup><mo>)</mo><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">(z-b)^{-1}</annotation></semantics></math></span></span>项系数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mrow><mo>−</mo><mn>1</mn></mrow></msub></mrow><annotation encoding="application/x-tex">a_{-1}</annotation></semantics></math></span></span>。</p>
+<details>
+<summary>例：用高阶极点公式算 $\operatorname{Res}\dfrac{1}{(z^2+1)^3}$ 在 $z=i$</summary>
+<p>因为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">z=i</annotation></semantics></math></span></span>为三阶极点（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">m=3</annotation></semantics></math></span></span>），按高阶极点公式：</p>
+
+$$
+\operatorname{Res}f(i)=\frac{1}{2!}\frac{\mathrm{d}^2}{\mathrm{d}z^2}\Big[(z-i)^3\frac{1}{(z^2+1)^3}\Big]\Big|_{z=i}
+= -\frac{3}{16}i.
+$$
+
+</details>
+<hr>
+<h3 id="利用留数定理计算实变函数定积分">利用留数定理计算实变函数定积分</h3>
+<h4 id="总体套路（把实积分“封闭化”）">总体套路（把实积分“封闭化”）</h4>
+<p><strong>核心想法</strong>：把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_a^b f(x),\mathrm{d}x</annotation></semantics></math></span></span>嵌入某个闭合曲线<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span>的复积分<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mo>∮</mo><mi>l</mi></msub><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">\oint_l f(z),\mathrm{d}z</annotation></semantics></math></span></span>，使闭合曲线由实轴段<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math></span></span>加上辅助曲线段<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">l_1</annotation></semantics></math></span></span>组成，然后用留数定理把闭合积分转为留数和：</p>
+
+$$
+\int_a^b f(x),\mathrm{d}x+\int_{l_1}f(z),\mathrm{d}z
+=2\pi i\sum \operatorname{Res}f(\text{曲线内部奇点}).
+$$
+
+<p>接着证明（或构造使得）<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mo>∫</mo><mrow><msub><mi>l</mi><mn>1</mn></msub></mrow></msub><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>z</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\int_{l_1}f(z),\mathrm{d}z\to 0</annotation></semantics></math></span></span>或能被你控制，从而解出原积分。</p>
+<h4 id="Ⅰ-int-infty-infty-f-x-mathrm-d-x（上半圆闭合）">Ⅰ. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty} f(x),\mathrm{d}x</annotation></semantics></math></span></span>（上半圆闭合）</h4>
+<p><strong>典型条件</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(z)</annotation></semantics></math></span></span>在上半平面只有有限个奇点，且当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z\to\infty</annotation></semantics></math></span></span>时<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z f(z)\to 0</annotation></semantics></math></span></span>（足以保证大半圆弧积分<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\to 0</annotation></semantics></math></span></span>）。此时取上半圆<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>R</mi></msub></mrow><annotation encoding="application/x-tex">C_R</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mo>−</mo><mi>R</mi><mo separator="true">,</mo><mi>R</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[-R,R]</annotation></semantics></math></span></span>闭合，得到</p>
+
+$$
+\int_{-\infty}^{\infty} f(x),\mathrm{d}x
+=2\pi i \sum_{\text{上半平面}} \operatorname{Res} f(z).
+$$
+
+<details>
+<summary>例：$\int_0^\infty \dfrac{\mathrm{d}x}{(x^2+1)^3}$</summary>
+<p>令<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mo>(</mo><msup><mi>z</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><msup><mo>)</mo><mn>3</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">f(z)=\dfrac{1}{(z^2+1)^3}</annotation></semantics></math></span></span>，上半平面只有三阶极点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi>i</mi></mrow><annotation encoding="application/x-tex">z=i</annotation></semantics></math></span></span>，利用留数法可得</p>
+
+$$
+\int_0^\infty \frac{\mathrm{d}x}{(x^2+1)^3}=\frac{3\pi}{16}.
+$$
+
+</details>
+<h4 id="Ⅱ-int-infty-infty-f-x-e-imx-mathrm-d-x-与若尔当引理">Ⅱ. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>m</mi><mi>x</mi></mrow></msup><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty} f(x)e^{imx},\mathrm{d}x</annotation></semantics></math></span></span> 与若尔当引理</h4>
+<p>把余弦/正弦积分合并进指数形式：<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mi>cos</mi><mo>(</mo><mi>m</mi><mi>x</mi><mo>)</mo><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi><mo>=</mo><mi mathvariant="normal">ℜ</mi><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>m</mi><mi>x</mi></mrow></msup><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty} f(x)\cos(mx),\mathrm{d}x=\Re\int_{-\infty}^{\infty} f(x)e^{imx},\mathrm{d}x</annotation></semantics></math></span></span>，<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mi>sin</mi><mo>(</mo><mi>m</mi><mi>x</mi><mo>)</mo><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi><mo>=</mo><mi mathvariant="normal">ℑ</mi><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>m</mi><mi>x</mi></mrow></msup><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty} f(x)\sin(mx),\mathrm{d}x=\Im\int_{-\infty}^{\infty} f(x)e^{imx},\mathrm{d}x</annotation></semantics></math></span></span>。</p>
+<ul>
+<li><strong>若尔当（Jordan）引理</strong>：设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m&gt;0</annotation></semantics></math></span></span>，且当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z\to\infty</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><mi>arg</mi><mi>z</mi><mo>≤</mo><mi>π</mi></mrow><annotation encoding="application/x-tex">0\le \arg z\le \pi</annotation></semantics></math></span></span>）时<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>z</mi><mo>)</mo><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">f(z)\to 0</annotation></semantics></math></span></span>，则  
+    $$
+    \lim_{R\to\infty}\int_{C_R} f(z)e^{im z},\mathrm{d}z=0
+    \quad (C_R:\text{上半圆}).
+    $$
+    
+</li>
+<li><strong>无实轴奇点时</strong>（先记住这个版本）：  
+    $$
+    \int_{-\infty}^{\infty} f(x)e^{imx},\mathrm{d}x
+    =2\pi i \sum_{\text{上半平面}} \operatorname{Res}\big(f(z)e^{im z}\big)\quad (m&gt;0).
+    $$
+    
+</li>
+<li><strong>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>在实轴上也有有限个单极点</strong>（常见于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>sin</mi><mi>x</mi></mrow><mrow><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{\sin x}{x}</annotation></semantics></math></span></span>这类）：会多出“半个留数”的贡献：  
+    $$
+    \int_{-\infty}^{\infty} f(x)e^{imx},\mathrm{d}x
+    =2\pi i \sum_{\text{上半平面}} \operatorname{Res}\big(f(z)e^{im z}\big)
+    +\pi i \sum_{\text{实轴上}} \operatorname{Res}\big(f(z)e^{im z}\big)
+    \quad (m&gt;0).
+    $$
+    
+</li>
+</ul>
+<details>
+<summary>例：狄利克雷积分 $\int_0^\infty \dfrac{\sin x}{x}\,\mathrm{d}x$</summary>
+<p>用上式处理<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mfrac><mrow><msup><mi>e</mi><mrow><mi>i</mi><mi>x</mi></mrow></msup></mrow><mrow><mi>x</mi></mrow></mfrac><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty}\dfrac{e^{ix}}{x},\mathrm{d}x</annotation></semantics></math></span></span>，实轴上在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">z=0</annotation></semantics></math></span></span>有单极点，得到</p>
+
+$$
+\int_{-\infty}^{\infty}\frac{e^{ix}}{x},\mathrm{d}x=\pi i,
+\qquad
+\int_0^\infty\frac{\sin x}{x},\mathrm{d}x=\frac{\pi}{2}.
+$$
+
+</details>
+<details>
+<summary>例：$\int_0^\infty \dfrac{x\sin(mx)}{x^2+a^2}\,\mathrm{d}x$（$a&gt;0$）</summary>
+<p>先算<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mfrac><mrow><mi>x</mi></mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>a</mi><mn>2</mn></msup></mrow></mfrac><msup><mi>e</mi><mrow><mi>i</mi><mi>m</mi><mi>x</mi></mrow></msup><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty}\dfrac{x}{x^2+a^2}e^{imx},\mathrm{d}x</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">m&gt;0</annotation></semantics></math></span></span>），上半平面只有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mi>a</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">z=ai</annotation></semantics></math></span></span>一个单极点，取虚部得</p>
+
+$$
+\int_0^\infty \frac{x\sin(mx)}{x^2+a^2},\mathrm{d}x=\frac{\pi}{2}e^{-ma}.
+$$
+
+</details>
+<h4 id="Ⅲ-积分主值：实轴上有单极点怎么办">Ⅲ. 积分主值：实轴上有单极点怎么办</h4>
+<p>当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>在积分区间内无界（实轴上出现单极点）时，需要区分<strong>一般值</strong>与<strong>主值</strong>。例如在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[a,b]</annotation></semantics></math></span></span>内<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span></span>为单极点时，主值定义为</p>
+
+$$
+P\int_a^b f(x),\mathrm{d}x=\lim_{\varepsilon\to 0}\left[\int_a^{c-\varepsilon}f(x),\mathrm{d}x+\int_{c+\varepsilon}^{b}f(x),\mathrm{d}x\right].
+$$
+
+<ul>
+<li><strong>上半圆绕开实轴单极点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span></span></strong>：小半圆<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">C_r</annotation></semantics></math></span></span>会贡献$-\pi i,\operatorname{Res}f(c)$，从而出现“半留数”项（这就是为什么有时会多出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi><mi>i</mi></mrow><annotation encoding="application/x-tex">\pi i</annotation></semantics></math></span></span>乘留数）。</li>
+<li><strong>物理中常见的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>±</mo><mi>i</mi><mi>ε</mi></mrow><annotation encoding="application/x-tex">\pm i\varepsilon</annotation></semantics></math></span></span>处方</strong>：对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>&lt;</mo><msub><mi>x</mi><mn>0</mn></msub><mo>&lt;</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a&lt;x_0&lt;b</annotation></semantics></math></span></span>，且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>解析，有  
+    $$
+    \int_a^b \frac{f(x)}{x-x_0\mp i\varepsilon},\mathrm{d}x
+    = P\int_a^b \frac{f(x)}{x-x_0},\mathrm{d}x \pm i\pi f(x_0)\quad (\varepsilon\to 0).
+    $$
+    
+</li>
+</ul>
+<h4 id="Ⅳ-（补充）0-sim-2-pi-的三角有理式">Ⅳ.（补充）<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>∼</mo><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">0\sim 2\pi</annotation></semantics></math></span></span> 的三角有理式</h4>
+<p>常见类型<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mi>π</mi></mrow></msubsup><mi>R</mi><mo>(</mo><mi>cos</mi><mi>x</mi><mo separator="true">,</mo><mi>sin</mi><mi>x</mi><mo>)</mo><mo separator="true">,</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">\int_0^{2\pi}R(\cos x,\sin x),\mathrm{d}x</annotation></semantics></math></span></span>通常用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">z=e^{ix}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mi>x</mi><mo>=</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>(</mo><mi>z</mi><mo>+</mo><msup><mi>z</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos x=\frac12(z+z^{-1})</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>x</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn><mi>i</mi></mrow></mfrac><mo>(</mo><mi>z</mi><mo>−</mo><msup><mi>z</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin x=\frac{1}{2i}(z-z^{-1})</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>z</mi></mrow><mrow><mi>i</mi><mi>z</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\mathrm{d}x=\frac{\mathrm{d}z}{iz}</annotation></semantics></math></span></span>，把积分化成单位圆上的留数计算。该思路在原文后续定积分总结中被作为“除了这种类型外，其它类型也遵循同一封闭曲线+留数思路”。</p>
+<details>
+<summary>例：单位圆内只取一个极点，直接算出结果</summary>
+<p>原文中有一例通过判别单位圆内外极点位置，只取<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><mi mathvariant="normal">∣</mi><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">|z|&lt;1</annotation></semantics></math></span></span>内的极点<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">z_1</annotation></semantics></math></span></span>并算留数，得到</p>
+
+$$
+I=\frac{2\pi}{(1-\varepsilon^2)^{3/2}}.
+$$
+
+</details>
+
       </div>
       <div class="post-tags-categories">
         
@@ -435,30 +588,6 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">复变函数及其积分</div>
-      </div>
-      
-      <!-- <div class="content">
-        复变函数及其积分
-复数的基本概念
-复数的表示形式
-定义 −1=i\sqrt{-1} = i√​−1​​​=i
-
-
-代数式
-      </div> -->
-    </a>
-  </div>
-
 
 
   
@@ -467,17 +596,17 @@
       background-position: center center;">
       <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/GaiTong/%E9%9A%8F%E6%9C%BA%E8%BF%87%E7%A8%8B%E7%AE%80%E4%BB%8B/" class="post-nav-link">
+    <a href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E7%BA%A7%E6%95%B0%E5%92%8C%E5%B1%95%E5%BC%80/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">随机过程简介</div>
+        <div class="title-text">复变函数级数和展开</div>
       </div>
       <!-- <div class="content">
-        随机过程简介
-随机序列(离散)，随机过程(连续)
-随机序列(离散时间过程)与信息流
-
-在概率空间(Ω,F,P)(\Ome
+        复变函数级数和展开
+级数展开，解析延拓，孤立奇点分类
+复变函数级数和解析函数级数
+定义
+这里的级数收敛和数学分析中实变函
       </div> -->
     </a>
   </div>
@@ -595,7 +724,7 @@
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">留数定理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86%E5%92%8C%E7%95%99%E6%95%B0%E6%B1%82%E6%B3%95"><span class="toc-text">留数定理和留数求法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%95%99%E6%95%B0%E4%B8%8E%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86"><span class="toc-text">留数与留数定理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%95%99%E6%95%B0%E7%9A%84%E5%B8%B8%E7%94%A8%E6%B1%82%E6%B3%95"><span class="toc-text">留数的常用求法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86%E8%AE%A1%E7%AE%97%E5%AE%9E%E5%8F%98%E5%87%BD%E6%95%B0%E5%AE%9A%E7%A7%AF%E5%88%86"><span class="toc-text">利用留数定理计算实变函数定积分</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E4%BD%93%E5%A5%97%E8%B7%AF%EF%BC%88%E6%8A%8A%E5%AE%9E%E7%A7%AF%E5%88%86%E2%80%9C%E5%B0%81%E9%97%AD%E5%8C%96%E2%80%9D%EF%BC%89"><span class="toc-text">总体套路（把实积分“封闭化”）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%85%A0-int-infty-infty-f-x-mathrm-d-x%EF%BC%88%E4%B8%8A%E5%8D%8A%E5%9C%86%E9%97%AD%E5%90%88%EF%BC%89"><span class="toc-text">Ⅰ. ∫−∞∞f(x),dx\int_{-\infty}^{\infty} f(x),\mathrm{d}x∫​−∞​∞​​f(x),dx（上半圆闭合）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%85%A1-int-infty-infty-f-x-e-imx-mathrm-d-x-%E4%B8%8E%E8%8B%A5%E5%B0%94%E5%BD%93%E5%BC%95%E7%90%86"><span class="toc-text">Ⅱ. ∫−∞∞f(x)eimx,dx\int_{-\infty}^{\infty} f(x)e^{imx},\mathrm{d}x∫​−∞​∞​​f(x)e​imx​​,dx 与若尔当引理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%85%A2-%E7%A7%AF%E5%88%86%E4%B8%BB%E5%80%BC%EF%BC%9A%E5%AE%9E%E8%BD%B4%E4%B8%8A%E6%9C%89%E5%8D%95%E6%9E%81%E7%82%B9%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="toc-text">Ⅲ. 积分主值：实轴上有单极点怎么办</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%85%A3-%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%890-sim-2-pi-%E7%9A%84%E4%B8%89%E8%A7%92%E6%9C%89%E7%90%86%E5%BC%8F"><span class="toc-text">Ⅳ.（补充）0∼2π0\sim 2\pi0∼2π 的三角有理式</span></a></li></ol></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -621,6 +750,27 @@
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ShuLiFangFa/%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-14</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ShuLiFangFa/%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86/">留数定理</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -661,27 +811,6 @@
                 
               </div>
               <a class="post-title" href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/">复变函数及其积分</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/ShuLiFangFa/%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-08</span>
-                
-              </div>
-              <a class="post-title" href="/physics/ShuLiFangFa/%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86/">留数定理</a>
             </div>
           </div>
         
