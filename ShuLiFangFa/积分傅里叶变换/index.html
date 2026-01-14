@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>archives: 2026/1 | tianyi</title>
+  <title>积分傅里叶变换 | tianyi</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -340,174 +340,747 @@
   
 </header>
         <!-- 内容区域 -->
-        <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="archive-header" style="background-image:url('https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c')">
-  <div class="archive-header-title">
-    archive
-  </div>
-  <div class="archive-header-desc">
-  
-  <span class="title" id="archive-header-desc"></span>
-  <script>
-  function typedFn() {
-    const el = '#archive-header-desc';
-    const type = 'archive';
-    let desc = '一起唱吧，心中的歌！'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
-  
-  </div>
-  <div class="mask-box"></div>
-</div>
+        
+<!-- prismjs 代码高亮 -->
 
-<div class="archive-video">
-  <video class="full-video" autoplay="" loop="" muted="">
-      <source style="width: 100%;height: 100vh;" src="/physics/">
-  </video>
-  <div class="video-header-title">
-    archive
-  </div>
-  <div class="video-header-desc">
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-      <span class="title" id="archive-video-header-desc"></span>
-      <script>
-  function typedFn() {
-    const el = '#archive-video-header-desc';
-    const type = 'archive';
-    let desc = '一起唱吧，心中的歌！'
-    var typed = new Typed(el, {
-      strings: [desc],
-      startDelay: 100,
-      typeSpeed: 100,
-      loop: true,
-      backSpeed: 50,
-      showCursor: true
-    });
-  }
-  typedFn();
-</script>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        积分傅里叶变换
+      </span>
+    </div>
+    
+    
       
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2026-01-14 |
+        </span>
+      
+
+      
+
+      
+    
   </div>
-  <div class="mask-box"></div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
 </div>
 
-<!-- hash算法 -->
 
 
-<div class="archive-main">
-  <section class="archive">
-    <div class="archive-content">
-      <ul class="post-archive">
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>积分傅里叶变换</h1>
+<p><strong>核心思路</strong>：把非周期函数看成周期函数在周期 $T\to\infty$ 时的极限，离散频谱 $\omega_n$ 过渡到连续谱 $\omega$，求和变积分，从而得到傅里叶积分与傅里叶变换对。</p>
+<p><strong>一个常见的充分条件</strong>（保证可做傅里叶积分/变换）：在任意有限区间分段光滑、至多第一类间断点；且 $\int_{-\infty}^{\infty}|f(t)|\,\mathrm dt$ 存在，并约定间断点取平均值 $f(t)=\frac{f(t+0)+f(t-0)}{2}$。</p>
+<hr>
+<h3 id="定义与约定">定义与约定</h3>
+<h4 id="时间变量-swig￼5-（频率-swig￼6-）的对称约定">时间变量 $t$（频率 $\omega$）的对称约定</h4>
+$$
+\begin{cases}
+f(t)=\dfrac{1}{\sqrt{2\pi}}\displaystyle\int_{-\infty}^{\infty}\widetilde f(\omega)e^{-i\omega t}\,\mathrm d\omega\\[6pt]
+\widetilde f(\omega)=\dfrac{1}{\sqrt{2\pi}}\displaystyle\int_{-\infty}^{\infty}f(t')e^{i\omega t'}\,\mathrm dt'.
+\end{cases}
+$$
+<p>这组公式中，第一式可视为<strong>反演式</strong>，第二式可视为<strong>变换式</strong>。</p>
+<h4 id="空间变量-swig￼8-（波数-swig￼9-）的对称约定（更常用）">空间变量 $x$（波数 $k$）的对称约定（更常用）</h4>
+<p>物理上当自变量换成空间坐标 $x$ 时，常把频率记作波数 $k$，并习惯采用：</p>
+$$
+\begin{cases}
+f(x)=\dfrac{1}{\sqrt{2\pi}}\displaystyle\int_{-\infty}^{\infty}\widetilde f(k)e^{ikx}\,\mathrm dk\\[6pt]
+\widetilde f(k)=\dfrac{1}{\sqrt{2\pi}}\displaystyle\int_{-\infty}^{\infty}f(x)e^{-ikx}\,\mathrm dx.
+\end{cases}
+$$
+<p><strong>约定可变但要一致</strong>：不同书里积分号前系数不一定相同，但只要“变换式系数 × 反演式系数 = $\frac{1}{2\pi}$”，并且指数因子成对改变（$e^{-i\omega t}$ 与 $e^{i\omega t'}$ 同时换号）即可保持一致。</p>
+<hr>
+<h3 id="基本性质（按上面的-swig￼16-约定）">基本性质（按上面的 $x\leftrightarrow k$ 约定）</h3>
+<p>下面均以 $f(x)\longleftrightarrow \widetilde f(k)$ 表示。</p>
+<p><strong>线性</strong></p>
+$f=c_1 f_1+c_2 f_2 \Longrightarrow \widetilde f=c_1\widetilde f_1+c_2\widetilde f_2$。
+<p><strong>伸缩</strong>（$a\neq0$）</p>
+$f(ax)\longleftrightarrow \frac1{|a|}\widetilde f\!\left(\frac{k}{a}\right)$。
+<p><strong>微分对应乘幂</strong>（若 $f^{(m)}(x)\to0$，$m=0,\dots,n-1$）</p>
+$f^{(n)}(x)\longleftrightarrow (ik)^n\widetilde f(k)$。
+<p><strong>积分对应除以 $ik$</strong>（若 $\int_{-\infty}^{\infty}f(\xi)\mathrm d\xi=0$）</p>
+$\displaystyle\int_{-\infty}^{x}f(\xi)\mathrm d\xi\longleftrightarrow \frac{1}{ik}\widetilde f(k)$。
+<p><strong>平移</strong></p>
+$f(x-\xi)\longleftrightarrow e^{-ik\xi}\widetilde f(k)$。
+<p><strong>乘积 ↔（频域）卷积</strong></p>
+$$
+f_1(x)f_2(x)\longleftrightarrow \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\widetilde f_1(\eta)\widetilde f_2(k-\eta)\,\mathrm d\eta.
+$$
+<p><strong>乘以 $(-ix)^n$ ↔ 频域求导</strong>（若 $\widetilde f^{(m)}(k)\to0$，$m=0,\dots,n-1$）</p>
+$(-ix)^n f(x)\longleftrightarrow \widetilde f^{(n)}(k)$。
+<p><strong>“除以 $(-ix)$” ↔ 频域积分</strong>（若 $\int \widetilde f(\eta)\mathrm d\eta=0$）</p>
+$\frac{1}{-ix}f(x)\longleftrightarrow \int_{-\infty}^{k}\widetilde f(\eta)\mathrm d\eta$。
+<p><strong>调制（乘指数） ↔ 频移</strong></p>
+$f(x)e^{-i\lambda x}\longleftrightarrow \widetilde f(k+\lambda)$。
+<p><strong>卷积 ↔ 乘积</strong>（卷积定理）</p>
+$$
+\frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} f_1(\xi)f_2(x-\xi)\,\mathrm d\xi
+\longleftrightarrow
+\widetilde f_1(k)\widetilde f_2(k).
+$$
+<blockquote>
+<p>备注：若你改用 $t\leftrightarrow\omega$ 的那套约定推导，上述性质里出现的 $\pm i$ 可能需要整体换号；例如 $f^{(n)}(t)\longleftrightarrow(-i\omega)^n\widetilde f(\omega)$。</p>
+</blockquote>
+<hr>
+<h3 id="常用变换对（选摘）">常用变换对（选摘）</h3>
+<h4 id="swig￼41-函数与其积分表示">$\delta$ 函数与其积分表示</h4>
+$$
+\delta(x)\longleftrightarrow \frac{1}{\sqrt{2\pi}}.
+$$
+<p>从而（代回反演式）得到 $\delta$ 的积分表示：</p>
+$$
+\delta(x)=\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{ikx}\,\mathrm dk
+=\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{-ikx}\,\mathrm dk.
+$$
+<h4 id="高斯函数（归一化形式）">高斯函数（归一化形式）</h4>
+$$
+\frac{\sqrt{\alpha}}{\pi^{1/4}}e^{-\frac{\alpha^2 x^2}{2}}
+\longleftrightarrow
+\frac{1}{\pi^{1/4}\sqrt{\alpha}}e^{-\frac{k^2}{2\alpha^2}}.
+$$
+<h4 id="一些“对称性推出来”的常见对（带主值的会标注）">一些“对称性推出来”的常见对（带主值的会标注）</h4>
+<p>例如：$\delta(x-a)\longleftrightarrow \frac{1}{\sqrt{2\pi}}e^{-ika}$，因此也有 $\frac{1}{\sqrt{2\pi}}e^{iax}\longleftrightarrow \delta(k-a)$；以及（主值意义下）$\frac{1}{x}\longleftrightarrow -i\sqrt{\frac{\pi}{2}}\frac{k}{|k|}$ 等。</p>
+<hr>
+<h3 id="Parseval-等式（能量守恒-内积守恒）">Parseval 等式（能量守恒/内积守恒）</h3>
+<p>若 $f\longleftrightarrow \widetilde f$，$g\longleftrightarrow \widetilde g$，则有（星号表示复共轭）：</p>
+$$
+\int_{-\infty}^{\infty}\widetilde f(k)\widetilde g^*(k)\,\mathrm dk
+=
+\int_{-\infty}^{\infty}f(x)g^*(x)\,\mathrm dx.
+$$
+<p>特别地取 $g=f$ 得到 $L^2$ 范数保持：$\int|\widetilde f|^2=\int|f|^2$（在本对称归一化下）。</p>
+<hr>
+<h3 id="与拉普拉斯变换的比较（怎么选工具）">与拉普拉斯变换的比较（怎么选工具）</h3>
+<p><strong>被积因子不同</strong>：拉普拉斯含衰减因子 $e^{-pt}$，傅里叶含振荡因子 $e^{i\omega t}$，因此为了保证收敛，傅里叶对原函数的要求往往更“苛刻”（例如 $t^n$ 不符合傅里叶变换要求）。</p>
+<p><strong>适用场景的直观区分</strong>：当 $t$ 是时间变量时，傅里叶常用于讨论 $(-\infty,\infty)$ 上的稳态/无初值约束问题；拉普拉斯更适合 $[0,\infty)$ 的瞬态/带初值（边界条件）问题。</p>
+<hr>
+<h3 id="多重傅里叶变换（二维-三维-四维）">多重傅里叶变换（二维/三维/四维）</h3>
+<h4 id="三维形式（向量记号更省）">三维形式（向量记号更省）</h4>
+<p>设 $\boldsymbol r=(x,y,z)$，$\boldsymbol k=(k_1,k_2,k_3)$，$\mathrm d\boldsymbol r=\mathrm dx,\mathrm dy,\mathrm dz$，$\mathrm d\boldsymbol k=\mathrm dk_1,\mathrm dk_2,\mathrm dk_3$，则：</p>
+$$
+\begin{cases}
+f(\boldsymbol r)=\left(\dfrac{1}{\sqrt{2\pi}}\right)^3\displaystyle\iiint \widetilde f(\boldsymbol k)e^{i\boldsymbol k\cdot \boldsymbol r}\,\mathrm d\boldsymbol k\\[6pt]
+\widetilde f(\boldsymbol k)=\left(\dfrac{1}{\sqrt{2\pi}}\right)^3\displaystyle\iiint f(\boldsymbol r)e^{-i\boldsymbol k\cdot \boldsymbol r}\,\mathrm d\boldsymbol r.
+\end{cases}
+$$
+<p><strong>卷积定理同样推广</strong>（以三元为例）：</p>
+$$
+\left(\frac{1}{\sqrt{2\pi}}\right)^3 \iiint f_1(\boldsymbol r')f_2(\boldsymbol r-\boldsymbol r')\,\mathrm d\boldsymbol r'
+\longleftrightarrow
+\widetilde f_1(\boldsymbol k)\widetilde f_2(\boldsymbol k).
+$$
+<h4 id="四维形式（把时空统一写法）">四维形式（把时空统一写法）</h4>
+<p>把四维矢量写作 $\boldsymbol x=(x,y,z,t)$、$\boldsymbol k=(k_1,k_2,k_3,\omega)$，并用 $\boldsymbol k\cdot\boldsymbol x=\boldsymbol k\cdot\boldsymbol r-\omega t$，则可写成紧凑形式：</p>
+$$
+\begin{cases}
+f(\boldsymbol x)=\left(\dfrac{1}{\sqrt{2\pi}}\right)^4\displaystyle\int \widetilde f(\boldsymbol k)e^{i\boldsymbol k\cdot\boldsymbol x}\,\mathrm d^4k\\[6pt]
+\widetilde f(\boldsymbol k)=\left(\dfrac{1}{\sqrt{2\pi}}\right)^4\displaystyle\int f(\boldsymbol x)e^{-i\boldsymbol k\cdot\boldsymbol x}\,\mathrm d^4x.
+\end{cases}
+$$
+<hr>
+<h3 id="例题（折叠）">例题（折叠）</h3>
+<details>
+<summary>例1：矩形脉冲的像函数（“sinc”型频谱）</summary>
+<p>给定</p>
+$$
+f(t)=
+\begin{cases}
+h, &amp; |t|&lt;\tau\\
+0, &amp; |t|&gt;\tau
+\end{cases}
+$$
+<p>则</p>
+$$
+\widetilde f(\omega)=\frac{1}{\sqrt{2\pi}}\int_{-\tau}^{\tau}h e^{i\omega t}\,\mathrm dt
+=\sqrt{\frac{2}{\pi}}\frac{h\sin(\omega\tau)}{\omega}.
+$$
+<p>并可写出对应傅里叶积分表示。</p>
+</details>
+<details>
+<summary>例2：δ 函数的积分表示</summary>
+<p>由 $\delta(x)\longleftrightarrow \frac{1}{\sqrt{2\pi}}$，代回反演式得到</p>
+$$
+\delta(x)=\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{ikx}\,\mathrm dk
+=\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{-ikx}\,\mathrm dk.
+$$
+</details>
+<details>
+<summary>例3：Parseval 等式</summary>
+<p>证明结论：</p>
+$$
+\int_{-\infty}^{\infty}\widetilde f(k)\widetilde g^*(k)\,\mathrm dk
+=
+\int_{-\infty}^{\infty}f(x)g^*(x)\,\mathrm dx.
+$$
+<p>思路：把 $\widetilde f,\widetilde g$ 写成积分（变换式），代入左侧后交换积分次序，用 $\delta$ 的积分表示（或等价恒等式）消去 $k$ 积分即可。</p>
+</details>
+<details>
+<summary>例5：用傅里叶变换解艾里方程/线性势薛定谔方程（结果涉及 Airy 函数）</summary>
+<p>把问题无量纲化后得到</p>
+$$
+u''(\xi)+\xi u(\xi)=0,
+\quad u(+\infty)=u'(+\infty)=0,
+$$
+<p>对 $u(\xi)$ 作傅里叶变换，可得到像函数满足一阶方程</p>
+$$
+\frac{\mathrm d \widetilde u(\omega)}{\mathrm d\omega}=i\omega^2\widetilde u(\omega),
+\quad\Rightarrow\quad
+\widetilde u(\omega)=C'e^{i\omega^3/3}.
+$$
+<p>代回反演式得到积分表达，最终写成 Airy 函数：</p>
+$$
+u(\xi)=C,\mathrm{Ai}(-\xi),
+\qquad
+\mathrm{Ai}(\xi)\equiv\frac{1}{2\pi}\int_{-\infty}^{\infty}e^{i\left(\frac{\omega^3}{3}+\omega\xi\right)}\,\mathrm d\omega.
+$$
+</details>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E6%B3%95/" class="">
+              数学物理方法
+            </a>
+          
+            <a href="/physics/tags/%E9%A2%84%E4%B9%A0/" class="">
+              预习
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/ShuLiFangFa/积分傅里叶变换/" target="_blank" title="积分傅里叶变换">https://kotokowa.github.io/physics/ShuLiFangFa/积分傅里叶变换/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/ShuLiFangFa/%E7%A7%AF%E5%88%86%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">积分拉普拉斯变换</div>
+      </div>
+      <!-- <div class="content">
+        积分拉普拉斯变换
+
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
         
         
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
           
-            
-            <div class="year" data-aos="zoom-in-up">
-                <div class="bullet"></div>
-                <a href="/physics/archives/2026">2026</a>
-            </div>
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
           
-          <li class="post-item" data-aos="fade-left">
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">积分傅里叶变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%E4%B8%8E%E7%BA%A6%E5%AE%9A"><span class="toc-text">定义与约定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%8F%98%E9%87%8F-swig%EF%BF%BC5-%EF%BC%88%E9%A2%91%E7%8E%87-swig%EF%BF%BC6-%EF%BC%89%E7%9A%84%E5%AF%B9%E7%A7%B0%E7%BA%A6%E5%AE%9A"><span class="toc-text">时间变量 $t$（频率 $\omega$）的对称约定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E5%8F%98%E9%87%8F-swig%EF%BF%BC8-%EF%BC%88%E6%B3%A2%E6%95%B0-swig%EF%BF%BC9-%EF%BC%89%E7%9A%84%E5%AF%B9%E7%A7%B0%E7%BA%A6%E5%AE%9A%EF%BC%88%E6%9B%B4%E5%B8%B8%E7%94%A8%EF%BC%89"><span class="toc-text">空间变量 $x$（波数 $k$）的对称约定（更常用）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8%EF%BC%88%E6%8C%89%E4%B8%8A%E9%9D%A2%E7%9A%84-swig%EF%BF%BC16-%E7%BA%A6%E5%AE%9A%EF%BC%89"><span class="toc-text">基本性质（按上面的 $x\leftrightarrow k$ 约定）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%8F%98%E6%8D%A2%E5%AF%B9%EF%BC%88%E9%80%89%E6%91%98%EF%BC%89"><span class="toc-text">常用变换对（选摘）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#swig%EF%BF%BC41-%E5%87%BD%E6%95%B0%E4%B8%8E%E5%85%B6%E7%A7%AF%E5%88%86%E8%A1%A8%E7%A4%BA"><span class="toc-text">$\delta$ 函数与其积分表示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E5%87%BD%E6%95%B0%EF%BC%88%E5%BD%92%E4%B8%80%E5%8C%96%E5%BD%A2%E5%BC%8F%EF%BC%89"><span class="toc-text">高斯函数（归一化形式）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E2%80%9C%E5%AF%B9%E7%A7%B0%E6%80%A7%E6%8E%A8%E5%87%BA%E6%9D%A5%E2%80%9D%E7%9A%84%E5%B8%B8%E8%A7%81%E5%AF%B9%EF%BC%88%E5%B8%A6%E4%B8%BB%E5%80%BC%E7%9A%84%E4%BC%9A%E6%A0%87%E6%B3%A8%EF%BC%89"><span class="toc-text">一些“对称性推出来”的常见对（带主值的会标注）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Parseval-%E7%AD%89%E5%BC%8F%EF%BC%88%E8%83%BD%E9%87%8F%E5%AE%88%E6%81%92-%E5%86%85%E7%A7%AF%E5%AE%88%E6%81%92%EF%BC%89"><span class="toc-text">Parseval 等式（能量守恒&#x2F;内积守恒）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E7%9A%84%E6%AF%94%E8%BE%83%EF%BC%88%E6%80%8E%E4%B9%88%E9%80%89%E5%B7%A5%E5%85%B7%EF%BC%89"><span class="toc-text">与拉普拉斯变换的比较（怎么选工具）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%87%8D%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%EF%BC%88%E4%BA%8C%E7%BB%B4-%E4%B8%89%E7%BB%B4-%E5%9B%9B%E7%BB%B4%EF%BC%89"><span class="toc-text">多重傅里叶变换（二维&#x2F;三维&#x2F;四维）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%BB%B4%E5%BD%A2%E5%BC%8F%EF%BC%88%E5%90%91%E9%87%8F%E8%AE%B0%E5%8F%B7%E6%9B%B4%E7%9C%81%EF%BC%89"><span class="toc-text">三维形式（向量记号更省）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E7%BB%B4%E5%BD%A2%E5%BC%8F%EF%BC%88%E6%8A%8A%E6%97%B6%E7%A9%BA%E7%BB%9F%E4%B8%80%E5%86%99%E6%B3%95%EF%BC%89"><span class="toc-text">四维形式（把时空统一写法）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%EF%BC%88%E6%8A%98%E5%8F%A0%EF%BC%89"><span class="toc-text">例题（折叠）</span></a></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/ShuLiFangFa/%E7%A7%AF%E5%88%86%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">01-14</span>
+                
+                  <span class="post-date">01-14</span>
+                
               </div>
               <a class="post-title" href="/physics/ShuLiFangFa/%E7%A7%AF%E5%88%86%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2/">积分傅里叶变换</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/ShuLiFangFa/%E7%A7%AF%E5%88%86%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">01-14</span>
+                
+                  <span class="post-date">01-14</span>
+                
               </div>
               <a class="post-title" href="/physics/ShuLiFangFa/%E7%A7%AF%E5%88%86%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2/">积分拉普拉斯变换</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/ShuLiFangFa/%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">01-13</span>
+                
+                  <span class="post-date">01-13</span>
+                
               </div>
               <a class="post-title" href="/physics/ShuLiFangFa/%E7%95%99%E6%95%B0%E5%AE%9A%E7%90%86/">留数定理</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E7%BA%A7%E6%95%B0%E5%92%8C%E5%B1%95%E5%BC%80/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">01-12</span>
+                
+                  <span class="post-date">01-12</span>
+                
               </div>
               <a class="post-title" href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E7%BA%A7%E6%95%B0%E5%92%8C%E5%B1%95%E5%BC%80/">复变函数级数和展开</a>
             </div>
-          </li>
+          </div>
         
-          
-          <li class="post-item" data-aos="fade-left">
+          <div class="aside-list-item">
             
+            
+            
+
             <div class="post-img-box">
               <a href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
               <div>
-                <span class="post-date">01-08</span>
+                
+                  <span class="post-date">01-08</span>
+                
               </div>
               <a class="post-title" href="/physics/ShuLiFangFa/%E5%A4%8D%E5%8F%98%E5%87%BD%E6%95%B0%E5%8F%8A%E5%85%B6%E7%A7%AF%E5%88%86/">复变函数及其积分</a>
             </div>
-          </li>
+          </div>
         
-      </ul>
+      </div>
     </div>
   </section>
-  <div class="w-70">
+
     
   </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
 </div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
 
       </main>
     </div>
