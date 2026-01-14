@@ -393,6 +393,531 @@
     <article class="post post-detail">
       <div class="post-content">
         <h1>积分拉普拉斯变换</h1>
+<h3 id="拉普拉斯变换（Laplace-Transform）基础">拉普拉斯变换（Laplace Transform）基础</h3>
+<p><strong>适用函数的常见条件（保证变换存在）</strong><br>
+设<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo><mtext>&nbsp;</mtext><mo>(</mo><mi>t</mi><mo>≥</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi(t)\ (t\ge 0)</annotation></semantics></math></span></span>满足：</p>
+<ul>
+<li>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mn>0</mn><mo separator="true">,</mo><mi mathvariant="normal">∞</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">[0,\infty)</annotation></semantics></math></span></span>上分段连续，且（通常也要求）<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>φ</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi'(t)</annotation></semantics></math></span></span>除第一类间断点外分段连续，并且任意有限区间内间断点有限；</li>
+<li>存在常数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">M&gt;0</annotation></semantics></math></span></span>与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>s</mi><mn>0</mn></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">s_0\ge 0</annotation></semantics></math></span></span>使得
+  $$
+  |\varphi(t)|\le Me^{s_0 t}.
+  $$
+  
+</li>
+</ul>
+<p><strong>拉普拉斯变换的定义</strong><br>
+对复变量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>（常写<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mi>s</mi><mo>+</mo><mrow><mi mathvariant="normal">i</mi></mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">p=s+\mathrm{i}\sigma</annotation></semantics></math></span></span>），定义</p>
+
+$$
+\bar\varphi(p)=\mathcal{L}{\varphi(t)}\equiv \int_{0}^{\infty}\varphi(t)e^{-pt},dt. \tag{L1}
+$$
+
+<p>其收敛域通常为右半平面 $\operatorname{Re}p&gt;s_0$。</p>
+<p><strong>像函数的基本解析性质（常用结论）</strong></p>
+<ul>
+<li>在 $\operatorname{Re}p&gt;s_0$ 内积分收敛，且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi(p)</annotation></semantics></math></span></span>有界（可估计为\sim 1/(\operatorname{Re}p-s_0)）。</li>
+<li>在 $\operatorname{Re}p&gt;s_0$ 内，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi(p)</annotation></semantics></math></span></span>关于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>解析。</li>
+<li>当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>沿右半平面趋于无穷远时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\bar\varphi(p)\to 0</annotation></semantics></math></span></span>（在一定角域内同样成立）。</li>
+</ul>
+<p><strong>符号约定</strong></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo><mo>⟷</mo><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi(p)\longleftrightarrow \varphi(t)</annotation></semantics></math></span></span> 表示一对拉普拉斯变换。</li>
+<li>常把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t&lt;0</annotation></semantics></math></span></span>时函数视为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span>，为强调这一点可引入阶梯函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(t)</annotation></semantics></math></span></span>：
+  $$
+  H(t)=
+  \begin{cases}
+  1,&amp; t&gt;0,\
+  0,&amp; t&lt;0.
+  \end{cases}
+  $$
+  
+</li>
+</ul>
+<p><strong>两个基本例子</strong></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>⟷</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>p</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">H(t)\longleftrightarrow \dfrac{1}{p}</annotation></semantics></math></span></span>（$\operatorname{Re}p&gt;0$）</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mi>α</mi><mi>t</mi></mrow></msup><mo>⟷</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>p</mi><mo>−</mo><mi>α</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">e^{\alpha t}\longleftrightarrow \dfrac{1}{p-\alpha}</annotation></semantics></math></span></span>（$\operatorname{Re}p&gt;\operatorname{Re}\alpha$）</li>
+</ul>
+<hr>
+<h3 id="变换的基本性质（把微分-积分变成代数运算）">变换的基本性质（把微分/积分变成代数运算）</h3>
+<p><strong>线性性</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>φ</mi><mn>1</mn></msub><mo>(</mo><mi>t</mi><mo>)</mo><mo>⟷</mo><msub><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mn>1</mn></msub><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi_1(t)\longleftrightarrow \bar\varphi_1(p)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>φ</mi><mn>2</mn></msub><mo>(</mo><mi>t</mi><mo>)</mo><mo>⟷</mo><msub><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mn>2</mn></msub><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi_2(t)\longleftrightarrow \bar\varphi_2(p)</annotation></semantics></math></span></span>，则</p>
+
+$$
+c_1\varphi_1(t)+c_2\varphi_2(t)\longleftrightarrow c_1\bar\varphi_1(p)+c_2\bar\varphi_2(p).
+$$
+
+<details>
+<summary>例：求 $\sin t$ 的拉普拉斯变换</summary>
+<p>由<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>t</mi><mo>=</mo><mfrac><mrow><msup><mi>e</mi><mrow><mrow><mi mathvariant="normal">i</mi></mrow><mi>t</mi></mrow></msup><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi mathvariant="normal">i</mi></mrow><mi>t</mi></mrow></msup></mrow><mrow><mn>2</mn><mrow><mi mathvariant="normal">i</mi></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sin t=\dfrac{e^{\mathrm{i}t}-e^{-\mathrm{i}t}}{2\mathrm{i}}</annotation></semantics></math></span></span>，以及<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mrow><mi mathvariant="normal">i</mi></mrow><mi>t</mi></mrow></msup><mo>⟷</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>p</mi><mo>−</mo><mrow><mi mathvariant="normal">i</mi></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">e^{\mathrm{i}t}\longleftrightarrow \dfrac{1}{p-\mathrm{i}}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi mathvariant="normal">i</mi></mrow><mi>t</mi></mrow></msup><mo>⟷</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>p</mi><mo>+</mo><mrow><mi mathvariant="normal">i</mi></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">e^{-\mathrm{i}t}\longleftrightarrow \dfrac{1}{p+\mathrm{i}}</annotation></semantics></math></span></span>（$\operatorname{Re}p&gt;0$），<br>
+得</p>
+
+$$
+\sin t \longleftrightarrow \frac{1}{2\mathrm{i}}
+\left(\frac{1}{p-\mathrm{i}}-\frac{1}{p+\mathrm{i}}\right)
+=\frac{1}{p^2+1}.
+$$
+
+</details>
+<p><strong>相似（伸缩）定理</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>⟷</mo><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi(t)\longleftrightarrow \bar\varphi(p)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a&gt;0</annotation></semantics></math></span></span>，则</p>
+
+$$
+\varphi(at)\longleftrightarrow \frac{1}{a}\bar\varphi!\left(\frac{p}{a}\right).
+$$
+
+<details>
+<summary>例：求 $\sin(\omega t)$ 的拉普拉斯变换</summary>
+<p>由<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>t</mi><mo>⟷</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sin t\longleftrightarrow \dfrac{1}{p^2+1}</annotation></semantics></math></span></span>，用伸缩定理（取<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mi>ω</mi></mrow><annotation encoding="application/x-tex">a=\omega</annotation></semantics></math></span></span>）得</p>
+
+$$
+\sin(\omega t)\longleftrightarrow \frac{\omega}{p^2+\omega^2}\quad(\omega&gt;0,\ \operatorname{Re}p&gt;0).
+$$
+
+</details>
+<p><strong>原函数求导定理（把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>域导数变成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>域多项式）</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>⟷</mo><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi(t)\longleftrightarrow \bar\varphi(p)</annotation></semantics></math></span></span>，则</p>
+
+$$
+\varphi'(t)\longleftrightarrow p,\bar\varphi(p)-\varphi(0). \tag{L2}
+$$
+
+<p>更一般地，对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">N</mi></mrow></mrow><annotation encoding="application/x-tex">n\in\mathbb{N}</annotation></semantics></math></span></span>，</p>
+
+$$
+\varphi^{(n)}(t)\longleftrightarrow
+p^{n}\bar\varphi(p)-p^{n-1}\varphi(0)-p^{n-2}\varphi'(0)-\cdots-\varphi^{(n-1)}(0). \tag{L3}
+$$
+
+<details>
+<summary>例：求 $\cos t$ 的拉普拉斯变换</summary>
+<p>因<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mi>t</mi><mo>=</mo><mo>(</mo><mi>sin</mi><mi>t</mi><msup><mo>)</mo><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\cos t=(\sin t)'</annotation></semantics></math></span></span>，又<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>t</mi><mo>⟷</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sin t\longleftrightarrow \dfrac{1}{p^2+1}</annotation></semantics></math></span></span>，且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mn>0</mn><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sin 0=0</annotation></semantics></math></span></span>，由(L2)得</p>
+
+$$
+\cos t \longleftrightarrow p\cdot\frac{1}{p^2+1}=\frac{p}{p^2+1}\quad(\operatorname{Re}p&gt;0).
+$$
+
+</details>
+<p><strong>原函数积分定理（把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>域积分变成<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>域除法）</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>⟷</mo><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi(t)\longleftrightarrow \bar\varphi(p)</annotation></semantics></math></span></span>，则</p>
+
+$$
+\int_{0}^{t}\varphi(\tau),d\tau \longleftrightarrow \frac{\bar\varphi(p)}{p}. \tag{L4}
+$$
+
+<p>由此可递推出幂函数的基本对：</p>
+
+$$
+\frac{t^n}{n!}\longleftrightarrow \frac{1}{p^{n+1}},\quad
+t^n\longleftrightarrow \frac{n!}{p^{n+1}}
+\quad(n=0,1,2,\ldots;\ \operatorname{Re}p&gt;0). \tag{L5}
+$$
+
+<p><strong>延迟（移位）定理（阶梯截断）</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>⟷</mo><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi(t)\longleftrightarrow \bar\varphi(p)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\tau&gt;0</annotation></semantics></math></span></span>，则</p>
+
+$$
+\varphi(t-\tau),H(t-\tau)\longleftrightarrow e^{-p\tau}\bar\varphi(p). \tag{L6}
+$$
+
+<p>特别地：</p>
+
+$$
+H(t-\tau)\longleftrightarrow \frac{e^{-p\tau}}{p}\quad(\operatorname{Re}p&gt;0).
+$$
+
+<hr>
+<h3 id="反演与在p域的运算">反演与在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>域的运算</h3>
+<p><strong>位移定理（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>平移对应<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>域指数因子）</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo><mo>⟷</mo><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi(p)\longleftrightarrow \varphi(t)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>为复常数，则</p>
+
+$$
+\bar\varphi(p+\lambda)\longleftrightarrow \varphi(t)e^{-\lambda t}. \tag{L7}
+$$
+
+<details>
+<summary>例：已知 $\bar\varphi(p)=\dfrac{p}{(p+\lambda)^2+\omega^2}$，求原函数</summary>
+<p>利用</p>
+
+$$
+\cos(\omega t)\longleftrightarrow \frac{p}{p^2+\omega^2},
+\quad
+\sin(\omega t)\longleftrightarrow \frac{\omega}{p^2+\omega^2},
+$$
+
+<p>并用位移定理，将<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>+</mo><mi>λ</mi></mrow><annotation encoding="application/x-tex">p+\lambda</annotation></semantics></math></span></span>配凑：</p>
+
+$$
+\frac{p}{(p+\lambda)^2+\omega^2}
+================================
+
+\frac{p+\lambda}{(p+\lambda)^2+\omega^2}
+-\frac{\lambda}{\omega}\frac{\omega}{(p+\lambda)^2+\omega^2}.
+$$
+
+<p>故原函数为</p>
+
+$$
+\left(\cos\omega t-\frac{\lambda}{\omega}\sin\omega t\right)e^{-\lambda t},
+\quad(\operatorname{Re}p&gt;-\operatorname{Re}\lambda).
+$$
+
+</details>
+<p><strong>像函数求导定理（对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>求导对应乘<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mo>−</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(-t)</annotation></semantics></math></span></span>）</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo><mo>⟷</mo><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi(p)\longleftrightarrow \varphi(t)</annotation></semantics></math></span></span>，则</p>
+
+$$
+\bar\varphi'(p)\longleftrightarrow (-t)\varphi(t),\qquad
+\bar\varphi^{(n)}(p)\longleftrightarrow (-t)^n\varphi(t). \tag{L8}
+$$
+
+<details>
+<summary>例：求 $t\sin t$ 的拉普拉斯变换</summary>
+<p>由<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>t</mi><mo>⟷</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sin t\longleftrightarrow \dfrac{1}{p^2+1}</annotation></semantics></math></span></span>，用(L8)得</p>
+
+$$
+t\sin t \longleftrightarrow -\frac{d}{dp}\left(\frac{1}{p^2+1}\right)=\frac{2p}{(p^2+1)^2}\quad(\operatorname{Re}p&gt;0).
+$$
+
+</details>
+<p><strong>像函数积分定理（对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>积分对应除以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>）</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo><mo>⟷</mo><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi(p)\longleftrightarrow \varphi(t)</annotation></semantics></math></span></span>，并且 $\int_{p}^{\infty}\bar\varphi(z),dz$ 在 $\operatorname{Re}p&gt;s_0$ 收敛，则</p>
+
+$$
+\int_{p}^{\infty}\bar\varphi(z),dz \longleftrightarrow \frac{\varphi(t)}{t}. \tag{L9}
+$$
+
+<details>
+<summary>例：求 $\dfrac{\sin t}{t}$ 的拉普拉斯变换</summary>
+<p>由<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>t</mi><mo>⟷</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sin t\longleftrightarrow \dfrac{1}{p^2+1}</annotation></semantics></math></span></span>，用(L9)得</p>
+
+$$
+\frac{\sin t}{t}\longleftrightarrow \int_{p}^{\infty}\frac{1}{z^2+1},dz
+=\frac{\pi}{2}-\arctan p.
+$$
+
+</details>
+<p><strong>卷积定理（乘积 ↔ 卷积）</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mn>1</mn></msub><mo>(</mo><mi>p</mi><mo>)</mo><mo>⟷</mo><msub><mi>φ</mi><mn>1</mn></msub><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi_1(p)\longleftrightarrow \varphi_1(t)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mn>2</mn></msub><mo>(</mo><mi>p</mi><mo>)</mo><mo>⟷</mo><msub><mi>φ</mi><mn>2</mn></msub><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi_2(p)\longleftrightarrow \varphi_2(t)</annotation></semantics></math></span></span>，则</p>
+
+$$
+\bar\varphi_1(p)\bar\varphi_2(p)\longleftrightarrow
+(\varphi_1*\varphi_2)(t)
+\equiv \int_{0}^{t}\varphi_1(\tau)\varphi_2(t-\tau),d\tau. \tag{L10}
+$$
+
+<details>
+<summary>例：求 $\dfrac{1}{p(p+\lambda)}$ 的原函数（$\lambda\ne 0$）</summary>
+<p>因为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>p</mi></mrow></mfrac><mo>⟷</mo><mi>H</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\dfrac{1}{p}\longleftrightarrow H(t)</annotation></semantics></math></span></span>，且由位移定理<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>p</mi><mo>+</mo><mi>λ</mi></mrow></mfrac><mo>⟷</mo><mi>H</mi><mo>(</mo><mi>t</mi><mo>)</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{1}{p+\lambda}\longleftrightarrow H(t)e^{-\lambda t}</annotation></semantics></math></span></span>，<br>
+故</p>
+
+$$
+\frac{1}{p(p+\lambda)}\longleftrightarrow
+\int_{0}^{t}H(\tau),H(t-\tau),e^{-\lambda(t-\tau)},d\tau
+=\int_{0}^{t}e^{-\lambda(t-\tau)},d\tau
+=\frac{1}{\lambda}(1-e^{-\lambda t}).
+$$
+
+</details>
+<hr>
+<h3 id="梅林（Mellin）反演公式与留数展开">梅林（Mellin）反演公式与留数展开</h3>
+<p><strong>反演公式（Bromwich 形式）</strong><br>
+取实常数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo>&gt;</mo><msub><mi>s</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">s&gt;s_0</annotation></semantics></math></span></span>，则对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t&gt;0</annotation></semantics></math></span></span>有</p>
+
+$$
+\varphi(t)H(t)=\frac{1}{2\pi\mathrm{i}}
+\int_{s-\mathrm{i}\infty}^{s+\mathrm{i}\infty}\bar\varphi(p),e^{pt},dp. \tag{L11}
+$$
+
+<p><strong>推广的若尔当引理（用于闭合积分）</strong><br>
+在一定角域内若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo><mo>→</mo><mn>0</mn><mtext>&nbsp;</mtext><mo>(</mo><mi>p</mi><mo>→</mo><mi mathvariant="normal">∞</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi(p)\to 0\ (p\to\infty)</annotation></semantics></math></span></span>，则对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t&gt;0</annotation></semantics></math></span></span>，闭合路径上大圆弧部分积分趋于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span>，从而可用留数定理计算反演积分。</p>
+<p><strong>展开定理（留数求原函数）</strong><br>
+当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi(p)</annotation></semantics></math></span></span>在全角域<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>≤</mo><mi>arg</mi><mi>p</mi><mo>≤</mo><mn>2</mn><mi>π</mi></mrow><annotation encoding="application/x-tex">0\le \arg p\le 2\pi</annotation></semantics></math></span></span>内单值，且<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\bar\varphi(p)\to 0</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">p\to\infty</annotation></semantics></math></span></span>）时，对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">t&gt;0</annotation></semantics></math></span></span>可写成</p>
+
+$$
+\varphi(t)=\sum \operatorname{Res}!\left[\bar\varphi(p)e^{pt}\right],
+$$
+
+<p>求和对闭合域内全部奇点进行（常用来快速得到级数展开形式的原函数）。</p>
+<details>
+<summary>例：$\bar\varphi(p)=\dfrac{1}{\sqrt{p}}$ 的原函数</summary>
+<p>选取负实轴作割线，使<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><msqrt><mrow><mi>p</mi></mrow></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{1}{\sqrt{p}}</annotation></semantics></math></span></span>在割线外单值解析；用反演积分并沿割线上下岸求和，可得到</p>
+
+$$
+\frac{1}{\sqrt{p}}\longleftrightarrow \frac{1}{\sqrt{\pi t}}.
+$$
+
+</details>
+<hr>
+<h3 id="求像函数-原函数的常用方法整理">求像函数/原函数的常用方法整理</h3>
+<p><strong>（1）直接用定义/性质/反演</strong><br>
+例如<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><msup><mi>t</mi><mi>α</mi></msup></mrow><annotation encoding="application/x-tex">\varphi(t)=t^\alpha</annotation></semantics></math></span></span>（$\operatorname{Re}\alpha&gt;-1$）：</p>
+
+$$
+t^\alpha \longleftrightarrow \int_0^\infty t^\alpha e^{-pt},dt
+=\frac{\Gamma(\alpha+1)}{p^{\alpha+1}}
+\quad(\operatorname{Re}p&gt;0). \tag{L12}
+$$
+
+<p><strong>（2）周期函数的像函数</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi(t)</annotation></semantics></math></span></span>以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span>为周期（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>t</mi><mo>+</mo><mi>T</mi><mo>)</mo><mo>=</mo><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi(t+T)=\varphi(t)</annotation></semantics></math></span></span>），则</p>
+
+$$
+\bar\varphi(p)=\frac{\int_0^T \varphi(t)e^{-pt},dt}{1-e^{-pT}}. \tag{L13}
+$$
+
+<p><strong>（3）幂级数展开逐项变换</strong></p>
+<details>
+<summary>例：$\varphi(t)=\sin\sqrt{t}$ 的像函数</summary>
+<p>先展开</p>
+
+$$
+\sin\sqrt{t}=\sum_{m=0}^\infty \frac{(-1)^m}{(2m+1)!},t^{\frac{2m+1}{2}},
+$$
+
+<p>再用(L12)逐项变换并求和，可得</p>
+
+$$
+\sin\sqrt{t}\longleftrightarrow \frac{\sqrt{\pi}}{2p^{3/2}}e^{-1/(4p)}.
+$$
+
+</details>
+<p><strong>（4）让像函数满足微分方程，再“反变换”求原函数</strong></p>
+<details>
+<summary>例：$\bar\varphi(p)=e^{-\sqrt{p}}$，求原函数</summary>
+<p>对<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>求导并整理得到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi(p)</annotation></semantics></math></span></span>满足某个常微分方程；再用<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>p</mi><mo>)</mo><mo>⟷</mo><mo>−</mo><mi>t</mi><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi'(p)\longleftrightarrow -t\varphi(t)</annotation></semantics></math></span></span>、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mrow><mi mathvariant="normal">′</mi><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>p</mi><mo>)</mo><mo>⟷</mo><msup><mi>t</mi><mn>2</mn></msup><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi''(p)\longleftrightarrow t^2\varphi(t)</annotation></semantics></math></span></span><br>
+把<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>域方程转回<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>域，解得</p>
+
+$$
+e^{-\sqrt{p}}\longleftrightarrow \frac{1}{2\sqrt{\pi},t^{3/2}}e^{-1/(4t)}.
+$$
+
+</details>
+<p><strong>（5）含参量的求导/积分技巧</strong></p>
+<details>
+<summary>例：证明一个常用对偶关系</summary>
+<p>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>⟷</mo><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi(t)\longleftrightarrow \bar\varphi(p)</annotation></semantics></math></span></span>，则有</p>
+
+$$
+\int_t^\infty \frac{\varphi(\tau)}{\tau},d\tau
+\longleftrightarrow
+\frac{1}{p}\int_0^p \bar\varphi(q),dq.
+$$
+
+</details>
+<hr>
+<h3 id="常用拉普拉斯变换对照表（摘取高频项）">常用拉普拉斯变换对照表（摘取高频项）</h3>
+<table>
+<thead>
+<tr>
+<th><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\varphi(t)</annotation></semantics></math></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>φ</mi><mo>¯</mo></mover><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\bar\varphi(p)</annotation></semantics></math></span></span>（收敛域略写）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H(t)</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>p</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{1}{p}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mi>a</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">e^{at}</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mi>p</mi><mo>−</mo><mi>a</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{1}{p-a}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>t</mi><mi>α</mi></msup></mrow><annotation encoding="application/x-tex">t^\alpha</annotation></semantics></math></span></span>（$\operatorname{Re}\alpha&gt;-1$）</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">Γ</mi><mo>(</mo><mi>α</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><mrow><msup><mi>p</mi><mrow><mi>α</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{\Gamma(\alpha+1)}{p^{\alpha+1}}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mo>(</mo><mi>ω</mi><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin(\omega t)</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>ω</mi></mrow><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{\omega}{p^2+\omega^2}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cos</mi><mo>(</mo><mi>ω</mi><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\cos(\omega t)</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>p</mi></mrow><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{p}{p^2+\omega^2}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>sin</mi><mo>(</mo><mi>ω</mi><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">t\sin(\omega t)</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>2</mn><mi>p</mi><mi>ω</mi></mrow><mrow><mo>(</mo><msup><mi>p</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup><msup><mo>)</mo><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{2p\omega}{(p^2+\omega^2)^2}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi><mi>cos</mi><mo>(</mo><mi>ω</mi><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">t\cos(\omega t)</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>−</mo><msup><mi>ω</mi><mn>2</mn></msup></mrow><mrow><mo>(</mo><msup><mi>p</mi><mn>2</mn></msup><mo>+</mo><msup><mi>ω</mi><mn>2</mn></msup><msup><mo>)</mo><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{p^2-\omega^2}{(p^2+\omega^2)^2}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>sin</mi><mo>(</mo><mi>ω</mi><mi>t</mi><mo>)</mo></mrow><mrow><mi>t</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{\sin(\omega t)}{t}</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\omega&gt;0</annotation></semantics></math></span></span>）</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>π</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>−</mo><mi>arctan</mi><mo>!</mo><mrow><mo fence="true">(</mo><mfrac><mrow><mi>p</mi></mrow><mrow><mi>ω</mi></mrow></mfrac><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\dfrac{\pi}{2}-\arctan!\left(\dfrac{p}{\omega}\right)</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sinh</mi><mo>(</mo><mi>ω</mi><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\sinh(\omega t)</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>ω</mi></mrow><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>−</mo><msup><mi>ω</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{\omega}{p^2-\omega^2}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>cosh</mi><mo>(</mo><mi>ω</mi><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\cosh(\omega t)</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>p</mi></mrow><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>−</mo><msup><mi>ω</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{p}{p^2-\omega^2}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><msqrt><mrow><mi>π</mi><mi>t</mi></mrow></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{1}{\sqrt{\pi t}}</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><msqrt><mrow><mi>p</mi></mrow></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{1}{\sqrt{p}}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn><msqrt><mrow><mi>π</mi></mrow></msqrt><mo separator="true">,</mo><msup><mi>t</mi><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mo>(</mo><mn>4</mn><mi>t</mi><mo>)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">\dfrac{1}{2\sqrt{\pi},t^{3/2}}e^{-1/(4t)}</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mo>−</mo><msqrt><mrow><mi>p</mi></mrow></msqrt></mrow></msup></mrow><annotation encoding="application/x-tex">e^{-\sqrt{p}}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mo>(</mo><mi>t</mi><mo>−</mo><mi>τ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\delta(t-\tau)</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\tau&gt;0</annotation></semantics></math></span></span>）</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>p</mi><mi>τ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">e^{-p\tau}</annotation></semantics></math></span></span></td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>J</mi><mn>0</mn></msub><mo>(</mo><mi>a</mi><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">J_0(at)</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><msqrt><mrow><msup><mi>p</mi><mn>2</mn></msup><mo>+</mo><msup><mi>a</mi><mn>2</mn></msup></mrow></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">\dfrac{1}{\sqrt{p^2+a^2}}</annotation></semantics></math></span></span></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="delta函数（点源-瞬时源）与拉普拉斯变换"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span></span>函数（点源/瞬时源）与拉普拉斯变换</h3>
+<p><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span></span>函数的核心定义（抽样性质）</strong><br>
+对在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mi>a</mi></mrow><annotation encoding="application/x-tex">x=a</annotation></semantics></math></span></span>处连续、变化不太快的函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span></span>，</p>
+
+$$
+\int_{-\infty}^{\infty} f(x)\delta(x-a),dx=f(a). \tag{D1}
+$$
+
+<p>它刻画“集中在一点”的密度（点电荷、瞬时力等）。</p>
+<p><strong>常用性质（摘取）</strong></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mo>(</mo><mo>−</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>δ</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\delta(-x)=\delta(x)</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mi>δ</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x\delta(x)=0</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mi>δ</mi><mo>(</mo><mi>x</mi><mo>−</mo><mi>a</mi><mo>)</mo><mo>=</mo><mi>f</mi><mo>(</mo><mi>a</mi><mo>)</mo><mi>δ</mi><mo>(</mo><mi>x</mi><mo>−</mo><mi>a</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)\delta(x-a)=f(a)\delta(x-a)</annotation></semantics></math></span></span></li>
+<li>若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\varphi(x)=0</annotation></semantics></math></span></span>的实根<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">x_k</annotation></semantics></math></span></span>均为单根，则
+  $$
+  \delta(\varphi(x))=\sum_k \frac{\delta(x-x_k)}{|\varphi'(x_k)|}. \tag{D2}
+  $$
+  
+特别地：
+  $$
+  \delta(ax)=\frac{1}{|a|}\delta(x),\qquad
+  \delta(x^2-a^2)=\frac{\delta(x-a)+\delta(x+a)}{2|a|}.
+  $$
+  
+</li>
+</ul>
+<p><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span></span>函数导数（分部积分意义下）</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi></mrow><annotation encoding="application/x-tex">f</annotation></semantics></math></span></span>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span>处有连续导数，则定义<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>δ</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>x</mi><mo>−</mo><mi>a</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\delta'(x-a)</annotation></semantics></math></span></span>满足</p>
+
+$$
+\int_{-\infty}^\infty f(x)\delta'(x-a),dx=-f'(a). \tag{D3}
+$$
+
+<p>并有（以分布意义理解）：</p>
+
+$$
+\frac{d}{dx}H(x)=\delta(x). \tag{D4}
+$$
+
+<p><strong>拉普拉斯变换中的关键对</strong><br>
+由抽样性质直接得到</p>
+
+$$
+\delta(t-\tau)\longleftrightarrow e^{-p\tau}\quad(\tau&gt;0),\qquad
+\delta(t)\longleftrightarrow 1.
+$$
+
+<details>
+<summary>例：用 $\delta(t-\tau)$ 解释一般受迫振动的卷积公式</summary>
+<p>若系统满足（以弹簧振子为例）线性方程，并把持续外力分解为“无穷多个瞬时力”：</p>
+
+$$
+f(t)=\int_{0}^{\infty} f(\tau)\delta(t-\tau),d\tau,
+$$
+
+<p>利用线性叠加与延迟定理，可导出响应的卷积形式（典型结果）：</p>
+
+$$
+x(t)=\frac{1}{m\omega_0}\int_0^t f(\tau)\sin!\big(\omega_0(t-\tau)\big),d\tau.
+$$
+
+</details>
+<hr>
+<h3 id="Z变换（离散系统的对应工具，附：与拉普拉斯的关系）">Z变换（离散系统的对应工具，附：与拉普拉斯的关系）</h3>
+<p><strong>单边Z变换定义</strong><br>
+给定采样序列<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>n</mi><mi>T</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(nT)</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>…</mo></mrow><annotation encoding="application/x-tex">n=0,1,2,\ldots</annotation></semantics></math></span></span>），定义</p>
+
+$$
+F(z)=Z[f(t)]\equiv \sum_{n=0}^{\infty} f(nT),z^{-n}\quad(|z|&gt;R). \tag{Z1}
+$$
+
+<p><strong>与拉普拉斯变换的连接</strong><br>
+构造脉冲串</p>
+
+$$
+\varphi(t)=\sum_{n=0}^{\infty} f(nT)\delta(t-nT),
+$$
+
+<p>则其拉普拉斯像函数为</p>
+
+$$
+\bar\varphi(p)=\sum_{n=0}^{\infty} f(nT)e^{-npT}.
+$$
+
+<p>令<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>p</mi><mi>T</mi></mrow></msup></mrow><annotation encoding="application/x-tex">z=e^{pT}</annotation></semantics></math></span></span>，则</p>
+
+$$
+\bar\varphi(p)=\sum_{n=0}^{\infty} f(nT)z^{-n}=F(z).
+$$
+
+<details>
+<summary>Z变换常见例子（节选）</summary>
+<ul>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mi>H</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(t)=H(t)</annotation></semantics></math></span></span>：</p>
+
+  $$
+  Z[f(t)]=\sum_{n=0}^{\infty} z^{-n}=\frac{z}{z-1}\quad(|z|&gt;1).
+  $$
+  
+</li>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><msup><mi>e</mi><mrow><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">f(t)=e^{t}</annotation></semantics></math></span></span>（实际指<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mi>t</mi></msup><mi>H</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">e^tH(t)</annotation></semantics></math></span></span>）：</p>
+
+  $$
+  Z[f(t)]=\sum_{n=0}^{\infty} e^{nT}z^{-n}=\frac{z}{z-e^{T}}\quad(|z|&gt;e^T).
+  $$
+  
+</li>
+<li>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mi>sin</mi><mo>(</mo><mi>ω</mi><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(t)=\sin(\omega t)</annotation></semantics></math></span></span>：</p>
+
+  $$
+  Z[f(t)]=\frac{z\sin(\omega T)}{z^2-2z\cos(\omega T)+1}\quad(|z|&gt;1).
+  $$
+  
+</li>
+</ul>
+</details>
+<p><strong>Z变换的“延迟型”性质（向前移<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">mT</annotation></semantics></math></span></span>）</strong><br>
+若<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mo>[</mo><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>]</mo><mo>=</mo><mi>F</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Z[f(t)]=F(z)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>∈</mo><mrow><mi mathvariant="double-struck">N</mi></mrow></mrow><annotation encoding="application/x-tex">m\in\mathbb{N}</annotation></semantics></math></span></span>，则</p>
+
+$$
+Z[f(t+mT)]
+==========
+
+z^{m}\left[F(z)-\sum_{k=0}^{m-1} f(kT)z^{-k}\right]. \tag{Z2}
+$$
+
+<p>常用于把差分方程化为代数方程。</p>
+<details>
+<summary>例：用Z变换解二阶常系数齐次差分方程（节选思路）</summary>
+<p>对</p>
+
+$$
+y(n+2)+2y(n+1)+y(n)=0,\quad y(0)=0,\ y(1)=1,
+$$
+
+<p>做Z变换并代入初值，可解得<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F(z)</annotation></semantics></math></span></span>，再展开为洛朗级数逐项反变换得到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y(n)</annotation></semantics></math></span></span>。</p>
+</details>
 
       </div>
       <div class="post-tags-categories">
@@ -591,7 +1116,7 @@
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">积分拉普拉斯变换</span></a></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">积分拉普拉斯变换</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%EF%BC%88Laplace-Transform%EF%BC%89%E5%9F%BA%E7%A1%80"><span class="toc-text">拉普拉斯变换（Laplace Transform）基础</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E6%8D%A2%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8%EF%BC%88%E6%8A%8A%E5%BE%AE%E5%88%86-%E7%A7%AF%E5%88%86%E5%8F%98%E6%88%90%E4%BB%A3%E6%95%B0%E8%BF%90%E7%AE%97%EF%BC%89"><span class="toc-text">变换的基本性质（把微分&#x2F;积分变成代数运算）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E6%BC%94%E4%B8%8E%E5%9C%A8p%E5%9F%9F%E7%9A%84%E8%BF%90%E7%AE%97"><span class="toc-text">反演与在ppp域的运算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A2%85%E6%9E%97%EF%BC%88Mellin%EF%BC%89%E5%8F%8D%E6%BC%94%E5%85%AC%E5%BC%8F%E4%B8%8E%E7%95%99%E6%95%B0%E5%B1%95%E5%BC%80"><span class="toc-text">梅林（Mellin）反演公式与留数展开</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%82%E5%83%8F%E5%87%BD%E6%95%B0-%E5%8E%9F%E5%87%BD%E6%95%B0%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%E6%95%B4%E7%90%86"><span class="toc-text">求像函数&#x2F;原函数的常用方法整理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2%E5%AF%B9%E7%85%A7%E8%A1%A8%EF%BC%88%E6%91%98%E5%8F%96%E9%AB%98%E9%A2%91%E9%A1%B9%EF%BC%89"><span class="toc-text">常用拉普拉斯变换对照表（摘取高频项）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#delta%E5%87%BD%E6%95%B0%EF%BC%88%E7%82%B9%E6%BA%90-%E7%9E%AC%E6%97%B6%E6%BA%90%EF%BC%89%E4%B8%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E5%8F%98%E6%8D%A2"><span class="toc-text">δ\deltaδ函数（点源&#x2F;瞬时源）与拉普拉斯变换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Z%E5%8F%98%E6%8D%A2%EF%BC%88%E7%A6%BB%E6%95%A3%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%AF%B9%E5%BA%94%E5%B7%A5%E5%85%B7%EF%BC%8C%E9%99%84%EF%BC%9A%E4%B8%8E%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%89"><span class="toc-text">Z变换（离散系统的对应工具，附：与拉普拉斯的关系）</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
