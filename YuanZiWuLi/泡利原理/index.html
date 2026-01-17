@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>线性变换与矩阵表示 | tianyi</title>
+  <title>泡利原理 | tianyi</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,21 +355,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        线性变换与矩阵表示
+        泡利原理
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2024-11-12 |
+          <i class="fas fa-calendar"></i> Published in：2026-01-17 |
         </span>
       
 
@@ -392,367 +392,179 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1>线性变换与矩阵表示</h1>
-<h2 id="线性变换的定义与基本性质">线性变换的定义与基本性质</h2>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span></span> 是数域 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 上的线性空间。映射</p>
+        <h1>泡利原理</h1>
+<h2 id="量子态表述与基本推论">量子态表述与基本推论</h2>
+<h3 id="四个量子数与“一个态最多一个电子”">四个量子数与“一个态最多一个电子”</h3>
+<p>在原子中完全确定一个电子的量子态需要四个量子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>l</mi><mo separator="true">,</mo><msub><mi>m</mi><mi>l</mi></msub><mo separator="true">,</mo><msub><mi>m</mi><mi>s</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(n,l,m_l,m_s)</annotation></semantics></math></span></span>, 其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>s</mi></msub><mo>=</mo><mo>±</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">m_s=\pm\displaystyle\frac{1}{2}</annotation></semantics></math></span></span>.</p>
+<p>泡利不相容原理: 在一个原子中不可能有两个或两个以上的电子具有完全相同的四个量子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>l</mi><mo separator="true">,</mo><msub><mi>m</mi><mi>l</mi></msub><mo separator="true">,</mo><msub><mi>m</mi><mi>s</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(n,l,m_l,m_s)</annotation></semantics></math></span></span>. 等价地说, 原子中的每一个确定的单电子态最多只能容纳 1 个电子.</p>
+<h3 id="费米子体系的交换反对称性">费米子体系的交换反对称性</h3>
+<p>对由相同费米子组成的体系, 总波函数必须是反对称的; 这会直接推出“不能有两个全同费米子处在同一单粒子态”.</p>
+<hr>
+<h2 id="波函数对称性推导泡利原理">波函数对称性推导泡利原理</h2>
+<h3 id="两粒子态的对称-反对称构造">两粒子态的对称/反对称构造</h3>
+<p>设两个粒子分别处于单粒子态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math></span></span>, 可写两种乘积态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ψ</mi><mrow><mtext><mi mathvariant="normal">I</mi></mtext></mrow></msub><mo>=</mo><msub><mi>ψ</mi><mi>a</mi></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mi>b</mi></msub><mo>(</mo><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\psi_{\text{I}}=\psi_a(1)\psi_b(2)</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ψ</mi><mrow><mtext><mi mathvariant="normal">I</mi><mi mathvariant="normal">I</mi></mtext></mrow></msub><mo>=</mo><msub><mi>ψ</mi><mi>b</mi></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mi>a</mi></msub><mo>(</mo><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\psi_{\text{II}}=\psi_b(1)\psi_a(2)</annotation></semantics></math></span></span>. 体系总波函数应为二者线性叠加, 归一化后得到对称与反对称组合:</p>
+
 
 $$
-\displaystyle
-T : V \to V
+\psi_{\text{S}}(1,2)=\frac{1}{\sqrt{2}}\left[\psi_a(1)\psi_b(2)+\psi_a(2)\psi_b(1)\right]
 $$
 
-<p>若对任意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo separator="true">,</mo><mi>β</mi><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">\alpha,\beta \in V</annotation></semantics></math></span></span> 与任意标量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>∈</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">k \in F</annotation></semantics></math></span></span> 满足</p>
-<ol>
-<li>加法保持：
-   $$
-   \displaystyle
-   T(\alpha + \beta) = T(\alpha) + T(\beta),
-   $$
-   
-</li>
-<li>数乘保持：
-   $$
-   \displaystyle
-   T(k \alpha) = k T(\alpha),
-   $$
-   
-</li>
-</ol>
-<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span></span> 上的线性变换，记作 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>∈</mo><mi>L</mi><mo>(</mo><mi>V</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">T \in L(V)</annotation></semantics></math></span></span>。</p>
-<p>从这两个公理可以推出一些基本性质：</p>
-<ol>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>(</mo><mn>0</mn><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">T(0) = 0</annotation></semantics></math></span></span>。</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>(</mo><mo>−</mo><mi>α</mi><mo>)</mo><mo>=</mo><mo>−</mo><mi>T</mi><mo>(</mo><mi>α</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">T(-\alpha) = - T(\alpha)</annotation></semantics></math></span></span>。</li>
-<li>对任意有限个向量与标量，
-   $$
-   \displaystyle
-   T\Bigl(\sum_{i=1}^{m} k_i \alpha_i\Bigr)
-   =
-   \sum_{i=1}^{m} k_i T(\alpha_i).
-   $$
-   
-</li>
-</ol>
-<h2 id="线性变换的矩阵表示">线性变换的矩阵表示</h2>
-<h3 id="在一组基下的表示">在一组基下的表示</h3>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span></span> 是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 维线性空间，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>ε</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>ε</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\varepsilon_1,\varepsilon_2,\cdots,\varepsilon_n</annotation></semantics></math></span></span> 是一组基。<br>
-设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>:</mo><mi>V</mi><mo>→</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">T : V \to V</annotation></semantics></math></span></span> 为线性变换。因为基向量组成一个基，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>(</mo><msub><mi>ε</mi><mi>j</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">T(\varepsilon_j)</annotation></semantics></math></span></span> 必可表示成基的线性组合：</p>
-
 $$
-\displaystyle
-T(\varepsilon_j)
-=
-a_{1j} \varepsilon_1
-+
-a_{2j} \varepsilon_2
-+
-\cdots
-+
-a_{nj} \varepsilon_n,
-\quad
-j = 1,\cdots,n.
+\psi_{\text{A}}(1,2)=\frac{1}{\sqrt{2}}\left[\psi_a(1)\psi_b(2)-\psi_a(2)\psi_b(1)\right]
 $$
 
-<p>写成矩阵形式就是</p>
+
+<p>实验规律: 玻色子对应对称波函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ψ</mi><mrow><mtext><mi mathvariant="normal">S</mi></mtext></mrow></msub></mrow><annotation encoding="application/x-tex">\psi_{\text{S}}</annotation></semantics></math></span></span>, 费米子对应反对称波函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ψ</mi><mrow><mtext><mi mathvariant="normal">A</mi></mtext></mrow></msub></mrow><annotation encoding="application/x-tex">\psi_{\text{A}}</annotation></semantics></math></span></span>.</p>
+<h3 id="“同态占据为-0”推出泡利不相容原理">“同态占据为 0”推出泡利不相容原理</h3>
+<p>若两个全同费米子试图处于同一单粒子态, 即令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a=b</annotation></semantics></math></span></span>, 则反对称组合变为</p>
+
 
 $$
-\displaystyle
-T(\varepsilon_1,\cdots,\varepsilon_n)
-=
-(\varepsilon_1,\cdots,\varepsilon_n) A,
+\psi_{\text{A}}(1,2)=\frac{1}{\sqrt{2}}\left[\psi_a(1)\psi_a(2)-\psi_a(2)\psi_a(1)\right]=0
 $$
 
-<p>其中</p>
+
+<p>波函数恒为 0 表示该物理态不存在, 因而两全同费米子不能同时处在同一单粒子态, 这就是泡利不相容原理的波函数推导形式.</p>
+<details>
+<summary><b>例题(定理推导题): 从反对称性推出“每一单粒子态最多容纳 1 个费米子”</b></summary>
+<p>费米子体系满足交换反对称性 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi><mo>(</mo><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mo>)</mo><mo>=</mo><mo>−</mo><mi>ψ</mi><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\psi(2,1)=-\psi(1,2)</annotation></semantics></math></span></span>. 对两粒子处于单粒子态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math></span></span> 的情况, 反对称构造为</p>
+
 
 $$
-\displaystyle
-A = (a_{ij})_{n \times n}
+\psi_{\text{A}}(1,2)=\frac{1}{\sqrt{2}}\left[\psi_a(1)\psi_b(2)-\psi_a(2)\psi_b(1)\right]
 $$
 
-<p>称为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span> 在基 $\{\varepsilon_i\}$ 下的矩阵。</p>
-<h3 id="坐标表示公式">坐标表示公式</h3>
-<p>任意向量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>∈</mo><mi>V</mi></mrow><annotation encoding="application/x-tex">\alpha \in V</annotation></semantics></math></span></span> 可写为</p>
+
+<p>若试图令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a=b</annotation></semantics></math></span></span>, 得</p>
+
 
 $$
-\displaystyle
-\alpha
-=
-(\varepsilon_1,\cdots,\varepsilon_n) X,
-\quad
-X =
-\begin{pmatrix}
-x_1 \\ \vdots \\ x_n
-\end{pmatrix}.
+\psi_{\text{A}}(1,2)=\frac{1}{\sqrt{2}}\left[\psi_a(1)\psi_a(2)-\psi_a(2)\psi_a(1)\right]=0
 $$
 
-<p>则</p>
+
+<p>因此 “两粒子同态占据” 不可能发生, 即每一确定单粒子态最多容纳 1 个费米子.</p>
+</details>
+<h3 id="空间部分与自旋部分的“互补对称性”-二电子">空间部分与自旋部分的“互补对称性”(二电子)</h3>
+<p>将自旋纳入后, 二粒子体系波函数可分为空间部分与自旋部分的乘积. 若总波函数为反对称, 则空间部分与自旋部分必须一对称一反对称.</p>
+<p>两个电子自旋 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>s</mi><mi>z</mi></msub><mo>=</mo><mo>±</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">s_z=\pm\displaystyle\frac{1}{2}</annotation></semantics></math></span></span> 合成后, 总自旋波函数为三重态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">S=1</annotation></semantics></math></span></span>(对称) 与单态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S=0</annotation></semantics></math></span></span>(反对称):</p>
+
 
 $$
-\displaystyle
-T(\alpha)
-=
-T(\varepsilon_1,\cdots,\varepsilon_n) X
-=
-(\varepsilon_1,\cdots,\varepsilon_n) A X.
+\chi_{1,1}=\alpha(1)\alpha(2),\quad
+\chi_{1,0}=\frac{1}{\sqrt{2}}\left[\alpha(1)\beta(2)+\alpha(2)\beta(1)\right],\quad
+\chi_{1,-1}=\beta(1)\beta(2)
 $$
 
-<p>因此，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span></span> 为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 的坐标列向量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>X</mi></mrow><annotation encoding="application/x-tex">AX</annotation></semantics></math></span></span> 就是 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>(</mo><mi>α</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">T(\alpha)</annotation></semantics></math></span></span> 的坐标列向量。</p>
-<h2 id="线性变换的运算与矩阵乘法">线性变换的运算与矩阵乘法</h2>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>T</mi><mn>2</mn></msub><mo>∈</mo><mi>L</mi><mo>(</mo><mi>V</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">T_1,T_2 \in L(V)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>∈</mo><mi>F</mi></mrow><annotation encoding="application/x-tex">k \in F</annotation></semantics></math></span></span>，定义</p>
-<ol>
-<li>和：
-   $$
-   \displaystyle
-   (T_1 + T_2)(\alpha)
-   = T_1(\alpha) + T_2(\alpha).
-   $$
-   
-</li>
-<li>数乘：
-   $$
-   \displaystyle
-   (k T_1)(\alpha)
-   = k T_1(\alpha).
-   $$
-   
-</li>
-<li>复合：
-   $$
-   \displaystyle
-   (T_1 T_2)(\alpha)
-   = T_1(T_2(\alpha)).
-   $$
-   
-</li>
-</ol>
-<p>在线性代数中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>(</mo><mi>V</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">L(V)</annotation></semantics></math></span></span> 在这些运算下构成一个代数结构。</p>
-<p>在固定基下，若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>T</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">T_1,T_2</annotation></semantics></math></span></span> 的矩阵分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>A</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">A_1,A_2</annotation></semantics></math></span></span>，则</p>
-<ol>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>+</mo><msub><mi>T</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">T_1 + T_2</annotation></semantics></math></span></span> 的矩阵为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>+</mo><msub><mi>A</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">A_1 + A_2</annotation></semantics></math></span></span>。</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><msub><mi>T</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">k T_1</annotation></semantics></math></span></span> 的矩阵为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><msub><mi>A</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">k A_1</annotation></semantics></math></span></span>。</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mn>1</mn></msub><msub><mi>T</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">T_1 T_2</annotation></semantics></math></span></span> 的矩阵为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>A</mi><mn>1</mn></msub><msub><mi>A</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">A_1 A_2</annotation></semantics></math></span></span>。</li>
-</ol>
-<h2 id="基变换与相似矩阵">基变换与相似矩阵</h2>
-<h3 id="过渡矩阵">过渡矩阵</h3>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span></span> 有两组基</p>
-
 $$
-\displaystyle
-\mathcal{E} = (\varepsilon_1,\cdots,\varepsilon_n),
-\quad
-\mathcal{E}' = (\varepsilon'_1,\cdots,\varepsilon'_n).
+\chi_{0,0}=\frac{1}{\sqrt{2}}\left[\alpha(1)\beta(2)-\alpha(2)\beta(1)\right]
 $$
 
-<p>存在唯一可逆矩阵 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 使得</p>
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 表示 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>s</mi><mi>z</mi></msub><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">s_z=\displaystyle\frac{1}{2}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 表示 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>s</mi><mi>z</mi></msub><mo>=</mo><mo>−</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">s_z=-\displaystyle\frac{1}{2}</annotation></semantics></math></span></span>.</p>
+<hr>
+<h2 id="壳层与同科电子的态项限制">壳层与同科电子的态项限制</h2>
+<h3 id="次壳层最大容纳数-N-l">次壳层最大容纳数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">N_l</annotation></semantics></math></span></span></h3>
+<p>对给定角量子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span>, 磁量子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">m_l</annotation></semantics></math></span></span> 有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>l</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2l+1</annotation></semantics></math></span></span> 个取值; 每个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">m_l</annotation></semantics></math></span></span> 对应两种自旋 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>s</mi></msub><mo>=</mo><mo>±</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">m_s=\pm\displaystyle\frac{1}{2}</annotation></semantics></math></span></span>. 因而该次壳层最多容纳</p>
+
 
 $$
-\displaystyle
-(\varepsilon'_1,\cdots,\varepsilon'_n)
-=
-(\varepsilon_1,\cdots,\varepsilon_n) S.
+N_l=2(2l+1)
 $$
 
-<p>矩阵 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 称为从基 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">E</mi></mrow></mrow><annotation encoding="application/x-tex">\mathcal{E}</annotation></semantics></math></span></span> 到基 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow><mi mathvariant="script">E</mi></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\mathcal{E}'</annotation></semantics></math></span></span> 的过渡矩阵。</p>
-<h3 id="线性变换在不同基下的矩阵关系">线性变换在不同基下的矩阵关系</h3>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span> 在基 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">E</mi></mrow></mrow><annotation encoding="application/x-tex">\mathcal{E}</annotation></semantics></math></span></span> 下的矩阵为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span>，在基 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow><mi mathvariant="script">E</mi></mrow><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\mathcal{E}'</annotation></semantics></math></span></span> 下的矩阵为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>。则有</p>
+
+<p>例如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo separator="true">,</mo><mi>p</mi><mo separator="true">,</mo><mi>d</mi><mo separator="true">,</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">s,p,d,f</annotation></semantics></math></span></span> 次壳层最多分别容纳 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo separator="true">,</mo><mn>6</mn><mo separator="true">,</mo><mn>1</mn><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mn>4</mn></mrow><annotation encoding="application/x-tex">2,6,10,14</annotation></semantics></math></span></span> 个电子.</p>
+<h3 id="壳层最大容纳数-N-n-2n-2">壳层最大容纳数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>n</mi></msub><mo>=</mo><mn>2</mn><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">N_n=2n^2</annotation></semantics></math></span></span></h3>
+<p>对给定主量子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>, 有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>n</mi><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">l=0,1,\cdots,n-1</annotation></semantics></math></span></span>. 因此壳层最大容纳数为</p>
+
 
 $$
-\displaystyle
-B = S^{-1} A S.
+N_n=\sum_{l=0}^{n-1}2(2l+1)
 $$
 
-<p>换言之，不同基下表示同一线性变换的两个矩阵是相似矩阵。</p>
-<h2 id="相似矩阵的定义与性质">相似矩阵的定义与性质</h2>
-<h3 id="相似矩阵">相似矩阵</h3>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo separator="true">,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A,B</annotation></semantics></math></span></span> 是同阶方阵。若存在可逆矩阵 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 使得</p>
-
 $$
-\displaystyle
-B = S^{-1} A S,
+N_n
+=2\sum_{l=0}^{n-1}(2l+1)
+=2\left(2\sum_{l=0}^{n-1}l+\sum_{l=0}^{n-1}1\right)
 $$
 
-<p>则称 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 相似。</p>
-<p>相似是一个等价关系，具有</p>
-<ol>
-<li>反身性：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 与自身相似。</li>
-<li>对称性：若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 相似，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 相似。</li>
-<li>传递性：若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 相似，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 相似，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi></mrow><annotation encoding="application/x-tex">C</annotation></semantics></math></span></span> 相似。</li>
-</ol>
-<h3 id="相似矩阵的共同性质">相似矩阵的共同性质</h3>
-<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 相似，则</p>
-<ol>
-<li>有相同的特征多项式：
-   $$
-   \displaystyle
-   |\lambda E - B|
-   = |\lambda E - S^{-1} A S|
-   = |S^{-1}(\lambda E - A) S|
-   = |\lambda E - A|.
-   $$
-   
-</li>
-<li>因而具有相同的特征值及其代数重数。</li>
-<li>有相同的秩和相同的行列式：
-   $$
-   \displaystyle
-   \det(B) = \det(S^{-1} A S) = \det(A),
-   $$
-   $$
-   \displaystyle
-   \text{rank}(B) = \text{rank}(A).
-   $$
-   
-</li>
-<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(x)</annotation></semantics></math></span></span> 为多项式，则
-   $$
-   \displaystyle
-   f(B) = S^{-1} f(A) S.
-   $$
-   
-</li>
-</ol>
-<h2 id="线性变换的典型例子">线性变换的典型例子</h2>
-<h3 id="多项式空间上的微分算子">多项式空间上的微分算子</h3>
-<p>考虑多项式空间</p>
-
 $$
-\displaystyle
-P_n = \{ a_0 + a_1 x + \cdots + a_n x^n \}.
+=2\left(2\cdot\frac{(n-1)n}{2}+n\right)
+=2n^2
 $$
 
-<p>定义微分变换</p>
-
-$$
-\displaystyle
-D : P_n \to P_n,
-\quad
-D(f) = f'.
-$$
-
-<p>以基</p>
-
-$$
-\displaystyle
-(1,x,x^2,\cdots,x^n)
-$$
-
-<p>表示，计算</p>
-
-$$
-\displaystyle
-D(1) = 0,\quad
-D(x) = 1,\quad
-D(x^2) = 2 x,\ \cdots,\ D(x^n) = n x^{n-1}.
-$$
-
-<p>可以写成矩阵</p>
-
-$$
-\displaystyle
-D(1,x,\cdots,x^n)
-=
-(1,x,\cdots,x^n)
-\begin{pmatrix}
-0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\
-0 &amp; 0 &amp; 2 &amp; \cdots &amp; 0 \\
-\vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
-0 &amp; 0 &amp; 0 &amp; \cdots &amp; n \\
-0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0
-\end{pmatrix}.
-$$
-
-<p>因此微分算子的矩阵有上超对角线结构。</p>
-<h3 id="平面上的旋转变换">平面上的旋转变换</h3>
-<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow><mi mathvariant="double-struck">R</mi></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\mathbb{R}^2</annotation></semantics></math></span></span> 中定义旋转变换 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mi>θ</mi></mrow></msub></mrow><annotation encoding="application/x-tex">T_{\theta}</annotation></semantics></math></span></span>，将所有向量绕原点逆时针旋转角度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>。在标准基</p>
-$(e_1,e_2)$ 下，矩阵为
-
-$$
-\displaystyle
-T_{\theta}
-=
-\begin{pmatrix}
-\cos\theta &amp; -\sin\theta \\
-\sin\theta &amp; \cos\theta
-\end{pmatrix}.
-$$
 
 <details>
-<summary>例题：不同基下的矩阵与相似变换</summary>
-<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>=</mo><msup><mrow><mi mathvariant="double-struck">R</mi></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">V = \mathbb{R}^2</annotation></semantics></math></span></span>，线性变换 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span> 为绕原点逆时针旋转 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><msup><mn>0</mn><mrow><mo>∘</mo></mrow></msup></mrow><annotation encoding="application/x-tex">90^{\circ}</annotation></semantics></math></span></span>。</p>
-<ol>
-<li>
-<p>在标准基 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">E</mi></mrow><mo>=</mo><mo>(</mo><msub><mi>e</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>e</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\mathcal{E} = (e_1,e_2)</annotation></semantics></math></span></span> 下，</p>
+<summary><b>例题(应用题): 3d 次壳层最多能放多少电子?</b></summary>
+<p>3d 次壳层对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">l=2</annotation></semantics></math></span></span>, 代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>l</mi></msub><mo>=</mo><mn>2</mn><mo>(</mo><mn>2</mn><mi>l</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">N_l=2(2l+1)</annotation></semantics></math></span></span>:</p>
 
-   $$
-   \displaystyle
-   T(e_1) = e_2,\quad T(e_2) = -e_1,
-   $$
-   $$
-   \displaystyle
-   A =
-   \begin{pmatrix}
-   0 &amp; -1 \\
-   1 &amp; 0
-   \end{pmatrix}.
-   $$
-   
-</li>
-<li>
-<p>取新基</p>
 
-   $$
-   \displaystyle
-   \varepsilon'_1 = e_1 + e_2,\quad
-   \varepsilon'_2 = e_1 - e_2.
-   $$
-   
-<p>写成矩阵</p>
+$$
+N_l=2(2\cdot 2+1)=10
+$$
 
-   $$
-   \displaystyle
-   (\varepsilon'_1,\varepsilon'_2)
-   =
-   (e_1,e_2)
-   \begin{pmatrix}
-   1 &amp; 1 \\
-   1 &amp; -1
-   \end{pmatrix}.
-   $$
-   
-<p>过渡矩阵为</p>
 
-   $$
-   \displaystyle
-   S =
-   \begin{pmatrix}
-   1 &amp; 1 \\
-   1 &amp; -1
-   \end{pmatrix}.
-   $$
-   
-</li>
-<li>
-<p>在新基下的矩阵为</p>
+<p>因此 3d 最多容纳 10 个电子.</p>
+</details>
+<h3 id="同科电子-nl-2-的快速判据-L-S-必为偶数">同科电子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><msup><mi>l</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">nl^2</annotation></semantics></math></span></span> 的快速判据: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>+</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">L+S</annotation></semantics></math></span></span> 必为偶数</h3>
+<p>同科电子指 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>l</mi></mrow><annotation encoding="application/x-tex">n,l</annotation></semantics></math></span></span> 相同的电子. 由于空间波函数与自旋波函数的交换对称性必须相反, 可得到同科两电子体系的选择规则: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 为偶数时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S=0</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 为奇数时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">S=1</annotation></semantics></math></span></span>, 即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>+</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">L+S</annotation></semantics></math></span></span> 必为偶数.</p>
+<p>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>p</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">p^2</annotation></semantics></math></span></span> 为例, 两个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 电子几何耦合给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">L=2,1,0</annotation></semantics></math></span></span>, 再用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>+</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">L+S</annotation></semantics></math></span></span> 为偶数筛选得到仅允许的态项为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>1</mn></msup><mi>D</mi><msup><mo separator="true">,</mo><mn>3</mn></msup><mi>P</mi><msup><mo separator="true">,</mo><mn>1</mn></msup><mi>S</mi></mrow><annotation encoding="application/x-tex">^1D,^3P,^1S</annotation></semantics></math></span></span>.</p>
+<details>
+<summary><b>例题(定理推导题): 用 “L+S 为偶数” 推出 p^2 只允许 ^1S,^1D,^3P</b></summary>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>p</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">p^2</annotation></semantics></math></span></span> 中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">l=1</annotation></semantics></math></span></span>, 两个轨道角动量合成给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">L=0,1,2</annotation></semantics></math></span></span>. 由同科电子规则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>+</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">L+S</annotation></semantics></math></span></span> 为偶数:</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">L=0</annotation></semantics></math></span></span>(偶) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Rightarrow S=0</annotation></semantics></math></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mo>⇒</mo><mn>1</mn></msup><mi>S</mi></mrow><annotation encoding="application/x-tex">\Rightarrow ^1S</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">L=1</annotation></semantics></math></span></span>(奇) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo><mi>S</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Rightarrow S=1</annotation></semantics></math></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mo>⇒</mo><mn>3</mn></msup><mi>P</mi></mrow><annotation encoding="application/x-tex">\Rightarrow ^3P</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">L=2</annotation></semantics></math></span></span>(偶) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Rightarrow S=0</annotation></semantics></math></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mo>⇒</mo><mn>1</mn></msup><mi>D</mi></mrow><annotation encoding="application/x-tex">\Rightarrow ^1D</annotation></semantics></math></span></span></li>
+</ul>
+<p>因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>p</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">p^2</annotation></semantics></math></span></span> 仅允许 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>1</mn></msup><mi>S</mi><msup><mo separator="true">,</mo><mn>1</mn></msup><mi>D</mi><msup><mo separator="true">,</mo><mn>3</mn></msup><mi>P</mi></mrow><annotation encoding="application/x-tex">^1S,^1D,^3P</annotation></semantics></math></span></span>.</p>
+</details>
+<hr>
+<h2 id="原子态能级次序与间隔">原子态能级次序与间隔</h2>
+<h3 id="从电子组态到原子态-以-sp-为例">从电子组态到原子态: 以 sp 为例</h3>
+<p>对 sp 组态, 有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>s</mi><mn>1</mn></msub><mo>=</mo><msub><mi>s</mi><mn>2</mn></msub><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">s_1=s_2=\displaystyle\frac{1}{2}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">l_1=0</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">l_2=1</annotation></semantics></math></span></span>, 因而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">S=0,1</annotation></semantics></math></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">L=1</annotation></semantics></math></span></span> (P 态). 再由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 的合成规则得到四个原子态: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>1</mn></msup><msub><mi>P</mi><mn>1</mn></msub><msup><mo separator="true">,</mo><mn>3</mn></msup><msub><mi>P</mi><mn>2</mn></msub><msup><mo separator="true">,</mo><mn>3</mn></msup><msub><mi>P</mi><mn>1</mn></msub><msup><mo separator="true">,</mo><mn>3</mn></msup><msub><mi>P</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">^1P_1,^3P_2,^3P_1,^3P_0</annotation></semantics></math></span></span>.</p>
+<details>
+<summary><b>例题(应用题): 为什么氦原子基态只有 1s^2 ^1S_0, 没有 ^3S_1?</b></summary>
+<p>按 L-S 耦合, ss 组态形式上可给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>1</mn></msup><msub><mi>S</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">^1S_0</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>3</mn></msup><msub><mi>S</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">^3S_1</annotation></semantics></math></span></span>. 但对氦基态 1s^2, 两电子的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mi>l</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><msub><mi>m</mi><mi>l</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">n=1,l=0,m_l=0</annotation></semantics></math></span></span> 完全相同, 若还取三重态则自旋平行使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">m_s</annotation></semantics></math></span></span> 也相同, 从而四个量子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>n</mi><mo separator="true">,</mo><mi>l</mi><mo separator="true">,</mo><msub><mi>m</mi><mi>l</mi></msub><mo separator="true">,</mo><msub><mi>m</mi><mi>s</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(n,l,m_l,m_s)</annotation></semantics></math></span></span> 完全相同, 违反泡利不相容原理. 因此 1s^2 只能是自旋反平行的单态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mn>1</mn></msup><msub><mi>S</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">^1S_0</annotation></semantics></math></span></span>.</p>
+</details>
+<h3 id="洪特定则">洪特定则</h3>
+<p>对给定电子组态形成的一组原子态: (1) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 最大者能量最低; (2) 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 相同下, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 较大者更低.</p>
+<h3 id="朗德间隔定则">朗德间隔定则</h3>
+<p>由自旋-轨道相互作用导致的能级位移估算:</p>
 
-   $$
-   \displaystyle
-   B = S^{-1} A S.
-   $$
-   
-<p>直接计算可得</p>
 
-   $$
-   \displaystyle
-   B =
-   \begin{pmatrix}
-   0 &amp; -1 \\
-   1 &amp; 0
-   \end{pmatrix},
-   $$
-   
-<p>恰好还是同一个矩阵。这说明旋转 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>9</mn><msup><mn>0</mn><mrow><mo>∘</mo></mrow></msup></mrow><annotation encoding="application/x-tex">90^{\circ}</annotation></semantics></math></span></span> 的线性变换在这个新基下形式不变，不过一般情况相似矩阵会改变具体形式。</p>
-</li>
-</ol>
+$$
+\Delta E\sim \boldsymbol{\mu}\cdot\boldsymbol{B}
+\sim \hat{S}\hat{L}\cos(L,S)
+\approx \hat{S}\hat{L}\frac{J^2-L^2-S^2}{2\hat{L}\hat{S}}
+$$
+
+$$
+\Delta E\sim J(J+1)-L(L+1)-S(S+1)
+$$
+
+
+<p>因此, 相邻 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">J+1</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 能级间隔正比于</p>
+
+
+$$
+[(J+1)(J+2)-L(L+1)-S(S+1)]-[J(J+1)-L(L+1)-S(S+1)]
+$$
+
+$$
+=(J+1)(J+2)-J(J+1)=2(J+1)
+$$
+
+
+<p>这就是朗德间隔定则: 在三重态中, 相邻能级间隔与两者中较大的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 成正比.</p>
+<details>
+<summary><b>例题(应用题): ^3P_J (J=0,1,2) 的相邻能级间隔比是多少?</b></summary>
+<p>由朗德间隔定则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>E</mi><mrow><mi>J</mi><mo>→</mo><mi>J</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>∝</mo><mn>2</mn><mo>(</mo><mi>J</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\Delta E_{J\to J+1}\propto 2(J+1)</annotation></semantics></math></span></span>:</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>E</mi><mrow><mn>0</mn><mo>→</mo><mn>1</mn></mrow></msub><mo>∝</mo><mn>2</mn><mo>(</mo><mn>0</mn><mo>+</mo><mn>1</mn><mo>)</mo><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\Delta E_{0\to 1}\propto 2(0+1)=2</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>E</mi><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub><mo>∝</mo><mn>2</mn><mo>(</mo><mn>1</mn><mo>+</mo><mn>1</mn><mo>)</mo><mo>=</mo><mn>4</mn></mrow><annotation encoding="application/x-tex">\Delta E_{1\to 2}\propto 2(1+1)=4</annotation></semantics></math></span></span></li>
+</ul>
+<p>因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>E</mi><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub><mo>:</mo><mi mathvariant="normal">Δ</mi><msub><mi>E</mi><mrow><mn>0</mn><mo>→</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>2</mn><mo>:</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta E_{1\to 2}:\Delta E_{0\to 1}=2:1</annotation></semantics></math></span></span>.</p>
 </details>
 
       </div>
@@ -760,8 +572,12 @@ $$
         
         <div class="tags">
           
-            <a href="/physics/tags/%E7%BA%BF%E4%BB%A3/" class="">
-              线代
+            <a href="/physics/tags/%E9%A2%84%E4%B9%A0/" class="">
+              预习
+            </a>
+          
+            <a href="/physics/tags/%E5%8E%9F%E5%AD%90%E7%89%A9%E7%90%86/" class="">
+              原子物理
             </a>
           
         </div>
@@ -775,7 +591,7 @@ $$
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/Metrics/线性变换与矩阵表示/" target="_blank" title="线性变换与矩阵表示">https://kotokowa.github.io/physics/Metrics/线性变换与矩阵表示/</a>
+    <a href="/physics/YuanZiWuLi/泡利原理/" target="_blank" title="泡利原理">https://kotokowa.github.io/physics/YuanZiWuLi/泡利原理/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -793,43 +609,25 @@ $$
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/physics/Metrics/%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F%E5%9F%BA%E7%A1%80/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">特征值与特征向量基础</div>
-      </div>
-      
-      <!-- <div class="content">
-        特征值与特征向量基础
-特征值与特征向量
-设 AAA 为 n×nn \times nn×n 矩阵。若存在标量 λ0\lam
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/Metrics/%E5%AD%90%E7%A9%BA%E9%97%B4%E7%9A%84%E5%92%8C%E3%80%81%E7%9B%B4%E5%92%8C%E4%B8%8E%E6%AD%A3%E4%BA%A4%E8%A1%A5/" class="post-nav-link">
+    <a href="/physics/YuanZiWuLi/%E5%8E%9F%E5%AD%90%E7%B2%BE%E7%BB%86%E7%BB%93%E6%9E%84_%E7%94%B5%E5%AD%90%E8%87%AA%E6%97%8B/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">子空间的和、直和与正交补</div>
+        <div class="title-text">原子精细结构 电子自旋</div>
       </div>
       <!-- <div class="content">
-        子空间的和、直和与正交补
-子空间的交与和
-设线性空间为 VVV，其中子空间 W1,W2⊆VW_1,W_2 \subset
+        原子精细结构电子自旋
+原子中电子轨道运动的磁矩
+轨道磁矩的经典表达与量子化对应
+
+环形电流的磁矩（面矢量为 S=Sen\
       </div> -->
     </a>
   </div>
@@ -947,7 +745,7 @@ $$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">线性变换与矩阵表示</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="toc-text">线性变换的定义与基本性质</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E7%9A%84%E7%9F%A9%E9%98%B5%E8%A1%A8%E7%A4%BA"><span class="toc-text">线性变换的矩阵表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8%E4%B8%80%E7%BB%84%E5%9F%BA%E4%B8%8B%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="toc-text">在一组基下的表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9D%90%E6%A0%87%E8%A1%A8%E7%A4%BA%E5%85%AC%E5%BC%8F"><span class="toc-text">坐标表示公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E7%9A%84%E8%BF%90%E7%AE%97%E4%B8%8E%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95"><span class="toc-text">线性变换的运算与矩阵乘法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E5%8F%98%E6%8D%A2%E4%B8%8E%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5"><span class="toc-text">基变换与相似矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%87%E6%B8%A1%E7%9F%A9%E9%98%B5"><span class="toc-text">过渡矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E5%9C%A8%E4%B8%8D%E5%90%8C%E5%9F%BA%E4%B8%8B%E7%9A%84%E7%9F%A9%E9%98%B5%E5%85%B3%E7%B3%BB"><span class="toc-text">线性变换在不同基下的矩阵关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E6%80%A7%E8%B4%A8"><span class="toc-text">相似矩阵的定义与性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5"><span class="toc-text">相似矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%E7%9A%84%E5%85%B1%E5%90%8C%E6%80%A7%E8%B4%A8"><span class="toc-text">相似矩阵的共同性质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BA%BF%E6%80%A7%E5%8F%98%E6%8D%A2%E7%9A%84%E5%85%B8%E5%9E%8B%E4%BE%8B%E5%AD%90"><span class="toc-text">线性变换的典型例子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E9%A1%B9%E5%BC%8F%E7%A9%BA%E9%97%B4%E4%B8%8A%E7%9A%84%E5%BE%AE%E5%88%86%E7%AE%97%E5%AD%90"><span class="toc-text">多项式空间上的微分算子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E4%B8%8A%E7%9A%84%E6%97%8B%E8%BD%AC%E5%8F%98%E6%8D%A2"><span class="toc-text">平面上的旋转变换</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">泡利原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E6%80%81%E8%A1%A8%E8%BF%B0%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%8E%A8%E8%AE%BA"><span class="toc-text">量子态表述与基本推论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AA%E9%87%8F%E5%AD%90%E6%95%B0%E4%B8%8E%E2%80%9C%E4%B8%80%E4%B8%AA%E6%80%81%E6%9C%80%E5%A4%9A%E4%B8%80%E4%B8%AA%E7%94%B5%E5%AD%90%E2%80%9D"><span class="toc-text">四个量子数与“一个态最多一个电子”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%B9%E7%B1%B3%E5%AD%90%E4%BD%93%E7%B3%BB%E7%9A%84%E4%BA%A4%E6%8D%A2%E5%8F%8D%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-text">费米子体系的交换反对称性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E5%AF%B9%E7%A7%B0%E6%80%A7%E6%8E%A8%E5%AF%BC%E6%B3%A1%E5%88%A9%E5%8E%9F%E7%90%86"><span class="toc-text">波函数对称性推导泡利原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%B2%92%E5%AD%90%E6%80%81%E7%9A%84%E5%AF%B9%E7%A7%B0-%E5%8F%8D%E5%AF%B9%E7%A7%B0%E6%9E%84%E9%80%A0"><span class="toc-text">两粒子态的对称&#x2F;反对称构造</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%80%9C%E5%90%8C%E6%80%81%E5%8D%A0%E6%8D%AE%E4%B8%BA-0%E2%80%9D%E6%8E%A8%E5%87%BA%E6%B3%A1%E5%88%A9%E4%B8%8D%E7%9B%B8%E5%AE%B9%E5%8E%9F%E7%90%86"><span class="toc-text">“同态占据为 0”推出泡利不相容原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A9%BA%E9%97%B4%E9%83%A8%E5%88%86%E4%B8%8E%E8%87%AA%E6%97%8B%E9%83%A8%E5%88%86%E7%9A%84%E2%80%9C%E4%BA%92%E8%A1%A5%E5%AF%B9%E7%A7%B0%E6%80%A7%E2%80%9D-%E4%BA%8C%E7%94%B5%E5%AD%90"><span class="toc-text">空间部分与自旋部分的“互补对称性”(二电子)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A3%B3%E5%B1%82%E4%B8%8E%E5%90%8C%E7%A7%91%E7%94%B5%E5%AD%90%E7%9A%84%E6%80%81%E9%A1%B9%E9%99%90%E5%88%B6"><span class="toc-text">壳层与同科电子的态项限制</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AC%A1%E5%A3%B3%E5%B1%82%E6%9C%80%E5%A4%A7%E5%AE%B9%E7%BA%B3%E6%95%B0-N-l"><span class="toc-text">次壳层最大容纳数 NlN_lN​l​​</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B3%E5%B1%82%E6%9C%80%E5%A4%A7%E5%AE%B9%E7%BA%B3%E6%95%B0-N-n-2n-2"><span class="toc-text">壳层最大容纳数 Nn&#x3D;2n2N_n&#x3D;2n^2N​n​​&#x3D;2n​2​​</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E7%A7%91%E7%94%B5%E5%AD%90-nl-2-%E7%9A%84%E5%BF%AB%E9%80%9F%E5%88%A4%E6%8D%AE-L-S-%E5%BF%85%E4%B8%BA%E5%81%B6%E6%95%B0"><span class="toc-text">同科电子 nl2nl^2nl​2​​ 的快速判据: L+SL+SL+S 必为偶数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E6%80%81%E8%83%BD%E7%BA%A7%E6%AC%A1%E5%BA%8F%E4%B8%8E%E9%97%B4%E9%9A%94"><span class="toc-text">原子态能级次序与间隔</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%94%B5%E5%AD%90%E7%BB%84%E6%80%81%E5%88%B0%E5%8E%9F%E5%AD%90%E6%80%81-%E4%BB%A5-sp-%E4%B8%BA%E4%BE%8B"><span class="toc-text">从电子组态到原子态: 以 sp 为例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B4%AA%E7%89%B9%E5%AE%9A%E5%88%99"><span class="toc-text">洪特定则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%97%E5%BE%B7%E9%97%B4%E9%9A%94%E5%AE%9A%E5%88%99"><span class="toc-text">朗德间隔定则</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
