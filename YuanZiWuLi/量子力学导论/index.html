@@ -414,385 +414,6 @@ $$
 $$
 
 <p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi></mrow><annotation encoding="application/x-tex">h</annotation></semantics></math></span></span> 为普朗克常数, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 为粒子动量, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ν</mi></mrow><annotation encoding="application/x-tex">\nu</annotation></semantics></math></span></span> 为频率. 这不是把粒子“变成”经典波, 而是说微观客体的状态在实验上表现为兼具波动与粒子特征, 且二者并非经典概念的简单叠加.</p>
-<h2 id="波函数的统计解释与归一化">波函数的统计解释与归一化</h2>
-<p>量子力学以波函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\psi(\mathbf{r},t)</annotation></semantics></math></span></span> 表示态. 玻恩概率解释:</p>
-<ul>
-<li>在给定时刻 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>, 粒子在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">r</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{r}</annotation></semantics></math></span></span> 附近体积元 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\mathrm{d}\tau</annotation></semantics></math></span></span> 内出现的概率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ψ</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mi>t</mi><mo>)</mo><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mrow><mi mathvariant="normal">d</mi></mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">|\psi(\mathbf{r},t)|^2 \mathrm{d}\tau</annotation></semantics></math></span></span>.</li>
-<li>因而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ψ</mi><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|\psi|^2</annotation></semantics></math></span></span> 是概率密度.</li>
-</ul>
-<p>归一化条件:</p>
-
-$$
-\displaystyle \int |\psi(\mathbf{r},t)|^2 \,\mathrm{d}\tau = 1
-$$
-
-<p>对一维:</p>
-
-$$
-\displaystyle \int_{-\infty}^{+\infty} |\psi(x,t)|^2 \,\mathrm{d}x = 1
-$$
-
-<p>波函数的“标准条件”(物理可接受性)通常要求: 单值、有限、连续(在势能有限处还常要求一阶导数连续; 在无穷高势垒边界可允许导数突变).</p>
-<h2 id="态的叠加原理与干涉">态的叠加原理与干涉</h2>
-<p>薛定谔方程是线性的, 因而若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ψ</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>ψ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\psi_1,\psi_2</annotation></semantics></math></span></span> 是解, 则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub><msub><mi>ψ</mi><mn>1</mn></msub><mo>+</mo><msub><mi>c</mi><mn>2</mn></msub><msub><mi>ψ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">c_1\psi_1+c_2\psi_2</annotation></semantics></math></span></span> 也是解. 对应到实验上:</p>
-<ul>
-<li>概率幅相加导致干涉: 两条路径(或两个中间态)同时可能时, 总概率幅为各概率幅之和, 概率为模平方, 因而出现交叉项.</li>
-<li>独立分段过程的概率幅相乘(如“先到中间态再到末态”), 对应分段幅度相乘.</li>
-</ul>
-<p>因此“有无哪条路径信息”会改变可叠加的概率幅结构, 从而改变是否出现干涉条纹.</p>
-<h2 id="不确定关系">不确定关系</h2>
-<p>不确定关系不是仪器误差, 而是态的内禀性质. 最常用的两个形式:</p>
-
-$$
-\displaystyle \Delta x \,\Delta p_x \ge \frac{\hbar}{2}
-$$
-
-
-$$
-\displaystyle \Delta t \,\Delta E \gtrsim \frac{\hbar}{2}
-$$
-
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">ℏ</mi><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>h</mi></mrow><mrow><mn>2</mn><mi>π</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\hbar = \displaystyle \frac{h}{2\pi}</annotation></semantics></math></span></span>.</p>
-<p>物理含义要点:</p>
-<ul>
-<li>把粒子局限在更小空间尺度(更小 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span></span>), 必然引入更大的动量散布(更大 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">\Delta p</annotation></semantics></math></span></span>), 因而“经典轨道语言”在微观上失效.</li>
-<li>统计性不是“无知”, 而是理论结构本身要求.</li>
-</ul>
-<details>
-<summary>例题: 束缚粒子的最小平均动能(数量级估计)</summary>
-<p>设粒子被束缚在尺度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>∼</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">\Delta x \sim r</annotation></semantics></math></span></span> 内, 则</p>
-
-$$
-\displaystyle \Delta p \gtrsim \frac{\hbar}{2r}
-$$
-
-<p>若平均动量为零, 典型动量量级由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">\Delta p</annotation></semantics></math></span></span> 给出, 最小平均动能量级</p>
-
-$$
-\displaystyle \langle T \rangle_{\min} \sim \frac{(\Delta p)^2}{2m} \gtrsim \frac{\hbar^2}{8mr^2}
-$$
-
-<p>结论: 只要粒子被束缚, 零点动能不可避免, 这与具体束缚势形状无关(数量级层面).</p>
-</details>
-<h2 id="薛定谔方程">薛定谔方程</h2>
-<h3 id="从经典对应到量子方程">从经典对应到量子方程</h3>
-<p>经典能量关系:</p>
-
-$$
-\displaystyle E = \frac{p^2}{2m} + V(\mathbf{r})
-$$
-
-<p>量子化的核心替换(作用到波函数上):</p>
-
-$$
-\displaystyle E \to i\hbar \frac{\partial}{\partial t}, \quad \mathbf{p} \to -i\hbar \nabla
-$$
-
-<p>得到时间依赖薛定谔方程:</p>
-
-$$
-\displaystyle i\hbar \frac{\partial \psi(\mathbf{r},t)}{\partial t}
-=
-\left[
-\displaystyle -\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r})
-\right]\psi(\mathbf{r},t)
-$$
-
-<p>这是一条基本假设, 与波函数存在及概率解释一起构成量子力学的基本框架.</p>
-<h3 id="定态薛定谔方程与能量本征问题">定态薛定谔方程与能量本征问题</h3>
-<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">V(\mathbf{r})</annotation></semantics></math></span></span> 不显含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>, 可分离变量:</p>
-
-$$
-\displaystyle \psi(\mathbf{r},t) = \phi(\mathbf{r})\,e^{-iEt/\hbar}
-$$
-
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 是常数，有能量量纲. 代入得定态方程:</p>
-
-$$
-\displaystyle \left[
--\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r})
-\right]\phi(\mathbf{r})
-=
-E\,\phi(\mathbf{r})
-$$
-
-<p>这是哈密顿算符 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>H</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat H</annotation></semantics></math></span></span> 的本征方程 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>H</mi><mo>^</mo></mover><mi>ϕ</mi><mo>=</mo><mi>E</mi><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\hat H\phi=E\phi</annotation></semantics></math></span></span>, 求解量子问题的本质是求本征值谱与本征函数.</p>
-<h2 id="一维典型势的解法与物理图像">一维典型势的解法与物理图像</h2>
-<h3 id="一维无限深势阱">一维无限深势阱</h3>
-<p>势能:</p>
-
-$$
-\displaystyle
-V(x)=
-\begin{cases}
-0, &amp; 0 &lt; x &lt; d,\\
-+\infty, &amp; x\le 0 \ \text{或}\ x\ge d.
-\end{cases}
-$$
-
-<p>阱内定态方程化为</p>
-
-$$
-\displaystyle \frac{\mathrm{d}^2\phi}{\mathrm{d}x^2}+k^2\phi=0,\quad k^2=\frac{2mE}{\hbar^2}
-$$
-
-<p>边界条件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϕ</mi><mo>(</mo><mn>0</mn><mo>)</mo><mo>=</mo><mi>ϕ</mi><mo>(</mo><mi>d</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\phi(0)=\phi(d)=0</annotation></semantics></math></span></span> 给出量子化:</p>
-
-$$
-\displaystyle k=\frac{n\pi}{d},\quad n=1,2,3,\cdots
-$$
-
-<p>归一化本征函数与能级:</p>
-
-$$
-\displaystyle \phi_n(x)=\sqrt{\frac{2}{d}}\sin\!\left(\frac{n\pi x}{d}\right)
-$$
-
-
-$$
-\displaystyle E_n=\frac{n^2\pi^2\hbar^2}{2md^2}
-$$
-
-<p>要点: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 越大振荡越快, 概率密度呈现多峰结构; 但“粒子在哪里”只能给出概率分布.</p>
-<h3 id="势阶与反射-透射">势阶与反射/透射</h3>
-<p>在经典中, 当粒子能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 高于势阶高度时应完全透过; 量子中即使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>&gt;</mo><msub><mi>V</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">E&gt;V_0</annotation></semantics></math></span></span> 也一般有反射, 原因是边界处波数改变导致波阻抗不匹配(本质是边界条件引起的散射).</p>
-<h3 id="方势垒与隧道效应-定性到半定量">方势垒与隧道效应(定性到半定量)</h3>
-<p>方势垒:</p>
-
-$$
-\displaystyle
-V(x)=
-\begin{cases}
-0, &amp; x &lt; x_1,\\
-V_0, &amp; x_1 &lt; x &lt; x_2,\\
-0, &amp; x &gt; x_2.
-\end{cases}
-$$
-
-<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>&lt;</mo><msub><mi>V</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">E&lt;V_0</annotation></semantics></math></span></span> 时, 势垒区解为指数型衰减/增长, 典型衰减常数</p>
-
-$$
-\displaystyle \kappa = \sqrt{\frac{2m(V_0-E)}{\hbar^2}}
-$$
-
-<p>薄垒近似(只保留主指数)常得到穿透率数量级</p>
-
-$$
-\displaystyle T \sim e^{-2\kappa a},\quad a=x_2-x_1
-$$
-
-<p>要点: 隧穿不是“借能量”, 而是定态波在禁阻区呈指数衰减但不必为零, 匹配边界后导致有限透射.</p>
-<h3 id="一维谐振子-结构性结论为主">一维谐振子(结构性结论为主)</h3>
-<p>势能:</p>
-
-$$
-\displaystyle V(x)=\frac{1}{2}m\omega^2 x^2
-$$
-
-<p>量子谐振子能级等间隔:</p>
-
-$$
-\displaystyle E_n=\left(n+\frac{1}{2}\right)\hbar\omega,\quad n=0,1,2,\cdots
-$$
-
-<p>基态零点能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mn>0</mn></msub><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mstyle></mrow><annotation encoding="application/x-tex">E_0=\displaystyle \frac{1}{2}\hbar\omega</annotation></semantics></math></span></span> 可由不确定关系做数量级解释: 若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span></span> 有限, 则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">\Delta p</annotation></semantics></math></span></span> 不可为零, 从而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><mi>T</mi><mo>⟩</mo></mrow><annotation encoding="application/x-tex">\langle T\rangle</annotation></semantics></math></span></span> 不可为零, 加上势能最小化给出零点能的必然性.</p>
-<p>本征函数可写成“高斯 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span></span> 厄米特多项式”的形式(此处重在结构与物理意义: 归一化、节点数随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 增加、与经典极限的对应).</p>
-<h2 id="算符、表象与期望值">算符、表象与期望值</h2>
-<h3 id="期望值的统一表达">期望值的统一表达</h3>
-<p>对任意可观测量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span>, 在位置表象中期望值写作</p>
-
-$$
-\displaystyle \langle A\rangle = \int \psi^*(\mathbf{r},t)\,\hat A\,\psi(\mathbf{r},t)\,\mathrm{d}\tau
-$$
-
-<p>一维则为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>⟨</mo><mi>A</mi><mo>⟩</mo><mo>=</mo><mo>∫</mo><msup><mi>ψ</mi><mo>∗</mo></msup><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo><mover accent="true"><mi>A</mi><mo>^</mo></mover><mi>ψ</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \langle A\rangle=\int \psi^*(x,t)\hat A\psi(x,t)\,\mathrm{d}x</annotation></semantics></math></span></span>.</p>
-<p>典型算符:</p>
-
-$$
-\displaystyle \hat x = x,\quad \hat p_x = -i\hbar\frac{\mathrm{d}}{\mathrm{d}x}
-$$
-
-<p>三维动量:</p>
-
-$$
-\displaystyle \hat{\mathbf{p}}=-i\hbar\nabla
-$$
-
-<p>哈密顿算符:</p>
-
-$$
-\displaystyle \hat H=\left[-\frac{\hbar^2}{2m}\nabla^2+V(\mathbf{r})\right]
-$$
-
-<h3 id="对易关系与不确定关系的结构来源">对易关系与不确定关系的结构来源</h3>
-<p>位置与动量的基本对易关系:</p>
-
-$$
-\displaystyle [\hat x,\hat p_x]=i\hbar
-$$
-
-<p>更一般的结构: 两算符对易 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span></span> 可有共同本征函数, 对应的物理量可同时具有确定值; 不对易 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span></span> 不能同时具有确定值, 并导向不确定关系.</p>
-<h3 id="角动量算符">角动量算符</h3>
-<p>轨道角动量:</p>
-
-$$
-\displaystyle \hat{\mathbf{L}}=\mathbf{r}\times\hat{\mathbf{p}}=-i\hbar\,\mathbf{r}\times\nabla
-$$
-
-<p>其分量之间的对易关系:</p>
-
-$$
-\displaystyle [\hat L_x,\hat L_y]=i\hbar \hat L_z \quad (\text{循环置换})
-$$
-
-<p>并且</p>
-
-$$
-\displaystyle [\hat L^2,\hat L_x]=[\hat L^2,\hat L_y]=[\hat L^2,\hat L_z]=0
-$$
-
-<p>这意味着可以同时选取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mi>L</mi><mo>^</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat L^2</annotation></semantics></math></span></span> 与某一分量(通常 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>L</mi><mo>^</mo></mover><mi>z</mi></msub></mrow><annotation encoding="application/x-tex">\hat L_z</annotation></semantics></math></span></span>)的共同本征态作为一组完备表象.</p>
-<h2 id="氢原子的薛定谔方程解-中心力场的一般结构">氢原子的薛定谔方程解(中心力场的一般结构)</h2>
-<h3 id="折合质量与库仑势">折合质量与库仑势</h3>
-<p>电子-原子核两体问题可化为折合质量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的单体在中心势中运动:</p>
-
-$$
-\displaystyle \mu=\frac{mm'}{m+m'}
-$$
-
-<p>库仑势(核电荷数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span>):</p>
-
-$$
-\displaystyle V(r)=-\frac{Ze^2}{4\pi\varepsilon_0\,r}
-$$
-
-<p>定态方程:</p>
-
-$$
-\displaystyle
-\left[
--\frac{\hbar^2}{2\mu}\nabla^2+V(r)
-\right]\psi(\mathbf{r})
-=
-E\psi(\mathbf{r})
-$$
-
-<h3 id="变量分离与量子数">变量分离与量子数</h3>
-<p>球坐标中令</p>
-
-$$
-\displaystyle \psi(r,\theta,\varphi)=R(r)\,Y(\theta,\varphi)
-$$
-
-<p>角向方程给出球谐函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>Y</mi><mrow><mi>l</mi></mrow><mrow><mi>m</mi></mrow></msubsup><mo>(</mo><mi>θ</mi><mo separator="true">,</mo><mi>φ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Y_{l}^{m}(\theta,\varphi)</annotation></semantics></math></span></span>, 并得到轨道角动量量子化:</p>
-
-$$
-\displaystyle \hat L^2 Y_{l}^{m}=l(l+1)\hbar^2\,Y_{l}^{m}
-$$
-
-
-$$
-\displaystyle \hat L_z Y_{l}^{m}=m\hbar\,Y_{l}^{m}
-$$
-
-<p>其中</p>
-<ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">l=0,1,2,\cdots</annotation></semantics></math></span></span> (角动量量子数)</li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mo>−</mo><mi>l</mi><mo separator="true">,</mo><mo>−</mo><mi>l</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>l</mi></mrow><annotation encoding="application/x-tex">m=-l,-l+1,\cdots,l</annotation></semantics></math></span></span> (磁量子数)</li>
-</ul>
-<p>球谐函数可写成</p>
-
-$$
-\displaystyle Y_{l}^{m}(\theta,\varphi)=N_{lm}\,P_{l}^{|m|}(\cos\theta)\,e^{im\varphi}
-$$
-
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>P</mi><mi>l</mi><mrow><mi mathvariant="normal">∣</mi><mi>m</mi><mi mathvariant="normal">∣</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">P_l^{|m|}</annotation></semantics></math></span></span> 为关联勒让德函数, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>l</mi><mi>m</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{lm}</annotation></semantics></math></span></span> 为归一化常数.</p>
-<h3 id="宇称">宇称</h3>
-<p>在坐标反演 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">r</mi></mrow><mo>→</mo><mo>−</mo><mrow><mi mathvariant="bold">r</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{r}\to-\mathbf{r}</annotation></semantics></math></span></span> 下, 球谐函数满足</p>
-
-$$
-\displaystyle Y_{l}^{m}(\pi-\theta,\varphi+\pi)=(-1)^l Y_{l}^{m}(\theta,\varphi)
-$$
-
-<p>因此在无外场且哈密顿在宇称变换下不变时, 态可具有确定宇称, 其奇偶由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 决定.</p>
-<h3 id="径向方程、有效势与束缚态">径向方程、有效势与束缚态</h3>
-<p>径向方程可写成“有效一维问题”的形式: 库仑势与离心势共同构成有效势</p>
-
-$$
-\displaystyle V_{\text{eff}}(r)=\frac{l(l+1)\hbar^2}{2\mu r^2}-\frac{Ze^2}{4\pi\varepsilon_0\,r}
-$$
-
-<p>束缚态对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">E&lt;0</annotation></semantics></math></span></span>. 通过渐近分析与级数解(本质是要求波函数在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r\to 0</annotation></semantics></math></span></span> 有限, 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">r\to\infty</annotation></semantics></math></span></span> 可归一化), 量子化条件自然出现, 导致主量子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>:</p>
-
-$$
-\displaystyle n=1,2,3,\cdots,\quad l=0,1,\cdots,n-1,\quad m=-l,\cdots,l
-$$
-
-<p>能级谱:</p>
-
-$$
-\displaystyle E_n=-\frac{\mu Z^2 e^4}{2(4\pi\varepsilon_0)^2\hbar^2}\frac{1}{n^2}
-$$
-
-<p>特别地, 氢原子(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Z=1</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>≈</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\mu\approx m</annotation></semantics></math></span></span>)基态能量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn><mn>3</mn><mi mathvariant="normal">.</mi><mn>6</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">-13.6\,\text{eV}</annotation></semantics></math></span></span>, 且只依赖 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 而与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo separator="true">,</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">l,m</annotation></semantics></math></span></span> 无关(忽略精细结构等更高阶效应).</p>
-<p>径向波函数结构上是“指数衰减 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span></span> 幂函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span></span> 多项式(拉盖尔多项式)”的形式, 其节点数与量子数相关, 给出不同轨道的空间分布.</p>
-<details>
-<summary>例题: 一维无限深势阱的归一化与平均值</summary>
-<p>已知</p>
-
-$$
-\displaystyle \phi_n(x)=A\sin\!\left(\frac{n\pi x}{d}\right),\quad 0 &lt; x &lt; d
-$$
-
-<p>归一化:</p>
-
-$$
-\displaystyle 1=\int_0^d |\phi_n(x)|^2\,\mathrm{d}x
-=|A|^2\int_0^d \sin^2\!\left(\frac{n\pi x}{d}\right)\mathrm{d}x
-=|A|^2\frac{d}{2}
-$$
-
-<p>故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>=</mo><msqrt><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>2</mn></mrow><mrow><mi>d</mi></mrow></mfrac></mstyle></mrow></msqrt></mrow><annotation encoding="application/x-tex">A=\sqrt{\displaystyle \frac{2}{d}}</annotation></semantics></math></span></span>.</p>
-<p>对称性可得</p>
-<ul>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><mi>x</mi><mo>⟩</mo><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>d</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\langle x\rangle=\displaystyle \frac{d}{2}</annotation></semantics></math></span></span></li>
-<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><mi>p</mi><mo>⟩</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\langle p\rangle=0</annotation></semantics></math></span></span></li>
-<li>能量本征态满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><mi>H</mi><mo>⟩</mo><mo>=</mo><msub><mi>E</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\langle H\rangle=E_n</annotation></semantics></math></span></span>.</li>
-</ul>
-</details>
-<details>
-<summary>例题: 隧穿指数主控项</summary>
-<p>对方势垒, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>&lt;</mo><msub><mi>V</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">E&lt;V_0</annotation></semantics></math></span></span>, 取势垒宽度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span>, 衰减常数</p>
-
-$$
-\displaystyle \kappa=\sqrt{\frac{2m(V_0-E)}{\hbar^2}}
-$$
-
-<p>若只关心数量级, 则透射概率主控于禁阻区指数衰减:</p>
-
-$$
-\displaystyle T \propto e^{-2\kappa a}
-$$
-
-<p>这解释了: 微小增加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>V</mi><mn>0</mn></msub><mo>−</mo><mi>E</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(V_0-E)</annotation></semantics></math></span></span> 会指数级压低隧穿, 也是扫描隧道显微镜等现象的基础.</p>
-</details>
-<details>
-<summary>例题: 由对易关系得到不确定关系(结构性结论)</summary>
-<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>]</mo><mo>=</mo><mi>i</mi><mover accent="true"><mi>C</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">[\hat A,\hat B]=i\hat C</annotation></semantics></math></span></span>, 则一般有</p>
-
-$$
-\displaystyle \Delta A\,\Delta B \ge \frac{1}{2}\left|\langle \hat C\rangle\right|
-$$
-
-<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo>=</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>=</mo><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">\hat A=\hat x,\hat B=\hat p_x</annotation></semantics></math></span></span>, 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo separator="true">,</mo><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub><mo>]</mo><mo>=</mo><mi>i</mi><mi mathvariant="normal">ℏ</mi></mrow><annotation encoding="application/x-tex">[\hat x,\hat p_x]=i\hbar</annotation></semantics></math></span></span>, 得</p>
-
-$$
-\displaystyle \Delta x\,\Delta p_x \ge \frac{\hbar}{2}
-$$
-
-<p>说明不确定关系本质上来自算符代数结构, 而不是某个具体实验装置.</p>
-</details>
-<h2 id="一些结论的推导和推论">一些结论的推导和推论</h2>
 <details>
 <summary>德布罗意关系的推导与推论</summary>
 <p><strong>由光子关系推广到物质波</strong></p>
@@ -858,6 +479,25 @@ $$
 
 <p>即 $\text{群速度等于粒子速度}$, 这使得用波包描述粒子运动在动力学上自洽。</p>
 </details>
+<h2 id="波函数的统计解释与归一化">波函数的统计解释与归一化</h2>
+<p>量子力学以波函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\psi(\mathbf{r},t)</annotation></semantics></math></span></span> 表示态. 玻恩概率解释:</p>
+<ul>
+<li>在给定时刻 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>, 粒子在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">r</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{r}</annotation></semantics></math></span></span> 附近体积元 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\mathrm{d}\tau</annotation></semantics></math></span></span> 内出现的概率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ψ</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mi>t</mi><mo>)</mo><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mrow><mi mathvariant="normal">d</mi></mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">|\psi(\mathbf{r},t)|^2 \mathrm{d}\tau</annotation></semantics></math></span></span>.</li>
+<li>因而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ψ</mi><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|\psi|^2</annotation></semantics></math></span></span> 是概率密度.</li>
+</ul>
+<p>归一化条件:</p>
+
+$$
+\displaystyle \int |\psi(\mathbf{r},t)|^2 \,\mathrm{d}\tau = 1
+$$
+
+<p>对一维:</p>
+
+$$
+\displaystyle \int_{-\infty}^{+\infty} |\psi(x,t)|^2 \,\mathrm{d}x = 1
+$$
+
+<p>波函数的“标准条件”(物理可接受性)通常要求: 单值、有限、连续(在势能有限处还常要求一阶导数连续; 在无穷高势垒边界可允许导数突变).</p>
 <details>
 <summary>概率解释与守恒: 连续性方程推导</summary>
 <p>从时间依赖薛定谔方程出发</p>
@@ -951,6 +591,166 @@ $$
 
 <p>因此归一化 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>∫</mo><mi mathvariant="normal">∣</mi><mi>ψ</mi><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">d</mi></mrow><mi>τ</mi><mo>=</mo><mn>1</mn></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \int|\psi|^2\,\mathrm{d}\tau=1</annotation></semantics></math></span></span> 在时间演化中保持不变。</p>
 </details>
+<h2 id="态的叠加原理与干涉">态的叠加原理与干涉</h2>
+<p>薛定谔方程是线性的, 因而若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ψ</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>ψ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\psi_1,\psi_2</annotation></semantics></math></span></span> 是解, 则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mn>1</mn></msub><msub><mi>ψ</mi><mn>1</mn></msub><mo>+</mo><msub><mi>c</mi><mn>2</mn></msub><msub><mi>ψ</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">c_1\psi_1+c_2\psi_2</annotation></semantics></math></span></span> 也是解. 对应到实验上:</p>
+<ul>
+<li>概率幅相加导致干涉: 两条路径(或两个中间态)同时可能时, 总概率幅为各概率幅之和, 概率为模平方, 因而出现交叉项.</li>
+<li>独立分段过程的概率幅相乘(如“先到中间态再到末态”), 对应分段幅度相乘.</li>
+</ul>
+<p>因此“有无哪条路径信息”会改变可叠加的概率幅结构, 从而改变是否出现干涉条纹.</p>
+<h2 id="不确定关系">不确定关系</h2>
+<p>不确定关系不是仪器误差, 而是态的内禀性质. 最常用的两个形式:</p>
+
+$$
+\displaystyle \Delta x \,\Delta p_x \ge \frac{\hbar}{2}
+$$
+
+
+$$
+\displaystyle \Delta t \,\Delta E \gtrsim \frac{\hbar}{2}
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">ℏ</mi><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>h</mi></mrow><mrow><mn>2</mn><mi>π</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\hbar = \displaystyle \frac{h}{2\pi}</annotation></semantics></math></span></span>.</p>
+<p>物理含义要点:</p>
+<ul>
+<li>把粒子局限在更小空间尺度(更小 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span></span>), 必然引入更大的动量散布(更大 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">\Delta p</annotation></semantics></math></span></span>), 因而“经典轨道语言”在微观上失效.</li>
+<li>统计性不是“无知”, 而是理论结构本身要求.</li>
+</ul>
+<details>
+<summary>一般不确定关系: 从柯西不等式到结论的推导</summary>
+<p>定义涨落算符</p>
+
+
+$$
+\displaystyle \Delta\hat A=\hat A-\langle A\rangle,\quad
+\Delta\hat B=\hat B-\langle B\rangle
+$$
+
+
+<p>令态矢在位置表象中对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\psi</annotation></semantics></math></span></span>, 记</p>
+
+
+$$
+\displaystyle f=(\Delta\hat A)\psi,\quad g=(\Delta\hat B)\psi
+$$
+
+
+<p>柯西-施瓦茨不等式:</p>
+
+
+$$
+\displaystyle \langle f|f\rangle\langle g|g\rangle \ge |\langle f|g\rangle|^2
+$$
+
+
+<p>左边分别为方差:</p>
+
+
+$$
+\displaystyle \langle f|f\rangle=\langle(\Delta\hat A)^2\rangle=(\Delta A)^2,\quad
+\langle g|g\rangle=\langle(\Delta\hat B)^2\rangle=(\Delta B)^2
+$$
+
+
+<p>因此</p>
+
+
+$$
+\displaystyle (\Delta A)^2(\Delta B)^2 \ge |\langle f|g\rangle|^2
+$$
+
+
+<p>将内积分解为对易子与反对易子部分:</p>
+
+
+$$
+\displaystyle \langle f|g\rangle
+=
+\langle \Delta\hat A\,\Delta\hat B\rangle
+=
+\frac{1}{2}\langle \{\Delta\hat A,\Delta\hat B\}\rangle
++\frac{1}{2}\langle [\Delta\hat A,\Delta\hat B]\rangle
+$$
+
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mtext>&nbsp;</mtext><mo separator="true">,</mo><mtext>&nbsp;</mtext><mo>]</mo></mrow><annotation encoding="application/x-tex">[\ ,\ ]</annotation></semantics></math></span></span> 为对易子, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mtext>&nbsp;</mtext><mo separator="true">,</mo><mtext>&nbsp;</mtext><mo>}</mo></mrow><annotation encoding="application/x-tex">\{\ ,\ \}</annotation></semantics></math></span></span> 为反对易子. 注意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi mathvariant="normal">Δ</mi><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo separator="true">,</mo><mi mathvariant="normal">Δ</mi><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>]</mo><mo>=</mo><mo>[</mo><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>]</mo></mrow><annotation encoding="application/x-tex">[\Delta\hat A,\Delta\hat B]=[\hat A,\hat B]</annotation></semantics></math></span></span>. 取模平方并用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mo>≥</mo><mo>(</mo><mi mathvariant="normal">ℑ</mi><mi>z</mi><msup><mo>)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|z|^2\ge (\Im z)^2</annotation></semantics></math></span></span>, 得到常用下界</p>
+
+
+$$
+\displaystyle \Delta A,\Delta B
+\ge
+\frac{1}{2}\left|\left\langle [\hat A,\hat B]\right\rangle\right|
+$$
+
+
+<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo>=</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>=</mo><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">\hat A=\hat x,\hat B=\hat p_x</annotation></semantics></math></span></span>, 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo separator="true">,</mo><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub><mo>]</mo><mo>=</mo><mi>i</mi><mi mathvariant="normal">ℏ</mi></mrow><annotation encoding="application/x-tex">[\hat x,\hat p_x]=i\hbar</annotation></semantics></math></span></span>, 得</p>
+
+
+$$
+\displaystyle \Delta x,\Delta p_x \ge \frac{\hbar}{2}
+$$
+
+
+</details>
+<details>
+<summary>例题: 束缚粒子的最小平均动能(数量级估计)</summary>
+<p>设粒子被束缚在尺度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>∼</mo><mi>r</mi></mrow><annotation encoding="application/x-tex">\Delta x \sim r</annotation></semantics></math></span></span> 内, 则</p>
+
+$$
+\displaystyle \Delta p \gtrsim \frac{\hbar}{2r}
+$$
+
+<p>若平均动量为零, 典型动量量级由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">\Delta p</annotation></semantics></math></span></span> 给出, 最小平均动能量级</p>
+
+$$
+\displaystyle \langle T \rangle_{\min} \sim \frac{(\Delta p)^2}{2m} \gtrsim \frac{\hbar^2}{8mr^2}
+$$
+
+<p>结论: 只要粒子被束缚, 零点动能不可避免, 这与具体束缚势形状无关(数量级层面).</p>
+</details>
+<h2 id="薛定谔方程">薛定谔方程</h2>
+<h3 id="从经典对应到量子方程">从经典对应到量子方程</h3>
+<p>经典能量关系:</p>
+
+$$
+\displaystyle E = \frac{p^2}{2m} + V(\mathbf{r})
+$$
+
+<p>量子化的核心替换(作用到波函数上):</p>
+
+$$
+\displaystyle E \to i\hbar \frac{\partial}{\partial t}, \quad \mathbf{p} \to -i\hbar \nabla
+$$
+
+<p>得到时间依赖薛定谔方程:</p>
+
+$$
+\displaystyle i\hbar \frac{\partial \psi(\mathbf{r},t)}{\partial t}
+=
+\left[
+\displaystyle -\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r})
+\right]\psi(\mathbf{r},t)
+$$
+
+<p>这是一条基本假设, 与波函数存在及概率解释一起构成量子力学的基本框架.</p>
+<h3 id="定态薛定谔方程与能量本征问题">定态薛定谔方程与能量本征问题</h3>
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">V(\mathbf{r})</annotation></semantics></math></span></span> 不显含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>, 可分离变量:</p>
+
+$$
+\displaystyle \psi(\mathbf{r},t) = \phi(\mathbf{r})\,e^{-iEt/\hbar}
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 是常数，有能量量纲. 代入得定态方程:</p>
+
+$$
+\displaystyle \left[
+-\frac{\hbar^2}{2m}\nabla^2 + V(\mathbf{r})
+\right]\phi(\mathbf{r})
+=
+E\,\phi(\mathbf{r})
+$$
+
+<p>这是哈密顿算符 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>H</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat H</annotation></semantics></math></span></span> 的本征方程 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>H</mi><mo>^</mo></mover><mi>ϕ</mi><mo>=</mo><mi>E</mi><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\hat H\phi=E\phi</annotation></semantics></math></span></span>, 求解量子问题的本质是求本征值谱与本征函数.</p>
 <details>
 <summary>时间无关势的分离变量推导</summary>
 <p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">V(\mathbf{r})</annotation></semantics></math></span></span> 不显含 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>, 设</p>
@@ -1016,6 +816,43 @@ $$
 
 <p>即定态的统计分布为时间常量。</p>
 </details>
+<h2 id="一维典型势的解法与物理图像">一维典型势的解法与物理图像</h2>
+<h3 id="一维无限深势阱">一维无限深势阱</h3>
+<p>势能:</p>
+
+$$
+\displaystyle
+V(x)=
+\begin{cases}
+0, &amp; 0 &lt; x &lt; d,\\
++\infty, &amp; x\le 0 \ \text{或}\ x\ge d.
+\end{cases}
+$$
+
+<p>阱内定态方程化为</p>
+
+$$
+\displaystyle \frac{\mathrm{d}^2\phi}{\mathrm{d}x^2}+k^2\phi=0,\quad k^2=\frac{2mE}{\hbar^2}
+$$
+
+<p>边界条件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϕ</mi><mo>(</mo><mn>0</mn><mo>)</mo><mo>=</mo><mi>ϕ</mi><mo>(</mo><mi>d</mi><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\phi(0)=\phi(d)=0</annotation></semantics></math></span></span> 给出量子化:</p>
+
+$$
+\displaystyle k=\frac{n\pi}{d},\quad n=1,2,3,\cdots
+$$
+
+<p>归一化本征函数与能级:</p>
+
+$$
+\displaystyle \phi_n(x)=\sqrt{\frac{2}{d}}\sin\!\left(\frac{n\pi x}{d}\right)
+$$
+
+
+$$
+\displaystyle E_n=\frac{n^2\pi^2\hbar^2}{2md^2}
+$$
+
+<p>要点: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 越大振荡越快, 概率密度呈现多峰结构; 但“粒子在哪里”只能给出概率分布.</p>
 <details>
 <summary>一维无限深势阱: 量子化与归一化的完整推导</summary>
 <p>设</p>
@@ -1123,6 +960,8 @@ $$
 
 <p>推论: 节点数与量子数关系为 $\text{阱内节点数}=n-1$, 与振荡频率随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 增大一致。</p>
 </details>
+<h3 id="势阶与反射-透射">势阶与反射/透射</h3>
+<p>在经典中, 当粒子能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 高于势阶高度时应完全透过; 量子中即使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>&gt;</mo><msub><mi>V</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">E&gt;V_0</annotation></semantics></math></span></span> 也一般有反射, 原因是边界处波数改变导致波阻抗不匹配(本质是边界条件引起的散射).</p>
 <details>
 <summary>势阶的量子反射: 反射与透射系数推导</summary>
 <p>设势阶</p>
@@ -1225,6 +1064,32 @@ $$
 
 <p>并满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>+</mo><mi>T</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">R+T=1</annotation></semantics></math></span></span>. 推论: 即使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>&gt;</mo><msub><mi>V</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">E&gt;V_0</annotation></semantics></math></span></span>, 只要 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>1</mn></msub><mo>≠</mo><msub><mi>k</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">k_1\ne k_2</annotation></semantics></math></span></span> 就有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">R&gt;0</annotation></semantics></math></span></span>, 体现纯量子散射。</p>
 </details>
+<h3 id="方势垒与隧道效应-定性到半定量">方势垒与隧道效应(定性到半定量)</h3>
+<p>方势垒:</p>
+
+$$
+\displaystyle
+V(x)=
+\begin{cases}
+0, &amp; x &lt; x_1,\\
+V_0, &amp; x_1 &lt; x &lt; x_2,\\
+0, &amp; x &gt; x_2.
+\end{cases}
+$$
+
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>&lt;</mo><msub><mi>V</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">E&lt;V_0</annotation></semantics></math></span></span> 时, 势垒区解为指数型衰减/增长, 典型衰减常数</p>
+
+$$
+\displaystyle \kappa = \sqrt{\frac{2m(V_0-E)}{\hbar^2}}
+$$
+
+<p>薄垒近似(只保留主指数)常得到穿透率数量级</p>
+
+$$
+\displaystyle T \sim e^{-2\kappa a},\quad a=x_2-x_1
+$$
+
+<p>要点: 隧穿不是“借能量”, 而是定态波在禁阻区呈指数衰减但不必为零, 匹配边界后导致有限透射.</p>
 <details>
 <summary>方势垒隧穿: 指数主控项推导</summary>
 <p>设方势垒</p>
@@ -1290,82 +1155,151 @@ $$
 
 <p>即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span> 对势垒高度与宽度呈指数敏感。</p>
 </details>
+<h3 id="一维谐振子的结构性结论">一维谐振子的结构性结论</h3>
+<p>势能:</p>
+
+$$
+\displaystyle V(x)=\frac{1}{2}m\omega^2 x^2
+$$
+
+<p>量子谐振子能级等间隔:</p>
+
+$$
+\displaystyle E_n=\left(n+\frac{1}{2}\right)\hbar\omega,\quad n=0,1,2,\cdots
+$$
+
+<p>基态零点能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mn>0</mn></msub><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mstyle></mrow><annotation encoding="application/x-tex">E_0=\displaystyle \frac{1}{2}\hbar\omega</annotation></semantics></math></span></span> 可由不确定关系做数量级解释: 若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span></span> 有限, 则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">\Delta p</annotation></semantics></math></span></span> 不可为零, 从而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><mi>T</mi><mo>⟩</mo></mrow><annotation encoding="application/x-tex">\langle T\rangle</annotation></semantics></math></span></span> 不可为零, 加上势能最小化给出零点能的必然性.</p>
+<p>本征函数可写成“高斯 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span></span> 厄米特多项式”的形式(此处重在结构与物理意义: 归一化、节点数随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 增加、与经典极限的对应).</p>
 <details>
-<summary>一般不确定关系: 从柯西不等式到结论的推导</summary>
-<p>定义涨落算符</p>
+<summary>谐振子零点能的推导: 从不确定关系到极小化</summary>
+<p>对一维谐振子</p>
 
 
 $$
-\displaystyle \Delta\hat A=\hat A-\langle A\rangle,\quad
-\Delta\hat B=\hat B-\langle B\rangle
+\displaystyle H=\frac{\hat p^2}{2m}+\frac{1}{2}m\omega^2\hat x^2
 $$
 
 
-<p>令态矢在位置表象中对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\psi</annotation></semantics></math></span></span>, 记</p>
+<p>对任意态, 有</p>
 
 
 $$
-\displaystyle f=(\Delta\hat A)\psi,\quad g=(\Delta\hat B)\psi
-$$
-
-
-<p>柯西-施瓦茨不等式:</p>
-
-
-$$
-\displaystyle \langle f|f\rangle\langle g|g\rangle \ge |\langle f|g\rangle|^2
-$$
-
-
-<p>左边分别为方差:</p>
-
-
-$$
-\displaystyle \langle f|f\rangle=\langle(\Delta\hat A)^2\rangle=(\Delta A)^2,\quad
-\langle g|g\rangle=\langle(\Delta\hat B)^2\rangle=(\Delta B)^2
-$$
-
-
-<p>因此</p>
-
-
-$$
-\displaystyle (\Delta A)^2(\Delta B)^2 \ge |\langle f|g\rangle|^2
-$$
-
-
-<p>将内积分解为对易子与反对易子部分:</p>
-
-
-$$
-\displaystyle \langle f|g\rangle
+\displaystyle \langle H\rangle
 =
-\langle \Delta\hat A\,\Delta\hat B\rangle
-=
-\frac{1}{2}\langle \{\Delta\hat A,\Delta\hat B\}\rangle
-+\frac{1}{2}\langle [\Delta\hat A,\Delta\hat B]\rangle
-$$
 
-
-<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mtext>&nbsp;</mtext><mo separator="true">,</mo><mtext>&nbsp;</mtext><mo>]</mo></mrow><annotation encoding="application/x-tex">[\ ,\ ]</annotation></semantics></math></span></span> 为对易子, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mtext>&nbsp;</mtext><mo separator="true">,</mo><mtext>&nbsp;</mtext><mo>}</mo></mrow><annotation encoding="application/x-tex">\{\ ,\ \}</annotation></semantics></math></span></span> 为反对易子. 注意 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi mathvariant="normal">Δ</mi><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo separator="true">,</mo><mi mathvariant="normal">Δ</mi><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>]</mo><mo>=</mo><mo>[</mo><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>]</mo></mrow><annotation encoding="application/x-tex">[\Delta\hat A,\Delta\hat B]=[\hat A,\hat B]</annotation></semantics></math></span></span>. 取模平方并用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>z</mi><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mo>≥</mo><mo>(</mo><mi mathvariant="normal">ℑ</mi><mi>z</mi><msup><mo>)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|z|^2\ge (\Im z)^2</annotation></semantics></math></span></span>, 得到常用下界</p>
-
-
-$$
-\displaystyle \Delta A,\Delta B
+\frac{\langle p^2\rangle}{2m}+\frac{1}{2}m\omega^2\langle x^2\rangle
 \ge
-\frac{1}{2}\left|\left\langle [\hat A,\hat B]\right\rangle\right|
+\frac{(\Delta p)^2}{2m}+\frac{1}{2}m\omega^2(\Delta x)^2
 $$
 
 
-<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo>=</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>=</mo><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">\hat A=\hat x,\hat B=\hat p_x</annotation></semantics></math></span></span>, 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo separator="true">,</mo><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub><mo>]</mo><mo>=</mo><mi>i</mi><mi mathvariant="normal">ℏ</mi></mrow><annotation encoding="application/x-tex">[\hat x,\hat p_x]=i\hbar</annotation></semantics></math></span></span>, 得</p>
+<p>并用不确定关系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo separator="true">,</mo><mi mathvariant="normal">Δ</mi><mi>p</mi><mo>≥</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi mathvariant="normal">ℏ</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\Delta x,\Delta p\ge \displaystyle \frac{\hbar}{2}</annotation></semantics></math></span></span>, 得</p>
 
 
 $$
-\displaystyle \Delta x,\Delta p_x \ge \frac{\hbar}{2}
+\displaystyle \langle H\rangle
+\ge
+\frac{1}{2m}\left(\frac{\hbar}{2\Delta x}\right)^2
++\frac{1}{2}m\omega^2(\Delta x)^2
+=
+
+\frac{\hbar^2}{8m(\Delta x)^2}+\frac{1}{2}m\omega^2(\Delta x)^2
 $$
 
 
+<p>把右边视为关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span></span> 的函数并极小化:</p>
+
+
+$$
+\displaystyle \frac{\mathrm{d}}{\mathrm{d}(\Delta x)}
+\left(
+\frac{\hbar^2}{8m(\Delta x)^2}+\frac{1}{2}m\omega^2(\Delta x)^2
+\right)=0
+$$
+
+
+<p>得到</p>
+
+
+$$
+\displaystyle -\frac{\hbar^2}{4m(\Delta x)^3}+m\omega^2(\Delta x)=0
+\;\Rightarrow\;
+(\Delta x)^2=\frac{\hbar}{2m\omega}
+$$
+
+
+<p>代回得最小平均能量</p>
+
+
+$$
+\displaystyle \langle H\rangle_{\min}
+=
+\frac{\hbar^2}{8m}\frac{2m\omega}{\hbar}
++\frac{1}{2}m\omega^2\frac{\hbar}{2m\omega}
+=
+\frac{1}{4}\hbar\omega+\frac{1}{4}\hbar\omega
+=
+\frac{1}{2}\hbar\omega
+$$
+
+
+<p>这给出零点能的必然性与其数值, 且表明基态不可能同时满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta x=0</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta p=0</annotation></semantics></math></span></span>。</p>
 </details>
+<h2 id="算符、表象与期望值">算符、表象与期望值</h2>
+<h3 id="期望值的统一表达">期望值的统一表达</h3>
+<p>对任意可观测量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span>, 在位置表象中期望值写作</p>
+
+$$
+\displaystyle \langle A\rangle = \int \psi^*(\mathbf{r},t)\,\hat A\,\psi(\mathbf{r},t)\,\mathrm{d}\tau
+$$
+
+<p>一维则为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mo>⟨</mo><mi>A</mi><mo>⟩</mo><mo>=</mo><mo>∫</mo><msup><mi>ψ</mi><mo>∗</mo></msup><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo><mover accent="true"><mi>A</mi><mo>^</mo></mover><mi>ψ</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo><mspace width="0.16667em"></mspace><mrow><mi mathvariant="normal">d</mi></mrow><mi>x</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \langle A\rangle=\int \psi^*(x,t)\hat A\psi(x,t)\,\mathrm{d}x</annotation></semantics></math></span></span>.</p>
+<p>典型算符:</p>
+
+$$
+\displaystyle \hat x = x,\quad \hat p_x = -i\hbar\frac{\mathrm{d}}{\mathrm{d}x}
+$$
+
+<p>三维动量:</p>
+
+$$
+\displaystyle \hat{\mathbf{p}}=-i\hbar\nabla
+$$
+
+<p>哈密顿算符:</p>
+
+$$
+\displaystyle \hat H=\left[-\frac{\hbar^2}{2m}\nabla^2+V(\mathbf{r})\right]
+$$
+
+<h3 id="对易关系与不确定关系的结构来源">对易关系与不确定关系的结构来源</h3>
+<p>位置与动量的基本对易关系:</p>
+
+$$
+\displaystyle [\hat x,\hat p_x]=i\hbar
+$$
+
+<p>更一般的结构: 两算符对易 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span></span> 可有共同本征函数, 对应的物理量可同时具有确定值; 不对易 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span></span> 不能同时具有确定值, 并导向不确定关系.</p>
+<h3 id="角动量算符">角动量算符</h3>
+<p>轨道角动量:</p>
+
+$$
+\displaystyle \hat{\mathbf{L}}=\mathbf{r}\times\hat{\mathbf{p}}=-i\hbar\,\mathbf{r}\times\nabla
+$$
+
+<p>其分量之间的对易关系:</p>
+
+$$
+\displaystyle [\hat L_x,\hat L_y]=i\hbar \hat L_z \quad (\text{循环置换})
+$$
+
+<p>并且</p>
+
+$$
+\displaystyle [\hat L^2,\hat L_x]=[\hat L^2,\hat L_y]=[\hat L^2,\hat L_z]=0
+$$
+
+<p>这意味着可以同时选取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mi>L</mi><mo>^</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat L^2</annotation></semantics></math></span></span> 与某一分量(通常 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>L</mi><mo>^</mo></mover><mi>z</mi></msub></mrow><annotation encoding="application/x-tex">\hat L_z</annotation></semantics></math></span></span>)的共同本征态作为一组完备表象.</p>
 <details>
 <summary>角动量本征值的推导要点: 从对易代数到量子化</summary>
 <p>角动量算符满足</p>
@@ -1468,8 +1402,92 @@ $$
 
 <p>这给出角动量量子化与磁量子数取值范围。</p>
 </details>
+<h2 id="氢原子的薛定谔方程解-中心力场的一般结构">氢原子的薛定谔方程解(中心力场的一般结构)</h2>
+<h3 id="折合质量与库仑势">折合质量与库仑势</h3>
+<p>电子-原子核两体问题可化为折合质量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的单体在中心势中运动:</p>
+
+$$
+\displaystyle \mu=\frac{mm'}{m+m'}
+$$
+
+<p>库仑势(核电荷数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span>):</p>
+
+$$
+\displaystyle V(r)=-\frac{Ze^2}{4\pi\varepsilon_0\,r}
+$$
+
+<p>定态方程:</p>
+
+$$
+\displaystyle
+\left[
+-\frac{\hbar^2}{2\mu}\nabla^2+V(r)
+\right]\psi(\mathbf{r})
+=
+E\psi(\mathbf{r})
+$$
+
+<h3 id="变量分离与量子数">变量分离与量子数</h3>
+<p>球坐标中令</p>
+
+$$
+\displaystyle \psi(r,\theta,\varphi)=R(r)\,Y(\theta,\varphi)
+$$
+
+<p>角向方程给出球谐函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>Y</mi><mrow><mi>l</mi></mrow><mrow><mi>m</mi></mrow></msubsup><mo>(</mo><mi>θ</mi><mo separator="true">,</mo><mi>φ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">Y_{l}^{m}(\theta,\varphi)</annotation></semantics></math></span></span>, 并得到轨道角动量量子化:</p>
+
+$$
+\displaystyle \hat L^2 Y_{l}^{m}=l(l+1)\hbar^2\,Y_{l}^{m}
+$$
+
+
+$$
+\displaystyle \hat L_z Y_{l}^{m}=m\hbar\,Y_{l}^{m}
+$$
+
+<p>其中</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">l=0,1,2,\cdots</annotation></semantics></math></span></span> (角动量量子数)</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><mo>−</mo><mi>l</mi><mo separator="true">,</mo><mo>−</mo><mi>l</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>l</mi></mrow><annotation encoding="application/x-tex">m=-l,-l+1,\cdots,l</annotation></semantics></math></span></span> (磁量子数)</li>
+</ul>
+<p>球谐函数可写成</p>
+
+$$
+\displaystyle Y_{l}^{m}(\theta,\varphi)=N_{lm}\,P_{l}^{|m|}(\cos\theta)\,e^{im\varphi}
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>P</mi><mi>l</mi><mrow><mi mathvariant="normal">∣</mi><mi>m</mi><mi mathvariant="normal">∣</mi></mrow></msubsup></mrow><annotation encoding="application/x-tex">P_l^{|m|}</annotation></semantics></math></span></span> 为关联勒让德函数, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mi>l</mi><mi>m</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N_{lm}</annotation></semantics></math></span></span> 为归一化常数.</p>
+<h3 id="宇称">宇称</h3>
+<p>在坐标反演 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">r</mi></mrow><mo>→</mo><mo>−</mo><mrow><mi mathvariant="bold">r</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{r}\to-\mathbf{r}</annotation></semantics></math></span></span> 下, 球谐函数满足</p>
+
+$$
+\displaystyle Y_{l}^{m}(\pi-\theta,\varphi+\pi)=(-1)^l Y_{l}^{m}(\theta,\varphi)
+$$
+
+<p>因此在无外场且哈密顿在宇称变换下不变时, 态可具有确定宇称, 其奇偶由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 决定.</p>
+<h3 id="径向方程、有效势与束缚态">径向方程、有效势与束缚态</h3>
+<p>径向方程可写成“有效一维问题”的形式: 库仑势与离心势共同构成有效势</p>
+
+$$
+\displaystyle V_{\text{eff}}(r)=\frac{l(l+1)\hbar^2}{2\mu r^2}-\frac{Ze^2}{4\pi\varepsilon_0\,r}
+$$
+
+<p>束缚态对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">E&lt;0</annotation></semantics></math></span></span>. 通过渐近分析与级数解(本质是要求波函数在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">r\to 0</annotation></semantics></math></span></span> 有限, 在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">r\to\infty</annotation></semantics></math></span></span> 可归一化), 量子化条件自然出现, 导致主量子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle n=1,2,3,\cdots,\quad l=0,1,\cdots,n-1,\quad m=-l,\cdots,l
+$$
+
+<p>能级谱:</p>
+
+$$
+\displaystyle E_n=-\frac{\mu Z^2 e^4}{2(4\pi\varepsilon_0)^2\hbar^2}\frac{1}{n^2}
+$$
+
+<p>特别地, 氢原子(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Z=1</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>≈</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">\mu\approx m</annotation></semantics></math></span></span>)基态能量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn><mn>3</mn><mi mathvariant="normal">.</mi><mn>6</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">-13.6\,\text{eV}</annotation></semantics></math></span></span>, 且只依赖 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 而与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo separator="true">,</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">l,m</annotation></semantics></math></span></span> 无关(忽略精细结构等更高阶效应).</p>
+<p>径向波函数结构上是“指数衰减 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span></span> 幂函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>×</mo></mrow><annotation encoding="application/x-tex">\times</annotation></semantics></math></span></span> 多项式(拉盖尔多项式)”的形式, 其节点数与量子数相关, 给出不同轨道的空间分布.</p>
 <details>
-<summary>氢原子能级 $E_n\propto -\displaystyle \frac{1}{n^2}$ 的推导骨架(不跳步的逻辑链)</summary>
+<summary>氢原子能级 $E_n\propto -\displaystyle \frac{1}{n^2}$ 的推导</summary>
 <p><strong>两体化一体与中心势分离</strong></p>
 <p>电子与原子核两体化为折合质量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 的一体问题, 势为库仑势 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>(</mo><mi>r</mi><mo>)</mo><mo>=</mo><mo>−</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>Z</mi><msup><mi>e</mi><mn>2</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><mi>r</mi></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">V(r)=-\displaystyle \frac{Ze^2}{4\pi\varepsilon_0 r}</annotation></semantics></math></span></span>. 定态方程</p>
 
@@ -1574,80 +1592,62 @@ $$
 
 <p>推论: 在忽略相对论修正与自旋相互作用时, 同一 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 的不同 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo separator="true">,</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">l,m</annotation></semantics></math></span></span> 简并, 这对应库仑势的高对称性(更严格地说与更大的动力学对称有关)。</p>
 </details>
+<hr>
 <details>
-<summary>谐振子零点能的推导: 从不确定关系到极小化</summary>
-<p>对一维谐振子</p>
-
-
-$$
-\displaystyle H=\frac{\hat p^2}{2m}+\frac{1}{2}m\omega^2\hat x^2
-$$
-
-
-<p>对任意态, 有</p>
-
+<summary>例题: 一维无限深势阱的归一化与平均值</summary>
+<p>已知</p>
 
 $$
-\displaystyle \langle H\rangle
-=
-
-\frac{\langle p^2\rangle}{2m}+\frac{1}{2}m\omega^2\langle x^2\rangle
-\ge
-\frac{(\Delta p)^2}{2m}+\frac{1}{2}m\omega^2(\Delta x)^2
+\displaystyle \phi_n(x)=A\sin\!\left(\frac{n\pi x}{d}\right),\quad 0 &lt; x &lt; d
 $$
 
-
-<p>并用不确定关系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo separator="true">,</mo><mi mathvariant="normal">Δ</mi><mi>p</mi><mo>≥</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi mathvariant="normal">ℏ</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\Delta x,\Delta p\ge \displaystyle \frac{\hbar}{2}</annotation></semantics></math></span></span>, 得</p>
-
+<p>归一化:</p>
 
 $$
-\displaystyle \langle H\rangle
-\ge
-\frac{1}{2m}\left(\frac{\hbar}{2\Delta x}\right)^2
-+\frac{1}{2}m\omega^2(\Delta x)^2
-=
-
-\frac{\hbar^2}{8m(\Delta x)^2}+\frac{1}{2}m\omega^2(\Delta x)^2
+\displaystyle 1=\int_0^d |\phi_n(x)|^2\,\mathrm{d}x
+=|A|^2\int_0^d \sin^2\!\left(\frac{n\pi x}{d}\right)\mathrm{d}x
+=|A|^2\frac{d}{2}
 $$
 
-
-<p>把右边视为关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span></span> 的函数并极小化:</p>
-
-
-$$
-\displaystyle \frac{\mathrm{d}}{\mathrm{d}(\Delta x)}
-\left(
-\frac{\hbar^2}{8m(\Delta x)^2}+\frac{1}{2}m\omega^2(\Delta x)^2
-\right)=0
-$$
-
-
-<p>得到</p>
-
+<p>故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>=</mo><msqrt><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mn>2</mn></mrow><mrow><mi>d</mi></mrow></mfrac></mstyle></mrow></msqrt></mrow><annotation encoding="application/x-tex">A=\sqrt{\displaystyle \frac{2}{d}}</annotation></semantics></math></span></span>.</p>
+<p>对称性可得</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><mi>x</mi><mo>⟩</mo><mo>=</mo><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi>d</mi></mrow><mrow><mn>2</mn></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\langle x\rangle=\displaystyle \frac{d}{2}</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><mi>p</mi><mo>⟩</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\langle p\rangle=0</annotation></semantics></math></span></span></li>
+<li>能量本征态满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><mi>H</mi><mo>⟩</mo><mo>=</mo><msub><mi>E</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">\langle H\rangle=E_n</annotation></semantics></math></span></span>.</li>
+</ul>
+</details>
+<details>
+<summary>例题: 隧穿指数主控项</summary>
+<p>对方势垒, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>&lt;</mo><msub><mi>V</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">E&lt;V_0</annotation></semantics></math></span></span>, 取势垒宽度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span>, 衰减常数</p>
 
 $$
-\displaystyle -\frac{\hbar^2}{4m(\Delta x)^3}+m\omega^2(\Delta x)=0
-\;\Rightarrow\;
-(\Delta x)^2=\frac{\hbar}{2m\omega}
+\displaystyle \kappa=\sqrt{\frac{2m(V_0-E)}{\hbar^2}}
 $$
 
-
-<p>代回得最小平均能量</p>
-
+<p>若只关心数量级, 则透射概率主控于禁阻区指数衰减:</p>
 
 $$
-\displaystyle \langle H\rangle_{\min}
-=
-\frac{\hbar^2}{8m}\frac{2m\omega}{\hbar}
-+\frac{1}{2}m\omega^2\frac{\hbar}{2m\omega}
-=
-\frac{1}{4}\hbar\omega+\frac{1}{4}\hbar\omega
-=
-\frac{1}{2}\hbar\omega
+\displaystyle T \propto e^{-2\kappa a}
 $$
 
+<p>这解释了: 微小增加 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>V</mi><mn>0</mn></msub><mo>−</mo><mi>E</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(V_0-E)</annotation></semantics></math></span></span> 会指数级压低隧穿, 也是扫描隧道显微镜等现象的基础.</p>
+</details>
+<details>
+<summary>例题: 由对易关系得到不确定关系(结构性结论)</summary>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>]</mo><mo>=</mo><mi>i</mi><mover accent="true"><mi>C</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">[\hat A,\hat B]=i\hat C</annotation></semantics></math></span></span>, 则一般有</p>
 
-<p>这给出零点能的必然性与其数值, 且表明基态不可能同时满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta x=0</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta p=0</annotation></semantics></math></span></span>。</p>
+$$
+\displaystyle \Delta A\,\Delta B \ge \frac{1}{2}\left|\langle \hat C\rangle\right|
+$$
+
+<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo>=</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>=</mo><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">\hat A=\hat x,\hat B=\hat p_x</annotation></semantics></math></span></span>, 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo separator="true">,</mo><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub><mo>]</mo><mo>=</mo><mi>i</mi><mi mathvariant="normal">ℏ</mi></mrow><annotation encoding="application/x-tex">[\hat x,\hat p_x]=i\hbar</annotation></semantics></math></span></span>, 得</p>
+
+$$
+\displaystyle \Delta x\,\Delta p_x \ge \frac{\hbar}{2}
+$$
+
+<p>说明不确定关系本质上来自算符代数结构, 而不是某个具体实验装置.</p>
 </details>
 
       </div>
@@ -1849,7 +1849,7 @@ $$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">量子力学导论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%BB%E5%B0%94%E7%90%86%E8%AE%BA%E7%9A%84%E5%9B%B0%E9%9A%BE%E4%B8%8E%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E7%9A%84%E5%87%BA%E5%8F%91%E7%82%B9"><span class="toc-text">玻尔理论的困难与量子力学的出发点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E8%B4%A8%E7%B2%92%E5%AD%90%E7%9A%84%E6%B3%A2%E7%B2%92%E4%BA%8C%E8%B1%A1%E6%80%A7%E4%B8%8E%E5%BE%B7%E5%B8%83%E7%BD%97%E6%84%8F%E5%85%B3%E7%B3%BB"><span class="toc-text">物质粒子的波粒二象性与德布罗意关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E7%9A%84%E7%BB%9F%E8%AE%A1%E8%A7%A3%E9%87%8A%E4%B8%8E%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-text">波函数的统计解释与归一化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%81%E7%9A%84%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86%E4%B8%8E%E5%B9%B2%E6%B6%89"><span class="toc-text">态的叠加原理与干涉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%85%B3%E7%B3%BB"><span class="toc-text">不确定关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">薛定谔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%BB%8F%E5%85%B8%E5%AF%B9%E5%BA%94%E5%88%B0%E9%87%8F%E5%AD%90%E6%96%B9%E7%A8%8B"><span class="toc-text">从经典对应到量子方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%80%81%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E4%B8%8E%E8%83%BD%E9%87%8F%E6%9C%AC%E5%BE%81%E9%97%AE%E9%A2%98"><span class="toc-text">定态薛定谔方程与能量本征问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E5%85%B8%E5%9E%8B%E5%8A%BF%E7%9A%84%E8%A7%A3%E6%B3%95%E4%B8%8E%E7%89%A9%E7%90%86%E5%9B%BE%E5%83%8F"><span class="toc-text">一维典型势的解法与物理图像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E6%97%A0%E9%99%90%E6%B7%B1%E5%8A%BF%E9%98%B1"><span class="toc-text">一维无限深势阱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%BF%E9%98%B6%E4%B8%8E%E5%8F%8D%E5%B0%84-%E9%80%8F%E5%B0%84"><span class="toc-text">势阶与反射&#x2F;透射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%8A%BF%E5%9E%92%E4%B8%8E%E9%9A%A7%E9%81%93%E6%95%88%E5%BA%94-%E5%AE%9A%E6%80%A7%E5%88%B0%E5%8D%8A%E5%AE%9A%E9%87%8F"><span class="toc-text">方势垒与隧道效应(定性到半定量)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E8%B0%90%E6%8C%AF%E5%AD%90-%E7%BB%93%E6%9E%84%E6%80%A7%E7%BB%93%E8%AE%BA%E4%B8%BA%E4%B8%BB"><span class="toc-text">一维谐振子(结构性结论为主)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E7%AC%A6%E3%80%81%E8%A1%A8%E8%B1%A1%E4%B8%8E%E6%9C%9F%E6%9C%9B%E5%80%BC"><span class="toc-text">算符、表象与期望值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B%E5%80%BC%E7%9A%84%E7%BB%9F%E4%B8%80%E8%A1%A8%E8%BE%BE"><span class="toc-text">期望值的统一表达</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%98%93%E5%85%B3%E7%B3%BB%E4%B8%8E%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%85%B3%E7%B3%BB%E7%9A%84%E7%BB%93%E6%9E%84%E6%9D%A5%E6%BA%90"><span class="toc-text">对易关系与不确定关系的结构来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E7%AE%97%E7%AC%A6"><span class="toc-text">角动量算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%9A%84%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E8%A7%A3-%E4%B8%AD%E5%BF%83%E5%8A%9B%E5%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E7%BB%93%E6%9E%84"><span class="toc-text">氢原子的薛定谔方程解(中心力场的一般结构)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%98%E5%90%88%E8%B4%A8%E9%87%8F%E4%B8%8E%E5%BA%93%E4%BB%91%E5%8A%BF"><span class="toc-text">折合质量与库仑势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%88%86%E7%A6%BB%E4%B8%8E%E9%87%8F%E5%AD%90%E6%95%B0"><span class="toc-text">变量分离与量子数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%87%E7%A7%B0"><span class="toc-text">宇称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%84%E5%90%91%E6%96%B9%E7%A8%8B%E3%80%81%E6%9C%89%E6%95%88%E5%8A%BF%E4%B8%8E%E6%9D%9F%E7%BC%9A%E6%80%81"><span class="toc-text">径向方程、有效势与束缚态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E4%BA%9B%E7%BB%93%E8%AE%BA%E7%9A%84%E6%8E%A8%E5%AF%BC%E5%92%8C%E6%8E%A8%E8%AE%BA"><span class="toc-text">一些结论的推导和推论</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">量子力学导论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%BB%E5%B0%94%E7%90%86%E8%AE%BA%E7%9A%84%E5%9B%B0%E9%9A%BE%E4%B8%8E%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E7%9A%84%E5%87%BA%E5%8F%91%E7%82%B9"><span class="toc-text">玻尔理论的困难与量子力学的出发点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E8%B4%A8%E7%B2%92%E5%AD%90%E7%9A%84%E6%B3%A2%E7%B2%92%E4%BA%8C%E8%B1%A1%E6%80%A7%E4%B8%8E%E5%BE%B7%E5%B8%83%E7%BD%97%E6%84%8F%E5%85%B3%E7%B3%BB"><span class="toc-text">物质粒子的波粒二象性与德布罗意关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E7%9A%84%E7%BB%9F%E8%AE%A1%E8%A7%A3%E9%87%8A%E4%B8%8E%E5%BD%92%E4%B8%80%E5%8C%96"><span class="toc-text">波函数的统计解释与归一化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%81%E7%9A%84%E5%8F%A0%E5%8A%A0%E5%8E%9F%E7%90%86%E4%B8%8E%E5%B9%B2%E6%B6%89"><span class="toc-text">态的叠加原理与干涉</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%85%B3%E7%B3%BB"><span class="toc-text">不确定关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B"><span class="toc-text">薛定谔方程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%BB%8F%E5%85%B8%E5%AF%B9%E5%BA%94%E5%88%B0%E9%87%8F%E5%AD%90%E6%96%B9%E7%A8%8B"><span class="toc-text">从经典对应到量子方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%80%81%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E4%B8%8E%E8%83%BD%E9%87%8F%E6%9C%AC%E5%BE%81%E9%97%AE%E9%A2%98"><span class="toc-text">定态薛定谔方程与能量本征问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E5%85%B8%E5%9E%8B%E5%8A%BF%E7%9A%84%E8%A7%A3%E6%B3%95%E4%B8%8E%E7%89%A9%E7%90%86%E5%9B%BE%E5%83%8F"><span class="toc-text">一维典型势的解法与物理图像</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E6%97%A0%E9%99%90%E6%B7%B1%E5%8A%BF%E9%98%B1"><span class="toc-text">一维无限深势阱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%BF%E9%98%B6%E4%B8%8E%E5%8F%8D%E5%B0%84-%E9%80%8F%E5%B0%84"><span class="toc-text">势阶与反射&#x2F;透射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E5%8A%BF%E5%9E%92%E4%B8%8E%E9%9A%A7%E9%81%93%E6%95%88%E5%BA%94-%E5%AE%9A%E6%80%A7%E5%88%B0%E5%8D%8A%E5%AE%9A%E9%87%8F"><span class="toc-text">方势垒与隧道效应(定性到半定量)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E8%B0%90%E6%8C%AF%E5%AD%90%E7%9A%84%E7%BB%93%E6%9E%84%E6%80%A7%E7%BB%93%E8%AE%BA"><span class="toc-text">一维谐振子的结构性结论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E7%AC%A6%E3%80%81%E8%A1%A8%E8%B1%A1%E4%B8%8E%E6%9C%9F%E6%9C%9B%E5%80%BC"><span class="toc-text">算符、表象与期望值</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B%E5%80%BC%E7%9A%84%E7%BB%9F%E4%B8%80%E8%A1%A8%E8%BE%BE"><span class="toc-text">期望值的统一表达</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%98%93%E5%85%B3%E7%B3%BB%E4%B8%8E%E4%B8%8D%E7%A1%AE%E5%AE%9A%E5%85%B3%E7%B3%BB%E7%9A%84%E7%BB%93%E6%9E%84%E6%9D%A5%E6%BA%90"><span class="toc-text">对易关系与不确定关系的结构来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E7%AE%97%E7%AC%A6"><span class="toc-text">角动量算符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%9A%84%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E8%A7%A3-%E4%B8%AD%E5%BF%83%E5%8A%9B%E5%9C%BA%E7%9A%84%E4%B8%80%E8%88%AC%E7%BB%93%E6%9E%84"><span class="toc-text">氢原子的薛定谔方程解(中心力场的一般结构)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%98%E5%90%88%E8%B4%A8%E9%87%8F%E4%B8%8E%E5%BA%93%E4%BB%91%E5%8A%BF"><span class="toc-text">折合质量与库仑势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%88%86%E7%A6%BB%E4%B8%8E%E9%87%8F%E5%AD%90%E6%95%B0"><span class="toc-text">变量分离与量子数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%87%E7%A7%B0"><span class="toc-text">宇称</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%84%E5%90%91%E6%96%B9%E7%A8%8B%E3%80%81%E6%9C%89%E6%95%88%E5%8A%BF%E4%B8%8E%E6%9D%9F%E7%BC%9A%E6%80%81"><span class="toc-text">径向方程、有效势与束缚态</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
