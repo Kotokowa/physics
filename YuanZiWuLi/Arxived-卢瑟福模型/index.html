@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>超精细相互作用 | tianyi</title>
+  <title>卢瑟福模型 | tianyi</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,21 +355,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        超精细相互作用
+        卢瑟福模型
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2026-01-17 |
+          <i class="fas fa-calendar"></i> Published in：2026-01-15 |
         </span>
       
 
@@ -392,106 +392,342 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1>超精细相互作用</h1>
-<h2 id="引言">引言</h2>
-<p>在第二章讨论原子中的电子运动时，我们只考虑了电子与原子核之间的库仑相互作用。随着研究的深入，到了第四章，引入了电子的自旋概念，从而产生了光谱的精细结构。但在这里，我们仍把原子核看作是一个点电荷，主要贡献是其电荷(Ze)，其次是质量。</p>
-<p>然而，第七章已经说明了原子核并不是一个质点。它有一定的几何大小，电荷分布（电四极矩）以及自旋角动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span> 和磁矩 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span>。这些性质将影响电子的运动，使得原子光谱出现比精细结构更小的分裂，这种分裂被称为超精细结构。其起因便是超精细相互作用。</p>
-<p>超精细结构引起的能量变化，通常比精细结构小三个数量级，但随着光谱仪技术的发展，分辨率已达到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>9</mn></mrow></msup></mrow><annotation encoding="application/x-tex">10^{-9}</annotation></semantics></math></span></span> 以上，超精细结构逐渐成为独立的研究领域。</p>
-<h2 id="超精细相互作用的理论基础">超精细相互作用的理论基础</h2>
-<h3 id="超精细相互作用的来源">超精细相互作用的来源</h3>
-<p>超精细相互作用是由原子核的自旋和磁矩与电子的磁场相互作用引起的。实验上最早观察到超精细结构的是迈克耳孙（A. Michelson, 1891年）、法布里（C. Fabry）和珀罗（A. Perot, 1897年）。</p>
-<h3 id="超精细相互作用的分裂程度">超精细相互作用的分裂程度</h3>
-<p>超精细相互作用引起的能级分裂比精细结构要小三个数量级。例如，精细结构和超精细结构所引起的能量变化可以通过表格表示（如表 43.1）：</p>
-<table>
-<thead>
-<tr>
-<th>相互作用</th>
-<th>能级变化数量级</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>中心库仑势</td>
-<td>30 000 cm⁻¹</td>
-</tr>
-<tr>
-<td>精细结构</td>
-<td>1~1 000 cm⁻¹</td>
-</tr>
-<tr>
-<td>超精细结构</td>
-<td>10⁻³~1 cm⁻¹</td>
-</tr>
-</tbody>
-</table>
-<p>从上表可见，超精细相互作用引起的能级变化比精细结构小三个数量级，但随着实验技术的进步，超精细结构已成为研究的一个重要方向。</p>
-<h3 id="磁偶极超精细相互作用">磁偶极超精细相互作用</h3>
-<h4 id="一般表达式">一般表达式</h4>
-<p>假设已知原子核的磁矩为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\mu_i</annotation></semantics></math></span></span>，电子运动在原子核处产生的磁场强度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>B</mi><mrow><mi>e</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">B_{el}</annotation></semantics></math></span></span>，则磁偶极相互作用的能量（哈密顿量）为：</p>
+        <h1>卢瑟福模型</h1>
+<p>本章目标: 用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 粒子散射实验建立原子的核式结构图像, 并推导库仑散射与卢瑟福散射公式.</p>
+<h2 id="核式结构的动机-为什么汤姆孙模型不行">核式结构的动机: 为什么汤姆孙模型不行</h2>
+<p>考虑原子半径 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>∼</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>1</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">R\sim 0.1\,\text{nm}</annotation></semantics></math></span></span>, 原子正电荷总量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Ze</annotation></semantics></math></span></span>. 在汤姆孙模型中正电荷均匀分布, 对入射 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 粒子(电荷 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>e</mi></mrow><annotation encoding="application/x-tex">2e</annotation></semantics></math></span></span>)的最大库仑力发生在掠射 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>=</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">r=R</annotation></semantics></math></span></span> 处.</p>
 
 $$
-\mathcal{H}_m = -\boldsymbol{\mu}_i \cdot \boldsymbol{B}_{el}
+\displaystyle F=\frac{2e(Ze)}{4\pi\varepsilon_0 R^2}
 $$
 
-<p>其中，核磁矩与核的自旋角动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span> 成正比：</p>
+<p>估算散射导致的动量相对变化, 取受力时间量级为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>R</mi><mi mathvariant="normal">/</mi><mi>v</mi></mrow><annotation encoding="application/x-tex">2R/v</annotation></semantics></math></span></span>, 则</p>
 
 $$
-\boldsymbol{\mu}_i = g_i \mu_N \boldsymbol{I}
+\displaystyle \frac{\Delta p}{p}
+=\frac{2FR/v}{m_\alpha v}
+=\frac{2Ze^2/(4\pi\varepsilon_0 R)}{\frac{1}{2}m_\alpha v^2}
 $$
 
-<p>这里，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">g_i</annotation></semantics></math></span></span> 为核的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span> 因子，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">\mu_N</annotation></semantics></math></span></span> 为核磁子。磁偶极相互作用的能量比电子自旋与轨道之间的精细相互作用小三个数量级。</p>
-<h4 id="单电子原子的磁超精细相互作用">单电子原子的磁超精细相互作用</h4>
-<p>我们首先考虑一个单电子原子（如氢原子或类氢原子）中的磁超精细相互作用。假设电子的轨道角动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">l \neq 0</annotation></semantics></math></span></span>，在原子核处感受到的电子磁场可以表示为：</p>
+<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>α</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><msub><mi>m</mi><mi>α</mi></msub><msup><mi>v</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E_\alpha=\frac{1}{2}m_\alpha v^2</annotation></semantics></math></span></span> 以 MeV 表示, 并使用常用常量</p>
 
 $$
-\boldsymbol{B}_{el} = -2 \frac{\mu_N}{r^3} \boldsymbol{N}, \quad l \neq 0
+\displaystyle \frac{e^2}{4\pi\varepsilon_0}=1.44\,\text{fm}\cdot\text{MeV}
 $$
 
-<p>其中，$\boldsymbol{N} = \boldsymbol{l} - \boldsymbol{s} + \frac{3(\boldsymbol{s} \cdot \boldsymbol{r})\boldsymbol{r}}{r^2}$，该式说明了电子的自旋和轨道角动量与超精细相互作用的关系。</p>
-<h4 id="氢原子的磁超精细结构">氢原子的磁超精细结构</h4>
-<p>对于核电荷为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Ze</annotation></semantics></math></span></span> 的类氢离子，我们可以进一步算出超精细结构常数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">a_s</annotation></semantics></math></span></span> 的表达式：</p>
+<p>取 $R\approx 1\,\text{\AA}=0.1\,\text{nm}$, 得到数量级估算</p>
 
 $$
-a_s = \left( 2\mu_N \frac{\mu_i}{I} \right) \frac{8Z^3}{3a_1^3 n^3}, \, l=0
+\displaystyle \frac{\Delta p}{p}
+\approx 3\times 10^{-5}\frac{Z}{E_\alpha}\,\text{rad}
 $$
 
-<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">l \neq 0</annotation></semantics></math></span></span> 时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>j</mi></msub></mrow><annotation encoding="application/x-tex">a_j</annotation></semantics></math></span></span> 可表示为：</p>
+<p>电子对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 粒子偏转的贡献更小. 即使对头碰撞, 由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>e</mi></msub><mo>≪</mo><msub><mi>m</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">m_e\ll m_\alpha</annotation></semantics></math></span></span>, 有</p>
 
 $$
-a_j = \left( 2\mu_N \frac{\mu_i}{I} \right) \left( \frac{Z}{a_1} \right)^3 \frac{1}{\left( l + \frac{1}{2} \right) j(j+1)}, \, l \neq 0
+\displaystyle \frac{\Delta p}{p}\approx \frac{2m_e}{m_\alpha}\sim 10^{-4}
 $$
 
-<h2 id="超精细相互作用的实验观察">超精细相互作用的实验观察</h2>
-<h3 id="例子：氢原子基态的超精细分裂">例子：氢原子基态的超精细分裂</h3>
-<p>在氢原子的基态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><msub><mi>S</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">2S_{1/2}</annotation></semantics></math></span></span>，自旋与核自旋的相互作用引起的能级分裂可以通过公式计算得到：</p>
+<p>综合可得保守估计</p>
 
 $$
-\Delta E(F=1) - \Delta E(F=0) = h\nu = a_s
+\displaystyle \theta&lt;10^{-4}\frac{Z}{E_\alpha}
 $$
 
-<p>计算结果显示，氢原子基态的超精细分裂已成为最早显示出电子反常磁矩的实验之一。</p>
-<h3 id="多电子原子的磁超精细结构">多电子原子的磁超精细结构</h3>
-<p>对于多电子原子，磁超精细相互作用的哈密顿量可以写为：</p>
+<p>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>α</mi></msub><mo>∼</mo><mn>5</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">M</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">E_\alpha\sim 5\,\text{MeV}</annotation></semantics></math></span></span> 轰击金 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mo>=</mo><mn>7</mn><mn>9</mn></mrow><annotation encoding="application/x-tex">Z=79</annotation></semantics></math></span></span> 为例, 单次散射最大偏转角远小于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>1</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">1^\circ</annotation></semantics></math></span></span>. 实验却观察到小但非极小的概率发生大角散射甚至反射, 因此必须存在正电荷高度集中且尺度远小于原子半径的结构, 即原子核.</p>
+<h2 id="库仑散射的几何关系-b-与-theta-的关系">库仑散射的几何关系: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 的关系</h2>
+<p>设入射粒子电荷为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mn>1</mn></msub><mi>e</mi></mrow><annotation encoding="application/x-tex">Z_1e</annotation></semantics></math></span></span>, 靶核电荷为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mn>2</mn></msub><mi>e</mi></mrow><annotation encoding="application/x-tex">Z_2e</annotation></semantics></math></span></span>, 远离靶核时入射能量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span>. 记 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 为瞄准距离(碰撞参量), <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 为散射角. 目标是推导</p>
 
 $$
-\mathcal{H}_m = \left( 2\mu_B \frac{\mu_i}{I} \right) \boldsymbol{I} \cdot \left\{ \sum_i \left[ \frac{\boldsymbol{l}_i}{r_i^3} - \frac{1}{r_i^3} \left( \boldsymbol{s}_i - \frac{3(\boldsymbol{s}_i \cdot \boldsymbol{r}_i)\boldsymbol{r}_i}{r_i^2} \right) \right] + \sum_j \left( \frac{8\pi}{3} \right) |\psi_j(0)|^2 \boldsymbol{s}_j \right\}
+\displaystyle b=\frac{a}{2}\cot\frac{\theta}{2}
 $$
 
-<p>这种哈密顿量表明多电子原子中各电子的磁超精细相互作用可以通过总角动量描述。</p>
-<h2 id="结论">结论</h2>
-<p>超精细相互作用是原子物理中重要的一部分，尤其在精细结构的基础上，它提供了更高精度的能级分裂。随着实验技术的进步，超精细结构的研究将继续推动原子物理学的发展。</p>
+<p>其中</p>
+
+$$
+\displaystyle a=\frac{Z_1Z_2e^2}{4\pi\varepsilon_0 E}
+$$
+
+<p><strong>推导(经典两体近似为一体, 靶核固定)</strong>：</p>
+<p>从牛顿第二定律出发, 库仑力为中心力</p>
+
+$$
+\displaystyle \frac{Z_1Z_2e^2}{4\pi\varepsilon_0 r^2}\,e_r
+= m\frac{\mathrm{d}v}{\mathrm{d}t}
+$$
+
+<p>中心力保证角动量守恒</p>
+
+$$
+\displaystyle mr^2\frac{\mathrm{d}\varphi}{\mathrm{d}t}=L
+$$
+
+<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">\mathrm{d}t</annotation></semantics></math></span></span> 消去时间, 得</p>
+
+$$
+\displaystyle \mathrm{d}v
+=\frac{Z_1Z_2e^2}{4\pi\varepsilon_0 L}\,\mathrm{d}\varphi\,e_r
+$$
+
+<p>两边积分. 左边</p>
+
+$$
+\displaystyle \int \mathrm{d}v = v_f-v_i = |v_f-v_i|\,e_u
+$$
+
+<p>能量守恒给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>v</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>v</mi><mi>f</mi></msub><mi mathvariant="normal">∣</mi><mo>=</mo><mi>v</mi></mrow><annotation encoding="application/x-tex">|v_i|=|v_f|=v</annotation></semantics></math></span></span>. 由几何可知 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>v</mi><mi>f</mi></msub><mo>−</mo><msub><mi>v</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mo>=</mo><mn>2</mn><mi>v</mi><mi>sin</mi><mo>(</mo><mi>θ</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">|v_f-v_i|=2v\sin(\theta/2)</annotation></semantics></math></span></span>, 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>e</mi><mi>u</mi></msub></mrow><annotation encoding="application/x-tex">e_u</annotation></semantics></math></span></span> 为该方向单位矢量.</p>
+<p>右边需要把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>e</mi><mi>r</mi></msub></mrow><annotation encoding="application/x-tex">e_r</annotation></semantics></math></span></span> 写成固定基底 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo separator="true">,</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">i,j</annotation></semantics></math></span></span> 后积分. 当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>φ</mi></mrow><annotation encoding="application/x-tex">\varphi</annotation></semantics></math></span></span> 从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn></mrow><annotation encoding="application/x-tex">0</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi><mo>−</mo><mi>θ</mi></mrow><annotation encoding="application/x-tex">\pi-\theta</annotation></semantics></math></span></span> 时</p>
+
+$$
+\displaystyle \int e_r\,\mathrm{d}\varphi
+=\int_0^{\pi-\theta}(i\cos\varphi+j\sin\varphi)\,\mathrm{d}\varphi
+=2\cos\frac{\theta}{2}\Bigl(i\sin\frac{\theta}{2}+j\cos\frac{\theta}{2}\Bigr)
+$$
+
+<p>括号中的单位矢量方向与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>e</mi><mi>u</mi></msub></mrow><annotation encoding="application/x-tex">e_u</annotation></semantics></math></span></span> 一致, 因此比较矢量方程两边的大小得到</p>
+
+$$
+\displaystyle v\sin\frac{\theta}{2}
+=\frac{1}{4\pi\varepsilon_0}\frac{Z_1Z_2e^2}{L}\cos\frac{\theta}{2}
+$$
+
+<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mi>m</mi><mi>v</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">L=mvb</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><msup><mi>v</mi><mn>2</mn></msup><mo>=</mo><mn>2</mn><mi>E</mi></mrow><annotation encoding="application/x-tex">mv^2=2E</annotation></semantics></math></span></span> 代入并整理, 得到</p>
+
+$$
+\displaystyle b=\frac{a}{2}\cot\frac{\theta}{2},
+\qquad
+\displaystyle a=\frac{1}{4\pi\varepsilon_0}\frac{Z_1Z_2e^2}{E}
+$$
+
+<h2 id="从-b-theta-到卢瑟福微分截面">从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">b(\theta)</annotation></semantics></math></span></span> 到卢瑟福微分截面</h2>
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 一一对应, 瞄准距离在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>+</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b+\mathrm{d}b</annotation></semantics></math></span></span> 之间的粒子, 将散射到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>−</mo><mrow><mi mathvariant="normal">d</mi></mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta-\mathrm{d}\theta</annotation></semantics></math></span></span> 之间.</p>
+<p>设薄箔面积为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span>, 厚度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>, 原子核数密度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span>. 环带面积为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>π</mi><mi>b</mi><mi mathvariant="normal">∣</mi><mrow><mi mathvariant="normal">d</mi></mrow><mi>b</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">2\pi b|\mathrm{d}b|</annotation></semantics></math></span></span>. 由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">b(\theta)</annotation></semantics></math></span></span> 求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mrow><mi mathvariant="normal">d</mi></mrow><mi>b</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|\mathrm{d}b|</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle b=\frac{a}{2}\cot\frac{\theta}{2},
+\qquad
+\displaystyle |\mathrm{d}b|
+=\left|\frac{\mathrm{d}b}{\mathrm{d}\theta}\right|\,\mathrm{d}\theta
+=\frac{a}{4}\csc^2\frac{\theta}{2}\,\mathrm{d}\theta
+$$
+
+<p>单个靶核对应的环带被击中的几率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>2</mn><mi>π</mi><mi>b</mi><mi mathvariant="normal">∣</mi><mrow><mi mathvariant="normal">d</mi></mrow><mi>b</mi><mi mathvariant="normal">∣</mi><mo>)</mo><mi mathvariant="normal">/</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">(2\pi b|\mathrm{d}b|)/A</annotation></semantics></math></span></span>. 代入得到</p>
+
+$$
+\displaystyle \frac{2\pi b|\mathrm{d}b|}{A}
+=\frac{a^2\,2\pi\sin\theta\,\mathrm{d}\theta}{16A\sin^4\frac{\theta}{2}}
+$$
+
+<p>对应的立体角微元为</p>
+
+$$
+\displaystyle \mathrm{d}\Omega=2\pi\sin\theta\,\mathrm{d}\theta
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle \frac{2\pi b|\mathrm{d}b|}{A}
+=\frac{a^2}{16A}\frac{\mathrm{d}\Omega}{\sin^4\frac{\theta}{2}}
+$$
+
+<p>薄箔体积为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">At</annotation></semantics></math></span></span>, 其中靶核数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>A</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">nAt</annotation></semantics></math></span></span>. 假定足够薄而不发生遮蔽, 则一个入射粒子散射到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\mathrm{d}\Omega</annotation></semantics></math></span></span> 方向的概率为</p>
+
+$$
+\displaystyle \mathrm{d}p(\theta)
+=\frac{a^2}{16A}\frac{\mathrm{d}\Omega}{\sin^4\frac{\theta}{2}}\cdot\frac{nAt}{A}
+$$
+
+<p>若共有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 个入射粒子, 则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="normal">d</mi></mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\mathrm{d}\Omega</annotation></semantics></math></span></span> 方向探测到的粒子数为</p>
+
+$$
+\displaystyle \mathrm{d}N'
+= N\,\mathrm{d}p(\theta)
+= ntN\left(\frac{1}{4\pi\varepsilon_0}\frac{Z_1Z_2e^2}{4E}\right)^2
+\frac{\mathrm{d}\Omega}{\sin^4\frac{\theta}{2}}
+$$
+
+<p>定义微分截面</p>
+
+$$
+\displaystyle \sigma_c(\theta)=\frac{\mathrm{d}\sigma}{\mathrm{d}\Omega}
+=\frac{\mathrm{d}N'}{Nnt\,\mathrm{d}\Omega}
+$$
+
+<p>得到卢瑟福微分散射截面</p>
+
+$$
+\displaystyle \sigma_c(\theta)
+=\left(\frac{1}{4\pi\varepsilon_0}\frac{Z_1Z_2e^2}{4E}\right)^2
+\frac{1}{\sin^4\frac{\theta}{2}}
+$$
+
+<p>它体现了典型的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>sin</mi><mrow><mo>−</mo><mn>4</mn></mrow></msup><mo>(</mo><mi>θ</mi><mi mathvariant="normal">/</mi><mn>2</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">\sin^{-4}(\theta/2)</annotation></semantics></math></span></span> 角分布.</p>
+<h2 id="靶核反冲与质心系修正">靶核反冲与质心系修正</h2>
+<p>若靶核不固定, 需要使用两体问题的质心系能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">E_c</annotation></semantics></math></span></span> 与折合质量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>μ</mi></msub></mrow><annotation encoding="application/x-tex">m_\mu</annotation></semantics></math></span></span>.</p>
+
+$$
+\displaystyle E_c=\frac{1}{2}m_\mu v^2,
+\qquad
+\displaystyle m_\mu=\frac{mm'}{m+m'}
+$$
+
+<p>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>L</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>m</mi><msup><mi>v</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E_L=\frac{1}{2}mv^2</annotation></semantics></math></span></span> 表示实验室系入射动能, 则</p>
+
+$$
+\displaystyle E_c=\frac{m'}{m+m'}E_L
+$$
+
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>≪</mo><msup><mi>m</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">m\ll m'</annotation></semantics></math></span></span> 时, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>≈</mo><msub><mi>E</mi><mi>L</mi></msub></mrow><annotation encoding="application/x-tex">E_c\approx E_L</annotation></semantics></math></span></span>, 并可近似认为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mi>L</mi></msub><mo>≈</mo><msub><mi>θ</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">\theta_L\approx\theta_c</annotation></semantics></math></span></span>, 于是仍可直接使用上面的卢瑟福形式.</p>
+<p>在一般情况下, 实验室系微分截面可写成(给出结果, 便于查用)</p>
+
+$$
+\displaystyle \sigma_L(\theta_L)
+=\left(\frac{1}{4\pi\varepsilon_0}\frac{Z_1Z_2e^2}{2E_L\sin^2\theta_L}\right)^2
+\frac{\left[\cos\theta_L+\sqrt{1-\left(\frac{m_1}{m_2}\sin\theta_L\right)^2}\right]^2}
+{\sqrt{1-\left(\frac{m_1}{m_2}\sin\theta_L\right)^2}}
+$$
+
+<h2 id="由散射估计核尺度-最近距离">由散射估计核尺度: 最近距离</h2>
+<p>对头碰撞时, 相对运动动能全部转化为库仑势能, 得最近距离 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">r_m</annotation></semantics></math></span></span>.</p>
+
+$$
+\displaystyle E_c=\frac{1}{4\pi\varepsilon_0}\frac{Z_1Z_2e^2}{r_m}
+$$
+
+
+$$
+\displaystyle r_m=\frac{1}{4\pi\varepsilon_0}\frac{Z_1Z_2e^2}{E_c}\equiv a
+$$
+
+<p>若实验在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>=</mo><mn>1</mn><mn>8</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta=180^\circ</annotation></semantics></math></span></span> 仍符合卢瑟福公式, 则核半径必须小于由上式给出的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">r_m</annotation></semantics></math></span></span> 数量级.</p>
+<h2 id="小角与-180-circ-附近的偏离-定性">小角与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mn>8</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">180^\circ</annotation></semantics></math></span></span> 附近的偏离(定性)</h2>
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span> 很小时对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 很大, 入射粒子将感受到核外电子的屏蔽, 原子整体近似电中性, 因而纯库仑的卢瑟福公式在小角处失效.</p>
+<p>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>≈</mo><mn>1</mn><mn>8</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta\approx 180^\circ</annotation></semantics></math></span></span> 的极窄角域, 也可能出现实验截面偏离经典公式的情况, 与更精细的动力学与实验分辨率有关.</p>
+<h2 id="行星模型的困难-原子稳定性-定量估算">行星模型的困难: 原子稳定性(定量估算)</h2>
+<p>设电子绕核作圆周运动. 离心力与库仑力平衡</p>
+
+$$
+\displaystyle \frac{m_e v^2}{R}=\frac{1}{4\pi\varepsilon_0}\frac{Ze^2}{R^2}
+$$
+
+<p>角动量定义</p>
+
+$$
+\displaystyle L=m_e vR
+$$
+
+<p>由此可解得速度</p>
+
+$$
+\displaystyle v=\frac{1}{4\pi\varepsilon_0}\frac{Ze^2}{L}
+$$
+
+<p>加速度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo>=</mo><msup><mi>v</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mi>R</mi></mrow><annotation encoding="application/x-tex">a=v^2/R</annotation></semantics></math></span></span>, 代入并整理为</p>
+
+$$
+\displaystyle a
+= m_e\left(\frac{1}{4\pi\varepsilon_0}\right)^3\frac{(Ze^2)^3}{L^4}
+$$
+
+<p>经典电动力学给出加速电荷辐射功率(Larmor 公式)</p>
+
+$$
+\displaystyle P
+=\frac{2}{3}\frac{1}{4\pi\varepsilon_0}\frac{e^2}{c^3}a^2
+=\frac{2}{3}\left(\frac{1}{4\pi\varepsilon_0}\right)^7\frac{e^2}{c^3}m_e^2\frac{(Ze^2)^6}{L^8}
+$$
+
+<p>设电子动能耗尽所需时间为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span></span>, 以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>τ</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><msub><mi>m</mi><mi>e</mi></msub><msup><mi>v</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">P\tau=\frac{1}{2}m_ev^2</annotation></semantics></math></span></span> 估算</p>
+
+$$
+\displaystyle P\tau=\frac{1}{2}m_e v^2
+$$
+
+<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi></mrow><annotation encoding="application/x-tex">P</annotation></semantics></math></span></span> 代入并整理, 得</p>
+
+$$
+\displaystyle \tau
+=\frac{3}{4}\frac{1}{Z^4}\frac{L}{m_ec^2}\left(\frac{4\pi\varepsilon_0 Lc}{e^2}\right)^5
+$$
+
+<p>再利用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>L</mi><mn>2</mn></msup><mo>=</mo><mfrac><mrow><mi>Z</mi><msup><mi>e</mi><mn>2</mn></msup><msub><mi>m</mi><mi>e</mi></msub><mi>R</mi></mrow><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">L^2=\frac{Ze^2 m_e R}{4\pi\varepsilon_0}</annotation></semantics></math></span></span>, 可化为</p>
+
+$$
+\displaystyle \tau=\frac{3}{4}\frac{R^3}{Zcr_e^2}
+$$
+
+<p>其中电子经典半径</p>
+
+$$
+\displaystyle r_e=\frac{e^2}{4\pi\varepsilon_0 m_ec^2}=2.818\,\text{fm}
+$$
+
+<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>≈</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>1</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">R\approx 0.1\,\text{nm}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">Z=1</annotation></semantics></math></span></span>, 得到量级估计</p>
+
+$$
+\displaystyle \tau\approx 3.2\times 10^{-10}\,\text{s}
+$$
+
+<p>这表明纯经典的行星模型无法解释原子的长期稳定性, 需要新的物理(后续章节的量子理论).</p>
+<details>
+<summary>综合例题(含解答)</summary>
+<p><strong>例题 1</strong>. <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 粒子(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">Z_1=2</annotation></semantics></math></span></span>)以能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><mn>5</mn><mi mathvariant="normal">.</mi><mn>0</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">M</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">E=5.0\,\text{MeV}</annotation></semantics></math></span></span> 轰击金核(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mn>2</mn></msub><mo>=</mo><mn>7</mn><mn>9</mn></mrow><annotation encoding="application/x-tex">Z_2=79</annotation></semantics></math></span></span>). 取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><msup><mi>e</mi><mn>2</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub></mrow></mfrac><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>4</mn><mn>4</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">m</mi></mtext><mo>⋅</mo><mtext><mi mathvariant="normal">M</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">\frac{e^2}{4\pi\varepsilon_0}=1.44\,\text{fm}\cdot\text{MeV}</annotation></semantics></math></span></span>. 计算产生 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>=</mo><mn>6</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta=60^\circ</annotation></semantics></math></span></span> 散射所需的瞄准距离 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span>.</p>
+
+$$
+\displaystyle a=\frac{Z_1Z_2}{E}\frac{e^2}{4\pi\varepsilon_0}
+=\frac{2\times 79}{5.0}\times 1.44\,\text{fm}
+=45.504\,\text{fm}
+$$
+
+
+$$
+\displaystyle b=\frac{a}{2}\cot\frac{\theta}{2}
+=\frac{45.504}{2}\cot 30^\circ
+=22.752\times \sqrt{3}\,\text{fm}
+\approx 39.4\,\text{fm}
+$$
+
+<p><strong>例题 2</strong>. 仍取例题 1 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>Z</mi><mn>2</mn></msub><mo separator="true">,</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">Z_1,Z_2,E</annotation></semantics></math></span></span>, 计算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>=</mo><mn>6</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta=60^\circ</annotation></semantics></math></span></span> 处的卢瑟福微分截面 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>σ</mi><mi>c</mi></msub><mo>(</mo><mi>θ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\sigma_c(\theta)</annotation></semantics></math></span></span> (给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">m</mi></mtext><mn>2</mn></msup><mi mathvariant="normal">/</mi><mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">r</mi></mtext></mrow><annotation encoding="application/x-tex">\text{fm}^2/\text{sr}</annotation></semantics></math></span></span> 量级).</p>
+
+$$
+\displaystyle \sigma_c(\theta)
+=\left(\frac{1}{4E}\frac{Z_1Z_2e^2}{4\pi\varepsilon_0}\right)^2
+\frac{1}{\sin^4\frac{\theta}{2}}
+=\left(\frac{a}{4}\right)^2\frac{1}{\sin^4\frac{\theta}{2}}
+$$
+
+
+$$
+\displaystyle \sigma_c(60^\circ)
+=\left(\frac{45.504}{4}\right)^2\frac{1}{\sin^4 30^\circ}\,\text{fm}^2/\text{sr}
+= (11.376)^2\times 16\,\text{fm}^2/\text{sr}
+\approx 2071\,\text{fm}^2/\text{sr}
+$$
+
+<p><strong>例题 3</strong>. 对头碰撞最近距离估计. 设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 粒子能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>L</mi></msub><mo>=</mo><mn>5</mn><mi mathvariant="normal">.</mi><mn>3</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">M</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">E_L=5.3\,\text{MeV}</annotation></semantics></math></span></span>, 轰击铜核 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>Z</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn><mn>9</mn></mrow><annotation encoding="application/x-tex">Z_2=29</annotation></semantics></math></span></span>. 近似 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>≪</mo><msup><mi>m</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">m\ll m'</annotation></semantics></math></span></span>, 取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>≈</mo><msub><mi>E</mi><mi>L</mi></msub></mrow><annotation encoding="application/x-tex">E_c\approx E_L</annotation></semantics></math></span></span>. 求最近距离 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">r_m</annotation></semantics></math></span></span> 并据此给出核半径上限数量级.</p>
+
+$$
+\displaystyle r_m
+=\frac{1}{4\pi\varepsilon_0}\frac{Z_1Z_2e^2}{E_c}
+=\frac{2\times 29}{5.3}\times 1.44\,\text{fm}
+\approx 15.8\,\text{fm}
+$$
+
+<p>因此若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>=</mo><mn>1</mn><mn>8</mn><msup><mn>0</mn><mo>∘</mo></msup></mrow><annotation encoding="application/x-tex">\theta=180^\circ</annotation></semantics></math></span></span> 散射仍服从卢瑟福公式, 则铜核半径应小于约 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mn>6</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">16\,\text{fm}</annotation></semantics></math></span></span> 的数量级.</p>
+</details>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/physics/tags/%E5%8E%9F%E5%AD%90%E7%89%A9%E7%90%86/" class="">
-              原子物理
-            </a>
-          
             <a href="/physics/tags/%E9%A2%84%E4%B9%A0/" class="">
               预习
+            </a>
+          
+            <a href="/physics/tags/%E5%8E%9F%E5%AD%90%E7%89%A9%E7%90%86/" class="">
+              原子物理
             </a>
           
         </div>
@@ -505,7 +741,7 @@ $$
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/YuanZiWuLi/超精细相互作用/" target="_blank" title="超精细相互作用">https://kotokowa.github.io/physics/YuanZiWuLi/超精细相互作用/</a>
+    <a href="/physics/YuanZiWuLi/Arxived-卢瑟福模型/" target="_blank" title="卢瑟福模型">https://kotokowa.github.io/physics/YuanZiWuLi/Arxived-卢瑟福模型/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -523,23 +759,44 @@ $$
 
 
 
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/YuanZiWuLi/Arxived-%E5%8E%9F%E5%AD%90%E7%9A%84%E9%87%8F%E5%AD%90%E6%80%81_%E7%8E%BB%E5%B0%94%E6%A8%A1%E5%9E%8B/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">原子的量子态 玻尔模型</div>
+      </div>
+      
+      <!-- <div class="content">
+        原子的量子态: 玻尔模型
+背景知识: 量子化观念的来历
+黑体辐射与普朗克量子假说
+黑体: 对入射电磁波近似全吸收, 可用
+      </div> -->
+    </a>
+  </div>
+
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/YuanZiWuLi/%E6%A0%B8%E5%8F%8D%E5%BA%94/" class="post-nav-link">
+    <a href="/physics/ShuLiFangFa/%E6%9F%B1%E5%87%BD%E6%95%B0/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">核反应</div>
+        <div class="title-text">柱函数</div>
       </div>
       <!-- <div class="content">
-        核反应
-§41 核反应概述
-核反应是指在特定条件下，粒子轰击核素后引发的原子核变化。它不仅可以是由中子、质子、氘核等粒子
+        柱函数
+三类柱函数
+柱函数常指贝赛尔族函数. 常见三类: 第一类 JνJ_\nuJ​ν​​, 第二类 YνY_\nuY​
       </div> -->
     </a>
   </div>
@@ -657,7 +914,7 @@ $$
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">超精细相互作用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%9A%84%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80"><span class="toc-text">超精细相互作用的理论基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%9A%84%E6%9D%A5%E6%BA%90"><span class="toc-text">超精细相互作用的来源</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%9A%84%E5%88%86%E8%A3%82%E7%A8%8B%E5%BA%A6"><span class="toc-text">超精细相互作用的分裂程度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E5%81%B6%E6%9E%81%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8"><span class="toc-text">磁偶极超精细相互作用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">一般表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%9A%84%E7%A3%81%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8"><span class="toc-text">单电子原子的磁超精细相互作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%9A%84%E7%A3%81%E8%B6%85%E7%B2%BE%E7%BB%86%E7%BB%93%E6%9E%84"><span class="toc-text">氢原子的磁超精细结构</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%9A%84%E5%AE%9E%E9%AA%8C%E8%A7%82%E5%AF%9F"><span class="toc-text">超精细相互作用的实验观察</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E6%B0%A2%E5%8E%9F%E5%AD%90%E5%9F%BA%E6%80%81%E7%9A%84%E8%B6%85%E7%B2%BE%E7%BB%86%E5%88%86%E8%A3%82"><span class="toc-text">例子：氢原子基态的超精细分裂</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%9A%84%E7%A3%81%E8%B6%85%E7%B2%BE%E7%BB%86%E7%BB%93%E6%9E%84"><span class="toc-text">多电子原子的磁超精细结构</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">卢瑟福模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%BC%8F%E7%BB%93%E6%9E%84%E7%9A%84%E5%8A%A8%E6%9C%BA-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%B1%A4%E5%A7%86%E5%AD%99%E6%A8%A1%E5%9E%8B%E4%B8%8D%E8%A1%8C"><span class="toc-text">核式结构的动机: 为什么汤姆孙模型不行</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%93%E4%BB%91%E6%95%A3%E5%B0%84%E7%9A%84%E5%87%A0%E4%BD%95%E5%85%B3%E7%B3%BB-b-%E4%B8%8E-theta-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">库仑散射的几何关系: bbb 与 θ\thetaθ 的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E-b-theta-%E5%88%B0%E5%8D%A2%E7%91%9F%E7%A6%8F%E5%BE%AE%E5%88%86%E6%88%AA%E9%9D%A2"><span class="toc-text">从 b(θ)b(\theta)b(θ) 到卢瑟福微分截面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%B6%E6%A0%B8%E5%8F%8D%E5%86%B2%E4%B8%8E%E8%B4%A8%E5%BF%83%E7%B3%BB%E4%BF%AE%E6%AD%A3"><span class="toc-text">靶核反冲与质心系修正</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B1%E6%95%A3%E5%B0%84%E4%BC%B0%E8%AE%A1%E6%A0%B8%E5%B0%BA%E5%BA%A6-%E6%9C%80%E8%BF%91%E8%B7%9D%E7%A6%BB"><span class="toc-text">由散射估计核尺度: 最近距离</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%8F%E8%A7%92%E4%B8%8E-180-circ-%E9%99%84%E8%BF%91%E7%9A%84%E5%81%8F%E7%A6%BB-%E5%AE%9A%E6%80%A7"><span class="toc-text">小角与 180∘180^\circ180​∘​​ 附近的偏离(定性)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%8C%E6%98%9F%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9B%B0%E9%9A%BE-%E5%8E%9F%E5%AD%90%E7%A8%B3%E5%AE%9A%E6%80%A7-%E5%AE%9A%E9%87%8F%E4%BC%B0%E7%AE%97"><span class="toc-text">行星模型的困难: 原子稳定性(定量估算)</span></a></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -690,7 +947,7 @@ $$
             
 
             <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/" class="post-img " style="background-size: cover; 
+              <a href="/physics/YuanZiWuLi/Arxived-%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -701,7 +958,7 @@ $$
                   <span class="post-date">01-17</span>
                 
               </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/">超精细相互作用</a>
+              <a class="post-title" href="/physics/YuanZiWuLi/Arxived-%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/">超精细相互作用</a>
             </div>
           </div>
         
@@ -711,7 +968,7 @@ $$
             
 
             <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/%E6%A0%B8%E5%8F%8D%E5%BA%94/" class="post-img " style="background-size: cover; 
+              <a href="/physics/YuanZiWuLi/Arxived-%E6%A0%B8%E5%8F%8D%E5%BA%94/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -722,7 +979,7 @@ $$
                   <span class="post-date">01-17</span>
                 
               </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/%E6%A0%B8%E5%8F%8D%E5%BA%94/">核反应</a>
+              <a class="post-title" href="/physics/YuanZiWuLi/Arxived-%E6%A0%B8%E5%8F%8D%E5%BA%94/">核反应</a>
             </div>
           </div>
         
@@ -732,7 +989,7 @@ $$
             
 
             <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/%E5%8E%9F%E5%AD%90%E6%A0%B8%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%8A%9B/" class="post-img " style="background-size: cover; 
+              <a href="/physics/YuanZiWuLi/Arxived-%E5%8E%9F%E5%AD%90%E6%A0%B8%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%8A%9B/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -743,7 +1000,7 @@ $$
                   <span class="post-date">01-17</span>
                 
               </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/%E5%8E%9F%E5%AD%90%E6%A0%B8%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%8A%9B/">原子核概念与作用力</a>
+              <a class="post-title" href="/physics/YuanZiWuLi/Arxived-%E5%8E%9F%E5%AD%90%E6%A0%B8%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%8A%9B/">原子核概念与作用力</a>
             </div>
           </div>
         
@@ -753,7 +1010,7 @@ $$
             
 
             <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/X%E5%B0%84%E7%BA%BF/" class="post-img " style="background-size: cover; 
+              <a href="/physics/YuanZiWuLi/Arxived-X%E5%B0%84%E7%BA%BF/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -764,7 +1021,7 @@ $$
                   <span class="post-date">01-17</span>
                 
               </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/X%E5%B0%84%E7%BA%BF/">X 射线</a>
+              <a class="post-title" href="/physics/YuanZiWuLi/Arxived-X%E5%B0%84%E7%BA%BF/">X 射线</a>
             </div>
           </div>
         
@@ -774,7 +1031,7 @@ $$
             
 
             <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/%E6%B3%A1%E5%88%A9%E5%8E%9F%E7%90%86/" class="post-img " style="background-size: cover; 
+              <a href="/physics/YuanZiWuLi/Arxived-%E6%B3%A1%E5%88%A9%E5%8E%9F%E7%90%86/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -785,7 +1042,7 @@ $$
                   <span class="post-date">01-17</span>
                 
               </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/%E6%B3%A1%E5%88%A9%E5%8E%9F%E7%90%86/">泡利原理</a>
+              <a class="post-title" href="/physics/YuanZiWuLi/Arxived-%E6%B3%A1%E5%88%A9%E5%8E%9F%E7%90%86/">泡利原理</a>
             </div>
           </div>
         

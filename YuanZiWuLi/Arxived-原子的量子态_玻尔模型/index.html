@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>原子核概念与作用力 | tianyi</title>
+  <title>原子的量子态 玻尔模型 | tianyi</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,21 +355,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        原子核概念与作用力
+        原子的量子态 玻尔模型
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2026-01-17 |
+          <i class="fas fa-calendar"></i> Published in：2026-01-16 |
         </span>
       
 
@@ -392,126 +392,477 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        <h1>原子核概念与作用力</h1>
-<h2 id="核的基态特性之一：核质量">核的基态特性之一：核质量</h2>
-<h3 id="核子的质量和质量亏损">核子的质量和质量亏损</h3>
-<p>原子核的质量并不等于其组成核子（质子和中子）质量的总和。这是因为在核子的结合过程中，会释放出一定的能量，导致核子的总质量小于单个质子和中子的总质量。这个差值叫做<strong>质量亏损</strong>，而<strong>结合能</strong>（即质量亏损对应的能量）是我们从核反应中获得能量的来源。</p>
-<h4 id="结合能推导">结合能推导</h4>
-<p>假设一个原子核由Z个质子和N个中子组成。根据能量守恒定律，原子核的质量总是低于其组成粒子质量的和。</p>
-<p><strong>1. 体积能</strong></p>
-<p>体积能是核子之间的相互作用能量，它与核子的数量（即质量数A）成正比。体积能主要受到核力的影响，公式表示为：</p>
+        <h1>原子的量子态: 玻尔模型</h1>
+<h2 id="背景知识-量子化观念的来历">背景知识: 量子化观念的来历</h2>
+<h3 id="黑体辐射与普朗克量子假说">黑体辐射与普朗克量子假说</h3>
+<p>黑体: 对入射电磁波近似全吸收, 可用小孔空腔近似.</p>
+<p>维恩位移律(峰值波长与温度的关系):</p>
 
-$$ E_{\text{BV}} = a_{\text{V}} A $$
+$$
+\displaystyle \lambda_m T = 0.2898\ \text{cm}\cdot\text{K}.
+$$
 
-<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mrow><mtext><mi mathvariant="normal">V</mi></mtext></mrow></msub></mrow><annotation encoding="application/x-tex">a_{\text{V}}</annotation></semantics></math></span></span> 是体积能的比例常数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 是质量数。</p>
-<p><strong>2. 表面能</strong></p>
-<p>由于原子核是由相互作用的核子组成的，因此，核内的每个核子都有不同的结合能。对于核外的核子，它们只与部分核子相互作用，因此其结合能较低。这个效应表现为表面能。表面能与核的表面积成正比，公式为：</p>
+<p>总辐射本领与变量变换关系:</p>
 
-$$ E_{\text{BS}} = a_{\text{S}} A^{2/3} $$
+$$
+\displaystyle R(T) = \int_0^\infty R(\lambda,T)\,d\lambda = \int_0^\infty R(\nu,T)\,d\nu.
+$$
 
-<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mrow><mtext><mi mathvariant="normal">S</mi></mtext></mrow></msub></mrow><annotation encoding="application/x-tex">a_{\text{S}}</annotation></semantics></math></span></span> 是表面能的比例常数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 是质量数。</p>
-<p><strong>3. 库仑能</strong></p>
-<p>由于质子带有正电荷，它们之间存在库仑排斥力。这个库仑作用力会使得原子核中的质子之间互相排斥，导致结合能降低。库仑能与核内质子数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span>的平方成正比，公式为：</p>
 
-$$ E_{\text{BC}} = - \frac{3}{5} \frac{1}{4\pi \varepsilon_0} \frac{Z(Z-1)e^2}{R} $$
+$$
+\displaystyle R(\lambda,T)\,d\lambda = -R(\nu,T)\,d\nu.
+$$
 
-<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span> 是质子数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>e</mi></mrow><annotation encoding="application/x-tex">e</annotation></semantics></math></span></span> 是电子的电荷量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span></span> 是原子核的半径，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\varepsilon_0</annotation></semantics></math></span></span> 是真空介电常数。</p>
-<h3 id="结合能的总表达式">结合能的总表达式</h3>
-<p>根据液滴模型，原子核的总结合能可以表示为：</p>
 
-$$ E_B = E_{\text{BV}} - E_{\text{BS}} - E_{\text{BC}} $$
+$$
+\displaystyle R(\lambda,T) = \frac{c}{\lambda^2}R\!\left(\nu=\frac{c}{\lambda},T\right).
+$$
 
-<p>将体积能、表面能和库仑能代入其中：</p>
+<p>小孔辐射本领与腔内平衡辐射场能量密度的关系:</p>
 
-$$ E_B = a_{\text{V}} A - a_{\text{S}} A^{2/3} - \frac{3}{5} \frac{1}{4\pi \varepsilon_0} \frac{Z(Z-1)e^2}{R} $$
+$$
+\displaystyle R(\nu,T) = \frac{c}{4}E(\nu,T).
+$$
 
-<p>这一公式可以用于计算不同核素的结合能。</p>
+<p>维恩经验公式(高频区拟合良好):</p>
+
+$$
+\displaystyle E(\nu,T)\,d\nu = C_1 \nu^3 e^{-C_2 \nu/T}\,d\nu.
+$$
+
+<p>瑞利-金斯公式(低频区拟合良好, 高频发散导致紫外灾难):</p>
+
+$$
+\displaystyle E(\nu,T)\,d\nu = \frac{8\pi}{c^3}kT\nu^2\,d\nu.
+$$
+
+<p>普朗克公式(统一上述两端极限):</p>
+
+$$
+\displaystyle E(\nu,T)\,d\nu = \frac{8\pi h\nu^3}{c^3}\cdot \frac{d\nu}{e^{h\nu/kT}-1}.
+$$
+
+<p>普朗克的核心量子化假定(能量交换量子化):</p>
+
+$$
+\displaystyle E = nh\nu,\quad n = 1,2,3,\cdots.
+$$
+
+<p>由变量变换也可得到波长分布形式:</p>
+
+$$
+\displaystyle E(\lambda,T)\,d\lambda = \frac{8\pi hc}{\lambda^5}\cdot \frac{d\lambda}{e^{hc/(\lambda kT)}-1}.
+$$
+
 <hr>
-<h2 id="核力">核力</h2>
-<h3 id="核力的基本特性">核力的基本特性</h3>
-<p>核力是质子与质子、中子与中子、质子与中子之间的强相互作用力。它有以下几个重要特性：</p>
+<h3 id="光电效应与爱因斯坦光量子">光电效应与爱因斯坦光量子</h3>
+<p>实验装置的关键量: 遏止电压 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">V_0</annotation></semantics></math></span></span> 由最大动能决定:</p>
+
+$$
+\displaystyle eV_0 = \frac{1}{2}m_e v_m^2.
+$$
+
+<p>爱因斯坦光电方程(光子能量分配):</p>
+
+$$
+\displaystyle \frac{1}{2}m_e v_m^2 = h\nu - \phi.
+$$
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϕ</mi></mrow><annotation encoding="application/x-tex">\phi</annotation></semantics></math></span></span> 为金属逸出功. 该式解释了:</p>
 <ol>
-<li><strong>短程性</strong>：核力只在非常短的距离内有效，约为2-3 fm。</li>
-<li><strong>饱和性</strong>：每个核子仅与相邻的核子之间发生作用，且作用强度与核子的数量关系不大。</li>
-<li><strong>强相互作用</strong>：核力比电磁力强大，约强100倍。</li>
-<li><strong>与电荷无关</strong>：核力对中子和质子之间的相互作用是相同的，核力在质子-质子、质子-中子和中子-中子之间相等。</li>
+<li>响应几乎瞬时</li>
+<li>最大动能与光强无关</li>
+<li>存在阈频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ν</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\nu_0</annotation></semantics></math></span></span></li>
 </ol>
-<h3 id="核力的介子理论">核力的介子理论</h3>
-<p>根据汤川秀树的介子理论，核力通过交换介子（如π介子）来传递。这一理论可以用来解释核力的短程性。</p>
-<h4 id="介子交换和能量转移公式">介子交换和能量转移公式</h4>
-<p>核力的传播粒子被称为<strong>介子</strong>。介子的质量与核力的力程密切相关。介子的能量转移可以通过下列公式估算：</p>
-
-$$ \Delta E = \frac{\hbar c}{\Delta x} $$
-
-<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">\Delta x</annotation></semantics></math></span></span> 为介子传播的距离，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">ℏ</mi></mrow><annotation encoding="application/x-tex">\hbar</annotation></semantics></math></span></span> 是普朗克常数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi></mrow><annotation encoding="application/x-tex">c</annotation></semantics></math></span></span> 是光速。</p>
-<p>由于核力是短程力，介子的质量大约为100 MeV，这与质子质量接近。</p>
 <hr>
-<h2 id="核的基态特性之二：核矩">核的基态特性之二：核矩</h2>
-<h3 id="核自旋与磁矩">核自旋与磁矩</h3>
-<p>核自旋是由核内质子和中子的自旋及轨道角动量共同决定的。核的自旋和核磁矩对于核物理学中的许多现象（如核磁共振）具有重要意义。</p>
-<h4 id="核磁矩的公式">核磁矩的公式</h4>
-<p>核磁矩的大小可以通过以下公式表示：</p>
+<h3 id="光谱经验规律-巴耳末与里德伯">光谱经验规律: 巴耳末与里德伯</h3>
+<p>波数定义:</p>
 
-$$ \mu = -\frac{e\hbar}{2m} \left( g_{\text{l}} l + g_{\text{s}} s \right) $$
+$$
+\displaystyle \sigma \equiv \frac{1}{\lambda}.
+$$
 
-<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 为轨道角动量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span></span> 为自旋角动量，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mrow><mtext><mi mathvariant="normal">l</mi></mtext></mrow></msub></mrow><annotation encoding="application/x-tex">g_{\text{l}}</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mrow><mtext><mi mathvariant="normal">s</mi></mtext></mrow></msub></mrow><annotation encoding="application/x-tex">g_{\text{s}}</annotation></semantics></math></span></span> 为轨道和自旋的g因子。</p>
-<h3 id="核磁矩的实验推导">核磁矩的实验推导</h3>
-<p>通过实验测量质子和中子的磁矩，可以得出以下结果：</p>
+<p>(插图) 氢原子光谱:</p>
+<p><img src="https://picx.zhimg.com/80/v2-203193aaf6580d67bb5eaa3c0a65fe85_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-203193aaf6580d67bb5eaa3c0a65fe85_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Fig 6.8 Hydrogen spectrum"></p>
+<p>巴耳末公式(可见区谱线系, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mn>3</mn><mo separator="true">,</mo><mn>4</mn><mo separator="true">,</mo><mn>5</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">n'=3,4,5,\cdots</annotation></semantics></math></span></span>):</p>
 
-$$ \mu_p = 2.79285 \mu_N, \quad \mu_n = -1.91304 \mu_N $$
+$$
+\displaystyle \sigma = \frac{4}{B}\left(\frac{1}{2^2}-\frac{1}{n'^2}\right).
+$$
 
-<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">\mu_N</annotation></semantics></math></span></span> 为核磁子，表示为：</p>
+<p>里德伯方程(统一表示氢的各谱线系):</p>
 
-$$ \mu_N = \frac{e\hbar}{2m_p} = 3.152 \times 10^{-8} , \text{eV/T} $$
+$$
+\displaystyle \sigma = R_H\left(\frac{1}{n^2}-\frac{1}{n'^2}\right) = T(n)-T(n').
+$$
 
-<h3 id="核自旋与核磁矩的关系">核自旋与核磁矩的关系</h3>
-<p>核的自旋和核磁矩之间存在着直接的关系。假设核的自旋为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span>，则核磁矩可表示为：</p>
+<p>光谱项:</p>
 
-$$ \mu_I = g_I \mu_N I $$
+$$
+\displaystyle T(n) = \frac{R_H}{n^2}.
+$$
 
-<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mi>I</mi></msub></mrow><annotation encoding="application/x-tex">g_I</annotation></semantics></math></span></span> 是核的g因子，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span> 为核自旋。</p>
 <hr>
-<h2 id="核-模-型">核 模 型</h2>
-<h3 id="费米气体模型">费米气体模型</h3>
-<p>费米气体模型把核子看作在势阱中运动的费米子，核内核子由于泡利不相容原理互不重合。尽管该模型简单，却能够解释一些基础的核特性。</p>
-<h3 id="核的壳层模型">核的壳层模型</h3>
-<p>核的壳层模型基于量子力学假设核子在类似于原子电子的壳层中运动。不同的质子数或中子数（称为幻数）会使得核更加稳定。</p>
-<h4 id="例子：氘核的自旋为1，因质子和中子的自旋与轨道角动量相结合。">例子：氘核的自旋为1，因质子和中子的自旋与轨道角动量相结合。</h4>
-<h3 id="集体模型">集体模型</h3>
-<p>集体模型假设核内核子之间存在集体运动，解释了原子核的形变及核的集体转动现象。</p>
-<h2 id="放射性衰变的基本规律">放射性衰变的基本规律</h2>
-<h3 id="指数衰变律">指数衰变律</h3>
-<p>放射性衰变遵循指数衰变规律，公式为：</p>
+<h2 id="玻尔模型">玻尔模型</h2>
+<p>玻尔处理氢原子的三步:</p>
+<ol>
+<li>经典轨道 + 定态条件</li>
+<li>频率条件(量子跃迁)</li>
+<li>对应原理推出角动量量子化, 并给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span></span> 的理论表达式</li>
+</ol>
+<hr>
+<h3 id="经典轨道与定态条件">经典轨道与定态条件</h3>
+<p>设电子质量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">m_e</annotation></semantics></math></span></span>, 电荷量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mi>e</mi></mrow><annotation encoding="application/x-tex">-e</annotation></semantics></math></span></span>, 围绕质子作半径 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 的圆周运动, 速度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span></span>.</p>
+<p>(插图) 玻尔模型的圆轨道示意:</p>
+<p><img src="https://pic4.zhimg.com/80/v2-2c4e5a17ff00c1640470c222f5801abb_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-2c4e5a17ff00c1640470c222f5801abb_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Fig 7.1 Bohr circular orbit model"></p>
+<p>向心力由库仑力提供:</p>
 
-$$ N(t) = N_0 e^{-\lambda t} $$
+$$
+\displaystyle m_e\frac{v^2}{r} = \frac{1}{4\pi\varepsilon_0}\frac{e^2}{r^2}.
+$$
 
-<h3 id="半衰期">半衰期</h3>
-<p>半衰期是放射性核素衰变至一半所需的时间，计算公式为：</p>
+<p>总能量(动能 + 势能):</p>
 
-$$ T_{1/2} = \frac{\ln 2}{\lambda} $$
+$$
+\displaystyle E = T+V = \frac{1}{2}m_e v^2 - \frac{e^2}{4\pi\varepsilon_0 r}.
+$$
 
-<h3 id="平均寿命">平均寿命</h3>
-<p>放射性核素的平均寿命为其衰变常数的倒数：</p>
+<p>由向心力方程得:</p>
 
-$$ \tau = \frac{1}{\lambda} = 1.44 T_{1/2} $$
+$$
+\displaystyle \frac{1}{2}m_e v^2 = \frac{1}{2}\frac{e^2}{4\pi\varepsilon_0 r}.
+$$
 
-<h3 id="放射性活度">放射性活度</h3>
-<p>放射性活度表示单位时间内发生衰变的核素数：</p>
+<p>代回能量式:</p>
 
-$$ A = \lambda N_0 e^{-\lambda t} $$
+$$
+\displaystyle E = \frac{1}{2}\frac{e^2}{4\pi\varepsilon_0 r} - \frac{e^2}{4\pi\varepsilon_0 r}
+= -\frac{1}{2}\frac{e^2}{4\pi\varepsilon_0 r}.
+$$
 
+<p>经典轨道频率(绕行频率):</p>
+
+$$
+\displaystyle f = \frac{v}{2\pi r}
+= \frac{1}{2\pi r}\sqrt{\frac{e^2}{4\pi\varepsilon_0 m_e r}}
+= \frac{e}{2\pi}\sqrt{\frac{1}{4\pi\varepsilon_0 m_e r^3}}.
+$$
+
+<p>定态条件: 电子只能处于某些分立轨道, 且处于定态时不辐射.</p>
+<hr>
+<h3 id="频率条件-辐射条件">频率条件(辐射条件)</h3>
+<p>当电子从定态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow><annotation encoding="application/x-tex">n'</annotation></semantics></math></span></span> 跃迁到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 时, 放出或吸收一个光子:</p>
+
+$$
+\displaystyle h\nu = E_{n'} - E_n.
+$$
+
+<p>将其与里德伯方程对照, 得到能级形式:</p>
+
+$$
+\displaystyle E_n = -\frac{Rh c}{n^2}.
+$$
+
+<p>波数与能级差关系:</p>
+
+$$
+\displaystyle \sigma \equiv \frac{1}{\lambda} = \frac{1}{hc}(E_{n'}-E_n).
+$$
+
+<p>由 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mfrac><mrow><msup><mi>e</mi><mn>2</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><mi>r</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">E = -\frac{1}{2}\frac{e^2}{4\pi\varepsilon_0 r}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mi>R</mi><mi>h</mi><mi>c</mi></mrow><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">E_n = -\frac{Rh c}{n^2}</annotation></semantics></math></span></span> 对比得到轨道半径:</p>
+
+$$
+\displaystyle r_n = \frac{1}{4\pi\varepsilon_0}\frac{e^2}{2Rh c}\,n^2.
+$$
+
+<p>(插图) 氢原子能级图与发射光谱(用于连接能级差与谱线):</p>
+<p><img src="https://picx.zhimg.com/80/v2-8f4f5f75409e64d4e93383cecf1d4135_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-8f4f5f75409e64d4e93383cecf1d4135_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Fig 8.3 Hydrogen energy levels and emission spectrum"></p>
+<p>此时 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span></span> 仍是经验常量, 需要进一步理论化.</p>
+<hr>
+<h3 id="对应原理与角动量量子化">对应原理与角动量量子化</h3>
+<p>把里德伯方程写成频率形式:</p>
+
+$$
+\displaystyle \nu = \sigma c
+= Rc\frac{n'^2-n^2}{n'^2 n^2}
+= Rc\frac{(n'+n)(n'-n)}{n'^2 n^2}.
+$$
+
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 很大且只考虑相邻跃迁 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>−</mo><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n'-n=1</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle \nu \approx Rc\frac{2n}{n^4}=\frac{2Rc}{n^3}.
+$$
+
+<p>对应原理要求该跃迁频率与经典轨道频率一致. 经典轨道频率为:</p>
+
+$$
+\displaystyle f = \frac{e}{2\pi}\sqrt{\frac{1}{4\pi\varepsilon_0 m_e r^3}}.
+$$
+
+<p>取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ν</mi><mo>=</mo><mi>f</mi></mrow><annotation encoding="application/x-tex">\nu=f</annotation></semantics></math></span></span>, 得:</p>
+
+$$
+\displaystyle \frac{2Rc}{n^3} = \frac{e}{2\pi}\sqrt{\frac{1}{4\pi\varepsilon_0 m_e r^3}}.
+$$
+
+<p>结合</p>
+
+$$
+\displaystyle r_n = \frac{1}{4\pi\varepsilon_0}\frac{e^2}{2Rh c}\,n^2
+$$
+
+<p>可推出里德伯常量的理论表达式:</p>
+
+$$
+\displaystyle R = \frac{2\pi^2 e^4 m_e}{(4\pi\varepsilon_0)^2 c h^3}.
+$$
+
+<p>引入</p>
+
+$$
+\displaystyle \hbar = \frac{h}{2\pi}.
+$$
+
+<p>轨道半径:</p>
+
+$$
+\displaystyle r_n = \frac{4\pi\varepsilon_0 \hbar^2}{m_e e^2}\,n^2.
+$$
+
+<p>能级:</p>
+
+$$
+\displaystyle E_n = -\frac{m_e e^4}{(4\pi\varepsilon_0)^2 2\hbar^2}\cdot\frac{1}{n^2}.
+$$
+
+<p>经典角动量:</p>
+
+$$
+\displaystyle L = m_e v r
+= m_e\sqrt{\frac{e^2}{4\pi\varepsilon_0 m_e r}}\cdot r
+= \sqrt{\frac{m_e e^2 r}{4\pi\varepsilon_0}}.
+$$
+
+<p>代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>r</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">r=r_n</annotation></semantics></math></span></span> 得到角动量量子化:</p>
+
+$$
+\displaystyle L = n\hbar,\quad n = 1,2,3,\cdots.
+$$
+
+<hr>
+<h2 id="方便的数值计算与重要常量">方便的数值计算与重要常量</h2>
+<p>常用组合常量:</p>
+
+$$
+\displaystyle
+\begin{cases}
+\hbar c = 197\ \text{fm}\cdot\text{MeV} = 197\ \text{nm}\cdot\text{eV}, \\
+e^2/(4\pi\varepsilon_0) = 1.44\ \text{fm}\cdot\text{MeV} = 1.44\ \text{nm}\cdot\text{eV}, \\
+m_e c^2 = 0.511\ \text{MeV} = 511\ \text{keV}.
+\end{cases}
+$$
+
+<h3 id="玻尔半径">玻尔半径</h3>
+<p>基态半径 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mn>1</mn></msub><mo>≡</mo><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">r_1 \equiv a_0</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle r_1 = \frac{4\pi\varepsilon_0 \hbar^2}{m_e e^2}
+= \frac{(\hbar c)^2}{m_e c^2\,(e^2/4\pi\varepsilon_0)}.
+$$
+
+<p>代入数值:</p>
+
+$$
+\displaystyle r_1 \approx \frac{(197)^2}{0.511\times 10^6 \times 1.44}\ \text{nm}
+\approx 0.053\ \text{nm}.
+$$
+
+<h3 id="精细结构常数与能级">精细结构常数与能级</h3>
+<p>定义精细结构常数:</p>
+
+$$
+\displaystyle \alpha \equiv \frac{e^2}{4\pi\varepsilon_0 \hbar c} \approx \frac{1}{137}.
+$$
+
+<p>把能级改写为:</p>
+
+$$
+\displaystyle E_n = -\frac{m_e c^2}{2}\left(\frac{e^2}{4\pi\varepsilon_0 \hbar c}\right)^2\frac{1}{n^2}
+= -\frac{1}{2}m_e(\alpha c)^2\frac{1}{n^2}.
+$$
+
+<p>基态能量:</p>
+
+$$
+\displaystyle E_1 = -\frac{1}{2}m_e c^2 \alpha^2 \approx -13.6\ \text{eV}.
+$$
+
+<p>电离能(把电子从基态移到无穷远):</p>
+
+$$
+\displaystyle E_\infty = 13.6\ \text{eV}.
+$$
+
+<p>玻尔第一速度:</p>
+
+$$
+\displaystyle v_1 = \alpha c.
+$$
+
+<p>并可由向心力方程直接推出:</p>
+
+$$
+\displaystyle v_1 = \sqrt{\frac{e^2}{4\pi\varepsilon_0 m_e r_1}}
+= \frac{e^2}{4\pi\varepsilon_0 \hbar}
+= \alpha c,
+\quad
+v_n = \frac{\alpha c}{n}.
+$$
+
+<p>里德伯常量的能量解释:</p>
+
+$$
+\displaystyle R = \frac{E_\infty}{hc}.
+$$
+
+<p>光子能量与波数关系(也常用于单位换算):</p>
+
+$$
+\displaystyle \sigma = \frac{1}{\lambda} = \frac{E}{hc}.
+$$
+
+<p>以及</p>
+
+$$
+\displaystyle \lambda = \frac{hc}{E} = \frac{1.24}{E}\ \text{nm}\cdot\text{keV},
+\quad
+hc = 1.24\ \text{nm}\cdot\text{keV}.
+$$
+
+<hr>
+<h2 id="实验检验要点">实验检验要点</h2>
+<h3 id="里德伯常量与折合质量修正">里德伯常量与折合质量修正</h3>
+<p>若核质量有限, 应用折合质量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>μ</mi></msub></mrow><annotation encoding="application/x-tex">m_\mu</annotation></semantics></math></span></span> 修正. 二体问题的几何关系是: 电子与原子核绕质心运动.</p>
+<p>(插图) 电子与原子核绕质心运动:</p>
+<p><img src="https://pic4.zhimg.com/80/v2-5167a0964b7ad6181c56102a87b87807_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-5167a0964b7ad6181c56102a87b87807_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Fig 8.1 Electron and nucleus about center of mass"></p>
+<p>对应该修正后的里德伯常量:</p>
+
+$$
+\displaystyle R_A = R\cdot\frac{1}{1+\frac{m_e}{m_A}}.
+$$
+
+<p>这解释了理论 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span></span> 与不同核素实验 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mi>A</mi></msub></mrow><annotation encoding="application/x-tex">R_A</annotation></semantics></math></span></span> 的微小差异.</p>
+<h3 id="类氢离子-核电荷数为-Z">类氢离子(核电荷数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span>)</h3>
+<p>只需在库仑相互作用中用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">Ze</annotation></semantics></math></span></span> 替换, 波数满足:</p>
+
+$$
+\displaystyle \left(\frac{1}{\lambda}\right)_A
+= R_A\left(\frac{1}{n^2}-\frac{1}{n'^2}\right)Z^2
+= R_A\left[\frac{1}{(n/Z)^2}-\frac{1}{(n'/Z)^2}\right].
+$$
+
+<p>(插图) 毕克林系与巴耳末系比较(说明 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><msup><mi>e</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">He^+</annotation></semantics></math></span></span> 与氢谱线差别):</p>
+<p><img src="https://pic1.zhimg.com/80/v2-40324aa029a4ffc2bd9436180dcad7f0_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-40324aa029a4ffc2bd9436180dcad7f0_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Fig 8.4 Pickering series vs Balmer series"></p>
+<hr>
+<h3 id="弗兰克-赫兹实验-量子态的独立实验证据">弗兰克-赫兹实验(量子态的独立实验证据)</h3>
+<p>该实验通过电子与原子碰撞的能量损失呈现出分立阈值, 直接支持原子能级的离散性.</p>
+<p>(插图) 弗兰克-赫兹实验装置:</p>
+<p><img src="https://pic1.zhimg.com/80/v2-3c50ff5a9579e0f3566ba086629820f8_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-3c50ff5a9579e0f3566ba086629820f8_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Fig 9.1 Franck-Hertz apparatus"></p>
+<p>(插图) 弗兰克-赫兹实验结果曲线:</p>
+<p><img src="https://pica.zhimg.com/80/v2-f4de863c6c90993655f7c6a329ad1c9e_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-f4de863c6c90993655f7c6a329ad1c9e_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Fig 9.2 Franck-Hertz result curve"></p>
+<hr>
+<details>
+<summary>综合例题(含解答)</summary>
+<p><strong>例题1</strong>: 计算氢原子巴耳末系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">H_\alpha</annotation></semantics></math></span></span> 的波长</p>
+<p>已知里德伯方程:</p>
+
+$$
+\displaystyle \frac{1}{\lambda} = R_H\left(\frac{1}{n^2}-\frac{1}{n'^2}\right).
+$$
+
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">H_\alpha</annotation></semantics></math></span></span> 对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>2</mn><mo>→</mo><msup><mi>n</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mn>3</mn></mrow><annotation encoding="application/x-tex">n=2\to n'=3</annotation></semantics></math></span></span>. 代入得:</p>
+
+$$
+\displaystyle \frac{1}{\lambda} = R_H\left(\frac{1}{2^2}-\frac{1}{3^2}\right)
+= R_H\left(\frac{1}{4}-\frac{1}{9}\right)
+= R_H\cdot\frac{5}{36}.
+$$
+
+<p>因此</p>
+
+$$
+\displaystyle \lambda = \frac{36}{5R_H}.
+$$
+
+<p>把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mi>H</mi></msub></mrow><annotation encoding="application/x-tex">R_H</annotation></semantics></math></span></span> 取实验值即可得到数值(应接近 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>6</mn><mn>5</mn><mn>6</mn><mtext>&nbsp;</mtext><mtext><mi mathvariant="normal">n</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">656\ \text{nm}</annotation></semantics></math></span></span> 的可见红光).</p>
+<hr>
+<p><strong>例题2</strong>: 由玻尔模型求氢原子基态的半径, 速度, 电离能之间的关系</p>
+<p>已知:</p>
+
+$$
+\displaystyle r_1 = \frac{4\pi\varepsilon_0 \hbar^2}{m_e e^2},\quad
+v_1 = \alpha c,\quad
+E_1 = -\frac{1}{2}m_e(\alpha c)^2.
+$$
+
+<p>(1) 证明 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mn>1</mn></msub><mo>=</mo><mfrac><mrow><msup><mi>e</mi><mn>2</mn></msup></mrow><mrow><mn>4</mn><mi>π</mi><msub><mi>ε</mi><mn>0</mn></msub><mi mathvariant="normal">ℏ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">v_1 = \frac{e^2}{4\pi\varepsilon_0 \hbar}</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle \alpha = \frac{e^2}{4\pi\varepsilon_0 \hbar c}\implies v_1=\alpha c=\frac{e^2}{4\pi\varepsilon_0 \hbar}.
+$$
+
+<p>(2) 用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">v_1</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">r_1</annotation></semantics></math></span></span> 证明基态向心力方程成立:</p>
+
+$$
+\displaystyle \frac{m_e v_1^2}{r_1}
+= \frac{m_e}{r_1}\left(\frac{e^2}{4\pi\varepsilon_0 \hbar}\right)^2
+= \frac{e^2}{4\pi\varepsilon_0 r_1^2}.
+$$
+
+<p>(3) 电离能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi mathvariant="normal">∞</mi></msub></mrow><annotation encoding="application/x-tex">E_\infty</annotation></semantics></math></span></span> 等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><msub><mi>E</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">-E_1</annotation></semantics></math></span></span>:</p>
+
+$$
+\displaystyle E_\infty = 0 - E_1 = \frac{1}{2}m_e(\alpha c)^2 = 13.6\ \text{eV}.
+$$
+
+<hr>
+<p><strong>例题3</strong>: 类氢离子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><msup><mi>e</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">He^+</annotation></semantics></math></span></span> 的莱曼系第一条谱线波长</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><msup><mi>e</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">He^+</annotation></semantics></math></span></span> 有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">Z=2</annotation></semantics></math></span></span>. 莱曼系对应末态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n=1</annotation></semantics></math></span></span>, 第一条谱线为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mn>2</mn><mo>→</mo><mi>n</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n'=2\to n=1</annotation></semantics></math></span></span>.</p>
+
+$$
+\displaystyle \left(\frac{1}{\lambda}\right)_{He^+}
+= R_{He^+}Z^2\left(\frac{1}{1^2}-\frac{1}{2^2}\right)
+= R_{He^+}\cdot 4\cdot\frac{3}{4}
+= 3R_{He^+}.
+$$
+
+<p>故</p>
+
+$$
+\displaystyle \lambda = \frac{1}{3R_{He^+}}.
+$$
+
+<p>若忽略折合质量差异取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>R</mi><mrow><mi>H</mi><msup><mi>e</mi><mo>+</mo></msup></mrow></msub><mo>≈</mo><msub><mi>R</mi><mi mathvariant="normal">∞</mi></msub></mrow><annotation encoding="application/x-tex">R_{He^+}\approx R_\infty</annotation></semantics></math></span></span>, 则可估算波长数量级并与紫外区相符. 若需要更精确, 用</p>
+
+$$
+\displaystyle R_{He^+} = R\cdot\frac{1}{1+\frac{m_e}{m_{He}}}
+$$
+
+<p>作修正即可.</p>
+</details>
 
       </div>
       <div class="post-tags-categories">
         
         <div class="tags">
           
-            <a href="/physics/tags/%E5%8E%9F%E5%AD%90%E7%89%A9%E7%90%86/" class="">
-              原子物理
-            </a>
-          
             <a href="/physics/tags/%E9%A2%84%E4%B9%A0/" class="">
               预习
+            </a>
+          
+            <a href="/physics/tags/%E5%8E%9F%E5%AD%90%E7%89%A9%E7%90%86/" class="">
+              原子物理
             </a>
           
         </div>
@@ -525,7 +876,7 @@ $$ A = \lambda N_0 e^{-\lambda t} $$
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/YuanZiWuLi/原子核概念与作用力/" target="_blank" title="原子核概念与作用力">https://kotokowa.github.io/physics/YuanZiWuLi/原子核概念与作用力/</a>
+    <a href="/physics/YuanZiWuLi/Arxived-原子的量子态_玻尔模型/" target="_blank" title="原子的量子态 玻尔模型">https://kotokowa.github.io/physics/YuanZiWuLi/Arxived-原子的量子态_玻尔模型/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -547,18 +898,18 @@ $$ A = \lambda N_0 e^{-\lambda t} $$
   <div class="post-nav-prev post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-7d26f7503070791ff6f030ba4502a317_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/YuanZiWuLi/%E6%A0%B8%E5%8F%8D%E5%BA%94/" class="post-nav-link">
+    <a href="/physics/YuanZiWuLi/Arxived-%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E5%AF%BC%E8%AE%BA/" class="post-nav-link">
       <div class="title">
         <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">核反应</div>
+        <div class="title-text">量子力学导论</div>
       </div>
       
       <!-- <div class="content">
-        核反应
-§41 核反应概述
-核反应是指在特定条件下，粒子轰击核素后引发的原子核变化。它不仅可以是由中子、质子、氘核等粒子
+        量子力学导论
+玻尔理论的困难与量子力学的出发点
+玻尔理论把微观粒子当作经典质点, 同时又人为加入量子化条件, 因而在逻辑
       </div> -->
     </a>
   </div>
@@ -569,18 +920,17 @@ $$ A = \lambda N_0 e^{-\lambda t} $$
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/YuanZiWuLi/X%E5%B0%84%E7%BA%BF/" class="post-nav-link">
+    <a href="/physics/YuanZiWuLi/Arxived-%E5%8D%A2%E7%91%9F%E7%A6%8F%E6%A8%A1%E5%9E%8B/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">X 射线</div>
+        <div class="title-text">卢瑟福模型</div>
       </div>
       <!-- <div class="content">
-        X 射线
-概述
-X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
-其典型波长范围约为 0.001 nm0.00
+        卢瑟福模型
+本章目标: 用 α\alphaα 粒子散射实验建立原子的核式结构图像, 并推导库仑散射与卢瑟福散射公式.
+核
       </div> -->
     </a>
   </div>
@@ -698,7 +1048,7 @@ X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">原子核概念与作用力</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E7%9A%84%E5%9F%BA%E6%80%81%E7%89%B9%E6%80%A7%E4%B9%8B%E4%B8%80%EF%BC%9A%E6%A0%B8%E8%B4%A8%E9%87%8F"><span class="toc-text">核的基态特性之一：核质量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%AD%90%E7%9A%84%E8%B4%A8%E9%87%8F%E5%92%8C%E8%B4%A8%E9%87%8F%E4%BA%8F%E6%8D%9F"><span class="toc-text">核子的质量和质量亏损</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E5%90%88%E8%83%BD%E6%8E%A8%E5%AF%BC"><span class="toc-text">结合能推导</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E5%90%88%E8%83%BD%E7%9A%84%E6%80%BB%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">结合能的总表达式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%8A%9B"><span class="toc-text">核力</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%8A%9B%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%89%B9%E6%80%A7"><span class="toc-text">核力的基本特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%8A%9B%E7%9A%84%E4%BB%8B%E5%AD%90%E7%90%86%E8%AE%BA"><span class="toc-text">核力的介子理论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%8B%E5%AD%90%E4%BA%A4%E6%8D%A2%E5%92%8C%E8%83%BD%E9%87%8F%E8%BD%AC%E7%A7%BB%E5%85%AC%E5%BC%8F"><span class="toc-text">介子交换和能量转移公式</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E7%9A%84%E5%9F%BA%E6%80%81%E7%89%B9%E6%80%A7%E4%B9%8B%E4%BA%8C%EF%BC%9A%E6%A0%B8%E7%9F%A9"><span class="toc-text">核的基态特性之二：核矩</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E8%87%AA%E6%97%8B%E4%B8%8E%E7%A3%81%E7%9F%A9"><span class="toc-text">核自旋与磁矩</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E7%A3%81%E7%9F%A9%E7%9A%84%E5%85%AC%E5%BC%8F"><span class="toc-text">核磁矩的公式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E7%A3%81%E7%9F%A9%E7%9A%84%E5%AE%9E%E9%AA%8C%E6%8E%A8%E5%AF%BC"><span class="toc-text">核磁矩的实验推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E8%87%AA%E6%97%8B%E4%B8%8E%E6%A0%B8%E7%A3%81%E7%9F%A9%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">核自旋与核磁矩的关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8-%E6%A8%A1-%E5%9E%8B"><span class="toc-text">核 模 型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%B9%E7%B1%B3%E6%B0%94%E4%BD%93%E6%A8%A1%E5%9E%8B"><span class="toc-text">费米气体模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E7%9A%84%E5%A3%B3%E5%B1%82%E6%A8%A1%E5%9E%8B"><span class="toc-text">核的壳层模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A%E6%B0%98%E6%A0%B8%E7%9A%84%E8%87%AA%E6%97%8B%E4%B8%BA1%EF%BC%8C%E5%9B%A0%E8%B4%A8%E5%AD%90%E5%92%8C%E4%B8%AD%E5%AD%90%E7%9A%84%E8%87%AA%E6%97%8B%E4%B8%8E%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F%E7%9B%B8%E7%BB%93%E5%90%88%E3%80%82"><span class="toc-text">例子：氘核的自旋为1，因质子和中子的自旋与轨道角动量相结合。</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9B%86%E4%BD%93%E6%A8%A1%E5%9E%8B"><span class="toc-text">集体模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%BE%E5%B0%84%E6%80%A7%E8%A1%B0%E5%8F%98%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%A7%84%E5%BE%8B"><span class="toc-text">放射性衰变的基本规律</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E6%95%B0%E8%A1%B0%E5%8F%98%E5%BE%8B"><span class="toc-text">指数衰变律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E8%A1%B0%E6%9C%9F"><span class="toc-text">半衰期</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E5%9D%87%E5%AF%BF%E5%91%BD"><span class="toc-text">平均寿命</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BE%E5%B0%84%E6%80%A7%E6%B4%BB%E5%BA%A6"><span class="toc-text">放射性活度</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">原子的量子态: 玻尔模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86-%E9%87%8F%E5%AD%90%E5%8C%96%E8%A7%82%E5%BF%B5%E7%9A%84%E6%9D%A5%E5%8E%86"><span class="toc-text">背景知识: 量子化观念的来历</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%91%E4%BD%93%E8%BE%90%E5%B0%84%E4%B8%8E%E6%99%AE%E6%9C%97%E5%85%8B%E9%87%8F%E5%AD%90%E5%81%87%E8%AF%B4"><span class="toc-text">黑体辐射与普朗克量子假说</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E7%94%B5%E6%95%88%E5%BA%94%E4%B8%8E%E7%88%B1%E5%9B%A0%E6%96%AF%E5%9D%A6%E5%85%89%E9%87%8F%E5%AD%90"><span class="toc-text">光电效应与爱因斯坦光量子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E8%B0%B1%E7%BB%8F%E9%AA%8C%E8%A7%84%E5%BE%8B-%E5%B7%B4%E8%80%B3%E6%9C%AB%E4%B8%8E%E9%87%8C%E5%BE%B7%E4%BC%AF"><span class="toc-text">光谱经验规律: 巴耳末与里德伯</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%BB%E5%B0%94%E6%A8%A1%E5%9E%8B"><span class="toc-text">玻尔模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E8%BD%A8%E9%81%93%E4%B8%8E%E5%AE%9A%E6%80%81%E6%9D%A1%E4%BB%B6"><span class="toc-text">经典轨道与定态条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E7%8E%87%E6%9D%A1%E4%BB%B6-%E8%BE%90%E5%B0%84%E6%9D%A1%E4%BB%B6"><span class="toc-text">频率条件(辐射条件)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E5%BA%94%E5%8E%9F%E7%90%86%E4%B8%8E%E8%A7%92%E5%8A%A8%E9%87%8F%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-text">对应原理与角动量量子化</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E4%BE%BF%E7%9A%84%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E4%B8%8E%E9%87%8D%E8%A6%81%E5%B8%B8%E9%87%8F"><span class="toc-text">方便的数值计算与重要常量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%BB%E5%B0%94%E5%8D%8A%E5%BE%84"><span class="toc-text">玻尔半径</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%BE%E7%BB%86%E7%BB%93%E6%9E%84%E5%B8%B8%E6%95%B0%E4%B8%8E%E8%83%BD%E7%BA%A7"><span class="toc-text">精细结构常数与能级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%A3%80%E9%AA%8C%E8%A6%81%E7%82%B9"><span class="toc-text">实验检验要点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8C%E5%BE%B7%E4%BC%AF%E5%B8%B8%E9%87%8F%E4%B8%8E%E6%8A%98%E5%90%88%E8%B4%A8%E9%87%8F%E4%BF%AE%E6%AD%A3"><span class="toc-text">里德伯常量与折合质量修正</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E6%B0%A2%E7%A6%BB%E5%AD%90-%E6%A0%B8%E7%94%B5%E8%8D%B7%E6%95%B0%E4%B8%BA-Z"><span class="toc-text">类氢离子(核电荷数为 ZZZ)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%97%E5%85%B0%E5%85%8B-%E8%B5%AB%E5%85%B9%E5%AE%9E%E9%AA%8C-%E9%87%8F%E5%AD%90%E6%80%81%E7%9A%84%E7%8B%AC%E7%AB%8B%E5%AE%9E%E9%AA%8C%E8%AF%81%E6%8D%AE"><span class="toc-text">弗兰克-赫兹实验(量子态的独立实验证据)</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -731,7 +1081,7 @@ X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
             
 
             <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/" class="post-img " style="background-size: cover; 
+              <a href="/physics/YuanZiWuLi/Arxived-%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -742,7 +1092,7 @@ X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
                   <span class="post-date">01-17</span>
                 
               </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/">超精细相互作用</a>
+              <a class="post-title" href="/physics/YuanZiWuLi/Arxived-%E8%B6%85%E7%B2%BE%E7%BB%86%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8/">超精细相互作用</a>
             </div>
           </div>
         
@@ -752,7 +1102,7 @@ X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
             
 
             <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/%E6%A0%B8%E5%8F%8D%E5%BA%94/" class="post-img " style="background-size: cover; 
+              <a href="/physics/YuanZiWuLi/Arxived-%E6%A0%B8%E5%8F%8D%E5%BA%94/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-f02870623dd3328aaf6fa5f08b98730b_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -763,7 +1113,7 @@ X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
                   <span class="post-date">01-17</span>
                 
               </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/%E6%A0%B8%E5%8F%8D%E5%BA%94/">核反应</a>
+              <a class="post-title" href="/physics/YuanZiWuLi/Arxived-%E6%A0%B8%E5%8F%8D%E5%BA%94/">核反应</a>
             </div>
           </div>
         
@@ -773,7 +1123,7 @@ X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
             
 
             <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/%E5%8E%9F%E5%AD%90%E6%A0%B8%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%8A%9B/" class="post-img " style="background-size: cover; 
+              <a href="/physics/YuanZiWuLi/Arxived-%E5%8E%9F%E5%AD%90%E6%A0%B8%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%8A%9B/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -784,7 +1134,7 @@ X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
                   <span class="post-date">01-17</span>
                 
               </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/%E5%8E%9F%E5%AD%90%E6%A0%B8%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%8A%9B/">原子核概念与作用力</a>
+              <a class="post-title" href="/physics/YuanZiWuLi/Arxived-%E5%8E%9F%E5%AD%90%E6%A0%B8%E6%A6%82%E5%BF%B5%E4%B8%8E%E4%BD%9C%E7%94%A8%E5%8A%9B/">原子核概念与作用力</a>
             </div>
           </div>
         
@@ -794,7 +1144,7 @@ X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
             
 
             <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/X%E5%B0%84%E7%BA%BF/" class="post-img " style="background-size: cover; 
+              <a href="/physics/YuanZiWuLi/Arxived-X%E5%B0%84%E7%BA%BF/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -805,7 +1155,7 @@ X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
                   <span class="post-date">01-17</span>
                 
               </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/X%E5%B0%84%E7%BA%BF/">X 射线</a>
+              <a class="post-title" href="/physics/YuanZiWuLi/Arxived-X%E5%B0%84%E7%BA%BF/">X 射线</a>
             </div>
           </div>
         
@@ -815,7 +1165,7 @@ X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
             
 
             <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/%E6%B3%A1%E5%88%A9%E5%8E%9F%E7%90%86/" class="post-img " style="background-size: cover; 
+              <a href="/physics/YuanZiWuLi/Arxived-%E6%B3%A1%E5%88%A9%E5%8E%9F%E7%90%86/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-a615113e57312c7ca32ee1de98423c42_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
@@ -826,7 +1176,7 @@ X射线(又称伦琴射线)本质上是核外电子产生的短波电磁辐射.
                   <span class="post-date">01-17</span>
                 
               </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/%E6%B3%A1%E5%88%A9%E5%8E%9F%E7%90%86/">泡利原理</a>
+              <a class="post-title" href="/physics/YuanZiWuLi/Arxived-%E6%B3%A1%E5%88%A9%E5%8E%9F%E7%90%86/">泡利原理</a>
             </div>
           </div>
         
