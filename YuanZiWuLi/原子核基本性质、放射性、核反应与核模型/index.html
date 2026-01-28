@@ -1,0 +1,2127 @@
+<!DOCTYPE html><html><!-- meta/link... --><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>原子核基本性质、放射性、核反应与核模型 | tianyi</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/physics/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/physics/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/physics/css/style.css">
+
+  
+  
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/physics/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/physics/atom.xml" title="tianyi" type="application/atom+xml">
+</head>
+
+  
+  <!-- 预加载动画 -->
+  
+  
+  <body><div class="preloader_6" id="loader">
+  <div class="loader"></div>
+</div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
+
+  
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer="">
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/physics/js/swiper/swiper.min.js"></script>
+<script src="/physics/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/physics/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/physics/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/physics/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">tianyi</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/physics/" class="logo">tianyi</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/physics/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/physics/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        原子核基本性质、放射性、核反应与核模型
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2026-01-28 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>原子核基本性质、放射性、核反应与核模型</h1>
+<h2 id="原子核与核物理的基本图景">原子核与核物理的基本图景</h2>
+<h3 id="为什么研究原子核更复杂">为什么研究原子核更复杂</h3>
+<p>在原子物理中，常把原子核近似为点电荷来研究电子能级与光谱；但一旦关心核的内部结构、核能级以及核的转变过程，就进入核物理的范围。复杂性主要来自两个方面：</p>
+<h4 id="多体量子体系">多体量子体系</h4>
+<p>原子核由许多核子（质子与中子）构成，是典型多体量子系统。核子间并不存在一个简单的“中心势”能完全主导，很多现象需要用集体运动与独立粒子运动共同描述。</p>
+<h4 id="多种相互作用并存">多种相互作用并存</h4>
+<p>核现象不仅受电磁作用影响，还强烈涉及：</p>
+<ul>
+<li>强相互作用：提供核子束缚、决定核结构与稳定性；</li>
+<li>弱相互作用：主导 β 衰变等过程；</li>
+<li>电磁作用：导致库仑斥力、γ 跃迁、超精细结构等。</li>
+</ul>
+<hr>
+<h2 id="原子核的组成与基本性质">原子核的组成与基本性质</h2>
+<h3 id="质子与中子：原子核的基本组成">质子与中子：原子核的基本组成</h3>
+<h4 id="中子发现的关键思路">中子发现的关键思路</h4>
+<p>早期人们已通过放射性认识到 α、β、γ 射线，并通过 Rutherford 散射实验确立“原子有核”。质子逐步被确认是核内带正电的成分，但“把电子塞进核里”会在自旋、统计性质与能量尺度等方面引发严重矛盾。</p>
+<p>1932 年 Chadwick 研究 α 粒子轰击铍产生的中性辐射，结合能量与动量守恒分析，证明该辐射是质量接近质子的中性粒子——中子。典型反应示例：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>+</mo><msup><mrow></mrow><mrow><mn>9</mn></mrow></msup><mrow><mi mathvariant="normal">B</mi><mi mathvariant="normal">e</mi></mrow><mo>→</mo><mi>n</mi><mo>+</mo><msup><mrow></mrow><mrow><mn>1</mn><mn>2</mn></mrow></msup><mrow><mi mathvariant="normal">C</mi></mrow></mrow><annotation encoding="application/x-tex">\alpha + {}^{9}\mathrm{Be} \rightarrow n + {}^{12}\mathrm{C}</annotation></semantics></math></span></span></li>
+</ul>
+<p>由此确立现代图景：原子核由质子与中子组成。</p>
+<hr>
+<h3 id="核的尺寸、密度与“近似不可压缩”">核的尺寸、密度与“近似不可压缩”</h3>
+<h4 id="核半径经验关系">核半径经验关系</h4>
+<p>大量实验（电子散射、中子散射等）表明核的特征半径与质量数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 满足经验公式：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>=</mo><msub><mi>r</mi><mn>0</mn></msub><msup><mi>A</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">R = r_0 A^{1/3}</annotation></semantics></math></span></span></li>
+</ul>
+<p>因为体积 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi><mo>∝</mo><msup><mi>R</mi><mn>3</mn></msup><mo>∝</mo><mi>A</mi></mrow><annotation encoding="application/x-tex">V \propto R^3 \propto A</annotation></semantics></math></span></span>，核内平均密度近似为常数。这与核力的短程性与饱和性密切相关：每个核子主要与有限数目的近邻强烈相互作用，从宏观看，核物质像“不可压缩液滴”。</p>
+<h4 id="细化理解：核表面与形变（补充）">细化理解：核表面与形变（补充）</h4>
+<p>更精细的密度分布会显示“表面弥散层”（边界并非陡峭截止）。某些核还会发生形变（椭球形甚至更复杂），这与壳层结构与集体激发有关。</p>
+<hr>
+<h3 id="质量亏损、结合能与比结合能">质量亏损、结合能与比结合能</h3>
+<h4 id="结合能与质量亏损">结合能与质量亏损</h4>
+<p>把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span> 个质子与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>−</mo><mi>Z</mi></mrow><annotation encoding="application/x-tex">A-Z</annotation></semantics></math></span></span> 个中子从无穷远聚合成一个原子核，会释放能量，称为结合能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>。用质量差表示：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi><mo>=</mo><mi mathvariant="normal">Δ</mi><mi>M</mi><msup><mi>c</mi><mn>2</mn></msup><mo>=</mo><mrow><mo fence="true">[</mo><mi>Z</mi><msub><mi>m</mi><mi>p</mi></msub><mo>+</mo><mo>(</mo><mi>A</mi><mo>−</mo><mi>Z</mi><mo>)</mo><msub><mi>m</mi><mi>n</mi></msub><mo>−</mo><msub><mi>M</mi><mi>N</mi></msub><mo fence="true">]</mo></mrow><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">B = \Delta M c^2 = \left[Z m_p + (A-Z)m_n - M_N\right]c^2</annotation></semantics></math></span></span></li>
+</ul>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>N</mi></msub></mrow><annotation encoding="application/x-tex">M_N</annotation></semantics></math></span></span> 为核质量。</p>
+<h4 id="比结合能与裂变-聚变的能量学方向">比结合能与裂变/聚变的能量学方向</h4>
+<p>定义比结合能：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi><mo>=</mo><mi>B</mi><mi mathvariant="normal">/</mi><mi>A</mi></mrow><annotation encoding="application/x-tex">\varepsilon = B/A</annotation></semantics></math></span></span></li>
+</ul>
+<p>经验上，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ε</mi></mrow><annotation encoding="application/x-tex">\varepsilon</annotation></semantics></math></span></span> 随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 增大先上升，在铁族附近达到较高值，随后缓慢下降。由此得到核能的基本判断：</p>
+<ul>
+<li>轻核聚变：向更高的比结合能“爬坡”，放能；</li>
+<li>重核裂变：裂变产物更接近铁族区域，放能。</li>
+</ul>
+<h4 id="原子质量与电子质量的注意点（补充）">原子质量与电子质量的注意点（补充）</h4>
+<p>实际计算中常用“原子质量”表。许多反应/衰变中电子数在两边相同（或能被等效处理），原子质量的电子质量会相互抵消，从而仍可得到正确的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span> 值。但对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>β</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">\beta^+</annotation></semantics></math></span></span> 衰变与电子俘获，电子数变化会影响能量条件，需要格外小心。</p>
+<hr>
+<h3 id="核自旋、核磁矩与超精细结构">核自旋、核磁矩与超精细结构</h3>
+<h4 id="核自旋-I">核自旋 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span></h4>
+<p>核的总角动量称为核自旋 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span>。实验上，不同核素的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span> 反映了核子在能级中的填充方式，尤其与壳层结构密切相关。</p>
+<h4 id="核磁矩与核子内部结构">核磁矩与核子内部结构</h4>
+<p>质子与中子的磁矩都显著偏离“点粒子自旋磁矩”的简单预言，表现为反常磁矩，提示核子并非无结构点粒子，而有内部自由度（现代观点为夸克-胶子结构）。</p>
+<h4 id="超精细结构：电子与核磁矩的耦合">超精细结构：电子与核磁矩的耦合</h4>
+<p>原子谱线的超精细分裂来自电子总角动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 的磁矩与核磁矩的相互作用。角动量耦合后，总角动量为：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">F</mi></mrow><mo>=</mo><mrow><mi mathvariant="bold">J</mi></mrow><mo>+</mo><mrow><mi mathvariant="bold">I</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{F}=\mathbf{J}+\mathbf{I}</annotation></semantics></math></span></span></li>
+</ul>
+<p>不同 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span> 对应不同的微小能级位移，从而产生超精细分裂。</p>
+<hr>
+<h2 id="放射性与衰变">放射性与衰变</h2>
+<h3 id="放射性的基本概念">放射性的基本概念</h3>
+<p>放射性是指不稳定原子核自发转变为其他核种或较低能级状态，并发射粒子或辐射。常见过程包括：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 衰变、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 衰变、<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> 跃迁（以及内转换等竞争过程）</li>
+</ul>
+<hr>
+<h3 id="衰变定律、半衰期、平均寿命与活度">衰变定律、半衰期、平均寿命与活度</h3>
+<h4 id="指数衰变定律">指数衰变定律</h4>
+<p>设核素数目为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">N(t)</annotation></semantics></math></span></span>，衰变常数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>，则：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><msub><mi>N</mi><mn>0</mn></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>λ</mi><mi>t</mi></mrow></msup></mrow><annotation encoding="application/x-tex">N(t)=N_0 e^{-\lambda t}</annotation></semantics></math></span></span></li>
+</ul>
+<p>半衰期与平均寿命分别为：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>=</mo><mi>ln</mi><mn>2</mn><mi mathvariant="normal">/</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">T_{1/2}=\ln2/\lambda</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>λ</mi></mrow><annotation encoding="application/x-tex">\tau=1/\lambda</annotation></semantics></math></span></span></li>
+</ul>
+<h4 id="活度">活度</h4>
+<p>活度表示单位时间内衰变数：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mi>d</mi><mi>N</mi></mrow><mrow><mi>d</mi><mi>t</mi></mrow></mfrac><mo>=</mo><mi>λ</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">A=-\frac{dN}{dt}=\lambda N</annotation></semantics></math></span></span></li>
+</ul>
+<p>工程和实验中常用 Bq 等单位刻画放射源强度。</p>
+<h4 id="衰变链与平衡（补充）">衰变链与平衡（补充）</h4>
+<p>许多核素并非只衰变一次，而是形成衰变链。链中某一子体的活度会随时间增长到与母体活度相当（在一定条件下形成暂时/长期平衡），这在天然放射系与核测量中很常见。</p>
+<hr>
+<h3 id="衰变能（Q-值）与动能分配">衰变能（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span> 值）与动能分配</h3>
+<p>对衰变：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>→</mo><mi>B</mi><mo>+</mo><mi>C</mi><mo>(</mo><mo>+</mo><mo>⋯</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">A \rightarrow B + C (+\cdots)</annotation></semantics></math></span></span></li>
+</ul>
+<p>衰变能由质量差给出：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mo>=</mo><mo>(</mo><msub><mi>m</mi><mi>A</mi></msub><mo>−</mo><msub><mi>m</mi><mi>B</mi></msub><mo>−</mo><msub><mi>m</mi><mi>C</mi></msub><mo>−</mo><mo>⋯</mo><mo>)</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">Q=(m_A-m_B-m_C-\cdots)c^2</annotation></semantics></math></span></span></li>
+</ul>
+<p>当初态近似静止且为两体衰变时，动量守恒会使轻粒子通常获得更高速度与显著动能；多体衰变则会出现连续能谱与多种分配。</p>
+<hr>
+<h3 id="alpha-衰变：量子隧穿与寿命-能量关联"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 衰变：量子隧穿与寿命-能量关联</h3>
+<h4 id="基本形式">基本形式</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 衰变常见于重核：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mrow></mrow><mi>Z</mi><mi>A</mi></msubsup><mi>X</mi><mo>→</mo><msubsup><mrow></mrow><mrow><mi>Z</mi><mo>−</mo><mn>2</mn></mrow><mrow><mi>A</mi><mo>−</mo><mn>4</mn></mrow></msubsup><mi>Y</mi><mo>+</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">{}^A_Z X \rightarrow {}^{A-4}_{Z-2}Y+\alpha</annotation></semantics></math></span></span></li>
+</ul>
+<h4 id="势垒贯穿的量子图像">势垒贯穿的量子图像</h4>
+<p>核内强相互作用束缚与核外库仑斥力共同形成势垒。<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 粒子通过量子隧穿穿出势垒。该机制解释了：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 能量略有差别会导致半衰期跨越巨大数量级的变化（能量越高，隧穿概率越大，寿命越短）。</li>
+</ul>
+<hr>
+<h3 id="beta-衰变：连续谱、中微子与弱相互作用"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 衰变：连续谱、中微子与弱相互作用</h3>
+<h4 id="早期矛盾与关键事实">早期矛盾与关键事实</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 衰变的电子（或正电子）能谱连续，引发三类核心困难：</p>
+<ul>
+<li>核能级离散，为何出射电子能量连续？</li>
+<li>若电子能量小于最大值，能量似乎不守恒</li>
+<li>核内并没有“预先存在的电子”可直接发射</li>
+</ul>
+<h4 id="中微子的引入与弱相互作用观点">中微子的引入与弱相互作用观点</h4>
+<p>Pauli 提出中微子（或反中微子）带走部分能量与动量以恢复守恒定律。随后实验验证中微子存在。Fermi 将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 衰变描述为弱相互作用过程：核内核子发生类型转变并伴随轻子发射。</p>
+<h4 id="三种常见类型">三种常见类型</h4>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>β</mi><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">\beta^-</annotation></semantics></math></span></span>：中子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 质子，同时放出电子与反中微子</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>β</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">\beta^+</annotation></semantics></math></span></span>：质子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 中子，同时放出正电子与中微子</li>
+<li>电子俘获（EC）：核俘获轨道电子使质子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>→</mo></mrow><annotation encoding="application/x-tex">\rightarrow</annotation></semantics></math></span></span> 中子，放出中微子</li>
+</ul>
+<h4 id="beta-与-EC-的能量条件（补充）"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>β</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">\beta^+</annotation></semantics></math></span></span> 与 EC 的能量条件（补充）</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>β</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">\beta^+</annotation></semantics></math></span></span> 衰变需要额外能量来“制造”正电子，并且还要满足动量守恒对应的运动学要求；当能量条件不满足时，同一核素可能通过电子俘获发生转变。</p>
+<h4 id="壳层空穴与-Auger-电子">壳层空穴与 Auger 电子</h4>
+<p>EC 发生后原子壳层出现空穴，外层电子跃迁填补会发射特征 X 射线；也可能把跃迁能量传给另一电子使其逸出，形成 Auger 电子。</p>
+<hr>
+<h3 id="gamma-跃迁、内转换与-Mossbauer-效应"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> 跃迁、内转换与 Mössbauer 效应</h3>
+<h4 id="gamma-跃迁与核能级"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> 跃迁与核能级</h4>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> 辐射通常对应同一核素从激发态向低能级跃迁：</p>
+<ul>
+<li>
+$X^* \rightarrow X + \gamma$
+</li>
+</ul>
+<h4 id="内转换（IC）">内转换（IC）</h4>
+<p>核的跃迁能也可能不以光子形式发射，而是直接传给原子电子使其逸出，形成内转换电子。对很多核跃迁来说，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> 与 IC 之间存在竞争，其比例与跃迁能量、多极性与核结构有关。</p>
+<h4 id="同质异能态与“受阻跃迁”（补充）">同质异能态与“受阻跃迁”（补充）</h4>
+<p>某些激发态寿命很长，可形成同质异能态。一个重要原因是跃迁受到选择定则或多极性限制，导致跃迁几率显著降低（“受阻跃迁”）。</p>
+<h4 id="Mossbauer-效应">Mössbauer 效应</h4>
+<p>若发射/吸收核处在晶格中，反冲动量可由整个晶体共同承担，使反冲能量近乎为零，从而实现极窄线宽的共振吸收与极高分辨率测量。</p>
+<hr>
+<h3 id="放射性的典型应用">放射性的典型应用</h3>
+<h4 id="示踪与诊断">示踪与诊断</h4>
+<p>利用放射性核素易被探测的特性追踪物质迁移与反应路径，在化学、生物与医学中都有重要应用。</p>
+<h4 id="辐射探测与计量">辐射探测与计量</h4>
+<p>放射性可通过电离、闪烁与半导体效应等方式被探测。能谱、计数率与衰变链信息常用于核素识别与定量分析。</p>
+<h4 id="放射性年代学：以-14-mathrm-C-为例">放射性年代学：以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>1</mn><mn>4</mn></mrow></msup><mrow><mi mathvariant="normal">C</mi></mrow></mrow><annotation encoding="application/x-tex">^{14}\mathrm{C}</annotation></semantics></math></span></span> 为例</h4>
+<p>宇宙线在大气中产生 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>1</mn><mn>4</mn></mrow></msup><mrow><mi mathvariant="normal">C</mi></mrow></mrow><annotation encoding="application/x-tex">^{14}\mathrm{C}</annotation></semantics></math></span></span>，生物体在生前与环境保持近似平衡；死亡后 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>1</mn><mn>4</mn></mrow></msup><mrow><mi mathvariant="normal">C</mi></mrow></mrow><annotation encoding="application/x-tex">^{14}\mathrm{C}</annotation></semantics></math></span></span> 仅按指数规律衰减。测得剩余比例即可估算年代，核心仍是衰变定律在自然体系中的应用。</p>
+<hr>
+<h2 id="核反应：能量学、运动学与几率描述">核反应：能量学、运动学与几率描述</h2>
+<h3 id="核反应的定义与记号">核反应的定义与记号</h3>
+<p>核反应指外来粒子作用使靶核转变为其他核或其他状态。一般写作：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>+</mo><mi>a</mi><mo>→</mo><mi>b</mi><mo>+</mo><mi>B</mi><mo>(</mo><mo>+</mo><mo>⋯</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">A + a \rightarrow b + B (+\cdots)</annotation></semantics></math></span></span></li>
+</ul>
+<p>常用紧凑记号：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>)</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A(a,b)B</annotation></semantics></math></span></span></li>
+</ul>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 为靶核，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi></mrow><annotation encoding="application/x-tex">a</annotation></semantics></math></span></span> 为入射粒子，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>b</mi></mrow><annotation encoding="application/x-tex">b</annotation></semantics></math></span></span> 为出射粒子，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 为反冲核或产物核。</p>
+<hr>
+<h3 id="反应能-Q：放能与吸能">反应能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span>：放能与吸能</h3>
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>(</mo><mi>a</mi><mo separator="true">,</mo><mi>b</mi><mo>)</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">A(a,b)B</annotation></semantics></math></span></span>：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mo>=</mo><mo>(</mo><msub><mi>m</mi><mi>A</mi></msub><mo>+</mo><msub><mi>m</mi><mi>a</mi></msub><mo>−</mo><msub><mi>m</mi><mi>b</mi></msub><mo>−</mo><msub><mi>m</mi><mi>B</mi></msub><mo>)</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">Q=(m_A+m_a-m_b-m_B)c^2</annotation></semantics></math></span></span></li>
+</ul>
+<p>物理含义：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Q&gt;0</annotation></semantics></math></span></span>：放能反应，产物总动能增加；</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Q&lt;0</annotation></semantics></math></span></span>：吸能反应，需要入射动能提供能量。</li>
+</ul>
+<h4 id="阈能的概念（补充）">阈能的概念（补充）</h4>
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">Q&lt;0</annotation></semantics></math></span></span> 时，在实验室系往往存在阈能：即使入射动能刚好等于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>Q</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|Q|</annotation></semantics></math></span></span> 也未必能发生反应，因为还必须满足动量守恒，体系需要保留一定的整体动能。</p>
+<hr>
+<h3 id="反应运动学与-Q-方程：用测量量反推核能级">反应运动学与 Q 方程：用测量量反推核能级</h3>
+<p>在核质量或能级信息不够精确时，可测量出射粒子的能量与角度，并结合能量与动量守恒建立关系式（常称 Q 方程），从而反推出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi></mrow><annotation encoding="application/x-tex">Q</annotation></semantics></math></span></span> 值或产物核的激发能。</p>
+<p>一个常见现象是：在固定角度测得出射粒子能量出现双分支，往往意味着产物核落在不同能级（基态/激发态）。两条分支的能量差直接对应不同激发能的差值，这类方法是核谱学的重要手段。</p>
+<hr>
+<h3 id="反应截面：把“发生几率”量化">反应截面：把“发生几率”量化</h3>
+<h4 id="薄靶近似下的基本关系">薄靶近似下的基本关系</h4>
+<p>设靶中可反应核数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span>，入射粒子流量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span>（单位面积单位时间粒子数），则在时间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">dt</annotation></semantics></math></span></span> 内发生反应的核数满足：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>N</mi><mo>=</mo><mo>−</mo><mi>σ</mi><mi>I</mi><mi>N</mi><mspace width="0.16667em"></mspace><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">dN=-\sigma I N\,dt</annotation></semantics></math></span></span></li>
+</ul>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span></span> 具有面积量纲，直观可理解为靶核对该反应的“有效面积”。</p>
+<h4 id="单位">单位</h4>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mtext>&nbsp;</mtext><mrow><mi mathvariant="normal">b</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">n</mi></mrow><mo>=</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>2</mn><mn>4</mn></mrow></msup><mtext>&nbsp;</mtext><msup><mrow><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mrow><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">1\ \mathrm{barn}=10^{-24}\ \mathrm{cm}^2</annotation></semantics></math></span></span></li>
+</ul>
+<h4 id="能量依赖与共振（补充）">能量依赖与共振（补充）</h4>
+<p>截面通常随入射能量显著变化。若反应经过复合核中间态，截面可能出现尖锐共振峰，对应复合核的离散能级结构；而直接反应机制则常呈现不同的角分布与能量依赖特征。</p>
+<hr>
+<h2 id="裂变与聚变：核能的两条路径">裂变与聚变：核能的两条路径</h2>
+<h3 id="核裂变：链式反应与慢化思想">核裂变：链式反应与慢化思想</h3>
+<h4 id="裂变产物与能量规模">裂变产物与能量规模</h4>
+<p>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mn>3</mn><mn>5</mn></mrow></msup><mrow><mi mathvariant="normal">U</mi></mrow></mrow><annotation encoding="application/x-tex">^{235}\mathrm{U}</annotation></semantics></math></span></span> 为代表的重核可在吸收中子后裂变，通常产生：</p>
+<ul>
+<li>两个中等质量裂变产物</li>
+<li>平均约若干个中子（典型值约 2.5）</li>
+<li>放能约 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mn>0</mn><mn>0</mn><mtext>&nbsp;</mtext><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mrow></mrow><annotation encoding="application/x-tex">200\ \mathrm{MeV}</annotation></semantics></math></span></span> 量级（常见给出约 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mn>1</mn><mn>0</mn><mtext>&nbsp;</mtext><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mrow></mrow><annotation encoding="application/x-tex">210\ \mathrm{MeV}</annotation></semantics></math></span></span> 的代表数）</li>
+</ul>
+<h4 id="链式反应与中子慢化">链式反应与中子慢化</h4>
+<p>裂变放出的中子若能继续诱发更多裂变，就形成链式反应。很多可裂变核对热中子截面更大，因此常通过慢化剂降低中子能量，提高裂变概率，实现可控功率输出。</p>
+<h4 id="可控与不可控释放的概念差异">可控与不可控释放的概念差异</h4>
+<p>反应堆依靠控制棒、冷却与反馈机制把链式反应稳定在可控状态；而核武器追求极短时间的超临界与快速能量释放。这里的差异关键不在“是否能裂变”，而在“是否能稳定控制反应速率与中子经济”。</p>
+<hr>
+<h3 id="钍基路线：增殖得到可裂变核素">钍基路线：增殖得到可裂变核素</h3>
+<p>钍资源丰度高，可通过吸收中子并经历 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>β</mi><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">\beta^-</annotation></semantics></math></span></span> 衰变链增殖得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mn>3</mn><mn>3</mn></mrow></msup><mrow><mi mathvariant="normal">U</mi></mrow></mrow><annotation encoding="application/x-tex">^{233}\mathrm{U}</annotation></semantics></math></span></span>：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mn>3</mn><mn>2</mn></mrow></msup><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mo>+</mo><mi>n</mi><mo>→</mo><msup><mrow></mrow><mrow><mn>2</mn><mn>3</mn><mn>3</mn></mrow></msup><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mo>+</mo><mi>γ</mi></mrow><annotation encoding="application/x-tex">{}^{232}\mathrm{Th}+n \rightarrow {}^{233}\mathrm{Th}+\gamma</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mn>3</mn><mn>3</mn></mrow></msup><mrow><mi mathvariant="normal">T</mi><mi mathvariant="normal">h</mi></mrow><mo>→</mo><msup><mrow></mrow><mrow><mn>2</mn><mn>3</mn><mn>3</mn></mrow></msup><mrow><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow><mo>+</mo><msup><mi>β</mi><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">{}^{233}\mathrm{Th}\rightarrow {}^{233}\mathrm{Pa}+\beta^-</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mn>3</mn><mn>3</mn></mrow></msup><mrow><mi mathvariant="normal">P</mi><mi mathvariant="normal">a</mi></mrow><mo>→</mo><msup><mrow></mrow><mrow><mn>2</mn><mn>3</mn><mn>3</mn></mrow></msup><mrow><mi mathvariant="normal">U</mi></mrow><mo>+</mo><msup><mi>β</mi><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">{}^{233}\mathrm{Pa}\rightarrow {}^{233}\mathrm{U}+\beta^-</annotation></semantics></math></span></span></li>
+</ul>
+<p>这种燃料循环思想涉及中子经济性、材料与安全等多方面工程约束，但在核能体系设计中占有重要位置。</p>
+<hr>
+<h3 id="核聚变：克服库仑势垒与约束问题">核聚变：克服库仑势垒与约束问题</h3>
+<h4 id="为什么聚变难">为什么聚变难</h4>
+<p>轻核带正电，靠近必须克服库仑斥力。提高温度能提升粒子平均动能，使它们更可能接近到强相互作用起效的距离。但工程上更难的常常是：</p>
+<ul>
+<li>如何把高温等离子体稳定约束足够久</li>
+</ul>
+<h4 id="磁约束与-Tokamak">磁约束与 Tokamak</h4>
+<p>磁场对带电粒子产生洛伦兹力，从而实现对等离子体的磁约束。Tokamak 是典型方案之一，核心在于同时满足温度、密度与约束时间的要求。</p>
+<h4 id="D–T-反应与-ITER">D–T 反应与 ITER</h4>
+<p>较“容易点火”的聚变反应之一是氘-氚反应：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mo>+</mo><mi>T</mi><mo>→</mo><msup><mrow></mrow><mrow><mn>4</mn></mrow></msup><mrow><mi mathvariant="normal">H</mi><mi mathvariant="normal">e</mi></mrow><mo>+</mo><mi>n</mi><mo>+</mo><mn>1</mn><mn>7</mn><mi mathvariant="normal">.</mi><mn>6</mn><mtext>&nbsp;</mtext><mrow><mi mathvariant="normal">M</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mrow></mrow><annotation encoding="application/x-tex">D+T\rightarrow {}^{4}\mathrm{He}+n+17.6\ \mathrm{MeV}</annotation></semantics></math></span></span></li>
+</ul>
+<p>ITER 旨在验证高功率聚变等离子体在工程上的可行性。</p>
+<h4 id="氚增殖：用锂“养氚”">氚增殖：用锂“养氚”</h4>
+<p>氚在自然界极稀少，因此常讨论在包层利用锂与中子反应增殖氚：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>6</mn></mrow></msup><mrow><mi mathvariant="normal">L</mi><mi mathvariant="normal">i</mi></mrow><mo>+</mo><mi>n</mi><mo>→</mo><msup><mrow></mrow><mrow><mn>4</mn></mrow></msup><mrow><mi mathvariant="normal">H</mi><mi mathvariant="normal">e</mi></mrow><mo>+</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">{}^{6}\mathrm{Li}+n\rightarrow {}^{4}\mathrm{He}+T</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>7</mn></mrow></msup><mrow><mi mathvariant="normal">L</mi><mi mathvariant="normal">i</mi></mrow><mo>+</mo><mi>n</mi><mo>→</mo><msup><mrow></mrow><mrow><mn>4</mn></mrow></msup><mrow><mi mathvariant="normal">H</mi><mi mathvariant="normal">e</mi></mrow><mo>+</mo><mi>T</mi><mo>+</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">{}^{7}\mathrm{Li}+n\rightarrow {}^{4}\mathrm{He}+T+n</annotation></semantics></math></span></span>（条件更复杂）</li>
+</ul>
+<h4 id="为什么不直接主打-D–D（补充）">为什么不直接主打 D–D（补充）</h4>
+<p>D–D 不需要氚，但反应截面更小、点火条件更苛刻；此外反应链会受到核结构与通道限制（某些质量数组合对应的不稳定核使路径不“顺滑”），因此工程上常优先考虑 D–T。</p>
+<hr>
+<h2 id="核力与核模型：从相互作用到结构规律">核力与核模型：从相互作用到结构规律</h2>
+<h3 id="核力的主要性质">核力的主要性质</h3>
+<h4 id="短程性">短程性</h4>
+<p>核力作用程在几个 fm 量级，远短于电磁相互作用的有效范围，因此核相互作用主要发生在近邻核子之间。</p>
+<h4 id="饱和性">饱和性</h4>
+<p>由于短程性，每个核子只能与有限数目的近邻强烈相互作用，使总结合能随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 近似线性增长，这是核物质呈“近似常密度液滴”的关键原因之一。</p>
+<h4 id="排斥芯">排斥芯</h4>
+<p>在极短距离上核力呈强烈排斥，防止核子无限靠近导致系统塌缩。</p>
+<h4 id="电荷无关性与同位旋">电荷无关性与同位旋</h4>
+<p>除去库仑效应后，p–p、n–n、p–n 的核力相近，可用同位旋统一描述核子两种状态：</p>
+<ul>
+<li>同位旋 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">I=1/2</annotation></semantics></math></span></span>，第三分量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>I</mi><mn>3</mn></msub><mo>=</mo><mo>±</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">I_3=\pm 1/2</annotation></semantics></math></span></span> 对应质子/中子。</li>
+</ul>
+<hr>
+<h3 id="核力的来源：介子交换与-QCD-剩余力">核力的来源：介子交换与 QCD 剩余力</h3>
+<h4 id="汤川介子交换思想">汤川介子交换思想</h4>
+<p>汤川提出核力可视为核子交换介子产生，作用程与介子质量相关。用作用程估算得到介子质量能标在百 MeV 附近，符合核力短程性的经验。</p>
+<h4 id="现代观点：强相互作用的有效表现">现代观点：强相互作用的有效表现</h4>
+<p>更根本层面上，核子间核力可视为 QCD 色力在强束缚体系上的有效“剩余力”，在层级结构上与范德华力的出现方式具有可类比之处。</p>
+<hr>
+<h3 id="费米气体模型：核子的量子简并体系">费米气体模型：核子的量子简并体系</h3>
+<h4 id="基本思想">基本思想</h4>
+<p>核子是费米子，满足泡利不相容原理。在平均场近似下，核子填充从低到高的动量态形成费米海。</p>
+<h4 id="对称能的直观来源">对称能的直观来源</h4>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span> 相差很大，数量更多的一类核子必须占据更高动量态，导致能量上升，因此稳定核总体倾向 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>≈</mo><mi>Z</mi></mrow><annotation encoding="application/x-tex">N\approx Z</annotation></semantics></math></span></span>。对重核还要叠加库仑斥力的影响，常见稳定核呈现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>&gt;</mo><mi>Z</mi></mrow><annotation encoding="application/x-tex">N&gt;Z</annotation></semantics></math></span></span>。</p>
+<hr>
+<h3 id="液滴模型与半经验质量公式">液滴模型与半经验质量公式</h3>
+<h4 id="液滴图像">液滴图像</h4>
+<p>核密度近似常数、核力短程且饱和，使核在宏观上像带电液滴。液滴模型用若干项分别描述不同效应，构成半经验质量公式，用于拟合与解释结合能的总体趋势。</p>
+<h4 id="各项的物理含义（概念性）">各项的物理含义（概念性）</h4>
+<ul>
+<li>体积项：内部核子与近邻结合的主要贡献</li>
+<li>表面项：表面核子近邻更少，结合减弱</li>
+<li>库仑项：质子间斥力降低结合能，随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span> 增大更显著</li>
+<li>对称项：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span> 不平衡的能量代价</li>
+<li>配对项：偶偶核更稳定、奇奇核相对不稳定的经验规律</li>
+</ul>
+<p>液滴模型擅长解释宏观趋势（如裂变倾向、总体稳定性），但对幻数与精细结构解释不足。</p>
+<hr>
+<h3 id="壳层模型：平均场与强自旋-轨道耦合">壳层模型：平均场与强自旋-轨道耦合</h3>
+<h4 id="引入壳层结构的动机">引入壳层结构的动机</h4>
+<p>实验发现某些 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 的核特别稳定，称为幻数。为解释这一现象，引入核子在平均势场中运动的量子能级结构，并按泡利原理填充。</p>
+<h4 id="强自旋-轨道耦合与幻数">强自旋-轨道耦合与幻数</h4>
+<p>仅靠简单平均势场可得到部分幻数，但要完整解释经验幻数，需要引入强自旋-轨道耦合导致能级重新分裂与重排。由此得到常见幻数序列：</p>
+<ul>
+<li>质子幻数：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo separator="true">,</mo><mn>8</mn><mo separator="true">,</mo><mn>2</mn><mn>0</mn><mo separator="true">,</mo><mn>2</mn><mn>8</mn><mo separator="true">,</mo><mn>5</mn><mn>0</mn><mo separator="true">,</mo><mn>8</mn><mn>2</mn></mrow><annotation encoding="application/x-tex">2, 8, 20, 28, 50, 82</annotation></semantics></math></span></span></li>
+<li>中子幻数：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mo separator="true">,</mo><mn>8</mn><mo separator="true">,</mo><mn>2</mn><mn>0</mn><mo separator="true">,</mo><mn>2</mn><mn>8</mn><mo separator="true">,</mo><mn>5</mn><mn>0</mn><mo separator="true">,</mo><mn>8</mn><mn>2</mn><mo separator="true">,</mo><mn>1</mn><mn>2</mn><mn>6</mn></mrow><annotation encoding="application/x-tex">2, 8, 20, 28, 50, 82, 126</annotation></semantics></math></span></span></li>
+</ul>
+<h4 id="与核自旋规律的联系（补充）">与核自旋规律的联系（补充）</h4>
+<p>壳层填充直接影响基态核自旋：闭壳层附近核常呈现更“简单”的自旋与磁矩特征，而开壳层核则更复杂。</p>
+<h4 id="与宇宙元素丰度的联系（补充）">与宇宙元素丰度的联系（补充）</h4>
+<p>在天体核合成的 s/r 过程路径上，闭壳层会造成俘获与衰变过程的“堆积”，对应元素丰度峰，这反映了核结构对宇宙化学演化的深刻影响。</p>
+<hr>
+<h3 id="多模型互补的总体认识">多模型互补的总体认识</h3>
+<p>原子核既呈现集体行为（液滴/振动/转动等），也呈现单粒子行为（壳层占据、魔数效应）。因此：</p>
+<ul>
+<li>费米气体模型强调统计与对称能来源</li>
+<li>液滴模型擅长描述宏观趋势与能量学</li>
+<li>壳层模型解释精细结构、幻数与核自旋等</li>
+</ul>
+<p>现实研究中通常综合多种模型视角，才能得到更完整的核图景。</p>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E9%A2%84%E4%B9%A0/" class="">
+              预习
+            </a>
+          
+            <a href="/physics/tags/%E5%8E%9F%E5%AD%90%E7%89%A9%E7%90%86pku/" class="">
+              原子物理pku
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/YuanZiWuLi/原子核基本性质、放射性、核反应与核模型/" target="_blank" title="原子核基本性质、放射性、核反应与核模型">https://kotokowa.github.io/physics/YuanZiWuLi/原子核基本性质、放射性、核反应与核模型/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/YuanZiWuLi/%E6%A0%B8%E5%90%88%E6%88%90%E4%B8%8E%E5%BC%BA%E5%AD%90%E5%AF%B9%E7%A7%B0%E6%80%A7/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">核合成与强子对称性</div>
+      </div>
+      
+      <!-- <div class="content">
+        核合成与强子对称性
+核素起源与核合成
+这一部分回答一个问题: 宇宙中的元素从何而来. 关键结论是: 轻元素主要来自早期宇
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/YuanZiWuLi/%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E3%80%81%E7%A3%81%E5%9C%BA%E6%95%88%E5%BA%94%E4%B8%8E%E5%88%86%E5%AD%90%E5%85%89%E8%B0%B1/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">多电子原子、磁场效应与分子光谱</div>
+      </div>
+      <!-- <div class="content">
+        多电子原子、磁场效应与分子光谱
+多电子原子的能级结构：从“单电子图像”到“多体效应”
+为什么多电子原子能级更复杂
+主要原
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">原子核基本性质、放射性、核反应与核模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E6%A0%B8%E4%B8%8E%E6%A0%B8%E7%89%A9%E7%90%86%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%9B%BE%E6%99%AF"><span class="toc-text">原子核与核物理的基本图景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%A0%94%E7%A9%B6%E5%8E%9F%E5%AD%90%E6%A0%B8%E6%9B%B4%E5%A4%8D%E6%9D%82"><span class="toc-text">为什么研究原子核更复杂</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E4%BD%93%E9%87%8F%E5%AD%90%E4%BD%93%E7%B3%BB"><span class="toc-text">多体量子体系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E7%A7%8D%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E5%B9%B6%E5%AD%98"><span class="toc-text">多种相互作用并存</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E6%A0%B8%E7%9A%84%E7%BB%84%E6%88%90%E4%B8%8E%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8"><span class="toc-text">原子核的组成与基本性质</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A8%E5%AD%90%E4%B8%8E%E4%B8%AD%E5%AD%90%EF%BC%9A%E5%8E%9F%E5%AD%90%E6%A0%B8%E7%9A%84%E5%9F%BA%E6%9C%AC%E7%BB%84%E6%88%90"><span class="toc-text">质子与中子：原子核的基本组成</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E5%AD%90%E5%8F%91%E7%8E%B0%E7%9A%84%E5%85%B3%E9%94%AE%E6%80%9D%E8%B7%AF"><span class="toc-text">中子发现的关键思路</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E7%9A%84%E5%B0%BA%E5%AF%B8%E3%80%81%E5%AF%86%E5%BA%A6%E4%B8%8E%E2%80%9C%E8%BF%91%E4%BC%BC%E4%B8%8D%E5%8F%AF%E5%8E%8B%E7%BC%A9%E2%80%9D"><span class="toc-text">核的尺寸、密度与“近似不可压缩”</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E5%8D%8A%E5%BE%84%E7%BB%8F%E9%AA%8C%E5%85%B3%E7%B3%BB"><span class="toc-text">核半径经验关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%86%E5%8C%96%E7%90%86%E8%A7%A3%EF%BC%9A%E6%A0%B8%E8%A1%A8%E9%9D%A2%E4%B8%8E%E5%BD%A2%E5%8F%98%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-text">细化理解：核表面与形变（补充）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A8%E9%87%8F%E4%BA%8F%E6%8D%9F%E3%80%81%E7%BB%93%E5%90%88%E8%83%BD%E4%B8%8E%E6%AF%94%E7%BB%93%E5%90%88%E8%83%BD"><span class="toc-text">质量亏损、结合能与比结合能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E5%90%88%E8%83%BD%E4%B8%8E%E8%B4%A8%E9%87%8F%E4%BA%8F%E6%8D%9F"><span class="toc-text">结合能与质量亏损</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E7%BB%93%E5%90%88%E8%83%BD%E4%B8%8E%E8%A3%82%E5%8F%98-%E8%81%9A%E5%8F%98%E7%9A%84%E8%83%BD%E9%87%8F%E5%AD%A6%E6%96%B9%E5%90%91"><span class="toc-text">比结合能与裂变&#x2F;聚变的能量学方向</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E8%B4%A8%E9%87%8F%E4%B8%8E%E7%94%B5%E5%AD%90%E8%B4%A8%E9%87%8F%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-text">原子质量与电子质量的注意点（补充）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E8%87%AA%E6%97%8B%E3%80%81%E6%A0%B8%E7%A3%81%E7%9F%A9%E4%B8%8E%E8%B6%85%E7%B2%BE%E7%BB%86%E7%BB%93%E6%9E%84"><span class="toc-text">核自旋、核磁矩与超精细结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E8%87%AA%E6%97%8B-I"><span class="toc-text">核自旋 III</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%B8%E7%A3%81%E7%9F%A9%E4%B8%8E%E6%A0%B8%E5%AD%90%E5%86%85%E9%83%A8%E7%BB%93%E6%9E%84"><span class="toc-text">核磁矩与核子内部结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B6%85%E7%B2%BE%E7%BB%86%E7%BB%93%E6%9E%84%EF%BC%9A%E7%94%B5%E5%AD%90%E4%B8%8E%E6%A0%B8%E7%A3%81%E7%9F%A9%E7%9A%84%E8%80%A6%E5%90%88"><span class="toc-text">超精细结构：电子与核磁矩的耦合</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%BE%E5%B0%84%E6%80%A7%E4%B8%8E%E8%A1%B0%E5%8F%98"><span class="toc-text">放射性与衰变</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BE%E5%B0%84%E6%80%A7%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">放射性的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%B0%E5%8F%98%E5%AE%9A%E5%BE%8B%E3%80%81%E5%8D%8A%E8%A1%B0%E6%9C%9F%E3%80%81%E5%B9%B3%E5%9D%87%E5%AF%BF%E5%91%BD%E4%B8%8E%E6%B4%BB%E5%BA%A6"><span class="toc-text">衰变定律、半衰期、平均寿命与活度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E6%95%B0%E8%A1%B0%E5%8F%98%E5%AE%9A%E5%BE%8B"><span class="toc-text">指数衰变定律</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B4%BB%E5%BA%A6"><span class="toc-text">活度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A1%B0%E5%8F%98%E9%93%BE%E4%B8%8E%E5%B9%B3%E8%A1%A1%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-text">衰变链与平衡（补充）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%B0%E5%8F%98%E8%83%BD%EF%BC%88Q-%E5%80%BC%EF%BC%89%E4%B8%8E%E5%8A%A8%E8%83%BD%E5%88%86%E9%85%8D"><span class="toc-text">衰变能（QQQ 值）与动能分配</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#alpha-%E8%A1%B0%E5%8F%98%EF%BC%9A%E9%87%8F%E5%AD%90%E9%9A%A7%E7%A9%BF%E4%B8%8E%E5%AF%BF%E5%91%BD-%E8%83%BD%E9%87%8F%E5%85%B3%E8%81%94"><span class="toc-text">α\alphaα 衰变：量子隧穿与寿命-能量关联</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="toc-text">基本形式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%BF%E5%9E%92%E8%B4%AF%E7%A9%BF%E7%9A%84%E9%87%8F%E5%AD%90%E5%9B%BE%E5%83%8F"><span class="toc-text">势垒贯穿的量子图像</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#beta-%E8%A1%B0%E5%8F%98%EF%BC%9A%E8%BF%9E%E7%BB%AD%E8%B0%B1%E3%80%81%E4%B8%AD%E5%BE%AE%E5%AD%90%E4%B8%8E%E5%BC%B1%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8"><span class="toc-text">β\betaβ 衰变：连续谱、中微子与弱相互作用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%97%A9%E6%9C%9F%E7%9F%9B%E7%9B%BE%E4%B8%8E%E5%85%B3%E9%94%AE%E4%BA%8B%E5%AE%9E"><span class="toc-text">早期矛盾与关键事实</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E5%BE%AE%E5%AD%90%E7%9A%84%E5%BC%95%E5%85%A5%E4%B8%8E%E5%BC%B1%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E8%A7%82%E7%82%B9"><span class="toc-text">中微子的引入与弱相互作用观点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%B1%BB%E5%9E%8B"><span class="toc-text">三种常见类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#beta-%E4%B8%8E-EC-%E7%9A%84%E8%83%BD%E9%87%8F%E6%9D%A1%E4%BB%B6%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-text">β+\beta^+β​+​​ 与 EC 的能量条件（补充）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A3%B3%E5%B1%82%E7%A9%BA%E7%A9%B4%E4%B8%8E-Auger-%E7%94%B5%E5%AD%90"><span class="toc-text">壳层空穴与 Auger 电子</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gamma-%E8%B7%83%E8%BF%81%E3%80%81%E5%86%85%E8%BD%AC%E6%8D%A2%E4%B8%8E-Mossbauer-%E6%95%88%E5%BA%94"><span class="toc-text">γ\gammaγ 跃迁、内转换与 Mössbauer 效应</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#gamma-%E8%B7%83%E8%BF%81%E4%B8%8E%E6%A0%B8%E8%83%BD%E7%BA%A7"><span class="toc-text">γ\gammaγ 跃迁与核能级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%BD%AC%E6%8D%A2%EF%BC%88IC%EF%BC%89"><span class="toc-text">内转换（IC）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8C%E8%B4%A8%E5%BC%82%E8%83%BD%E6%80%81%E4%B8%8E%E2%80%9C%E5%8F%97%E9%98%BB%E8%B7%83%E8%BF%81%E2%80%9D%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-text">同质异能态与“受阻跃迁”（补充）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mossbauer-%E6%95%88%E5%BA%94"><span class="toc-text">Mössbauer 效应</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BE%E5%B0%84%E6%80%A7%E7%9A%84%E5%85%B8%E5%9E%8B%E5%BA%94%E7%94%A8"><span class="toc-text">放射性的典型应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A4%BA%E8%B8%AA%E4%B8%8E%E8%AF%8A%E6%96%AD"><span class="toc-text">示踪与诊断</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%90%E5%B0%84%E6%8E%A2%E6%B5%8B%E4%B8%8E%E8%AE%A1%E9%87%8F"><span class="toc-text">辐射探测与计量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%BE%E5%B0%84%E6%80%A7%E5%B9%B4%E4%BB%A3%E5%AD%A6%EF%BC%9A%E4%BB%A5-14-mathrm-C-%E4%B8%BA%E4%BE%8B"><span class="toc-text">放射性年代学：以 14C^{14}\mathrm{C}​14​​C 为例</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%8F%8D%E5%BA%94%EF%BC%9A%E8%83%BD%E9%87%8F%E5%AD%A6%E3%80%81%E8%BF%90%E5%8A%A8%E5%AD%A6%E4%B8%8E%E5%87%A0%E7%8E%87%E6%8F%8F%E8%BF%B0"><span class="toc-text">核反应：能量学、运动学与几率描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%8F%8D%E5%BA%94%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E8%AE%B0%E5%8F%B7"><span class="toc-text">核反应的定义与记号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BA%94%E8%83%BD-Q%EF%BC%9A%E6%94%BE%E8%83%BD%E4%B8%8E%E5%90%B8%E8%83%BD"><span class="toc-text">反应能 QQQ：放能与吸能</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%98%88%E8%83%BD%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-text">阈能的概念（补充）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BA%94%E8%BF%90%E5%8A%A8%E5%AD%A6%E4%B8%8E-Q-%E6%96%B9%E7%A8%8B%EF%BC%9A%E7%94%A8%E6%B5%8B%E9%87%8F%E9%87%8F%E5%8F%8D%E6%8E%A8%E6%A0%B8%E8%83%BD%E7%BA%A7"><span class="toc-text">反应运动学与 Q 方程：用测量量反推核能级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%BA%94%E6%88%AA%E9%9D%A2%EF%BC%9A%E6%8A%8A%E2%80%9C%E5%8F%91%E7%94%9F%E5%87%A0%E7%8E%87%E2%80%9D%E9%87%8F%E5%8C%96"><span class="toc-text">反应截面：把“发生几率”量化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%96%84%E9%9D%B6%E8%BF%91%E4%BC%BC%E4%B8%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%85%B3%E7%B3%BB"><span class="toc-text">薄靶近似下的基本关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BD%8D"><span class="toc-text">单位</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%83%BD%E9%87%8F%E4%BE%9D%E8%B5%96%E4%B8%8E%E5%85%B1%E6%8C%AF%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-text">能量依赖与共振（补充）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A3%82%E5%8F%98%E4%B8%8E%E8%81%9A%E5%8F%98%EF%BC%9A%E6%A0%B8%E8%83%BD%E7%9A%84%E4%B8%A4%E6%9D%A1%E8%B7%AF%E5%BE%84"><span class="toc-text">裂变与聚变：核能的两条路径</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E8%A3%82%E5%8F%98%EF%BC%9A%E9%93%BE%E5%BC%8F%E5%8F%8D%E5%BA%94%E4%B8%8E%E6%85%A2%E5%8C%96%E6%80%9D%E6%83%B3"><span class="toc-text">核裂变：链式反应与慢化思想</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A3%82%E5%8F%98%E4%BA%A7%E7%89%A9%E4%B8%8E%E8%83%BD%E9%87%8F%E8%A7%84%E6%A8%A1"><span class="toc-text">裂变产物与能量规模</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E5%BC%8F%E5%8F%8D%E5%BA%94%E4%B8%8E%E4%B8%AD%E5%AD%90%E6%85%A2%E5%8C%96"><span class="toc-text">链式反应与中子慢化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E6%8E%A7%E4%B8%8E%E4%B8%8D%E5%8F%AF%E6%8E%A7%E9%87%8A%E6%94%BE%E7%9A%84%E6%A6%82%E5%BF%B5%E5%B7%AE%E5%BC%82"><span class="toc-text">可控与不可控释放的概念差异</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%92%8D%E5%9F%BA%E8%B7%AF%E7%BA%BF%EF%BC%9A%E5%A2%9E%E6%AE%96%E5%BE%97%E5%88%B0%E5%8F%AF%E8%A3%82%E5%8F%98%E6%A0%B8%E7%B4%A0"><span class="toc-text">钍基路线：增殖得到可裂变核素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E8%81%9A%E5%8F%98%EF%BC%9A%E5%85%8B%E6%9C%8D%E5%BA%93%E4%BB%91%E5%8A%BF%E5%9E%92%E4%B8%8E%E7%BA%A6%E6%9D%9F%E9%97%AE%E9%A2%98"><span class="toc-text">核聚变：克服库仑势垒与约束问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%81%9A%E5%8F%98%E9%9A%BE"><span class="toc-text">为什么聚变难</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A3%81%E7%BA%A6%E6%9D%9F%E4%B8%8E-Tokamak"><span class="toc-text">磁约束与 Tokamak</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#D%E2%80%93T-%E5%8F%8D%E5%BA%94%E4%B8%8E-ITER"><span class="toc-text">D–T 反应与 ITER</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B0%9A%E5%A2%9E%E6%AE%96%EF%BC%9A%E7%94%A8%E9%94%82%E2%80%9C%E5%85%BB%E6%B0%9A%E2%80%9D"><span class="toc-text">氚增殖：用锂“养氚”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%9B%B4%E6%8E%A5%E4%B8%BB%E6%89%93-D%E2%80%93D%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-text">为什么不直接主打 D–D（补充）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B8%E5%8A%9B%E4%B8%8E%E6%A0%B8%E6%A8%A1%E5%9E%8B%EF%BC%9A%E4%BB%8E%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E5%88%B0%E7%BB%93%E6%9E%84%E8%A7%84%E5%BE%8B"><span class="toc-text">核力与核模型：从相互作用到结构规律</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%8A%9B%E7%9A%84%E4%B8%BB%E8%A6%81%E6%80%A7%E8%B4%A8"><span class="toc-text">核力的主要性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%AD%E7%A8%8B%E6%80%A7"><span class="toc-text">短程性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A5%B1%E5%92%8C%E6%80%A7"><span class="toc-text">饱和性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%92%E6%96%A5%E8%8A%AF"><span class="toc-text">排斥芯</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E8%8D%B7%E6%97%A0%E5%85%B3%E6%80%A7%E4%B8%8E%E5%90%8C%E4%BD%8D%E6%97%8B"><span class="toc-text">电荷无关性与同位旋</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%B8%E5%8A%9B%E7%9A%84%E6%9D%A5%E6%BA%90%EF%BC%9A%E4%BB%8B%E5%AD%90%E4%BA%A4%E6%8D%A2%E4%B8%8E-QCD-%E5%89%A9%E4%BD%99%E5%8A%9B"><span class="toc-text">核力的来源：介子交换与 QCD 剩余力</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B1%A4%E5%B7%9D%E4%BB%8B%E5%AD%90%E4%BA%A4%E6%8D%A2%E6%80%9D%E6%83%B3"><span class="toc-text">汤川介子交换思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%B0%E4%BB%A3%E8%A7%82%E7%82%B9%EF%BC%9A%E5%BC%BA%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%9A%84%E6%9C%89%E6%95%88%E8%A1%A8%E7%8E%B0"><span class="toc-text">现代观点：强相互作用的有效表现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%B9%E7%B1%B3%E6%B0%94%E4%BD%93%E6%A8%A1%E5%9E%8B%EF%BC%9A%E6%A0%B8%E5%AD%90%E7%9A%84%E9%87%8F%E5%AD%90%E7%AE%80%E5%B9%B6%E4%BD%93%E7%B3%BB"><span class="toc-text">费米气体模型：核子的量子简并体系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3"><span class="toc-text">基本思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AF%B9%E7%A7%B0%E8%83%BD%E7%9A%84%E7%9B%B4%E8%A7%82%E6%9D%A5%E6%BA%90"><span class="toc-text">对称能的直观来源</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%B2%E6%BB%B4%E6%A8%A1%E5%9E%8B%E4%B8%8E%E5%8D%8A%E7%BB%8F%E9%AA%8C%E8%B4%A8%E9%87%8F%E5%85%AC%E5%BC%8F"><span class="toc-text">液滴模型与半经验质量公式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B6%B2%E6%BB%B4%E5%9B%BE%E5%83%8F"><span class="toc-text">液滴图像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%84%E9%A1%B9%E7%9A%84%E7%89%A9%E7%90%86%E5%90%AB%E4%B9%89%EF%BC%88%E6%A6%82%E5%BF%B5%E6%80%A7%EF%BC%89"><span class="toc-text">各项的物理含义（概念性）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B3%E5%B1%82%E6%A8%A1%E5%9E%8B%EF%BC%9A%E5%B9%B3%E5%9D%87%E5%9C%BA%E4%B8%8E%E5%BC%BA%E8%87%AA%E6%97%8B-%E8%BD%A8%E9%81%93%E8%80%A6%E5%90%88"><span class="toc-text">壳层模型：平均场与强自旋-轨道耦合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E5%85%A5%E5%A3%B3%E5%B1%82%E7%BB%93%E6%9E%84%E7%9A%84%E5%8A%A8%E6%9C%BA"><span class="toc-text">引入壳层结构的动机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%BA%E8%87%AA%E6%97%8B-%E8%BD%A8%E9%81%93%E8%80%A6%E5%90%88%E4%B8%8E%E5%B9%BB%E6%95%B0"><span class="toc-text">强自旋-轨道耦合与幻数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E%E6%A0%B8%E8%87%AA%E6%97%8B%E8%A7%84%E5%BE%8B%E7%9A%84%E8%81%94%E7%B3%BB%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-text">与核自旋规律的联系（补充）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8E%E5%AE%87%E5%AE%99%E5%85%83%E7%B4%A0%E4%B8%B0%E5%BA%A6%E7%9A%84%E8%81%94%E7%B3%BB%EF%BC%88%E8%A1%A5%E5%85%85%EF%BC%89"><span class="toc-text">与宇宙元素丰度的联系（补充）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E6%A8%A1%E5%9E%8B%E4%BA%92%E8%A1%A5%E7%9A%84%E6%80%BB%E4%BD%93%E8%AE%A4%E8%AF%86"><span class="toc-text">多模型互补的总体认识</span></a></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/7/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-cde50ed4c355bb20693b266edd0bd0bd_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-cde50ed4c355bb20693b266edd0bd0bd_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/7/">粒子物理标准模型与夸克-轻子基本作用</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E6%A0%B8%E5%90%88%E6%88%90%E4%B8%8E%E5%BC%BA%E5%AD%90%E5%AF%B9%E7%A7%B0%E6%80%A7/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E6%A0%B8%E5%90%88%E6%88%90%E4%B8%8E%E5%BC%BA%E5%AD%90%E5%AF%B9%E7%A7%B0%E6%80%A7/">核合成与强子对称性</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E5%8E%9F%E5%AD%90%E6%A0%B8%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8%E3%80%81%E6%94%BE%E5%B0%84%E6%80%A7%E3%80%81%E6%A0%B8%E5%8F%8D%E5%BA%94%E4%B8%8E%E6%A0%B8%E6%A8%A1%E5%9E%8B/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E5%8E%9F%E5%AD%90%E6%A0%B8%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8%E3%80%81%E6%94%BE%E5%B0%84%E6%80%A7%E3%80%81%E6%A0%B8%E5%8F%8D%E5%BA%94%E4%B8%8E%E6%A0%B8%E6%A8%A1%E5%9E%8B/">原子核基本性质、放射性、核反应与核模型</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E3%80%81%E7%A3%81%E5%9C%BA%E6%95%88%E5%BA%94%E4%B8%8E%E5%88%86%E5%AD%90%E5%85%89%E8%B0%B1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E3%80%81%E7%A3%81%E5%9C%BA%E6%95%88%E5%BA%94%E4%B8%8E%E5%88%86%E5%AD%90%E5%85%89%E8%B0%B1/">多电子原子、磁场效应与分子光谱</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E4%BB%8E%E6%97%A7%E9%87%8F%E5%AD%90%E8%AE%BA%E5%88%B0%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84%EF%BC%9A%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%B2%BE%E7%A1%AE%E8%A7%A3%E3%80%81%E7%B1%BB%E6%B0%A2%E6%A0%87%E5%BA%A6%E5%BE%8B%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%95%88%E5%BA%94/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E4%BB%8E%E6%97%A7%E9%87%8F%E5%AD%90%E8%AE%BA%E5%88%B0%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84%EF%BC%9A%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%B2%BE%E7%A1%AE%E8%A7%A3%E3%80%81%E7%B1%BB%E6%B0%A2%E6%A0%87%E5%BA%A6%E5%BE%8B%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%95%88%E5%BA%94/">从旧量子论到多电子原子结构：氢原子精确解、类氢标度律与交换效应</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script defer="">
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(76, 213, 153, 0.6)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 -  <a target="_blank" rel="noopener" href="https://github.com/kotokowa">kotokowa</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
+  <div class="dark-content">
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
+  </div>
+</div>
+
+<script defer="">
+  $(function() {
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
+    if (isDark) {
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
+    }
+  }
+</script>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer="">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script defer="" src="/physics/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/physics/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js class="" server="netease" type="playlist" id="17453633682" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="none" volume="0.4" list-folded="true">
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <!-- 背景彩带 -->
+    
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
+    
+
+    <script src="/physics/js/utils/index.js"></script>
+    <script src="/physics/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/physics/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/physics/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/physics/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/physics/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/physics/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax="">
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+        <script type="text/javascript">
+  var utteranceComment = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceComment.Theme = 'github-dark';
+    } else {
+      utteranceComment.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceComment.Theme)
+      utterances.setAttribute('repo', 'kotokowa/physics-utterances')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceComment.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+      
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script async="" src="/physics/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>

@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>热辐射、光子与物质波：量子化的诞生与波粒二象性 | tianyi</title>
+  <title>粒子物理标准模型与夸克-轻子基本作用 | tianyi</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,21 +355,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic4.zhimg.com/80/v2-cde50ed4c355bb20693b266edd0bd0bd_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        热辐射、光子与物质波：量子化的诞生与波粒二象性
+        粒子物理标准模型与夸克-轻子基本作用
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2026-01-27 |
+          <i class="fas fa-calendar"></i> Published in：2026-01-28 |
         </span>
       
 
@@ -392,7 +392,787 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1>粒子物理标准模型与夸克-轻子基本作用</h1>
+<h2 id="总览">总览</h2>
+<p>物质结构可由分子, 原子, 原子核(核子+电子), 进一步下探到夸克与轻子. 一个核心思想是: 若要求理论在局域规范变换下形式不变, 就必须引入规范场, 其量子对应规范玻色子. 电磁, 电弱, 强相互作用都可纳入这一框架, 并可用交换规范玻色子的图像(Feynman 图)来理解相互作用过程.</p>
+<p>另一个开放问题是: 是否存在统一理论(TOE), 以及把基本粒子视为零维"点"会引发的发散困难如何解决.</p>
+<h2 id="电磁学中的规范变换">电磁学中的规范变换</h2>
+<p>引入电磁势 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>A</mi><mo separator="true">,</mo><mi>φ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(A,\varphi)</annotation></semantics></math></span></span>, 场强满足:</p>
+
+
+$$
+\displaystyle B = \nabla \times A
+$$
+
+
+
+
+$$
+\displaystyle E = -\nabla \varphi - \frac{1}{c}\frac{\partial A}{\partial t}
+$$
+
+
+<p>对任意标量函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\Lambda(r,t)</annotation></semantics></math></span></span>, 规范变换为:</p>
+
+
+$$
+\displaystyle A \to A' = A + \nabla \Lambda
+$$
+
+
+
+
+$$
+\displaystyle \varphi \to \varphi' = \varphi - \frac{1}{c}\frac{\partial \Lambda}{\partial t}
+$$
+
+
+<p>由此可验证:</p>
+
+
+$$
+\displaystyle B' = \nabla \times A' = B
+$$
+
+
+
+
+$$
+\displaystyle E' = -\nabla \varphi' - \frac{1}{c}\frac{\partial A'}{\partial t} = E
+$$
+
+
+<p>这表明电磁理论具有规范不变性.</p>
+<h2 id="电荷与电磁作用-从相位到局域规范">电荷与电磁作用: 从相位到局域规范</h2>
+<p>量子力学中观测量依赖 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Ψ</mi><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|\Psi|^2</annotation></semantics></math></span></span>, 因此相位变换不改变物理结果. 区分两类变换:</p>
+<ol>
+<li>整体规范变换: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Λ</mi></mrow><annotation encoding="application/x-tex">\Lambda</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(r,t)</annotation></semantics></math></span></span> 无关.</li>
+<li>局域规范变换: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>=</mo><mi mathvariant="normal">Λ</mi><mo>(</mo><mi>r</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\Lambda = \Lambda(r,t)</annotation></semantics></math></span></span>.</li>
+</ol>
+<h3 id="非相对论-Schrodinger-方程与最小耦合">非相对论: Schrödinger 方程与最小耦合</h3>
+<p>自由粒子的 Schrödinger 方程在整体规范变换下不变, 但在局域规范变换下一般不保持形式不变. 将其改写为带电粒子在外场 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>A</mi><mo separator="true">,</mo><mi>φ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(A,\varphi)</annotation></semantics></math></span></span> 中的方程后, 才能在如下联动的局域规范变换下保持不变:</p>
+
+
+$$
+\displaystyle \Psi(r,t) \to \Psi'(r,t) = e^{i\Lambda(r,t)}\Psi(r,t)
+$$
+
+
+
+
+$$
+\displaystyle A \to A' = A + \nabla \Lambda(r,t)
+$$
+
+
+
+
+$$
+\displaystyle \varphi \to \varphi' = \varphi - \frac{1}{c}\frac{\partial \Lambda(r,t)}{\partial t}
+$$
+
+
+<p>实现这一点的关键是最小耦合替换, 它把"引入规范场"简化为算符替换:</p>
+
+
+$$
+\displaystyle i\frac{\partial}{\partial t} \to i\frac{\partial}{\partial t} - e\varphi
+$$
+
+
+
+
+$$
+\displaystyle \hat p = -i\nabla \to -i\nabla - \frac{e}{c}A
+$$
+
+
+<p>结论: 若要求局域规范对称性, 就必须引入与电荷耦合的规范场 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>A</mi><mo separator="true">,</mo><mi>φ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(A,\varphi)</annotation></semantics></math></span></span>, 其量子对应规范玻色子(光子).</p>
+<h3 id="相对论-Dirac-方程-Pauli-矩阵与规范耦合">相对论: Dirac 方程, Pauli 矩阵与规范耦合</h3>
+<p>相对论性电子满足 Dirac 方程. 记 Pauli 矩阵为:</p>
+
+
+$$
+\displaystyle \sigma_1 =
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix},
+\quad
+\sigma_2 =
+\begin{pmatrix}
+0 &amp; -i \\
+i &amp; 0
+\end{pmatrix},
+\quad
+\sigma_3 =
+\begin{pmatrix}
+1 &amp; 0 \\
+0 &amp; -1
+\end{pmatrix}
+$$
+
+
+<p>常用的 Dirac 矩阵分块表示为:</p>
+
+
+$$
+\displaystyle \alpha =
+\begin{pmatrix}
+0 &amp; \sigma \\
+\sigma &amp; 0
+\end{pmatrix},
+\quad
+\beta =
+\begin{pmatrix}
+I &amp; 0 \\
+0 &amp; -I
+\end{pmatrix}
+$$
+
+
+<p>自由 Dirac 方程可写为(一种常见形式):</p>
+
+
+$$
+\displaystyle \left(i\frac{\partial}{\partial t} - c\alpha\cdot \hat p - \beta mc^2\right)\Psi(r,t) = 0
+$$
+
+
+<p>考虑电磁场存在时, 同样通过最小耦合替换引入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>A</mi><mo separator="true">,</mo><mi>φ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(A,\varphi)</annotation></semantics></math></span></span>, 才能保持局域规范不变性:</p>
+
+
+$$
+\displaystyle \left(i\frac{\partial}{\partial t} - e\varphi - \alpha\cdot (c\hat p - eA) - \beta mc^2\right)\Psi(r,t) = 0
+$$
+
+
+<h2 id="用群描述规范对称性-以及-Noether-观点">用群描述规范对称性, 以及 Noether 观点</h2>
+<p>群: 定义了乘法并满足封闭性, 结合律, 单位元, 逆元的集合. 乘法可交换为 Abel 群, 否则为非 Abel 群.</p>
+<p>幺正群 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U(n)</annotation></semantics></math></span></span>: 满足</p>
+
+
+$$
+\displaystyle u^\dagger u = I
+$$
+
+
+<p>的幺正矩阵集合, 独立参数个数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">n^2</annotation></semantics></math></span></span>.</p>
+<p>特殊幺正群 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>U</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">SU(n)</annotation></semantics></math></span></span>: 行列式为 1 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U(n)</annotation></semantics></math></span></span> 子群, 独立参数个数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>n</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n^2-1</annotation></semantics></math></span></span>.</p>
+<p>波函数相位变换构成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">U(1)</annotation></semantics></math></span></span>, 且为 Abel 群. 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">U(1)</annotation></semantics></math></span></span> 的独立参数个数一致, 电磁相互作用对应 1 个规范玻色子(光子). 对称性与守恒量之间的联系可由 Noether 思想概括为: 连续对称性对应守恒律.</p>
+<h2 id="非-Abel-规范理论-电弱统一-与-QCD">非 Abel 规范理论, 电弱统一, 与 QCD</h2>
+<h3 id="非-Abel-规范理论的动机">非 Abel 规范理论的动机</h3>
+<p>可把相互作用视作局域规范对称性要求下引入的规范场. 非 Abel 规范理论的代表性思想来源之一是 Yang-Mills: 从同位旋守恒与同位旋的规范不变性出发构建框架.</p>
+<h3 id="电弱统一-SU-2-times-U-1">电弱统一: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>U</mi><mo>(</mo><mn>2</mn><mo>)</mo><mo>×</mo><mi>U</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">SU(2)\times U(1)</annotation></semantics></math></span></span></h3>
+<p>电弱规范群为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>U</mi><mo>(</mo><mn>2</mn><mo>)</mo><mo>×</mo><mi>U</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">SU(2)\times U(1)</annotation></semantics></math></span></span>, 独立参数数目为 4, 对应规范玻色子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>W</mi><mo>±</mo></msup></mrow><annotation encoding="application/x-tex">W^\pm</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Z</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">Z^0</annotation></semantics></math></span></span>, 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span>.</p>
+<p>中间玻色子质量给出量级:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>W</mi></msub><mo>≈</mo><mn>8</mn><mn>0</mn><mi mathvariant="normal">.</mi><mn>4</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">G</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">M_W \approx 80.4\,\text{GeV}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>Z</mi></msub><mo>≈</mo><mn>9</mn><mn>1</mn><mi mathvariant="normal">.</mi><mn>2</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">G</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">M_Z \approx 91.2\,\text{GeV}</annotation></semantics></math></span></span>.</p>
+<p>关键点:</p>
+<ol>
+<li>预言中性流弱作用(相对比 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 衰变的带电流过程).</li>
+<li>Higgs 机制: 真空对称性自发破缺使规范玻色子质量非零.</li>
+<li>真空相变: 真空从高对称态到低对称态的转变过程.</li>
+</ol>
+<h3 id="QCD-SU-3-与渐近自由">QCD: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>U</mi><mo>(</mo><mn>3</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">SU(3)</annotation></semantics></math></span></span> 与渐近自由</h3>
+<p>强相互作用由 QCD 描述, 规范群为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>U</mi><mo>(</mo><mn>3</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">SU(3)</annotation></semantics></math></span></span>, 独立参数数目为 8, 对应 8 种胶子(带色荷).</p>
+<p>一回路近似下强耦合随能标跑动可写为:</p>
+
+
+$$
+\displaystyle \alpha_s(Q^2) = \frac{4\pi}{\left(11-\frac{2}{3}n_f\right)\ln\left(\frac{Q^2}{\Lambda^2}\right)}
+$$
+
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>n</mi><mi>f</mi></msub></mrow><annotation encoding="application/x-tex">n_f</annotation></semantics></math></span></span> 为夸克味数(常取 3 到 6), 参数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Λ</mi><mo>≈</mo><mn>2</mn><mn>2</mn><mn>0</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">M</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">\Lambda \approx 220\,\text{MeV}</annotation></semantics></math></span></span>.</p>
+<h3 id="夸克间势模型-线性束缚-与力尺度">夸克间势模型, 线性束缚, 与力尺度</h3>
+<p>夸克之间相互作用可用唯象势模型描述:</p>
+
+
+$$
+\displaystyle V(\text{colour}) = -\frac{4}{3}\frac{\alpha_s}{r} + kr,
+\quad
+k = 0.86\,\text{GeV/fm}
+$$
+
+
+<p>短距离时与库仑势类似呈 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">1/r</annotation></semantics></math></span></span> 依赖, 长距离时线性项主导, 该项与禁闭现象相关.</p>
+<p>线性项主导时吸引力近似为:</p>
+
+
+$$
+\displaystyle f_c = \frac{dV(\text{colour})}{dr} \approx k = 0.86\,\text{GeV/fm} \approx 1.36\times 10^{10}\,\text{erg/cm}
+$$
+
+
+<p>一吨物体重量估算为:</p>
+
+
+$$
+\displaystyle f_T = 10^6\,\text{g}\times 9.8\times 10^2\,\text{cm/s}^2 = 9.8\times 10^8\,\text{erg/cm}
+$$
+
+
+<p>对比可得:</p>
+
+
+$$
+\displaystyle \frac{f_c}{f_T} \approx 10
+$$
+
+
+<p>这提供了强作用在 fm 尺度上极强的直观量级.</p>
+<h3 id="基本相互作用与规范玻色子对照">基本相互作用与规范玻色子对照</h3>
+<table>
+<thead>
+<tr>
+<th>相互作用</th>
+<th>规范群</th>
+<th>是否自发破缺</th>
+<th>规范玻色子</th>
+<th>质量特征</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>电磁</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">U(1)</annotation></semantics></math></span></span></td>
+<td>否</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span></td>
+<td>零质量</td>
+</tr>
+<tr>
+<td>电弱</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>U</mi><mo>(</mo><mn>2</mn><mo>)</mo><mo>×</mo><mi>U</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">SU(2)\times U(1)</annotation></semantics></math></span></span></td>
+<td>发生</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi><mo separator="true">,</mo><msup><mi>W</mi><mo>±</mo></msup><mo separator="true">,</mo><msup><mi>Z</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">\gamma, W^\pm, Z^0</annotation></semantics></math></span></span></td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span> 零质量, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>W</mi><mo>±</mo></msup><mo separator="true">,</mo><msup><mi>Z</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">W^\pm, Z^0</annotation></semantics></math></span></span> 非零质量</td>
+</tr>
+<tr>
+<td>强</td>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mi>U</mi><mo>(</mo><mn>3</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">SU(3)</annotation></semantics></math></span></span></td>
+<td>否</td>
+<td>8 种胶子</td>
+<td>零质量</td>
+</tr>
+</tbody>
+</table>
+<p>需要注意: 胶子零质量, 但强作用表现为短程, 与色禁闭和色力线结构相关. "质量的起源"既涉及 Higgs 机制也涉及强相互作用的束缚能等更深层问题.</p>
+<h2 id="标准模型的粒子组成">标准模型的粒子组成</h2>
+<p>物质费米子分三代:</p>
+<ol>
+<li>夸克: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>u</mi><mo separator="true">,</mo><mi>d</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(u,d)</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>c</mi><mo separator="true">,</mo><mi>s</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(c,s)</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>t</mi><mo separator="true">,</mo><mi>b</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(t,b)</annotation></semantics></math></span></span>.</li>
+<li>轻子: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>e</mi><mo separator="true">,</mo><msub><mi>ν</mi><mi>e</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(e,\nu_e)</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>μ</mi><mo separator="true">,</mo><msub><mi>ν</mi><mi>μ</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(\mu,\nu_\mu)</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>τ</mi><mo separator="true">,</mo><msub><mi>ν</mi><mi>τ</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">(\tau,\nu_\tau)</annotation></semantics></math></span></span>.</li>
+</ol>
+<p>规范玻色子: 胶子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span>, 光子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span></span>, 以及 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>W</mi><mo>±</mo></msup></mrow><annotation encoding="application/x-tex">W^\pm</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Z</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">Z^0</annotation></semantics></math></span></span>.<br>
+标量玻色子: Higgs 粒子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span></span>.</p>
+<p>把颜色, 反粒子, 自旋等自由度一起计入, 基本自由度数目可达到几十到六十余个, 可作为"基本砖块"计数的直观图像.</p>
+<h2 id="超出标准模型的动机-点粒子导致的发散">超出标准模型的动机: 点粒子导致的发散</h2>
+<p>把基本粒子视为零维点会带来自能发散困难. 以点电子的经典电磁自能为例, 可出现如下发散型积分结构:</p>
+
+
+$$
+\displaystyle \int_0^\infty r^2 E^2\,dr \sim \int_0^\infty r^{-2}\,dr \sim \left.\frac{1}{r}\right|_\infty^0 \to \infty
+$$
+
+
+<p>在量子电动力学中, 质量修正也对高能截断敏感, 典型形式为:</p>
+
+
+$$
+\displaystyle \delta_m \propto \alpha m_{0e}\ln\left(\frac{\Lambda}{m_{0e}}\right)
+$$
+
+
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Λ</mi></mrow><annotation encoding="application/x-tex">\Lambda</annotation></semantics></math></span></span> 可理解为虚光子动量截断. 这类现象支持一种直觉: 基本粒子可能不是严格零维点, 可能需要弦或更高维膜等更深层结构描述.</p>
+<p>此外, 若把引力也纳入统一视角, 可讨论更高能标下的超统一设想. 强与电相互作用强度之间的巨大差异, 使得分层的能标结构在物理上显得尤为关键.</p>
+<h2 id="相互作用的图像化描述-Feynman-图">相互作用的图像化描述: Feynman 图</h2>
+<p>相互作用可视为粒子交换规范玻色子. Feynman 图常用规则:</p>
+<ol>
+<li>时间轴向上(或向右).</li>
+<li>不同线型表示不同粒子类型(费米子线, 光子线, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>W</mi><mo>±</mo></msup></mrow><annotation encoding="application/x-tex">W^\pm</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Z</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">Z^0</annotation></semantics></math></span></span>, 胶子线等).</li>
+<li>正反粒子用箭头方向与时间方向关系区分.</li>
+</ol>
+<p>典型示例: 电子-正电子对通过光子中间态发生湮灭与产生过程:</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mo>+</mo></msup><mo>+</mo><msup><mi>e</mi><mo>−</mo></msup><mo>→</mo><mi>γ</mi><mo>→</mo><msup><mi>e</mi><mo>+</mo></msup><mo>+</mo><msup><mi>e</mi><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">e^+ + e^- \to \gamma \to e^+ + e^-</annotation></semantics></math></span></span>.</p>
+<h2 id="夸克与轻子间的弱作用">夸克与轻子间的弱作用</h2>
+<h3 id="带电流弱作用-beta-衰变与夸克变味">带电流弱作用: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 衰变与夸克变味</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 衰变可在多层次理解.</p>
+<ol>
+<li>核子层次:</li>
+</ol>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>→</mo><mi>p</mi><mo>+</mo><msup><mi>e</mi><mo>−</mo></msup><mo>+</mo><msub><mover accent="true"><mi>ν</mi><mo>¯</mo></mover><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">n \to p + e^- + \bar\nu_e</annotation></semantics></math></span></span>.</p>
+<ol start="2">
+<li>夸克层次: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mo>{</mo><mi>u</mi><mi>d</mi><mi>d</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">n=\{udd\}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mo>{</mo><mi>u</mi><mi>u</mi><mi>d</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">p=\{uud\}</annotation></semantics></math></span></span>, 核心为</li>
+</ol>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mo>→</mo><mi>u</mi><mo>+</mo><msup><mi>W</mi><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">d \to u + W^-</annotation></semantics></math></span></span>, 随后 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>W</mi><mo>−</mo></msup><mo>→</mo><msup><mi>e</mi><mo>−</mo></msup><mo>+</mo><msub><mover accent="true"><mi>ν</mi><mo>¯</mo></mover><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">W^- \to e^- + \bar\nu_e</annotation></semantics></math></span></span>.</p>
+<p>常见过程写法:</p>
+<ol>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>β</mi><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">\beta^-</annotation></semantics></math></span></span> 衰变:</li>
+</ol>
+
+
+$$
+\displaystyle {}^A_ZX \to {}^A_{Z+1}Y + e^- + \bar\nu_e
+$$
+
+
+<ol start="2">
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>β</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">\beta^+</annotation></semantics></math></span></span> 衰变:</li>
+</ol>
+
+
+$$
+\displaystyle {}^A_ZX \to {}^A_{Z-1}Y + e^+ + \nu_e
+$$
+
+
+<ol start="3">
+<li>电子俘获(EC), 并伴随壳层空穴弛豫产生 Auger 电子:</li>
+</ol>
+
+
+$$
+\displaystyle {}^A_ZX + e^- \to {}^A_{Z-1}Y + \nu_e
+$$
+
+
+<h3 id="中性流弱作用-中微子散射与相干增强">中性流弱作用: 中微子散射与相干增强</h3>
+<p>中微子可通过 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Z</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">Z^0</annotation></semantics></math></span></span> 交换与核子或原子核散射. 给出一个数量级估算(用于直觉尺度):</p>
+
+
+$$
+\displaystyle \sigma_{\nu(n,p)} \approx 10^{-44}\left(\frac{E_\nu}{m_ec^2}\right)^2\,\text{cm}^2
+$$
+
+
+<p>当中微子波长满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>λ</mi><mi>ν</mi></msub><mo>&gt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">\lambda_\nu &gt; R</annotation></semantics></math></span></span> 时, 可出现相干散射, 截面近似得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>A</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">A^2</annotation></semantics></math></span></span> 的增强:</p>
+
+
+$$
+\displaystyle \sigma_{\nu A} \approx 10^{-45}\left(\frac{E_\nu}{m_ec^2}\right)^2 A^2\,\text{cm}^2
+$$
+
+
+<p>这种过程在引力塌缩型超新星爆发等天体环境中具有重要意义.</p>
+<h3 id="轻子数守恒">轻子数守恒</h3>
+<p>弱作用过程中, 轻子数分别守恒: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">L_e</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>μ</mi></msub></mrow><annotation encoding="application/x-tex">L_\mu</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>τ</mi></msub></mrow><annotation encoding="application/x-tex">L_\tau</annotation></semantics></math></span></span>. 典型赋值如下:</p>
+<table>
+<thead>
+<tr>
+<th>粒子</th>
+<th><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">L_e</annotation></semantics></math></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>μ</mi></msub></mrow><annotation encoding="application/x-tex">L_\mu</annotation></semantics></math></span></span></th>
+<th><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>L</mi><mi>τ</mi></msub></mrow><annotation encoding="application/x-tex">L_\tau</annotation></semantics></math></span></span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">e^-</annotation></semantics></math></span></span></td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">e^+</annotation></semantics></math></span></span></td>
+<td>-1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ν</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">\nu_e</annotation></semantics></math></span></span></td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>ν</mi><mo>¯</mo></mover><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">\bar\nu_e</annotation></semantics></math></span></span></td>
+<td>-1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>μ</mi><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">\mu^-</annotation></semantics></math></span></span></td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>μ</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">\mu^+</annotation></semantics></math></span></span></td>
+<td>0</td>
+<td>-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ν</mi><mi>μ</mi></msub></mrow><annotation encoding="application/x-tex">\nu_\mu</annotation></semantics></math></span></span></td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>ν</mi><mo>¯</mo></mover><mi>μ</mi></msub></mrow><annotation encoding="application/x-tex">\bar\nu_\mu</annotation></semantics></math></span></span></td>
+<td>0</td>
+<td>-1</td>
+<td>0</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>τ</mi><mo>−</mo></msup></mrow><annotation encoding="application/x-tex">\tau^-</annotation></semantics></math></span></span></td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>τ</mi><mo>+</mo></msup></mrow><annotation encoding="application/x-tex">\tau^+</annotation></semantics></math></span></span></td>
+<td>0</td>
+<td>0</td>
+<td>-1</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ν</mi><mi>τ</mi></msub></mrow><annotation encoding="application/x-tex">\nu_\tau</annotation></semantics></math></span></span></td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>ν</mi><mo>¯</mo></mover><mi>τ</mi></msub></mrow><annotation encoding="application/x-tex">\bar\nu_\tau</annotation></semantics></math></span></span></td>
+<td>0</td>
+<td>0</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<p>这解释了为何太阳主要产生 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ν</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">\nu_e</annotation></semantics></math></span></span>, 而反应堆主要产生 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>ν</mi><mo>¯</mo></mover><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">\bar\nu_e</annotation></semantics></math></span></span>.</p>
+<h3 id="宇称不守恒-theta-tau-之谜与极化-60-text-Co-实验">宇称不守恒: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span></span> 之谜与极化 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>6</mn><mn>0</mn></mrow></msup><mtext><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi></mtext></mrow><annotation encoding="application/x-tex">^{60}\text{Co}</annotation></semantics></math></span></span> 实验</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span></span>-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span></span> 之谜涉及相同质量与寿命但不同衰变道的粒子, 典型写法包括:</p>
+
+
+$$
+\displaystyle \tau^+ \to 2\pi^+ + \pi^- \quad \text{or}\quad 2\pi^0 + \pi^+
+$$
+
+
+
+
+$$
+\displaystyle \theta^+ \to \pi^+ + \pi^0
+$$
+
+
+<p>在已知 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span></span> 介子宇称为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span></span> 的前提下, 末态宇称推断出现冲突, 引发对弱作用宇称守恒性的质疑. 提出弱作用宇称不守恒的设想后, 通过极化 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>6</mn><mn>0</mn></mrow></msup><mtext><mi mathvariant="normal">C</mi><mi mathvariant="normal">o</mi></mtext></mrow><annotation encoding="application/x-tex">^{60}\text{Co}</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 衰变实验检验:</p>
+
+
+$$
+\displaystyle {}^{60}\text{Co} \to {}^{60}\text{Ni} + e^- + \bar\nu_e
+$$
+
+
+<p>实验结果支持弱作用宇称不守恒, 并与中微子的手征性质联系: 正中微子呈左手, 反中微子呈右手(在 Dirac 中微子语境下的表述).</p>
+<h3 id="CP-守恒性讨论与-CP-破缺线索">CP 守恒性讨论与 CP 破缺线索</h3>
+<p>一个常见的澄清是: 某些电磁装置在通电流后看似出现 P 不对称偏转, 但若把磁棒内部分子环流的 P 变换一并考虑, 仍可保持电磁作用的 P 守恒.</p>
+<p>弱作用中可进一步讨论 CP 变换. 例如:</p>
+
+
+$$
+\displaystyle \pi^+ \to \mu^+ + \nu_\mu,
+\quad
+\pi^- \to \mu^- + \bar\nu_\mu
+$$
+
+
+<p>并指出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span></span> 介子衰变中发现 CP 破缺的事实, 以及与第 3 代夸克引入和重子起源问题之间的关联线索.</p>
+<h2 id="夸克与强作用-渐近自由-禁闭-与低能描述">夸克与强作用: 渐近自由, 禁闭, 与低能描述</h2>
+<p>强作用两大特点:</p>
+<ol>
+<li>渐近自由, 可由 QCD 给出理论说明.</li>
+<li>色禁闭, 未发现带色强子, 如何从 QCD 严格推出禁闭仍是挑战.</li>
+</ol>
+<p>低能强力描述的两条路径:</p>
+<ol>
+<li>格点 QCD(LQCD) 的数值计算.</li>
+<li>唯象模型, 例如组分夸克模型与口袋模型.</li>
+</ol>
+<h3 id="口袋模型的基本关系与数量级">口袋模型的基本关系与数量级</h3>
+<p>口袋模型引入口袋常数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>, 表示"张开口袋所需能量密度". 一种典型写法为:</p>
+
+
+$$
+\displaystyle M(R) = M_0(R) + \frac{4}{3}\pi R^3 B
+$$
+
+
+<p>对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi></mrow><annotation encoding="application/x-tex">R</annotation></semantics></math></span></span> 极小化:</p>
+
+
+$$
+\displaystyle \frac{dM}{dR} = 0
+$$
+
+
+<p>并在重子(核子)的估算中给出典型数量级关系:</p>
+
+
+$$
+\displaystyle M \approx \frac{4}{R} \approx 900\,\text{MeV},
+\quad
+R \approx 1\,\text{fm}
+$$
+
+
+<p>由此得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 的数量级估计:</p>
+
+
+$$
+\displaystyle B \approx 50\,\text{MeV}\cdot \text{fm}^{-3}
+$$
+
+
+<h2 id="费米子的味混合-CKM-与中微子振荡">费米子的味混合: CKM 与中微子振荡</h2>
+<h3 id="相互作用本征态与质量本征态">相互作用本征态与质量本征态</h3>
+<p>味本征态(相互作用本征态)与质量本征态(能量本征态)不一致会导致味混合. 定态波函数形式为:</p>
+
+
+$$
+\displaystyle \Psi(r,t) = \psi(r)e^{-iEt/\hbar}
+$$
+
+
+<p>定态: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 确定, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Ψ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|\Psi|</annotation></semantics></math></span></span> 不变.<br>
+非定态: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi></mrow><annotation encoding="application/x-tex">E</annotation></semantics></math></span></span> 不定, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Ψ</mi><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|\Psi|</annotation></semantics></math></span></span> 可随时间变化.</p>
+<h3 id="夸克味混合-CKM-矩阵近似">夸克味混合: CKM 矩阵近似</h3>
+<p>夸克之间的弱味混合可用 CKM 矩阵描述, 其近似形状接近单位矩阵:</p>
+
+
+$$
+\displaystyle U^{\text{CKM}} \approx
+\begin{pmatrix}
+0.974 &amp; 0.227 &amp; 10^{-3} \\
+-0.227 &amp; 0.973 &amp; 0.04 \\
+10^{-3} &amp; -0.04 &amp; 0.999
+\end{pmatrix}
+$$
+
+
+<h3 id="中微子味混合与-MSW-物质增强效应">中微子味混合与 MSW 物质增强效应</h3>
+<p>中微子振荡的关键点是味态叠加与传播相位差导致的味转换. 物质增强效应(MSW)的核心原因是: 正常物质中没有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>τ</mi></mrow><annotation encoding="application/x-tex">\tau</annotation></semantics></math></span></span>, 而 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ν</mi><mi>e</mi></msub></mrow><annotation encoding="application/x-tex">\nu_e</annotation></semantics></math></span></span> 与电子的散射会在有效哈密顿量中引入特殊项, 从而改变有效混合并可能增强转化.</p>
+<h3 id="太阳中微子问题与-SNO-的三类通道">太阳中微子问题与 SNO 的三类通道</h3>
+<p>SNO 使用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi></mtext></mrow><annotation encoding="application/x-tex">10^6\,\text{kg}</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>D</mi><mn>2</mn></msub><mi>O</mi></mrow><annotation encoding="application/x-tex">D_2O</annotation></semantics></math></span></span> 靶并关注 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>&gt;</mo><mn>5</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">M</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">&gt;5\,\text{MeV}</annotation></semantics></math></span></span> 区间, 通过三类反应通道区分中微子成分:</p>
+
+
+$$
+\displaystyle \text{ES:}\quad \nu_x + e^- \to \nu_x + e^-
+$$
+
+
+
+
+$$
+\displaystyle \text{CC:}\quad \nu_e + D \to e^- + 2p
+$$
+
+
+
+
+$$
+\displaystyle \text{NC:}\quad \nu_x + D \to \nu_x + n + p
+$$
+
+
+<p>通量测量示例(单位 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup><mi mathvariant="normal">/</mi><msup><mtext><mi mathvariant="normal">c</mi><mi mathvariant="normal">m</mi></mtext><mn>2</mn></msup><mtext><mi mathvariant="normal">s</mi></mtext></mrow><annotation encoding="application/x-tex">10^6/\text{cm}^2\text{s}</annotation></semantics></math></span></span>):</p>
+
+
+$$
+\displaystyle \phi_{\text{CC}} =
+\left[1.76^{+0.06}_{-0.05}(\text{stat.})^{+0.09}_{-0.09}(\text{syst.})\right]
+$$
+
+
+
+
+$$
+\displaystyle \phi_{\text{ES}} =
+\left[2.39^{+0.24}_{-0.23}(\text{stat.})^{+0.12}_{-0.12}(\text{syst.})\right]
+$$
+
+
+
+
+$$
+\displaystyle \phi_{\text{NC}} =
+\left[5.09^{+0.44}_{-0.43}(\text{stat.})^{+0.46}_{-0.43}(\text{syst.})\right]
+$$
+
+
+<p>CC 与 NC 的差异可用于揭示味转换图景.</p>
+<h3 id="中微子混合矩阵的强混合与反应堆结果">中微子混合矩阵的强混合与反应堆结果</h3>
+<p>中微子混合矩阵可显著偏离单位矩阵, 可用如下示意形状表达:</p>
+
+
+$$
+\displaystyle U \approx
+\begin{pmatrix}
+0.8 &amp; 0.5 &amp; ? \\
+0.4 &amp; 0.6 &amp; 0.7 \\
+0.4 &amp; 0.6 &amp; 0.7
+\end{pmatrix}
+$$
+
+
+<p>反应堆中微子实验给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>θ</mi><mrow><mn>1</mn><mn>3</mn></mrow></msub></mrow><annotation encoding="application/x-tex">\theta_{13}</annotation></semantics></math></span></span> 的测量示例:</p>
+
+
+$$
+\displaystyle \sin^2\theta_{13} = 0.092 \pm 0.016(\text{sta}) \pm 0.005(\text{sys})
+$$
+
+
+<h2 id="例题">例题</h2>
+<h3 id="例题-验证电磁势的规范变换不改变-E-B">例题: 验证电磁势的规范变换不改变 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo separator="true">,</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">E,B</annotation></semantics></math></span></span></h3>
+<p>题目. 给定</p>
+
+
+$$
+\displaystyle B = \nabla \times A,
+\quad
+E = -\nabla \varphi - \frac{1}{c}\frac{\partial A}{\partial t}
+$$
+
+
+<p>在变换</p>
+
+
+$$
+\displaystyle A' = A + \nabla \Lambda,
+\quad
+\varphi' = \varphi - \frac{1}{c}\frac{\partial \Lambda}{\partial t}
+$$
+
+
+<p>下证明 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>B</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mi>B</mi></mrow><annotation encoding="application/x-tex">B'=B</annotation></semantics></math></span></span> 且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>E</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">E'=E</annotation></semantics></math></span></span>.</p>
+<p>解. 直接代入.</p>
+
+
+$$
+\displaystyle B' = \nabla \times A' = \nabla \times (A+\nabla \Lambda) = \nabla \times A + \nabla \times (\nabla \Lambda) = B
+$$
+
+
+
+
+$$
+\displaystyle E' = -\nabla \varphi' - \frac{1}{c}\frac{\partial A'}{\partial t}
+= -\nabla\left(\varphi - \frac{1}{c}\frac{\partial \Lambda}{\partial t}\right)
+-\frac{1}{c}\frac{\partial}{\partial t}(A+\nabla \Lambda)
+= -\nabla \varphi - \frac{1}{c}\frac{\partial A}{\partial t} = E
+$$
+
+
+<h3 id="例题-用最小耦合写出带电粒子的动量算符">例题: 用最小耦合写出带电粒子的动量算符</h3>
+<p>题目. 说明从自由粒子的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>p</mi><mo>^</mo></mover><mo>=</mo><mo>−</mo><mi>i</mi><mi mathvariant="normal">∇</mi></mrow><annotation encoding="application/x-tex">\hat p=-i\nabla</annotation></semantics></math></span></span> 出发, 引入电磁场后应如何替换.</p>
+<p>解. 最小耦合给出:</p>
+
+
+$$
+\displaystyle \hat p \to \hat p - \frac{e}{c}A = -i\nabla - \frac{e}{c}A
+$$
+
+
+<p>并同时有能量项替换:</p>
+
+
+$$
+\displaystyle i\frac{\partial}{\partial t} \to i\frac{\partial}{\partial t} - e\varphi
+$$
+
+
+<h3 id="例题-从势模型求强作用吸引力并与一吨重量比较">例题: 从势模型求强作用吸引力并与一吨重量比较</h3>
+<p>题目. 给定</p>
+
+
+$$
+\displaystyle V(\text{colour}) = -\frac{4}{3}\frac{\alpha_s}{r} + kr,
+\quad
+k = 0.86\,\text{GeV/fm}
+$$
+
+
+<p>在大距离线性项主导时, 估算吸引力并与一吨重量比较.</p>
+<p>解. 线性项主导时:</p>
+
+
+$$
+\displaystyle f_c = \frac{dV}{dr} \approx k \approx 0.86\,\text{GeV/fm} \approx 1.36\times 10^{10}\,\text{erg/cm}
+$$
+
+
+<p>一吨重量:</p>
+
+
+$$
+\displaystyle f_T = 10^6\,\text{g}\times 9.8\times 10^2\,\text{cm/s}^2 = 9.8\times 10^8\,\text{erg/cm}
+$$
+
+
+<p>因此:</p>
+
+
+$$
+\displaystyle \frac{f_c}{f_T} \approx 10
+$$
+
+
+<h3 id="例题-相干中微子散射的-A-2-增强">例题: 相干中微子散射的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>A</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">A^2</annotation></semantics></math></span></span> 增强</h3>
+<p>题目. 给定核子尺度估算</p>
+
+
+$$
+\displaystyle \sigma_{\nu(n,p)} \approx 10^{-44}\left(\frac{E_\nu}{m_ec^2}\right)^2\,\text{cm}^2
+$$
+
+
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>λ</mi><mi>ν</mi></msub><mo>&gt;</mo><mi>R</mi></mrow><annotation encoding="application/x-tex">\lambda_\nu &gt; R</annotation></semantics></math></span></span> 发生相干散射时, 写出对原子核的截面估算并解释 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>A</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">A^2</annotation></semantics></math></span></span>.</p>
+<p>解. 相干条件下多个核子散射振幅可相干叠加, 振幅与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 成正比, 截面与振幅平方成正比, 因此出现 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>A</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">A^2</annotation></semantics></math></span></span>:</p>
+
+
+$$
+\displaystyle \sigma_{\nu A} \approx 10^{-45}\left(\frac{E_\nu}{m_ec^2}\right)^2 A^2\,\text{cm}^2
+$$
+
+
+<h3 id="例题-口袋模型中用极小化条件估计-B-的量级">例题: 口袋模型中用极小化条件估计 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 的量级</h3>
+<p>题目. 给定</p>
+
+
+$$
+\displaystyle M(R) = M_0(R) + \frac{4}{3}\pi R^3 B
+$$
+
+
+<p>并采用典型数量级 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo>≈</mo><mn>9</mn><mn>0</mn><mn>0</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">M</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">M \approx 900\,\text{MeV}</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>≈</mo><mn>1</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">R \approx 1\,\text{fm}</annotation></semantics></math></span></span>, 估算 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 的量级.</p>
+<p>解. 把体能项视为主要贡献的量级估算, 有</p>
+
+
+$$
+\displaystyle \frac{4}{3}\pi R^3 B \sim M
+$$
+
+
+<p>代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>≈</mo><mn>1</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">f</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">R\approx 1\,\text{fm}</annotation></semantics></math></span></span> 得</p>
+
+
+$$
+\displaystyle B \sim \frac{3}{4\pi}\frac{M}{R^3} \sim \text{几十}\,\text{MeV}\cdot \text{fm}^{-3}
+$$
+
+
+<p>与给出的典型估计</p>
+
+
+$$
+\displaystyle B \approx 50\,\text{MeV}\cdot \text{fm}^{-3}
+$$
+
+
+<p>一致.</p>
+
       </div>
       <div class="post-tags-categories">
         
@@ -417,7 +1197,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/YuanZiWuLi/7/" target="_blank" title="热辐射、光子与物质波：量子化的诞生与波粒二象性">https://kotokowa.github.io/physics/YuanZiWuLi/7/</a>
+    <a href="/physics/YuanZiWuLi/7/" target="_blank" title="粒子物理标准模型与夸克-轻子基本作用">https://kotokowa.github.io/physics/YuanZiWuLi/7/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -435,43 +1215,23 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/physics/YuanZiWuLi/6/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">热辐射、光子与物质波：量子化的诞生与波粒二象性</div>
-      </div>
-      
-      <!-- <div class="content">
-        
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/YuanZiWuLi/%E7%83%AD%E8%BE%90%E5%B0%84%E3%80%81%E5%85%89%E5%AD%90%E4%B8%8E%E7%89%A9%E8%B4%A8%E6%B3%A2%EF%BC%9A%E9%87%8F%E5%AD%90%E5%8C%96%E7%9A%84%E8%AF%9E%E7%94%9F%E4%B8%8E%E6%B3%A2%E7%B2%92%E4%BA%8C%E8%B1%A1%E6%80%A7/" class="post-nav-link">
+    <a href="/physics/YuanZiWuLi/%E6%A0%B8%E5%90%88%E6%88%90%E4%B8%8E%E5%BC%BA%E5%AD%90%E5%AF%B9%E7%A7%B0%E6%80%A7/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">热辐射、光子与物质波：量子化的诞生与波粒二象性</div>
+        <div class="title-text">核合成与强子对称性</div>
       </div>
       <!-- <div class="content">
-        热辐射、光子与物质波：量子化的诞生与波粒二象性
-辐射场的定量描述
-分布函数与能量密度
-
-用分布函数 f(ν,k^,r,t
+        核合成与强子对称性
+核素起源与核合成
+这一部分回答一个问题: 宇宙中的元素从何而来. 关键结论是: 轻元素主要来自早期宇
       </div> -->
     </a>
   </div>
@@ -589,7 +1349,7 @@
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">粒子物理标准模型与夸克-轻子基本作用</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E8%A7%88"><span class="toc-text">总览</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E7%A3%81%E5%AD%A6%E4%B8%AD%E7%9A%84%E8%A7%84%E8%8C%83%E5%8F%98%E6%8D%A2"><span class="toc-text">电磁学中的规范变换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%B5%E8%8D%B7%E4%B8%8E%E7%94%B5%E7%A3%81%E4%BD%9C%E7%94%A8-%E4%BB%8E%E7%9B%B8%E4%BD%8D%E5%88%B0%E5%B1%80%E5%9F%9F%E8%A7%84%E8%8C%83"><span class="toc-text">电荷与电磁作用: 从相位到局域规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E7%9B%B8%E5%AF%B9%E8%AE%BA-Schrodinger-%E6%96%B9%E7%A8%8B%E4%B8%8E%E6%9C%80%E5%B0%8F%E8%80%A6%E5%90%88"><span class="toc-text">非相对论: Schrödinger 方程与最小耦合</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%AE%BA-Dirac-%E6%96%B9%E7%A8%8B-Pauli-%E7%9F%A9%E9%98%B5%E4%B8%8E%E8%A7%84%E8%8C%83%E8%80%A6%E5%90%88"><span class="toc-text">相对论: Dirac 方程, Pauli 矩阵与规范耦合</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E7%BE%A4%E6%8F%8F%E8%BF%B0%E8%A7%84%E8%8C%83%E5%AF%B9%E7%A7%B0%E6%80%A7-%E4%BB%A5%E5%8F%8A-Noether-%E8%A7%82%E7%82%B9"><span class="toc-text">用群描述规范对称性, 以及 Noether 观点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E-Abel-%E8%A7%84%E8%8C%83%E7%90%86%E8%AE%BA-%E7%94%B5%E5%BC%B1%E7%BB%9F%E4%B8%80-%E4%B8%8E-QCD"><span class="toc-text">非 Abel 规范理论, 电弱统一, 与 QCD</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E-Abel-%E8%A7%84%E8%8C%83%E7%90%86%E8%AE%BA%E7%9A%84%E5%8A%A8%E6%9C%BA"><span class="toc-text">非 Abel 规范理论的动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%BC%B1%E7%BB%9F%E4%B8%80-SU-2-times-U-1"><span class="toc-text">电弱统一: SU(2)×U(1)SU(2)\times U(1)SU(2)×U(1)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#QCD-SU-3-%E4%B8%8E%E6%B8%90%E8%BF%91%E8%87%AA%E7%94%B1"><span class="toc-text">QCD: SU(3)SU(3)SU(3) 与渐近自由</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B8%E5%85%8B%E9%97%B4%E5%8A%BF%E6%A8%A1%E5%9E%8B-%E7%BA%BF%E6%80%A7%E6%9D%9F%E7%BC%9A-%E4%B8%8E%E5%8A%9B%E5%B0%BA%E5%BA%A6"><span class="toc-text">夸克间势模型, 线性束缚, 与力尺度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E4%B8%8E%E8%A7%84%E8%8C%83%E7%8E%BB%E8%89%B2%E5%AD%90%E5%AF%B9%E7%85%A7"><span class="toc-text">基本相互作用与规范玻色子对照</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%87%E5%87%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E7%B2%92%E5%AD%90%E7%BB%84%E6%88%90"><span class="toc-text">标准模型的粒子组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B6%85%E5%87%BA%E6%A0%87%E5%87%86%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%8A%A8%E6%9C%BA-%E7%82%B9%E7%B2%92%E5%AD%90%E5%AF%BC%E8%87%B4%E7%9A%84%E5%8F%91%E6%95%A3"><span class="toc-text">超出标准模型的动机: 点粒子导致的发散</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E7%9A%84%E5%9B%BE%E5%83%8F%E5%8C%96%E6%8F%8F%E8%BF%B0-Feynman-%E5%9B%BE"><span class="toc-text">相互作用的图像化描述: Feynman 图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%B8%E5%85%8B%E4%B8%8E%E8%BD%BB%E5%AD%90%E9%97%B4%E7%9A%84%E5%BC%B1%E4%BD%9C%E7%94%A8"><span class="toc-text">夸克与轻子间的弱作用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%A6%E7%94%B5%E6%B5%81%E5%BC%B1%E4%BD%9C%E7%94%A8-beta-%E8%A1%B0%E5%8F%98%E4%B8%8E%E5%A4%B8%E5%85%8B%E5%8F%98%E5%91%B3"><span class="toc-text">带电流弱作用: β\betaβ 衰变与夸克变味</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%80%A7%E6%B5%81%E5%BC%B1%E4%BD%9C%E7%94%A8-%E4%B8%AD%E5%BE%AE%E5%AD%90%E6%95%A3%E5%B0%84%E4%B8%8E%E7%9B%B8%E5%B9%B2%E5%A2%9E%E5%BC%BA"><span class="toc-text">中性流弱作用: 中微子散射与相干增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%BB%E5%AD%90%E6%95%B0%E5%AE%88%E6%81%92"><span class="toc-text">轻子数守恒</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%87%E7%A7%B0%E4%B8%8D%E5%AE%88%E6%81%92-theta-tau-%E4%B9%8B%E8%B0%9C%E4%B8%8E%E6%9E%81%E5%8C%96-60-text-Co-%E5%AE%9E%E9%AA%8C"><span class="toc-text">宇称不守恒: θ\thetaθ-τ\tauτ 之谜与极化 60Co^{60}\text{Co}​60​​Co 实验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CP-%E5%AE%88%E6%81%92%E6%80%A7%E8%AE%A8%E8%AE%BA%E4%B8%8E-CP-%E7%A0%B4%E7%BC%BA%E7%BA%BF%E7%B4%A2"><span class="toc-text">CP 守恒性讨论与 CP 破缺线索</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%B8%E5%85%8B%E4%B8%8E%E5%BC%BA%E4%BD%9C%E7%94%A8-%E6%B8%90%E8%BF%91%E8%87%AA%E7%94%B1-%E7%A6%81%E9%97%AD-%E4%B8%8E%E4%BD%8E%E8%83%BD%E6%8F%8F%E8%BF%B0"><span class="toc-text">夸克与强作用: 渐近自由, 禁闭, 与低能描述</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%A3%E8%A2%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%85%B3%E7%B3%BB%E4%B8%8E%E6%95%B0%E9%87%8F%E7%BA%A7"><span class="toc-text">口袋模型的基本关系与数量级</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%B9%E7%B1%B3%E5%AD%90%E7%9A%84%E5%91%B3%E6%B7%B7%E5%90%88-CKM-%E4%B8%8E%E4%B8%AD%E5%BE%AE%E5%AD%90%E6%8C%AF%E8%8D%A1"><span class="toc-text">费米子的味混合: CKM 与中微子振荡</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E6%9C%AC%E5%BE%81%E6%80%81%E4%B8%8E%E8%B4%A8%E9%87%8F%E6%9C%AC%E5%BE%81%E6%80%81"><span class="toc-text">相互作用本征态与质量本征态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B8%E5%85%8B%E5%91%B3%E6%B7%B7%E5%90%88-CKM-%E7%9F%A9%E9%98%B5%E8%BF%91%E4%BC%BC"><span class="toc-text">夸克味混合: CKM 矩阵近似</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%BE%AE%E5%AD%90%E5%91%B3%E6%B7%B7%E5%90%88%E4%B8%8E-MSW-%E7%89%A9%E8%B4%A8%E5%A2%9E%E5%BC%BA%E6%95%88%E5%BA%94"><span class="toc-text">中微子味混合与 MSW 物质增强效应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%AA%E9%98%B3%E4%B8%AD%E5%BE%AE%E5%AD%90%E9%97%AE%E9%A2%98%E4%B8%8E-SNO-%E7%9A%84%E4%B8%89%E7%B1%BB%E9%80%9A%E9%81%93"><span class="toc-text">太阳中微子问题与 SNO 的三类通道</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E5%BE%AE%E5%AD%90%E6%B7%B7%E5%90%88%E7%9F%A9%E9%98%B5%E7%9A%84%E5%BC%BA%E6%B7%B7%E5%90%88%E4%B8%8E%E5%8F%8D%E5%BA%94%E5%A0%86%E7%BB%93%E6%9E%9C"><span class="toc-text">中微子混合矩阵的强混合与反应堆结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-text">例题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-%E9%AA%8C%E8%AF%81%E7%94%B5%E7%A3%81%E5%8A%BF%E7%9A%84%E8%A7%84%E8%8C%83%E5%8F%98%E6%8D%A2%E4%B8%8D%E6%94%B9%E5%8F%98-E-B"><span class="toc-text">例题: 验证电磁势的规范变换不改变 E,BE,BE,B</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-%E7%94%A8%E6%9C%80%E5%B0%8F%E8%80%A6%E5%90%88%E5%86%99%E5%87%BA%E5%B8%A6%E7%94%B5%E7%B2%92%E5%AD%90%E7%9A%84%E5%8A%A8%E9%87%8F%E7%AE%97%E7%AC%A6"><span class="toc-text">例题: 用最小耦合写出带电粒子的动量算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-%E4%BB%8E%E5%8A%BF%E6%A8%A1%E5%9E%8B%E6%B1%82%E5%BC%BA%E4%BD%9C%E7%94%A8%E5%90%B8%E5%BC%95%E5%8A%9B%E5%B9%B6%E4%B8%8E%E4%B8%80%E5%90%A8%E9%87%8D%E9%87%8F%E6%AF%94%E8%BE%83"><span class="toc-text">例题: 从势模型求强作用吸引力并与一吨重量比较</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-%E7%9B%B8%E5%B9%B2%E4%B8%AD%E5%BE%AE%E5%AD%90%E6%95%A3%E5%B0%84%E7%9A%84-A-2-%E5%A2%9E%E5%BC%BA"><span class="toc-text">例题: 相干中微子散射的 A2A^2A​2​​ 增强</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98-%E5%8F%A3%E8%A2%8B%E6%A8%A1%E5%9E%8B%E4%B8%AD%E7%94%A8%E6%9E%81%E5%B0%8F%E5%8C%96%E6%9D%A1%E4%BB%B6%E4%BC%B0%E8%AE%A1-B-%E7%9A%84%E9%87%8F%E7%BA%A7"><span class="toc-text">例题: 口袋模型中用极小化条件估计 BBB 的量级</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -615,6 +1375,69 @@
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/7/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-cde50ed4c355bb20693b266edd0bd0bd_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-cde50ed4c355bb20693b266edd0bd0bd_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/7/">粒子物理标准模型与夸克-轻子基本作用</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E6%A0%B8%E5%90%88%E6%88%90%E4%B8%8E%E5%BC%BA%E5%AD%90%E5%AF%B9%E7%A7%B0%E6%80%A7/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" class="lazyload placeholder" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E6%A0%B8%E5%90%88%E6%88%90%E4%B8%8E%E5%BC%BA%E5%AD%90%E5%AF%B9%E7%A7%B0%E6%80%A7/">核合成与强子对称性</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E5%8E%9F%E5%AD%90%E6%A0%B8%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8%E3%80%81%E6%94%BE%E5%B0%84%E6%80%A7%E3%80%81%E6%A0%B8%E5%8F%8D%E5%BA%94%E4%B8%8E%E6%A0%B8%E6%A8%A1%E5%9E%8B/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E5%8E%9F%E5%AD%90%E6%A0%B8%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8%E3%80%81%E6%94%BE%E5%B0%84%E6%80%A7%E3%80%81%E6%A0%B8%E5%8F%8D%E5%BA%94%E4%B8%8E%E6%A0%B8%E6%A8%A1%E5%9E%8B/">原子核基本性质、放射性、核反应与核模型</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -655,69 +1478,6 @@
                 
               </div>
               <a class="post-title" href="/physics/YuanZiWuLi/%E4%BB%8E%E6%97%A7%E9%87%8F%E5%AD%90%E8%AE%BA%E5%88%B0%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84%EF%BC%9A%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%B2%BE%E7%A1%AE%E8%A7%A3%E3%80%81%E7%B1%BB%E6%B0%A2%E6%A0%87%E5%BA%A6%E5%BE%8B%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%95%88%E5%BA%94/">从旧量子论到多电子原子结构：氢原子精确解、类氢标度律与交换效应</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E3%80%81%E5%85%B8%E5%9E%8B%E6%A8%A1%E5%9E%8B%E3%80%81%E8%87%AA%E6%97%8B%E4%B8%8E%E5%85%89%E5%AD%90%E3%80%81%E5%8F%8C%E6%80%81%E7%B3%BB%E7%BB%9F/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-28</span>
-                
-              </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E3%80%81%E5%85%B8%E5%9E%8B%E6%A8%A1%E5%9E%8B%E3%80%81%E8%87%AA%E6%97%8B%E4%B8%8E%E5%85%89%E5%AD%90%E3%80%81%E5%8F%8C%E6%80%81%E7%B3%BB%E7%BB%9F/">薛定谔方程、典型模型、自旋与光子、双态系统</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E7%AE%97%E7%AC%A6%E3%80%81%E6%B5%8B%E9%87%8F%E4%B8%8E%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-27</span>
-                
-              </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E7%AE%97%E7%AC%A6%E3%80%81%E6%B5%8B%E9%87%8F%E4%B8%8E%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F/">量子力学中的算符、测量与轨道角动量</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/YuanZiWuLi/5/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">01-27</span>
-                
-              </div>
-              <a class="post-title" href="/physics/YuanZiWuLi/5/">热辐射、光子与物质波：量子化的诞生与波粒二象性</a>
             </div>
           </div>
         
