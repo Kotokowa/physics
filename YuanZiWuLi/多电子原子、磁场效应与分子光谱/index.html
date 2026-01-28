@@ -1,0 +1,2110 @@
+<!DOCTYPE html><html><!-- meta/link... --><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>多电子原子、磁场效应与分子光谱 | tianyi</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/physics/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/physics/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/physics/css/style.css">
+
+  
+  
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/physics/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/physics/atom.xml" title="tianyi" type="application/atom+xml">
+</head>
+
+  
+  <!-- 预加载动画 -->
+  
+  
+  <body><div class="preloader_6" id="loader">
+  <div class="loader"></div>
+</div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
+
+  
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer="">
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/physics/js/swiper/swiper.min.js"></script>
+<script src="/physics/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/physics/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/physics/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/physics/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">tianyi</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/physics/" class="logo">tianyi</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/physics/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/physics/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        多电子原子、磁场效应与分子光谱
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2026-01-28 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>多电子原子、磁场效应与分子光谱</h1>
+<h2 id="多电子原子的能级结构：从“单电子图像”到“多体效应”">多电子原子的能级结构：从“单电子图像”到“多体效应”</h2>
+<h3 id="为什么多电子原子能级更复杂">为什么多电子原子能级更复杂</h3>
+<h4 id="主要原因概览">主要原因概览</h4>
+<ul>
+<li><strong>电子—电子相互作用</strong>：同一原子内多个电子之间存在库仑斥力，导致能级相对氢原子发生移动，并破坏部分简并。</li>
+<li><strong>交换效应与自旋相关</strong>：电子不可区分 + 泡利不相容原理，使得不同自旋组态对应不同能量（如氦原子的单重态/三重态能级差异）。</li>
+<li><strong>自旋—轨道相互作用（磁相互作用的一种）</strong>：在多电子原子中常导致同一项（term）进一步按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 分裂，形成<strong>精细结构</strong>。</li>
+<li>（补充）实际更精细的结构还可能包括<strong>相对论动能修正</strong>与<strong>Darwin 项</strong>（对 s 态显著），以及更弱的<strong>超精细结构</strong>（电子与原子核自旋的相互作用），但这里重点放在自旋—轨道与外磁场效应。</li>
+</ul>
+<h2 id="精细结构：自旋—轨道耦合如何导致能级分裂">精细结构：自旋—轨道耦合如何导致能级分裂</h2>
+<h3 id="单电子原子的自旋—轨道相互作用（直观图像）">单电子原子的自旋—轨道相互作用（直观图像）</h3>
+<h4 id="物理图像">物理图像</h4>
+<ul>
+<li>电子绕核的轨道运动可视为产生轨道磁矩；</li>
+<li>电子自旋对应自旋磁矩；</li>
+<li>两者之间的磁相互作用使能量产生微小修正，典型形式与$$
+  \mathbf{s}\cdot\mathbf{l}
+  $$
+有关。</li>
+</ul>
+<h4 id="关键结论">关键结论</h4>
+<ul>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">l=0</annotation></semantics></math></span></span>（s 态），则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">l</mi></mrow><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mathbf{l}=0</annotation></semantics></math></span></span>，<strong>不发生自旋—轨道分裂</strong>。</li>
+<li>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo>≠</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">l\neq 0</annotation></semantics></math></span></span>，会按$$
+  \mathbf{j}=\mathbf{l}+\mathbf{s},\quad j=l\pm \tfrac12
+  $$
+分裂成不同 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span></span> 的能级（常见为“双重分裂”）。</li>
+</ul>
+<h3 id="多电子原子中的自旋—轨道效应：项与精细分裂">多电子原子中的自旋—轨道效应：项与精细分裂</h3>
+<ul>
+<li>多电子原子先由电子—电子相互作用确定“项”（term），再由自旋—轨道作用使项按不同 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 产生精细分裂。</li>
+<li>轻元素通常自旋—轨道较弱，适合 <strong>LS 耦合</strong>；重元素自旋—轨道更强，适合 <strong>jj 耦合</strong>（见后文耦合方案）。</li>
+</ul>
+<h2 id="碱金属原子：原子实屏蔽与“单价电子近似”">碱金属原子：原子实屏蔽与“单价电子近似”</h2>
+<h3 id="原子实与有效核电荷">原子实与有效核电荷</h3>
+<ul>
+<li>碱金属可视为：<strong>闭壳层原子实 + 一个价电子</strong>。</li>
+<li>价电子在外层感受到的核电荷被内层电子屏蔽，可用<strong>有效核电荷</strong>表示：$$
+  Z^* = Z - s
+  $$
+其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span></span> 为屏蔽常数（不同壳层不同）。</li>
+</ul>
+<h3 id="能级的-l-依赖：简并如何被破坏">能级的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 依赖：简并如何被破坏</h3>
+<ul>
+<li>氢原子能量只与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span></span> 有关（忽略精细结构），存在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 简并；</li>
+<li>碱金属因价电子穿透原子实的程度与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 有关（s 穿透强、p 次之、d 更弱…），使得能量与 <strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>l</mi></mrow><annotation encoding="application/x-tex">n,l</annotation></semantics></math></span></span></strong> 都有关，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 简并被消除；</li>
+<li>同时自旋—轨道作用再引入按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span></span> 的精细分裂。</li>
+</ul>
+<h3 id="辐射跃迁选择定则（常用）">辐射跃迁选择定则（常用）</h3>
+<h4 id="电偶极跃迁（E1）基本选择定则">电偶极跃迁（E1）基本选择定则</h4>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>l</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta l = \pm 1</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>j</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta j = 0,\pm 1</annotation></semantics></math></span></span>（但 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi><mo>=</mo><mn>0</mn><mo>↛</mo><mi>j</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">j=0 \nrightarrow j=0</annotation></semantics></math></span></span>）</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>m</mi><mi>j</mi></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta m_j = 0,\pm 1</annotation></semantics></math></span></span>（在外磁场中尤其重要，后文详述）</li>
+</ul>
+<h2 id="角动量耦合方案与原子态标记">角动量耦合方案与原子态标记</h2>
+<h3 id="角动量与守恒量">角动量与守恒量</h3>
+<ul>
+<li>严格守恒的是总角动量：$$
+  \mathbf{J}=\sum_i (\mathbf{l}_i+\mathbf{s}_i)
+  $$
+</li>
+<li>在不同相互作用主导的极限下，会出现不同“近似守恒量”，对应不同耦合方案。</li>
+</ul>
+<h3 id="LS-耦合（Russell–Saunders-耦合）：轻元素常用">LS 耦合（Russell–Saunders 耦合）：轻元素常用</h3>
+<h4 id="定义">定义</h4>
+<ul>
+<li>先各自合成总轨道角动量与总自旋：$$
+  \mathbf{L}=\sum_i \mathbf{l}_i,\qquad
+  \mathbf{S}=\sum_i \mathbf{s}_i
+  $$
+</li>
+<li>再合成总角动量：$$
+  \mathbf{J}=\mathbf{L}+\mathbf{S}
+  $$
+</li>
+</ul>
+<h4 id="原子态符号（项符号）">原子态符号（项符号）</h4>
+$$
+^{2S+1}L_J
+$$
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>S</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2S+1</annotation></semantics></math></span></span>：多重度（单重态、三重态等）</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span>：用字母表示（S,P,D,F,…对应 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mn>3</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">L=0,1,2,3,\cdots</annotation></semantics></math></span></span>）</li>
+<li>下标 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span>：总角动量量子数</li>
+</ul>
+<h3 id="jj-耦合：重元素常用">jj 耦合：重元素常用</h3>
+<ul>
+<li>对每个电子先合成：$$
+  \mathbf{j}_i=\mathbf{l}_i+\mathbf{s}_i
+  $$
+</li>
+<li>再将各 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mi mathvariant="bold">j</mi></mrow><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">\mathbf{j}_i</annotation></semantics></math></span></span> 合成为总 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">J</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{J}</annotation></semantics></math></span></span>。</li>
+<li>当自旋—轨道作用比电子间 LS 相关作用更强时，这一方案更合适。</li>
+</ul>
+<h3 id="态数核对：用简并度检验枚举是否完整">态数核对：用简并度检验枚举是否完整</h3>
+<ul>
+<li>对一个给定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span></span> 的能级，磁量子数取值 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>j</mi></msub><mo>=</mo><mo>−</mo><mi>j</mi><mo separator="true">,</mo><mo>−</mo><mi>j</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>j</mi></mrow><annotation encoding="application/x-tex">m_j=-j,-j+1,\cdots,j</annotation></semantics></math></span></span>，简并度为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>j</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2j+1</annotation></semantics></math></span></span>。</li>
+<li>枚举某一电子组态的全部可能项/能级后，可以用“所有能级的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mn>2</mn><mi>J</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">(2J+1)</annotation></semantics></math></span></span> 之和 = 总微观态数”进行核对，避免漏项。</li>
+</ul>
+<h2 id="Hund-经验定则：快速判断基态项（LS-耦合下）">Hund 经验定则：快速判断基态项（LS 耦合下）</h2>
+<h3 id="三条-Hund-定则（常用表述）">三条 Hund 定则（常用表述）</h3>
+<ol>
+<li><strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 最大者能量最低</strong>（优先最大多重度）。</li>
+<li>在同一 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span> 下，<strong><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span> 最大者能量最低</strong>。</li>
+<li>在同一 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mi>S</mi><mo>+</mo><mn>1</mn></mrow></msup><mi>L</mi></mrow><annotation encoding="application/x-tex">^{2S+1}L</annotation></semantics></math></span></span> 下：
+<ul>
+<li><strong>未满半壳层</strong>：最小 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 能量最低；</li>
+<li><strong>超过半满</strong>：最大 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 能量最低；</li>
+<li><strong>恰半满</strong>：通常只有一个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span>（或规则简化）。</li>
+</ul>
+</li>
+</ol>
+<h3 id="使用方法（示意）">使用方法（示意）</h3>
+<ul>
+<li>先写电子组态（如 p²、p³…），由泡利原理确定可能的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo separator="true">,</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">S,L</annotation></semantics></math></span></span>；</li>
+<li>用 Hund 定则排序，得到基态项与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span>。</li>
+<li>常见结论：C、N、O 等轻元素基态项可按上述规则快速判定。</li>
+</ul>
+<h2 id="内层电子跃迁与特征-X-射线">内层电子跃迁与特征 X 射线</h2>
+<h3 id="内层空穴与特征谱线的产生">内层空穴与特征谱线的产生</h3>
+<ul>
+<li>高能粒子轰击原子，使内层（K、L…壳层）电子被电离，形成空穴；</li>
+<li>外层电子向内层跃迁“填空”，释放光子，形成<strong>特征 X 射线</strong>（如 K<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>、K<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 等）。</li>
+</ul>
+<h3 id="屏蔽常数与有效核电荷：估算内层能级">屏蔽常数与有效核电荷：估算内层能级</h3>
+<ul>
+<li>近似把内层电子视为在有效核电荷 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Z</mi><mo>∗</mo></msup></mrow><annotation encoding="application/x-tex">Z^*</annotation></semantics></math></span></span> 下的类氢能级：$$
+  E_n \approx -13.6\,\text{eV}\cdot \frac{(Z^*)^2}{n^2}
+  $$
+</li>
+<li>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Z</mi><mo>∗</mo></msup><mo>=</mo><mi>Z</mi><mo>−</mo><msub><mi>s</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">Z^*=Z-s_n</annotation></semantics></math></span></span>，不同壳层屏蔽常数不同（如 K、L 层各有经验值）。</li>
+<li>因此 K<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 等谱线能量可由两壳层能量差估算。</li>
+</ul>
+<h3 id="Moseley-定律：谱线频率与原子序数的规律">Moseley 定律：谱线频率与原子序数的规律</h3>
+<ul>
+<li>对特征 X 射线，实验上发现频率近似满足：$$
+  \sqrt{\nu} \propto (Z-\sigma)
+  $$
+其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span></span> 为屏蔽相关常数（不同谱系不同）。</li>
+<li>重要意义：
+<ul>
+<li>可用来<strong>测定元素的原子序数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span></strong>；</li>
+<li>为元素周期律的核电荷本质提供强证据。</li>
+</ul>
+</li>
+</ul>
+<h3 id="X-射线吸收边">X 射线吸收边</h3>
+<ul>
+<li>当入射 X 射线能量达到某壳层束缚能阈值时，吸收系数突变，形成<strong>吸收边</strong>（K 边、L 边…）。</li>
+<li>应用提示：
+<ul>
+<li>医学造影常利用某些元素在特定能区的吸收边增强对比；</li>
+<li>天体物理中也会讨论谱线/边的能量移动与红移效应等现象。</li>
+</ul>
+</li>
+</ul>
+<h2 id="外加磁场中的原子：磁矩、Zeeman-与-Paschen–Back">外加磁场中的原子：磁矩、Zeeman 与 Paschen–Back</h2>
+<h2 id="原子磁矩与-Lande-因子">原子磁矩与 Landé 因子</h2>
+<h3 id="角动量与磁矩的关系">角动量与磁矩的关系</h3>
+<ul>
+<li>轨道磁矩与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">L</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math></span></span> 相关，自旋磁矩与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">S</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{S}</annotation></semantics></math></span></span> 相关；</li>
+<li>对给定原子态，常把总磁矩写成与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">J</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{J}</annotation></semantics></math></span></span> 成比例：$$
+  \boldsymbol{\mu} = - g\,\mu_B\,\frac{\mathbf{J}}{\hbar}
+  $$
+其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">\mu_B</annotation></semantics></math></span></span> 为玻尔磁子，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span> 为 <strong>Landé 因子</strong>。</li>
+</ul>
+<h3 id="磁量子数与简并度">磁量子数与简并度</h3>
+<ul>
+<li>在无外场时，同一 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>J</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2J+1</annotation></semantics></math></span></span> 个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>J</mi></msub></mrow><annotation encoding="application/x-tex">M_J</annotation></semantics></math></span></span> 态简并；</li>
+<li>外加磁场定义了空间方向，使不同 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>J</mi></msub></mrow><annotation encoding="application/x-tex">M_J</annotation></semantics></math></span></span> 的能量分裂。</li>
+</ul>
+<h2 id="Zeeman-效应（弱磁场极限）">Zeeman 效应（弱磁场极限）</h2>
+<h3 id="能级分裂（线性-Zeeman）">能级分裂（线性 Zeeman）</h3>
+<ul>
+<li>弱场下 LS 耦合仍成立，可写能级附加项：$$
+  \Delta E = g\,\mu_B\,B\,M_J
+  $$
+</li>
+<li>因此同一 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 态按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>M</mi><mi>J</mi></msub></mrow><annotation encoding="application/x-tex">M_J</annotation></semantics></math></span></span> 等间隔分裂。</li>
+</ul>
+<h3 id="谱线分裂与选择定则">谱线分裂与选择定则</h3>
+<h4 id="选择定则（E1，在磁场方向量子化）">选择定则（E1，在磁场方向量子化）</h4>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>M</mi><mi>J</mi></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta M_J = 0,\pm 1</annotation></semantics></math></span></span>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>M</mi><mi>J</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta M_J=0</annotation></semantics></math></span></span>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>π</mi></mrow><annotation encoding="application/x-tex">\pi</annotation></semantics></math></span></span> 分量（线偏振，平行于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span>）</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>M</mi><mi>J</mi></msub><mo>=</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta M_J=\pm 1</annotation></semantics></math></span></span>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>σ</mi><mo>±</mo></msup></mrow><annotation encoding="application/x-tex">\sigma^\pm</annotation></semantics></math></span></span> 分量（圆偏振或线偏振，取决于观测方向）</li>
+</ul>
+</li>
+</ul>
+<h3 id="正常与反常-Zeeman">正常与反常 Zeeman</h3>
+<ul>
+<li><strong>正常 Zeeman 效应</strong>：常见“三分裂”，多发生在总自旋 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S=0</annotation></semantics></math></span></span> 或上下能级 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span> 关系使分裂呈简单三线结构时。</li>
+<li><strong>反常 Zeeman 效应</strong>：更普遍，因自旋参与导致 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span> 不同，谱线分裂条数可能多于三条。</li>
+</ul>
+<h3 id="典型例子思路">典型例子思路</h3>
+<ul>
+<li>若某跃迁上下能级的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span> 值相同或使得频移只取三种值，表现为正常 Zeeman；</li>
+<li>若上下能级 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi></mrow><annotation encoding="application/x-tex">g</annotation></semantics></math></span></span> 不同（如常见碱金属的某些跃迁），会出现更多分裂分量（可通过列举允许的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>M</mi><mi>J</mi></msub><mo>→</mo><msubsup><mi>M</mi><mi>J</mi><mrow><mi mathvariant="normal">′</mi></mrow></msubsup><mo>)</mo></mrow><annotation encoding="application/x-tex">(M_J\to M'_J)</annotation></semantics></math></span></span> 逐一计算频移）。</li>
+</ul>
+<h2 id="Paschen–Back-效应（强磁场极限）">Paschen–Back 效应（强磁场极限）</h2>
+<h3 id="物理条件与耦合破坏">物理条件与耦合破坏</h3>
+<ul>
+<li>当外磁场相互作用能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∼</mo><msub><mi>μ</mi><mi>B</mi></msub><mi>B</mi></mrow><annotation encoding="application/x-tex">\sim \mu_B B</annotation></semantics></math></span></span> 远大于自旋—轨道耦合能时：
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">L</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{L}</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">S</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{S}</annotation></semantics></math></span></span> 不再稳固耦合为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">J</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{J}</annotation></semantics></math></span></span>；</li>
+<li>体系更适合用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>l</mi></msub><mo separator="true">,</mo><msub><mi>m</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">m_l, m_s</annotation></semantics></math></span></span> 描述投影量。</li>
+</ul>
+</li>
+</ul>
+<h3 id="能级与选择定则的改变（典型形式）">能级与选择定则的改变（典型形式）</h3>
+<ul>
+<li>能量按 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">m_l</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">m_s</annotation></semantics></math></span></span> 线性分裂（常写作轨道项 + 自旋项之和）。</li>
+<li>典型跃迁选择定则趋向于：
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>m</mi><mi>l</mi></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta m_l = 0,\pm 1</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>m</mi><mi>s</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta m_s = 0</annotation></semantics></math></span></span></li>
+</ul>
+</li>
+<li>因此强场下谱线分裂图样与弱场 Zeeman 明显不同，并可观察到从 Zeeman 到 Paschen–Back 的连续过渡。</li>
+</ul>
+<h2 id="分子能级与光谱：电子—振动—转动的层级结构">分子能级与光谱：电子—振动—转动的层级结构</h2>
+<h3 id="分子能量尺度与对应波段">分子能量尺度与对应波段</h3>
+<h4 id="三类能级与数量级">三类能级与数量级</h4>
+<ul>
+<li><strong>电子能级</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∼</mo></mrow><annotation encoding="application/x-tex">\sim</annotation></semantics></math></span></span> eV（紫外/可见）</li>
+<li><strong>振动能级</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\sim 10^{-1}</annotation></semantics></math></span></span>–<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span></span> eV（红外）</li>
+<li><strong>转动能级</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\sim 10^{-4}</annotation></semantics></math></span></span>–<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">10^{-2}</annotation></semantics></math></span></span> eV（远红外/微波）</li>
+</ul>
+<h3 id="分子振动：近似简谐振子模型">分子振动：近似简谐振子模型</h3>
+<h4 id="简谐振子能级">简谐振子能级</h4>
+<ul>
+<li>近似把双原子分子视为两原子沿键长方向的振动，势能在平衡位置附近二次展开：$$
+  E_v = \left(v+\tfrac12\right)\hbar\omega,\quad v=0,1,2,\cdots
+  $$
+</li>
+<li>能级<strong>等间隔</strong>是简谐近似的重要特征。</li>
+</ul>
+<h4 id="振动跃迁选择定则（红外）">振动跃迁选择定则（红外）</h4>
+<ul>
+<li>理想简谐振子：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>v</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta v=\pm 1</annotation></semantics></math></span></span>（基频）</li>
+<li>（补充）真实分子存在<strong>非谐性</strong>时，会出现弱的泛频：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>v</mi><mo>=</mo><mo>±</mo><mn>2</mn><mo separator="true">,</mo><mo>±</mo><mn>3</mn><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\Delta v=\pm 2,\pm 3,\cdots</annotation></semantics></math></span></span>，并导致谱线位置略偏离等间隔。</li>
+</ul>
+<h3 id="分子转动：刚性转子近似">分子转动：刚性转子近似</h3>
+<h4 id="转动能级">转动能级</h4>
+<ul>
+<li>双原子分子可近似为刚性转子：$$
+  E_J = \frac{\hbar^2}{2I}J(J+1),\quad J=0,1,2,\cdots
+  $$
+其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span> 为转动惯量。</li>
+<li>邻近转动能级间隔随 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span> 增大而增大。</li>
+</ul>
+<h4 id="转动跃迁选择定则（微波-远红外）">转动跃迁选择定则（微波/远红外）</h4>
+<ul>
+<li>电偶极允许的纯转动跃迁：$$
+  \Delta J = \pm 1
+  $$
+</li>
+<li>要发生纯转动谱，分子需具有<strong>永久电偶极矩</strong>（如 CO、HCl 等），同核双原子分子（如 N<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow></mrow><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">_2</annotation></semantics></math></span></span>、O<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow></mrow><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">_2</annotation></semantics></math></span></span>）无永久偶极，纯转动红外/微波吸收通常不活跃。</li>
+</ul>
+<h3 id="振动—转动光谱：谱带结构">振动—转动光谱：谱带结构</h3>
+<h4 id="总能量表达与谱带来源">总能量表达与谱带来源</h4>
+<ul>
+<li>振动与转动叠加：$$
+  E(v,J)=\left(v+\tfrac12\right)\hbar\omega+\frac{\hbar^2}{2I}J(J+1)
+  $$
+</li>
+<li>当发生振动跃迁（如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mo>:</mo><mn>0</mn><mo>→</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">v:0\to 1</annotation></semantics></math></span></span>）时，同时允许转动量子数变化 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>J</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta J=\pm 1</annotation></semantics></math></span></span>，于是出现两支谱线群：
+<ul>
+<li><strong>P 支</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>J</mi><mo>=</mo><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta J=-1</annotation></semantics></math></span></span></li>
+<li><strong>R 支</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>J</mi><mo>=</mo><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta J=+1</annotation></semantics></math></span></span><br>
+-（补充）某些情况下还会出现 Q 支（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>J</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\Delta J=0</annotation></semantics></math></span></span>），但对典型双原子电偶极跃迁常不出现或受限，取决于跃迁类型与角动量耦合规则。</li>
+</ul>
+</li>
+</ul>
+<h4 id="同位素效应（以-HCl-为例的典型现象）">同位素效应（以 HCl 为例的典型现象）</h4>
+<ul>
+<li>不同同位素（如 H<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>3</mn><mn>5</mn></mrow></msup></mrow><annotation encoding="application/x-tex">^ {35}</annotation></semantics></math></span></span>Cl 与 H<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>3</mn><mn>7</mn></mrow></msup></mrow><annotation encoding="application/x-tex">^ {37}</annotation></semantics></math></span></span>Cl）改变分子的约化质量，从而改变：
+<ul>
+<li>振动频率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ω</mi></mrow><annotation encoding="application/x-tex">\omega</annotation></semantics></math></span></span></li>
+<li>转动惯量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi></mrow><annotation encoding="application/x-tex">I</annotation></semantics></math></span></span></li>
+</ul>
+</li>
+<li>因此红外谱带位置与线间距会出现可分辨的偏移，可用于同位素识别与分子常数测定。</li>
+</ul>
+<h2 id="复习速记：核心公式与定则清单">复习速记：核心公式与定则清单</h2>
+<h3 id="多电子原子与精细结构">多电子原子与精细结构</h3>
+<ul>
+<li>项符号：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mrow></mrow><mrow><mn>2</mn><mi>S</mi><mo>+</mo><mn>1</mn></mrow></msup><msub><mi>L</mi><mi>J</mi></msub></mrow><annotation encoding="application/x-tex">^{2S+1}L_J</annotation></semantics></math></span></span></li>
+<li>LS 耦合：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">L</mi></mrow><mo>=</mo><mo>∑</mo><msub><mrow><mi mathvariant="bold">l</mi></mrow><mi>i</mi></msub><mo separator="true">,</mo><mtext>&nbsp;</mtext><mrow><mi mathvariant="bold">S</mi></mrow><mo>=</mo><mo>∑</mo><msub><mrow><mi mathvariant="bold">s</mi></mrow><mi>i</mi></msub><mo separator="true">,</mo><mtext>&nbsp;</mtext><mrow><mi mathvariant="bold">J</mi></mrow><mo>=</mo><mrow><mi mathvariant="bold">L</mi></mrow><mo>+</mo><mrow><mi mathvariant="bold">S</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{L}=\sum\mathbf{l}_i,\ \mathbf{S}=\sum\mathbf{s}_i,\ \mathbf{J}=\mathbf{L}+\mathbf{S}</annotation></semantics></math></span></span></li>
+<li>Hund 定则：先最大 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span>，再最大 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi></mrow><annotation encoding="application/x-tex">L</annotation></semantics></math></span></span>，再按半满规则定 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi></mrow><annotation encoding="application/x-tex">J</annotation></semantics></math></span></span></li>
+</ul>
+<h3 id="X-射线">X 射线</h3>
+<ul>
+<li>有效核电荷：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>Z</mi><mo>∗</mo></msup><mo>=</mo><mi>Z</mi><mo>−</mo><mi>s</mi></mrow><annotation encoding="application/x-tex">Z^*=Z-s</annotation></semantics></math></span></span></li>
+<li>类氢近似：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>n</mi></msub><mo>≈</mo><mo>−</mo><mn>1</mn><mn>3</mn><mi mathvariant="normal">.</mi><mn>6</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext><mo>⋅</mo><mo>(</mo><msup><mi>Z</mi><mo>∗</mo></msup><msup><mo>)</mo><mn>2</mn></msup><mi mathvariant="normal">/</mi><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">E_n\approx -13.6\,\text{eV}\cdot (Z^*)^2/n^2</annotation></semantics></math></span></span></li>
+<li>Moseley：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msqrt><mrow><mi>ν</mi></mrow></msqrt><mo>∝</mo><mo>(</mo><mi>Z</mi><mo>−</mo><mi>σ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\sqrt{\nu}\propto (Z-\sigma)</annotation></semantics></math></span></span></li>
+<li>吸收边：当光子能量跨过束缚能阈值时吸收突变</li>
+</ul>
+<h3 id="磁场效应">磁场效应</h3>
+<ul>
+<li>Zeeman（弱场）：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>E</mi><mo>=</mo><mi>g</mi><msub><mi>μ</mi><mi>B</mi></msub><mi>B</mi><msub><mi>M</mi><mi>J</mi></msub></mrow><annotation encoding="application/x-tex">\Delta E=g\mu_BBM_J</annotation></semantics></math></span></span></li>
+<li>选择定则：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>M</mi><mi>J</mi></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta M_J=0,\pm 1</annotation></semantics></math></span></span></li>
+<li>Paschen–Back（强场）：用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mi>l</mi></msub><mo separator="true">,</mo><msub><mi>m</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">m_l,m_s</annotation></semantics></math></span></span> 描述；常见 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>m</mi><mi>s</mi></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mtext>&nbsp;</mtext><mi mathvariant="normal">Δ</mi><msub><mi>m</mi><mi>l</mi></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta m_s=0,\ \Delta m_l=0,\pm1</annotation></semantics></math></span></span></li>
+</ul>
+<h3 id="分子能级">分子能级</h3>
+<ul>
+<li>振动：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>v</mi></msub><mo>=</mo><mo>(</mo><mi>v</mi><mo>+</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>)</mo><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mrow><annotation encoding="application/x-tex">E_v=(v+\tfrac12)\hbar\omega</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>v</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta v=\pm1</annotation></semantics></math></span></span></li>
+<li>转动：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>J</mi></msub><mo>=</mo><msup><mi mathvariant="normal">ℏ</mi><mn>2</mn></msup><mi>J</mi><mo>(</mo><mi>J</mi><mo>+</mo><mn>1</mn><mo>)</mo><mi mathvariant="normal">/</mi><mo>(</mo><mn>2</mn><mi>I</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">E_J=\hbar^2J(J+1)/(2I)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>J</mi><mo>=</mo><mo>±</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Delta J=\pm1</annotation></semantics></math></span></span></li>
+<li>振转：P 支（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">-1</annotation></semantics></math></span></span>）与 R 支（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">+1</annotation></semantics></math></span></span>）形成谱带</li>
+</ul>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E9%A2%84%E4%B9%A0/" class="">
+              预习
+            </a>
+          
+            <a href="/physics/tags/%E5%8E%9F%E5%AD%90%E7%89%A9%E7%90%86pku/" class="">
+              原子物理pku
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/YuanZiWuLi/多电子原子、磁场效应与分子光谱/" target="_blank" title="多电子原子、磁场效应与分子光谱">https://kotokowa.github.io/physics/YuanZiWuLi/多电子原子、磁场效应与分子光谱/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/YuanZiWuLi/%E4%BB%8E%E6%97%A7%E9%87%8F%E5%AD%90%E8%AE%BA%E5%88%B0%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84%EF%BC%9A%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%B2%BE%E7%A1%AE%E8%A7%A3%E3%80%81%E7%B1%BB%E6%B0%A2%E6%A0%87%E5%BA%A6%E5%BE%8B%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%95%88%E5%BA%94/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">从旧量子论到多电子原子结构：氢原子精确解、类氢标度律与交换效应</div>
+      </div>
+      <!-- <div class="content">
+        从旧量子论到多电子原子结构：氢原子精确解、类氢标度律与交换效应
+全局主线与核心问题
+实验“逼问”理论的三个问题
+原子为何
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">多电子原子、磁场效应与分子光谱</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%9A%84%E8%83%BD%E7%BA%A7%E7%BB%93%E6%9E%84%EF%BC%9A%E4%BB%8E%E2%80%9C%E5%8D%95%E7%94%B5%E5%AD%90%E5%9B%BE%E5%83%8F%E2%80%9D%E5%88%B0%E2%80%9C%E5%A4%9A%E4%BD%93%E6%95%88%E5%BA%94%E2%80%9D"><span class="toc-text">多电子原子的能级结构：从“单电子图像”到“多体效应”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E8%83%BD%E7%BA%A7%E6%9B%B4%E5%A4%8D%E6%9D%82"><span class="toc-text">为什么多电子原子能级更复杂</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%8E%9F%E5%9B%A0%E6%A6%82%E8%A7%88"><span class="toc-text">主要原因概览</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B2%BE%E7%BB%86%E7%BB%93%E6%9E%84%EF%BC%9A%E8%87%AA%E6%97%8B%E2%80%94%E8%BD%A8%E9%81%93%E8%80%A6%E5%90%88%E5%A6%82%E4%BD%95%E5%AF%BC%E8%87%B4%E8%83%BD%E7%BA%A7%E5%88%86%E8%A3%82"><span class="toc-text">精细结构：自旋—轨道耦合如何导致能级分裂</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%9A%84%E8%87%AA%E6%97%8B%E2%80%94%E8%BD%A8%E9%81%93%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%EF%BC%88%E7%9B%B4%E8%A7%82%E5%9B%BE%E5%83%8F%EF%BC%89"><span class="toc-text">单电子原子的自旋—轨道相互作用（直观图像）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%9B%BE%E5%83%8F"><span class="toc-text">物理图像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%93%E8%AE%BA"><span class="toc-text">关键结论</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E4%B8%AD%E7%9A%84%E8%87%AA%E6%97%8B%E2%80%94%E8%BD%A8%E9%81%93%E6%95%88%E5%BA%94%EF%BC%9A%E9%A1%B9%E4%B8%8E%E7%B2%BE%E7%BB%86%E5%88%86%E8%A3%82"><span class="toc-text">多电子原子中的自旋—轨道效应：项与精细分裂</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A2%B1%E9%87%91%E5%B1%9E%E5%8E%9F%E5%AD%90%EF%BC%9A%E5%8E%9F%E5%AD%90%E5%AE%9E%E5%B1%8F%E8%94%BD%E4%B8%8E%E2%80%9C%E5%8D%95%E4%BB%B7%E7%94%B5%E5%AD%90%E8%BF%91%E4%BC%BC%E2%80%9D"><span class="toc-text">碱金属原子：原子实屏蔽与“单价电子近似”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E5%AE%9E%E4%B8%8E%E6%9C%89%E6%95%88%E6%A0%B8%E7%94%B5%E8%8D%B7"><span class="toc-text">原子实与有效核电荷</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E7%BA%A7%E7%9A%84-l-%E4%BE%9D%E8%B5%96%EF%BC%9A%E7%AE%80%E5%B9%B6%E5%A6%82%E4%BD%95%E8%A2%AB%E7%A0%B4%E5%9D%8F"><span class="toc-text">能级的 lll 依赖：简并如何被破坏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BE%90%E5%B0%84%E8%B7%83%E8%BF%81%E9%80%89%E6%8B%A9%E5%AE%9A%E5%88%99%EF%BC%88%E5%B8%B8%E7%94%A8%EF%BC%89"><span class="toc-text">辐射跃迁选择定则（常用）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E5%81%B6%E6%9E%81%E8%B7%83%E8%BF%81%EF%BC%88E1%EF%BC%89%E5%9F%BA%E6%9C%AC%E9%80%89%E6%8B%A9%E5%AE%9A%E5%88%99"><span class="toc-text">电偶极跃迁（E1）基本选择定则</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E8%80%A6%E5%90%88%E6%96%B9%E6%A1%88%E4%B8%8E%E5%8E%9F%E5%AD%90%E6%80%81%E6%A0%87%E8%AE%B0"><span class="toc-text">角动量耦合方案与原子态标记</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E4%B8%8E%E5%AE%88%E6%81%92%E9%87%8F"><span class="toc-text">角动量与守恒量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LS-%E8%80%A6%E5%90%88%EF%BC%88Russell%E2%80%93Saunders-%E8%80%A6%E5%90%88%EF%BC%89%EF%BC%9A%E8%BD%BB%E5%85%83%E7%B4%A0%E5%B8%B8%E7%94%A8"><span class="toc-text">LS 耦合（Russell–Saunders 耦合）：轻元素常用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E6%80%81%E7%AC%A6%E5%8F%B7%EF%BC%88%E9%A1%B9%E7%AC%A6%E5%8F%B7%EF%BC%89"><span class="toc-text">原子态符号（项符号）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#jj-%E8%80%A6%E5%90%88%EF%BC%9A%E9%87%8D%E5%85%83%E7%B4%A0%E5%B8%B8%E7%94%A8"><span class="toc-text">jj 耦合：重元素常用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%81%E6%95%B0%E6%A0%B8%E5%AF%B9%EF%BC%9A%E7%94%A8%E7%AE%80%E5%B9%B6%E5%BA%A6%E6%A3%80%E9%AA%8C%E6%9E%9A%E4%B8%BE%E6%98%AF%E5%90%A6%E5%AE%8C%E6%95%B4"><span class="toc-text">态数核对：用简并度检验枚举是否完整</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hund-%E7%BB%8F%E9%AA%8C%E5%AE%9A%E5%88%99%EF%BC%9A%E5%BF%AB%E9%80%9F%E5%88%A4%E6%96%AD%E5%9F%BA%E6%80%81%E9%A1%B9%EF%BC%88LS-%E8%80%A6%E5%90%88%E4%B8%8B%EF%BC%89"><span class="toc-text">Hund 经验定则：快速判断基态项（LS 耦合下）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E6%9D%A1-Hund-%E5%AE%9A%E5%88%99%EF%BC%88%E5%B8%B8%E7%94%A8%E8%A1%A8%E8%BF%B0%EF%BC%89"><span class="toc-text">三条 Hund 定则（常用表述）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%88%E7%A4%BA%E6%84%8F%EF%BC%89"><span class="toc-text">使用方法（示意）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%B1%82%E7%94%B5%E5%AD%90%E8%B7%83%E8%BF%81%E4%B8%8E%E7%89%B9%E5%BE%81-X-%E5%B0%84%E7%BA%BF"><span class="toc-text">内层电子跃迁与特征 X 射线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%B1%82%E7%A9%BA%E7%A9%B4%E4%B8%8E%E7%89%B9%E5%BE%81%E8%B0%B1%E7%BA%BF%E7%9A%84%E4%BA%A7%E7%94%9F"><span class="toc-text">内层空穴与特征谱线的产生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%8F%E8%94%BD%E5%B8%B8%E6%95%B0%E4%B8%8E%E6%9C%89%E6%95%88%E6%A0%B8%E7%94%B5%E8%8D%B7%EF%BC%9A%E4%BC%B0%E7%AE%97%E5%86%85%E5%B1%82%E8%83%BD%E7%BA%A7"><span class="toc-text">屏蔽常数与有效核电荷：估算内层能级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Moseley-%E5%AE%9A%E5%BE%8B%EF%BC%9A%E8%B0%B1%E7%BA%BF%E9%A2%91%E7%8E%87%E4%B8%8E%E5%8E%9F%E5%AD%90%E5%BA%8F%E6%95%B0%E7%9A%84%E8%A7%84%E5%BE%8B"><span class="toc-text">Moseley 定律：谱线频率与原子序数的规律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-%E5%B0%84%E7%BA%BF%E5%90%B8%E6%94%B6%E8%BE%B9"><span class="toc-text">X 射线吸收边</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%96%E5%8A%A0%E7%A3%81%E5%9C%BA%E4%B8%AD%E7%9A%84%E5%8E%9F%E5%AD%90%EF%BC%9A%E7%A3%81%E7%9F%A9%E3%80%81Zeeman-%E4%B8%8E-Paschen%E2%80%93Back"><span class="toc-text">外加磁场中的原子：磁矩、Zeeman 与 Paschen–Back</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%9F%E5%AD%90%E7%A3%81%E7%9F%A9%E4%B8%8E-Lande-%E5%9B%A0%E5%AD%90"><span class="toc-text">原子磁矩与 Landé 因子</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E4%B8%8E%E7%A3%81%E7%9F%A9%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-text">角动量与磁矩的关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E9%87%8F%E5%AD%90%E6%95%B0%E4%B8%8E%E7%AE%80%E5%B9%B6%E5%BA%A6"><span class="toc-text">磁量子数与简并度</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Zeeman-%E6%95%88%E5%BA%94%EF%BC%88%E5%BC%B1%E7%A3%81%E5%9C%BA%E6%9E%81%E9%99%90%EF%BC%89"><span class="toc-text">Zeeman 效应（弱磁场极限）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E7%BA%A7%E5%88%86%E8%A3%82%EF%BC%88%E7%BA%BF%E6%80%A7-Zeeman%EF%BC%89"><span class="toc-text">能级分裂（线性 Zeeman）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B0%B1%E7%BA%BF%E5%88%86%E8%A3%82%E4%B8%8E%E9%80%89%E6%8B%A9%E5%AE%9A%E5%88%99"><span class="toc-text">谱线分裂与选择定则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E6%8B%A9%E5%AE%9A%E5%88%99%EF%BC%88E1%EF%BC%8C%E5%9C%A8%E7%A3%81%E5%9C%BA%E6%96%B9%E5%90%91%E9%87%8F%E5%AD%90%E5%8C%96%EF%BC%89"><span class="toc-text">选择定则（E1，在磁场方向量子化）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%B8%B8%E4%B8%8E%E5%8F%8D%E5%B8%B8-Zeeman"><span class="toc-text">正常与反常 Zeeman</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E4%BE%8B%E5%AD%90%E6%80%9D%E8%B7%AF"><span class="toc-text">典型例子思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Paschen%E2%80%93Back-%E6%95%88%E5%BA%94%EF%BC%88%E5%BC%BA%E7%A3%81%E5%9C%BA%E6%9E%81%E9%99%90%EF%BC%89"><span class="toc-text">Paschen–Back 效应（强磁场极限）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E6%9D%A1%E4%BB%B6%E4%B8%8E%E8%80%A6%E5%90%88%E7%A0%B4%E5%9D%8F"><span class="toc-text">物理条件与耦合破坏</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E7%BA%A7%E4%B8%8E%E9%80%89%E6%8B%A9%E5%AE%9A%E5%88%99%E7%9A%84%E6%94%B9%E5%8F%98%EF%BC%88%E5%85%B8%E5%9E%8B%E5%BD%A2%E5%BC%8F%EF%BC%89"><span class="toc-text">能级与选择定则的改变（典型形式）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%AD%90%E8%83%BD%E7%BA%A7%E4%B8%8E%E5%85%89%E8%B0%B1%EF%BC%9A%E7%94%B5%E5%AD%90%E2%80%94%E6%8C%AF%E5%8A%A8%E2%80%94%E8%BD%AC%E5%8A%A8%E7%9A%84%E5%B1%82%E7%BA%A7%E7%BB%93%E6%9E%84"><span class="toc-text">分子能级与光谱：电子—振动—转动的层级结构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%AD%90%E8%83%BD%E9%87%8F%E5%B0%BA%E5%BA%A6%E4%B8%8E%E5%AF%B9%E5%BA%94%E6%B3%A2%E6%AE%B5"><span class="toc-text">分子能量尺度与对应波段</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%B1%BB%E8%83%BD%E7%BA%A7%E4%B8%8E%E6%95%B0%E9%87%8F%E7%BA%A7"><span class="toc-text">三类能级与数量级</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%AD%90%E6%8C%AF%E5%8A%A8%EF%BC%9A%E8%BF%91%E4%BC%BC%E7%AE%80%E8%B0%90%E6%8C%AF%E5%AD%90%E6%A8%A1%E5%9E%8B"><span class="toc-text">分子振动：近似简谐振子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E8%B0%90%E6%8C%AF%E5%AD%90%E8%83%BD%E7%BA%A7"><span class="toc-text">简谐振子能级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%AF%E5%8A%A8%E8%B7%83%E8%BF%81%E9%80%89%E6%8B%A9%E5%AE%9A%E5%88%99%EF%BC%88%E7%BA%A2%E5%A4%96%EF%BC%89"><span class="toc-text">振动跃迁选择定则（红外）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%AD%90%E8%BD%AC%E5%8A%A8%EF%BC%9A%E5%88%9A%E6%80%A7%E8%BD%AC%E5%AD%90%E8%BF%91%E4%BC%BC"><span class="toc-text">分子转动：刚性转子近似</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E5%8A%A8%E8%83%BD%E7%BA%A7"><span class="toc-text">转动能级</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BD%AC%E5%8A%A8%E8%B7%83%E8%BF%81%E9%80%89%E6%8B%A9%E5%AE%9A%E5%88%99%EF%BC%88%E5%BE%AE%E6%B3%A2-%E8%BF%9C%E7%BA%A2%E5%A4%96%EF%BC%89"><span class="toc-text">转动跃迁选择定则（微波&#x2F;远红外）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%AF%E5%8A%A8%E2%80%94%E8%BD%AC%E5%8A%A8%E5%85%89%E8%B0%B1%EF%BC%9A%E8%B0%B1%E5%B8%A6%E7%BB%93%E6%9E%84"><span class="toc-text">振动—转动光谱：谱带结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E8%83%BD%E9%87%8F%E8%A1%A8%E8%BE%BE%E4%B8%8E%E8%B0%B1%E5%B8%A6%E6%9D%A5%E6%BA%90"><span class="toc-text">总能量表达与谱带来源</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8C%E4%BD%8D%E7%B4%A0%E6%95%88%E5%BA%94%EF%BC%88%E4%BB%A5-HCl-%E4%B8%BA%E4%BE%8B%E7%9A%84%E5%85%B8%E5%9E%8B%E7%8E%B0%E8%B1%A1%EF%BC%89"><span class="toc-text">同位素效应（以 HCl 为例的典型现象）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E4%B9%A0%E9%80%9F%E8%AE%B0%EF%BC%9A%E6%A0%B8%E5%BF%83%E5%85%AC%E5%BC%8F%E4%B8%8E%E5%AE%9A%E5%88%99%E6%B8%85%E5%8D%95"><span class="toc-text">复习速记：核心公式与定则清单</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E4%B8%8E%E7%B2%BE%E7%BB%86%E7%BB%93%E6%9E%84"><span class="toc-text">多电子原子与精细结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#X-%E5%B0%84%E7%BA%BF"><span class="toc-text">X 射线</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A3%81%E5%9C%BA%E6%95%88%E5%BA%94"><span class="toc-text">磁场效应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%AD%90%E8%83%BD%E7%BA%A7"><span class="toc-text">分子能级</span></a></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E3%80%81%E7%A3%81%E5%9C%BA%E6%95%88%E5%BA%94%E4%B8%8E%E5%88%86%E5%AD%90%E5%85%89%E8%B0%B1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E3%80%81%E7%A3%81%E5%9C%BA%E6%95%88%E5%BA%94%E4%B8%8E%E5%88%86%E5%AD%90%E5%85%89%E8%B0%B1/">多电子原子、磁场效应与分子光谱</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E4%BB%8E%E6%97%A7%E9%87%8F%E5%AD%90%E8%AE%BA%E5%88%B0%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84%EF%BC%9A%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%B2%BE%E7%A1%AE%E8%A7%A3%E3%80%81%E7%B1%BB%E6%B0%A2%E6%A0%87%E5%BA%A6%E5%BE%8B%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%95%88%E5%BA%94/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E4%BB%8E%E6%97%A7%E9%87%8F%E5%AD%90%E8%AE%BA%E5%88%B0%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84%EF%BC%9A%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%B2%BE%E7%A1%AE%E8%A7%A3%E3%80%81%E7%B1%BB%E6%B0%A2%E6%A0%87%E5%BA%A6%E5%BE%8B%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%95%88%E5%BA%94/">从旧量子论到多电子原子结构：氢原子精确解、类氢标度律与交换效应</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E3%80%81%E5%85%B8%E5%9E%8B%E6%A8%A1%E5%9E%8B%E3%80%81%E8%87%AA%E6%97%8B%E4%B8%8E%E5%85%89%E5%AD%90%E3%80%81%E5%8F%8C%E6%80%81%E7%B3%BB%E7%BB%9F/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E3%80%81%E5%85%B8%E5%9E%8B%E6%A8%A1%E5%9E%8B%E3%80%81%E8%87%AA%E6%97%8B%E4%B8%8E%E5%85%89%E5%AD%90%E3%80%81%E5%8F%8C%E6%80%81%E7%B3%BB%E7%BB%9F/">薛定谔方程、典型模型、自旋与光子、双态系统</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E7%AE%97%E7%AC%A6%E3%80%81%E6%B5%8B%E9%87%8F%E4%B8%8E%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-27</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E7%AE%97%E7%AC%A6%E3%80%81%E6%B5%8B%E9%87%8F%E4%B8%8E%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F/">量子力学中的算符、测量与轨道角动量</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/5/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-27</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/5/">热辐射、光子与物质波：量子化的诞生与波粒二象性</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script defer="">
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(76, 213, 153, 0.6)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 -  <a target="_blank" rel="noopener" href="https://github.com/kotokowa">kotokowa</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
+  <div class="dark-content">
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
+  </div>
+</div>
+
+<script defer="">
+  $(function() {
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
+    if (isDark) {
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
+    }
+  }
+</script>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer="">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script defer="" src="/physics/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/physics/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js class="" server="netease" type="playlist" id="17453633682" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="none" volume="0.4" list-folded="true">
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <!-- 背景彩带 -->
+    
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
+    
+
+    <script src="/physics/js/utils/index.js"></script>
+    <script src="/physics/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/physics/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/physics/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/physics/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/physics/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/physics/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax="">
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+        <script type="text/javascript">
+  var utteranceComment = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceComment.Theme = 'github-dark';
+    } else {
+      utteranceComment.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceComment.Theme)
+      utterances.setAttribute('repo', 'kotokowa/physics-utterances')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceComment.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+      
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script async="" src="/physics/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>

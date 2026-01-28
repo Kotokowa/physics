@@ -1,0 +1,2210 @@
+<!DOCTYPE html><html><!-- meta/link... --><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>量子力学中的算符、测量与轨道角动量 | tianyi</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/physics/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/physics/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/physics/css/style.css">
+
+  
+  
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/physics/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/physics/atom.xml" title="tianyi" type="application/atom+xml">
+</head>
+
+  
+  <!-- 预加载动画 -->
+  
+  
+  <body><div class="preloader_6" id="loader">
+  <div class="loader"></div>
+</div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
+
+  
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer="">
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/physics/js/swiper/swiper.min.js"></script>
+<script src="/physics/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/physics/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/physics/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/physics/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">tianyi</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/physics/" class="logo">tianyi</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/physics/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/physics/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        量子力学中的算符、测量与轨道角动量
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2026-01-27 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>量子力学中的算符、测量与轨道角动量：一份整合笔记</h1>
+<h2 id="量子态与概率诠释">量子态与概率诠释</h2>
+<h3 id="波函数与概率密度">波函数与概率密度</h3>
+<ul>
+<li>用波函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ψ</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\Psi(\mathbf{r},t)</annotation></semantics></math></span></span> 描述微观体系的动力学状态。</li>
+<li>概率密度：$$
+  P(\mathbf{r},t)=|\Psi(\mathbf{r},t)|^2=\Psi^*(\mathbf{r},t)\Psi(\mathbf{r},t)
+  $$
+</li>
+<li>对定态（能量本征态），时间因子常可分离：$$
+  \Psi(\mathbf{r},t)=\psi(\mathbf{r})e^{-iEt/\hbar}
+  $$
+讨论空间分布时常省略时间相位，仅写 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\psi(\mathbf{r})</annotation></semantics></math></span></span>。</li>
+</ul>
+<h3 id="平面波与“动量确定、位置不定”">平面波与“动量确定、位置不定”</h3>
+<ul>
+<li>一维平面波：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>∝</mo><msup><mi>e</mi><mrow><mi>i</mi><mi>k</mi><mi>x</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\psi(x)\propto e^{ikx}</annotation></semantics></math></span></span>（动量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mi mathvariant="normal">ℏ</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">p=\hbar k</annotation></semantics></math></span></span> 确定）。</li>
+<li>其概率密度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ψ</mi><mo>(</mo><mi>x</mi><mo>)</mo><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|\psi(x)|^2</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 无关：粒子在全空间“等几率出现”。</li>
+<li>直观结论：动量越确定，位置越不确定。</li>
+</ul>
+<h2 id="海森堡不确定性关系（从波包到一般形式）">海森堡不确定性关系（从波包到一般形式）</h2>
+<h3 id="高斯波包：位置局域化导致动量展宽">高斯波包：位置局域化导致动量展宽</h3>
+<p>用“高斯包络 × 平面波”构造一维波包（归一化形式之一）：</p>
+$$
+\psi(x)=\left(\frac{\pi}{a}\right)^{-1/4} e^{-ax^2/2}\,e^{ik_0x}
+$$
+<ul>
+<li>概率密度与归一化：$$
+  P(x)=|\psi(x)|^2=\left(\frac{\pi}{a}\right)^{-1/2} e^{-ax^2},\quad 
+  \int_{-\infty}^{\infty}P(x)\,dx=1
+  $$
+</li>
+<li>位置不确定度（该构型下的结果）：$$
+  (\Delta x)^2=\frac{1}{2a}
+  $$
+</li>
+</ul>
+<h3 id="频谱分解：傅里叶变换与动量表象">频谱分解：傅里叶变换与动量表象</h3>
+<p>对波函数做傅里叶变换，得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span>（或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>）空间的幅度：</p>
+$$
+C(k)=\int_{-\infty}^{\infty}\frac{\psi(x)e^{-ikx}}{2\pi}\,dx
+$$
+<p>对上述高斯波包可得 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">C(k)</annotation></semantics></math></span></span> 仍为高斯，峰值在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">k_0</annotation></semantics></math></span></span>：</p>
+$$
+C(k)\propto \exp\!\left[-\frac{(k-k_0)^2}{4a}\right]
+$$
+<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mi mathvariant="normal">ℏ</mi><mi>k</mi></mrow><annotation encoding="application/x-tex">p=\hbar k</annotation></semantics></math></span></span> 写成动量幅度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">C(p)</annotation></semantics></math></span></span>：</p>
+$$
+C(p)\propto \exp\!\left[-\frac{(p-p_0)^2}{4a\hbar^2}\right],\quad p_0=\hbar k_0
+$$
+<p>概率解释对照：</p>
+<ul>
+<li>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 表象：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi mathvariant="normal">∣</mi><mi>ψ</mi><mo>(</mo><mi>x</mi><mo>)</mo><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">P(x)=|\psi(x)|^2</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo>)</mo><mspace width="0.16667em"></mspace><mi>d</mi><mi>x</mi></mrow><annotation encoding="application/x-tex">P(x)\,dx</annotation></semantics></math></span></span> 是落在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>x</mi><mo separator="true">,</mo><mi>x</mi><mo>+</mo><mi>d</mi><mi>x</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[x,x+dx]</annotation></semantics></math></span></span> 的概率。</li>
+<li>在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 表象：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>p</mi><mo>)</mo><mo>=</mo><mi mathvariant="normal">∣</mi><mi>C</mi><mo>(</mo><mi>p</mi><mo>)</mo><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">P(p)=|C(p)|^2</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>p</mi><mo>)</mo><mspace width="0.16667em"></mspace><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">P(p)\,dp</annotation></semantics></math></span></span> 是落在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mi>p</mi><mo separator="true">,</mo><mi>p</mi><mo>+</mo><mi>d</mi><mi>p</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">[p,p+dp]</annotation></semantics></math></span></span> 的概率。</li>
+</ul>
+<h3 id="得到-Delta-x-Delta-p-sim-hbar-与一般不确定性原理">得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>x</mi><mspace width="0.16667em"></mspace><mi mathvariant="normal">Δ</mi><mi>p</mi><mo>∼</mo><mi mathvariant="normal">ℏ</mi></mrow><annotation encoding="application/x-tex">\Delta x\,\Delta p\sim \hbar</annotation></semantics></math></span></span> 与一般不确定性原理</h3>
+<p>对该高斯态可算出量级关系：</p>
+$$
+\Delta x\,\Delta p \approx \hbar
+$$
+<p>推广到一般情形（补充的常见严格形式）：</p>
+$$
+\Delta A\,\Delta B \ge \frac{1}{2}\big|\langle [\hat A,\hat B]\rangle\big|
+$$
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>]</mo><mo>=</mo><mover accent="true"><mi>A</mi><mo>^</mo></mover><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>−</mo><mover accent="true"><mi>B</mi><mo>^</mo></mover><mover accent="true"><mi>A</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">[\hat A,\hat B]=\hat A\hat B-\hat B\hat A</annotation></semantics></math></span></span> 为对易子。</p>
+<h3 id="能量-时间不确定性（寿命与谱线宽度）">能量-时间不确定性（寿命与谱线宽度）</h3>
+<p>常见量级关系：</p>
+$$
+\Delta E\,\Delta t \approx \hbar
+$$
+<p>物理含义：若某激发态寿命为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\Delta t</annotation></semantics></math></span></span>，则能级存在天然宽度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>E</mi><mo>∼</mo><mi mathvariant="normal">ℏ</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">Δ</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\Delta E\sim\hbar/\Delta t</annotation></semantics></math></span></span>（谱线展宽）。<br>
+也可用于估计真空中短暂涨落的时间尺度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup><mi mathvariant="normal">Δ</mi><mi>t</mi><mo>∼</mo><mi mathvariant="normal">ℏ</mi></mrow><annotation encoding="application/x-tex">mc^2\Delta t\sim\hbar</annotation></semantics></math></span></span>（量级估计）。</p>
+<h2 id="物理应用：康普顿波长与电磁耦合常数">物理应用：康普顿波长与电磁耦合常数</h2>
+<h3 id="康普顿波长的引入">康普顿波长的引入</h3>
+<p>康普顿散射给出波长改变量：</p>
+$$
+\Delta\lambda = \lambda'-\lambda = \frac{h}{mc}(1-\cos\theta)
+$$
+<p>定义康普顿波长：</p>
+$$
+\lambda_c=\frac{h}{mc}\quad (\text{或常用约化形式 } \bar\lambda_c=\hbar/(mc))
+$$
+<h3 id="思想实验：把电子限制在尺度-x">思想实验：把电子限制在尺度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span></h3>
+<p>设将电子局限在空间尺度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 内，取量级估计：</p>
+<ul>
+<li>平均动量可取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><mrow><mi mathvariant="bold">p</mi></mrow><mo>⟩</mo><mo>≈</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\langle \mathbf{p}\rangle\approx 0</annotation></semantics></math></span></span>，但动量不确定度不为零。</li>
+<li>由不确定性关系：$$
+  \Delta p \sim \frac{\hbar}{x}
+  $$
+</li>
+</ul>
+<p>若仍用非相对论动能量级：</p>
+$$
+E_k\sim \frac{(\Delta p)^2}{2m}\sim \frac{\hbar^2}{2mx^2}
+$$
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">E_k</annotation></semantics></math></span></span> 与静能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">mc^2</annotation></semantics></math></span></span> 同量级时：</p>
+$$
+\frac{\hbar^2}{2mx^2}\sim mc^2\quad \Rightarrow\quad x\sim \frac{\hbar}{mc}\sim \bar\lambda_c
+$$
+<p>结论：把电子限制在康普顿波长尺度以内，会迫使其动量/能量达到相对论量级，更容易出现粒子产生与湮没等现象（物理层面理解）。</p>
+<h3 id="电磁耦合常数-alpha-mathrm-em-的刻画">电磁耦合常数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mrow><mrow><mi mathvariant="normal">e</mi><mi mathvariant="normal">m</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">\alpha_{\mathrm{em}}</annotation></semantics></math></span></span> 的刻画</h3>
+<p>两单位电荷相距 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span> 的库仑势能量级：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>∼</mo><msup><mi>e</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">U\sim e^2/r</annotation></semantics></math></span></span>。取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi><mo>=</mo><msub><mi>λ</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">r=\lambda_c</annotation></semantics></math></span></span>，得到无量纲比值：</p>
+$$
+\alpha_{\mathrm{em}} \equiv \frac{e^2}{\hbar c}\approx \frac{1}{137}
+$$
+<p>可理解为：在康普顿尺度上，库仑相互作用能与静能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><msup><mi>c</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">mc^2</annotation></semantics></math></span></span> 的无量纲比值。<br>
+（补充）类似地，不同相互作用也常用无量纲耦合常数刻画强弱。</p>
+<h2 id="表象与算符：从“描述”到“可观测量”">表象与算符：从“描述”到“可观测量”</h2>
+<h3 id="表象的概念：同一态的不同坐标化描述">表象的概念：同一态的不同坐标化描述</h3>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\psi(\mathbf{r})</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>(</mo><mrow><mi mathvariant="bold">p</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">C(\mathbf{p})</annotation></semantics></math></span></span> 等价地描述同一量子态：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\psi(\mathbf{r})</annotation></semantics></math></span></span>：位置（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>r</mi></mrow><annotation encoding="application/x-tex">r</annotation></semantics></math></span></span>）表象波函数</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>(</mo><mrow><mi mathvariant="bold">p</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">C(\mathbf{p})</annotation></semantics></math></span></span>：动量（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>）表象波函数<br>
+二者的模平方分别给出在对应表象下的概率密度。</li>
+</ul>
+<h3 id="期望值与动量算符的引入（以一维为例）">期望值与动量算符的引入（以一维为例）</h3>
+<p>位置平均值：</p>
+$$
+\langle x\rangle=\int_{-\infty}^{\infty} x\,|\psi(x)|^2\,dx
+$$
+<p>动量平均值可在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 空间写为：</p>
+$$
+\langle p\rangle=\int_{-\infty}^{\infty} p\,|C(p)|^2\,dp
+$$
+<p>将 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>(</mo><mi>k</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">C(k)</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ψ</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\psi(x)</annotation></semantics></math></span></span> 用傅里叶变换联系起来，可把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><mi>p</mi><mo>⟩</mo></mrow><annotation encoding="application/x-tex">\langle p\rangle</annotation></semantics></math></span></span> 写回到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span> 空间形式，从而引出位置表象中的动量算符：</p>
+$$
+\hat p_x=-i\hbar \frac{d}{dx}
+$$
+<p>并有：</p>
+$$
+\langle p\rangle=\langle \psi|\hat p|\psi\rangle
+$$
+<p>三维位置表象：</p>
+$$
+\hat{\mathbf{p}}=-i\hbar\nabla
+$$
+<p>补充（与后续练习呼应）：在动量表象中</p>
+$$
+\hat{\mathbf{r}}=i\hbar\nabla_{\mathbf{p}}
+$$
+<h2 id="一般算符、本征值与测量公设">一般算符、本征值与测量公设</h2>
+<h3 id="从经典力学量到算符">从经典力学量到算符</h3>
+<p>一般力学量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">p</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">O(\mathbf{r},\mathbf{p})</annotation></semantics></math></span></span> 在量子论中对应算符 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>O</mi><mo>^</mo></mover><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mover accent="true"><mrow><mrow><mi mathvariant="bold">p</mi></mrow></mrow><mo>^</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat O(\mathbf{r},\hat{\mathbf{p}})</annotation></semantics></math></span></span>。例如非相对论动能：</p>
+$$
+\hat T=\frac{\hat{\mathbf{p}}^2}{2m}= -\frac{\hbar^2}{2m}\nabla^2
+$$
+<h3 id="本征值方程与厄米算符">本征值方程与厄米算符</h3>
+<p>本征方程：</p>
+$$
+\hat O|j_i\rangle=o_i|j_i\rangle
+$$
+<p>若算符自伴/厄米，则本征值为实数，可作为可观测量对应的算符（测量结果必须是实数）。</p>
+<h3 id="测量：展开、概率与塌缩">测量：展开、概率与塌缩</h3>
+<p>设 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><mi mathvariant="normal">∣</mi><msub><mi>j</mi><mi>i</mi></msub><mo>⟩</mo><mo>}</mo></mrow><annotation encoding="application/x-tex">\{|j_i\rangle\}</annotation></semantics></math></span></span> 构成完备正交归一基，则任意态可展开：</p>
+$$
+|\psi\rangle=\sum_i c_i|j_i\rangle
+$$
+<p>测量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>O</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat O</annotation></semantics></math></span></span> 时，得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>o</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">o_i</annotation></semantics></math></span></span> 的概率为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>c</mi><mi>i</mi></msub><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">|c_i|^2</annotation></semantics></math></span></span>，测量后态塌缩到对应本征态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>j</mi><mi>i</mi></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|j_i\rangle</annotation></semantics></math></span></span>。</p>
+<h3 id="期望值的统一表达">期望值的统一表达</h3>
+<p>由展开得到期望值：</p>
+$$
+\langle \hat O\rangle=\langle \psi|\hat O|\psi\rangle=\sum_i |c_i|^2\,o_i
+$$
+<p>在位置表象也常写作：</p>
+$$
+\langle \hat O\rangle=\int \psi^*(\mathbf{r})\,\hat O\,\psi(\mathbf{r})\,d^3r
+$$
+<h2 id="对易关系与共同本征态">对易关系与共同本征态</h2>
+<h3 id="对易子的定义与常用恒等式">对易子的定义与常用恒等式</h3>
+<p>定义：</p>
+$$
+[\hat A,\hat B]=\hat A\hat B-\hat B\hat A
+$$
+<p>常用性质：</p>
+$$
+[A,B_1+B_2]=[A,B_1]+[A,B_2],\quad [A,\lambda B]=\lambda[A,B]
+$$
+<p>乘法规则：</p>
+$$
+[A,B_1B_2]=[A,B_1]B_2+B_1[A,B_2]
+$$
+<h3 id="典型例子：-hat-p-x-hat-x">典型例子：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub><mo separator="true">,</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo>]</mo></mrow><annotation encoding="application/x-tex">[\hat p_x,\hat x]</annotation></semantics></math></span></span></h3>
+<p>在位置表象 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub><mo>=</mo><mo>−</mo><mi>i</mi><mi mathvariant="normal">ℏ</mi><mfrac><mrow><mi>d</mi></mrow><mrow><mi>d</mi><mi>x</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\hat p_x=-i\hbar\frac{d}{dx}</annotation></semantics></math></span></span>，可得：</p>
+$$
+[\hat p_x,\hat x]=-i\hbar
+$$
+<p>与常见写法 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mover accent="true"><mi>x</mi><mo>^</mo></mover><mo separator="true">,</mo><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub><mo>]</mo><mo>=</mo><mi>i</mi><mi mathvariant="normal">ℏ</mi></mrow><annotation encoding="application/x-tex">[\hat x,\hat p_x]=i\hbar</annotation></semantics></math></span></span> 等价（交换顺序差一个负号）。</p>
+<h3 id="共同本征态与“可同时确定”">共同本征态与“可同时确定”</h3>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mover accent="true"><mi>A</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>B</mi><mo>^</mo></mover><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">[\hat A,\hat B]=0</annotation></semantics></math></span></span>，则在适当条件下可选取共同本征态，从而在该态中可同时具有确定的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>B</mi></mrow><annotation encoding="application/x-tex">B</annotation></semantics></math></span></span> 的测量值。这是“可兼容观测量”的数学基础。</p>
+<h2 id="轨道角动量：对称性、算符形式与量子化">轨道角动量：对称性、算符形式与量子化</h2>
+<h3 id="为什么讨论角动量（中心力场与守恒）">为什么讨论角动量（中心力场与守恒）</h3>
+<p>有心力系统（球对称势）角动量守恒；在原子问题中尤为关键。更一般地，连续对称性与守恒量相关（Noether 思想）。</p>
+<h3 id="轨道角动量算符的定义">轨道角动量算符的定义</h3>
+<p>经典定义：</p>
+$$
+\mathbf{l}=\mathbf{r}\times \mathbf{p}
+$$
+<p>量子论中：</p>
+$$
+\hat{\mathbf{l}}=\hat{\mathbf{r}}\times\hat{\mathbf{p}}
+$$
+<p>直角坐标分量：</p>
+$$
+\hat l_x=y\hat p_z-z\hat p_y,\quad
+\hat l_y=z\hat p_x-x\hat p_z,\quad
+\hat l_z=x\hat p_y-y\hat p_x
+$$
+<h3 id="球坐标中的表达式（中心势常用）">球坐标中的表达式（中心势常用）</h3>
+$$
+\hat l_z=-i\hbar\frac{\partial}{\partial \phi}
+$$
+$$
+\hat l_x=i\hbar\left(\sin\phi\,\frac{\partial}{\partial\theta}
++\cot\theta\cos\phi\,\frac{\partial}{\partial\phi}\right)
+$$
+$$
+\hat l_y=i\hbar\left(-\cos\phi\,\frac{\partial}{\partial\theta}
++\cot\theta\sin\phi\,\frac{\partial}{\partial\phi}\right)
+$$
+<p>总角动量平方：</p>
+$$
+\hat l^2=\hat l_x^2+\hat l_y^2+\hat l_z^2
+=-\hbar^2\left[\frac{1}{\sin\theta}\frac{\partial}{\partial\theta}
+\left(\sin\theta\frac{\partial}{\partial\theta}\right)
++\frac{1}{\sin^2\theta}\frac{\partial^2}{\partial\phi^2}\right]
+$$
+<h3 id="一个检验例：分量算符的本征态">一个检验例：分量算符的本征态</h3>
+<p>给定（径向部分记为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>R</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">R(r)</annotation></semantics></math></span></span>）：</p>
+$$
+\psi_1=R(r)\sin\theta\cos\phi,\quad
+\psi_2=R(r)\sin\theta\sin\phi,\quad
+\psi_3=-R(r)\cos\theta
+$$
+<p>可验证：</p>
+$$
+\hat l_x\psi_1=0,\quad \hat l_y\psi_2=0,\quad \hat l_z\psi_3=0
+$$
+<h2 id="角动量对易代数与共同本征量">角动量对易代数与共同本征量</h2>
+<h3 id="分量间的对易关系">分量间的对易关系</h3>
+$$
+[\hat l_x,\hat l_y]=i\hbar \hat l_z,\quad
+[\hat l_y,\hat l_z]=i\hbar \hat l_x,\quad
+[\hat l_z,\hat l_x]=i\hbar \hat l_y
+$$
+<p>紧凑写法（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ϵ</mi><mrow><mi>i</mi><mi>j</mi><mi>k</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\epsilon_{ijk}</annotation></semantics></math></span></span> 为 Levi-Civita 符号）：</p>
+$$
+[\hat l_i,\hat l_j]=i\hbar\,\epsilon_{ijk}\hat l_k
+$$
+<p>也常用形式化写法强调代数结构：</p>
+$$
+\hat{\mathbf{l}}\times\hat{\mathbf{l}}=i\hbar\hat{\mathbf{l}}
+$$
+<p>并会用到基本对易关系：</p>
+$$
+[\hat x,\hat p_x]=i\hbar
+$$
+<h3 id="hat-l-2-与分量对易：选择完备可观测量"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mi>l</mi><mo>^</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat l^2</annotation></semantics></math></span></span> 与分量对易：选择完备可观测量</h3>
+$$
+[\hat l^2,\hat l_z]=0
+$$
+<p>同理 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><msup><mover accent="true"><mi>l</mi><mo>^</mo></mover><mn>2</mn></msup><mo separator="true">,</mo><msub><mover accent="true"><mi>l</mi><mo>^</mo></mover><mi>x</mi></msub><mo>]</mo><mo>=</mo><mo>[</mo><msup><mover accent="true"><mi>l</mi><mo>^</mo></mover><mn>2</mn></msup><mo separator="true">,</mo><msub><mover accent="true"><mi>l</mi><mo>^</mo></mover><mi>y</mi></msub><mo>]</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">[\hat l^2,\hat l_x]=[\hat l^2,\hat l_y]=0</annotation></semantics></math></span></span>。因此可选取共同本征态集合，使态同时具有确定的 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mi>l</mi><mo>^</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat l^2</annotation></semantics></math></span></span> 与某一分量（通常取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>l</mi><mo>^</mo></mover><mi>z</mi></msub></mrow><annotation encoding="application/x-tex">\hat l_z</annotation></semantics></math></span></span>）。</p>
+<h2 id="轨道角动量的本征态与量子数">轨道角动量的本征态与量子数</h2>
+<h3 id="对比：动量本征态（连续谱）">对比：动量本征态（连续谱）</h3>
+<p>一维动量算符：</p>
+$$
+\hat p_x=-i\hbar\frac{\partial}{\partial x}
+$$
+<p>本征方程 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>p</mi><mo>^</mo></mover><mi>x</mi></msub><mi>ψ</mi><mo>=</mo><mi mathvariant="normal">ℏ</mi><mi>k</mi><mi>ψ</mi></mrow><annotation encoding="application/x-tex">\hat p_x\psi=\hbar k\psi</annotation></semantics></math></span></span> 的解为平面波：</p>
+$$
+\psi(x)=Ae^{ikx}
+$$
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span></span> 连续取值，因此动量本征态集合对应连续谱。</p>
+<h3 id="hat-l-z-本征态：单值性导致-m-量子化"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>l</mi><mo>^</mo></mover><mi>z</mi></msub></mrow><annotation encoding="application/x-tex">\hat l_z</annotation></semantics></math></span></span> 本征态：单值性导致 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 量子化</h3>
+$$
+\hat l_z=-i\hbar\frac{\partial}{\partial\phi}
+$$
+<p>本征方程：</p>
+$$
+\hat l_z\psi_m(\phi)=m\hbar\,\psi_m(\phi)
+$$
+<p>解：</p>
+$$
+\psi_m(\phi)=Ae^{im\phi}
+$$
+<p>归一化（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mi>π</mi></mrow></msubsup><mi mathvariant="normal">∣</mi><mi>ψ</mi><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mi>d</mi><mi>ϕ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\int_0^{2\pi}|\psi|^2d\phi=1</annotation></semantics></math></span></span>）给出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>=</mo><mo>(</mo><mn>2</mn><mi>π</mi><msup><mo>)</mo><mrow><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">A=(2\pi)^{-1/2}</annotation></semantics></math></span></span>。<br>
+单值性约束：</p>
+$$
+\psi(\phi)=\psi(\phi+2\pi)\Rightarrow m\in\mathbb{Z}
+$$
+<p>因此 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 离散，称为磁量子数。</p>
+<h3 id="hat-l-2-与-hat-l-z-的共同本征态：球谐函数"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mover accent="true"><mi>l</mi><mo>^</mo></mover><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\hat l^2</annotation></semantics></math></span></span> 与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>l</mi><mo>^</mo></mover><mi>z</mi></msub></mrow><annotation encoding="application/x-tex">\hat l_z</annotation></semantics></math></span></span> 的共同本征态：球谐函数</h3>
+<p>共同本征态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ψ</mi><mrow><mi>l</mi><mi>m</mi></mrow></msub><mo>(</mo><mi>θ</mi><mo separator="true">,</mo><mi>ϕ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\psi_{lm}(\theta,\phi)</annotation></semantics></math></span></span> 满足：</p>
+$$
+\hat l^2\psi_{lm}=l(l+1)\hbar^2\psi_{lm},\quad
+\hat l_z\psi_{lm}=m\hbar\psi_{lm}
+$$
+<p>角向部分为球谐函数：</p>
+$$
+Y_{lm}(\theta,\phi)\propto P_l^{m}(\cos\theta)\,e^{im\phi}
+$$
+<p>允许取值：</p>
+$$
+l=0,1,2,\cdots;\quad m=0,\pm1,\pm2,\cdots,\pm l
+$$
+<p>记号上常写 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>l</mi><mi>m</mi><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|lm\rangle</annotation></semantics></math></span></span> 表示该共同本征态。</p>
+<p>补充：球谐函数构成单位球面上的正交完备基：</p>
+$$
+\int Y_{lm}^*(\theta,\phi)\,Y_{l'm'}(\theta,\phi)\,d\Omega=\delta_{ll'}\delta_{mm'}
+$$
+<h2 id="角动量合成：从经典连续到量子离散">角动量合成：从经典连续到量子离散</h2>
+<h3 id="经典合成（连续）">经典合成（连续）</h3>
+<p>经典向量加法：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">l</mi></mrow><mo>=</mo><msub><mrow><mi mathvariant="bold">l</mi></mrow><mn>1</mn></msub><mo>+</mo><msub><mrow><mi mathvariant="bold">l</mi></mrow><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">\mathbf{l}=\mathbf{l}_1+\mathbf{l}_2</annotation></semantics></math></span></span>。合成大小依赖夹角，可在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>l</mi><mn>1</mn></msub><mo>−</mo><msub><mi>l</mi><mn>2</mn></msub><mi mathvariant="normal">∣</mi></mrow><annotation encoding="application/x-tex">|l_1-l_2|</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>1</mn></msub><mo>+</mo><msub><mi>l</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">l_1+l_2</annotation></semantics></math></span></span> 连续变化。</p>
+<h3 id="量子合成规则（离散）">量子合成规则（离散）</h3>
+<p>总角动量算符：</p>
+$$
+\hat{\mathbf{l}}=\hat{\mathbf{l}}_1+\hat{\mathbf{l}}_2
+$$
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>l</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">l_1,l_2</annotation></semantics></math></span></span> 已知，则总角动量量子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 只能取：</p>
+$$
+l=|l_1-l_2|,\ |l_1-l_2|+1,\ \cdots,\ l_1+l_2
+$$
+<p>每个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 下 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 取 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mi>l</mi><mo separator="true">,</mo><mo>−</mo><mi>l</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>l</mi></mrow><annotation encoding="application/x-tex">-l,-l+1,\cdots,l</annotation></semantics></math></span></span>。</p>
+<h3 id="合成例：两电子-l-1-l-2-1">合成例：两电子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>1</mn></msub><mo>=</mo><msub><mi>l</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">l_1=l_2=1</annotation></semantics></math></span></span></h3>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>m</mi><mn>2</mn></msub><mo>∈</mo><mo>{</mo><mn>1</mn><mo separator="true">,</mo><mn>0</mn><mo separator="true">,</mo><mo>−</mo><mn>1</mn><mo>}</mo></mrow><annotation encoding="application/x-tex">m_1,m_2\in\{1,0,-1\}</annotation></semantics></math></span></span>，总 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mo>=</mo><msub><mi>m</mi><mn>1</mn></msub><mo>+</mo><msub><mi>m</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">m=m_1+m_2</annotation></semantics></math></span></span>。</li>
+<li>总 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 的可能取值：$$
+  l\in\{2,1,0\}
+  $$
+</li>
+</ul>
+<h3 id="合成例：l-1-2-l-2-5（计数与列举）">合成例：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>l</mi><mn>1</mn></msub><mo>=</mo><mn>2</mn><mo separator="true">,</mo><mtext>&nbsp;</mtext><msub><mi>l</mi><mn>2</mn></msub><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">l_1=2,\ l_2=5</annotation></semantics></math></span></span>（计数与列举）</h3>
+<p>单个电子态：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>l</mi><mn>1</mn></msub><msub><mi>m</mi><mn>1</mn></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|l_1m_1\rangle</annotation></semantics></math></span></span>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>±</mo><mn>1</mn><mo separator="true">,</mo><mo>±</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">m_1=0,\pm1,\pm2</annotation></semantics></math></span></span>（共 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><msub><mi>l</mi><mn>1</mn></msub><mo>+</mo><mn>1</mn><mo>=</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">2l_1+1=5</annotation></semantics></math></span></span> 个）</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>l</mi><mn>2</mn></msub><msub><mi>m</mi><mn>2</mn></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|l_2m_2\rangle</annotation></semantics></math></span></span>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>m</mi><mn>2</mn></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mo>±</mo><mn>1</mn><mo separator="true">,</mo><mo>±</mo><mn>2</mn><mo separator="true">,</mo><mo>±</mo><mn>3</mn><mo separator="true">,</mo><mo>±</mo><mn>4</mn><mo separator="true">,</mo><mo>±</mo><mn>5</mn></mrow><annotation encoding="application/x-tex">m_2=0,\pm1,\pm2,\pm3,\pm4,\pm5</annotation></semantics></math></span></span>（共 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><msub><mi>l</mi><mn>2</mn></msub><mo>+</mo><mn>1</mn><mo>=</mo><mn>1</mn><mn>1</mn></mrow><annotation encoding="application/x-tex">2l_2+1=11</annotation></semantics></math></span></span> 个）</li>
+</ul>
+<p>合成前总态数：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn><mo>×</mo><mn>1</mn><mn>1</mn><mo>=</mo><mn>5</mn><mn>5</mn></mrow><annotation encoding="application/x-tex">5\times 11=55</annotation></semantics></math></span></span>。</p>
+<p>合成后允许：</p>
+$$
+l=7,6,5,4,3
+$$
+<p>对应每个 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 的态数分别为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>2</mn><mi>l</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2l+1</annotation></semantics></math></span></span>：</p>
+$$
+15+13+11+9+7=55
+$$
+<p>与合成前计数一致。</p>
+<p>列举（示意写法）：</p>
+<ul>
+<li>合成前：
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>l</mi><mn>1</mn></msub><msub><mi>m</mi><mn>1</mn></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|l_1m_1\rangle</annotation></semantics></math></span></span>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mn>2</mn><mn>0</mn><mo>⟩</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mn>2</mn><mo>±</mo><mn>1</mn><mo>⟩</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mn>2</mn><mo>±</mo><mn>2</mn><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|20\rangle, |2\pm1\rangle, |2\pm2\rangle</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>l</mi><mn>2</mn></msub><msub><mi>m</mi><mn>2</mn></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|l_2m_2\rangle</annotation></semantics></math></span></span>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mn>5</mn><mn>0</mn><mo>⟩</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mn>5</mn><mo>±</mo><mn>1</mn><mo>⟩</mo><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mn>5</mn><mo>±</mo><mn>5</mn><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|50\rangle, |5\pm1\rangle,\cdots,|5\pm5\rangle</annotation></semantics></math></span></span></li>
+</ul>
+</li>
+<li>合成后：
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mn>7</mn><mn>0</mn><mo>⟩</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mn>7</mn><mo>±</mo><mn>1</mn><mo>⟩</mo><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mn>7</mn><mo>±</mo><mn>7</mn><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|70\rangle,|7\pm1\rangle,\cdots,|7\pm7\rangle</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mn>6</mn><mn>0</mn><mo>⟩</mo><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mn>6</mn><mo>±</mo><mn>6</mn><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|60\rangle,\cdots,|6\pm6\rangle</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mn>5</mn><mn>0</mn><mo>⟩</mo><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mn>5</mn><mo>±</mo><mn>5</mn><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|50\rangle,\cdots,|5\pm5\rangle</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mn>4</mn><mn>0</mn><mo>⟩</mo><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mn>4</mn><mo>±</mo><mn>4</mn><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|40\rangle,\cdots,|4\pm4\rangle</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mn>3</mn><mn>0</mn><mo>⟩</mo><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><mn>3</mn><mo>±</mo><mn>3</mn><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|30\rangle,\cdots,|3\pm3\rangle</annotation></semantics></math></span></span></li>
+</ul>
+</li>
+</ul>
+<p>补充：要把“合成前的直积基”变成“合成后的总角动量基”，需要 Clebsch–Gordan 系数；此处只使用合成规则与计数，不展开系数表。</p>
+<h2 id="练习（整理）">练习（整理）</h2>
+<h3 id="不确定性与康普顿波长">不确定性与康普顿波长</h3>
+<ul>
+<li>从不确定性关系角度解释康普顿波长的物理意义：若电子活动范围 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≲</mo><msub><mi>λ</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">\lesssim \lambda_c</annotation></semantics></math></span></span>，其动量不确定度对应的运动更偏相对论性还是非相对论性？并比较 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>λ</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">\lambda_c</annotation></semantics></math></span></span> 与原子/原子核典型尺度大小关系。</li>
+<li>用不确定性关系说明：在原子中“电子轨道”的经典概念为何没有意义；以及在某些束流实验条件下为何又可近似使用轨道概念。</li>
+<li>用归一化条件 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msup><mi>ψ</mi><mo>∗</mo></msup><mo>(</mo><mi>x</mi><mo>)</mo><mi>ψ</mi><mo>(</mo><mi>x</mi><mo>)</mo><mspace width="0.16667em"></mspace><mi>d</mi><mi>x</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\int_{-\infty}^{\infty}\psi^*(x)\psi(x)\,dx=1</annotation></semantics></math></span></span>，求高斯型波函数归一化因子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>=</mo><mo>(</mo><mi>π</mi><mi mathvariant="normal">/</mi><mi>a</mi><msup><mo>)</mo><mrow><mo>−</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>4</mn></mrow></msup></mrow><annotation encoding="application/x-tex">A=(\pi/a)^{-1/4}</annotation></semantics></math></span></span>。</li>
+<li>论证在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span> 表象中位矢 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="bold">r</mi></mrow></mrow><annotation encoding="application/x-tex">\mathbf{r}</annotation></semantics></math></span></span> 对应算符$$
+  x\to i\hbar\frac{\partial}{\partial p_x},\quad
+  y\to i\hbar\frac{\partial}{\partial p_y},\quad
+  z\to i\hbar\frac{\partial}{\partial p_z}
+  $$
+即 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mrow><mi mathvariant="bold">r</mi></mrow></mrow><mo>^</mo></mover><mo>=</mo><mi>i</mi><mi mathvariant="normal">ℏ</mi><msub><mi mathvariant="normal">∇</mi><mrow><mrow><mi mathvariant="bold">p</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">\hat{\mathbf{r}}=i\hbar\nabla_{\mathbf{p}}</annotation></semantics></math></span></span>。</li>
+</ul>
+<h3 id="角动量与算符恒等式">角动量与算符恒等式</h3>
+<ul>
+<li>数学恒等式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>a</mi><mo>+</mo><mi>b</mi><mo>)</mo><mo>(</mo><mi>a</mi><mo>−</mo><mi>b</mi><mo>)</mo><mo>=</mo><msup><mi>a</mi><mn>2</mn></msup><mo>−</mo><msup><mi>b</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">(a+b)(a-b)=a^2-b^2</annotation></semantics></math></span></span>。在量子论中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>a</mi><mo separator="true">,</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">a,b</annotation></semantics></math></span></span> 变为算符 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>a</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>b</mi><mo>^</mo></mover></mrow><annotation encoding="application/x-tex">\hat a,\hat b</annotation></semantics></math></span></span> 后，上式是否仍普遍成立？（提示：与 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>[</mo><mover accent="true"><mi>a</mi><mo>^</mo></mover><mo separator="true">,</mo><mover accent="true"><mi>b</mi><mo>^</mo></mover><mo>]</mo></mrow><annotation encoding="application/x-tex">[\hat a,\hat b]</annotation></semantics></math></span></span> 是否为 0 有关。）</li>
+<li>证明矢量算符恒等式：$$
+  \hat{\mathbf{p}}\times\hat{\mathbf{l}}+\hat{\mathbf{l}}\times\hat{\mathbf{p}}
+  =2i\hbar\,\hat{\mathbf{p}}
+  $$
+</li>
+</ul>
+<h2 id="总结串联">总结串联</h2>
+<ul>
+<li>用“表象 + 算符 + 本征值 + 对易关系”建立从量子态到可观测量的桥梁。</li>
+<li>不确定性关系刻画“不可同时确定”的根源（非对易）。</li>
+<li>轨道角动量来自旋转对称性，其对易代数决定了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi><mo separator="true">,</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">l,m</annotation></semantics></math></span></span> 的量子化与合成规则。</li>
+</ul>
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E9%A2%84%E4%B9%A0/" class="">
+              预习
+            </a>
+          
+            <a href="/physics/tags/%E5%8E%9F%E5%AD%90%E7%89%A9%E7%90%86pku/" class="">
+              原子物理pku
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/YuanZiWuLi/量子力学中的算符、测量与轨道角动量/" target="_blank" title="量子力学中的算符、测量与轨道角动量">https://kotokowa.github.io/physics/YuanZiWuLi/量子力学中的算符、测量与轨道角动量/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/YuanZiWuLi/%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E3%80%81%E5%85%B8%E5%9E%8B%E6%A8%A1%E5%9E%8B%E3%80%81%E8%87%AA%E6%97%8B%E4%B8%8E%E5%85%89%E5%AD%90%E3%80%81%E5%8F%8C%E6%80%81%E7%B3%BB%E7%BB%9F/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">薛定谔方程、典型模型、自旋与光子、双态系统</div>
+      </div>
+      
+      <!-- <div class="content">
+        薛定谔方程、典型模型、自旋与光子、双态系统
+薛定谔方程与量子态的描述方式
+量子态、波函数与可观测量
+波函数与概率解释
+
+
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/YuanZiWuLi/5/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">热辐射、光子与物质波：量子化的诞生与波粒二象性</div>
+      </div>
+      <!-- <div class="content">
+        
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">量子力学中的算符、测量与轨道角动量：一份整合笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E6%80%81%E4%B8%8E%E6%A6%82%E7%8E%87%E8%AF%A0%E9%87%8A"><span class="toc-text">量子态与概率诠释</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A2%E5%87%BD%E6%95%B0%E4%B8%8E%E6%A6%82%E7%8E%87%E5%AF%86%E5%BA%A6"><span class="toc-text">波函数与概率密度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%B3%E9%9D%A2%E6%B3%A2%E4%B8%8E%E2%80%9C%E5%8A%A8%E9%87%8F%E7%A1%AE%E5%AE%9A%E3%80%81%E4%BD%8D%E7%BD%AE%E4%B8%8D%E5%AE%9A%E2%80%9D"><span class="toc-text">平面波与“动量确定、位置不定”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%B7%E6%A3%AE%E5%A0%A1%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E5%85%B3%E7%B3%BB%EF%BC%88%E4%BB%8E%E6%B3%A2%E5%8C%85%E5%88%B0%E4%B8%80%E8%88%AC%E5%BD%A2%E5%BC%8F%EF%BC%89"><span class="toc-text">海森堡不确定性关系（从波包到一般形式）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%96%AF%E6%B3%A2%E5%8C%85%EF%BC%9A%E4%BD%8D%E7%BD%AE%E5%B1%80%E5%9F%9F%E5%8C%96%E5%AF%BC%E8%87%B4%E5%8A%A8%E9%87%8F%E5%B1%95%E5%AE%BD"><span class="toc-text">高斯波包：位置局域化导致动量展宽</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%91%E8%B0%B1%E5%88%86%E8%A7%A3%EF%BC%9A%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2%E4%B8%8E%E5%8A%A8%E9%87%8F%E8%A1%A8%E8%B1%A1"><span class="toc-text">频谱分解：傅里叶变换与动量表象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%97%E5%88%B0-Delta-x-Delta-p-sim-hbar-%E4%B8%8E%E4%B8%80%E8%88%AC%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E5%8E%9F%E7%90%86"><span class="toc-text">得到 ΔxΔp∼ℏ\Delta x\,\Delta p\sim \hbarΔxΔp∼ℏ 与一般不确定性原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%BD%E9%87%8F-%E6%97%B6%E9%97%B4%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%EF%BC%88%E5%AF%BF%E5%91%BD%E4%B8%8E%E8%B0%B1%E7%BA%BF%E5%AE%BD%E5%BA%A6%EF%BC%89"><span class="toc-text">能量-时间不确定性（寿命与谱线宽度）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E5%BA%94%E7%94%A8%EF%BC%9A%E5%BA%B7%E6%99%AE%E9%A1%BF%E6%B3%A2%E9%95%BF%E4%B8%8E%E7%94%B5%E7%A3%81%E8%80%A6%E5%90%88%E5%B8%B8%E6%95%B0"><span class="toc-text">物理应用：康普顿波长与电磁耦合常数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%B7%E6%99%AE%E9%A1%BF%E6%B3%A2%E9%95%BF%E7%9A%84%E5%BC%95%E5%85%A5"><span class="toc-text">康普顿波长的引入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E6%83%B3%E5%AE%9E%E9%AA%8C%EF%BC%9A%E6%8A%8A%E7%94%B5%E5%AD%90%E9%99%90%E5%88%B6%E5%9C%A8%E5%B0%BA%E5%BA%A6-x"><span class="toc-text">思想实验：把电子限制在尺度 xxx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E7%A3%81%E8%80%A6%E5%90%88%E5%B8%B8%E6%95%B0-alpha-mathrm-em-%E7%9A%84%E5%88%BB%E7%94%BB"><span class="toc-text">电磁耦合常数 αem\alpha_{\mathrm{em}}α​em​​ 的刻画</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E8%B1%A1%E4%B8%8E%E7%AE%97%E7%AC%A6%EF%BC%9A%E4%BB%8E%E2%80%9C%E6%8F%8F%E8%BF%B0%E2%80%9D%E5%88%B0%E2%80%9C%E5%8F%AF%E8%A7%82%E6%B5%8B%E9%87%8F%E2%80%9D"><span class="toc-text">表象与算符：从“描述”到“可观测量”</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A8%E8%B1%A1%E7%9A%84%E6%A6%82%E5%BF%B5%EF%BC%9A%E5%90%8C%E4%B8%80%E6%80%81%E7%9A%84%E4%B8%8D%E5%90%8C%E5%9D%90%E6%A0%87%E5%8C%96%E6%8F%8F%E8%BF%B0"><span class="toc-text">表象的概念：同一态的不同坐标化描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B%E5%80%BC%E4%B8%8E%E5%8A%A8%E9%87%8F%E7%AE%97%E7%AC%A6%E7%9A%84%E5%BC%95%E5%85%A5%EF%BC%88%E4%BB%A5%E4%B8%80%E7%BB%B4%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-text">期望值与动量算符的引入（以一维为例）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E7%AE%97%E7%AC%A6%E3%80%81%E6%9C%AC%E5%BE%81%E5%80%BC%E4%B8%8E%E6%B5%8B%E9%87%8F%E5%85%AC%E8%AE%BE"><span class="toc-text">一般算符、本征值与测量公设</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6%E9%87%8F%E5%88%B0%E7%AE%97%E7%AC%A6"><span class="toc-text">从经典力学量到算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%BE%81%E5%80%BC%E6%96%B9%E7%A8%8B%E4%B8%8E%E5%8E%84%E7%B1%B3%E7%AE%97%E7%AC%A6"><span class="toc-text">本征值方程与厄米算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8B%E9%87%8F%EF%BC%9A%E5%B1%95%E5%BC%80%E3%80%81%E6%A6%82%E7%8E%87%E4%B8%8E%E5%A1%8C%E7%BC%A9"><span class="toc-text">测量：展开、概率与塌缩</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%9F%E6%9C%9B%E5%80%BC%E7%9A%84%E7%BB%9F%E4%B8%80%E8%A1%A8%E8%BE%BE"><span class="toc-text">期望值的统一表达</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E6%98%93%E5%85%B3%E7%B3%BB%E4%B8%8E%E5%85%B1%E5%90%8C%E6%9C%AC%E5%BE%81%E6%80%81"><span class="toc-text">对易关系与共同本征态</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%98%93%E5%AD%90%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%B8%B8%E7%94%A8%E6%81%92%E7%AD%89%E5%BC%8F"><span class="toc-text">对易子的定义与常用恒等式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B8%E5%9E%8B%E4%BE%8B%E5%AD%90%EF%BC%9A-hat-p-x-hat-x"><span class="toc-text">典型例子：[p^x,x^][\hat p_x,\hat x][​p​^​​​x​​,​x​^​​]</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B1%E5%90%8C%E6%9C%AC%E5%BE%81%E6%80%81%E4%B8%8E%E2%80%9C%E5%8F%AF%E5%90%8C%E6%97%B6%E7%A1%AE%E5%AE%9A%E2%80%9D"><span class="toc-text">共同本征态与“可同时确定”</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F%EF%BC%9A%E5%AF%B9%E7%A7%B0%E6%80%A7%E3%80%81%E7%AE%97%E7%AC%A6%E5%BD%A2%E5%BC%8F%E4%B8%8E%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-text">轨道角动量：对称性、算符形式与量子化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AE%A8%E8%AE%BA%E8%A7%92%E5%8A%A8%E9%87%8F%EF%BC%88%E4%B8%AD%E5%BF%83%E5%8A%9B%E5%9C%BA%E4%B8%8E%E5%AE%88%E6%81%92%EF%BC%89"><span class="toc-text">为什么讨论角动量（中心力场与守恒）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F%E7%AE%97%E7%AC%A6%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">轨道角动量算符的定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%83%E5%9D%90%E6%A0%87%E4%B8%AD%E7%9A%84%E8%A1%A8%E8%BE%BE%E5%BC%8F%EF%BC%88%E4%B8%AD%E5%BF%83%E5%8A%BF%E5%B8%B8%E7%94%A8%EF%BC%89"><span class="toc-text">球坐标中的表达式（中心势常用）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AA%E6%A3%80%E9%AA%8C%E4%BE%8B%EF%BC%9A%E5%88%86%E9%87%8F%E7%AE%97%E7%AC%A6%E7%9A%84%E6%9C%AC%E5%BE%81%E6%80%81"><span class="toc-text">一个检验例：分量算符的本征态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E5%AF%B9%E6%98%93%E4%BB%A3%E6%95%B0%E4%B8%8E%E5%85%B1%E5%90%8C%E6%9C%AC%E5%BE%81%E9%87%8F"><span class="toc-text">角动量对易代数与共同本征量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E9%87%8F%E9%97%B4%E7%9A%84%E5%AF%B9%E6%98%93%E5%85%B3%E7%B3%BB"><span class="toc-text">分量间的对易关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hat-l-2-%E4%B8%8E%E5%88%86%E9%87%8F%E5%AF%B9%E6%98%93%EF%BC%9A%E9%80%89%E6%8B%A9%E5%AE%8C%E5%A4%87%E5%8F%AF%E8%A7%82%E6%B5%8B%E9%87%8F"><span class="toc-text">l^2\hat l^2​l​^​​​2​​ 与分量对易：选择完备可观测量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F%E7%9A%84%E6%9C%AC%E5%BE%81%E6%80%81%E4%B8%8E%E9%87%8F%E5%AD%90%E6%95%B0"><span class="toc-text">轨道角动量的本征态与量子数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%EF%BC%9A%E5%8A%A8%E9%87%8F%E6%9C%AC%E5%BE%81%E6%80%81%EF%BC%88%E8%BF%9E%E7%BB%AD%E8%B0%B1%EF%BC%89"><span class="toc-text">对比：动量本征态（连续谱）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hat-l-z-%E6%9C%AC%E5%BE%81%E6%80%81%EF%BC%9A%E5%8D%95%E5%80%BC%E6%80%A7%E5%AF%BC%E8%87%B4-m-%E9%87%8F%E5%AD%90%E5%8C%96"><span class="toc-text">l^z\hat l_z​l​^​​​z​​ 本征态：单值性导致 mmm 量子化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hat-l-2-%E4%B8%8E-hat-l-z-%E7%9A%84%E5%85%B1%E5%90%8C%E6%9C%AC%E5%BE%81%E6%80%81%EF%BC%9A%E7%90%83%E8%B0%90%E5%87%BD%E6%95%B0"><span class="toc-text">l^2\hat l^2​l​^​​​2​​ 与 l^z\hat l_z​l​^​​​z​​ 的共同本征态：球谐函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E5%90%88%E6%88%90%EF%BC%9A%E4%BB%8E%E7%BB%8F%E5%85%B8%E8%BF%9E%E7%BB%AD%E5%88%B0%E9%87%8F%E5%AD%90%E7%A6%BB%E6%95%A3"><span class="toc-text">角动量合成：从经典连续到量子离散</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%90%88%E6%88%90%EF%BC%88%E8%BF%9E%E7%BB%AD%EF%BC%89"><span class="toc-text">经典合成（连续）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E5%90%88%E6%88%90%E8%A7%84%E5%88%99%EF%BC%88%E7%A6%BB%E6%95%A3%EF%BC%89"><span class="toc-text">量子合成规则（离散）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E6%88%90%E4%BE%8B%EF%BC%9A%E4%B8%A4%E7%94%B5%E5%AD%90-l-1-l-2-1"><span class="toc-text">合成例：两电子 l1&#x3D;l2&#x3D;1l_1&#x3D;l_2&#x3D;1l​1​​&#x3D;l​2​​&#x3D;1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%88%E6%88%90%E4%BE%8B%EF%BC%9Al-1-2-l-2-5%EF%BC%88%E8%AE%A1%E6%95%B0%E4%B8%8E%E5%88%97%E4%B8%BE%EF%BC%89"><span class="toc-text">合成例：l1&#x3D;2, l2&#x3D;5l_1&#x3D;2,\ l_2&#x3D;5l​1​​&#x3D;2, l​2​​&#x3D;5（计数与列举）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0%EF%BC%88%E6%95%B4%E7%90%86%EF%BC%89"><span class="toc-text">练习（整理）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7%E4%B8%8E%E5%BA%B7%E6%99%AE%E9%A1%BF%E6%B3%A2%E9%95%BF"><span class="toc-text">不确定性与康普顿波长</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E5%8A%A8%E9%87%8F%E4%B8%8E%E7%AE%97%E7%AC%A6%E6%81%92%E7%AD%89%E5%BC%8F"><span class="toc-text">角动量与算符恒等式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E4%B8%B2%E8%81%94"><span class="toc-text">总结串联</span></a></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E3%80%81%E7%A3%81%E5%9C%BA%E6%95%88%E5%BA%94%E4%B8%8E%E5%88%86%E5%AD%90%E5%85%89%E8%B0%B1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E3%80%81%E7%A3%81%E5%9C%BA%E6%95%88%E5%BA%94%E4%B8%8E%E5%88%86%E5%AD%90%E5%85%89%E8%B0%B1/">多电子原子、磁场效应与分子光谱</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E4%BB%8E%E6%97%A7%E9%87%8F%E5%AD%90%E8%AE%BA%E5%88%B0%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84%EF%BC%9A%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%B2%BE%E7%A1%AE%E8%A7%A3%E3%80%81%E7%B1%BB%E6%B0%A2%E6%A0%87%E5%BA%A6%E5%BE%8B%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%95%88%E5%BA%94/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-6a69034623014e758c18538ba5d1729d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E4%BB%8E%E6%97%A7%E9%87%8F%E5%AD%90%E8%AE%BA%E5%88%B0%E5%A4%9A%E7%94%B5%E5%AD%90%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84%EF%BC%9A%E6%B0%A2%E5%8E%9F%E5%AD%90%E7%B2%BE%E7%A1%AE%E8%A7%A3%E3%80%81%E7%B1%BB%E6%B0%A2%E6%A0%87%E5%BA%A6%E5%BE%8B%E4%B8%8E%E4%BA%A4%E6%8D%A2%E6%95%88%E5%BA%94/">从旧量子论到多电子原子结构：氢原子精确解、类氢标度律与交换效应</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E3%80%81%E5%85%B8%E5%9E%8B%E6%A8%A1%E5%9E%8B%E3%80%81%E8%87%AA%E6%97%8B%E4%B8%8E%E5%85%89%E5%AD%90%E3%80%81%E5%8F%8C%E6%80%81%E7%B3%BB%E7%BB%9F/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-4fe02df215ca82cc6704026c2b7417e5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E8%96%9B%E5%AE%9A%E8%B0%94%E6%96%B9%E7%A8%8B%E3%80%81%E5%85%B8%E5%9E%8B%E6%A8%A1%E5%9E%8B%E3%80%81%E8%87%AA%E6%97%8B%E4%B8%8E%E5%85%89%E5%AD%90%E3%80%81%E5%8F%8C%E6%80%81%E7%B3%BB%E7%BB%9F/">薛定谔方程、典型模型、自旋与光子、双态系统</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E7%AE%97%E7%AC%A6%E3%80%81%E6%B5%8B%E9%87%8F%E4%B8%8E%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-2e536b044d0c314e41e30720b9bcab9d_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-27</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E4%B8%AD%E7%9A%84%E7%AE%97%E7%AC%A6%E3%80%81%E6%B5%8B%E9%87%8F%E4%B8%8E%E8%BD%A8%E9%81%93%E8%A7%92%E5%8A%A8%E9%87%8F/">量子力学中的算符、测量与轨道角动量</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/YuanZiWuLi/5/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" class="lazyload placeholder" data-srcset="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">01-27</span>
+                
+              </div>
+              <a class="post-title" href="/physics/YuanZiWuLi/5/">热辐射、光子与物质波：量子化的诞生与波粒二象性</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script defer="">
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(76, 213, 153, 0.6)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 -  <a target="_blank" rel="noopener" href="https://github.com/kotokowa">kotokowa</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
+  <div class="dark-content">
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
+  </div>
+</div>
+
+<script defer="">
+  $(function() {
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
+    if (isDark) {
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
+    }
+  }
+</script>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer="">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script defer="" src="/physics/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/physics/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js class="" server="netease" type="playlist" id="17453633682" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="none" volume="0.4" list-folded="true">
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <!-- 背景彩带 -->
+    
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
+    
+
+    <script src="/physics/js/utils/index.js"></script>
+    <script src="/physics/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/physics/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/physics/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/physics/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/physics/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/physics/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax="">
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+        <script type="text/javascript">
+  var utteranceComment = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceComment.Theme = 'github-dark';
+    } else {
+      utteranceComment.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceComment.Theme)
+      utterances.setAttribute('repo', 'kotokowa/physics-utterances')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceComment.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+      
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script async="" src="/physics/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>
