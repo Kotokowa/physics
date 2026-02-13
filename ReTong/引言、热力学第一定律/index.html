@@ -1,0 +1,2069 @@
+<!DOCTYPE html><html><!-- meta/link... --><head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+  <title>引言、热力学第一定律 | tianyi</title>
+
+  <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
+  <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
+  <link href="https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="/physics/js/swiper/swiper@5.4.1.min.css" rel="stylesheet">
+  
+  
+  
+  
+<link rel="stylesheet" href="/physics/css/animate.min.css">
+
+  
+<link rel="stylesheet" href="/physics/css/style.css">
+
+  
+  
+    <link href="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" rel="stylesheet">
+  
+  
+    
+<link rel="stylesheet" href="/physics/js/shareJs/share.min.css">
+
+  
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
+    <script defer="" src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+    <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+    
+    
+    <!-- 依赖于jquery和vue -->
+    <script src="https://unpkg.com/jquery@3.5.1/dist/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue@2.6.11/dist/vue.min.js"></script>
+
+    <!-- import link -->
+    
+        
+            
+        
+            
+        
+    
+    <!-- import script -->
+    
+        
+            
+        
+            
+        
+    
+
+<meta name="generator" content="Hexo 8.0.0"><link rel="alternate" href="/physics/atom.xml" title="tianyi" type="application/atom+xml">
+</head>
+
+  
+  <!-- 预加载动画 -->
+  
+  
+  <body><div class="preloader_6" id="loader">
+  <div class="loader"></div>
+</div>
+  <script>
+    var endLoading = function () {
+      document.body.style.overflow = 'auto';
+      document.getElementById('loader').classList.add("loaded");
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+  </script>
+
+
+  
+    <!-- 判断是否为暗黑风格 -->
+    <!-- 判断是否为黑夜模式 -->
+<script defer="">
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>
+
+    <!-- 需要在上面加载的js -->
+    <script>
+  function loadScript(src, cb) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var HEAD = document.getElementsByTagName("head")[0] || document.documentElement;
+        var script = document.createElement("script");
+        script.setAttribute("type", "text/javascript");
+        if (cb) {
+          if (JSON.stringify(cb)) {
+            for (let p in cb) {
+              if (p == "onload") {
+                script[p] = () => {
+                  cb[p]()
+                  resolve()
+                }
+              } else {
+                script[p] = cb[p]
+                script.onload = resolve
+              }
+            }
+          } else {
+            script.onload = () => {
+              cb()
+              resolve()
+            };
+          }
+        } else {
+          script.onload = resolve
+        }
+        script.setAttribute("src", src);
+        HEAD.appendChild(script);
+      });
+    });
+  }
+
+  //https://github.com/filamentgroup/loadCSS
+  var loadCSS = function (src) {
+    return new Promise(resolve => {
+      setTimeout(function () {
+        var link = document.createElement('link');
+        link.rel = "stylesheet";
+        link.href = src;
+        link.onload = resolve;
+        document.getElementsByTagName("head")[0].appendChild(link);
+      });
+    });
+  };
+
+</script> 
+
+<!-- 轮播图所需要的js -->
+<script src="/physics/js/swiper/swiper.min.js"></script>
+<script src="/physics/js/swiper/vue-awesome-swiper.js"></script>
+<script src="/physics/js/swiper/swiper.animate1.0.3.min.js"></script>
+
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
+
+  <script src="/physics/js/vue-typed-js/index.js"></script>
+
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="/physics/js/vue-seamless-scroll/index.js"></script>
+
+<!-- 打字机效果js -->
+<script src="https://unpkg.com/typed.js@2.0.11"></script>
+
+
+    <div id="safearea">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        
+<header class="header  " id="navHeader" style="position: fixed;
+  left: 0; top: 0; z-index: 10;width: 100%;">
+  <div class="header-content">
+    <div class="bars">
+      <div id="appDrawer" class="sidebar-image">
+  <div class="drawer-box-icon">
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  </div>
+  
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo lazyload placeholder" src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+      <h3 class="drawer-box-head_title">tianyi</h3>
+      <h5 class="drawer-box-head_desc"></h5>
+    </div>
+    
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        
+        
+          <li class="drawer-box-content_item">
+            <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics">
+              <i class="fas fa-github" aria-hidden="true"></i>
+              <span>Github</span>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+      top: 0,
+      openArr: [],
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>
+
+    </div>
+    <div class="blog-title" id="author-avatar">
+      
+        <div class="avatar">
+          <img src="/physics/medias/logo.jpg" class="lazyload placeholder" data-srcset="/physics/medias/logo.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="logo">
+        </div>
+      
+      <a href="/physics/" class="logo">tianyi</a>
+    </div>
+    <nav class="navbar">
+      <ul class="menu">
+        
+      </ul>
+      
+      
+        <div id="appSearch">
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <span>
+            <i class="fas fa-search" aria-hidden="true"></i>
+            <span class="title">Search</span>
+          </span>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+        </h2>
+        <form class="site-search-form">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" @click="getSearchFile()" class="st-search-input" v-model="searchInput">
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
+      </div>
+    </div>
+  </transition>
+</div>
+<script src="/physics/js/local_search.js"></script>
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+      window.addEventListener('pjax:complete', () => {
+        this.cancelDialogVisible();
+      })
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'overflow: hidden;';
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile("/physics/search.xml");
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
+<!-- <script type="text/javascript" id="local.search.active">
+  var inputArea = document.querySelector("#local-search-input");
+  inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
+  inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
+</script> -->
+
+      
+
+    </nav>
+  </div>
+  
+    <a target="_blank" rel="noopener" href="https://github.com/kotokowa/physics" class="github-corner color-primary" aria-label="View source on GitHub"><svg width="60" height="60" viewBox="0 0 250 250" style="fill:#fff; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+  
+  
+</header>
+        <!-- 内容区域 -->
+        
+<!-- prismjs 代码高亮 -->
+
+
+
+
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+
+
+  <!-- 文章详情页顶部图片和标题 -->
+
+
+
+
+<div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;background-image:url('https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp')">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
+  
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        引言、热力学第一定律
+      </span>
+    </div>
+    
+    
+      
+        <span class="post-detail-header_date">
+          <i class="fas fa-calendar"></i> Published in：2026-02-11 |
+        </span>
+      
+
+      
+
+      
+    
+  </div>
+  
+  
+    <script defer="" src="/physics/js/bubble/bubble.js"></script>
+  
+</div>
+
+
+
+
+
+<div class="post-detail-content post-row" style="padding-top: 0px;">
+  <div class="main-content">
+    <article class="post post-detail">
+      <div class="post-content">
+        <h1>引言、热力学第一定律</h1>
+<h2 id="定义">定义</h2>
+<p><strong>系统</strong>：研究对象，通常指占据某个特定空间内的东西</p>
+<p><strong>环境</strong>：宇宙中对象（系统）之外的其它部分，远大于系统</p>
+<p><strong>界面/约束</strong>：把对象和环境区分开来，可以是实体的、也可以是虚拟的</p>
+<h3 id="系统的分类">系统的分类</h3>
+<p><strong>孤立系统</strong>：<br>
+固定的边界，不可变形，不可传递能量和物质</p>
+<p>系统和环境所有性质都不接触</p>
+<p>内外所有的平衡均可不同</p>
+<p><strong>封闭系统</strong>：<br>
+边界可以变形，可以传递能量，但不能传递物质</p>
+<p>可以有力（包括电磁力）、热接触，但是无化学接触</p>
+<p>内外可以达到力学、热学平衡，但是可以化学不平衡</p>
+<p><strong>开放系统</strong>：<br>
+边界可以变形，可以传递能量和物质</p>
+<p>具有所有可能的力、热和化学接触</p>
+<p>内外达到所有平衡：力学、热学和化学平衡</p>
+<p>其他：<br>
+介乎孤立/封闭系统：边界可以是刚性透热，或者弹性绝热的</p>
+<p>介乎封闭/开放系统：半透膜，只有部分物质可以实现化学接触</p>
+<h3 id="模型">模型</h3>
+<p><strong>模型</strong>：研究时只需要对象的部分性质，对研究对象进行简化，建立模型</p>
+<p><strong>参量</strong></p>
+<ul>
+<li><strong>原始参量</strong>：直接可测的参量</li>
+<li><strong>高级参量</strong>：抽象，对原始参量的数学组合，如：加速度，动量，哈密顿量</li>
+</ul>
+<h2 id="热力学">热力学</h2>
+<h3 id="热力学系统和热力学参量">热力学系统和热力学参量</h3>
+<p><strong>热力学系统</strong>：处于热力学平衡态下的宏观体系，包含大量的微观粒子</p>
+<p><strong>热力学平衡态</strong>：在外界约束不改变时，系统通过足够长时间的演化后达到的一种状态，在此状态下各个宏观参量不发生改变、是热力学中的<strong>第一个模型</strong></p>
+<p><strong>热力学参量</strong>：宏观物理量，忽略了大量微观细节。</p>
+<details>
+<summary>热力学参量举例</summary>
+<p>几何参量：形状、尺寸、表面积<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span></span>，体积<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\cdots</annotation></semantics></math></span></span></p>
+<p>力学参量：张力<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span>，压强<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\cdots</annotation></semantics></math></span></span></p>
+<p>时间参量：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>t</mi></mrow><annotation encoding="application/x-tex">t</annotation></semantics></math></span></span>，平衡态热力学不包含时间参量</p>
+<p>动能<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span></span>，势能<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span>，哈密顿量 Hamiltonian <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\cdots</annotation></semantics></math></span></span></p>
+<p>电磁学参量：电场$\boldsymbol{E}$，电偶极矩$\boldsymbol{P}$，电位移矢量$\boldsymbol{D} = \varepsilon_0 \boldsymbol{E} + \boldsymbol{P}$；磁场$\boldsymbol{H}$，磁偶极矩$\boldsymbol{M}$，磁感应强度$\boldsymbol{B} = \mu_0 (\boldsymbol{H} + \boldsymbol{M})$；$\cdots$
+
+电磁能$E = \boldsymbol{E} \cdot \boldsymbol{D}/2 + \boldsymbol{B} \cdot \boldsymbol{H}/2$，Hamiltonian $H$，$\cdots$</p>
+<p>化学参量：物质的量<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mrow><mi mathvariant="normal">A</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{A}}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mrow><mi mathvariant="normal">B</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">N_{\mathrm{B}}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\cdots</annotation></semantics></math></span></span></p>
+<p>反应热，化学势<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mrow><mrow><mi mathvariant="normal">A</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">\mu_{\mathrm{A}}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>μ</mi><mrow><mrow><mi mathvariant="normal">B</mi></mrow></mrow></msub></mrow><annotation encoding="application/x-tex">\mu_{\mathrm{B}}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\cdots</annotation></semantics></math></span></span></p>
+<p>热学参量：温度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span></p>
+<p>内能<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span>，熵<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span>，自由能<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span>，焓<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi></mrow><annotation encoding="application/x-tex">H</annotation></semantics></math></span></span>，Gibbs自由能<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>G</mi></mrow><annotation encoding="application/x-tex">G</annotation></semantics></math></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\cdots</annotation></semantics></math></span></span></p>
+</details>
+<h4 id="热力学参量的分类">热力学参量的分类</h4>
+<p>按照参量和粒子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 的关系，可以分为两类：</p>
+<p>广延量：与粒子数成正比，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∝</mo><msup><mi>N</mi><mn>1</mn></msup></mrow><annotation encoding="application/x-tex">\propto N^1</annotation></semantics></math></span></span></p>
+<p>如：质量，体积，内能…</p>
+<p>强度量：与粒子数无关，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∝</mo><msup><mi>N</mi><mn>0</mn></msup></mrow><annotation encoding="application/x-tex">\propto N^0</annotation></semantics></math></span></span></p>
+<p>如：压强，温度…</p>
+<p>传统热力学参量只有这两种，而非平衡参量可以既非广延量也非强度量，例如涨落 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∝</mo><msup><mi>N</mi><mrow><mo>±</mo><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\propto N^{\pm 1/2}</annotation></semantics></math></span></span></p>
+<p>仅只考虑短程力的时候，能够把物理量划分为广延量和强度量。此时认为小系统只受相邻系统间界面的影响，而对于大系统界面的影响可以忽略，可以看成是小系统的简单叠加；如果存在长程作用（如重力），则为非广延系统（如：星系），不能简单分为广延量和强度量。</p>
+<h3 id="温度与热力学第零定律">温度与热力学第零定律</h3>
+<p><strong>热力学第零定律（热平衡定律）</strong></p>
+<p>热平衡：有热接触的两个系统，经过足够长时间的演化后达到的状态</p>
+<p>处于热平衡状态下的系统，存在一个状态函数，对于互为热平衡的两个系统，该函数的数值相等</p>
+<details>
+<summary>寻找这个状态函数的一个通解例子</summary>
+<p>A 系统：参数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub></mrow><annotation encoding="application/x-tex">x_1, x_2, \cdots, x_n</annotation></semantics></math></span></span></p>
+<p>B 系统：参数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>y</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>y</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">y_1, y_2, \cdots, y_m</annotation></semantics></math></span></span></p>
+<p>C 系统：参数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>z</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>z</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">z_1, z_2, \cdots, z_k</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>⇔</mo><mi>B</mi><mo>⇒</mo><mi>F</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo separator="true">;</mo><msub><mi>y</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>y</mi><mi>m</mi></msub><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A \Leftrightarrow B \Rightarrow F(x_1, x_2, \cdots, x_n; y_1, y_2, \cdots, y_m) = 0</annotation></semantics></math></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><msub><mi>F</mi><mn>1</mn></msub><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo separator="true">;</mo><msub><mi>y</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>y</mi><mi>m</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\Rightarrow x_1 = F_1(x_2, \cdots, x_n; y_1, y_2, \cdots, y_m)</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mo>⇔</mo><mi>C</mi><mo>⇒</mo><mi>G</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo separator="true">;</mo><msub><mi>z</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>z</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>z</mi><mi>k</mi></msub><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">A \Leftrightarrow C \Rightarrow G(x_1, x_2, \cdots, x_n; z_1, z_2, \cdots, z_k) = 0</annotation></semantics></math></span></span><br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><msub><mi>G</mi><mn>1</mn></msub><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo separator="true">;</mo><msub><mi>z</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>z</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>z</mi><mi>k</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\Rightarrow x_1 = G_1(x_2, \cdots, x_n; z_1, z_2, \cdots, z_k)</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span></span> 存在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><msub><mi>y</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>y</mi><mi>m</mi></msub><mo separator="true">;</mo><msub><mi>z</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>z</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>z</mi><mi>k</mi></msub><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">H(y_1, y_2, \cdots, y_m; z_1, z_2, \cdots, z_k) = 0</annotation></semantics></math></span></span>，<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span></span> 可以从方程中消去所有的<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span></span></p>
+\begin{align*}
+x_1 &amp;= F_1(x_2, \cdots, x_n; y_1, y_2, \cdots, y_m) \\
+&amp;= a_1(x_2, \cdots, x_n)g(y_1, y_2, \cdots, y_m) + a_2(x_2, \cdots, x_n) \\ \\
+&amp;= G_1(x_2, \cdots, x_n; z_1, z_2, \cdots, z_k) \\
+&amp;= a_1(x_2, \cdots, x_n)h(z_1, z_2, \cdots, z_k) + a_2(x_2, \cdots, x_n)
+\end{align*}
+
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>f</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><mfrac><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>a</mi><mn>2</mn></msub><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>(</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle f(x_1, x_2, \cdots, x_n) = \frac{x_1 - a_2(x_2, \cdots, x_n)}{a_1(x_2, \cdots, x_n)}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mi>T</mi><mo>=</mo><mi>f</mi><mo>(</mo><msub><mi>x</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>x</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>x</mi><mi>n</mi></msub><mo>)</mo><mo>=</mo><mi>g</mi><mo>(</mo><msub><mi>y</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>y</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>y</mi><mi>m</mi></msub><mo>)</mo><mo>=</mo><mi>h</mi><mo>(</mo><msub><mi>z</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>z</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>z</mi><mi>k</mi></msub><mo>)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle T = f(x_1, x_2, \cdots, x_n) = g(y_1, y_2, \cdots, y_m) = h(z_1, z_2, \cdots, z_k)
+</annotation></semantics></math></span></span></span></p>
+</details>
+<p>借助状态函数，可以给出<strong>普适的</strong>温度的定义（Carathéodary 定理），而温度函数的选择可以有任意性</p>
+<p>传统温标：先找两个固定温度然后对某个物理量线性插值</p>
+<p>等容温标：粒子数、体积等不变，温度和压强成线性关系</p>
+<p>等压温标：粒子数、压强等不变，温度和体积成线性关系</p>
+<p>反之，借助状态函数，在确定温标后也可以列出状态方程，反解热力学参数</p>
+<details>
+<summary>状态方程的例子</summary>
+<p>理想气体方程 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mi>V</mi><mo>=</mo><mi>n</mi><mi>R</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">pV = nRT</annotation></semantics></math></span></span></p>
+<p>范氏气体 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mrow><mo fence="true">(</mo><mi>p</mi><mo>+</mo><mfrac><mrow><mi>a</mi><msup><mi>n</mi><mn>2</mn></msup></mrow><mrow><msup><mi>V</mi><mn>2</mn></msup></mrow></mfrac><mo fence="true">)</mo></mrow><mo>(</mo><mi>V</mi><mo>−</mo><mi>n</mi><mi>b</mi><mo>)</mo><mo>=</mo><mi>n</mi><mi>R</mi><mi>T</mi></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \left(p + \frac{a n^2}{V^2}\right)(V - nb) = nRT</annotation></semantics></math></span></span></p>
+$\begin{align*}\text{Onnes 方程 }pV &amp;= nRT + Bp + Cp^2 + Dp^3 + \cdots \\ &amp;= nRT + B^\prime /V + C^\prime /V^2 + D^\prime /V^3 + \cdots \\ &amp;\text{其中系数被称为 Virial coefficients （维理系数）}\end{align*}$
+<p>液体表面膜<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi><mo>=</mo><msub><mi>σ</mi><mn>0</mn></msub><msup><mrow><mo fence="true">(</mo><mn>1</mn><mo>−</mo><mfrac><mrow><mi>T</mi></mrow><mrow><msub><mi>T</mi><mi>c</mi></msub></mrow></mfrac><mo fence="true">)</mo></mrow><mi>n</mi></msup><mspace width="2em"></mspace></mrow><annotation encoding="application/x-tex">\sigma = \sigma_0\left(1 - \frac{T}{T_c}\right)^n \qquad</annotation></semantics></math></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">T_c</annotation></semantics></math></span></span>：临界点；<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>=</mo><mn>1</mn><mo>∼</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">n = 1 \sim 2</annotation></semantics></math></span></span></p>
+$\begin{align*}\text{弹性棒}F &amp;= AT\left(\frac{l}{l_0} - \frac{l_0^2}{l^2}\right) \\ &amp;\approx -\frac{3AT}{l_0}(l - l_0)\quad\boxed{\text{牛顿弹性定律}}\end{align*}$
+<p>顺磁系统：居里定律<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo>=</mo><mi>M</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>H</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">M = M(T,H)</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>H</mi><mo>=</mo><mn>0</mn><mo>)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">M(T,H=0) = 0</annotation></semantics></math></span></span>，顺磁性，外磁场为零时，磁矩为零</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>M</mi></mrow><mrow><mi>V</mi></mrow></mfrac><mo>=</mo><mi>χ</mi><mo>(</mo><mi>T</mi><mo>)</mo><mi>H</mi><mspace width="1em"></mspace><mi>χ</mi><mo>(</mo><mi>T</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>C</mi></mrow><mrow><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{M}{V} = \chi(T)H \quad \chi(T) = \frac{C}{T}</annotation></semantics></math></span></span>，外场比较小时成立</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>H</mi><mo>)</mo><mo>=</mo><msub><mi>M</mi><mn>0</mn></msub><mi>tanh</mi><mfrac><mrow><mi>g</mi><msub><mi>μ</mi><mi>B</mi></msub><mi>H</mi></mrow><mrow><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">M(T,H) = M_0 \tanh\frac{g\mu_BH}{k_BT}</annotation></semantics></math></span></span>，理想顺磁系统</p>
+<p>铁磁系统的顺磁相 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>M</mi></mrow><mrow><mi>V</mi></mrow></mfrac><mo>=</mo><mi>χ</mi><mo>(</mo><mi>T</mi><mo>)</mo><mi>H</mi><mspace width="1em"></mspace><mi>χ</mi><mo>(</mo><mi>T</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>C</mi></mrow><mrow><mi>T</mi><mo>−</mo><msub><mi>T</mi><mi>c</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\frac{M}{V} = \chi(T)H \quad \chi(T) = \frac{C}{T-T_c}</annotation></semantics></math></span></span></p>
+</details>
+<h3 id="一点数学">一点数学</h3>
+
+$$\left(\frac{\partial x}{\partial y}\right)_z = 1/\left(\frac{\partial y}{\partial x}\right)_z$$
+$$-1 = \left(\frac{\partial x}{\partial y}\right)_z\left(\frac{\partial y}{\partial z}\right)_x\left(\frac{\partial z}{\partial x}\right)_y$$
+
+<p>证明：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>=</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>y</mi><mo separator="true">,</mo><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">0 = f(x,y,z)
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>=</mo><mi>δ</mi><mi>f</mi><mo>=</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>y</mi><mi>z</mi></mrow></msub><mi>δ</mi><mi>x</mi><mo>+</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>z</mi><mi>x</mi></mrow></msub><mi>δ</mi><mi>y</mi><mo>+</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub><mi>δ</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">0 = \delta f = \left(\frac{\partial f}{\partial x}\right)_{yz}\delta x + \left(\frac{\partial f}{\partial y}\right)_{zx}\delta y + \left(\frac{\partial f}{\partial z}\right)_{xy}\delta z
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>z</mi></msub><mo>=</mo><msub><mi>lim</mi><mrow><mi>δ</mi><mi>y</mi><mo>→</mo><mn>0</mn></mrow></msub><mfrac><mrow><mi>δ</mi><mi>x</mi></mrow><mrow><mi>δ</mi><mi>y</mi></mrow></mfrac><mspace width="-0.16667em"></mspace><msub><mo fence="false">∣</mo><mrow><mi>δ</mi><mi>z</mi><mo>=</mo><mn>0</mn></mrow></msub><mo>=</mo><mo>−</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>z</mi><mi>x</mi></mrow></msub><mi mathvariant="normal">/</mi><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>y</mi><mi>z</mi></mrow></msub><mo>⇐</mo><mn>0</mn><mo>=</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>y</mi><mi>z</mi></mrow></msub><mi>δ</mi><mi>x</mi><mo>+</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>z</mi><mi>x</mi></mrow></msub><mi>δ</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">\left(\frac{\partial x}{\partial y}\right)_z = \lim_{\delta y \to 0} \frac{\delta x}{\delta y}\!\bigg|_{\delta z=0} = -\left(\frac{\partial f}{\partial y}\right)_{zx}/\left(\frac{\partial f}{\partial x}\right)_{yz} \Leftarrow 0 = \left(\frac{\partial f}{\partial x}\right)_{yz}\delta x + \left(\frac{\partial f}{\partial y}\right)_{zx}\delta y
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>z</mi></msub><mo>=</mo><mo>−</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>y</mi><mi>z</mi></mrow></msub><mi mathvariant="normal">/</mi><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>x</mi><mi>z</mi></mrow></msub><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>z</mi></msub></mrow><annotation encoding="application/x-tex">\left(\frac{\partial y}{\partial x}\right)_z = -\left(\frac{\partial f}{\partial x}\right)_{yz}/\left(\frac{\partial f}{\partial y}\right)_{xz} = 1/\left(\frac{\partial x}{\partial y}\right)_z
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>z</mi></msub><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>x</mi></msub><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>y</mi></msub><mo>=</mo><mrow><mo fence="true">[</mo><mo>−</mo><mfrac><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>z</mi><mi>x</mi></mrow></msub></mrow><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>y</mi><mi>z</mi></mrow></msub></mrow></mfrac><mo fence="true">]</mo></mrow><mrow><mo fence="true">[</mo><mo>−</mo><mfrac><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>z</mi><mi>x</mi></mrow></msub></mrow></mfrac><mo fence="true">]</mo></mrow><mrow><mo fence="true">[</mo><mo>−</mo><mfrac><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>x</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>y</mi><mi>z</mi></mrow></msub></mrow><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>f</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>x</mi><mi>y</mi></mrow></msub></mrow></mfrac><mo fence="true">]</mo></mrow><mo>=</mo><mo>−</mo><mn>1</mn></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle\left(\frac{\partial x}{\partial y}\right)_z\left(\frac{\partial y}{\partial z}\right)_x\left(\frac{\partial z}{\partial x}\right)_y = \left[-\frac{\left(\frac{\partial f}{\partial y}\right)_{zx}}{\left(\frac{\partial f}{\partial x}\right)_{yz}}\right]\left[-\frac{\left(\frac{\partial f}{\partial z}\right)_{xy}}{\left(\frac{\partial f}{\partial y}\right)_{zx}}\right]\left[-\frac{\left(\frac{\partial f}{\partial x}\right)_{yz}}{\left(\frac{\partial f}{\partial z}\right)_{xy}}\right] = -1
+</annotation></semantics></math></span></span></span></p>
+
+$$\alpha = \frac{1}{V}\left(\frac{\partial V}{\partial T}\right)_p \quad \text{定压膨胀系数，实验上易测}$$
+$$\kappa_T = -\frac{1}{V}\left(\frac{\partial V}{\partial p}\right)_T \quad \text{恒温压缩系数，实验上易测}$$
+$$\beta = \frac{1}{p}\left(\frac{\partial p}{\partial T}\right)_V \quad \text{定容压力系数，理论上易算}$$
+
+$$\beta = \frac{\alpha}{p\kappa_T}$$
+
+<h3 id="定义：过程">定义：过程</h3>
+<p><strong>状态的图示</strong>：用自由参数组成一个空间，空间上的一个点表示一个热力学平衡态</p>
+<p>过程：从一个平衡态到另一平衡态的过渡。<strong>一般的</strong>过程在状态图上无法表示出来</p>
+<p>简单系统中有两类重要过程：</p>
+<p><strong>绝热过程</strong>：系统和环境有力学接触，但无热学接触。边界可以变形，传递力学信息，但是不能传递热信息。系统内外可以达到力学平衡，但是不能达到热学平衡</p>
+<p><strong>纯传热过程</strong>：系统和环境有热学接触，但无力学接触。刚性透热边界</p>
+<p>绝热过程有清楚的力学定义，可以只用与热无关的力学参数来表达；传热过程则没有清楚的力学定义</p>
+<p>一般的过程可以是这两类过程的组合，可以同时有做功和传热</p>
+<h3 id="热力学第一定律">热力学第一定律</h3>
+<p>能量守恒的推广：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>U</mi><mo>=</mo><mi mathvariant="normal">Δ</mi><mi>Q</mi><mo>−</mo><mi mathvariant="normal">Δ</mi><mi>W</mi></mrow><annotation encoding="application/x-tex">\Delta U = \Delta Q - \Delta W</annotation></semantics></math></span></span> （注意正负定义）</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>Q</mi><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mi mathvariant="normal">Δ</mi><mi>W</mi></mrow><annotation encoding="application/x-tex">\Delta Q ,\, \Delta W</annotation></semantics></math></span></span> 是过程量，和具体发生路径有关</p>
+<p>简单系统中任意两个状态都可以从其中一个状态经过绝热过程变为另一个状态，且做功总量只和初末态有关，和过程无关</p>
+<h4 id="功">功</h4>
+<p>一般的过程由于无法用状态参量来描述系统，难以求解功。对功的问题只在准静态过程考虑</p>
+<p><strong>准静态过程</strong>：理想过程，发生非常慢，在任何时候系统都处在平衡态，发生过程也无能量损耗。</p>
+<blockquote>
+<p>辨别：准静态过程不等于可逆过程：准静态过程允许耗散（缓慢），不一定可逆<br>
+可逆过程时刻都处于平衡态，这一点和准静态过程一样<br>
+可逆过程是准静态过程的子集</p>
+</blockquote>
+<p><strong>表达式</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>W</mi><mo>=</mo><mi>F</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">\Delta W = F \cdot \Delta r</annotation></semantics></math></span></span></p>
+<ul>
+<li><strong>理想气体</strong>： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>W</mi><mo>=</mo><mi>p</mi><mi>d</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">dW = pdV</annotation></semantics></math></span></span></li>
+<li><strong>弹性棒</strong>： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>W</mi><mo>=</mo><mo>−</mo><mi>F</mi><mi>d</mi><mi>L</mi></mrow><annotation encoding="application/x-tex">dW = -FdL</annotation></semantics></math></span></span></li>
+<li><strong>表面膜</strong>： <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>W</mi><mo>=</mo><mo>−</mo><mi>F</mi><mi>d</mi><mi>l</mi><mo>=</mo><mo>−</mo><mi>σ</mi><mi>h</mi><mi>d</mi><mi>l</mi><mo>=</mo><mo>−</mo><mi>σ</mi><mi>d</mi><mi>A</mi><mspace width="1em"></mspace></mrow><annotation encoding="application/x-tex">dW = -Fdl = -\sigma hdl = -\sigma dA\quad</annotation></semantics></math></span></span> h是膜周长，dl是向外延展距离</li>
+<li>回忆电学几个关系 电场能量密度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><mfrac><mrow><mi>E</mi><mo>⋅</mo><mi>D</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>H</mi><mo>⋅</mo><mi>B</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo separator="true">,</mo><mspace width="0.16667em"></mspace></mrow><annotation encoding="application/x-tex">E = \frac{E \cdot D}{2} = \frac{H \cdot B}{2},\,</annotation></semantics></math></span></span> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mo>=</mo><msub><mi>ϵ</mi><mn>0</mn></msub><mi>E</mi><mo>+</mo><mi>P</mi><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mi>B</mi><mo>=</mo><msub><mi>μ</mi><mn>0</mn></msub><mo>(</mo><mi>H</mi><mo>+</mo><mi>M</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">D = \epsilon_0 E + P,\,B = \mu_0 (H+M)</annotation></semantics></math></span></span></li>
+<li>
+$\begin{align*} \textbf{磁介质：}dW &amp;= -[\mu_0 H \cdot dV H \boxed{\text{真空能，H不变}} + \mu_0 H \cdot d(VM) \boxed{\text{介质贡献}}] \\ &amp;= -H \cdot d(\mu_0 VH + \mu_0 VM) \\ &amp;= -H \cdot d(VB) \boxed{\text{考虑真空贡献}}\\ &amp;= -\mu_0 H \cdot d(VM) \boxed{\text{不考虑真空}}\end{align*}$
+</li>
+<li><strong>电介质</strong>： $dW = -E\cdot d(VD) \boxed{\text{考虑真空}} = -E\cdot d(VP) \boxed{\text{不考虑真空}}$</li>
+<li><strong>电磁介质</strong>：<br>  $\begin{align*}dW &amp;= -V \left( \boldsymbol{H} \cdot d\boldsymbol{B} + \boldsymbol{E} \cdot d\boldsymbol{D} \right) - dV \int \left( \boldsymbol{H} \cdot d\boldsymbol{B} + \boldsymbol{E} \cdot d\boldsymbol{D} \right)\boxed{\text{空间均匀体系，有体积变化}} \\ &amp;= -V \left( \boldsymbol{H} \cdot d\boldsymbol{B} + \boldsymbol{E} \cdot d\boldsymbol{D} \right)\boxed{\text{空间均匀体系，不考虑体积变化}}\end{align*}$<br>
+<strong>推导</strong>：  
+    Maxwell方程：<br>
+    $\nabla \cdot \boldsymbol{D} = \rho$<br>
+    $\nabla \times \boldsymbol{E} = -\frac{\partial \boldsymbol{B}}{\partial t}$<br>
+    $\nabla \cdot \boldsymbol{B} = 0$<br>
+    $\nabla \times \boldsymbol{H} = \boldsymbol{J} + \frac{\partial \boldsymbol{D}}{\partial t} \implies \boldsymbol{J} = \nabla \times \boldsymbol{H} - \frac{\partial \boldsymbol{D}}{\partial t}$<br><br>
+    带电粒子在电场作用下移动做功，功率密度：$P = I \times U / V = \boldsymbol{E} \cdot \boldsymbol{J}$
+
+    $
+    \begin{align*}
+    \frac{\partial w}{\partial t} &amp;= P = \boldsymbol{E} \cdot \boldsymbol{J} = \boldsymbol{E} \cdot \left[ \nabla \times \boldsymbol{H} - \frac{\partial \boldsymbol{D}}{\partial t} \right] \\
+    &amp;= -\nabla \cdot (\boldsymbol{E} \times \boldsymbol{H}) + \boldsymbol{H} \cdot (\nabla \times \boldsymbol{E}) - \boldsymbol{E} \cdot \frac{\partial \boldsymbol{D}}{\partial t} \\
+    &amp;= -\nabla \cdot (\boldsymbol{E} \times \boldsymbol{H}) - \boldsymbol{H} \cdot \frac{\partial \boldsymbol{B}}{\partial t} - \boldsymbol{E} \cdot \frac{\partial \boldsymbol{D}}{\partial t}
+    \end{align*}
+    $
+
+    $\displaystyle dW = \int_V dV \left[ \frac{\partial w}{\partial t} dt \right] = -\int_V dV \left[ \nabla \cdot (\boldsymbol{E} \times \boldsymbol{H}) dt + \boldsymbol{H} \cdot \frac{\partial \boldsymbol{B}}{\partial t} dt + \boldsymbol{E} \cdot \frac{\partial \boldsymbol{D}}{\partial t} dt \right]$
+    <br>
+    考虑到 $\int_V \nabla \cdot (\boldsymbol{E} \times \boldsymbol{H}) = \oint_S \boldsymbol{E} \times \boldsymbol{H} \cdot d\boldsymbol{S} \approx 0$
+    <br>
+    $dW= -\int_V \left[ \boldsymbol{H} \cdot d\boldsymbol{B} + \boldsymbol{E} \cdot d\boldsymbol{D} \right] dV \quad$
+    <br><br>
+    电磁介质里的元功表达式：<br>
+    $
+    \begin{align*}
+    dW &amp;= -\int_V \left[ \boldsymbol{H} \cdot d\boldsymbol{B} + \boldsymbol{E} \cdot d\boldsymbol{D} \right] dV \\
+    &amp;= -\int_V \left[ \boldsymbol{H} \cdot d(\mu_0 \boldsymbol{H} + \mu_0 \boldsymbol{M}) + \boldsymbol{E} \cdot d(\varepsilon_0 \boldsymbol{E} + \boldsymbol{P}) \right] dV \\
+    &amp;= -\int_V \left( \mu_0 \boldsymbol{H} \cdot d\boldsymbol{H} + \varepsilon_0 \boldsymbol{E} \cdot d\boldsymbol{E} \right) dV \quad \text{真空贡献，有时被忽略} \\
+    &amp;\quad -\int_V \left( \mu_0 \boldsymbol{H} \cdot d\boldsymbol{M} + \boldsymbol{E} \cdot d\boldsymbol{P} \right) dV \quad \text{介质贡献}
+    \end{align*}
+    $
+    <br>
+    空间均匀体系，且不考虑体积变化：
+    $dW = -V \left( \boldsymbol{H} \cdot d\boldsymbol{B} + \boldsymbol{E} \cdot d\boldsymbol{D} \right)$
+    <br>
+    空间均匀体系，有体积变化：
+    $\displaystyle dW = -V \left( \boldsymbol{H} \cdot d\boldsymbol{B} + \boldsymbol{E} \cdot d\boldsymbol{D} \right) - dV \int \left( \boldsymbol{H} \cdot d\boldsymbol{B} + \boldsymbol{E} \cdot d\boldsymbol{D} \right)$
+
+    
+</li>
+</ul>
+<h4 id="热容">热容</h4>
+$\displaystyle C_{proc} = \lim_{\Delta T \to 0} \frac{\Delta Q}{\Delta T}\!\bigg|_{proc}$
+<br>
+<p>不同的过程对应不同的热容，热容的定义<strong>依赖于过程</strong></p>
+<p>热容是<strong>广延量</strong>，摩尔热容是强度量</p>
+<p>常见等容热容和等压热容</p>
+<h4 id="传热的三种方式">传热的三种方式</h4>
+<ul>
+<li>热传导：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>J</mi><mi>Q</mi></msub><mo>=</mo><mfrac><mrow><mover accent="true"><mrow><mi>Q</mi></mrow><mo>˙</mo></mover></mrow><mrow><mi>A</mi></mrow></mfrac><mo>=</mo><mi>κ</mi><mfrac><mrow><msub><mi>T</mi><mn>1</mn></msub><mo>−</mo><msub><mi>T</mi><mn>2</mn></msub></mrow><mrow><mi>l</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mi>κ</mi><mfrac><mrow><mi>d</mi><mi>T</mi></mrow><mrow><mi>d</mi><mi>l</mi></mrow></mfrac><mspace width="1em"></mspace><msub><mi>J</mi><mi>Q</mi></msub><mo>=</mo><mo>−</mo><mi>κ</mi><mi mathvariant="normal">∇</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">J_Q = \frac{\dot{Q}}{A} = \kappa \frac{T_1 - T_2}{l} = -\kappa \frac{dT}{dl}\quad J_Q = -\kappa \nabla T</annotation></semantics></math></span></span></li>
+<li>对流：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>J</mi><mi>C</mi></msub><mo>=</mo><mi>α</mi><msub><mi>J</mi><mi>Q</mi></msub><mo>=</mo><mo>−</mo><mi>α</mi><mi>κ</mi><mfrac><mrow><mi>d</mi><mi>T</mi></mrow><mrow><mi>d</mi><mi>l</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">J_C = \alpha J_Q = -\alpha \kappa \frac{dT}{dl}</annotation></semantics></math></span></span></li>
+<li>热辐射：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>J</mi><mi>Q</mi></msub><mo>=</mo><mfrac><mrow><mover accent="true"><mrow><mi>Q</mi></mrow><mo>˙</mo></mover></mrow><mrow><mi>A</mi></mrow></mfrac><mo>=</mo><mi>ϵ</mi><mi>σ</mi><msup><mi>T</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">J_Q = \frac{\dot{Q}}{A} = \epsilon \sigma T^4</annotation></semantics></math></span></span></li>
+</ul>
+<h3 id="Carnot-过程">Carnot 过程</h3>
+
+$
+\begin{aligned}
+C_V &amp;= C_V(\theta, V) = C_V(\theta) = \left( \frac{\partial U}{\partial \theta} \right)_V = \frac{dU}{d\theta} \Leftrightarrow \frac{dU}{dT}, \\
+C_p &amp;= C_p(\theta, p) = C_p(\theta) = C_V + C \quad (\text{理想气体温标}) \\
+&amp;\quad \Leftrightarrow C_V + nR \quad (\text{热力学温标}), \\
+\gamma &amp;= \frac{C_p}{C_V} = \gamma(\theta) \quad (\text{可通过声速确定，在室温以上}), \\
+C_V &amp;= \frac{C}{\gamma - 1}, \\
+C_p &amp;= \frac{\gamma C}{\gamma - 1} \quad (\text{通常简化为不依赖温度}).
+\end{aligned}
+$
+<br>
+$
+\begin{aligned}
+\text{多方过程}: &amp; \quad pV^n \equiv \text{const}, \\
+\text{等压过程}: &amp; \quad n = 0, \ p \equiv \text{const}, \\
+\text{等温过程}: &amp; \quad n = 1, \ pV \propto \theta \propto T \equiv \text{const}, \\
+\text{绝热过程}: &amp; \quad n = \gamma, \ pV^\gamma \equiv \text{const}, \\
+\text{等容过程}: &amp; \quad n = \infty, \ V p^{1/n} = V \equiv \text{const}.
+\end{aligned}
+$
+<br>
+<p><strong>卡诺效率推导</strong></p>
+<p>卡诺循环过程：<br>
+<strong>等温膨胀</strong>（态1→态2）：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>W</mi><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub><mo>=</mo><mi>C</mi><msub><mi>θ</mi><mn>1</mn></msub><mi>ln</mi><mfrac><mrow><msub><mi>V</mi><mn>2</mn></msub></mrow><mrow><msub><mi>V</mi><mn>1</mn></msub></mrow></mfrac><mo separator="true">,</mo><mspace width="1em"></mspace><mi mathvariant="normal">Δ</mi><msub><mi>Q</mi><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub><mo>=</mo><mi mathvariant="normal">Δ</mi><msub><mi>W</mi><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub><mo>=</mo><mi>C</mi><msub><mi>θ</mi><mn>1</mn></msub><mi>ln</mi><mfrac><mrow><msub><mi>V</mi><mn>2</mn></msub></mrow><mrow><msub><mi>V</mi><mn>1</mn></msub></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\Delta W_{1 \to 2} = C\theta_1 \ln \frac{V_2}{V_1}, \quad \Delta Q_{1 \to 2} = \Delta W_{1 \to 2} = C\theta_1 \ln \frac{V_2}{V_1}.
+</annotation></semantics></math></span></span></span></p>
+<p><strong>绝热膨胀</strong>（态2→态3）：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>W</mi><mrow><mn>2</mn><mo>→</mo><mn>3</mn></mrow></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mi>C</mi><mo>(</mo><msub><mi>θ</mi><mn>2</mn></msub><mo>−</mo><msub><mi>θ</mi><mn>1</mn></msub><mo>)</mo></mrow><mrow><mi>γ</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>C</mi><mo>(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>θ</mi><mn>2</mn></msub><mo>)</mo></mrow><mrow><mi>γ</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo separator="true">,</mo><mspace width="1em"></mspace><mi mathvariant="normal">Δ</mi><msub><mi>Q</mi><mrow><mn>2</mn><mo>→</mo><mn>3</mn></mrow></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>p</mi><mn>2</mn></msub><msubsup><mi>V</mi><mn>2</mn><mi>γ</mi></msubsup><mo>=</mo><msub><mi>p</mi><mn>3</mn></msub><msubsup><mi>V</mi><mn>3</mn><mi>γ</mi></msubsup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\Delta W_{2 \to 3} = -\frac{C(\theta_2 - \theta_1)}{\gamma - 1} = \frac{C(\theta_1 - \theta_2)}{\gamma - 1}, \quad \Delta Q_{2 \to 3} = 0, \quad p_2 V_2^\gamma = p_3 V_3^\gamma.
+</annotation></semantics></math></span></span></span></p>
+<p><strong>等温压缩</strong>（态3→态4）：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>W</mi><mrow><mn>3</mn><mo>→</mo><mn>4</mn></mrow></msub><mo>=</mo><mi>C</mi><msub><mi>θ</mi><mn>2</mn></msub><mi>ln</mi><mfrac><mrow><msub><mi>V</mi><mn>4</mn></msub></mrow><mrow><msub><mi>V</mi><mn>3</mn></msub></mrow></mfrac><mo separator="true">,</mo><mspace width="1em"></mspace><mi mathvariant="normal">Δ</mi><msub><mi>Q</mi><mrow><mn>3</mn><mo>→</mo><mn>4</mn></mrow></msub><mo>=</mo><mi mathvariant="normal">Δ</mi><msub><mi>W</mi><mrow><mn>3</mn><mo>→</mo><mn>4</mn></mrow></msub><mo>=</mo><mi>C</mi><msub><mi>θ</mi><mn>2</mn></msub><mi>ln</mi><mfrac><mrow><msub><mi>V</mi><mn>4</mn></msub></mrow><mrow><msub><mi>V</mi><mn>3</mn></msub></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\Delta W_{3 \to 4} = C\theta_2 \ln \frac{V_4}{V_3}, \quad \Delta Q_{3 \to 4} = \Delta W_{3 \to 4} = C\theta_2 \ln \frac{V_4}{V_3}.
+</annotation></semantics></math></span></span></span></p>
+<p><strong>绝热压缩</strong>（态4→态1）：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>W</mi><mrow><mn>4</mn><mo>→</mo><mn>1</mn></mrow></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mi>C</mi><mo>(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>θ</mi><mn>2</mn></msub><mo>)</mo></mrow><mrow><mi>γ</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>C</mi><mo>(</mo><msub><mi>θ</mi><mn>2</mn></msub><mo>−</mo><msub><mi>θ</mi><mn>1</mn></msub><mo>)</mo></mrow><mrow><mi>γ</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo separator="true">,</mo><mspace width="1em"></mspace><mi mathvariant="normal">Δ</mi><msub><mi>Q</mi><mrow><mn>4</mn><mo>→</mo><mn>1</mn></mrow></msub><mo>=</mo><mn>0</mn><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>p</mi><mn>1</mn></msub><msubsup><mi>V</mi><mn>1</mn><mi>γ</mi></msubsup><mo>=</mo><msub><mi>p</mi><mn>4</mn></msub><msubsup><mi>V</mi><mn>4</mn><mi>γ</mi></msubsup><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\Delta W_{4 \to 1} = -\frac{C(\theta_1 - \theta_2)}{\gamma - 1} = \frac{C(\theta_2 - \theta_1)}{\gamma - 1}, \quad \Delta Q_{4 \to 1} = 0, \quad p_1 V_1^\gamma = p_4 V_4^\gamma.
+</annotation></semantics></math></span></span></span></p>
+<p>加起来有：<br>
+<strong>整体做功</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtable><mtr><mtd><mrow><mi mathvariant="normal">Δ</mi><mi>W</mi></mrow></mtd><mtd><mrow><mrow></mrow><mo>=</mo><mi mathvariant="normal">Δ</mi><msub><mi>W</mi><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>W</mi><mrow><mn>2</mn><mo>→</mo><mn>3</mn></mrow></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>W</mi><mrow><mn>3</mn><mo>→</mo><mn>4</mn></mrow></msub><mo>+</mo><mi mathvariant="normal">Δ</mi><msub><mi>W</mi><mrow><mn>4</mn><mo>→</mo><mn>1</mn></mrow></msub></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mrow></mrow><mo>=</mo><mi>C</mi><msub><mi>θ</mi><mn>1</mn></msub><mi>ln</mi><mfrac><mrow><msub><mi>V</mi><mn>2</mn></msub></mrow><mrow><msub><mi>V</mi><mn>1</mn></msub></mrow></mfrac><mo>+</mo><mi>C</mi><msub><mi>θ</mi><mn>2</mn></msub><mi>ln</mi><mfrac><mrow><msub><mi>V</mi><mn>4</mn></msub></mrow><mrow><msub><mi>V</mi><mn>3</mn></msub></mrow></mfrac></mrow></mtd></mtr><mtr><mtd><mrow></mrow></mtd><mtd><mrow><mrow></mrow><mo>=</mo><mi>C</mi><mo>(</mo><msub><mi>θ</mi><mn>1</mn></msub><mo>−</mo><msub><mi>θ</mi><mn>2</mn></msub><mo>)</mo><mi>ln</mi><mfrac><mrow><msub><mi>V</mi><mn>2</mn></msub></mrow><mrow><msub><mi>V</mi><mn>1</mn></msub></mrow></mfrac><mi mathvariant="normal">.</mi></mrow></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">\begin{aligned}
+\Delta W &amp;= \Delta W_{1 \to 2} + \Delta W_{2 \to 3} + \Delta W_{3 \to 4} + \Delta W_{4 \to 1} \\
+&amp;= C\theta_1 \ln \frac{V_2}{V_1} + C\theta_2 \ln \frac{V_4}{V_3} \\
+&amp;= C(\theta_1 - \theta_2) \ln \frac{V_2}{V_1}.
+\end{aligned}
+</annotation></semantics></math></span></span></span></p>
+<p><strong>从高温热源吸热</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>Q</mi><mo>=</mo><mi mathvariant="normal">Δ</mi><msub><mi>Q</mi><mrow><mn>1</mn><mo>→</mo><mn>2</mn></mrow></msub><mo>=</mo><mi>C</mi><msub><mi>θ</mi><mn>1</mn></msub><mi>ln</mi><mfrac><mrow><msub><mi>V</mi><mn>2</mn></msub></mrow><mrow><msub><mi>V</mi><mn>1</mn></msub></mrow></mfrac><mi mathvariant="normal">.</mi></mrow><annotation encoding="application/x-tex">\Delta Q = \Delta Q_{1 \to 2} = C\theta_1 \ln \frac{V_2}{V_1}.
+</annotation></semantics></math></span></span></span></p>
+<p><strong>效率</strong>：</p>
+\begin{aligned}
+\eta &amp;= \frac{\Delta W}{\Delta Q} = 1 - \frac{\theta_2}{\theta_1} \quad (\text{理想气体温标}) \\
+&amp;= 1 - \frac{T_2}{T_1} \quad (\text{热力学温标}).
+\end{aligned}
+
+
+      </div>
+      <div class="post-tags-categories">
+        
+        <div class="tags">
+          
+            <a href="/physics/tags/%E6%A6%82%E7%BB%9Fustc%EF%BC%8C%E9%A2%84%E4%B9%A0/" class="">
+              概统ustc，预习
+            </a>
+          
+        </div>
+        
+      </div>
+      
+        <div class="copyright">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong>author:  </strong>kotokowa
+    </li>
+    <li class="post-copyright-link">
+    <strong>link:  </strong>
+    <a href="/physics/ReTong/引言、热力学第一定律/" target="_blank" title="引言、热力学第一定律">https://kotokowa.github.io/physics/ReTong/引言、热力学第一定律/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>Copyright notice:   </strong>
+      All articles on this website, unless otherwise stated, adopt <a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      reprint policy. If reproduced, please indicate source!
+    </li>
+  </ul>
+<div>
+      
+    </div></div></article>
+    <!-- 上一篇文章和下一篇文章 -->
+    
+      <!-- 文章详情页的上一页和下一页 -->
+<div class="post-nav">
+
+
+
+  
+  <div class="post-nav-prev post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/ReTong/%E7%B3%BB%E7%BB%BC%E7%BB%9F%E8%AE%A1/" class="post-nav-link">
+      <div class="title">
+        <i class="fas fa-angle-left"></i> Prev:
+        <div class="title-text">系综统计</div>
+      </div>
+      
+      <!-- <div class="content">
+        
+      </div> -->
+    </a>
+  </div>
+
+
+
+  
+  <div class="post-nav-next post-nav-item">
+    <div class="post-nav-img" style="background-size: cover; 
+      background-position: center center;">
+      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-9fae531f54c1093d37455abd35163e11_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+    </div>
+    <a href="/physics/ReTong/%E9%9D%9E%E5%B9%B3%E8%A1%A1%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%90%86%E8%AE%BA/" class="post-nav-link">
+      <div class="title">
+        Next: <i class="fas fa-angle-right"></i>
+        <div class="title-text">非平衡热力学与统计理论</div>
+      </div>
+      <!-- <div class="content">
+        
+      </div> -->
+    </a>
+  </div>
+
+</div>
+
+    
+    
+
+    <!-- 打赏 -->
+    
+
+    <!-- 分享 -->
+    
+      <!-- https://github.com/overtrue/share.js -->
+<!-- 文章详情页的分享 -->
+<div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+
+<script defer="" src="/physics/js/shareJs/social-share.min.js"></script>
+
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
+
+
+    
+    
+    <!-- 评论 -->
+    <!-- 评论 -->
+
+  <div id="myComment">
+    
+      <div id="gitment-container"></div>
+
+    
+  </div>
+
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+
+  </div>
+
+  <!-- 目录 -->
+  <aside id="l_side">
+  
+    
+      <section class="widget side_blogger">
+  <div class="content">
+    
+      
+        <a class="avatar flat-box rectangle" href="/physics/about/">
+          <img src="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/v2-4b1c8ef0a203caaaaea6ea3c43d8b9c2_r.jpg" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp">
+        </a>
+      
+    
+    
+      <div class="text">
+        
+          <h2>小洛包</h2>
+        
+        
+          <p>我好饿好饿~</p>
+
+        
+        
+      </div>
+    
+    
+      <div class="social-wrapper">
+        
+          
+            <a href="/physics/atom.xml" class="social fas fa-rss flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="mailto:kano25250@outlook.com" class="social fas fa-envelope flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+          
+            <a href="https://github.com/kotokowa/physics" class="social fab fa-github flat-btn" target="_blank" rel="external nofollow noopener noreferrer">
+              
+            </a>
+          
+        
+      </div>
+    
+  </div>
+</section>
+
+    
+  
+  
+  
+
+  <div class="layout_sticky">    
+    
+      
+<section class="widget side_toc">
+  
+  <header>
+    
+      <i style="color: " class="fas fa-list fa-fw" aria-hidden="true"></i><span class="name" style="color: ">本文目录</span>
+    
+  </header>
+
+
+  <div class="content">
+    <div class="toc-main">
+      <div class="toc-content">
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">引言、热力学第一定律</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">系统的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-text">模型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6"><span class="toc-text">热力学</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%B3%BB%E7%BB%9F%E5%92%8C%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%8F%82%E9%87%8F"><span class="toc-text">热力学系统和热力学参量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%8F%82%E9%87%8F%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-text">热力学参量的分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B8%A9%E5%BA%A6%E4%B8%8E%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E9%9B%B6%E5%AE%9A%E5%BE%8B"><span class="toc-text">温度与热力学第零定律</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%82%B9%E6%95%B0%E5%AD%A6"><span class="toc-text">一点数学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A%E8%BF%87%E7%A8%8B"><span class="toc-text">定义：过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E5%AE%9A%E5%BE%8B"><span class="toc-text">热力学第一定律</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F"><span class="toc-text">功</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%83%AD%E5%AE%B9"><span class="toc-text">热容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E7%83%AD%E7%9A%84%E4%B8%89%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-text">传热的三种方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Carnot-%E8%BF%87%E7%A8%8B"><span class="toc-text">Carnot 过程</span></a></li></ol></li></ol></li></ol> -->
+        <div class="toc"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- 手机端目录按钮 -->
+<div id="toc-mobile-btn">
+  <i class="fas fa-list-ul" aria-hidden="true"></i>
+</div>
+
+      
+  <section class="widget side_recent_post">
+    
+  <header>
+    
+      <a style="color: " href="/tags/"><i class="fas fa-book fa-fw" aria-hidden="true"></i><span class="name">最新文章</span></a>
+    
+  </header>
+
+
+    <div class="content">
+      
+      <!-- hash算法 -->
+      
+      <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABoltzmann%E7%BB%9F%E8%AE%A1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-11</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABoltzmann%E7%BB%9F%E8%AE%A1/">几率法：Boltzmann统计</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABose%E7%BB%9F%E8%AE%A1%E5%92%8CFermi%E7%BB%9F%E8%AE%A1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-11</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABose%E7%BB%9F%E8%AE%A1%E5%92%8CFermi%E7%BB%9F%E8%AE%A1/">几率法：Bose统计和Fermi统计</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ReTong/%E5%A4%9A%E7%BB%84%E5%85%83%E7%B3%BB%E7%BB%9F%E3%80%81%E5%8C%96%E5%AD%A6%E5%8F%8D%E5%BA%94/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-11</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ReTong/%E5%A4%9A%E7%BB%84%E5%85%83%E7%B3%BB%E7%BB%9F%E3%80%81%E5%8C%96%E5%AD%A6%E5%8F%8D%E5%BA%94/">多组元系统、化学反应</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ReTong/%E6%B6%A8%E8%90%BD/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-11</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ReTong/%E6%B6%A8%E8%90%BD/">涨落</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%87%BD%E6%95%B0/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-11</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%87%BD%E6%95%B0/">热力学函数</a>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </section>
+
+    
+  </div>
+</aside>
+
+  <!-- 图片放大 Wrap images with fancybox support -->
+  <script defer="" src="/physics/js/wrapImage.js"></script>
+</div>
+
+<!-- 文章详情页背景图 -->
+<div id="appBgSwiper" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;" :style="{'background-color': bgColor ? bgColor : 'transparent'}">
+	<transition-group tag="ul" :name="names">
+		<li v-for="(image,index) in img" :key="index" v-show="index === mark" class="bg-swiper-box">
+			<img :src="image" class="bg-swiper-img no-lazy">
+		</li>
+	</transition-group>
+</div>
+<script>
+	var vm = new Vue({
+		el: '#appBgSwiper',
+		data: {
+			names: '' || 'fade' || 'fade', // translate-fade fade
+			mark: 0,
+			img: [],
+			bgColor: '',
+			time: null
+		},
+		methods: {   //添加方法
+			change(i, m) {
+				if (i > m) {
+					// this.names = 'fade';
+				} else if (i < m) {
+					// this.names = 'fade';
+				} else {
+					return;
+				}
+				this.mark = i;
+			},
+			prev() {
+				// this.names = 'fade';
+				this.mark--;
+				if (this.mark === -1) {
+					this.mark = 3;
+					return
+				}
+			},
+			next() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			autoPlay() {
+				// this.names = 'fade';
+				this.mark++;
+				if (this.mark === this.img.length) {
+					this.mark = 0;
+					return
+				}
+			},
+			play() {
+				let bgImgDelay = '' || '180000'
+				let delay = parseInt(bgImgDelay) || 180000;
+				this.time = setInterval(this.autoPlay, delay);
+			},
+			enter() {
+				clearInterval(this.time);
+			},
+			leave() {
+				this.play();
+			}
+		},
+		created() {
+			this.play()
+		},
+		beforeDestroy() {
+			clearInterval(this.time);
+		},
+		mounted() {
+			let prop = '' || '';
+			let isImg = prop.includes('.bmp') || prop.includes('.jpg') || prop.includes('.png') || prop.includes('.tif') || prop.includes('.gif') || prop.includes('.pcx') || prop.includes('.tga') || prop.includes('.exif') || prop.includes('.fpx') || prop.includes('.psd') || prop.includes('.cdr') || prop.includes('.pcd') || prop.includes('.dxf') || prop.includes('.ufo') || prop.includes('.eps') || prop.includes('.ai') || prop.includes('.raw') || prop.includes('.WMF') || prop.includes('.webp') || prop.includes('.jpeg') || prop.includes('http://') || prop.includes('https://')
+			if (isImg) {
+				let img = prop.split(',');
+				let configRoot = '/physics/'
+				let arrImg = [];
+				img.forEach(el => {
+					var Expression = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w- .\/?%&=]*)?/;
+					var objExp = new RegExp(Expression);
+
+					if (objExp.test(el)) {
+						// http or https
+						arrImg.push(el);
+					} else {
+						// 非http or https开头
+						// 本地文件
+						let firstStr = el.charAt(0);
+						if (firstStr == '/') {
+							el = el.substr(1); // 删除第一个字符 '/',因为 configRoot最后一个字符为 /
+						}
+						el = configRoot + el;
+						arrImg.push(el);
+					}
+				})
+				this.img = arrImg;
+			} else {
+				this.bgColor = prop;
+			}
+		}
+	})
+</script>
+
+<style>
+	.bg-swiper-box {
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.bg-swiper-img {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+	}
+</style>
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://unpkg.com/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+
+
+
+  <script>
+  function loadMermaid() {
+    if (document.getElementsByClassName('mermaid').length) {
+      if (window.mermaidJsLoad) mermaid.init()
+      else {
+        loadScript('https://unpkg.com/mermaid/dist/mermaid.min.js').then(() => {
+          window.mermaidJsLoad = true
+          mermaid.initialize({
+            theme: 'default',
+          })
+          if ('true') {
+            mermaid.init();
+          }
+        })
+      }
+    }
+  };
+  document.addEventListener("DOMContentLoaded", function () {
+    loadMermaid();
+  })
+
+  document.addEventListener('pjax:complete', function () {
+    loadMermaid();
+  })
+  
+</script>
+
+
+      </main>
+    </div>
+
+    <!-- 页脚 -->
+    
+  
+  
+    <!-- 底部鱼儿跳动效果，依赖于jquery-->
+<div id="j-fish-skip" style=" position: relative;height: 153px;width: auto;"></div>
+<script defer="">
+  var RENDERER = {
+    POINT_INTERVAL: 5,
+    FISH_COUNT: 3,
+    MAX_INTERVAL_COUNT: 50,
+    INIT_HEIGHT_RATE: .5,
+    THRESHOLD: 50,
+    FISH_COLOR: '',
+    init: function () {
+      this.setFishColor(); this.setParameters(), this.reconstructMethods(), this.setup(), this.bindEvent(), this.render()
+    },
+    setFishColor: function () {
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+      if (isDark) {
+        this.FISH_COLOR = '#222'; // 暗黑色，有时间把这整成一个变量
+      } else {
+        this.FISH_COLOR = '' || 'rgba(76, 213, 153, 0.6)';
+      }
+    },
+    setParameters: function () {
+      this.$window = $(window), this.$container = $("#j-fish-skip"), this.$canvas = $("<canvas />"), this.context = this.$canvas.appendTo(this.$container).get(0).getContext("2d"), this.points = [], this.fishes = [], this.watchIds = []
+    },
+    createSurfacePoints: function () {
+      var t = Math.round(this.width / this.POINT_INTERVAL);
+      this.pointInterval = this.width / (t - 1), this.points.push(new SURFACE_POINT(this, 0));
+      for (var i = 1; i < t; i++) {
+        var e = new SURFACE_POINT(this, i * this.pointInterval),
+          h = this.points[i - 1];
+        e.setPreviousPoint(h), h.setNextPoint(e), this.points.push(e)
+      }
+    },
+    reconstructMethods: function () {
+      this.watchWindowSize = this.watchWindowSize.bind(this), this.jdugeToStopResize = this.jdugeToStopResize.bind(this), this.startEpicenter = this.startEpicenter.bind(this), this.moveEpicenter = this.moveEpicenter.bind(this), this.reverseVertical = this.reverseVertical.bind(this), this.render = this.render.bind(this)
+    },
+    setup: function () {
+      this.points.length = 0, this.fishes.length = 0, this.watchIds.length = 0, this.intervalCount = this.MAX_INTERVAL_COUNT, this.width = this.$container.width(), this.height = this.$container.height(), this.fishCount = this.FISH_COUNT * this.width / 500 * this.height / 500, this.$canvas.attr({
+        width: this.width,
+        height: this.height
+      }), this.reverse = !1, this.fishes.push(new FISH(this)), this.createSurfacePoints()
+    },
+    watchWindowSize: function () {
+      this.clearTimer(), this.tmpWidth = this.$window.width(), this.tmpHeight = this.$window.height(), this.watchIds.push(setTimeout(this.jdugeToStopResize, this.WATCH_INTERVAL))
+    },
+    clearTimer: function () {
+      for (; this.watchIds.length > 0;) clearTimeout(this.watchIds.pop())
+    },
+    jdugeToStopResize: function () {
+      var t = this.$window.width(),
+        i = this.$window.height(),
+        e = t == this.tmpWidth && i == this.tmpHeight;
+      this.tmpWidth = t, this.tmpHeight = i, e && this.setup()
+    },
+    bindEvent: function () {
+      this.$window.on("resize", this.watchWindowSize), this.$container.on("mouseenter", this.startEpicenter), this.$container.on("mousemove", this.moveEpicenter)
+    },
+    getAxis: function (t) {
+      var i = this.$container.offset();
+      return {
+        x: t.clientX - i.left + this.$window.scrollLeft(),
+        y: t.clientY - i.top + this.$window.scrollTop()
+      }
+    },
+    startEpicenter: function (t) {
+      this.axis = this.getAxis(t)
+    },
+    moveEpicenter: function (t) {
+      var i = this.getAxis(t);
+      this.axis || (this.axis = i), this.generateEpicenter(i.x, i.y, i.y - this.axis.y), this.axis = i
+    },
+    generateEpicenter: function (t, i, e) {
+      if (!(i < this.height / 2 - this.THRESHOLD || i > this.height / 2 + this.THRESHOLD)) {
+        var h = Math.round(t / this.pointInterval);
+        h < 0 || h >= this.points.length || this.points[h].interfere(i, e)
+      }
+    },
+    reverseVertical: function () {
+      this.reverse = !this.reverse;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].reverseVertical()
+    },
+    controlStatus: function () {
+      for (var t = 0, i = this.points.length; t < i; t++) this.points[t].updateSelf();
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].updateNeighbors();
+      this.fishes.length < this.fishCount && 0 == --this.intervalCount && (this.intervalCount = this.MAX_INTERVAL_COUNT, this.fishes.push(new FISH(this)))
+    },
+    render: function () {
+      requestAnimationFrame(this.render), this.controlStatus(), this.context.clearRect(0, 0, this.width, this.height), this.context.fillStyle = this.FISH_COLOR;
+      for (var t = 0, i = this.fishes.length; t < i; t++) this.fishes[t].render(this.context);
+      this.context.save(), this.context.globalCompositeOperation = "xor", this.context.beginPath(), this.context.moveTo(0, this.reverse ? 0 : this.height);
+      for (t = 0, i = this.points.length; t < i; t++) this.points[t].render(this.context);
+      this.context.lineTo(this.width, this.reverse ? 0 : this.height), this.context.closePath(), this.context.fill(), this.context.restore()
+    }
+  },
+  SURFACE_POINT = function (t, i) {
+    this.renderer = t, this.x = i, this.init()
+  };
+  SURFACE_POINT.prototype = {
+    SPRING_CONSTANT: .03,
+    SPRING_FRICTION: .9,
+    WAVE_SPREAD: .3,
+    ACCELARATION_RATE: .01,
+    init: function () {
+      this.initHeight = this.renderer.height * this.renderer.INIT_HEIGHT_RATE, this.height = this.initHeight, this.fy = 0, this.force = {
+        previous: 0,
+        next: 0
+      }
+    },
+    setPreviousPoint: function (t) {
+      this.previous = t
+    },
+    setNextPoint: function (t) {
+      this.next = t
+    },
+    interfere: function (t, i) {
+      this.fy = this.renderer.height * this.ACCELARATION_RATE * (this.renderer.height - this.height - t >= 0 ? -1 : 1) * Math.abs(i)
+    },
+    updateSelf: function () {
+      this.fy += this.SPRING_CONSTANT * (this.initHeight - this.height), this.fy *= this.SPRING_FRICTION, this.height += this.fy
+    },
+    updateNeighbors: function () {
+      this.previous && (this.force.previous = this.WAVE_SPREAD * (this.height - this.previous.height)), this.next && (this.force.next = this.WAVE_SPREAD * (this.height - this.next.height))
+    },
+    render: function (t) {
+      this.previous && (this.previous.height += this.force.previous, this.previous.fy += this.force.previous), this.next && (this.next.height += this.force.next, this.next.fy += this.force.next), t.lineTo(this.x, this.renderer.height - this.height)
+    }
+  };
+  var FISH = function (t) {
+    this.renderer = t, this.init()
+  };
+  FISH.prototype = {
+    GRAVITY: .4,
+    init: function () {
+      this.direction = Math.random() < .5, this.x = this.direction ? this.renderer.width + this.renderer.THRESHOLD : -this.renderer.THRESHOLD, this.previousY = this.y, this.vx = this.getRandomValue(4, 10) * (this.direction ? -1 : 1), this.renderer.reverse ? (this.y = this.getRandomValue(1 * this.renderer.height / 10, 4 * this.renderer.height / 10), this.vy = this.getRandomValue(2, 5), this.ay = this.getRandomValue(.05, .2)) : (this.y = this.getRandomValue(6 * this.renderer.height / 10, 9 * this.renderer.height / 10), this.vy = this.getRandomValue(-5, -2), this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1, this.theta = 0, this.phi = 0
+    },
+    getRandomValue: function (t, i) {
+      return t + (i - t) * Math.random()
+    },
+    reverseVertical: function () {
+      this.isOut = !this.isOut, this.ay *= -1
+    },
+    controlStatus: function (t) {
+      this.previousY = this.y, this.x += this.vx, this.y += this.vy, this.vy += this.ay, this.renderer.reverse ? this.y > this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy -= this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(.05, .2)), this.isOut = !1) : this.y < this.renderer.height * this.renderer.INIT_HEIGHT_RATE ? (this.vy += this.GRAVITY, this.isOut = !0) : (this.isOut && (this.ay = this.getRandomValue(-.2, -.05)), this.isOut = !1), this.isOut || (this.theta += Math.PI / 20, this.theta %= 2 * Math.PI, this.phi += Math.PI / 30, this.phi %= 2 * Math.PI), this.renderer.generateEpicenter(this.x + (this.direction ? -1 : 1) * this.renderer.THRESHOLD, this.y, this.y - this.previousY), (this.vx > 0 && this.x > this.renderer.width + this.renderer.THRESHOLD || this.vx < 0 && this.x < -this.renderer.THRESHOLD) && this.init()
+    },
+    render: function (t) {
+      t.save(), t.translate(this.x, this.y), t.rotate(Math.PI + Math.atan2(this.vy, this.vx)), t.scale(1, this.direction ? 1 : -1), t.beginPath(), t.moveTo(-30, 0), t.bezierCurveTo(-20, 15, 15, 10, 40, 0), t.bezierCurveTo(15, -10, -20, -15, -30, 0), t.fill(), t.save(), t.translate(40, 0), t.scale(.9 + .2 * Math.sin(this.theta), 1), t.beginPath(), t.moveTo(0, 0), t.quadraticCurveTo(5, 10, 20, 8), t.quadraticCurveTo(12, 5, 10, 0), t.quadraticCurveTo(12, -5, 20, -8), t.quadraticCurveTo(5, -10, 0, 0), t.fill(), t.restore(), t.save(), t.translate(-3, 0), t.rotate((Math.PI / 3 + Math.PI / 10 * Math.sin(this.phi)) * (this.renderer.reverse ? -1 : 1)), t.beginPath(), this.renderer.reverse ? (t.moveTo(5, 0), t.bezierCurveTo(10, 10, 10, 30, 0, 40), t.bezierCurveTo(-12, 25, -8, 10, 0, 0)) : (t.moveTo(-5, 0), t.bezierCurveTo(-10, -10, -10, -30, 0, -40), t.bezierCurveTo(12, -25, 8, -10, 0, 0)), t.closePath(), t.fill(), t.restore(), t.restore(), this.controlStatus(t)
+    }
+  }, $(function () {
+    RENDERER.init()
+    $('.dark').click(function () {
+      setTimeout(() => {
+        RENDERER.setFishColor();
+        RENDERER.context.fill();
+      });
+    })
+  });
+</script>
+  
+  <div class="footer bg-color">
+    <div class="footer-main">
+      
+        
+          <div class="link">
+            
+          </div>
+        
+      
+        
+          <div class="footer-copyright">
+            <p>Copyright © 2025 -  <a target="_blank" rel="noopener" href="https://github.com/kotokowa">kotokowa</a> | Powered by <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a target="_blank" rel="noopener" href="https://github.com/yuang01/theme">Bamboo</a></p>
+
+          </div>
+        
+      
+        
+          <div class="footer-custom">
+            
+          </div>
+        
+      
+    </div>
+  </div>
+
+
+
+    <!-- 渲染暗黑按钮 -->
+    
+      <div class="dark" onclick="toggleDarkMode()">
+  <div class="dark-content">
+    <i class="fas" id="darkIcon" aria-hidden="true"></i>
+  </div>
+</div>
+
+<script defer="">
+  $(function() {
+    // 初始化暗黑模式状态
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    updateDarkModeIcon(isDark);
+  });
+
+  function toggleDarkMode() {
+    const isDark = $(document.body).hasClass('darkModel');
+    $(document.body).toggleClass('darkModel');
+    localStorage.setItem('dark', !isDark);
+    updateDarkModeIcon(!isDark);
+  }
+
+  function updateDarkModeIcon(isDark) {
+    const iconElement = document.getElementById('darkIcon');
+    if (isDark) {
+      iconElement.classList.remove('fa-moon');
+      iconElement.classList.add('fa-lightbulb');
+    } else {
+      iconElement.classList.remove('fa-lightbulb');
+      iconElement.classList.add('fa-moon');
+    }
+  }
+</script>
+
+    
+    <!-- 渲染回到顶部按钮 -->
+    
+      <div class="goTop top-btn-color" pointer="">
+  <i class="fas fa-arrow-up" aria-hidden="true"></i>
+</div>
+<script defer="" src="/physics/js/goTop.js"></script>
+
+    
+    <!-- 渲染左下角音乐播放器 -->
+    
+      <link rel="stylesheet" href="/physics/js/aplayer/APlayer@1.10.1.min.css">
+<style>
+.aplayer .aplayer-lrc p {
+  
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
+
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  
+  font-size: 15px;
+  color: #42b983;
+}
+
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+
+</style>
+<meting-js class="" server="netease" type="playlist" id="17453633682" fixed="true" autoplay="true" theme="#42b983" loop="all" order="random" preload="none" volume="0.4" list-folded="true">
+</meting-js>
+
+<!-- <style>
+  #aplayer {
+    position: fixed;
+    left: 0;
+    bottom: 300px;
+  }
+</style> -->
+<script defer="" src="https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js"></script>
+<script defer="" src="https://unpkg.com/meting@2/dist/Meting.min.js"></script>
+    
+
+    <!-- 图片放大 -->
+    
+      <script src="https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    
+
+    <!-- 百度解析 -->
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+    
+    <!-- 背景彩带 -->
+    
+      <script async="" type="text/javascript" size="100" alpha="0.4" zindex="-1" src="/physics/js/ribbon.min.js"></script>
+    
+
+    <script src="/physics/js/utils/index.js"></script>
+    <script src="/physics/js/app.js"></script>
+    
+    <!-- 文章目录所需js -->
+<!-- <link href="/physics/js/tocbot/tocbot.css" rel="stylesheet">
+<script src="/physics/js/tocbot/tocbot.min.js"></script> -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css">
+
+<script>
+  var headerEl = 'h2, h3, h4',  //headers 
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: 20,
+    // onClick: function (e) {},
+  }
+  if ($('.toc').length > 0) {
+
+    $(content).children(headerEl).each(function () {
+      //去除空格以及多余标点
+      var headerId = $(this).text().replace(/[\s|\~|`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\_|\+|\=|\||\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?|\：|\，|\。]/g, '');
+
+      headerId = headerId.toLowerCase();
+      if (idArr[headerId]) {
+        //id已经存在
+        $(this).attr('id', headerId + '-' + idArr[headerId]);
+        idArr[headerId]++;
+      }
+      else {
+        //id未存在
+        idArr[headerId] = 1;
+        $(this).attr('id', headerId);
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
+  }
+
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc-list').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 150) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+      mobileTocClick();
+    }
+  });
+  
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
+</script>
+
+<style>
+  /* .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  } */
+</style>
+ 
+
+<!-- 设置导航背景 -->
+<script>
+  let setHeaderClass = () => {
+    const nav = $('#navHeader');
+    const navTop = nav.outerHeight();
+    const winTop = $(window).scrollTop();
+    if(winTop > navTop) {
+      nav.addClass('header-bg-color');
+    }
+    else {
+      nav.removeClass('header-bg-color');
+    }
+  };
+
+  let scrollCollect = () => {
+    return bamboo.throttle(function (e) {
+      setHeaderClass();
+    }, 200)()
+  }
+
+  let initHeaderBg = () => {
+    setHeaderClass();
+  }
+
+  setHeaderClass();
+  window.addEventListener('scroll', scrollCollect);
+
+  document.addEventListener('pjax:send', function () {
+    window.removeEventListener('scroll', scrollCollect)
+  })
+  document.addEventListener('pjax:complete', function () {
+    window.addEventListener('scroll', scrollCollect);
+    setHeaderClass();
+  })
+</script> 
+
+<!-- 渲染issues标签里的内容 -->
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/issues/index.js');
+  };
+  $(function () {
+    loadIssuesJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof IssuesAPI == "undefined") {
+      loadIssuesJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的图片标签(getPhotoOnline)里的内容 -->
+<script>
+  function loadPhotoOnlineJS() {
+    if ($(".post-detail").find(".getJsonPhoto-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getPhotoOnline/index.js');
+  };
+  $(function () {
+    loadPhotoOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getPhotoJson == "undefined") {
+      loadPhotoOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的talk标签(getTalkOnline)里的内容 -->
+<script>
+  function loadTalkOnlineJS() {
+    if ($(".post-detail").find(".getJsonTalk-api").length == 0) {
+      return;
+    } 
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/waterfall.js/1.0.2/waterfall.min.js'); // 瀑布流插件，https://raphamorim.io/waterfall.js/
+    loadScript('/physics/js/getTalkOnline/index.js');
+  };
+  $(function () {
+    loadTalkOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getTalkJson == "undefined") {
+      loadTalkOnlineJS();
+    }
+  })
+</script>
+
+<!-- 渲染远程json加载的site-card标签(getSiteOnline)里的内容 -->
+<script>
+  function loadSiteOnlineJS() {
+    if ($(".post-detail").find(".getJsonSite-api").length == 0) {
+      return;
+    } 
+    loadScript('/physics/js/getSiteOnline/index.js');
+  };
+  $(function () {
+    loadSiteOnlineJS();
+  });
+  document.addEventListener('pjax:complete', function () {
+    if (typeof getSiteJson == "undefined") {
+      loadSiteOnlineJS();
+    }
+  })
+</script>
+
+<!-- 输入框打字特效 -->
+<!-- 输入框打字特效 -->
+
+  <script src="/physics/js/activate-power-mode.js"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+
+
+<!-- markdown代码一键复制功能 -->
+
+  <link rel="stylesheet" href="https://unpkg.com/v-plugs-ayu/lib/ayu.css">
+  <script src="https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js"></script>
+  <script src="/physics/js/clipboard/clipboard.min.js"></script>
+  <div id="appCopy">
+  </div>
+  <script data-pjax="">
+    var vm = new Vue({
+      el: '#appCopy',
+      data: {
+      },
+      computed: {
+      },
+      mounted() {
+        const that = this;
+        var copy = 'copy';
+        /* code */
+        var initCopyCode = function () {
+          var copyHtml = '';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '</button>';
+          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").not('.gutter pre').before(copyHtml);
+          new ClipboardJS('.btn-copy', {
+            target: function (trigger) {
+              return trigger.nextElementSibling;
+            }
+          });
+        }
+        initCopyCode();
+        $('.btn-copy').unbind('click').bind('click', function () {
+          doSomething();
+        })
+        $(document).unbind('keypress').bind('keypress', function (e) {
+          if (e.ctrlKey && e.keyCode == 67) {
+            doSomething();
+          }
+        })
+
+        function doSomething() {
+          that.$notify({
+            title: "成功",
+            content: "代码已复制，请遵守相关授权协议。",
+            type: 'success'
+          })
+        }
+      },
+      methods: {
+      },
+      created() { }
+    })
+  </script>
+  
+
+<!-- 图片懒加载 -->
+<script defer="" src="https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazyload",
+    threshold: 0
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    lazyLoadInstance.update();
+  });
+  document.addEventListener('pjax:complete', function () {
+    lazyLoadInstance.update();
+  });
+</script>
+
+
+<!-- 卡片滚动动画 -->
+   
+
+<!-- 评论所需js -->
+
+  
+        <script type="text/javascript">
+  var utteranceComment = {};
+
+  function check_utterance() {
+    let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('false');
+    if (isDark) {
+      utteranceComment.Theme = 'github-dark';
+    } else {
+      utteranceComment.Theme = 'github-light';
+    }
+
+    return document.getElementById("gitment-container");
+  }
+  comment_el = '#gitment-container';
+  load_utterance = function () {
+    if ($(comment_el).length) {
+      // 匿名函数，防止污染全局变量
+      const HEAD = check_utterance();
+
+      var utterances = document.createElement('script');
+      utterances.type = 'text/javascript';
+      utterances.async = true;
+      utterances.setAttribute('issue-term', 'pathname')
+      utterances.setAttribute('theme', utteranceComment.Theme)
+      utterances.setAttribute('repo', 'kotokowa/physics-utterances')
+      utterances.crossorigin = 'anonymous';
+      utterances.src = 'https://utteranc.es/client.js';
+      // content 是要插入评论的地方
+      document.getElementById('gitment-container').appendChild(utterances);
+
+    }
+  }
+
+  function dark_utterance() {
+    const HEAD = check_utterance();
+    if (!HEAD) return;
+    const message = {
+      type: 'set-theme',
+      theme: utteranceComment.Theme
+    };
+    const utteranceIframe = document.querySelector('iframe');
+    utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');
+  }
+
+  $(document).ready(load_utterance);
+  document.addEventListener('pjax:complete', function () {
+    load_utterance();
+  });
+
+  $('.dark').click(function () {
+    setTimeout(() => {
+      dark_utterance();
+    });
+  })
+
+</script>
+
+<style>
+  .utterances {
+    max-width: inherit !important;
+  }
+</style>
+      
+
+
+<!-- 鼠标点击特效 -->
+<!-- 爱心点击 -->
+
+   
+    <script async="" src="/physics/js/cursor/clicklove.js"></script> 
+  
+
+
+
+
+  <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax=""></script>
+
+
+<!-- 轮播图标签 -->
+<script>
+  var bambooSwiperTag = {};
+  function load_swiper() {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    loadCSS("https://unpkg.com/swiper@6/swiper-bundle.min.css")
+    loadScript("https://unpkg.com/swiper@6/swiper-bundle.min.js").then(() => {
+      pjax_swiper();
+    });
+  }
+
+  load_swiper();
+
+  function pjax_swiper() {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
+      slidesPerView: 'auto',
+      spaceBetween: 8,
+      centeredSlides: true,
+      loop: true,
+      autoplay: true ? {
+        delay: 3000,
+        stopOnLastSlide: false,
+        disableOnInteraction: false,
+      } : false,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on:{
+        init: function(){
+          swiperAnimateCache(this); //隐藏动画元素 
+          swiperAnimate(this); //初始化完成开始动画
+        }, 
+        slideChangeTransitionEnd: function(){ 
+          swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+          //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+        } 
+      }
+    });
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
+    if (typeof bambooSwiperTag.swiper === "undefined") {
+      load_swiper();
+    } else {
+      pjax_swiper();
+    }
+  });
+</script>
+    <!-- pjax -->
+    
+
+<!-- pjax -->
+
+
+  <script src="/physics/js/pjax@0.2.8/index.js"></script>
+  
+    <div class="pjax-animate">
+  
+    <div class="loading-circle"><div id="loader-circle"></div></div>
+    <script>
+      window.ShowLoading = function() {
+        $(".loading-circle").css("display", "block");
+      };
+      window.HideLoading = function() {
+        $(".loading-circle").css("display", "none");
+      }
+    </script>
+  
+	<script>
+    document.addEventListener('pjax:complete', function () {
+      window.HideLoading();
+    })
+    document.addEventListener('pjax:send', function () {
+      window.ShowLoading();
+    })
+    document.addEventListener('pjax:error', function () {
+      window.HideLoading();
+    })
+	</script>
+</div>
+
+  
+
+  <script>
+    var pjax = new Pjax({
+      elements: 'a[href]:not([href^="#"]):not([href="javascript:void(0)"]):not([no-pjax])',   // 拦截正常带链接的 a 标签
+      selectors: ["#pjax-container","title"],                                   // 根据实际需要确认重载区域
+      cacheBust: false,   // url 地址追加时间戳，用以避免浏览器缓存
+      timeout: 5000
+    });
+
+    document.addEventListener('pjax:send', function (e) {
+
+      try {
+        var currentUrl = window.location.pathname;
+        var targetUrl = e.triggerElement.href;
+        var banUrl = [""];
+        if (banUrl[0] != "") {
+          banUrl.forEach(item => {
+            if(currentUrl.indexOf(item) != -1 || targetUrl.indexOf(item) != -1) {
+              window.location.href = targetUrl;
+            }
+          });
+        }
+      } catch (error) {}
+
+      $(window).unbind('resize');
+      $(window).unbind('scroll');
+      $(document).unbind('scroll');
+      $(document).unbind('click');
+      $('body').unbind('click');
+
+    })
+    
+    document.addEventListener('pjax:complete', function () {
+      $('script[data-pjax], .pjax-reload script').each(function () {
+        $(this).parent().append($(this).remove());
+      });
+    });
+
+    document.addEventListener('pjax:error', function (e) {
+      window.location.href = e.triggerElement.href;
+    })
+    
+    // 刷新不从顶部开始
+    document.addEventListener("DOMContentLoaded", function () {
+      history.scrollRestoration = 'auto';
+    })
+  </script>
+
+
+
+  
+</body></html>
