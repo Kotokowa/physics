@@ -369,7 +369,7 @@
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2026-02-11 |
+          <i class="fas fa-calendar"></i> Published in：2026-02-13 |
         </span>
       
 
@@ -392,7 +392,74 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1>热力学第二定律</h1>
+<h2 id="定义">定义</h2>
+<p><strong>可逆过程</strong>：过程中每一步都可以沿相反方向发生，并且不引起外界的其他改变。</p>
+<p>不可逆过程的特点：不能反向发生 / 反向发生引起外界的变化</p>
+<p><strong>热力学第二定律</strong></p>
+<ul>
+<li>Clausius 表述：热传导是不可逆的，或者热不可能自发的从低温转移到高温</li>
+<li>Kelvin 表述：不可能从单一热源取热并完全转成功而不引起其他变化</li>
+</ul>
+<h2 id="Caloric-理论（热质说）与卡诺定理">Caloric 理论（热质说）与卡诺定理</h2>
+<p>将“热”视为一种无质量的流体，称为“热质”。这种流体由不可毁灭的微粒组成，具有自我排斥的特性。在该理论框架下，物体的冷热程度取决于其内部包含热质的多少。热质流入物体，温度升高；流出则温度降低。这种模型并不对：热可以产生和消灭；热功当量，热不是物质。</p>
+<p><strong>卡诺热机</strong>条件：需要两个不同温度，热从高温向低温流动时做功，热守恒，不同温度之间<strong>没有直接热接触</strong>（没有不导致体积变化的热传导），工作过程为<strong>可逆</strong>的准静态过程</p>
+<p>卡诺循环：</p>
+<ol>
+<li>从高温环境吸热，系统缓慢膨胀，系统和环境之间无温度差，消除Caloric迅速流动导致能量损失</li>
+<li>绝热膨胀，确保Caloric不流失</li>
+<li>等温压缩</li>
+<li>绝热压缩</li>
+</ol>
+<p>这样的过程效率最高。</p>
+<p>理想热机效率与工质无关，只与温度有关：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>η</mi><mi>R</mi></msub><mo>=</mo><msub><mi>η</mi><mi>R</mi></msub><mo>(</mo><msub><mi>t</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>t</mi><mn>2</mn></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\eta_R = \eta_R(t_1, t_2)</annotation></semantics></math></span></span>，且 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>η</mi><mi>R</mi></msub><mo>≥</mo><msub><mi>η</mi><mrow><mi>I</mi><mi>R</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\eta_R \ge \eta_{IR}</annotation></semantics></math></span></span></p>
+<p>定义<strong>元热机效率</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>η</mi><mi>R</mi></msub><mo>(</mo><mi>t</mi><mo>+</mo><mi>d</mi><mi>t</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo><mo>=</mo><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mi>d</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">\eta_R(t + dt, t) = f(t)dt</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(t)</annotation></semantics></math></span></span> 是 Carnot 函数</p>
+<p>从 Carnot 函数可以推导饱和蒸汽压和温度有关：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>η</mi><mo>=</mo><mi>f</mi><mo>(</mo><mi>T</mi><mo>)</mo><mi mathvariant="normal">Δ</mi><mi>T</mi><mo>=</mo><mfrac><mrow><mi>W</mi></mrow><mrow><mi>Q</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>V</mi></mrow><mrow><mi>L</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\eta = f(T)\Delta T = \frac{W}{Q} = \frac{\Delta p \cdot \Delta V}{L}
+</annotation></semantics></math></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi><mo>⋅</mo><mi mathvariant="normal">Δ</mi><mi>V</mi><mo>=</mo><mi mathvariant="normal">Δ</mi><mi>p</mi><mo>(</mo><msub><mi>v</mi><mrow><mi>g</mi><mi>a</mi><mi>s</mi></mrow></msub><mo>−</mo><msub><mi>v</mi><mrow><mi>l</mi><mi>i</mi><mi>q</mi></mrow></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\Delta p \cdot \Delta V = \Delta p (v_{gas} - v_{liq})</annotation></semantics></math></span></span> ，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mo>=</mo><mi>L</mi></mrow><annotation encoding="application/x-tex">Q = L</annotation></semantics></math></span></span> 是相变潜热</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>f</mi><mo>(</mo><mi>T</mi><mo>)</mo><mo>⋅</mo><mi>L</mi></mrow><mrow><msub><mi>v</mi><mi>g</mi></msub><mo>−</mo><msub><mi>v</mi><mi>l</mi></msub></mrow></mfrac></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \frac{\Delta p}{\Delta T} = \frac{f(T) \cdot L}{v_g - v_l}
+</annotation></semantics></math></span></span></span></p>
+<p>另外，对于水，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>l</mi></msub><mo>&lt;</mo><msub><mi>v</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">v_l &lt; v_s</annotation></semantics></math></span></span>，故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>p</mi></mrow><mrow><mi mathvariant="normal">Δ</mi><mi>T</mi></mrow></mfrac><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\frac{\Delta p}{\Delta T} &lt; 0</annotation></semantics></math></span></span>，压强增大，冰点降低</p>
+<h2 id="放弃了热守恒定律之后的讨论">放弃了热守恒定律之后的讨论</h2>
+<p>Clausius 修正：热传导不可逆，保留了能量守恒定律，但是放弃了热守恒定律</p>
+<p><img src="https://pic4.zhimg.com/80/.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Clausius 框架下 Carnot 定理仍然成立的证明"></p>
+<p>Kelvin第一种热力学温标的推导</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>η</mi><mi>R</mi></msub><mo>(</mo><mi>t</mi><mo>+</mo><mi>d</mi><mi>t</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo><mo>=</mo><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mi>d</mi><mi>t</mi><mo>=</mo><mi>d</mi><mi mathvariant="normal">Θ</mi><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\eta_R (t + dt, t) = f(t)dt = d\Theta (t)
+</annotation></semantics></math></span></span></span></p>
+<p>这个解和目前常用的<strong>热力学温标 T</strong> 的关系为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Θ</mi><mo>(</mo><mi>T</mi><mo>)</mo><mo>=</mo><mi>C</mi><mi>ln</mi><mi>T</mi><mi mathvariant="normal">/</mi><msub><mi>T</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">\Theta (T) = C \ln T/T_0
+</annotation></semantics></math></span></span></span></p>
+<p>重新定义：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>η</mi><mi>R</mi></msub><mo>(</mo><mi>t</mi><mo>+</mo><mi>d</mi><mi>t</mi><mo separator="true">,</mo><mi>t</mi><mo>)</mo><mo>=</mo><mi>f</mi><mo>(</mo><mi>t</mi><mo>)</mo><mi>d</mi><mi>t</mi><mo>=</mo><mi>d</mi><mi>T</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow><annotation encoding="application/x-tex">\eta_R (t + dt, t) = f(t)dt = dT/T</annotation></semantics></math></span></span></p>
+<p>于是：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>η</mi><mi>R</mi></msub><mo>=</mo><mn>1</mn><mo>−</mo><mfrac><mrow><msub><mi>T</mi><mn>2</mn></msub></mrow><mrow><msub><mi>T</mi><mn>1</mn></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\eta_R = 1 - \frac{T_2}{T_1}</annotation></semantics></math></span></span> <strong>热机效率上限</strong></p>
+<p>理想的 Carnot 过程应有：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mo>∑</mo><mi>i</mi></msub><mfrac><mrow><msub><mi>Q</mi><mi>i</mi></msub></mrow><mrow><msub><mi>T</mi><mi>i</mi></msub></mrow></mfrac><mo>=</mo><mn>0</mn></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \sum_i \frac{Q_i}{T_i} = 0</annotation></semantics></math></span></span></p>
+<h3 id="熵">熵</h3>
+<p>热机工作过程存在两种转变：</p>
+<ul>
+<li>一部分热转变成功</li>
+<li>另外一部分热从高温热源转移到低温热源</li>
+</ul>
+<p>可逆过程这两种转变有确定的关系，和系统及过程无关，<strong>热功的转变和热转移导致的转变是等价的</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mfrac><mrow><mi>Q</mi></mrow><mrow><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">S = \frac{Q}{T}
+</annotation></semantics></math></span></span></span></p>
+<p>对于相图中一个循环，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><msub><mi>Q</mi><mn>1</mn></msub></mrow><mrow><msub><mi>T</mi><mn>1</mn></msub></mrow></mfrac><mo>+</mo><mfrac><mrow><msub><mi>Q</mi><mn>2</mn></msub></mrow><mrow><msub><mi>T</mi><mn>2</mn></msub></mrow></mfrac><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\frac{Q_1}{T_1} + \frac{Q_2}{T_2} \le 0</annotation></semantics></math></span></span>，等号对应可逆的 Carnot 循环，不等号对应于不可逆循环（熵增）</p>
+<p>定义</p>
+<p><strong>熵变</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>S</mi><mo>≥</mo><mfrac><mrow><mi>d</mi><mi>Q</mi></mrow><mrow><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">dS \ge \frac{dQ}{T}</annotation></semantics></math></span></span></p>
+<p><strong>熵流</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>d</mi><mi>e</mi></msub><mi>S</mi><mo>≡</mo><mfrac><mrow><mi>d</mi><mi>Q</mi></mrow><mrow><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">d_eS \equiv \frac{dQ}{T}</annotation></semantics></math></span></span> 可大于零（系统吸热），可等于零（绝热），也可小于零（系统放热）</p>
+<p><strong>熵产生</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>d</mi><mi>i</mi></msub><mi>S</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">d_iS \ge 0</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>S</mi><mo>=</mo><msub><mi>d</mi><mi>i</mi></msub><mi>S</mi><mo>+</mo><msub><mi>d</mi><mi>e</mi></msub><mi>S</mi></mrow><annotation encoding="application/x-tex">dS = d_iS + d_eS</annotation></semantics></math></span></span></p>
+<p>上述等号都对应可逆过程，不等号对应不可逆过程</p>
+<p>孤立系统 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>S</mi><mo>=</mo><msub><mi>d</mi><mi>i</mi></msub><mi>S</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">dS = d_iS \ge 0</annotation></semantics></math></span></span>，熵不减少</p>
+<p>熵是广延量，量纲：能量/温度</p>
+<p>体积不变，温度升高，熵增加</p>
+<p>温度不变，体积膨胀，熵增加</p>
+<p>温度不变，压强降低，熵增加</p>
+$\begin{align*}\textbf{热力学第二定律的熵表述：}dU &amp;= dQ - dW \\ &amp;= Td_eS -dW \\ &amp;=  T(dS - d_iS) - dW \\ &amp;= TdS - pdV \end{align*}$
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">S = k_B \ln \Omega</annotation></semantics></math></span></span>，其中 Ω 是相应的所有可能微观态数目</p>
+<p>熵是描述体系的能量分散程度，某种意义上可以说描述了微观无序，<strong>宏观无序可能和微观无关</strong>（看状态数）。</p>
+<p>只有孤立系统里的熵才是不减小的，封闭/开放系统里存在热交换，有熵流，熵改变可以是负的，虽然整个宇宙的熵增加，但是<strong>系统熵可以自发的减少</strong>。</p>
+<p>宏观不可逆和微观可逆是可以兼容的，二者可以同时成立。微观逆过程⇒宏观逆过程，但是宏观逆过程⇏微观逆过程。</p>
+
       </div>
       <div class="post-tags-categories">
         
@@ -431,36 +498,18 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%87%BD%E6%95%B0/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">热力学函数</div>
-      </div>
-      
-      <!-- <div class="content">
-        
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-d726f36dce4a9e28c1b7c5f671838e49_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" class="lazyload placeholder" data-srcset="https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/ReTong/%E7%9B%B8%E5%8F%98/" class="post-nav-link">
+    <a href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABoltzmann%E7%BB%9F%E8%AE%A1/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">相变</div>
+        <div class="title-text">几率法：Boltzmann统计</div>
       </div>
       <!-- <div class="content">
         
@@ -581,7 +630,7 @@
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">热力学第二定律</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Caloric-%E7%90%86%E8%AE%BA%EF%BC%88%E7%83%AD%E8%B4%A8%E8%AF%B4%EF%BC%89%E4%B8%8E%E5%8D%A1%E8%AF%BA%E5%AE%9A%E7%90%86"><span class="toc-text">Caloric 理论（热质说）与卡诺定理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%94%BE%E5%BC%83%E4%BA%86%E7%83%AD%E5%AE%88%E6%81%92%E5%AE%9A%E5%BE%8B%E4%B9%8B%E5%90%8E%E7%9A%84%E8%AE%A8%E8%AE%BA"><span class="toc-text">放弃了热守恒定律之后的讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%86%B5"><span class="toc-text">熵</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -607,6 +656,27 @@
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-13</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/">热力学第二定律</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -677,9 +747,9 @@
             
 
             <div class="post-img-box">
-              <a href="/physics/ReTong/%E6%B6%A8%E8%90%BD/" class="post-img " style="background-size: cover; 
+              <a href="/physics/ReTong/%E5%BC%95%E8%A8%80%E3%80%81%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E5%AE%9A%E5%BE%8B/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -688,28 +758,7 @@
                   <span class="post-date">02-11</span>
                 
               </div>
-              <a class="post-title" href="/physics/ReTong/%E6%B6%A8%E8%90%BD/">涨落</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%87%BD%E6%95%B0/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">02-11</span>
-                
-              </div>
-              <a class="post-title" href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%87%BD%E6%95%B0/">热力学函数</a>
+              <a class="post-title" href="/physics/ReTong/%E5%BC%95%E8%A8%80%E3%80%81%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E5%AE%9A%E5%BE%8B/">引言、热力学第一定律</a>
             </div>
           </div>
         
