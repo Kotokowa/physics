@@ -369,7 +369,7 @@
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2026-02-11 |
+          <i class="fas fa-calendar"></i> Published in：2026-02-14 |
         </span>
       
 
@@ -392,7 +392,45 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1>热力学函数</h1>
+<h2 id="热力学函数的引入">热力学函数的引入</h2>
+<p>热力学系统的宏观状态<strong>原始参量</strong>：几何𝑉、力学𝑝、电磁学、化学参量𝑁</p>
+<p>从热力学定律可推出<strong>高级参量</strong>：温度𝑇、内能𝑈、熵𝑆、焓𝐻</p>
+<p>高级参量可以表示为原始参量的函数 eg.: 𝑈 = 𝑈(𝑝,𝑉) = 𝑈(𝑇,𝑉) = ···</p>
+<p>进一步简化，以高级参量作为自变量，可以有 𝑈 = 𝑈(𝑆,𝑉) = ···</p>
+<p>这个函数只依赖系统参量而无需外界参数，更加方便。</p>
+<p>同样，引入更多的热力学函数 eg.: 𝐹 = 𝐹(𝑇,𝑉) = 𝑈 −𝑇𝑆</p>
+<h2 id="数学背景">数学背景</h2>
+<p>介绍 Legendre 变换和 Jacobi 行列式</p>
+<h3 id="Legendre-变换">Legendre 变换</h3>
+<h4 id="引入">引入</h4>
+<p>若有函数 𝑓(𝑥,···)，则 x 和 𝑦 = <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">∂</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">\partial_x</annotation></semantics></math></span></span>𝑓(𝑥,···) 一般称为共轭参量。例如：哈密顿量 𝐻(𝒓,𝒑) 包含了 𝒓 和 𝒑 随时间的改变 v = <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mrow><mi mathvariant="bold">r</mi></mrow></mrow><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">\dot{\bold{r}}</annotation></semantics></math></span></span> = 𝜕𝒑𝐻，𝑭 = <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mrow><mi mathvariant="bold">p</mi></mrow></mrow><mo>˙</mo></mover></mrow><annotation encoding="application/x-tex">\dot{\bold{p}}</annotation></semantics></math></span></span> = −𝜕𝒓𝐻</p>
+<p>目的：使用共轭参量为自变量时，改变函数形式，使得函数里包含的信息保持不变。于是提出 Legendre 变换</p>
+<p>设有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>y</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><msub><mi mathvariant="normal">∂</mi><mi>x</mi></msub><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y = y(x) = \partial_x f(x)</annotation></semantics></math></span></span>，反解得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mi>x</mi><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x = x(y)</annotation></semantics></math></span></span></p>
+<p>直接令 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>f</mi><mo>∗</mo></msup><mo>(</mo><mi>y</mi><mo>)</mo><mo>=</mo><mi>f</mi><mo>(</mo><mi>x</mi><mo>(</mo><mi>y</mi><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">f^*(y) = f(x(y))</annotation></semantics></math></span></span></p>
+<p>以 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mi>a</mi><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>b</mi><mi>x</mi><mo>+</mo><mi>c</mi></mrow><annotation encoding="application/x-tex">f(x) = ax^2 + bx + c</annotation></semantics></math></span></span> 为例，代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><msub><mi mathvariant="normal">∂</mi><mi>x</mi></msub><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">y = \partial_x f(x)</annotation></semantics></math></span></span>，得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mn>2</mn><mi>a</mi><mi>x</mi><mo>+</mo><mi>b</mi></mrow><annotation encoding="application/x-tex">y = 2ax + b</annotation></semantics></math></span></span> 或 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>y</mi><mo>−</mo><mi>b</mi></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">x = \frac{y-b}{2a}</annotation></semantics></math></span></span></p>
+<p>得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>f</mi><mo>∗</mo></msup><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f^*(y)</annotation></semantics></math></span></span>，再代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><msub><mi mathvariant="normal">∂</mi><mi>y</mi></msub><msup><mi>f</mi><mo>∗</mo></msup><mo>(</mo><mi>y</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x = \partial_y f^*(y)</annotation></semantics></math></span></span>，得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi><mo>=</mo><mfrac><mrow><mi>y</mi></mrow><mrow><mn>2</mn><mi>a</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">x = \frac{y}{2a}</annotation></semantics></math></span></span></p>
+<p>只保留了斜率信息，而<strong>截距丢失</strong>！</p>
+<p>对于这个例子，Legendre 变换 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>f</mi></mrow><mo>~</mo></mover><mo>(</mo><mi>y</mi><mo>)</mo><mo>=</mo><msup><mi>f</mi><mo>∗</mo></msup><mo>(</mo><mi>y</mi><mo>)</mo><mo>−</mo><mi>x</mi><mi>y</mi></mrow><annotation encoding="application/x-tex">\tilde{f}(y) = f^*(y) - xy</annotation></semantics></math></span></span>，此时<strong>信息不丢失</strong>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>x</mi><mo>)</mo><mo>=</mo><mover accent="true"><mrow><mover accent="true"><mrow><mi>f</mi></mrow><mo>~</mo></mover></mrow><mo>~</mo></mover></mrow><annotation encoding="application/x-tex">f(x) = \tilde{\tilde{f}}</annotation></semantics></math></span></span></p>
+<h4 id="经典力学表述和热力学表述">经典力学表述和热力学表述</h4>
+<p><strong>经典力学</strong>中的 Legendre 变换：哈密顿描述 ⇔ 拉格朗日描述</p>
+<p>𝐻 = 𝐻(𝒓, 𝒑)<br>
+𝐿 = 𝐿(𝒓,𝒗)</p>
+<p>𝐻 = 𝒑 · 𝒗 − 𝐿</p>
+<p>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi><mo>=</mo><mover accent="true"><mrow><mi>r</mi></mrow><mo>˙</mo></mover><mo>=</mo><msub><mi mathvariant="normal">∂</mi><mi>p</mi></msub><mi>H</mi><mo separator="true">,</mo><mspace width="1em"></mspace><mi>F</mi><mo>=</mo><mover accent="true"><mrow><mi>p</mi></mrow><mo>˙</mo></mover><mo>=</mo><mo>−</mo><msub><mi mathvariant="normal">∂</mi><mi>r</mi></msub><mi>H</mi></mrow><annotation encoding="application/x-tex">v = \dot{r} = \partial_p H,\quad F = \dot{p} = -\partial_r H</annotation></semantics></math></span></span> （H 分别对各个变量的偏导）</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><msub><mi mathvariant="normal">∂</mi><mi>v</mi></msub><mi>L</mi><mo separator="true">,</mo><mspace width="1em"></mspace><mover accent="true"><mrow><mi>p</mi></mrow><mo>˙</mo></mover><mo>=</mo><msub><mi mathvariant="normal">∂</mi><mi>r</mi></msub><mi>L</mi></mrow><annotation encoding="application/x-tex">p = \partial_v L,\quad \dot{p} = \partial_r L</annotation></semantics></math></span></span> （L 分别对各个变量的偏导）</p>
+<p>可以验证各自变量的形式保持不变，哈密顿描述和拉格朗日描述二者完全等价</p>
+<p><strong>热力学</strong>或<strong>多变量</strong> Legendre 变换比经典力学表述仅相差一个符号</p>
+<p>设有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mi>L</mi><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo>)</mo><mo separator="true">,</mo><mspace width="2em"></mspace><mi>d</mi><mi>L</mi><mo>=</mo><msub><mi>y</mi><mn>1</mn></msub><mi>d</mi><msub><mi>X</mi><mn>1</mn></msub><mo>+</mo><msub><mi>y</mi><mn>2</mn></msub><mi>d</mi><msub><mi>X</mi><mn>2</mn></msub><mo>+</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">L = L(X_1, X_2, \cdots),\qquad dL = y_1 dX_1 + y_2 dX_2 + \cdots</annotation></semantics></math></span></span></p>
+<p>则有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><msub><mi>y</mi><mi>α</mi></msub><mrow><mo fence="true">(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>X</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo fence="true">)</mo></mrow><mo>=</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>L</mi></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>X</mi><mi>α</mi></msub></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><msub><mi>X</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>X</mi><mn>3</mn></msub><mo separator="true">,</mo><mo>⋯</mo></mrow></msub></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle y_\alpha\left(X_1, X_2, \cdots\right) = \left(\frac{\partial L}{\partial X_\alpha}\right)_{X_2, X_3, \cdots}</annotation></semantics></math></span></span></p>
+<p>可以反解出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>α</mi></msub><mo>=</mo><msub><mi>X</mi><mi>α</mi></msub><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>y</mi><mi>α</mi></msub><mo separator="true">,</mo><mo>⋯</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">X_\alpha = X_\alpha(X_1, \cdots, y_\alpha, \cdots)</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>L</mi></mrow><mo>~</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>L</mi></mrow><mo>~</mo></mover><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>y</mi><mi>α</mi></msub><mo separator="true">,</mo><mo>⋯</mo><mo>)</mo><mo>=</mo><mi>L</mi><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>X</mi><mi>α</mi></msub><mo>(</mo><msub><mi>X</mi><mn>1</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>y</mi><mi>α</mi></msub><mo separator="true">,</mo><mo>⋯</mo><mo>)</mo><mo separator="true">,</mo><mo>⋯</mo><mo>)</mo><mo>−</mo><msub><mi>X</mi><mi>α</mi></msub><msub><mi>y</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">\tilde{L} =\tilde{L}(X_1, \cdots, y_\alpha, \cdots) = L(X_1, \cdots, X_\alpha(X_1, \cdots, y_\alpha, \cdots), \cdots) - X_\alpha y_\alpha</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mover accent="true"><mrow><mi>L</mi></mrow><mo>~</mo></mover><mo>=</mo><mi>d</mi><mi>L</mi><mo>−</mo><mi>d</mi><mo>(</mo><msub><mi>X</mi><mi>α</mi></msub><msub><mi>y</mi><mi>α</mi></msub><mo>)</mo><mo>=</mo><msub><mi>y</mi><mn>1</mn></msub><mi>d</mi><msub><mi>X</mi><mn>1</mn></msub><mo>+</mo><msub><mi>y</mi><mn>2</mn></msub><mi>d</mi><msub><mi>X</mi><mn>2</mn></msub><mo>+</mo><mo>⋯</mo><mo>−</mo><msub><mi>y</mi><mi>α</mi></msub><mi>d</mi><msub><mi>X</mi><mi>α</mi></msub><mo>−</mo><msub><mi>X</mi><mi>α</mi></msub><mi>d</mi><msub><mi>y</mi><mi>α</mi></msub></mrow><annotation encoding="application/x-tex">d\tilde{L} = dL - d(X_\alpha y_\alpha) = y_1 dX_1 + y_2 dX_2 + \cdots - y_\alpha dX_\alpha - X_\alpha dy_\alpha</annotation></semantics></math></span></span></p>
+<p>即：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mover accent="true"><mrow><mi>L</mi></mrow><mo>~</mo></mover><mo>=</mo><msub><mi>y</mi><mn>1</mn></msub><mi>d</mi><msub><mi>X</mi><mn>1</mn></msub><mo>+</mo><msub><mi>y</mi><mn>2</mn></msub><mi>d</mi><msub><mi>X</mi><mn>2</mn></msub><mo>+</mo><mo>⋯</mo><mo>−</mo><msub><mi>X</mi><mi>α</mi></msub><mi>d</mi><msub><mi>y</mi><mi>α</mi></msub><mo>+</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">d\tilde{L} = y_1 dX_1 + y_2 dX_2 + \cdots - X_\alpha dy_\alpha + \cdots</annotation></semantics></math></span></span></p>
+<p>对于自变量信息的一致性：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>X</mi><mi>α</mi></msub><mo>=</mo><mo>−</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mover accent="true"><mrow><mi>L</mi></mrow><mo>~</mo></mover></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>y</mi><mi>α</mi></msub></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>X</mi><mi mathvariant="normal">\</mi><msub><mi>X</mi><mi>α</mi></msub></mrow></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>y</mi><mi>i</mi></msub><mo>=</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mover accent="true"><mrow><mi>L</mi></mrow><mo>~</mo></mover></mrow><mrow><mi mathvariant="normal">∂</mi><msub><mi>X</mi><mi>i</mi></msub></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><msub><mi>y</mi><mi>α</mi></msub><mo separator="true">,</mo><mi>X</mi><mi mathvariant="normal">\</mi><mo>(</mo><msub><mi>X</mi><mi>α</mi></msub><mo separator="true">,</mo><msub><mi>X</mi><mi>i</mi></msub><mo>)</mo></mrow></msub><mo separator="true">,</mo><mi>i</mi><mo>≠</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">X_\alpha = -\left(\frac{\partial\tilde{L}}{\partial y_\alpha}\right)_{X \backslash X_\alpha}, \quad y_i = \left(\frac{\partial\tilde{L}}{\partial X_i}\right)_{y_\alpha, X \backslash (X_\alpha, X_i)}, i \neq \alpha</annotation></semantics></math></span></span></p>
+<p>类似地，若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>L</mi></mrow><mo>~</mo></mover><mo>(</mo><mi>X</mi><mo separator="true">,</mo><msub><mi>y</mi><mi>α</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>β</mi></msub><mo separator="true">,</mo><mo>⋯</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">\tilde{L}(X, y_\alpha, y_\beta, \cdots)</annotation></semantics></math></span></span>，只要对应把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>y</mi><mi>α</mi></msub><mi>d</mi><msub><mi>X</mi><mi>α</mi></msub><mo separator="true">,</mo><mspace width="0.16667em"></mspace><msub><mi>y</mi><mi>β</mi></msub><mi>d</mi><msub><mi>X</mi><mi>β</mi></msub><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">y_\alpha dX_\alpha,\,y_\beta dX_\beta, \cdots</annotation></semantics></math></span></span> 换成 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><msub><mi>X</mi><mi>α</mi></msub><mi>d</mi><msub><mi>y</mi><mi>α</mi></msub><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mo>−</mo><msub><mi>X</mi><mi>β</mi></msub><mi>d</mi><msub><mi>y</mi><mi>β</mi></msub><mo separator="true">,</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">-X_\alpha dy_\alpha,\,-X_\beta dy_\beta, \cdots</annotation></semantics></math></span></span> 就行了</p>
+<p>有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><mover accent="true"><mrow><mover accent="true"><mrow><mi>L</mi></mrow><mo>~</mo></mover></mrow><mo>~</mo></mover></mrow><annotation encoding="application/x-tex">L = \tilde{\tilde{L}}</annotation></semantics></math></span></span></p>
+
       </div>
       <div class="post-tags-categories">
         
@@ -431,39 +469,24 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/physics/ReTong/%E6%B6%A8%E8%90%BD/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">涨落</div>
-      </div>
-      
-      <!-- <div class="content">
-        
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/ReTong/%E7%AD%89%E5%87%A0%E7%8E%87%E5%81%87%E8%AE%BE/" class="post-nav-link">
+    <a href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">等几率假设</div>
+        <div class="title-text">热力学第二定律</div>
       </div>
       <!-- <div class="content">
-        
+        热力学第二定律
+定义
+可逆过程：过程中每一步都可以沿相反方向发生，并且不引起外界的其他改变。
+不可逆过程的特点：不能反向
       </div> -->
     </a>
   </div>
@@ -581,7 +604,7 @@
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">热力学函数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%95%E5%85%A5"><span class="toc-text">热力学函数的引入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E8%83%8C%E6%99%AF"><span class="toc-text">数学背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Legendre-%E5%8F%98%E6%8D%A2"><span class="toc-text">Legendre 变换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-text">引入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E5%8A%9B%E5%AD%A6%E8%A1%A8%E8%BF%B0%E5%92%8C%E7%83%AD%E5%8A%9B%E5%AD%A6%E8%A1%A8%E8%BF%B0"><span class="toc-text">经典力学表述和热力学表述</span></a></li></ol></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -614,6 +637,27 @@
             
 
             <div class="post-img-box">
+              <a href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%87%BD%E6%95%B0/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-14</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%87%BD%E6%95%B0/">热力学函数</a>
+            </div>
+          </div>
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
               <a href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
@@ -626,27 +670,6 @@
                 
               </div>
               <a class="post-title" href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/">热力学第二定律</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABose%E7%BB%9F%E8%AE%A1%E5%92%8CFermi%E7%BB%9F%E8%AE%A1/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">02-11</span>
-                
-              </div>
-              <a class="post-title" href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABose%E7%BB%9F%E8%AE%A1%E5%92%8CFermi%E7%BB%9F%E8%AE%A1/">几率法：Bose统计和Fermi统计</a>
             </div>
           </div>
         
@@ -677,9 +700,9 @@
             
 
             <div class="post-img-box">
-              <a href="/physics/ReTong/%E5%BC%95%E8%A8%80%E3%80%81%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E5%AE%9A%E5%BE%8B/" class="post-img " style="background-size: cover; 
+              <a href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABose%E7%BB%9F%E8%AE%A1%E5%92%8CFermi%E7%BB%9F%E8%AE%A1/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
               </a>
             </div>
             <div class="post-date-title">
@@ -688,7 +711,7 @@
                   <span class="post-date">02-11</span>
                 
               </div>
-              <a class="post-title" href="/physics/ReTong/%E5%BC%95%E8%A8%80%E3%80%81%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E5%AE%9A%E5%BE%8B/">引言、热力学第一定律</a>
+              <a class="post-title" href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABose%E7%BB%9F%E8%AE%A1%E5%92%8CFermi%E7%BB%9F%E8%AE%A1/">几率法：Bose统计和Fermi统计</a>
             </div>
           </div>
         
