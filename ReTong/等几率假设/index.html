@@ -423,6 +423,7 @@
 </annotation></semantics></math></span></span></span></p>
 <p>如果我们找到某个 $ \rho(S,t) $，使得计算得到的 $ \bar{O}(t) $ 和实验测量值（在宏观尺度下）无法区分，则可以用 $ \rho $ 来取代 $ \tilde{\rho} $。用随机系统的 $ \rho $ 代替决定性的 $ \tilde{\rho} $ 来简化计算，这对应于 <strong>Laplace 观点</strong>。</p>
 <p>在一般情况下，$ \rho $ 的形式我们并不清楚，并不简化太多问题。但在特殊的孤立系统中（处于热力学平衡态下），可以假设所有可能的微观态等几率出现（等几率假设）。利用这一假设，计算得到的物理量和平衡态热力学得到的结果相同。</p>
+<hr>
 <p>不过，很多人并不喜欢这种引入几率的方法，为了得到更加严格的理论（以及回避当时对分子论的反对意见），<strong>Gibbs 引入了系综理论</strong>。</p>
 <p>时间平均的表达式为：</p>
 <p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle scriptlevel="0" displaystyle="true"><mover accent="true"><mrow><mi>O</mi></mrow><mo>¯</mo></mover><mo>(</mo><mi>t</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>τ</mi></mrow></mfrac><msubsup><mo>∫</mo><mrow><mi>t</mi></mrow><mrow><mi>t</mi><mo>+</mo><mi>τ</mi></mrow></msubsup><mi>O</mi><mo>(</mo><mi>S</mi><mo>(</mo><mi>τ</mi><mo>)</mo><mo>)</mo><mi>d</mi><mi>τ</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>τ</mi></mrow></mfrac><msub><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mi>M</mi></mrow></msub><mi>O</mi><mo>(</mo><mi>S</mi><mo>(</mo><mi>t</mi><mo>+</mo><mi>i</mi><mi>τ</mi><mi mathvariant="normal">/</mi><mi>M</mi><mo>)</mo><mo>)</mo><mfrac><mrow><mi>τ</mi></mrow><mrow><mi>M</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>M</mi></mrow></mfrac><msub><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mi>M</mi></mrow></msub><mi>O</mi><mo>(</mo><mi>S</mi><mo>(</mo><mi>t</mi><mo>+</mo><mi>i</mi><mi>τ</mi><mi mathvariant="normal">/</mi><mi>M</mi><mo>)</mo><mo>)</mo></mstyle></mrow><annotation encoding="application/x-tex">\displaystyle \bar{O}(t) = \frac{1}{\tau} \int_{t}^{t+\tau} O(S(\tau)) d\tau = \frac{1}{\tau} \sum_{i=1,M} O(S(t+i\tau/M)) \frac{\tau}{M} = \frac{1}{M} \sum_{i=1,M} O(S(t+i\tau/M))
@@ -439,6 +440,37 @@
 <li><strong>两种统计方法：时间平均、以及系综平均</strong>。</li>
 </ul>
 <h3 id="例子">例子</h3>
+<p>设有体积为 𝑉 的方形盒中的理想气体，𝑁 个粒子，𝑡 = 0 时刻粒子都在容器左边，只考虑容器<strong>左右两边</strong>的粒子密度。每个粒子遵守微观运动规律。</p>
+<p>记粒子位置 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">x_i(t)</annotation></semantics></math></span></span>，速度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>i</mi></msub><mo>(</mo><mi>t</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">v_i(t)</annotation></semantics></math></span></span>，已知 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>(</mo><mn>0</mn><mo>)</mo><mo>&lt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">x_i(0) &lt; 0</annotation></semantics></math></span></span></p>
+<p>左右两边的粒子数（密度）很快趋于相同⇒平衡；长时间后，两边粒子数差Δ𝑁在零附近有小的涨落</p>
+<p>显见系统可逆：在 𝑡 = 𝑇 时刻，把所有粒子速度反号，微观态反向演化，在 2𝑇 时刻前宏观朝非平衡方向演化，之后又向平衡演化</p>
+<p>这说明我们无法从宏观上区分正向演化和反向演化（除了开始的短暂时刻）；无论正向演化和反向演化，都是朝平衡态方向熵增加演化</p>
+<img src="https://pic4.zhimg.com/80/v2-0a4f2cebe4d94c3846e7e7d3de5b4cd5_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-0a4f2cebe4d94c3846e7e7d3de5b4cd5_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" width="60%" alt="粒子分布统计模拟图">
+<p>这解决了微观可逆和宏观不可逆的不同：宏观不可逆并不意味着微观不可逆，可逆的微观过程从宏观上仍然可以体现出不可逆性</p>
+<p>Poincaré recurrence theorem：经典的孤立系统可以无限接近初态。回归时间 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∼</mo><msup><mi>e</mi><mrow><mi>N</mi><mi>τ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\sim e^{N\tau}</annotation></semantics></math></span></span>，对宏观系统而言不可能看到回归</p>
+<p>在这个例子中，显见平衡态物理量 = 平均值 = 最可几值，都是 N/2</p>
+<h3 id="总结-统计基本假设">总结 统计基本假设</h3>
+<ol>
+<li>
+<p>等几率假设<br>
+孤立系统中，每个可能的微观态出现几率相同</p>
+</li>
+<li>
+<p>系综理论：直接计算热力学量（宏观物理量）<br>
+宏观物理量=长时间、大尺度的平均⇔系综平均</p>
+</li>
+<li>
+<p>Boltzmann 几率法：构造热力学平衡态，由此计算热力学量。热力学平衡态是最可几态</p>
+</li>
+</ol>
+<p><strong>热力学理论成立时 2 和 3 等价</strong></p>
+<p>等几率假设的理论依据：</p>
+<p><strong>遍历性</strong>：在测量时间里，系统跑遍或者几乎跑遍了所有可能的微观态</p>
+<p><strong>Bayes 理论</strong>：最客观的主观预设<br>
+在没有其它任何信息的时候，最客观的假设是所有可能性处于同等地位，出现几率相同</p>
+<p><strong>正则典型性</strong><br>
+任何一个典型系统得到的结果和统计方法得到的结果基本相同</p>
+<p>等几率假设是独立于力学之外的规律，不能从力学规律推导出来</p>
 
       </div>
       <div class="post-tags-categories">
@@ -616,7 +648,7 @@
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">等几率假设</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Coarse-graining"><span class="toc-text">Coarse graining</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E5%92%8C%E5%AE%9A%E4%B9%89"><span class="toc-text">概念和定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%90%86%E7%90%86%E8%AE%BA"><span class="toc-text">数理理论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-text">例子</span></a></li></ol></li></ol></li></ol> -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">等几率假设</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Coarse-graining"><span class="toc-text">Coarse graining</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E5%92%8C%E5%AE%9A%E4%B9%89"><span class="toc-text">概念和定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E7%90%86%E7%90%86%E8%AE%BA"><span class="toc-text">数理理论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90"><span class="toc-text">例子</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-%E7%BB%9F%E8%AE%A1%E5%9F%BA%E6%9C%AC%E5%81%87%E8%AE%BE"><span class="toc-text">总结 统计基本假设</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
