@@ -4,7 +4,7 @@
   <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-  <title>几率法：Boltzmann统计 | tianyi</title>
+  <title>几率法：Boltzmann 统计 | tianyi</title>
 
   <link rel="icon" type="image/x-icon, image/vnd.microsoft.icon" href="/physics/favicon.ico">
   <link rel="stylesheet" href="https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css">
@@ -355,21 +355,21 @@
 
 
 <div class="post-detail-header" id="thumbnail_canvas" style="background-repeat: no-repeat; background-size: cover; 
-  background-position: center center;position: relative;background-image:url('https://pic1.zhimg.com/80/v2-fc31146a1cc77ad5415afeeee8e9bd5a_1440w.webp')">
+  background-position: center center;position: relative;background-image:url('https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp')">
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas" style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
   <div class="post-detail-header_info-box">
     <div class="title-box">
       <span class="title">
-        几率法：Boltzmann统计
+        几率法：Boltzmann 统计
       </span>
     </div>
     
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2026-02-11 |
+          <i class="fas fa-calendar"></i> Published in：2026-02-28 |
         </span>
       
 
@@ -392,7 +392,776 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1>几率法：Boltzmann 统计</h1>
+<h2 id="基本概念">基本概念</h2>
+<p>为了阐明 Boltzmann 统计的定义，需要先了解近独立子系组成的系统，全同和非全同粒子的系统态（多粒子态）和单粒子态</p>
+<h3 id="近独立子系组成的系统">近独立子系组成的系统</h3>
+<p>考虑系统运动时，可以把系统分成不同的子系统，这些子系统之间相互作用可以忽略不计。于是有总能量</p>
+\begin{aligned}
+    \hat{H} = \sum_{i = 1}^N \hat{h}_i (\boldsymbol{r}_i, \boldsymbol{p}_i) + H_I \backsimeq \sum_{i = 1}^N h_i (\boldsymbol{r}_i, \boldsymbol{p}_i)
+\end{aligned}
+
+<p>子系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>h</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">h_i</annotation></semantics></math></span></span> 可以是来自于组成系统的粒子、或者粒子的某个自由度、或者是元激发形式的能量</p>
+<p>若考虑 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 个近独立粒子组成的系统，这些粒子具有相同的运动形式，单粒子的 Hamiltonian 相同，即单组元系统，粒子间没有相互作用，则</p>
+\begin{aligned}
+    \hat{H} = \sum_i \hat{h}_i (\hat{\boldsymbol{r}}_i, \hat{\boldsymbol{p}}_i | V, H, \cdots)
+\end{aligned}
+
+<p>微观描述：系统的波函数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Ψ</mi><mo>(</mo><msub><mi>r</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>r</mi><mn>2</mn></msub><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>r</mi><mi>N</mi></msub><mo separator="true">,</mo><mi>t</mi><mo>)</mo><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|\Psi(r_1, r_2, \cdots, r_N, t)\rangle</annotation></semantics></math></span></span></p>
+<p>热力学平衡态物理量（特别是能量）不随时间改变 ⇒ 只要考虑物理量（特别是能量）不变的态⇒能量本征态</p>
+<p>对于无相互作用的系统，粒子之间没有关系，求系统的本征态/波函数时可以通过分离变量，先求出单粒子的本征态/波函数，然后组合出系统本征态/波函数。</p>
+<h3 id="单粒子态和系统态（多粒子态）">单粒子态和系统态（多粒子态）</h3>
+<p><strong>单粒子问题</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>H</mi></mrow><mo>^</mo></mover><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mover accent="true"><mrow><mi>h</mi></mrow><mo>^</mo></mover><mi>i</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><mover accent="true"><mrow><mi>h</mi></mrow><mo>^</mo></mover><mo>(</mo><msub><mrow><mi mathvariant="bold">r</mi></mrow><mi>i</mi></msub><mo separator="true">,</mo><msub><mrow><mi mathvariant="bold">p</mi></mrow><mi>i</mi></msub><mi mathvariant="normal">∣</mi><mi>V</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat{H} = \sum_i \hat{h}_i = \sum_i \hat{h}(\mathbf{r}_i, \mathbf{p}_i|V)
+</annotation></semantics></math></span></span></span></p>
+\begin{aligned}
+\hat{h}|\psi_s\rangle &amp;= \varepsilon_s(V)|\psi_s\rangle \quad \boxed{\text{态描述，V为体积，即外界参数}} \\
+&amp;= \varepsilon_l(V)|\psi_{1\alpha}\rangle \quad \boxed{\text{能级描述：}\alpha=1,2,\cdot,\omega_l；\omega_l\text{简并度}}
+\end{aligned}
+
+<p>且有：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><msub><mi>ψ</mi><mi>s</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mrow><msup><mi>s</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msub><mo>⟩</mo><mo>=</mo><msub><mi>δ</mi><mrow><mi>s</mi><msup><mi>s</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msub><mspace width="1em"></mspace><mo>⟨</mo><msub><mi>ψ</mi><mrow><mn>1</mn><mi>α</mi></mrow></msub><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mrow><msup><mn>1</mn><mrow><mi mathvariant="normal">′</mi></mrow></msup><msup><mi>α</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msub><mo>⟩</mo><mo>=</mo><msub><mi>δ</mi><mrow><mi>l</mi><msup><mi>l</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msub><msub><mi>δ</mi><mrow><mi>α</mi><msup><mi>α</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup></mrow></msub></mrow><annotation encoding="application/x-tex">\langle\psi_s|\psi_{s'}\rangle = \delta_{ss'} \quad \langle\psi_{1\alpha}|\psi_{1'\alpha'}\rangle = \delta_{ll'}\delta_{\alpha\alpha'}
+</annotation></semantics></math></span></span></span></p>
+<p><strong>系统问题</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>H</mi></mrow><mo>^</mo></mover><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mover accent="true"><mrow><mi>h</mi></mrow><mo>^</mo></mover><mi>i</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><mover accent="true"><mrow><mi>h</mi></mrow><mo>^</mo></mover><mo>(</mo><msub><mrow><mi mathvariant="bold">r</mi></mrow><mi>i</mi></msub><mo separator="true">,</mo><msub><mrow><mi mathvariant="bold">p</mi></mrow><mi>i</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\hat{H} = \sum_i \hat{h}_i = \sum_i \hat{h}(\mathbf{r}_i, \mathbf{p}_i)
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>h</mi></mrow><mo>^</mo></mover><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mi>s</mi></msub><mo>⟩</mo><mo>=</mo><msub><mi>ε</mi><mi>s</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mi>s</mi></msub><mo>⟩</mo><mo>=</mo><msub><mi>ε</mi><mi>l</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mrow><mi>l</mi><mi>α</mi></mrow></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">\hat{h}|\psi_s\rangle = \varepsilon_s|\psi_s\rangle = \varepsilon_l|\psi_{l\alpha}\rangle
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>H</mi></mrow><mo>^</mo></mover><mi mathvariant="normal">∣</mi><msub><mi mathvariant="normal">Ψ</mi><mi>S</mi></msub><mo>⟩</mo><mo>=</mo><msub><mi>E</mi><mi>S</mi></msub><mi mathvariant="normal">∣</mi><msub><mi mathvariant="normal">Ψ</mi><mi>S</mi></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">\hat{H}|\Psi_S\rangle = E_S|\Psi_S\rangle
+</annotation></semantics></math></span></span></span></p>
+<p>统计假设中微观态的数目指的是系统态，不是单粒子态。单粒子态只不过是得到系统态的手段。</p>
+<p>从单粒子态得到系统态时需要考虑粒子全同性（见后文）</p>
+<p>统计物理的基本假设和方法对所有系统都相同，不依赖于组成系统的粒子遵循的微观规律，也不要考虑粒子是否全同，以及具有什么样的全同性。</p>
+<p>全同性仅仅体现在从单粒子态构造系统态的方法不一样。</p>
+<h3 id="全同和非全同粒子">全同和非全同粒子</h3>
+<p><strong>非全同粒子</strong>：系统本征波函数是单粒子态的简单直积</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi mathvariant="normal">Ψ</mi><mi>S</mi></msub><mo>(</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><mi>N</mi><mo>)</mo><mo>⟩</mo><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mrow><msub><mi>s</mi><mn>1</mn></msub></mrow></msub><mo>(</mo><mn>1</mn><mo>)</mo><mo>⟩</mo><mo>⊗</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mrow><msub><mi>s</mi><mn>2</mn></msub></mrow></msub><mo>(</mo><mn>2</mn><mo>)</mo><mo>⟩</mo><mo>⋯</mo><mo>⊗</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mrow><msub><mi>s</mi><mi>N</mi></msub></mrow></msub><mo>(</mo><mi>N</mi><mo>)</mo><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|\Psi_S(1,2,\cdots,N)\rangle = |\psi_{s_1}(1)\rangle \otimes |\psi_{s_2}(2)\rangle \cdots \otimes |\psi_{s_N}(N)\rangle
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mrow><msub><mi>s</mi><mn>1</mn></msub></mrow></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mrow><msub><mi>s</mi><mn>2</mn></msub></mrow></msub><mo>(</mo><mn>2</mn><mo>)</mo><mo>⋯</mo><msub><mi>ψ</mi><mrow><msub><mi>s</mi><mi>N</mi></msub></mrow></msub><mo>(</mo><mi>N</mi><mo>)</mo><mo>⟩</mo></mrow><annotation encoding="application/x-tex">= |\psi_{s_1}(1)\psi_{s_2}(2)\cdots\psi_{s_N}(N)\rangle
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mrow><msub><mi>l</mi><mn>1</mn></msub><msub><mi>α</mi><mn>1</mn></msub></mrow></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mrow><msub><mi>l</mi><mn>2</mn></msub><msub><mi>α</mi><mn>2</mn></msub></mrow></msub><mo>(</mo><mn>2</mn><mo>)</mo><mo>⋯</mo><msub><mi>ψ</mi><mrow><msub><mi>l</mi><mi>N</mi></msub><msub><mi>α</mi><mi>N</mi></msub></mrow></msub><mo>(</mo><mi>N</mi><mo>)</mo><mo>⟩</mo></mrow><annotation encoding="application/x-tex">= |\psi_{l_1\alpha_1}(1)\psi_{l_2\alpha_2}(2)\cdots\psi_{l_N\alpha_N}(N)\rangle
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>H</mi></mrow><mo>^</mo></mover><mi mathvariant="normal">∣</mi><msub><mi mathvariant="normal">Ψ</mi><mi>S</mi></msub><mo>⟩</mo><mo>=</mo><msub><mi>E</mi><mi>S</mi></msub><mi mathvariant="normal">∣</mi><msub><mi mathvariant="normal">Ψ</mi><mi>S</mi></msub><mo>⟩</mo><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>ε</mi><mrow><msub><mi>s</mi><mi>i</mi></msub></mrow></msub><mi mathvariant="normal">∣</mi><msub><mi mathvariant="normal">Ψ</mi><mi>S</mi></msub><mo>⟩</mo><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>ε</mi><mrow><msub><mi>l</mi><mi>i</mi></msub></mrow></msub><mi mathvariant="normal">∣</mi><msub><mi mathvariant="normal">Ψ</mi><mi>S</mi></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">\hat{H}|\Psi_S\rangle = E_S|\Psi_S\rangle = \sum_i \varepsilon_{s_i}|\Psi_S\rangle = \sum_i \varepsilon_{l_i}|\Psi_S\rangle
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>S</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>ε</mi><mrow><msub><mi>s</mi><mi>i</mi></msub></mrow></msub><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>ε</mi><mrow><msub><mi>l</mi><mi>i</mi></msub></mrow></msub></mrow><annotation encoding="application/x-tex">E_S = \sum_i \varepsilon_{s_i} = \sum_i \varepsilon_{l_i}
+</annotation></semantics></math></span></span></span></p>
+<p><strong>全同粒子</strong>：系统本征波函数是单粒子波函数简单直积后再对称化（波色子）或者反对称化（费米子）</p>
+
+$$|\Psi_S\rangle = \frac{1}{C} \sum_P (\pm)^P |\psi_{s_1}(1)\psi_{s_2}(2)\cdots\psi_{s_N}(N)\rangle \quad \boxed{\text{P: 交换算符，$N!$个}}$$
+
+<p>下面以两个粒子为例讨论全同和非全同粒子的性质以及宏观态分布</p>
+<p>设两个单粒子态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>⟩</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>2</mn></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|\psi_1\rangle, |\psi_2\rangle</annotation></semantics></math></span></span></p>
+<p>三种情况：</p>
+<ol>
+<li>
+<p><strong>非全同粒子</strong>：多粒子态（系统态）无对称性要求</p>
+<p>多粒子态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi mathvariant="normal">Ψ</mi><mn>1</mn></msub><mo>⟩</mo><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mn>2</mn></msub><mo>(</mo><mn>2</mn><mo>)</mo><mo>⟩</mo><mspace width="2em"></mspace><mi mathvariant="normal">∣</mi><msub><mi mathvariant="normal">Ψ</mi><mn>2</mn></msub><mo>⟩</mo><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>2</mn></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mn>1</mn></msub><mo>(</mo><mn>2</mn><mo>)</mo><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|\Psi_1\rangle = |\psi_1(1)\psi_2(2)\rangle \qquad |\Psi_2\rangle = |\psi_2(1)\psi_1(2)\rangle</annotation></semantics></math></span></span></p>
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>⟩</mo><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>2</mn></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|\psi_1\rangle = |\psi_2\rangle</annotation></semantics></math></span></span> 时，只有一个多粒子态（系统态）；反之，有两个不同的多粒子态</p>
+</li>
+<li>
+<p><strong>全同波色子(Boson)</strong>：交换对称的多粒子波函数</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Ψ</mi><mo>⟩</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>C</mi></mrow></mfrac><mo>[</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mn>2</mn></msub><mo>(</mo><mn>2</mn><mo>)</mo><mo>⟩</mo><mo>+</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>(</mo><mn>2</mn><mo>)</mo><msub><mi>ψ</mi><mn>2</mn></msub><mo>(</mo><mn>1</mn><mo>)</mo><mo>⟩</mo><mo>]</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>C</mi></mrow></mfrac><mo>[</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mn>2</mn></msub><mo>(</mo><mn>2</mn><mo>)</mo><mo>⟩</mo><mo>+</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>2</mn></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mn>1</mn></msub><mo>(</mo><mn>2</mn><mo>)</mo><mo>⟩</mo><mo>]</mo></mrow><annotation encoding="application/x-tex">|\Psi\rangle = \frac{1}{C}[|\psi_1(1)\psi_2(2)\rangle + |\psi_1(2)\psi_2(1)\rangle] = \frac{1}{C}[|\psi_1(1)\psi_2(2)\rangle + |\psi_2(1)\psi_1(2)\rangle]
+</annotation></semantics></math></span></span></span></p>
+<p>不管 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>⟩</mo><mo separator="true">,</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>2</mn></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|\psi_1\rangle , |\psi_2\rangle</annotation></semantics></math></span></span> 是否相同，都只有一个多粒子态</p>
+</li>
+<li>
+<p><strong>全同费米子(Fermion)</strong>：交换反对称的多粒子波函数</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Ψ</mi><mo>⟩</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>C</mi></mrow></mfrac><mo>[</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mn>2</mn></msub><mo>(</mo><mn>2</mn><mo>)</mo><mo>⟩</mo><mo>−</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>(</mo><mn>2</mn><mo>)</mo><msub><mi>ψ</mi><mn>2</mn></msub><mo>(</mo><mn>1</mn><mo>)</mo><mo>⟩</mo><mo>]</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>C</mi></mrow></mfrac><mo>[</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mn>2</mn></msub><mo>(</mo><mn>2</mn><mo>)</mo><mo>⟩</mo><mo>−</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>2</mn></msub><mo>(</mo><mn>1</mn><mo>)</mo><msub><mi>ψ</mi><mn>1</mn></msub><mo>(</mo><mn>2</mn><mo>)</mo><mo>⟩</mo><mo>]</mo></mrow><annotation encoding="application/x-tex">|\Psi\rangle = \frac{1}{C}[|\psi_1(1)\psi_2(2)\rangle - |\psi_1(2)\psi_2(1)\rangle] = \frac{1}{C}[|\psi_1(1)\psi_2(2)\rangle - |\psi_2(1)\psi_1(2)\rangle]
+</annotation></semantics></math></span></span></span></p>
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>⟩</mo><mo>=</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>2</mn></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|\psi_1\rangle = |\psi_2\rangle</annotation></semantics></math></span></span> 时，此多粒子态不存在（Pauli 不相容原理）</p>
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>1</mn></msub><mo>⟩</mo><mo>≠</mo><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mn>2</mn></msub><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|\psi_1\rangle \neq |\psi_2\rangle</annotation></semantics></math></span></span> 时，一个多粒子态</p>
+</li>
+</ol>
+<p><strong>分布函数</strong>：</p>
+<p>微观描述：系统态、多粒子波函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>ψ</mi><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|\psi\rangle</annotation></semantics></math></span></span><br>
+宏观描述：内能密度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>(</mo><mi>r</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">u(r)</annotation></semantics></math></span></span>，粒子数密度 ρ(r)，总能量…<br>
+分布函数：每个态/能级上有几个粒子占据 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mi mathvariant="normal">/</mi><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">a_s/a_l</annotation></semantics></math></span></span></p>
+<p>从分布函数可以得到宏观描述</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ρ</mi><mo>(</mo><mi>r</mi><mo>)</mo><mo>=</mo><mo>⟨</mo><mi mathvariant="normal">Ψ</mi><mi mathvariant="normal">∣</mi><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>N</mi></mrow></msubsup><mi>δ</mi><mo>(</mo><mi>r</mi><mo>−</mo><msub><mi>r</mi><mi>i</mi></msub><mo>)</mo><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Ψ</mi><mo>⟩</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>N</mi></mrow></msubsup><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mrow><msub><mi>s</mi><mi>i</mi></msub></mrow></msub><mo>(</mo><mi>r</mi><mo>)</mo><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mo>=</mo><msub><mo>∑</mo><mrow><mi>s</mi></mrow></msub><msub><mi>a</mi><mi>s</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mi>s</mi></msub><mo>(</mo><mi>r</mi><mo>)</mo><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\rho(r) = \langle\Psi|\sum_{i=1}^{N}\delta(r-r_i)|\Psi\rangle = \sum_{i=1}^{N}|\psi_{s_i}(r)|^2 = \sum_{s}a_s|\psi_s(r)|^2
+</annotation></semantics></math></span></span></span></p>
+<p>求密度时，不关心具体粒子，只要知道每个态上的粒子数as即可</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>(</mo><mi>r</mi><mo>)</mo><mo>=</mo><mo>⟨</mo><mi mathvariant="normal">Ψ</mi><mi mathvariant="normal">∣</mi><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>N</mi></mrow></msubsup><msub><mi>ε</mi><mrow><msub><mi>s</mi><mi>i</mi></msub></mrow></msub><mi>δ</mi><mo>(</mo><mi>r</mi><mo>−</mo><msub><mi>r</mi><mi>i</mi></msub><mo>)</mo><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Ψ</mi><mo>⟩</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>N</mi></mrow></msubsup><msub><mi>ε</mi><mrow><msub><mi>s</mi><mi>i</mi></msub></mrow></msub><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mrow><msub><mi>s</mi><mi>i</mi></msub></mrow></msub><mo>(</mo><mi>r</mi><mo>)</mo><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup><mo>=</mo><msub><mo>∑</mo><mrow><mi>s</mi></mrow></msub><msub><mi>a</mi><mi>s</mi></msub><msub><mi>ε</mi><mi>s</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mi>s</mi></msub><mo>(</mo><mi>r</mi><mo>)</mo><msup><mi mathvariant="normal">∣</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">u(r) = \langle\Psi|\sum_{i=1}^{N}\varepsilon_{s_i}\delta(r-r_i)|\Psi\rangle = \sum_{i=1}^{N}\varepsilon_{s_i}|\psi_{s_i}(r)|^2 = \sum_{s}a_s\varepsilon_s|\psi_s(r)|^2
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mo>⟨</mo><mi mathvariant="normal">Ψ</mi><mi mathvariant="normal">∣</mi><mover accent="true"><mrow><mi>H</mi></mrow><mo>^</mo></mover><mi mathvariant="normal">∣</mi><mi mathvariant="normal">Ψ</mi><mo>⟩</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>N</mi></mrow></msubsup><msub><mi>ε</mi><mrow><msub><mi>s</mi><mi>i</mi></msub></mrow></msub><mo>=</mo><msub><mo>∑</mo><mrow><mi>s</mi></mrow></msub><msub><mi>ε</mi><mi>s</mi></msub><msub><mi>a</mi><mi>s</mi></msub><mo>=</mo><msub><mo>∑</mo><mrow><mi>l</mi></mrow></msub><msub><mi>ε</mi><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">U = \langle\Psi|\hat{H}|\Psi\rangle = \sum_{i=1}^{N}\varepsilon_{s_i} = \sum_{s}\varepsilon_s a_s = \sum_{l}\varepsilon_l a_l
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><msub><mo>∑</mo><mrow><mi>i</mi></mrow></msub><mn>1</mn><mo>=</mo><msub><mo>∑</mo><mrow><mi>s</mi></mrow></msub><msub><mi>a</mi><mi>s</mi></msub><mo>=</mo><msub><mo>∑</mo><mrow><mi>l</mi></mrow></msub><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">N = \sum_{i}1 = \sum_{s}a_s = \sum_{l}a_l
+</annotation></semantics></math></span></span></span></p>
+<p>不同的分布函数代表不同的宏观态，可以是平衡态，也可以是非平衡态</p>
+<h2 id="Boltzmann-统计">Boltzmann 统计</h2>
+<h3 id="等几率假设与微观态计数">等几率假设与微观态计数</h3>
+<h4 id="等几率假设（基本思想）">等几率假设（基本思想）</h4>
+<p>对孤立系统，宏观态（用分布 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>a</mi><mi>l</mi></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{a_l\}</annotation></semantics></math></span></span> 表示）出现的几率满足：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>(</mo><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow><mo>)</mo><mo>∝</mo><mi mathvariant="normal">Ω</mi><mo>(</mo><mi>E</mi><mo separator="true">,</mo><mi>N</mi><mo separator="true">,</mo><mi>V</mi><mo separator="true">,</mo><mo>{</mo><msub><mi>a</mi><mi>l</mi></msub><mo>}</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">p({a_l}) \propto \Omega(E,N,V,\{a_l\})
+</annotation></semantics></math></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span></span> 是该分布对应的<strong>系统微观态数目</strong>。</p>
+<h4 id="非全同粒子系统的微观态数-Omega-E-N-V-a-l">非全同粒子系统的微观态数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>(</mo><mi>E</mi><mo separator="true">,</mo><mi>N</mi><mo separator="true">,</mo><mi>V</mi><mo separator="true">,</mo><mo>{</mo><msub><mi>a</mi><mi>l</mi></msub><mo>}</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">\Omega(E,N,V,\{a_l\})</annotation></semantics></math></span></span></h4>
+<p>设能级（或组）用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 标记，第 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>l</mi></mrow><annotation encoding="application/x-tex">l</annotation></semantics></math></span></span> 组有简并度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ω</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">\omega_l</annotation></semantics></math></span></span>，该组被占据的粒子数为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">a_l</annotation></semantics></math></span></span>。</p>
+<ul>
+<li><strong>粒子数约束</strong><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><mn>1</mn><mo>=</mo><msub><mo>∑</mo><mi>s</mi></msub><msub><mi>a</mi><mi>s</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">N=\sum_i 1=\sum_s a_s=\sum_l a_l
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li><strong>能量约束</strong><p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>ε</mi><mrow><msub><mi>s</mi><mi>i</mi></msub></mrow></msub><mo>=</mo><msub><mo>∑</mo><mi>s</mi></msub><msub><mi>a</mi><mi>s</mi></msub><msub><mi>ε</mi><mi>s</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><msub><mi>ε</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">E=\sum_i \varepsilon_{s_i}=\sum_s a_s\varepsilon_s=\sum_l a_l\varepsilon_l
+</annotation></semantics></math></span></span></span></p>
+</li>
+</ul>
+<p>对非全同粒子，先做“把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 个粒子分到各组”的组合计数，再乘上各组内部简并态的选取数：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>(</mo><mi>E</mi><mo separator="true">,</mo><mi>N</mi><mo separator="true">,</mo><mi>V</mi><mo separator="true">,</mo><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow><mo>)</mo><mo>=</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>N</mi></mrow><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>N</mi><mo>−</mo><msub><mi>a</mi><mn>1</mn></msub></mrow><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow></mfrac><mo fence="true">)</mo></mrow><mo>⋯</mo><mrow><mo fence="true">(</mo><mfrac linethickness="0px"><mrow><mi>N</mi><mo>−</mo><msub><mi>a</mi><mn>1</mn></msub><mo>−</mo><mo>⋯</mo><mo>−</mo><msub><mi>a</mi><mrow><mi>l</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow></mfrac><mo fence="true">)</mo></mrow><mo>⋯</mo><mo>×</mo><msubsup><mi>ω</mi><mn>1</mn><mrow><msub><mi>a</mi><mn>1</mn></msub></mrow></msubsup><msubsup><mi>ω</mi><mn>2</mn><mrow><msub><mi>a</mi><mn>2</mn></msub></mrow></msubsup><mo>⋯</mo><msubsup><mi>ω</mi><mi>l</mi><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow></msubsup><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\Omega(E,N,V,{a_l}) =
+\binom{N}{a_1}\binom{N-a_1}{a_2}\cdots
+\binom{N-a_1-\cdots-a_{l-1}}{a_l}\cdots
+\times \omega_1^{a_1}\omega_2^{a_2}\cdots\omega_l^{a_l}\cdots
+</annotation></semantics></math></span></span></span></p>
+<p>把连乘的组合数化简（经典结果）：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mfrac><mrow><mi>N</mi><mo>!</mo></mrow><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>!</mo><msub><mi>a</mi><mn>2</mn></msub><mo>!</mo><mo>⋯</mo><msub><mi>a</mi><mi>l</mi></msub><mo>!</mo><mo>⋯</mo></mrow></mfrac><msub><mo>∏</mo><mi>l</mi></msub><msubsup><mi>ω</mi><mi>l</mi><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow></msubsup><mo>=</mo><mfrac><mrow><mi>N</mi><mo>!</mo></mrow><mrow><msub><mo>∏</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo>!</mo></mrow></mfrac><msub><mo>∏</mo><mi>l</mi></msub><msubsup><mi>ω</mi><mi>l</mi><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow></msubsup></mrow><annotation encoding="application/x-tex">\Omega=
+\frac{N!}{a_1!a_2!\cdots a_l!\cdots}
+\prod_l \omega_l^{a_l}=
+\frac{N!}{\prod_l a_l!}\prod_l \omega_l^{a_l}
+</annotation></semantics></math></span></span></span></p>
+<h3 id="热力学平衡态-⇔-最可几态（最大-Omega-的分布）">热力学平衡态 ⇔ 最可几态（最大 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\Omega</annotation></semantics></math></span></span> 的分布）</h3>
+<p><strong>取对数并用 Stirling 公式</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>=</mo><mi>ln</mi><mi>N</mi><mo>!</mo><mo>−</mo><msub><mo>∑</mo><mi>l</mi></msub><mi>ln</mi><msub><mi>a</mi><mi>l</mi></msub><mo>!</mo><mo>+</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mi>ln</mi><msub><mi>ω</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">\ln\Omega = \ln N!-\sum_l \ln a_l!+\sum_l a_l\ln\omega_l
+</annotation></semantics></math></span></span></span></p>
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">a_l</annotation></semantics></math></span></span> 很大时用 Stirling 公式：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi>n</mi><mo>!</mo><mo>≃</mo><mi>n</mi><mi>ln</mi><mi>n</mi><mo>−</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">\ln n!\simeq n\ln n-n
+</annotation></semantics></math></span></span></span></p>
+<p>于是</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>≃</mo><mo>(</mo><mi>N</mi><mi>ln</mi><mi>N</mi><mo>−</mo><mi>N</mi><mo>)</mo><mo>−</mo><msub><mo>∑</mo><mi>l</mi></msub><mo>(</mo><msub><mi>a</mi><mi>l</mi></msub><mi>ln</mi><msub><mi>a</mi><mi>l</mi></msub><mo>−</mo><msub><mi>a</mi><mi>l</mi></msub><mo>)</mo><mo>+</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mi>ln</mi><msub><mi>ω</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">\ln\Omega
+\simeq
+(N\ln N-N)-\sum_l(a_l\ln a_l-a_l)+\sum_l a_l\ln\omega_l
+</annotation></semantics></math></span></span></span></p>
+<p>整理（用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">\sum_l a_l=N</annotation></semantics></math></span></span>）：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>=</mo><mo fence="false">(</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo fence="false">)</mo><mi>ln</mi><mo fence="false">(</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo fence="false">)</mo><mo>−</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo>(</mo><mi>ln</mi><msub><mi>a</mi><mi>l</mi></msub><mo>−</mo><mi>ln</mi><msub><mi>ω</mi><mi>l</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\ln\Omega = \Big(\sum_l a_l\Big)\ln\Big(\sum_l a_l\Big)
+-\sum_l a_l(\ln a_l-\ln\omega_l)
+</annotation></semantics></math></span></span></span></p>
+<p><strong>变分：最大化 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\ln\Omega</annotation></semantics></math></span></span></strong>：</p>
+<p>对分布做微扰 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>l</mi></msub><mo>→</mo><msub><mi>a</mi><mi>l</mi></msub><mo>+</mo><mi>δ</mi><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">a_l\to a_l+\delta a_l</annotation></semantics></math></span></span>。用</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>x</mi><mi>ln</mi><mi>x</mi><msup><mo>)</mo><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>=</mo><mi>ln</mi><mi>x</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">(x\ln x)'=\ln x+1
+</annotation></semantics></math></span></span></span></p>
+<p>可得</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>=</mo><mi>δ</mi><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><mo fence="false">[</mo><mi>ln</mi><mi>N</mi><mo>−</mo><mi>ln</mi><mo fence="false">(</mo><mfrac><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow><mrow><msub><mi>ω</mi><mi>l</mi></msub></mrow></mfrac><mo fence="false">)</mo><mo fence="false">]</mo><mi>δ</mi><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">0=\delta\ln\Omega=
+\sum_l\Big[\ln N-\ln\Big(\frac{a_l}{\omega_l}\Big)\Big]\delta a_l
+</annotation></semantics></math></span></span></span></p>
+<p>但 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">\delta a_l</annotation></semantics></math></span></span> <strong>不独立</strong>，因为还要满足约束：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>=</mo><mi>δ</mi><mi>E</mi><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ε</mi><mi>l</mi></msub><mo separator="true">,</mo><mi>δ</mi><msub><mi>a</mi><mi>l</mi></msub><mo separator="true">,</mo><mspace width="2em"></mspace><mn>0</mn><mo>=</mo><mi>δ</mi><mi>N</mi><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><mi>δ</mi><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">0=\delta E=\sum_l \varepsilon_l,\delta a_l,\qquad
+0=\delta N=\sum_l \delta a_l
+</annotation></semantics></math></span></span></span></p>
+<p><strong>拉格朗日乘子法（使 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">\delta a_l</annotation></semantics></math></span></span> 视作独立）</strong>：</p>
+<p>构造：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>=</mo><mi>δ</mi><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>−</mo><mi>β</mi><mo separator="true">,</mo><mi>δ</mi><mi>E</mi><mo>−</mo><mover accent="true"><mi>α</mi><mo>~</mo></mover><mo separator="true">,</mo><mi>δ</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">0=\delta\ln\Omega-\beta,\delta E-\tilde\alpha,\delta N
+</annotation></semantics></math></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>α</mi><mo>~</mo></mover><mo separator="true">,</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\tilde\alpha,\beta</annotation></semantics></math></span></span> 是待定的 Lagrange 乘子。代入上式：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><mo fence="false">[</mo><mi>ln</mi><mi>N</mi><mo>−</mo><mi>ln</mi><mo fence="false">(</mo><mfrac><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow><mrow><msub><mi>ω</mi><mi>l</mi></msub></mrow></mfrac><mo fence="false">)</mo><mo>−</mo><mover accent="true"><mi>α</mi><mo>~</mo></mover><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub><mo fence="false">]</mo><mi>δ</mi><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">0=\sum_l\Big[\ln N-\ln\Big(\frac{a_l}{\omega_l}\Big)-\tilde\alpha-\beta\varepsilon_l\Big]\delta a_l
+</annotation></semantics></math></span></span></span></p>
+<p>由于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">\delta a_l</annotation></semantics></math></span></span> 可视为独立，括号必须逐项为 0：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mo fence="false">(</mo><mfrac><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow><mrow><msub><mi>ω</mi><mi>l</mi></msub></mrow></mfrac><mo fence="false">)</mo><mo>=</mo><mi>ln</mi><mi>N</mi><mo>−</mo><mover accent="true"><mi>α</mi><mo>~</mo></mover><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">\ln\Big(\frac{a_l}{\omega_l}\Big)=\ln N-\tilde\alpha-\beta\varepsilon_l
+</annotation></semantics></math></span></span></span></p>
+<p>指数化得到最可几态（平衡态）分布：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>a</mi><mo>¯</mo></mover><mi>l</mi></msub><mo>=</mo><mi>N</mi><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mover accent="true"><mi>α</mi><mo>~</mo></mover><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">\bar a_l=N\omega_l e^{-\tilde\alpha-\beta\varepsilon_l}
+</annotation></semantics></math></span></span></span></p>
+<p>常把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>α</mi><mo>~</mo></mover></mrow><annotation encoding="application/x-tex">\tilde\alpha</annotation></semantics></math></span></span> 吸收到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span> 中：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mover accent="true"><mi>α</mi><mo>~</mo></mover><mo>−</mo><mi>ln</mi><mi>N</mi><mspace width="1em"></mspace><mo>⟺</mo><mspace width="1em"></mspace><mover accent="true"><mi>α</mi><mo>~</mo></mover><mo>=</mo><mi>α</mi><mo>+</mo><mi>ln</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">\alpha=\tilde\alpha-\ln N
+\quad\Longleftrightarrow\quad
+\tilde\alpha=\alpha+\ln N
+</annotation></semantics></math></span></span></span></p>
+<p>于是</p>
+
+$$
+\boxed{\bar a_l=\omega_l e^{-\alpha-\beta\varepsilon_l}}
+$$
+并且对单粒子微观态 $s$（无简并度因子写法）：
+$$
+\boxed{\bar a_s=e^{-\alpha-\beta\varepsilon_s}}
+$$
+
+<h3 id="Boltzmann-分布与乘子物理意义">Boltzmann 分布与乘子物理意义</h3>
+<p>由分布：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>a</mi><mo>¯</mo></mover><mi>l</mi></msub><mo>=</mo><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">\bar a_l=\omega_l e^{-\alpha-\beta\varepsilon_l}
+</annotation></semantics></math></span></span></span></p>
+<p>配合约束方程：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mover accent="true"><mi>a</mi><mo>¯</mo></mover><mi>l</mi></msub><msub><mi>ε</mi><mi>l</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ε</mi><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup><mo separator="true">,</mo><mspace width="2em"></mspace><mi>N</mi><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mover accent="true"><mi>a</mi><mo>¯</mo></mover><mi>l</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">E=\sum_l \bar a_l\varepsilon_l=\sum_l \varepsilon_l\omega_l e^{-\alpha-\beta\varepsilon_l},
+\qquad
+N=\sum_l \bar a_l=\sum_l \omega_l e^{-\alpha-\beta\varepsilon_l}
+</annotation></semantics></math></span></span></span></p>
+<p>直接解出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo separator="true">,</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha,\beta</annotation></semantics></math></span></span> 通常很麻烦，因此引入特性函数（配分函数）与 Legendre 变换来简化。</p>
+<h4 id="乘子与态密度导数关系">乘子与态密度导数关系</h4>
+<p>由于平衡态满足</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>0</mn><mo>=</mo><mi>δ</mi><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>−</mo><mi>β</mi><mi>δ</mi><mi>E</mi><mo>−</mo><mover accent="true"><mi>α</mi><mo>~</mo></mover><mi>δ</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">0=\delta\ln\Omega-\beta\delta E-\tilde\alpha\delta N
+</annotation></semantics></math></span></span></span></p>
+<p>可推出</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi mathvariant="normal">Ω</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>E</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>N</mi></msub><mo separator="true">,</mo><mspace width="2em"></mspace><mover accent="true"><mi>α</mi><mo>~</mo></mover><mo>=</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi mathvariant="normal">Ω</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>N</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>E</mi></msub></mrow><annotation encoding="application/x-tex">\beta=\left(\frac{\partial\ln\Omega}{\partial E}\right)_N,
+\qquad
+\tilde\alpha=\left(\frac{\partial\ln\Omega}{\partial N}\right)_E
+</annotation></semantics></math></span></span></span></p>
+<p>并写成微分形式：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>=</mo><mi>β</mi><mo separator="true">,</mo><mi>d</mi><mi>E</mi><mo>+</mo><mover accent="true"><mi>α</mi><mo>~</mo></mover><mo separator="true">,</mo><mi>d</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">d\ln\Omega=\beta,dE+\tilde\alpha,dN
+</annotation></semantics></math></span></span></span></p>
+<h4 id="Legendre-变换：从-E-N-V-到-beta-N-V">Legendre 变换：从 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>E</mi><mo separator="true">,</mo><mi>N</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(E,N,V)</annotation></semantics></math></span></span> 到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><mi>β</mi><mo separator="true">,</mo><mi>N</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">(\beta,N,V)</annotation></semantics></math></span></span></h4>
+<p>定义：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi>Z</mi><mo>(</mo><mi>β</mi><mo separator="true">,</mo><mi>N</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo><mo>=</mo><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>−</mo><mi>β</mi><mi>E</mi></mrow><annotation encoding="application/x-tex">\ln Z(\beta,N,V)=\ln\Omega-\beta E
+</annotation></semantics></math></span></span></span></p>
+<p>微分：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>ln</mi><mi>Z</mi><mo>=</mo><mi>d</mi><mo>(</mo><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>−</mo><mi>β</mi><mi>E</mi><mo>)</mo><mo>=</mo><mo>−</mo><mi>E</mi><mo separator="true">,</mo><mi>d</mi><mi>β</mi><mo>+</mo><mover accent="true"><mi>α</mi><mo>~</mo></mover><mo separator="true">,</mo><mi>d</mi><mi>N</mi></mrow><annotation encoding="application/x-tex">d\ln Z=d(\ln\Omega-\beta E)= -E,d\beta+\tilde\alpha,dN
+</annotation></semantics></math></span></span></span></p>
+<p>这使得平衡态计算从“能量确定的孤立系统”转为“温度确定的封闭系统”，在求平衡态物理量时等价。</p>
+<h3 id="配分函数-z-与系统配分函数-Z">配分函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 与系统配分函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span></h3>
+<p>由</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>a</mi><mo>¯</mo></mover><mi>l</mi></msub><mo>=</mo><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">\bar a_l=\omega_l e^{-\alpha-\beta\varepsilon_l}
+</annotation></semantics></math></span></span></span></p>
+<p>定义<strong>单粒子配分函数</strong>：</p>
+
+$$
+\boxed{z(\beta,V)=\sum_l \omega_l e^{-\beta\varepsilon_l}
+=\sum_s e^{-\beta\varepsilon_s}}
+$$
+
+<p>由粒子数约束：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mover accent="true"><mi>a</mi><mo>¯</mo></mover><mi>l</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mi>z</mi></mrow><annotation encoding="application/x-tex">N=\sum_l \bar a_l=\sum_l \omega_l e^{-\alpha-\beta\varepsilon_l}
+=e^{-\alpha}\sum_l \omega_l e^{-\beta\varepsilon_l}
+=e^{-\alpha}z
+</annotation></semantics></math></span></span></span></p>
+<p>所以</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><mo separator="true">,</mo><mspace width="2em"></mspace><mi>α</mi><mo>=</mo><mo>−</mo><mi>ln</mi><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><mo>=</mo><mo>−</mo><mi>ln</mi><mi>N</mi><mo>+</mo><mi>ln</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">e^{-\alpha}=\frac{N}{z},\qquad
+\alpha=-\ln\frac{N}{z}=-\ln N+\ln z
+</annotation></semantics></math></span></span></span></p>
+<p>从而</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mi>α</mi><mo>~</mo></mover><mo>=</mo><mi>α</mi><mo>+</mo><mi>ln</mi><mi>N</mi><mo>=</mo><mi>ln</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\tilde\alpha=\alpha+\ln N=\ln z
+</annotation></semantics></math></span></span></span></p>
+<p>进一步可推出系统特性函数：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi>Z</mi><mo>=</mo><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>−</mo><mi>β</mi><mi>E</mi></mrow><annotation encoding="application/x-tex">\ln Z=\ln\Omega-\beta E
+</annotation></semantics></math></span></span></span></p>
+<p>代入并化简（PDF 中完整代数推导）最终得到</p>
+
+$$
+\boxed{\ln Z = N\ln z}
+\quad\Longleftrightarrow\quad
+\boxed{Z=z^N}
+$$
+
+<p>因此：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span>：单粒子配分函数</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span></span>：系统配分函数（在这里得到 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi><mo>=</mo><msup><mi>z</mi><mi>N</mi></msup></mrow><annotation encoding="application/x-tex">Z=z^N</annotation></semantics></math></span></span>）</li>
+</ul>
+<h3 id="物理量（内能、压强、熵）">物理量（内能、压强、熵）</h3>
+<blockquote>
+<p>后续计算中常把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mover accent="true"><mi>a</mi><mo>¯</mo></mover><mi>l</mi></msub><mo separator="true">,</mo><msub><mover accent="true"><mi>a</mi><mo>¯</mo></mover><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\bar a_l,\bar a_s</annotation></semantics></math></span></span> 直接写作 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>l</mi></msub><mo separator="true">,</mo><msub><mi>a</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">a_l,a_s</annotation></semantics></math></span></span>。</p>
+</blockquote>
+<h4 id="内能-U（-最可几态能量）">内能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span>（= 最可几态能量）</h4>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mi>E</mi><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><msub><mi>ε</mi><mi>l</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup><msub><mi>ε</mi><mi>l</mi></msub><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ε</mi><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">U=E=\sum_l a_l\varepsilon_l
+=\sum_l \omega_l e^{-\alpha-\beta\varepsilon_l}\varepsilon_l
+=e^{-\alpha}\sum_l \varepsilon_l\omega_l e^{-\beta\varepsilon_l}
+</annotation></semantics></math></span></span></span></p>
+<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mo>=</mo><mi>N</mi><mi mathvariant="normal">/</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">e^{-\alpha}=N/z</annotation></semantics></math></span></span>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ε</mi><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">U=\frac{N}{z}\sum_l \varepsilon_l\omega_l e^{-\beta\varepsilon_l}
+</annotation></semantics></math></span></span></span></p>
+<p>把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">\varepsilon_l e^{-\beta\varepsilon_l}</annotation></semantics></math></span></span> 写成对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span> 的导数：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>β</mi></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup><mo>=</mo><msub><mi>ε</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">-\frac{\partial}{\partial\beta}e^{-\beta\varepsilon_l}
+=\varepsilon_l e^{-\beta\varepsilon_l}
+</annotation></semantics></math></span></span></span></p>
+<p>于是</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>β</mi></mrow></mfrac><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup><mo fence="true">)</mo></mrow><mi>V</mi></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>β</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>V</mi></msub></mrow><annotation encoding="application/x-tex">U=-\frac{N}{z}\left(\frac{\partial}{\partial\beta}\sum_l \omega_l e^{-\beta\varepsilon_l}\right)_V
+=-\frac{N}{z}\left(\frac{\partial z}{\partial\beta}\right)_V
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mo>−</mo><mi>N</mi><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>β</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>V</mi></msub><mo>=</mo><mo>−</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi>Z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>β</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>N</mi><mo separator="true">,</mo><mi>V</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U=-N\left(\frac{\partial\ln z}{\partial\beta}\right)_V
+= -\left(\frac{\partial\ln Z}{\partial\beta}\right)_{N,V}
+</annotation></semantics></math></span></span></span></p>
+<p>又因为</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\beta=\frac{1}{k_BT}
+</annotation></semantics></math></span></span></span></p>
+<p>可改写成对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi></mrow><annotation encoding="application/x-tex">T</annotation></semantics></math></span></span> 的形式：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><msup><mi>T</mi><mn>2</mn></msup><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>V</mi></msub><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><msup><mi>T</mi><mn>2</mn></msup><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi>Z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>N</mi><mo separator="true">,</mo><mi>V</mi></mrow></msub></mrow><annotation encoding="application/x-tex">U=Nk_BT^2\left(\frac{\partial\ln z}{\partial T}\right)_V
+= k_BT^2\left(\frac{\partial\ln Z}{\partial T}\right)_{N,V}
+</annotation></semantics></math></span></span></span></p>
+<h4 id="压强-p（由能级对体积的依赖）">压强 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi></mrow><annotation encoding="application/x-tex">p</annotation></semantics></math></span></span>（由能级对体积的依赖）</h4>
+<p>从内能变分：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>U</mi><mo>=</mo><mi>δ</mi><mover accent="true"><mi>E</mi><mo>¯</mo></mover><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ε</mi><mi>l</mi></msub><mo>(</mo><mi>V</mi><mo>)</mo><mo separator="true">,</mo><mi>δ</mi><msub><mi>a</mi><mi>l</mi></msub><mo>+</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo separator="true">,</mo><mi>δ</mi><msub><mi>ε</mi><mi>l</mi></msub><mo>(</mo><mi>V</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\delta U=\delta \bar E
+=\sum_l \varepsilon_l(V),\delta a_l+\sum_l a_l,\delta\varepsilon_l(V)
+</annotation></semantics></math></span></span></span></p>
+<p>解释：</p>
+<ul>
+<li>体积不变导致的内能变化 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span></span> <strong>吸热</strong></li>
+<li>体积改变导致的内能变化 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⇒</mo></mrow><annotation encoding="application/x-tex">\Rightarrow</annotation></semantics></math></span></span> <strong>做功</strong></li>
+</ul>
+<p>压强定义为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mo>−</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">p=-\sum_l a_l\left(\frac{\partial\varepsilon_l}{\partial V}\right)
+</annotation></semantics></math></span></span></span></p>
+<p>代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>l</mi></msub><mo>=</mo><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">a_l=\omega_l e^{-\alpha-\beta\varepsilon_l}</annotation></semantics></math></span></span>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mo>−</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">p=-\sum_l \omega_l e^{-\alpha-\beta\varepsilon_l}\left(\frac{\partial\varepsilon_l}{\partial V}\right)
+</annotation></semantics></math></span></span></span></p>
+<p>转写为对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span></span> 的导数（关键步骤：把 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">∂</mi><mi>V</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">\partial_V e^{-\beta\varepsilon_l}</annotation></semantics></math></span></span> 提出来）：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><mfrac><mrow><mn>1</mn></mrow><mrow><mi>β</mi></mrow></mfrac><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup><mo fence="true">)</mo></mrow><mi>β</mi></msub><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>β</mi><mi>z</mi></mrow></mfrac><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>β</mi></msub></mrow><annotation encoding="application/x-tex">p=\frac{N}{z}\frac{1}{\beta}\left(\frac{\partial}{\partial V}\sum_l \omega_l e^{-\beta\varepsilon_l}\right)_\beta
+=\frac{N}{\beta z}\left(\frac{\partial z}{\partial V}\right)_\beta
+</annotation></semantics></math></span></span></span></p>
+
+$$
+\boxed{p=\frac{N}{\beta}\left(\frac{\partial\ln z}{\partial V}\right)_\beta
+=\frac{1}{\beta}\left(\frac{\partial\ln Z}{\partial V}\right)_{\beta,N}}
+$$
+
+<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mo>(</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\beta=1/(k_BT)</annotation></semantics></math></span></span>：<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>T</mi></msub><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi>Z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>T</mi><mo separator="true">,</mo><mi>N</mi></mrow></msub></mrow><annotation encoding="application/x-tex">
+p=Nk_BT\left(\frac{\partial\ln z}{\partial V}\right)_T
+= k_BT\left(\frac{\partial\ln Z}{\partial V}\right)_{T,N}
+</annotation></semantics></math></span></span></p>
+<p>并与热力学第一定律一致：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>U</mi><mo>=</mo><mi>d</mi><mi>Q</mi><mo>−</mo><mi>d</mi><mi>W</mi><mo>=</mo><mi>d</mi><mi>Q</mi><mo>−</mo><mi>p</mi><mo separator="true">,</mo><mi>d</mi><mi>V</mi></mrow><annotation encoding="application/x-tex">dU=dQ-dW=dQ-p,dV
+</annotation></semantics></math></span></span></span></p>
+<h4 id="熵-S：证明-beta-dQ-是全微分">熵 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi></mrow><annotation encoding="application/x-tex">S</annotation></semantics></math></span></span>：证明 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mi>d</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">\beta dQ</annotation></semantics></math></span></span> 是全微分</h4>
+<p>从</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>U</mi><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ε</mi><mi>l</mi></msub><mo separator="true">,</mo><mi>δ</mi><msub><mi>a</mi><mi>l</mi></msub><mo>+</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo separator="true">,</mo><mi>δ</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">\delta U=\sum_l \varepsilon_l,\delta a_l+\sum_l a_l,\delta\varepsilon_l
+</annotation></semantics></math></span></span></span></p>
+<p>识别热量部分：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>Q</mi><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ε</mi><mi>l</mi></msub><mo separator="true">,</mo><mi>d</mi><msub><mi>a</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">dQ=\sum_l \varepsilon_l,da_l
+</annotation></semantics></math></span></span></span></p>
+<p>计算：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mi>d</mi><mi>Q</mi><mo>=</mo><mi>β</mi><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ε</mi><mi>l</mi></msub><mo separator="true">,</mo><mi>d</mi><msub><mi>a</mi><mi>l</mi></msub><mo>=</mo><msub><mo>∑</mo><mi>l</mi></msub><mo fence="false">[</mo><mi>d</mi><mo>(</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo>)</mo><mo>−</mo><msub><mi>a</mi><mi>l</mi></msub><mo separator="true">,</mo><mi>d</mi><mo>(</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub><mo>)</mo><mo fence="false">]</mo></mrow><annotation encoding="application/x-tex">\beta dQ=\beta\sum_l \varepsilon_l,da_l
+=\sum_l\big[d(\beta\varepsilon_l a_l)-a_l,d(\beta\varepsilon_l)\big]
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mi>d</mi><mo fence="false">(</mo><msub><mo>∑</mo><mi>l</mi></msub><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo fence="false">)</mo><mo>−</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo separator="true">,</mo><mi>d</mi><mo>(</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub><mo>)</mo><mo>=</mo><mi>d</mi><mo>(</mo><mi>β</mi><mi>U</mi><mo>)</mo><mo>−</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo separator="true">,</mo><mi>d</mi><mo>(</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">= d\Big(\sum_l\beta\varepsilon_l a_l\Big)-\sum_l a_l,d(\beta\varepsilon_l)
+= d(\beta U)-\sum_l a_l,d(\beta\varepsilon_l)
+</annotation></semantics></math></span></span></span></p>
+<p>用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>l</mi></msub><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">a_l=e^{-\alpha}\omega_l e^{-\beta\varepsilon_l}</annotation></semantics></math></span></span>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo separator="true">,</mo><mi>d</mi><mo>(</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub><mo>)</mo><mo>=</mo><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup><mi>d</mi><mo>(</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub><mo>)</mo><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><mo separator="true">,</mo><mi>d</mi><mo fence="false">(</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup><mo fence="false">)</mo></mrow><annotation encoding="application/x-tex">-\sum_l a_l,d(\beta\varepsilon_l)
+=-e^{-\alpha}\sum_l \omega_l e^{-\beta\varepsilon_l}d(\beta\varepsilon_l)
+= \frac{N}{z}\sum_l \omega_l,d\big(e^{-\beta\varepsilon_l}\big)
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><mo separator="true">,</mo><mi>d</mi><mo fence="false">(</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>l</mi></msub></mrow></msup><mo fence="false">)</mo><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><mo separator="true">,</mo><mi>d</mi><mi>z</mi><mo>=</mo><mi>d</mi><mo>(</mo><mi>N</mi><mi>ln</mi><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">=\frac{N}{z},d\Big(\sum_l\omega_l e^{-\beta\varepsilon_l}\Big)
+=\frac{N}{z},dz
+= d(N\ln z)
+</annotation></semantics></math></span></span></span></p>
+<p>所以：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mi>d</mi><mi>Q</mi><mo>=</mo><mi>d</mi><mo>(</mo><mi>β</mi><mi>U</mi><mo>+</mo><mi>N</mi><mi>ln</mi><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\beta dQ=d(\beta U+N\ln z)
+</annotation></semantics></math></span></span></span></p>
+<p>它是全微分。类比热力学</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi>d</mi><mi>Q</mi></mrow><mrow><mi>T</mi></mrow></mfrac><mo>=</mo><mi>d</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">\frac{dQ}{T}=dS
+</annotation></semantics></math></span></span></span></p>
+<p>可得</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\beta=\frac{1}{k_BT}
+</annotation></semantics></math></span></span></span></p>
+<p>并得到熵：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mi>d</mi><mi>Q</mi><mo>=</mo><mi>d</mi><mrow><mo fence="true">(</mo><mfrac><mrow><mi>S</mi></mrow><mrow><msub><mi>k</mi><mi>B</mi></msub></mrow></mfrac><mo fence="true">)</mo></mrow><mo>=</mo><mi>d</mi><mrow><mo fence="true">(</mo><mfrac><mrow><mi>U</mi></mrow><mrow><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></mfrac><mo>+</mo><mi>N</mi><mi>ln</mi><mi>z</mi><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">\beta dQ=d\left(\frac{S}{k_B}\right)
+=d\left(\frac{U}{k_BT}+N\ln z\right)
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi>z</mi><mo>+</mo><mfrac><mrow><mi>U</mi></mrow><mrow><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">S=Nk_B\ln z+\frac{U}{T}
+</annotation></semantics></math></span></span></span></p>
+<h4 id="压强与熵的“另一种推导”（量子形式写法）">压强与熵的“另一种推导”（量子形式写法）</h4>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><msub><mo>∑</mo><mi>s</mi></msub><msub><mi>a</mi><mi>s</mi></msub><mo>⟨</mo><msub><mi>ψ</mi><mi>s</mi></msub><mi mathvariant="normal">∣</mi><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mover accent="true"><mi>h</mi><mo>^</mo></mover><mo>(</mo><mi>V</mi><mo>)</mo></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mi>s</mi></msub><mo>⟩</mo><mo>=</mo><msub><mo>∑</mo><mi>s</mi></msub><msub><mi>a</mi><mi>s</mi></msub><mrow><mo fence="true">[</mo><mo>−</mo><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msub><mi>ε</mi><mi>s</mi></msub></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">p=\sum_s a_s\langle\psi_s|-\frac{\partial\hat h(V)}{\partial V}|\psi_s\rangle
+=\sum_s a_s\left[-\left(\frac{\partial\varepsilon_s}{\partial V}\right)\right]
+</annotation></semantics></math></span></span></span></p>
+<p>并同样推到：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>β</mi></mrow></mfrac><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>β</mi></msub></mrow><annotation encoding="application/x-tex">p=\frac{N}{\beta}\left(\frac{\partial\ln z}{\partial V}\right)_\beta
+</annotation></semantics></math></span></span></span></p>
+<p>同时</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>(</mo><mi>d</mi><mi>U</mi><mo>+</mo><mi>p</mi><mo separator="true">,</mo><mi>d</mi><mi>V</mi><mo>)</mo><mo>=</mo><mi>d</mi><mo>(</mo><mi>β</mi><mi>U</mi><mo>+</mo><mi>N</mi><mi>ln</mi><mi>z</mi><mo>)</mo><mo>⟺</mo><mfrac><mrow><mi>d</mi><mi>Q</mi></mrow><mrow><mi>T</mi></mrow></mfrac><mo>=</mo><mi>d</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">\beta(dU+p,dV)=d(\beta U+N\ln z)
+\Longleftrightarrow \frac{dQ}{T}=dS
+</annotation></semantics></math></span></span></span></p>
+<h3 id="Boltzmann-关系：S-k-B-ln-Omega">Boltzmann 关系：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">S=k_B\ln\Omega</annotation></semantics></math></span></span></h3>
+<p>已知：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi>Z</mi><mo>=</mo><mi>N</mi><mi>ln</mi><mi>z</mi><mo>=</mo><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>−</mo><mi>β</mi><mi>E</mi></mrow><annotation encoding="application/x-tex">\ln Z=N\ln z=\ln\Omega-\beta E
+</annotation></semantics></math></span></span></span></p>
+<p>且</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mo>(</mo><mi>β</mi><mi>U</mi><mo>+</mo><mi>N</mi><mi>ln</mi><mi>z</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">S=k_B(\beta U+N\ln z)
+</annotation></semantics></math></span></span></span></p>
+<p>代入 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mi>ln</mi><mi>z</mi><mo>=</mo><mi>ln</mi><mi>Z</mi><mo>=</mo><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>−</mo><mi>β</mi><mi>E</mi></mrow><annotation encoding="application/x-tex">N\ln z=\ln Z=\ln\Omega-\beta E</annotation></semantics></math></span></span> 并用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mi>E</mi></mrow><annotation encoding="application/x-tex">U=E</annotation></semantics></math></span></span>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mo>[</mo><mi>β</mi><mi>U</mi><mo>+</mo><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>−</mo><mi>β</mi><mi>U</mi><mo>]</mo><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">S=k_B[\beta U+\ln\Omega-\beta U]=k_B\ln\Omega
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">S=k_B\ln\Omega
+</annotation></semantics></math></span></span></span></p>
+<p>重要推广：</p>
+<ul>
+<li>平衡态：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>(</mo><mrow><msub><mover accent="true"><mi>a</mi><mo>¯</mo></mover><mi>l</mi></msub></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">S=k_B\ln\Omega({\bar a_l})</annotation></semantics></math></span></span></li>
+<li>任意态也可定义：<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>(</mo><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow><mo>)</mo><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>(</mo><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">S({a_l})=k_B\ln\Omega({a_l})
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>孤立系统平衡：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ω</mi></mrow><annotation encoding="application/x-tex">\ln\Omega</annotation></semantics></math></span></span> 最大 ⇔ 熵最大</li>
+</ul>
+<h3 id="自由能-F">自由能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span></h3>
+<p>从</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mfrac><mrow><mi>U</mi></mrow><mrow><mi>T</mi></mrow></mfrac><mo>+</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi>z</mi><mo>=</mo><mfrac><mrow><mi>U</mi></mrow><mrow><mi>T</mi></mrow></mfrac><mo>+</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">S=\frac{U}{T}+Nk_B\ln z=\frac{U}{T}+k_B\ln Z
+</annotation></semantics></math></span></span></span></p>
+<p>得 Helmholtz 自由能：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>U</mi><mo>−</mo><mi>T</mi><mi>S</mi><mo>=</mo><mi>U</mi><mo>−</mo><mi>T</mi><mrow><mo fence="true">(</mo><mfrac><mrow><mi>U</mi></mrow><mrow><mi>T</mi></mrow></mfrac><mo>+</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi>Z</mi><mo fence="true">)</mo></mrow><mo>=</mo><mo>−</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi>ln</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">F=U-TS
+=U-T\left(\frac{U}{T}+k_B\ln Z\right)
+=-k_BT\ln Z
+</annotation></semantics></math></span></span></span></p>
+<p>又因 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi>Z</mi><mo>=</mo><mi>N</mi><mi>ln</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">\ln Z=N\ln z</annotation></semantics></math></span></span>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mo>−</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi>ln</mi><mi>z</mi><mo>=</mo><mo>−</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi>ln</mi><mi>Z</mi></mrow><annotation encoding="application/x-tex">F=-Nk_BT\ln z=-k_BT\ln Z
+</annotation></semantics></math></span></span></span></p>
+<p>且有常用关系：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mo>−</mo><mi>N</mi><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>β</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>V</mi></msub><mspace width="2em"></mspace><mi>p</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>β</mi></mrow></mfrac><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi>Z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>β</mi><mo separator="true">,</mo><mi>N</mi></mrow></msub><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>T</mi></msub></mrow><annotation encoding="application/x-tex">U=-N\left(\frac{\partial\ln z}{\partial\beta}\right)_V
+\qquad
+p=\frac{1}{\beta}\left(\frac{\partial\ln Z}{\partial V}\right)_{\beta,N}
+=Nk_BT\left(\frac{\partial\ln z}{\partial V}\right)_T
+</annotation></semantics></math></span></span></span></p>
+<h3 id="Boltzmann-因子与特征温度">Boltzmann 因子与特征温度</h3>
+<h4 id="Boltzmann-因子">Boltzmann 因子</h4>
+<p>由</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>s</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">a_s=\frac{N}{z}e^{-\beta\varepsilon_s}
+</annotation></semantics></math></span></span></span></p>
+<p>可写出相对基态能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">\varepsilon_g</annotation></semantics></math></span></span> 的形式（基态能量对占据数整体只给公共因子，可取 0）：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mo>∝</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mo>(</mo><msub><mi>ε</mi><mi>s</mi></msub><mo>−</mo><msub><mi>ε</mi><mi>g</mi></msub><mo>)</mo></mrow></msup><mo>≡</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi mathvariant="normal">Δ</mi><msub><mi>ε</mi><mi>s</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">a_s\propto e^{-\beta(\varepsilon_s-\varepsilon_g)}\equiv e^{-\beta\Delta\varepsilon_s}
+</annotation></semantics></math></span></span></span></p>
+<p>单粒子态 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mi>s</mi><mo>⟩</mo></mrow><annotation encoding="application/x-tex">|s\rangle</annotation></semantics></math></span></span> 被占据的几率：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>s</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>a</mi><mi>s</mi></msub></mrow><mrow><mi>N</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>z</mi></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>s</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">p_s=\frac{a_s}{N}=\frac{1}{z}e^{-\beta\varepsilon_s}
+</annotation></semantics></math></span></span></span></p>
+<h4 id="特征温度-Theta-与“冻结-完全激发”">特征温度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">\Theta</annotation></semantics></math></span></span> 与“冻结/完全激发”</h4>
+<p>若某自由度特征激发能量为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>ε</mi></mrow><annotation encoding="application/x-tex">\Delta\varepsilon</annotation></semantics></math></span></span>，其被激发的几率满足：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>∝</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi mathvariant="normal">Δ</mi><mi>ε</mi></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi mathvariant="normal">Δ</mi><mi>ε</mi><mi mathvariant="normal">/</mi><mo>(</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>)</mo></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi mathvariant="normal">Θ</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow></msup></mrow><annotation encoding="application/x-tex">p\propto e^{-\beta\Delta\varepsilon}
+=e^{-\Delta\varepsilon/(k_BT)}
+=e^{-\Theta/T}
+</annotation></semantics></math></span></span></span></p>
+<p>定义</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Θ</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><mi>ε</mi></mrow><mrow><msub><mi>k</mi><mi>B</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\Theta=\frac{\Delta\varepsilon}{k_B}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>≪</mo><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">T\ll \Theta</annotation></semantics></math></span></span>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>≈</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p\approx 0</annotation></semantics></math></span></span>，该自由度几乎全在基态 ⇒ <strong>自由度冻结</strong>，对热力学性质几乎无影响</li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>≫</mo><mi mathvariant="normal">Θ</mi></mrow><annotation encoding="application/x-tex">T\gg \Theta</annotation></semantics></math></span></span>：低能激发 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>∼</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">p\sim 1</annotation></semantics></math></span></span>，自由度被完全激发 ⇒ 进入经典区，满足能量均分</li>
+</ul>
+<p>并强调：</p>
+
+$$
+k_BT \,\text{可视为能量尺度（温度的新物理含义）}
+$$
+
+<p>以及玻尔兹曼常数的 SI 定义：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mi>B</mi></msub><mo>=</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>3</mn><mn>8</mn><mn>0</mn><mn>6</mn><mn>4</mn><mn>9</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>2</mn><mn>3</mn></mrow></msup><mtext>&nbsp;</mtext><mtext><mi mathvariant="normal">J</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">K</mi></mtext></mrow><annotation encoding="application/x-tex">k_B=1.380649\times 10^{-23}\ \text{J/K}
+</annotation></semantics></math></span></span></span></p>
+<h4 id="若干典型运动的特征温度（数量级比较）">若干典型运动的特征温度（数量级比较）</h4>
+<p>能量尺度示例：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mtext><mi mathvariant="normal">K</mi></mtext><mo>⇒</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>=</mo><mn>8</mn><mi mathvariant="normal">.</mi><mn>6</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>5</mn></mrow></msup><mo separator="true">,</mo><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext><mo>≈</mo><mn>0</mn><mi mathvariant="normal">.</mi><mn>1</mn><mo separator="true">,</mo><mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">T=1,\text{K}\Rightarrow k_BT=8.6\times10^{-5},\text{eV}\approx 0.1,\text{meV}</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mn>3</mn><mn>0</mn><mn>0</mn><mo separator="true">,</mo><mtext><mi mathvariant="normal">K</mi></mtext><mo>⇒</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>=</mo><mn>2</mn><mn>5</mn><mi mathvariant="normal">.</mi><mn>8</mn><mo separator="true">,</mo><mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">T=300,\text{K}\Rightarrow k_BT=25.8,\text{meV}</annotation></semantics></math></span></span></li>
+</ul>
+<p><strong>原子中电子运动（氢样）</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mi>n</mi></msub><mo>=</mo><mo>−</mo><mfrac><mrow><msub><mi>m</mi><mi>e</mi></msub><msup><mi>e</mi><mn>4</mn></msup></mrow><mrow><mn>8</mn><msup><mi>h</mi><mn>2</mn></msup><msubsup><mi>ε</mi><mn>0</mn><mn>2</mn></msubsup></mrow></mfrac><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mo>−</mo><mfrac><mrow><mn>1</mn><mo separator="true">,</mo><mi>R</mi><mi>y</mi></mrow><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mo>−</mo><mfrac><mrow><mn>1</mn><mn>3</mn><mi mathvariant="normal">.</mi><mn>6</mn><mo separator="true">,</mo><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\varepsilon_n=-\frac{m_ee^4}{8h^2\varepsilon_0^2}\frac{1}{n^2}
+=-\frac{1,Ry}{n^2}
+=-\frac{13.6,\text{eV}}{n^2}
+</annotation></semantics></math></span></span></span></p>
+<p>典型激发能 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>ε</mi><mi>e</mi></msub><mo>∼</mo><mn>1</mn><mn>0</mn><mo separator="true">,</mo><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">V</mi></mtext></mrow><annotation encoding="application/x-tex">\Delta\varepsilon_e\sim 10,\text{eV}</annotation></semantics></math></span></span>，则</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Θ</mi><mi>e</mi></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">Δ</mi><msub><mi>ε</mi><mi>e</mi></msub></mrow><mrow><msub><mi>k</mi><mi>B</mi></msub></mrow></mfrac><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mo separator="true">,</mo><mtext><mi mathvariant="normal">K</mi></mtext></mrow><annotation encoding="application/x-tex">\Theta_e=\frac{\Delta\varepsilon_e}{k_B}\sim 10^5,\text{K}
+</annotation></semantics></math></span></span></span></p>
+<p>因此室温 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mn>3</mn><mn>0</mn><mn>0</mn><mtext><mi mathvariant="normal">K</mi></mtext></mrow><annotation encoding="application/x-tex">T=300\text{K}</annotation></semantics></math></span></span>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mrow><mi>e</mi><mi>x</mi></mrow></msub><mo>∼</mo><msup><mi>e</mi><mrow><mo>−</mo><msub><mi mathvariant="normal">Θ</mi><mi>e</mi></msub><mi mathvariant="normal">/</mi><mi>T</mi></mrow></msup><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>1</mn><mn>6</mn><mn>8</mn></mrow></msup></mrow><annotation encoding="application/x-tex">p_{ex}\sim e^{-\Theta_e/T}\sim 10^{-168}
+</annotation></semantics></math></span></span></span></p>
+<p>⇒ 室温附近电子自由度几乎完全冻结。</p>
+<p>其他特征温度数量级：</p>
+<ul>
+<li>双原子<strong>振动</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Θ</mi><mi>v</mi></msub><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mn>2</mn></msup><mo>−</mo><mn>1</mn><msup><mn>0</mn><mn>3</mn></msup><mo separator="true">,</mo><mtext><mi mathvariant="normal">K</mi></mtext></mrow><annotation encoding="application/x-tex">\Theta_v\sim 10^2-10^3,\text{K}</annotation></semantics></math></span></span></li>
+<li>双原子<strong>转动</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Θ</mi><mi>r</mi></msub><mo>∼</mo><mn>1</mn><mn>0</mn><mo separator="true">,</mo><mtext><mi mathvariant="normal">K</mi></mtext></mrow><annotation encoding="application/x-tex">\Theta_r\sim 10,\text{K}</annotation></semantics></math></span></span></li>
+<li>原子<strong>平动</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Θ</mi><mi>t</mi></msub><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mrow><mo>−</mo><mn>1</mn><mn>2</mn></mrow></msup><mo separator="true">,</mo><mtext><mi mathvariant="normal">K</mi></mtext></mrow><annotation encoding="application/x-tex">\Theta_t\sim 10^{-12},\text{K}</annotation></semantics></math></span></span>（例：氢原子在 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo separator="true">,</mo><mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">m</mi></mtext></mrow><annotation encoding="application/x-tex">1,\text{mm}</annotation></semantics></math></span></span> 盒中）</li>
+</ul>
+<h4 id="“氢原子配分函数发散”提示">“氢原子配分函数发散”提示</h4>
+<p>氢原子：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ε</mi><mi>n</mi></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mi>R</mi><mi>y</mi></mrow><mrow><msup><mi>n</mi><mn>2</mn></msup></mrow></mfrac><mo separator="true">,</mo><mspace width="2em"></mspace><msub><mi>ω</mi><mi>n</mi></msub><mo>=</mo><mn>2</mn><msup><mi>n</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\varepsilon_n=-\frac{Ry}{n^2},\qquad \omega_n=2n^2
+</annotation></semantics></math></span></span></span></p>
+<p>单粒子配分函数</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><msub><mo>∑</mo><mi>n</mi></msub><msub><mi>ω</mi><mi>n</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ε</mi><mi>n</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">z=\sum_n \omega_n e^{-\beta\varepsilon_n}
+</annotation></semantics></math></span></span></span></p>
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">z\to\infty</annotation></semantics></math></span></span>，从而</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>g</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>a</mi><mi>g</mi></msub></mrow><mrow><mi>N</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>z</mi></mrow></mfrac><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">p_g=\frac{a_g}{N}=\frac{1}{z}\to 0
+</annotation></semantics></math></span></span></span></p>
+<p>⇒ “处于基态的几率 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∼</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\sim 0</annotation></semantics></math></span></span>”?（该模型需要更精细处理：例如束缚态/连续谱、体积、相互作用或电离平衡等因素，否则会出现形式上的发散/悖论）。</p>
+<h2 id="两能级系统">两能级系统</h2>
+<p>最简单的体系是由没有相互作用的两能级子系统组成。能量本征态如下：</p>
+<ul>
+<li>$ \hat{H}|0\rangle = 0|0\rangle $</li>
+<li>$ \hat{H}|1\rangle = \epsilon|1\rangle = k_B \Theta |1\rangle $</li>
+</ul>
+<p>配分函数 $ z $ 为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><msub><mo>∑</mo><mi>s</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mi>s</mi></msub></mrow></msup><mo>=</mo><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">z = \sum_s e^{-\beta \epsilon_s} = 1 + e^{-\beta \epsilon}
+</annotation></semantics></math></span></span></span></p>
+<p>基态占有概率：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mn>0</mn></msub></mrow></msup><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi mathvariant="normal">Θ</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_0 = \frac{N}{z} e^{-\beta \epsilon_0} = \frac{N}{1 + e^{-\beta \epsilon}} = \frac{N}{1 + e^{-\Theta/T}}
+</annotation></semantics></math></span></span></span></p>
+<p>激发态占有概率：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mn>1</mn></msub></mrow></msup><mo>=</mo><mfrac><mrow><mi>N</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup></mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>N</mi><msup><mi>e</mi><mrow><mo>−</mo><mi mathvariant="normal">Θ</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow></msup></mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi mathvariant="normal">Θ</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_1 = \frac{N}{z} e^{-\beta \epsilon_1} = \frac{N e^{-\beta \epsilon}}{1 + e^{-\beta \epsilon}} = \frac{N e^{-\Theta/T}}{1 + e^{-\Theta/T}}
+</annotation></semantics></math></span></span></span></p>
+<p>内能：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><msub><mi>a</mi><mn>0</mn></msub><msub><mi>ϵ</mi><mn>0</mn></msub><mo>+</mo><msub><mi>a</mi><mn>1</mn></msub><msub><mi>ϵ</mi><mn>1</mn></msub><mo>=</mo><mi>N</mi><mi>ϵ</mi><mfrac><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup></mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">U = a_0 \epsilon_0 + a_1 \epsilon_1 = N \epsilon \frac{e^{-\beta \epsilon}}{1 + e^{-\beta \epsilon}}
+</annotation></semantics></math></span></span></span></p>
+<p>热容：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>U</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">Θ</mi></mrow><mrow><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mn>2</mn></msup><mfrac><mrow><msup><mi>e</mi><mrow><mi mathvariant="normal">Θ</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow></msup></mrow><mrow><mo>(</mo><msup><mi>e</mi><mrow><mi mathvariant="normal">Θ</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow></msup><mo>+</mo><mn>1</mn><msup><mo>)</mo><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">C = \left( \frac{\partial U}{\partial T} \right)
+= N k_B \left( \frac{\Theta}{T} \right)^2 \frac{e^{\Theta/T}}{(e^{\Theta/T} + 1)^2}
+</annotation></semantics></math></span></span></span></p>
+<p>其中 $ \Theta = \frac{\epsilon}{k_B} $。</p>
+<p>熵：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mfrac><mrow><mi>U</mi></mrow><mrow><mi>T</mi></mrow></mfrac><mo>+</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">S = \frac{U}{T} + N k_B \ln z
+</annotation></semantics></math></span></span></span></p>
+<h3 id="低温和高温极限">低温和高温极限</h3>
+<p><strong>低温极限</strong>：$ T \ll \Theta $</p>
+<p>$ a_0 \approx N e^{-\Theta/T} \approx 0 $</p>
+<p>$ U \approx 0 $</p>
+<p>$ C \approx N k_B \left(\frac{\Theta}{T}\right)^2 e^{-\Theta/T} $</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>≃</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mo>(</mo><mi mathvariant="normal">Θ</mi><mi mathvariant="normal">/</mi><mi>T</mi><mo>)</mo><msup><mi>e</mi><mrow><mo>−</mo><mi mathvariant="normal">Θ</mi><mi mathvariant="normal">/</mi><mi>T</mi></mrow></msup><mo>∼</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S \simeq N k_B (\Theta/T)e^{-\Theta/T} \sim 0</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>≃</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">S = k_B \ln \Omega \simeq 1</annotation></semantics></math></span></span></p>
+<p><strong>高温极限</strong>：$ T \gg \Theta $</p>
+<p>$ z = 1 + e^{-\Theta / T} \simeq 2 $</p>
+<p>$ a_0 \simeq a_1 \simeq \frac{N}{2} $</p>
+<p>$ U \approx \frac{N \epsilon}{2} $</p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>≃</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mo>(</mo><mfrac><mrow><mi mathvariant="normal">Θ</mi></mrow><mrow><mn>2</mn><mi>T</mi></mrow></mfrac><msup><mo>)</mo><mn>2</mn></msup><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">C \simeq N k_B (\frac{\Theta}{2T})^2 \to 0</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>≃</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">S \simeq N k_B \ln 2</annotation></semantics></math></span></span></p>
+<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>≃</mo><msup><mn>2</mn><mi>N</mi></msup></mrow><annotation encoding="application/x-tex">S = k_B \ln \Omega \simeq 2^N</annotation></semantics></math></span></span></p>
+<p><strong>Schottky反常</strong>：在低温和高温下，热容趋近于零，且热容在中等温度出现峰值，峰值位置大致在激发态能级处。原因：系统态数目以及能量有上限。</p>
+<h2 id="单原子和双原子气体体系（aigc）">单原子和双原子气体体系（aigc）</h2>
+<h3 id="单原子气体热容与能量均分原理">单原子气体热容与能量均分原理</h3>
+<ul>
+<li>
+<p><strong>能量均分原理</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><annotation encoding="application/x-tex">U = \frac{3}{2} Nk_B T
+</annotation></semantics></math></span></span></span></p>
+<p>每个自由度的热力学平均能量为 $ \frac{k_B T}{2} $，总的内能为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><annotation encoding="application/x-tex">U = \frac{3}{2} Nk_B T
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p><strong>配分函数</strong> $ z $ 的表达式：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><msub><mo>∑</mo><mrow><msub><mi>n</mi><mi>x</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>y</mi></msub><mo separator="true">,</mo><msub><mi>n</mi><mi>z</mi></msub></mrow></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mrow><msub><mi>n</mi><mi>x</mi></msub><msub><mi>n</mi><mi>y</mi></msub><msub><mi>n</mi><mi>z</mi></msub></mrow></msub></mrow></msup><mo>=</mo><msub><mi>z</mi><mi>x</mi></msub><msub><mi>z</mi><mi>y</mi></msub><msub><mi>z</mi><mi>z</mi></msub></mrow><annotation encoding="application/x-tex">z = \sum_{n_x, n_y, n_z} e^{-\beta \epsilon_{n_x n_y n_z}} = z_x z_y z_z
+</annotation></semantics></math></span></span></span></p>
+<p>其中，$ z_x, z_y, z_z $ 分别表示 x, y, z 方向的配分函数。对每个方向，配分函数为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>x</mi></msub><mo>=</mo><msubsup><mo>∑</mo><mrow><msub><mi>n</mi><mi>x</mi></msub><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mrow><msub><mi>n</mi><mi>x</mi></msub></mrow></msub></mrow></msup><mo>≈</mo><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mrow><msub><mi>n</mi><mi>x</mi></msub></mrow></msub></mrow></msup><mi>d</mi><msub><mi>n</mi><mi>x</mi></msub></mrow><annotation encoding="application/x-tex">z_x = \sum_{n_x=1}^{\infty} e^{-\beta \epsilon_{n_x}} \approx \int_0^\infty e^{-\beta \epsilon_{n_x}} dn_x
+</annotation></semantics></math></span></span></span></p>
+<p>通过积分法来简化求和过程，得到：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>x</mi></msub><mo>≈</mo><msqrt><mrow><mfrac><mrow><mn>2</mn><mi>m</mi><msubsup><mi>L</mi><mi>x</mi><mn>2</mn></msubsup></mrow><mrow><msup><mi mathvariant="normal">ℏ</mi><mn>2</mn></msup><mi>β</mi></mrow></mfrac></mrow></msqrt><mo>⋅</mo><msqrt><mrow><mi>π</mi></mrow></msqrt><mo>=</mo><mfrac><mrow><msub><mi>L</mi><mi>x</mi></msub></mrow><mrow><msub><mi>λ</mi><mi>T</mi></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">z_x \approx \sqrt{\frac{2m L_x^2}{\hbar^2 \beta}} \cdot \sqrt{\pi} = \frac{L_x}{\lambda_T}
+</annotation></semantics></math></span></span></span></p>
+<p>最终得出总配分函数：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mi>V</mi></mrow><mrow><msubsup><mi>λ</mi><mi>T</mi><mn>3</mn></msubsup></mrow></mfrac></mrow><annotation encoding="application/x-tex">z = \frac{V}{\lambda_T^3}
+</annotation></semantics></math></span></span></span></p>
+<p>其中，$ \lambda_T = \frac{h}{\sqrt{2\pi m k_B T}} $ 为热波长。</p>
+</li>
+</ul>
+<h3 id="单原子理想气体状态方程">单原子理想气体状态方程</h3>
+<ul>
+<li>
+<p><strong>内能</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mo>−</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi>Z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>β</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>V</mi></msub><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><annotation encoding="application/x-tex">U = -\left( \frac{\partial \ln Z}{\partial \beta} \right)_V = \frac{3}{2} N k_B T
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p><strong>状态方程</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mrow><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mi>V</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">p = \frac{N k_B T}{V}
+</annotation></semantics></math></span></span></span></p>
+<p>其中，$ p $ 为压力，$ N $ 为粒子数，$ T $ 为温度，$ V $ 为体积。</p>
+</li>
+</ul>
+<h3 id="双原子气体热容问题">双原子气体热容问题</h3>
+<ul>
+<li>
+<p><strong>经典统计下的热容</strong>：<br>
+单一双原子分子在经典统计下的自由度为 7，热容为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><mfrac><mrow><mn>7</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">C_V = \frac{7}{2} N k_B
+</annotation></semantics></math></span></span></span></p>
+<p>然而实际实验中，室温下大多数双原子气体的热容为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><mfrac><mrow><mn>5</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">C_V = \frac{5}{2} N k_B
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p><strong>温度对热容的影响</strong>：随着温度的降低，自由度冻结，热容会减小，尤其是氢气。</p>
+</li>
+</ul>
+<h3 id="双原子分子的单粒子问题">双原子分子的单粒子问题</h3>
+<ul>
+<li><strong>哈密顿量</strong>：<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>H</mi></mrow><mo>^</mo></mover><mo>=</mo><mfrac><mrow><msubsup><mi>p</mi><mi>A</mi><mn>2</mn></msubsup></mrow><mrow><mn>2</mn><msub><mi>M</mi><mi>A</mi></msub></mrow></mfrac><mo>+</mo><mfrac><mrow><msubsup><mi>p</mi><mi>B</mi><mn>2</mn></msubsup></mrow><mrow><mn>2</mn><msub><mi>M</mi><mi>B</mi></msub></mrow></mfrac><mo>+</mo><mfrac><mrow><msub><mi>Z</mi><mi>A</mi></msub><msub><mi>Z</mi><mi>B</mi></msub><msup><mi>e</mi><mn>2</mn></msup></mrow><mrow><msub><mi>ϵ</mi><mn>0</mn></msub><mi mathvariant="normal">∣</mi><msub><mi>R</mi><mi>A</mi></msub><mo>−</mo><msub><mi>R</mi><mi>B</mi></msub><mi mathvariant="normal">∣</mi></mrow></mfrac><mo>+</mo><msub><mo>∑</mo><mi>i</mi></msub><mfrac><mrow><msubsup><mi>p</mi><mi>i</mi><mn>2</mn></msubsup></mrow><mrow><mn>2</mn><msub><mi>m</mi><mi>e</mi></msub></mrow></mfrac><mo>+</mo><msub><mo>∑</mo><mrow><mi>i</mi><mo>&lt;</mo><mi>j</mi></mrow></msub><mfrac><mrow><msup><mi>e</mi><mn>2</mn></msup></mrow><mrow><msub><mi>ϵ</mi><mn>0</mn></msub><mi mathvariant="normal">∣</mi><msub><mi>r</mi><mi>i</mi></msub><mo>−</mo><msub><mi>r</mi><mi>j</mi></msub><mi mathvariant="normal">∣</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\hat{H} = \frac{p_A^2}{2M_A} + \frac{p_B^2}{2M_B} + \frac{Z_A Z_B e^2}{\epsilon_0 |R_A - R_B|} + \sum_i \frac{p_i^2}{2m_e} + \sum_{i&lt;j} \frac{e^2}{\epsilon_0 |r_i - r_j|}
+</annotation></semantics></math></span></span></span></p>
+其中，$ R_A, R_B $ 为原子位置，$ p_A, p_B $ 为动量，其他项表示电子与原子核的相互作用。</li>
+</ul>
+<h3 id="双原子分子的转动和振动">双原子分子的转动和振动</h3>
+<ul>
+<li>
+<p><strong>振动能级</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>H</mi><mi>v</mi></msub><mo>=</mo><mo>−</mo><mfrac><mrow><msup><mi mathvariant="normal">ℏ</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>μ</mi></mrow></mfrac><mfrac><mrow><msup><mi>d</mi><mn>2</mn></msup></mrow><mrow><mi>d</mi><msup><mi>R</mi><mn>2</mn></msup></mrow></mfrac><mo>+</mo><mi>V</mi><mo>(</mo><mi>R</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">H_v = - \frac{\hbar^2}{2\mu} \frac{d^2}{dR^2} + V(R)
+</annotation></semantics></math></span></span></span></p>
+<p>振动能级间隔为 $ \Delta E = \hbar \omega $，使得热容随温度变化。</p>
+</li>
+<li>
+<p><strong>转动能级</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>l</mi></msub><mo>=</mo><mfrac><mrow><msup><mi mathvariant="normal">ℏ</mi><mn>2</mn></msup><mi>l</mi><mo>(</mo><mi>l</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><mrow><mn>2</mn><mi>I</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">E_l = \frac{\hbar^2 l (l+1)}{2I}
+</annotation></semantics></math></span></span></span></p>
+<p>转动能级表示为 $ l = 0, 1, 2, \dots $，其中 $ I $ 是转动惯量，$ l $ 为量子数。</p>
+</li>
+</ul>
+<h3 id="氢气的热容">氢气的热容</h3>
+<ul>
+<li>
+<p><strong>转动能级</strong>：氢气的转动能级间隔与其转动惯量相关，转动惯量为 $ I = \mu R_0^2 $，其中 $ \mu $ 是约化质量，$ R_0 $ 是氢分子的平衡距离。</p>
+<ul>
+<li>氢气的转动能级为：<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>E</mi><mi>l</mi></msub><mo>=</mo><mfrac><mrow><msup><mi mathvariant="normal">ℏ</mi><mn>2</mn></msup><mi>l</mi><mo>(</mo><mi>l</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><mrow><mn>2</mn><mi>I</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">E_l = \frac{\hbar^2 l (l+1)}{2I}
+</annotation></semantics></math></span></span></span></p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>转动热容</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn><mn>2</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub></mrow><mrow><msup><mi>T</mi><mn>2</mn></msup></mrow></mfrac><mo>⋅</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mn>2</mn><msub><mi mathvariant="normal">Θ</mi><mi>r</mi></msub></mrow><mrow><mi>T</mi></mrow></mfrac></mrow></msup></mrow><annotation encoding="application/x-tex">C_r = \frac{12 N k_B}{T^2} \cdot e^{-\frac{2\Theta_r}{T}}
+</annotation></semantics></math></span></span></span></p>
+<p>其中 $ \Theta_r $ 为转动温度，$ T $ 为实际温度。</p>
+</li>
+</ul>
+<h3 id="H2-的转动能谱">H2 的转动能谱</h3>
+<ul>
+<li>
+<p><strong>转动能级和自旋波函数的关系</strong>：氢分子具有自旋量子数 $ S = 1/2 $，是 Fermion。转动波函数的奇偶性和自旋波函数的奇偶性有关：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>χ</mi><mo>(</mo><mi>A</mi><mo separator="true">,</mo><mi>B</mi><mo>)</mo><mo>=</mo><mo>(</mo><mo>−</mo><mn>1</mn><msup><mo>)</mo><mrow><mi>l</mi><mo>+</mo><mn>1</mn></mrow></msup><mi>χ</mi><mo>(</mo><mi>B</mi><mo separator="true">,</mo><mi>A</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\chi(A, B) = (-1)^{l+1} \chi(B, A)
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p><strong>转动热容</strong>：</p>
+<ul>
+<li>
+<p>在低温极限下，氢气的转动热容表现为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub><mo>=</mo><mn>3</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mo>⋅</mo><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mn>2</mn><msub><mi mathvariant="normal">Θ</mi><mi>r</mi></msub></mrow><mrow><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mn>2</mn></msup><mo>⋅</mo><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mn>2</mn><msub><mi mathvariant="normal">Θ</mi><mi>r</mi></msub></mrow><mrow><mi>T</mi></mrow></mfrac></mrow></msup></mrow><annotation encoding="application/x-tex">C_r = 3 N k_B \cdot \left( \frac{2 \Theta_r}{T} \right)^2 \cdot e^{-\frac{2\Theta_r}{T}}
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p>在高温极限下，氢气的转动热容表现为：</p>
+
+    $$
+    C_r = N k_B \quad \text{(经典极限)}
+    $$
+    
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="氢气的热容实验">氢气的热容实验</h3>
+<ul>
+<li>
+<p><strong>正常氢和平衡氢</strong>：实验中发现，氢气的热容不仅与温度有关，还受到氢分子是否处于平衡态的影响。平衡氢的正氢和仲氢的比例根据Boltzmann统计确定，而正常氢则是由从室温冷却到低温的亚稳态组成。</p>
+</li>
+<li>
+<p><strong>热容计算</strong>：对于不同的氢分子状态，推导了其热容公式，低温下氢分子的热容表现出量子效应的明显特征。</p>
+</li>
+</ul>
+<h3 id="低温正常氢的热容">低温正常氢的热容</h3>
+<ul>
+<li>
+<p><strong>正氢与仲氢的比例</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>l</mi></msub><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><msub><mi>z</mi><mi>r</mi></msub></mrow></mfrac><msub><mo>∑</mo><mrow><mtext><mi mathvariant="normal">o</mi><mi mathvariant="normal">r</mi></mtext><mtext>&nbsp;</mtext><mi>t</mi><mtext><mi mathvariant="normal">h</mi><mi mathvariant="normal">o</mi></mtext></mrow></msub><msub><mi>ω</mi><mi>l</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mi>l</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">a_l = \frac{N}{z_r} \sum_{\text{or} \ t \text{ho}} \omega_l e^{-\beta \epsilon_l}
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p><strong>热容</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>o</mi></msub><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mo>×</mo><mfrac><mrow><mn>7</mn></mrow><mrow><mn>3</mn></mrow></mfrac><mo>×</mo><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mn>1</mn><mn>0</mn><msub><mi mathvariant="normal">Θ</mi><mi>r</mi></msub></mrow><mrow><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mn>2</mn></msup><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mn>1</mn><mn>0</mn><msub><mi mathvariant="normal">Θ</mi><mi>r</mi></msub></mrow><mrow><mi>T</mi></mrow></mfrac></mrow></msup></mrow><annotation encoding="application/x-tex">C_o = N k_B \times \frac{7}{3} \times \left( \frac{10\Theta_r}{T} \right)^2 e^{-\frac{10\Theta_r}{T}}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>p</mi></msub><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mo>×</mo><mn>5</mn><mo>×</mo><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mn>6</mn><msub><mi mathvariant="normal">Θ</mi><mi>r</mi></msub></mrow><mrow><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mn>2</mn></msup><msup><mi>e</mi><mrow><mo>−</mo><mfrac><mrow><mn>6</mn><msub><mi mathvariant="normal">Θ</mi><mi>r</mi></msub></mrow><mrow><mi>T</mi></mrow></mfrac></mrow></msup></mrow><annotation encoding="application/x-tex">C_p = N k_B \times 5 \times \left( \frac{6\Theta_r}{T} \right)^2 e^{-\frac{6\Theta_r}{T}}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>r</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac><msub><mi>C</mi><mi>p</mi></msub><mo>+</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>4</mn></mrow></mfrac><msub><mi>C</mi><mi>o</mi></msub></mrow><annotation encoding="application/x-tex">C_r = \frac{1}{4} C_p + \frac{3}{4} C_o
+</annotation></semantics></math></span></span></span></p>
+</li>
+</ul>
+<h3 id="双原子分子气体热容">双原子分子气体热容</h3>
+<ul>
+<li><strong>温度升高热容增加</strong>：原来冻结的自由度“解冻”<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>=</mo><mfrac><mrow><mn>3</mn><mi>R</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mspace width="1em"></mspace><mi>T</mi><mo>&gt;</mo><msub><mi mathvariant="normal">Θ</mi><mi>r</mi></msub><mo>∼</mo><mn>1</mn><mn>0</mn><mi>K</mi></mrow><annotation encoding="application/x-tex">C = \frac{3R}{2} \quad T &gt; \Theta_r \sim 10K
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn><mi>R</mi><mspace width="1em"></mspace><mi>T</mi><mo>&gt;</mo><msub><mi mathvariant="normal">Θ</mi><mi>v</mi></msub><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup><mi>K</mi></mrow><annotation encoding="application/x-tex">5R \quad T &gt; \Theta_v \sim 10^4K
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>7</mn><mi>R</mi><mspace width="1em"></mspace><mi>T</mi><mo>&gt;</mo><msub><mi mathvariant="normal">Θ</mi><mi>e</mi></msub><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup><mo>−</mo><mn>5</mn><mi>K</mi></mrow><annotation encoding="application/x-tex">7R \quad T &gt; \Theta_e \sim 10^4 - 5K
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>(</mo><msub><mi>N</mi><mi>e</mi></msub><mo>+</mo><mn>7</mn><mo>)</mo><mspace width="1em"></mspace><mi>T</mi><mo>&gt;</mo><msub><mi mathvariant="normal">Θ</mi><mi>M</mi></msub><mo>∼</mo><mn>1</mn><mi>M</mi><mi>e</mi><mi>V</mi><mi mathvariant="normal">/</mi><msub><mi>k</mi><mi>B</mi></msub><mo>=</mo><mn>1</mn><msup><mn>0</mn><mn>7</mn></msup><mi>K</mi></mrow><annotation encoding="application/x-tex">(N_e + 7) \quad T &gt; \Theta_M \sim 1MeV/k_B = 10^7K
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>V</mi></msub><mo>∼</mo><mfrac><mrow><mi>U</mi></mrow><mrow><mn>2</mn><mi>M</mi><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac><msub><mi>k</mi><mi>B</mi></msub><mspace width="1em"></mspace><mfrac><mrow><mi>d</mi><mi>U</mi></mrow><mrow><mi>d</mi><mi>T</mi></mrow></mfrac><mo>=</mo><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><mfrac><mrow><mi>U</mi></mrow><mrow><mn>2</mn><mi>M</mi><msup><mi>c</mi><mn>2</mn></msup></mrow></mfrac><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>∼</mo><mn>2</mn><mi>M</mi><msup><mi>c</mi><mn>2</mn></msup><mo>⋅</mo><mi>ln</mi><mfrac><mrow><mi>U</mi></mrow><mrow><mi>V</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">C_V \sim \frac{U}{2M c^2} k_B \quad \frac{dU}{dT} = C_V = \frac{U}{2M c^2} k_B T \sim 2 M c^2 \cdot \ln \frac{U}{V}
+</annotation></semantics></math></span></span></span></p>
+</li>
+</ul>
+<h2 id="准经典近似">准经典近似</h2>
+<h3 id="单粒子量子力学描述">单粒子量子力学描述</h3>
+<ul>
+<li><strong>量子态</strong>：量子力学中，无法同时确定位置 $ \mathbf{r} $ 和动量 $ \mathbf{p} $，由测不准原理决定。</li>
+<li><strong>相空间</strong>：相空间中非常靠近的点无法区分，一个量子态占据相空间体积 $ \Delta \mathbf{r} \Delta \mathbf{p} = h $。</li>
+</ul>
+<p><strong>推导过程</strong>：</p>
+<ol>
+<li>假设相空间中的点由 $ \mathbf{r} $ 和 $ \mathbf{p} $ 两个坐标表示。由于量子力学的测不准原理，不能同时确定 $ \mathbf{r} $ 和 $ \mathbf{p} $。</li>
+<li>一个量子态占据的相空间体积为 $ \Delta \mathbf{r} \Delta \mathbf{p} = h $，其中 $ h $ 为普朗克常数。</li>
+</ol>
+<p>由此，单粒子态密度 $ f(\mathbf{r}, \mathbf{p}) $ 可以表示为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∫</mo><mi>f</mi><mo>(</mo><msub><mrow><mi mathvariant="bold">r</mi></mrow><mi>i</mi></msub><mo separator="true">,</mo><msub><mrow><mi mathvariant="bold">p</mi></mrow><mi>i</mi></msub><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>h</mi><mi>d</mi></msup></mrow></mfrac><mo>∫</mo><mi>d</mi><mrow><mi mathvariant="bold">r</mi></mrow><mi>d</mi><mrow><mi mathvariant="bold">p</mi></mrow><mi>f</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">p</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\int f(\mathbf{r}_i, \mathbf{p}_i) = \frac{1}{h^d} \int d\mathbf{r} d\mathbf{p} f(\mathbf{r}, \mathbf{p})
+</annotation></semantics></math></span></span></span></p>
+<h3 id="准经典近似与配分函数">准经典近似与配分函数</h3>
+<p><strong>推导过程</strong>：</p>
+<ul>
+<li>配分函数 $ z $ 定义为系统所有能量状态的求和：</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><msub><mo>∑</mo><mi>s</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mi>s</mi></msub></mrow></msup></mrow><annotation encoding="application/x-tex">z = \sum_s e^{-\beta \epsilon_s}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>对于准经典近似，可以将量子态的求和转换为积分形式：</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>c</mi></msub><mo>=</mo><mo>∫</mo><mfrac><mrow><mi>d</mi><mrow><mi mathvariant="bold">r</mi></mrow><mi>d</mi><mrow><mi mathvariant="bold">p</mi></mrow></mrow><mrow><msup><mi>h</mi><mi>d</mi></msup></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>h</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">p</mi></mrow><mo>)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">z_c = \int \frac{d\mathbf{r} d\mathbf{p}}{h^d} e^{-\beta h(\mathbf{r}, \mathbf{p})}
+</annotation></semantics></math></span></span></span></p>
+<p>其中，$ \beta = \frac{1}{k_B T} $ 为倒温度。</p>
+<p>进一步推导：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>h</mi><mn>3</mn></msup></mrow></mfrac><msub><mo>∫</mo><mrow><mtext><mi mathvariant="normal">B</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">x</mi></mtext></mrow></msub><mi>d</mi><mrow><mi mathvariant="bold">r</mi></mrow><mo>∫</mo><mi>d</mi><mrow><mi mathvariant="bold">p</mi></mrow><mspace width="0.16667em"></mspace><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mfrac><mrow><msup><mi>p</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mrow></msup></mrow><annotation encoding="application/x-tex">z = \frac{1}{h^3} \int_{\text{Box}} d\mathbf{r} \int d\mathbf{p} \, e^{-\beta \frac{p^2}{2m}}
+</annotation></semantics></math></span></span></span></p>
+<p>通过高斯积分得到：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>c</mi></msub><mo>=</mo><mfrac><mrow><mi>V</mi></mrow><mrow><mo>(</mo><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi mathvariant="normal">/</mi><msup><mi>h</mi><mn>2</mn></msup><msup><mo>)</mo><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">z_c = \frac{V}{(2 \pi m k_B T / h^2)^{3/2}}
+</annotation></semantics></math></span></span></span></p>
+<h3 id="盒中理想气体的准经典近似">盒中理想气体的准经典近似</h3>
+<p><strong>哈密顿量</strong>：对于盒中理想气体，哈密顿量为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">p</mi></mrow><mo>)</mo><mo>=</mo><mfrac><mrow><msup><mi>p</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>+</mo><mi>V</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">h(\mathbf{r}, \mathbf{p}) = \frac{p^2}{2m} + V(\mathbf{r})
+</annotation></semantics></math></span></span></span></p>
+<p>推导配分函数：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>c</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>h</mi><mn>3</mn></msup></mrow></mfrac><msub><mo>∫</mo><mrow><mtext><mi mathvariant="normal">B</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">x</mi></mtext></mrow></msub><mi>d</mi><mrow><mi mathvariant="bold">r</mi></mrow><mo>∫</mo><mi>d</mi><mrow><mi mathvariant="bold">p</mi></mrow><mspace width="0.16667em"></mspace><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mfrac><mrow><msup><mi>p</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mrow></msup></mrow><annotation encoding="application/x-tex">z_c = \frac{1}{h^3} \int_{\text{Box}} d\mathbf{r} \int d\mathbf{p} \, e^{-\beta \frac{p^2}{2m}}
+</annotation></semantics></math></span></span></span></p>
+<p>对于动能部分，通过高斯积分可以得到：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∫</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mfrac><mrow><msup><mi>p</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac></mrow></msup><mi>d</mi><mi>p</mi><mo>=</mo><msqrt><mrow><mfrac><mrow><mn>2</mn><mi>π</mi><mi>m</mi></mrow><mrow><mi>β</mi></mrow></mfrac></mrow></msqrt></mrow><annotation encoding="application/x-tex">\int e^{-\beta \frac{p^2}{2m}} dp = \sqrt{\frac{2\pi m}{\beta}}
+</annotation></semantics></math></span></span></span></p>
+<p>将该结果代入配分函数的积分中，最终得到：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>c</mi></msub><mo>=</mo><mfrac><mrow><mi>V</mi></mrow><mrow><mo>(</mo><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi mathvariant="normal">/</mi><msup><mi>h</mi><mn>2</mn></msup><msup><mo>)</mo><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">z_c = \frac{V}{(2 \pi m k_B T / h^2)^{3/2}}
+</annotation></semantics></math></span></span></span></p>
+<h3 id="Maxwell-速度分布">Maxwell 速度分布</h3>
+<p><strong>推导过程</strong>：</p>
+<ol>
+<li>根据 Maxwell-Boltzmann 分布，速度分布 $ f_M(v) $ 可以通过动量 $ \mathbf{p} $ 和速度 $ \mathbf{v} $ 之间的关系得到：</li>
+</ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>M</mi></msub><mo>(</mo><mi>v</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>m</mi></mrow><mrow><mn>3</mn></mrow></mfrac><msub><mi>f</mi><mi>B</mi></msub><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mi>m</mi><mi>v</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>m</mi></mrow><mrow><mn>3</mn></mrow></mfrac><mfrac><mrow><mi>N</mi></mrow><mrow><mi>V</mi><msup><mi>h</mi><mn>3</mn></msup></mrow></mfrac><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><msup><mi>h</mi><mn>2</mn></msup></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><msup><mi>e</mi><mrow><mo>−</mo><mi>m</mi><msup><mi>v</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mo>(</mo><mn>2</mn><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">f_M(v) = \frac{m}{3} f_B(\mathbf{r}, mv) = \frac{m}{3} \frac{N}{V h^3} \left( \frac{2 \pi m k_B T}{h^2} \right)^{3/2} e^{-m v^2/(2 k_B T)}
+</annotation></semantics></math></span></span></span></p>
+<ol start="2">
+<li>进一步化简得到：</li>
+</ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>M</mi></msub><mo>(</mo><mi>v</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>V</mi></mrow></mfrac><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mi>m</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mo>−</mo><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><msup><mi>v</mi><mn>2</mn></msup><msup><mi>e</mi><mrow><mo>−</mo><mi>m</mi><msup><mi>v</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mo>(</mo><mn>2</mn><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">f_M(v) = \frac{N}{V} \left( \frac{2 \pi k_B T}{m} \right)^{-3/2} v^2 e^{-m v^2/(2 k_B T)}
+</annotation></semantics></math></span></span></span></p>
+<ol start="3">
+<li>平均速度 $ \langle v \rangle $ 可以通过速度分布函数 $ f_M(v) $ 计算得到：</li>
+</ol>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>⟨</mo><mi>v</mi><mo>⟩</mo><mo>=</mo><msqrt><mrow><mfrac><mrow><mn>8</mn><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mi>π</mi><mi>m</mi></mrow></mfrac></mrow></msqrt></mrow><annotation encoding="application/x-tex">\langle v \rangle = \sqrt{\frac{8 k_B T}{\pi m}}
+</annotation></semantics></math></span></span></span></p>
+<h3 id="单粒子态密度">单粒子态密度</h3>
+<p><strong>推导过程</strong>：<br>
+通过将态密度 $ g(\epsilon) $ 表示为能量积分，简化计算。状态密度 $ g(\epsilon) $ 定义为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mo>=</mo><msub><mo>∑</mo><mi>s</mi></msub><mi>δ</mi><mo>(</mo><mi>ϵ</mi><mo>−</mo><msub><mi>ϵ</mi><mi>s</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">g(\epsilon) = \sum_s \delta(\epsilon - \epsilon_s)
+</annotation></semantics></math></span></span></span></p>
+<p>当能量量子化不重要时，可以通过准经典近似进行计算：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mo>=</mo><mo>∫</mo><mfrac><mrow><msup><mi>d</mi><mi>r</mi></msup><mi>p</mi><mspace width="0.16667em"></mspace><msup><mi>d</mi><mi>r</mi></msup><mi>x</mi></mrow><mrow><msup><mi>h</mi><mi>r</mi></msup></mrow></mfrac><mi>δ</mi><mo>(</mo><mi>ϵ</mi><mo>−</mo><msub><mi>ω</mi><mi>λ</mi></msub><mo>(</mo><mrow><mi mathvariant="bold">p</mi></mrow><mo separator="true">,</mo><mrow><mi mathvariant="bold">x</mi></mrow><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">g(\epsilon) = \int \frac{d^r p \, d^r x}{h^r} \delta(\epsilon - \omega_\lambda(\mathbf{p}, \mathbf{x}))
+</annotation></semantics></math></span></span></span></p>
+<p>在三维空间中，态密度的计算结果为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>h</mi><mn>3</mn></msup></mrow></mfrac><msub><mo>∫</mo><mrow><mtext><mi mathvariant="normal">B</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">x</mi></mtext></mrow></msub><mi>d</mi><mrow><mi mathvariant="bold">r</mi></mrow><mi>d</mi><mrow><mi mathvariant="bold">p</mi></mrow><mspace width="0.16667em"></mspace><mi>δ</mi><mo>(</mo><mi>ϵ</mi><mo>−</mo><mfrac><mrow><msup><mi>p</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>−</mo><mi>V</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">g(\epsilon) = \frac{1}{h^3} \int_{\text{Box}} d\mathbf{r} d\mathbf{p} \, \delta(\epsilon - \frac{p^2}{2m} - V(\mathbf{r}))
+</annotation></semantics></math></span></span></span></p>
+<h3 id="一维谐振子的准经典近似">一维谐振子的准经典近似</h3>
+<p><strong>哈密顿量</strong>：对于一维谐振子，哈密顿量为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>h</mi><mo>(</mo><mi>x</mi><mo separator="true">,</mo><mi>p</mi><mo>)</mo><mo>=</mo><mfrac><mrow><msup><mi>p</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>x</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">h(x, p) = \frac{p^2}{2m} + \frac{m \omega^2 x^2}{2}
+</annotation></semantics></math></span></span></span></p>
+<p>通过求解配分函数得到：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><msub><mo>∑</mo><mi>n</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mo>(</mo><mi>n</mi><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo>)</mo><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mrow></msup></mrow><annotation encoding="application/x-tex">z = \sum_n e^{-\beta (n + \frac{1}{2}) \hbar \omega}
+</annotation></semantics></math></span></span></span></p>
+<p>近似得到：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>≈</mo><mfrac><mrow><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">z \approx \frac{k_B T}{\hbar \omega}
+</annotation></semantics></math></span></span></span></p>
+<p>进一步推导：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>z</mi><mi>c</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>h</mi></mrow></mfrac><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msup><mi>p</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mo>(</mo><mn>2</mn><mi>m</mi><mo>)</mo></mrow></msup><mi>d</mi><mi>p</mi><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>m</mi><msup><mi>ω</mi><mn>2</mn></msup><msup><mi>x</mi><mn>2</mn></msup><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><mi>d</mi><mi>x</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi></mrow><mrow><mi>β</mi><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">z_c = \frac{1}{h} \int_{-\infty}^{\infty} e^{-\beta p^2/(2m)} dp \int_{-\infty}^{\infty} e^{-\beta m \omega^2 x^2 / 2} dx = \frac{2 \pi}{\beta \hbar \omega}
+</annotation></semantics></math></span></span></span></p>
+<h3 id="自旋自由度">自旋自由度</h3>
+<p>对于自由度的计算，状态密度可以使用能量和自旋量子数的关系来简化计算。</p>
+<p><strong>公式</strong>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>g</mi><mn>2</mn></msub><mi>D</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>π</mi><mi>A</mi><msub><mi>ω</mi><mi>S</mi></msub></mrow><mrow><mn>2</mn><mi>m</mi><msup><mi>h</mi><mn>2</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">g_2D(\epsilon) = \frac{\pi A \omega_S}{2m h^2}
+</annotation></semantics></math></span></span></span></p>
+<p>其中，$ \omega_S = 2S + 1 $，例如对于电子 $ S = 1/2 $ 时，$ \omega_S = 2 $。</p>
+<h3 id="理想气体的配分函数">理想气体的配分函数</h3>
+<p>使用态密度来计算单粒子配分函数：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mo>∫</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow></msup><mfrac><mrow><msup><mi>d</mi><mn>3</mn></msup><mi>r</mi><msup><mi>d</mi><mn>3</mn></msup><mi>p</mi></mrow><mrow><msup><mi>h</mi><mn>3</mn></msup></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>V</mi></mrow><mrow><mo>(</mo><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi mathvariant="normal">/</mi><msup><mi>h</mi><mn>2</mn></msup><msup><mo>)</mo><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">z = \int e^{-\beta \epsilon(p)} \frac{d^3 r d^3 p}{h^3} = \frac{V}{(2 \pi m k_B T / h^2)^{3/2}}
+</annotation></semantics></math></span></span></span></p>
+<p>通过积分得到：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>β</mi><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">z = \frac{1}{\beta \hbar \omega}
+</annotation></semantics></math></span></span></span></p>
+
       </div>
       <div class="post-tags-categories">
         
@@ -413,7 +1182,7 @@
     </li>
     <li class="post-copyright-link">
     <strong>link:  </strong>
-    <a href="/physics/ReTong/几率法：Boltzmann统计/" target="_blank" title="几率法：Boltzmann统计">https://kotokowa.github.io/physics/ReTong/几率法：Boltzmann统计/</a>
+    <a href="/physics/ReTong/几率法：Boltzmann统计/" target="_blank" title="几率法：Boltzmann 统计">https://kotokowa.github.io/physics/ReTong/几率法：Boltzmann统计/</a>
     </li>
     <li class="post-copyright-license">
       <strong>Copyright notice:   </strong>
@@ -431,42 +1200,22 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">热力学第二定律</div>
-      </div>
-      
-      <!-- <div class="content">
-        热力学第二定律
-定义
-可逆过程：过程中每一步都可以沿相反方向发生，并且不引起外界的其他改变。
-不可逆过程的特点：不能反向
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABose%E7%BB%9F%E8%AE%A1%E5%92%8CFermi%E7%BB%9F%E8%AE%A1/" class="post-nav-link">
+    <a href="/physics/ReTong/%E7%AD%89%E5%87%A0%E7%8E%87%E5%81%87%E8%AE%BE/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">几率法：Bose统计和Fermi统计</div>
+        <div class="title-text">等几率假设</div>
       </div>
       <!-- <div class="content">
-        
+        等几率假设
+目前的统计物理主流还是基于还原论：宏观物体由微观粒子组成；微观粒子服从力学规律；宏观性质/过程可以从相应的微
       </div> -->
     </a>
   </div>
@@ -584,7 +1333,7 @@
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">几率法：Boltzmann 统计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-text">基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%91%E7%8B%AC%E7%AB%8B%E5%AD%90%E7%B3%BB%E7%BB%84%E6%88%90%E7%9A%84%E7%B3%BB%E7%BB%9F"><span class="toc-text">近独立子系组成的系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%B2%92%E5%AD%90%E6%80%81%E5%92%8C%E7%B3%BB%E7%BB%9F%E6%80%81%EF%BC%88%E5%A4%9A%E7%B2%92%E5%AD%90%E6%80%81%EF%BC%89"><span class="toc-text">单粒子态和系统态（多粒子态）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%90%8C%E5%92%8C%E9%9D%9E%E5%85%A8%E5%90%8C%E7%B2%92%E5%AD%90"><span class="toc-text">全同和非全同粒子</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Boltzmann-%E7%BB%9F%E8%AE%A1"><span class="toc-text">Boltzmann 统计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E5%87%A0%E7%8E%87%E5%81%87%E8%AE%BE%E4%B8%8E%E5%BE%AE%E8%A7%82%E6%80%81%E8%AE%A1%E6%95%B0"><span class="toc-text">等几率假设与微观态计数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%89%E5%87%A0%E7%8E%87%E5%81%87%E8%AE%BE%EF%BC%88%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3%EF%BC%89"><span class="toc-text">等几率假设（基本思想）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%9E%E5%85%A8%E5%90%8C%E7%B2%92%E5%AD%90%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%BE%AE%E8%A7%82%E6%80%81%E6%95%B0-Omega-E-N-V-a-l"><span class="toc-text">非全同粒子系统的微观态数 Ω(E,N,V,{al})\Omega(E,N,V,\{a_l\})Ω(E,N,V,{a​l​​})</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%B9%B3%E8%A1%A1%E6%80%81-%E2%87%94-%E6%9C%80%E5%8F%AF%E5%87%A0%E6%80%81%EF%BC%88%E6%9C%80%E5%A4%A7-Omega-%E7%9A%84%E5%88%86%E5%B8%83%EF%BC%89"><span class="toc-text">热力学平衡态 ⇔ 最可几态（最大 Ω\OmegaΩ 的分布）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Boltzmann-%E5%88%86%E5%B8%83%E4%B8%8E%E4%B9%98%E5%AD%90%E7%89%A9%E7%90%86%E6%84%8F%E4%B9%89"><span class="toc-text">Boltzmann 分布与乘子物理意义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B9%98%E5%AD%90%E4%B8%8E%E6%80%81%E5%AF%86%E5%BA%A6%E5%AF%BC%E6%95%B0%E5%85%B3%E7%B3%BB"><span class="toc-text">乘子与态密度导数关系</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Legendre-%E5%8F%98%E6%8D%A2%EF%BC%9A%E4%BB%8E-E-N-V-%E5%88%B0-beta-N-V"><span class="toc-text">Legendre 变换：从 (E,N,V)(E,N,V)(E,N,V) 到 (β,N,V)(\beta,N,V)(β,N,V)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E5%88%86%E5%87%BD%E6%95%B0-z-%E4%B8%8E%E7%B3%BB%E7%BB%9F%E9%85%8D%E5%88%86%E5%87%BD%E6%95%B0-Z"><span class="toc-text">配分函数 zzz 与系统配分函数 ZZZ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%A9%E7%90%86%E9%87%8F%EF%BC%88%E5%86%85%E8%83%BD%E3%80%81%E5%8E%8B%E5%BC%BA%E3%80%81%E7%86%B5%EF%BC%89"><span class="toc-text">物理量（内能、压强、熵）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E8%83%BD-U%EF%BC%88-%E6%9C%80%E5%8F%AF%E5%87%A0%E6%80%81%E8%83%BD%E9%87%8F%EF%BC%89"><span class="toc-text">内能 UUU（&#x3D; 最可几态能量）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%8B%E5%BC%BA-p%EF%BC%88%E7%94%B1%E8%83%BD%E7%BA%A7%E5%AF%B9%E4%BD%93%E7%A7%AF%E7%9A%84%E4%BE%9D%E8%B5%96%EF%BC%89"><span class="toc-text">压强 ppp（由能级对体积的依赖）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%86%B5-S%EF%BC%9A%E8%AF%81%E6%98%8E-beta-dQ-%E6%98%AF%E5%85%A8%E5%BE%AE%E5%88%86"><span class="toc-text">熵 SSS：证明 βdQ\beta dQβdQ 是全微分</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%8B%E5%BC%BA%E4%B8%8E%E7%86%B5%E7%9A%84%E2%80%9C%E5%8F%A6%E4%B8%80%E7%A7%8D%E6%8E%A8%E5%AF%BC%E2%80%9D%EF%BC%88%E9%87%8F%E5%AD%90%E5%BD%A2%E5%BC%8F%E5%86%99%E6%B3%95%EF%BC%89"><span class="toc-text">压强与熵的“另一种推导”（量子形式写法）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Boltzmann-%E5%85%B3%E7%B3%BB%EF%BC%9AS-k-B-ln-Omega"><span class="toc-text">Boltzmann 关系：S&#x3D;kBlnΩS&#x3D;k_B\ln\OmegaS&#x3D;k​B​​lnΩ</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E7%94%B1%E8%83%BD-F"><span class="toc-text">自由能 FFF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Boltzmann-%E5%9B%A0%E5%AD%90%E4%B8%8E%E7%89%B9%E5%BE%81%E6%B8%A9%E5%BA%A6"><span class="toc-text">Boltzmann 因子与特征温度</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Boltzmann-%E5%9B%A0%E5%AD%90"><span class="toc-text">Boltzmann 因子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E5%BE%81%E6%B8%A9%E5%BA%A6-Theta-%E4%B8%8E%E2%80%9C%E5%86%BB%E7%BB%93-%E5%AE%8C%E5%85%A8%E6%BF%80%E5%8F%91%E2%80%9D"><span class="toc-text">特征温度 Θ\ThetaΘ 与“冻结&#x2F;完全激发”</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8B%A5%E5%B9%B2%E5%85%B8%E5%9E%8B%E8%BF%90%E5%8A%A8%E7%9A%84%E7%89%B9%E5%BE%81%E6%B8%A9%E5%BA%A6%EF%BC%88%E6%95%B0%E9%87%8F%E7%BA%A7%E6%AF%94%E8%BE%83%EF%BC%89"><span class="toc-text">若干典型运动的特征温度（数量级比较）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%80%9C%E6%B0%A2%E5%8E%9F%E5%AD%90%E9%85%8D%E5%88%86%E5%87%BD%E6%95%B0%E5%8F%91%E6%95%A3%E2%80%9D%E6%8F%90%E7%A4%BA"><span class="toc-text">“氢原子配分函数发散”提示</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E8%83%BD%E7%BA%A7%E7%B3%BB%E7%BB%9F"><span class="toc-text">两能级系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8E%E6%B8%A9%E5%92%8C%E9%AB%98%E6%B8%A9%E6%9E%81%E9%99%90"><span class="toc-text">低温和高温极限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E5%8E%9F%E5%AD%90%E5%92%8C%E5%8F%8C%E5%8E%9F%E5%AD%90%E6%B0%94%E4%BD%93%E4%BD%93%E7%B3%BB%EF%BC%88aigc%EF%BC%89"><span class="toc-text">单原子和双原子气体体系（aigc）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%8E%9F%E5%AD%90%E6%B0%94%E4%BD%93%E7%83%AD%E5%AE%B9%E4%B8%8E%E8%83%BD%E9%87%8F%E5%9D%87%E5%88%86%E5%8E%9F%E7%90%86"><span class="toc-text">单原子气体热容与能量均分原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E5%8E%9F%E5%AD%90%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B"><span class="toc-text">单原子理想气体状态方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%8E%9F%E5%AD%90%E6%B0%94%E4%BD%93%E7%83%AD%E5%AE%B9%E9%97%AE%E9%A2%98"><span class="toc-text">双原子气体热容问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%8E%9F%E5%AD%90%E5%88%86%E5%AD%90%E7%9A%84%E5%8D%95%E7%B2%92%E5%AD%90%E9%97%AE%E9%A2%98"><span class="toc-text">双原子分子的单粒子问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%8E%9F%E5%AD%90%E5%88%86%E5%AD%90%E7%9A%84%E8%BD%AC%E5%8A%A8%E5%92%8C%E6%8C%AF%E5%8A%A8"><span class="toc-text">双原子分子的转动和振动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%A2%E6%B0%94%E7%9A%84%E7%83%AD%E5%AE%B9"><span class="toc-text">氢气的热容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#H2-%E7%9A%84%E8%BD%AC%E5%8A%A8%E8%83%BD%E8%B0%B1"><span class="toc-text">H2 的转动能谱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B0%A2%E6%B0%94%E7%9A%84%E7%83%AD%E5%AE%B9%E5%AE%9E%E9%AA%8C"><span class="toc-text">氢气的热容实验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8E%E6%B8%A9%E6%AD%A3%E5%B8%B8%E6%B0%A2%E7%9A%84%E7%83%AD%E5%AE%B9"><span class="toc-text">低温正常氢的热容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E5%8E%9F%E5%AD%90%E5%88%86%E5%AD%90%E6%B0%94%E4%BD%93%E7%83%AD%E5%AE%B9"><span class="toc-text">双原子分子气体热容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%86%E7%BB%8F%E5%85%B8%E8%BF%91%E4%BC%BC"><span class="toc-text">准经典近似</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%B2%92%E5%AD%90%E9%87%8F%E5%AD%90%E5%8A%9B%E5%AD%A6%E6%8F%8F%E8%BF%B0"><span class="toc-text">单粒子量子力学描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E7%BB%8F%E5%85%B8%E8%BF%91%E4%BC%BC%E4%B8%8E%E9%85%8D%E5%88%86%E5%87%BD%E6%95%B0"><span class="toc-text">准经典近似与配分函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%92%E4%B8%AD%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93%E7%9A%84%E5%87%86%E7%BB%8F%E5%85%B8%E8%BF%91%E4%BC%BC"><span class="toc-text">盒中理想气体的准经典近似</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Maxwell-%E9%80%9F%E5%BA%A6%E5%88%86%E5%B8%83"><span class="toc-text">Maxwell 速度分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E7%B2%92%E5%AD%90%E6%80%81%E5%AF%86%E5%BA%A6"><span class="toc-text">单粒子态密度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E7%BB%B4%E8%B0%90%E6%8C%AF%E5%AD%90%E7%9A%84%E5%87%86%E7%BB%8F%E5%85%B8%E8%BF%91%E4%BC%BC"><span class="toc-text">一维谐振子的准经典近似</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%87%AA%E6%97%8B%E8%87%AA%E7%94%B1%E5%BA%A6"><span class="toc-text">自旋自由度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93%E7%9A%84%E9%85%8D%E5%88%86%E5%87%BD%E6%95%B0"><span class="toc-text">理想气体的配分函数</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -610,6 +1359,27 @@
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABoltzmann%E7%BB%9F%E8%AE%A1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">02-28</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABoltzmann%E7%BB%9F%E8%AE%A1/">几率法：Boltzmann 统计</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -692,27 +1462,6 @@
                 
               </div>
               <a class="post-title" href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%87%BD%E6%95%B0/">热力学函数</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">02-13</span>
-                
-              </div>
-              <a class="post-title" href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/">热力学第二定律</a>
             </div>
           </div>
         
