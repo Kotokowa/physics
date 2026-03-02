@@ -369,7 +369,7 @@
     
       
         <span class="post-detail-header_date">
-          <i class="fas fa-calendar"></i> Published in：2026-02-11 |
+          <i class="fas fa-calendar"></i> Published in：2026-03-01 |
         </span>
       
 
@@ -392,7 +392,744 @@
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">
-        
+        <h1>几率法：Bose统计和Fermi统计</h1>
+<h2 id="巨配分函数">巨配分函数</h2>
+<p>单粒子态：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mi mathvariant="script">H</mi></mrow><mo>=</mo><mover accent="true"><mrow><mi>h</mi></mrow><mo>^</mo></mover><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mi>s</mi></msub><mo>⟩</mo><mo>=</mo><msub><mo>∑</mo><mi>i</mi></msub><msub><mi>ϵ</mi><mi>i</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mi>i</mi></msub><mo>⟩</mo><mo>=</mo><msub><mi>ϵ</mi><mi>s</mi></msub><mi mathvariant="normal">∣</mi><msub><mi>ψ</mi><mi>s</mi></msub><mo>⟩</mo><mo>=</mo><msub><mi>ϵ</mi><mi>l</mi></msub><mi mathvariant="normal">∣</mi><msubsup><mi>ψ</mi><mi>l</mi><mi>α</mi></msubsup><mo>⟩</mo><mo separator="true">,</mo><mi>α</mi><mo>=</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mo separator="true">,</mo><mo>⋯</mo><mo separator="true">,</mo><msub><mi>ω</mi><mi>l</mi></msub></mrow><annotation encoding="application/x-tex">\mathcal{H} = \hat{h}|\psi_s\rangle = \sum_i \epsilon_i |\psi_i\rangle = \epsilon_s |\psi_s\rangle = \epsilon_l |\psi_l^\alpha\rangle, \alpha = 1, 2, \cdots, \omega_l</annotation></semantics></math></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ξ</mi><mo>=</mo><msub><mo>∏</mo><mi>s</mi></msub><mo>[</mo><mn>1</mn><mo>±</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mo>(</mo><msub><mi>ϵ</mi><mi>s</mi></msub><mo>−</mo><mi>μ</mi><mo>)</mo></mrow></msup><msup><mo>]</mo><mo>±</mo></msup></mrow><annotation encoding="application/x-tex">\Xi = \prod_s [1 \pm e^{-\beta(\epsilon_s - \mu)}]^\pm
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ξ</mi><mo>=</mo><mo>±</mo><msub><mo>∑</mo><mi>s</mi></msub><mi>ln</mi><mo>[</mo><mn>1</mn><mo>±</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mo>(</mo><msub><mi>ϵ</mi><mi>s</mi></msub><mo>−</mo><mi>μ</mi><mo>)</mo></mrow></msup><mo>]</mo><mo>=</mo><mo>±</mo><msub><mo>∑</mo><mi>l</mi></msub><msub><mi>ω</mi><mi>l</mi></msub><mi>ln</mi><mo>[</mo><mn>1</mn><mo>±</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mo>(</mo><msub><mi>ϵ</mi><mi>l</mi></msub><mo>−</mo><mi>μ</mi><mo>)</mo></mrow></msup><mo>]</mo></mrow><annotation encoding="application/x-tex">\ln \Xi = \pm \sum_s \ln[1 \pm e^{-\beta(\epsilon_s - \mu)}] = \pm \sum_l \omega_l \ln[1 \pm e^{-\beta(\epsilon_l - \mu)}]
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi mathvariant="normal">Ξ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mo>(</mo><mi>β</mi><msub><mi>ϵ</mi><mi>s</mi></msub><mo>)</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mo>(</mo><msub><mi>ϵ</mi><mi>s</mi></msub><mo>−</mo><mi>μ</mi><mo>)</mo></mrow></msup><mo>±</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_s = - \frac{\partial \ln \Xi}{\partial (\beta \epsilon_s)} = \frac{1}{e^{\beta(\epsilon_s - \mu)} \pm 1}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>l</mi></msub><mo>=</mo><msub><mi>ω</mi><mi>l</mi></msub><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mo>(</mo><msub><mi>ϵ</mi><mi>s</mi></msub><mo>−</mo><mi>μ</mi><mo>)</mo></mrow></msup><mo>±</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_l = \omega_l \frac{1}{e^{\beta(\epsilon_s - \mu)} \pm 1}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mo>−</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi mathvariant="normal">Ξ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>β</mi></mrow></mfrac><mo>=</mo><msub><mo>∑</mo><mi>s</mi></msub><msub><mi>a</mi><mi>s</mi></msub><msub><mi>ϵ</mi><mi>s</mi></msub><mo separator="true">,</mo><mspace width="1em"></mspace><mi>N</mi><mo>=</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi mathvariant="normal">Ξ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mo>(</mo><mi>β</mi><mi>μ</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">U = - \frac{\partial \ln \Xi}{\partial \beta} = \sum_s a_s \epsilon_s, \quad N = \frac{\partial \ln \Xi}{\partial (\beta \mu)}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>β</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi mathvariant="normal">Ξ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">p = \frac{1}{\beta} \frac{\partial \ln \Xi}{\partial V}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><mo>−</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi>r</mi><mo>{</mo><mover accent="true"><mrow><mi>ρ</mi></mrow><mo>^</mo></mover><mi>ln</mi><mover accent="true"><mrow><mi>ρ</mi></mrow><mo>^</mo></mover><mo>}</mo><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi mathvariant="normal">Ξ</mi><mo>+</mo><mfrac><mrow><mi>U</mi></mrow><mrow><mi>T</mi></mrow></mfrac><mo>−</mo><mfrac><mrow><mi>μ</mi><mi>N</mi></mrow><mrow><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">S = -k_B T r \{\hat{\rho} \ln \hat{\rho}\} = k_B \ln \Xi + \frac{U}{T} - \frac{\mu N}{T}
+</annotation></semantics></math></span></span></span></p>
+<h3 id="弱简并理想气体">弱简并理想气体</h3>
+<p>强简并与弱简并气体的比较：</p>
+<p>单粒子基态能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ϵ</mi><mi>g</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon_g = 0</annotation></semantics></math></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><msub><mi>ϵ</mi><mi>s</mi></msub></mrow></msup><mi mathvariant="normal">/</mi><mi>λ</mi><mo>±</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_s = \frac{1}{e^{\beta \epsilon_s} / \lambda \pm 1}
+</annotation></semantics></math></span></span></span></p>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mi>β</mi><mi>μ</mi></mrow></msup><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda = e^{-\alpha} = e^{\beta \mu} \ll 1</annotation></semantics></math></span></span>：弱简并，全同性不重要，Boltzmann 分布：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mo>≈</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mi>s</mi></msub><mo>−</mo><mi>α</mi></mrow></msup></mrow><annotation encoding="application/x-tex">a_s \approx e^{-\beta \epsilon_s - \alpha}
+</annotation></semantics></math></span></span></span></p>
+<p>若 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mi>β</mi><mi>μ</mi></mrow></msup><mo>≥</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda = e^{-\alpha} = e^{\beta \mu} \geq 1</annotation></semantics></math></span></span>：弱简并，全同性重要</p>
+<p>低能态 Fermion 分布：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><msub><mi>ϵ</mi><mi>s</mi></msub></mrow></msup><mi mathvariant="normal">/</mi><mi>λ</mi><mo>+</mo><mn>1</mn></mrow></mfrac><mo>≈</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">a_s = \frac{1}{e^{\epsilon_s} / \lambda + 1} \approx 1</annotation></semantics></math></span></span></p>
+<p>低能态 Boson 分布：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><msub><mi>ϵ</mi><mi>s</mi></msub></mrow></msup><mi mathvariant="normal">/</mi><mi>λ</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_s = \frac{1}{e^{\epsilon_s} / \lambda - 1}</annotation></semantics></math></span></span> 有限或无限，取决于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ϵ</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\epsilon_s</annotation></semantics></math></span></span></p>
+<h3 id="强弱简并判据">强弱简并判据</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mi>β</mi><mi>μ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\lambda = e^{-\alpha} = e^{\beta \mu}
+</annotation></semantics></math></span></span></span></p>
+<p>对于 Fermion：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>≥</mo><mn>1</mn><mo>⇒</mo><mi>β</mi><mi>μ</mi><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\lambda \geq 1 \Rightarrow \beta \mu \geq 0</annotation></semantics></math></span></span></p>
+<p>强简并条件：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mi mathvariant="normal">/</mi><mo>(</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>)</mo><mo>≫</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\mu / (k_B T) \gg 1</annotation></semantics></math></span></span></p>
+<p>对于 Boson：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ϵ</mi><mi>s</mi></msub><mo>−</mo><mi>μ</mi><mo>≥</mo><mn>0</mn><mo>⇒</mo><mi>μ</mi><mo>≤</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon_s - \mu \geq 0 \Rightarrow \mu \leq 0</annotation></semantics></math></span></span></p>
+<p>强简并条件：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>≃</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mu \simeq 0</annotation></semantics></math></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ξ</mi><mo>=</mo><mo>±</mo><msub><mo>∑</mo><mi>s</mi></msub><mi>ln</mi><mo>[</mo><mn>1</mn><mo>±</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mo>(</mo><msub><mi>ϵ</mi><mi>s</mi></msub><mo>−</mo><mi>μ</mi><mo>)</mo></mrow></msup><mo>]</mo><mo>=</mo><mo>±</mo><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>ln</mi><mo>[</mo><mn>1</mn><mo>±</mo><mi>λ</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup><mo>]</mo><mi>d</mi><mi>ϵ</mi><mo>±</mo><msub><mi>ω</mi><mi>g</mi></msub><mi>ln</mi><mo>[</mo><mn>1</mn><mo>±</mo><mi>λ</mi><mo>]</mo></mrow><annotation encoding="application/x-tex">\ln \Xi = \pm \sum_s \ln[1 \pm e^{-\beta(\epsilon_s - \mu)}] = \pm \int_0^\infty g(\epsilon) \ln[1 \pm \lambda e^{-\beta \epsilon}] d\epsilon \pm \omega_g \ln [1 \pm \lambda]
+</annotation></semantics></math></span></span></span></p>
+<p>（式中第一项是激发态贡献，第二项基态贡献，多数情况可以忽略不计。强简并的Bosonic气体时需要考虑。）</p>
+<ul>
+<li>这里的简并指的是量子全同性是否重要，和量子力学中的简并（不同的态本征能量相同）没有关系</li>
+</ul>
+<h3 id="弱简并理想气体-2">弱简并理想气体</h3>
+<h4 id="定义：">定义：</h4>
+<p><strong>单粒子态密度</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">g(\epsilon)</annotation></semantics></math></span></span>：</p>
+<p>描述能量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span></span> 附近的量子态数目，表达式为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>V</mi><msub><mi mathvariant="normal">Ω</mi><mi>s</mi></msub></mrow><mrow><msup><mi>h</mi><mn>3</mn></msup></mrow></mfrac><mo>(</mo><mn>2</mn><mi>m</mi><msup><mo>)</mo><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><msqrt><mrow><mi>ϵ</mi></mrow></msqrt></mrow><annotation encoding="application/x-tex">g(\epsilon) = \frac{2\pi V \Omega_s}{h^3} (2m)^{3/2} \sqrt{\epsilon}
+</annotation></semantics></math></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">\Omega_s</annotation></semantics></math></span></span> 为自旋简并度，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>V</mi></mrow><annotation encoding="application/x-tex">V</annotation></semantics></math></span></span> 为体积，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span></span> 为粒子质量。</p>
+<p><strong>关键参数定义</strong>：</p>
+<p>逸度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>β</mi><mi>μ</mi></mrow></msup></mrow><annotation encoding="application/x-tex">\lambda = e^{\beta\mu}</annotation></semantics></math></span></span>（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span> 为化学势，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><annotation encoding="application/x-tex">\beta = 1/k_B T</annotation></semantics></math></span></span>）。<br>
+热波长 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>λ</mi><mi>T</mi></msub><mo>=</mo><mfrac><mrow><mi>h</mi></mrow><mrow><msqrt><mrow><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">\lambda_T = \frac{h}{\sqrt{2\pi m k_B T}}</annotation></semantics></math></span></span>。<br>
+单粒子配分函数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo><mo>=</mo><mi>V</mi><msub><mi mathvariant="normal">Ω</mi><mi>s</mi></msub><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><msup><mi>h</mi><mn>2</mn></msup></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><mo>=</mo><mfrac><mrow><mi>V</mi><msub><mi mathvariant="normal">Ω</mi><mi>s</mi></msub></mrow><mrow><msubsup><mi>λ</mi><mi>T</mi><mn>3</mn></msubsup></mrow></mfrac></mrow><annotation encoding="application/x-tex">z(T,V) = V \Omega_s \left( \frac{2\pi m k_B T}{h^2} \right)^{3/2} = \frac{V\Omega_s}{\lambda_T^3}</annotation></semantics></math></span></span>。</p>
+<p><strong>统计函数</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>F</mi><mrow><mi>ν</mi></mrow><mrow><mo>(</mo><mo>∓</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">F_{\nu}^{(\mp)}(\lambda)</annotation></semantics></math></span></span>：</p>
+<p>这是推导中的核心函数，定义为级数形式：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msubsup><mi>F</mi><mrow><mi>ν</mi></mrow><mrow><mo>(</mo><mo>∓</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mo>(</mo><mo>∓</mo><msup><mo>)</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mfrac><mrow><msup><mi>λ</mi><mi>n</mi></msup></mrow><mrow><msup><mi>n</mi><mi>ν</mi></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">F_{\nu}^{(\mp)}(\lambda) = \sum_{n=1}^{\infty} (\mp)^{n+1} \frac{\lambda^n}{n^\nu}
+</annotation></semantics></math></span></span></span></p>
+<p><strong>符号约定</strong>：括号内符号，上符号对应费米子，下符号对应玻色子。该函数满足微分关系 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mfrac><mrow><mi mathvariant="normal">∂</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>λ</mi></mrow></mfrac><msubsup><mi>F</mi><mrow><mi>ν</mi></mrow><mrow><mo>(</mo><mo>∓</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo><mo>=</mo><msubsup><mi>F</mi><mrow><mi>ν</mi><mo>−</mo><mn>1</mn></mrow><mrow><mo>(</mo><mo>∓</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\lambda \frac{\partial}{\partial \lambda} F_{\nu}^{(\mp)}(\lambda) = F_{\nu-1}^{(\mp)}(\lambda)</annotation></semantics></math></span></span>。</p>
+<h4 id="关键公式推导与化学势反演">关键公式推导与化学势反演</h4>
+<p>利用巨正则系综，可以推导出系统的热力学量。在弱简并情况下（<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda \ll 1</annotation></semantics></math></span></span>），可通过级数展开处理</p>
+<p><strong>巨配分函数与粒子数</strong>：<br>
+巨配分函数对数：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ξ</mi><mo>=</mo><mi>z</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo><msubsup><mi>F</mi><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>(</mo><mo>∓</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\ln \Xi = z(T,V) F_{5/2}^{(\mp)}(\lambda)
+</annotation></semantics></math></span></span></span></p>
+<p>粒子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><mi>λ</mi><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi mathvariant="normal">Ξ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>λ</mi></mrow></mfrac><mo>=</mo><mi>z</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo><msubsup><mi>F</mi><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>(</mo><mo>∓</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">N = \lambda \frac{\partial \ln \Xi}{\partial \lambda} = z(T,V) F_{3/2}^{(\mp)}(\lambda)
+</annotation></semantics></math></span></span></span></p>
+<p><strong>化学势的级数反演</strong>：<br>
+在处理有静止质量的系统时，通常已知粒子数 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi></mrow><annotation encoding="application/x-tex">N</annotation></semantics></math></span></span> 需反解化学势。引入无量纲量 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">y = \frac{N}{z(T,V)}</annotation></semantics></math></span></span>，对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub></mrow><annotation encoding="application/x-tex">F_{3/2}</annotation></semantics></math></span></span> 进行展开：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mi>λ</mi><mo>∓</mo><mfrac><mrow><msup><mi>λ</mi><mn>2</mn></msup></mrow><mrow><msup><mn>2</mn><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><mo>+</mo><mfrac><mrow><msup><mi>λ</mi><mn>3</mn></msup></mrow><mrow><msup><mn>3</mn><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><mo>∓</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">y = \lambda \mp \frac{\lambda^2}{2^{3/2}} + \frac{\lambda^3}{3^{3/2}} \mp \cdots
+</annotation></semantics></math></span></span></span></p>
+<p>利用待定系数法或拉格朗日反演定理，可反解出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span> 关于 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi></mrow><annotation encoding="application/x-tex">y</annotation></semantics></math></span></span> 的级数表达式：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mi>y</mi><mo>±</mo><mfrac><mrow><msup><mi>y</mi><mn>2</mn></msup></mrow><mrow><msup><mn>2</mn><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><mo>+</mo><mrow><mo fence="true">(</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>4</mn></mrow></mfrac><mo>−</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mn>3</mn><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><mo fence="true">)</mo></mrow><msup><mi>y</mi><mn>3</mn></msup><mo>+</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\lambda = y \pm \frac{y^2}{2^{3/2}} + \left( \frac{1}{4} - \frac{1}{3^{3/2}} \right) y^3 + \cdots
+</annotation></semantics></math></span></span></span></p>
+<p>（注：正负号分别对应费米子和玻色子的量子修正）。</p>
+<h2 id="内能和热容">内能和热容</h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mo>−</mo><mo>(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi mathvariant="normal">Ξ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>β</mi></mrow></mfrac><msub><mo>)</mo><mrow><mi>λ</mi><mi>V</mi></mrow></msub><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><msup><mi>T</mi><mn>2</mn></msup><mo>(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi mathvariant="normal">Ξ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><msub><mo>)</mo><mrow><mi>λ</mi><mi>V</mi></mrow></msub><mo>=</mo><mi>λ</mi><mi>V</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><msup><mi>T</mi><mn>2</mn></msup><mo>(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>z</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><msub><mo>)</mo><mi>V</mi></msub><msubsup><mi>F</mi><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>(</mo><mo>±</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U = - (\frac{\partial \ln \Xi}{\partial \beta})_{\lambda V} = k_B T^2 (\frac{\partial \ln \Xi}{\partial T})_{\lambda V} = \lambda V = k_B T^2 (\frac{\partial z}{\partial T})_V F^{(\pm)}_{5/2} (\lambda)
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mfrac><mrow><mn>3</mn><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mrow><mi>z</mi></mrow><msubsup><mi>F</mi><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>(</mo><mo>±</mo><mo>)</mo></mrow></msubsup><mrow><mo fence="true">(</mo><mi>λ</mi><mo fence="true">)</mo></mrow><mfrac><mrow><msubsup><mi>F</mi><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>(</mo><mo>±</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><mrow><msubsup><mi>F</mi><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>(</mo><mo>±</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mfrac><mrow><msubsup><mi>F</mi><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>(</mo><mo>±</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><mrow><msubsup><mi>F</mi><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>(</mo><mo>±</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">U = \frac{3k_B T}{2} \mathcal{z} F^{(\pm)}_{3/2}\left(\lambda\right) \frac{F^{(\pm)}_{5/2}(\lambda)}{F^{(\pm)}_{3/2}(\lambda)} = \frac{3Nk_B T}{2} \frac{F^{(\pm)}_{5/2}(\lambda)}{F^{(\pm)}_{3/2}(\lambda)}
+</annotation></semantics></math></span></span></span></p>
+<p>记</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>V</mi><msub><mi mathvariant="normal">Ω</mi><mi>s</mi></msub></mrow></mfrac><mo>(</mo><mfrac><mrow><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><msup><mi>h</mi><mn>2</mn></msup></mrow></mfrac><msup><mo>)</mo><mrow><mo>−</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac></mrow></msup></mrow><annotation encoding="application/x-tex">y = \frac{N}{V \Omega_s} (\frac{2\pi m k_B T}{h^2})^{-\frac{3}{2}}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mfrac><mrow><mn>3</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mn>2</mn><mi>y</mi></mrow></mfrac><mo>(</mo><mi>λ</mi><mo>±</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mn>2</mn><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><msup><mi>λ</mi><mn>2</mn></msup><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mn>3</mn><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><msup><mi>λ</mi><mn>3</mn></msup><mo>+</mo><mo>⋯</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">U = \frac{3Nk_B T}{2y} (\lambda \pm \frac{1}{2^{5/2}}\lambda^2 + \frac{1}{3^{5/2}}\lambda^3 + \cdots)
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mfrac><mrow><mn>3</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mrow><mo fence="true">(</mo><mn>1</mn><mo>±</mo><mfrac><mrow><mi>y</mi></mrow><mrow><msup><mn>2</mn><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><mo>+</mo><mo>(</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>8</mn></mrow></mfrac><mo>−</mo><mfrac><mrow><mn>2</mn></mrow><mrow><msup><mn>3</mn><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><mo>)</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mo>⋯</mo><mo fence="true">)</mo></mrow></mrow><annotation encoding="application/x-tex">U = \frac{3 N k_B T}{2} \left( 1 \pm \frac{y}{2^{5/2}} + (\frac{1}{8} - \frac{2}{3^{5/2}})y^2 + \cdots \right)
+</annotation></semantics></math></span></span></span></p>
+<h3 id="热容">热容</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>U</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>N</mi><mi>V</mi></mrow></msub></mrow><annotation encoding="application/x-tex">C_V = \left( \frac{\partial U}{\partial T} \right)_{NV}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><mfrac><mrow><mn>3</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub></mrow><mrow><mn>2</mn></mrow></mfrac><mo>(</mo><mn>1</mn><mo>±</mo><mfrac><mrow><mi>y</mi></mrow><mrow><msup><mn>2</mn><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><mo>+</mo><mo>(</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>8</mn></mrow></mfrac><mo>−</mo><mfrac><mrow><mn>2</mn></mrow><mrow><msup><mn>3</mn><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><mo>)</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mo>⋯</mo><mo>)</mo><mo>+</mo><mfrac><mrow><mn>3</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>(</mo><mo>±</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mn>2</mn><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><mo>(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>y</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><msub><mo>)</mo><mrow><mi>N</mi><mi>V</mi></mrow></msub><mo>+</mo><mo>(</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>8</mn></mrow></mfrac><mo>−</mo><mfrac><mrow><mn>2</mn></mrow><mrow><msup><mn>3</mn><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><mo>)</mo><mo>(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msup><mi>y</mi><mn>2</mn></msup></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><msub><mo>)</mo><mrow><mi>N</mi><mi>V</mi></mrow></msub><mo>+</mo><mo>⋯</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">C_V = \frac{3 N k_B}{2} (1 \pm \frac{y}{2^{5/2}} + (\frac{1}{8} - \frac{2}{3^{5/2}})y^2 + \cdots) + \frac{3 N k_B T}{2} (\pm \frac{1}{2^{5/2}} (\frac{\partial y}{\partial T})_{NV} + (\frac{1}{8} - \frac{2}{3^{5/2}}) (\frac{\partial y^2}{\partial T})_{NV} + \cdots)
+</annotation></semantics></math></span></span></span></p>
+<h3 id="热容的另外一种表达式">热容的另外一种表达式</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mfrac><mrow><mn>3</mn><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi>z</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo></mrow><mrow><mn>2</mn></mrow></mfrac><msubsup><mi>F</mi><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>(</mo><mo>±</mo><mo>)</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo><mspace width="1em"></mspace><mi>N</mi><mo>=</mo><mi>z</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo><msubsup><mi>F</mi><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>±</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">U = \frac{3k_B T z(T,V)}{2} F_{5/2}^{(\pm)}(\lambda) \quad N = z(T,V) F_{3/2}^{\pm}(\lambda)
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>U</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>N</mi><mi>V</mi></mrow></msub><mo>=</mo><mfrac><mrow><mn>3</mn><msub><mi>k</mi><mi>B</mi></msub></mrow><mrow><mn>2</mn></mrow></mfrac><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mo>[</mo><mi>T</mi><mi>z</mi><mo>]</mo></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>N</mi><mi>V</mi></mrow></msub><msubsup><mi>F</mi><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>∓</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo><mo>+</mo><mfrac><mrow><mn>3</mn><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi>z</mi></mrow><mrow><mn>2</mn></mrow></mfrac><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><msubsup><mi>F</mi><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>∓</mo></mrow></msubsup></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>N</mi><mi>V</mi></mrow></msub></mrow><annotation encoding="application/x-tex">C_V = \left(\frac{\partial U}{\partial T}\right)_{NV} = \frac{3k_B}{2}\left(\frac{\partial [Tz]}{\partial T}\right)_{NV} F_{5/2}^{\mp}(\lambda) + \frac{3k_B T z}{2}\left(\frac{\partial F_{5/2}^{\mp}}{\partial T}\right)_{NV}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>X</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>N</mi></msub><mo>=</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>X</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>λ</mi></msub><mo>−</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>X</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>λ</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>T</mi></msub><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>N</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>λ</mi></msub><mi mathvariant="normal">/</mi><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>N</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>λ</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>T</mi></msub></mrow><annotation encoding="application/x-tex">\left(\frac{\partial X}{\partial T}\right)_N = \left(\frac{\partial X}{\partial T}\right)_\lambda - \left(\frac{\partial X}{\partial \lambda}\right)_T \left(\frac{\partial N}{\partial T}\right)_\lambda / \left(\frac{\partial N}{\partial \lambda}\right)_T
+</annotation></semantics></math></span></span></span></p>
+\left(\frac{\partial F_{5/2}^{\mp}}{\partial T}\right)_N 
+= \underbrace{\left(\frac{\partial F_{5/2}^{\mp}}{\partial T}\right)_\lambda}_{=0}
+-\underbrace{\left(\frac{\partial F_{5/2}^{\mp}}{\partial \lambda}\right)_T}_{= \frac{F_{3/2}^{\mp}}{\lambda}} 
+\times \underbrace{\left(\frac{\partial N}{\partial T}\right)_\lambda}_{= \frac{3N}{2T}} 
+/ \underbrace{\left(\frac{\partial N}{\partial \lambda}\right)_T}_{= \frac{z F_{1/2}^{\mp}}{\lambda}}
+
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn><mn>5</mn><msub><mi>k</mi><mi>B</mi></msub><mi>z</mi></mrow><mrow><mn>4</mn></mrow></mfrac><msubsup><mi>F</mi><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>∓</mo></mrow></msubsup><mo>−</mo><mfrac><mrow><mn>9</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub></mrow><mrow><mn>4</mn></mrow></mfrac><mfrac><mrow><msubsup><mi>F</mi><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>∓</mo></mrow></msubsup></mrow><mrow><msubsup><mi>F</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>∓</mo></mrow></msubsup></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>1</mn><mn>5</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub></mrow><mrow><mn>4</mn></mrow></mfrac><mfrac><mrow><msubsup><mi>F</mi><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>∓</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><mrow><msubsup><mi>F</mi><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>∓</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow></mfrac><mo>−</mo><mfrac><mrow><mn>9</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub></mrow><mrow><mn>4</mn></mrow></mfrac><mfrac><mrow><msubsup><mi>F</mi><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>∓</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><mrow><msubsup><mi>F</mi><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow><mrow><mo>∓</mo></mrow></msubsup><mo>(</mo><mi>λ</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">C_V = \frac{15k_B z}{4} F_{5/2}^{\mp} - \frac{9Nk_B}{4} \frac{F_{3/2}^{\mp}}{F_{1/2}^{\mp}} = \frac{15Nk_B}{4} \frac{F_{5/2}^{\mp}(\lambda)}{F_{3/2}^{\mp}(\lambda)} - \frac{9Nk_B}{4} \frac{F_{3/2}^{\mp}(\lambda)}{F_{1/2}^{\mp}(\lambda)}
+</annotation></semantics></math></span></span></span></p>
+<h2 id="压强">压强</h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mi>β</mi></mrow></mfrac><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>ln</mi><mi mathvariant="normal">Ξ</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>V</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">p = \frac{1}{\beta} \frac{\partial \ln \Xi}{\partial V}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ξ</mi><mo>=</mo><mfrac><mrow><mn>2</mn><mi>U</mi></mrow><mrow><mn>3</mn><mi>V</mi></mrow></mfrac><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><annotation encoding="application/x-tex">\ln \Xi = \frac{2U}{3V} = N k_B T
+</annotation></semantics></math></span></span></span></p>
+<p>Fermionic 系统的能量和压强比经典系统大：</p>
+<ul>
+<li>由于 Pauli 不相容原理，Fermion 更倾向于占据高能的单粒子态，导致能量和压强增大。</li>
+<li>等价于有个统计上的排斥作用。</li>
+</ul>
+<p>Bosonic 系统的能量和压强比经典系统小：</p>
+<ul>
+<li>Boson 更加抱团一点，都倾向于呆在低能的单粒子态上。</li>
+<li>等价于有个统计上的吸引作用。</li>
+</ul>
+<h3 id="经典极限">经典极限</h3>
+<p><strong>非定域系：</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>β</mi><mi>μ</mi></mrow></msup><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda = e^{\beta \mu} \ll 1
+</annotation></semantics></math></span></span></span></p>
+<p><strong>定域系：</strong></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>β</mi><mi>μ</mi></mrow></msup><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>α</mi></mrow></msup><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\lambda = e^{\beta \mu} = e^{-\alpha} = \frac{N}{z}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ξ</mi><mo>=</mo><msub><mo>∑</mo><mi>s</mi></msub><mi>ln</mi><mo>[</mo><mn>1</mn><mo>±</mo><mi>λ</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mi>s</mi></msub></mrow></msup><mo>]</mo></mrow><annotation encoding="application/x-tex">\ln \Xi = \sum_s \ln[1 \pm \lambda e^{-\beta \epsilon_s}]
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mo>=</mo><msub><mo>∑</mo><mi>s</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mi>s</mi></msub></mrow></msup><mo>=</mo><mi>λ</mi><msub><mo>∑</mo><mi>s</mi></msub><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mi>s</mi></msub></mrow></msup><mo>=</mo><mi>λ</mi><mi>z</mi></mrow><annotation encoding="application/x-tex">z = \sum_s e^{-\beta \epsilon_s} = \lambda \sum_s e^{-\beta \epsilon_s} = \lambda z
+</annotation></semantics></math></span></span></span></p>
+<h3 id="弱简并条件">弱简并条件</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>F</mi><mrow><mo>±</mo></mrow></msub><mrow><mo fence="true">(</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo>(</mo><mi>λ</mi><mo>)</mo><mo fence="true">)</mo></mrow><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>l</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mo>(</mo><mo>∓</mo><msup><mo>)</mo><mrow><mi>l</mi><mo>−</mo><mn>1</mn></mrow></msup><msup><mi>λ</mi><mi>l</mi></msup></mrow><annotation encoding="application/x-tex">F_{\pm} \left( \frac{3}{2} (\lambda) \right) = \sum_{l=1}^{\infty} (\mp)^{l-1} \lambda^l
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>y</mi><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><msub><mi mathvariant="normal">Ω</mi><mi>s</mi></msub><mi>V</mi></mrow></mfrac><msup><mrow><mo fence="true">(</mo><mfrac><mrow><msup><mi>h</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow><annotation encoding="application/x-tex">y = \frac{N}{\Omega_s V} \left( \frac{h^2}{2 \pi m k_B T} \right)^{3/2}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>≈</mo><mi>y</mi><mspace width="1em"></mspace><mtext><mi mathvariant="normal">a</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">d</mi></mtext><mspace width="1em"></mspace><msub><mi>λ</mi><mi>T</mi></msub><mo>=</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mi>p</mi><mi>T</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>h</mi></mrow><mrow><msqrt><mrow><mn>2</mn><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">\lambda \approx y \quad \text{and} \quad \lambda_T = \frac{h}{pT} = \frac{h}{\sqrt{2 m k_B T}}
+</annotation></semantics></math></span></span></span></p>
+<h2 id="弱简并极限">弱简并极限</h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mrow><mtext><mi mathvariant="normal">n</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mtext></mrow></msub><mo>=</mo><mfrac><mrow><msub><mi mathvariant="normal">Ω</mi><mrow><mtext><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mtext></mrow></msub></mrow><mrow><mi>N</mi><mo>!</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\Omega_{\text{nonlocal}} = \frac{\Omega_{\text{local}}}{N!}
+</annotation></semantics></math></span></span></span></p>
+<h3 id="不同统计的微观态数目">不同统计的微观态数目</h3>
+<ul>
+<li><strong>Boltzmann 统计</strong>:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mrow><mtext><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mtext></mrow></msub><mo>=</mo><mfrac><mrow><mi>N</mi><mo>!</mo></mrow><mrow><msub><mo>∏</mo><mi>l</mi></msub><msub><mi>a</mi><mi>l</mi></msub><mo>!</mo><msub><mi>ω</mi><mrow><msub><mi>a</mi><mi>l</mi></msub></mrow></msub></mrow></mfrac></mrow><annotation encoding="application/x-tex">\Omega_{\text{local}} = \frac{N!}{\prod_l a_l! \omega_{a_l}}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li><strong>Fermi 统计</strong>:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mrow><mtext><mi mathvariant="normal">F</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">m</mi><mi mathvariant="normal">i</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mtext></mrow></msub><mo>=</mo><msub><mo>∏</mo><mi>l</mi></msub><mi>γ</mi><mo>(</mo><msub><mi>a</mi><mi>l</mi></msub><mo separator="true">,</mo><msub><mi>ω</mi><mi>l</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\Omega_{\text{Fermion}} = \prod_l \gamma(a_l, \omega_l)
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li><strong>Bose 统计</strong>:</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Ω</mi><mrow><mtext><mi mathvariant="normal">B</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">s</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi></mtext></mrow></msub><mo>=</mo><msub><mo>∏</mo><mi>l</mi></msub><mi>γ</mi><mo>(</mo><msub><mi>a</mi><mi>l</mi></msub><mo separator="true">,</mo><msub><mi>ω</mi><mi>l</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\Omega_{\text{Boson}} = \prod_l \gamma(a_l, \omega_l)
+</annotation></semantics></math></span></span></span></p>
+<h3 id="Gibbs’-paradox">Gibbs’ paradox</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mrow><mtext><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mtext></mrow></msub><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo separator="true">,</mo><mi>N</mi><mo>)</mo><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi>z</mi><mo>+</mo><mfrac><mrow><mi>U</mi></mrow><mrow><mi>T</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">S_{\text{local}}(T, V, N) = N k_B \ln z + \frac{U}{T}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mrow><mtext><mi mathvariant="normal">n</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mtext></mrow></msub><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo separator="true">,</mo><mi>N</mi><mo>)</mo><mo>=</mo><msub><mi>S</mi><mrow><mtext><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mtext></mrow></msub><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo separator="true">,</mo><mi>N</mi><mo>)</mo><mo>−</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi>N</mi><mo>!</mo></mrow><annotation encoding="application/x-tex">S_{\text{nonlocal}}(T, V, N) = S_{\text{local}}(T, V, N) - k_B \ln N!
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>S</mi><mrow><mtext><mi mathvariant="normal">n</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">n</mi><mi mathvariant="normal">l</mi><mi mathvariant="normal">o</mi><mi mathvariant="normal">c</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">l</mi></mtext></mrow></msub><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mn>2</mn><mi>V</mi><mo separator="true">,</mo><mn>2</mn><mi>N</mi><mo>)</mo><mo>=</mo><mn>2</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi>z</mi><mo>+</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mn>3</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><annotation encoding="application/x-tex">S_{\text{nonlocal}}(T, 2V, 2N) = 2 N k_B \ln z + \frac{3}{2} 3 N k_B T
+</annotation></semantics></math></span></span></span></p>
+<h2 id="6-11-Bose-Einstein-凝聚">6.11 Bose-Einstein 凝聚</h2>
+<ul>
+<li>有宏观多的粒子处在基态上，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>g</mi></msub><mo>∼</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">a_g \sim N</annotation></semantics></math></span></span></li>
+</ul>
+<p><img src="https://via.placeholder.com/150" class="lazyload placeholder" data-srcset="https://via.placeholder.com/150" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Bose-Einstein Condensation"><br>
+<em>图：Bose-Einstein凝聚的示意图</em></p>
+<h3 id="两能级体系的-BEC">两能级体系的 BEC</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>H</mi></mrow><mo>^</mo></mover><mi mathvariant="normal">∣</mi><mn>0</mn><mo>⟩</mo><mo>=</mo><mn>0</mn><mi mathvariant="normal">∣</mi><mn>0</mn><mo>⟩</mo><mo separator="true">,</mo><mspace width="1em"></mspace><mover accent="true"><mrow><mi>H</mi></mrow><mo>^</mo></mover><mi mathvariant="normal">∣</mi><mn>1</mn><mo>⟩</mo><mo>=</mo><mi>ϵ</mi><mi mathvariant="normal">∣</mi><mn>1</mn><mo>⟩</mo></mrow><annotation encoding="application/x-tex">\hat{H}|0\rangle = 0|0\rangle, \quad \hat{H}|1\rangle = \epsilon|1\rangle
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>Boltzmann 分布：
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_0 = \frac{N}{1 + e^{-\beta \epsilon}}</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mfrac><mrow><mi>N</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup></mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_1 = \frac{N e^{-\beta \epsilon}}{1 + e^{-\beta \epsilon}}</annotation></semantics></math></span></span></li>
+<li>量子化极限：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi><mi mathvariant="normal">/</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>≫</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\epsilon / k_B T \gg 1</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>≈</mo><mi>N</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup><mo>≪</mo><msub><mi>a</mi><mn>0</mn></msub><mo>≈</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">a_1 \approx N e^{-\beta \epsilon} \ll a_0 \approx N</annotation></semantics></math></span></span></li>
+<li>经典极限：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≪</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi mathvariant="normal">/</mi><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">1 \ll k_B T / \epsilon</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>≈</mo><msub><mi>a</mi><mn>0</mn></msub><mo>≈</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>∼</mo><mi>O</mi><mo>(</mo><mi>N</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">a_1 \approx a_0 \approx \frac{N}{2} \sim O(N)</annotation></semantics></math></span></span></li>
+</ul>
+</li>
+</ul>
+<h3 id="Bose-分布">Bose 分布</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>μ</mi></mrow></msup><mo>−</mo><mn>1</mn></mrow></mfrac><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mo>(</mo><mi>ϵ</mi><mo>−</mo><mi>μ</mi><mo>)</mo></mrow></msup><mo>−</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_0 = \frac{1}{e^{-\beta \mu} - 1}, \quad a_1 = \frac{1}{e^{\beta (\epsilon - \mu)} - 1}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>量子化极限：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi><mi mathvariant="normal">/</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>≫</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\epsilon / k_B T \gg 1</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>≈</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mo>(</mo><mi>ϵ</mi><mo>−</mo><mi>μ</mi><mo>)</mo></mrow></msup><mo>≪</mo><msub><mi>a</mi><mn>0</mn></msub></mrow><annotation encoding="application/x-tex">a_1 \approx e^{-\beta (\epsilon - \mu)} \ll a_0</annotation></semantics></math></span></span></li>
+<li>经典极限：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mo>≪</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi mathvariant="normal">/</mi><mi>ϵ</mi><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mrow><mn>1</mn><mn>2</mn></mrow></msup><mo>≪</mo><mi>N</mi><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mrow><mn>2</mn><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">1 \ll k_B T / \epsilon \sim 10^{12} \ll N \sim 10^{23}</annotation></semantics></math></span></span></li>
+</ul>
+<h3 id="从热力学角度理解两能级体系的-BEC">从热力学角度理解两能级体系的 BEC</h3>
+<ul>
+<li>
+<p><strong>经典粒子</strong>：</p>
+<ul>
+<li>微观态数目：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mi>C</mi><msubsup><mi>a</mi><mn>1</mn><mi>N</mi></msubsup><mo>=</mo><mfrac><mrow><mi>N</mi><mo>!</mo></mrow><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>!</mo><msub><mi>a</mi><mn>1</mn></msub><mo>!</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">\Omega = C a_1^N = \frac{N!}{a_0! a_1!}</annotation></semantics></math></span></span></li>
+<li>熵：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>=</mo><mi>N</mi><mi>ln</mi><mi>N</mi><mo>−</mo><mo>(</mo><mi>N</mi><mo>−</mo><msub><mi>a</mi><mn>1</mn></msub><mo>)</mo><mi>ln</mi><mo>(</mo><mi>N</mi><mo>−</mo><msub><mi>a</mi><mn>1</mn></msub><mo>)</mo><mo>−</mo><msub><mi>a</mi><mn>1</mn></msub><mi>ln</mi><msub><mi>a</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">S = k_B \ln \Omega = N \ln N - (N - a_1) \ln (N - a_1) - a_1 \ln a_1</annotation></semantics></math></span></span></li>
+<li>内能：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><msub><mi>a</mi><mn>1</mn></msub><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">U = a_1 \epsilon</annotation></semantics></math></span></span></li>
+<li>自由能：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>U</mi><mo>−</mo><mi>T</mi><mi>S</mi><mo>=</mo><msub><mi>a</mi><mn>1</mn></msub><mi>ϵ</mi><mo>−</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>[</mo><mi>N</mi><mi>ln</mi><mi>N</mi><mo>−</mo><mo>(</mo><mi>N</mi><mo>−</mo><msub><mi>a</mi><mn>1</mn></msub><mo>)</mo><mi>ln</mi><mo>(</mo><mi>N</mi><mo>−</mo><msub><mi>a</mi><mn>1</mn></msub><mo>)</mo><mo>−</mo><msub><mi>a</mi><mn>1</mn></msub><mi>ln</mi><msub><mi>a</mi><mn>1</mn></msub><mo>]</mo></mrow><annotation encoding="application/x-tex">F = U - T S = a_1 \epsilon - k_B T [N \ln N - (N - a_1) \ln (N - a_1) - a_1 \ln a_1]</annotation></semantics></math></span></span></li>
+</ul>
+</li>
+<li>
+<p><strong>Boson粒子</strong>：</p>
+<ul>
+<li>微观态数目：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\Omega = 1</annotation></semantics></math></span></span></li>
+<li>熵：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>S</mi><mo>=</mo><msub><mi>k</mi><mi>B</mi></msub><mi>ln</mi><mi mathvariant="normal">Ω</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">S = k_B \ln \Omega = 0</annotation></semantics></math></span></span></li>
+<li>内能：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><msub><mi>a</mi><mn>1</mn></msub><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">U = a_1 \epsilon</annotation></semantics></math></span></span></li>
+<li>自由能：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>=</mo><mi>U</mi><mo>−</mo><mi>T</mi><mi>S</mi><mo>=</mo><msub><mi>a</mi><mn>1</mn></msub><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">F = U - T S = a_1 \epsilon</annotation></semantics></math></span></span></li>
+<li>自由能极小时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">a_1 = 0</annotation></semantics></math></span></span>, <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mn>0</mn></msub><mo>=</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">a_0 = N</annotation></semantics></math></span></span></li>
+</ul>
+</li>
+</ul>
+<h3 id="弱简并的三维-Bose-气体">弱简并的三维 Bose 气体</h3>
+<ul>
+<li>分布：</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mo>(</mo><msub><mi>ϵ</mi><mi>s</mi></msub><mo>−</mo><mi>μ</mi><mo>)</mo></mrow></msup><mo>−</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_s = \frac{1}{e^{\beta (\epsilon_s - \mu)} - 1}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>弱简并时：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>β</mi><mi>μ</mi></mrow></msup><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><mi>z</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>N</mi></mrow><mrow><msup><mi>λ</mi><mn>3</mn></msup></mrow></mfrac><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda = e^{\beta \mu} = \frac{N}{z} = \frac{N}{\lambda^3} \ll 1</annotation></semantics></math></span></span></li>
+<li>激发态粒子数：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>g</mi></msub><mo>≈</mo><mi>λ</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><msub><mi>ϵ</mi><mi>g</mi></msub></mrow></msup><mo>=</mo><mi>λ</mi><mo>∼</mo><mi>O</mi><mo>(</mo><msub><mi>N</mi><mn>0</mn></msub><mo>)</mo><mo>≪</mo><mi>N</mi></mrow><annotation encoding="application/x-tex">N_g \approx \lambda e^{-\beta \epsilon_g} = \lambda \sim O(N_0) \ll N</annotation></semantics></math></span></span></li>
+</ul>
+<h3 id="三维-Bose-气体的-BEC">三维 Bose 气体的 BEC</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>g</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>μ</mi></mrow></msup><mo>−</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mfrac><mrow><mi>λ</mi></mrow><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">N_g = \frac{1}{e^{-\beta \mu} - 1} = \frac{\lambda}{1 - \lambda}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda = 1</annotation></semantics></math></span></span>时，发生BEC。粒子在基态上。</li>
+</ul>
+<h3 id="相变温度">相变温度</h3>
+<ul>
+<li><strong>高温</strong>时：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda \ll 1</annotation></semantics></math></span></span>，粒子主要在激发态上</li>
+<li><strong>温度降低</strong>时：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span></span>增加，直到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi></mtext></mrow></msub><mo>=</mo><msub><mi>N</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">N_{\text{ex}} = N_c</annotation></semantics></math></span></span></li>
+</ul>
+<p>相变温度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">T_c</annotation></semantics></math></span></span>：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mi>c</mi></msub><mo>=</mo><mfrac><mrow><mi>h</mi></mrow><mrow><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub></mrow></mfrac><msup><mrow><mo fence="true">[</mo><msub><mi>F</mi><mrow><mo>+</mo><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>(</mo><mn>1</mn><mo>)</mo><mo fence="true">]</mo></mrow><mrow><mo>−</mo><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><msup><mi>n</mi><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">T_c = \frac{h}{2 \pi m k_B} \left[ F_{+3/2}(1) \right]^{-2/3} n^{2/3}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>≤</mo><msub><mi>T</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">T \leq T_c</annotation></semantics></math></span></span>时，激发态上的粒子数：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mrow><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi></mtext></mrow></msub><mo>=</mo><mfrac><mrow><mi>V</mi></mrow><mrow><msup><mrow><mo fence="true">(</mo><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo fence="true">)</mo></mrow><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><msub><mi>F</mi><mrow><mo>+</mo><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">N_{\text{ex}} = \frac{V}{\left(2 \pi m k_B T\right)^{3/2}} F_{+3/2}(1)</annotation></semantics></math></span></span></li>
+</ul>
+<h3 id="热容-2">热容</h3>
+<ul>
+<li>**<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>≥</mo><msub><mi>T</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">T \geq T_c</annotation></semantics></math></span></span>**时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><msub><mi>U</mi><mrow><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi></mtext></mrow></msub><mo>+</mo><msub><mi>N</mi><mi>g</mi></msub><msub><mi>ϵ</mi><mi>g</mi></msub></mrow><annotation encoding="application/x-tex">U = U_{\text{ex}} + N_g \epsilon_g</annotation></semantics></math></span></span></li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><mn>1</mn><mn>5</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mo>⋅</mo><mrow><mo fence="true">[</mo><msub><mi>F</mi><mrow><mo>+</mo><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>(</mo><mi>λ</mi><mo>)</mo><mo>−</mo><msub><mi>F</mi><mrow><mo>+</mo><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>(</mo><mi>λ</mi><mo>)</mo><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">C_V = 15 N k_B \cdot \left[ F_{+5/2}(\lambda) - F_{+3/2}(\lambda) \right]
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>**<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>≤</mo><msub><mi>T</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">T \leq T_c</annotation></semantics></math></span></span>**时：</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><msub><mi>U</mi><mrow><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi></mtext></mrow></msub><mo>+</mo><msub><mi>N</mi><mi>g</mi></msub><msub><mi>ϵ</mi><mi>g</mi></msub><mo>=</mo><msub><mi>U</mi><mrow><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi></mtext></mrow></msub><mo>=</mo><mfrac><mrow><mn>3</mn><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mn>2</mn></mrow></mfrac><mo>⋅</mo><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mi>T</mi></mrow><mrow><msub><mi>T</mi><mi>c</mi></msub></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><mo>⋅</mo><msub><mi>F</mi><mrow><mo>+</mo><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">U = U_{\text{ex}} + N_g \epsilon_g = U_{\text{ex}} = \frac{3 k_B T}{2} \cdot \left(\frac{T}{T_c}\right)^{3/2} \cdot F_{+5/2}(1)
+</annotation></semantics></math></span></span></span></p>
+<h2 id="BEC-相变类型">BEC 相变类型</h2>
+<p>BEC的相变通常认为是<strong>一阶相变</strong>，其中热容<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>V</mi></msub></mrow><annotation encoding="application/x-tex">C_V</annotation></semantics></math></span></span>连续但其导数不连续。Bose-Einstein凝聚体的<strong>正常相</strong>和<strong>凝聚相</strong>混合在一起，不像一般系统那样有明显的界面区分。</p>
+<h3 id="等温情况下体积变动导致的-BEC">等温情况下体积变动导致的 BEC</h3>
+<ul>
+<li>在保持温度和粒子数不变时，减小体积同样会导致粒子密度增大，从而发生BEC。</li>
+<li>当体积大于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>V</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">V_c</annotation></semantics></math></span></span>时，粒子主要占据激发态。</li>
+</ul>
+<h3 id="BEC-状态方程">BEC 状态方程</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ξ</mi><mo>=</mo><mo>−</mo><mi>ln</mi><mo>(</mo><mn>1</mn><mo>−</mo><mi>λ</mi><mo>)</mo><mo>+</mo><mfrac><mrow><mi>V</mi></mrow><mrow><mo>(</mo><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><msup><mo>)</mo><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup></mrow></mfrac><msub><mi>F</mi><mrow><mo>+</mo><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msub><mo>(</mo><mi>λ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\ln \Xi = - \ln(1 - \lambda) + \frac{V}{(2 \pi m k_B T)^{3/2}} F_{+5/2}(\lambda)
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>在正常相中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>μ</mi></mrow></msup><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda = e^{-\beta \mu} &lt; 1</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><msub><mi>N</mi><mrow><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi></mtext></mrow></msub></mrow><annotation encoding="application/x-tex">N = N_{\text{ex}}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>g</mi></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">N_g = 0</annotation></semantics></math></span></span></li>
+</ul>
+<h2 id="BEC-实验实现">BEC 实验实现</h2>
+<ul>
+<li><strong>1995年</strong>，Cornell 和 Wieman利用激光致冷和磁陷阱蒸发的方法，成功得到170nK的低温，接近实现2000个87Rb的BEC。</li>
+<li><strong>Ketterle</strong> 随后也成功实现了105个23Na的BEC。</li>
+</ul>
+<h3 id="吸收成像">吸收成像</h3>
+<ul>
+<li><strong>Absorption Imaging</strong>示意图：</li>
+</ul>
+<p><img src="https://via.placeholder.com/150" class="lazyload placeholder" data-srcset="https://via.placeholder.com/150" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Absorption Imaging"></p>
+<h3 id="量子相干测量">量子相干测量</h3>
+<ul>
+<li><strong>“Observation of Interference Between Two Bose Condensates”</strong>，Ketterle group, <em>Science 275</em>, 637 (1995)</li>
+</ul>
+<p>通过双缝干涉测量，BEC气体在两个不同位置激发粒子，粒子在重力作用下向下运动，表现出类似双缝干涉的效果。</p>
+<p><img src="https://via.placeholder.com/150" class="lazyload placeholder" data-srcset="https://via.placeholder.com/150" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="量子相干测量"></p>
+<h3 id="非对角长程序">非对角长程序</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ψ</mi><mi>k</mi></msub><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msqrt><mrow><mi>V</mi></mrow></msqrt></mrow></mfrac><msup><mi>e</mi><mrow><mi>i</mi><mrow><mi mathvariant="bold">k</mi></mrow><mo>⋅</mo><mrow><mi mathvariant="bold">r</mi></mrow></mrow></msup></mrow><annotation encoding="application/x-tex">\psi_k (\mathbf{r}) = \frac{1}{\sqrt{V}} e^{i \mathbf{k} \cdot \mathbf{r}}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ρ</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>=</mo><mi>ρ</mi><mo>(</mo><mi mathvariant="normal">∣</mi><mrow><mi mathvariant="bold">r</mi></mrow><mo>−</mo><mrow><msup><mi mathvariant="bold">r</mi><mrow><mi mathvariant="bold">′</mi></mrow></msup></mrow><mi mathvariant="normal">∣</mi><mo>)</mo><mo>=</mo><msub><mo>∫</mo><mi>k</mi></msub><msub><mi>n</mi><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>¯</mo></mover></mrow></msub><msubsup><mi>ψ</mi><mrow><mi>k</mi></mrow><mo>∗</mo></msubsup><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo><msub><mi>ψ</mi><mi>k</mi></msub><mo>(</mo><mrow><msup><mi mathvariant="bold">r</mi><mrow><mi mathvariant="bold">′</mi></mrow></msup></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\rho(s) = \rho(|\mathbf{r} - \mathbf{r'}|) = \int_k n_{\bar{k}} \psi^*_{k}(\mathbf{r}) \psi_k (\mathbf{r'})
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≡</mo><mfrac><mrow><msub><mi>N</mi><mn>0</mn></msub></mrow><mrow><mi>V</mi></mrow></mfrac><mo>+</mo><mo>∫</mo><mfrac><mrow><msup><mi>d</mi><mn>3</mn></msup><mi>k</mi></mrow><mrow><mo>(</mo><mn>2</mn><mi>π</mi><msup><mo>)</mo><mn>3</mn></msup></mrow></mfrac><msup><mi>e</mi><mrow><mi>i</mi><mrow><mi mathvariant="bold">k</mi></mrow><mo>⋅</mo><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>−</mo><mrow><msup><mi mathvariant="bold">r</mi><mrow><mi mathvariant="bold">′</mi></mrow></msup></mrow><mo>)</mo></mrow></msup><msup><mi>e</mi><mrow><mrow><mo fence="true">[</mo><mfrac><mrow><msup><mi mathvariant="normal">ℏ</mi><mn>2</mn></msup><msup><mi>k</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>−</mo><mi>μ</mi><mo fence="true">]</mo></mrow><mi mathvariant="normal">/</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><annotation encoding="application/x-tex">\equiv \frac{N_0}{V} + \int \frac{d^3 k}{(2\pi)^3} e^{i \mathbf{k} \cdot (\mathbf{r} - \mathbf{r'})} e^{\left[ \frac{\hbar^2 k^2}{2m} - \mu \right] / k_B T - 1}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>≈</mo><mfrac><mrow><msub><mi>N</mi><mn>0</mn></msub></mrow><mrow><mi>V</mi></mrow></mfrac><mo>+</mo><mfrac><mrow><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mn>2</mn><msup><mi mathvariant="normal">ℏ</mi><mn>2</mn></msup></mrow></mfrac><msup><mi>e</mi><mrow><mo>−</mo><mi>s</mi><mi mathvariant="normal">/</mi><msub><mi>r</mi><mn>0</mn></msub></mrow></msup><mspace width="1em"></mspace><mtext><mi mathvariant="normal">w</mi><mi mathvariant="normal">h</mi><mi mathvariant="normal">e</mi><mi mathvariant="normal">r</mi><mi mathvariant="normal">e</mi></mtext><mspace width="1em"></mspace><msub><mi>r</mi><mn>0</mn></msub><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ℏ</mi></mrow><mrow><msqrt><mrow><mn>2</mn><mi>m</mi><mi mathvariant="normal">∣</mi><mi>μ</mi><mi mathvariant="normal">∣</mi></mrow></msqrt></mrow></mfrac></mrow><annotation encoding="application/x-tex">\approx \frac{N_0}{V} + \frac{m k_B T}{2 \hbar^2} e^{-s / r_0} \quad \text{where} \quad r_0 = \frac{\hbar}{\sqrt{2m|\mu|}}
+</annotation></semantics></math></span></span></span></p>
+<h3 id="对角长程序">对角长程序</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi><mi>n</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo><mo>=</mo><mi>n</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo><mo>−</mo><mover accent="true"><mrow><mi>n</mi></mrow><mo>¯</mo></mover><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\delta n(\mathbf{r}) = n(\mathbf{r}) - \bar{n}(\mathbf{r})
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>C</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo separator="true">,</mo><mrow><msup><mi mathvariant="bold">r</mi><mrow><mi mathvariant="bold">′</mi></mrow></msup></mrow><mo>)</mo><mo>=</mo><mo>⟨</mo><mi>δ</mi><mi>n</mi><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo><mi>δ</mi><mi>n</mi><mo>(</mo><mrow><msup><mi mathvariant="bold">r</mi><mrow><mi mathvariant="bold">′</mi></mrow></msup></mrow><mo>)</mo><mo>⟩</mo></mrow><annotation encoding="application/x-tex">C(\mathbf{r}, \mathbf{r'}) = \langle \delta n (\mathbf{r}) \delta n (\mathbf{r'}) \rangle
+</annotation></semantics></math></span></span></span></p>
+<p>当 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">∣</mi><mrow><mi mathvariant="bold">r</mi></mrow><mo>−</mo><mrow><msup><mi mathvariant="bold">r</mi><mrow><mi mathvariant="bold">′</mi></mrow></msup></mrow><mi mathvariant="normal">∣</mi><mo>→</mo><mi mathvariant="normal">∞</mi></mrow><annotation encoding="application/x-tex">|\mathbf{r} - \mathbf{r'}| \to \infty</annotation></semantics></math></span></span> 时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mn>0</mn></msub><mo>→</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">C_0 \to 0</annotation></semantics></math></span></span>。</p>
+<h3 id="非对角长程序的测量">非对角长程序的测量</h3>
+<ul>
+<li><strong>“Measurement of the spatial coherence of a trapped Bose gas at the phase transition”</strong>, Bloch et. al., <em>Nature 403</em>, pp 166—170 (2000)</li>
+</ul>
+<p>不同温度下，干涉条纹的可见度随“双缝”间距Δ𝑧的关系。</p>
+<p><img src="https://via.placeholder.com/150" class="lazyload placeholder" data-srcset="https://via.placeholder.com/150" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="非对角长程序的测量"></p>
+<h2 id="BEC-的实验结果">BEC 的实验结果</h2>
+<ul>
+<li><strong>三个不同温度下粒子的速度分布</strong>：</li>
+</ul>
+<p><img src="https://via.placeholder.com/150" class="lazyload placeholder" data-srcset="https://via.placeholder.com/150" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="BEC的实验结果"></p>
+<h3 id="速度分布测量方法">速度分布测量方法</h3>
+<p>使用<strong>Time-of-flight</strong>测量法，通过去除磁陷阱让原子自由运动。经过一段时间后，测量粒子的位置和速度分布。无BEC时，速度分布对称；有BEC时，零能态中有明显不对称。</p>
+<h3 id="吸收成像-2">吸收成像</h3>
+<p><img src="https://via.placeholder.com/150" class="lazyload placeholder" data-srcset="https://via.placeholder.com/150" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="Absorption Imaging"></p>
+<h3 id="量子相干测量-2">量子相干测量</h3>
+<p>“Measurement of the spatial coherence of a trapped Bose gas at the phase transition”, Bloch et. al., Nature 403, pp 166—170 (2000)</p>
+<ul>
+<li>低温下，粒子相干性被测量，三种不同情况：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>≪</mo><msub><mi>T</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">T \ll T_c</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>≤</mo><msub><mi>T</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">T \leq T_c</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>&gt;</mo><msub><mi>T</mi><mi>c</mi></msub></mrow><annotation encoding="application/x-tex">T &gt; T_c</annotation></semantics></math></span></span>。</li>
+</ul>
+<p><img src="https://via.placeholder.com/150" class="lazyload placeholder" data-srcset="https://via.placeholder.com/150" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="量子相干测量"></p>
+<h2 id="非对角长程序-2">非对角长程序</h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ψ</mi><mi>k</mi></msub><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msqrt><mrow><mi>V</mi></mrow></msqrt></mrow></mfrac><msup><mi>e</mi><mrow><mi>i</mi><mrow><mi mathvariant="bold">k</mi></mrow><mo>⋅</mo><mrow><mi mathvariant="bold">r</mi></mrow></mrow></msup></mrow><annotation encoding="application/x-tex">\psi_k(\mathbf{r}) = \frac{1}{\sqrt{V}} e^{i \mathbf{k} \cdot \mathbf{r}}
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ρ</mi><mo>(</mo><mi>s</mi><mo>)</mo><mo>=</mo><mi>ρ</mi><mo>(</mo><mi mathvariant="normal">∣</mi><mrow><mi mathvariant="bold">r</mi></mrow><mo>−</mo><mrow><msup><mi mathvariant="bold">r</mi><mrow><mi mathvariant="bold">′</mi></mrow></msup></mrow><mi mathvariant="normal">∣</mi><mo>)</mo><mo>=</mo><msub><mo>∫</mo><mi>k</mi></msub><msub><mi>n</mi><mrow><mover accent="true"><mrow><mi>k</mi></mrow><mo>¯</mo></mover></mrow></msub><msubsup><mi>ψ</mi><mrow><mi>k</mi></mrow><mo>∗</mo></msubsup><mo>(</mo><mrow><mi mathvariant="bold">r</mi></mrow><mo>)</mo><msub><mi>ψ</mi><mi>k</mi></msub><mo>(</mo><mrow><msup><mi mathvariant="bold">r</mi><mrow><mi mathvariant="bold">′</mi></mrow></msup></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\rho(s) = \rho(|\mathbf{r} - \mathbf{r'}|) = \int_k n_{\bar{k}} \psi^*_{k}(\mathbf{r}) \psi_k (\mathbf{r'})
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>对角长程序描述的是粒子相互作用的关系。</li>
+</ul>
+<h2 id="6-12-光子-声子气体">6.12 光子/声子气体</h2>
+<p>有一类粒子，其粒子数不守恒，最低能量为零，可以随意产生或者消灭粒子，满足化学势为零的 Bose 或者 Fermi 统计。</p>
+<ul>
+<li><strong>粒子数不守恒的系统</strong>：
+<ul>
+<li>需要使用一个拉格朗日乘子 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span>，从而得出化学势 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mu = 0</annotation></semantics></math></span></span>。</li>
+<li><strong>Bosonic 粒子</strong>：光子、声子、magnon</li>
+<li><strong>Fermionic 粒子</strong>：中微子（？）</li>
+</ul>
+</li>
+</ul>
+<p>粒子数不守恒的系统中，化学势为零的物理含义：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>F</mi><mo>=</mo><mo>−</mo><mi>S</mi><mi>d</mi><mi>T</mi><mo>−</mo><mi>p</mi><mi>d</mi><mi>V</mi><mo>+</mo><mi>μ</mi><mi>d</mi><mi>N</mi><mo>⇒</mo><mi>μ</mi><mo>=</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>F</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>N</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mi>T</mi><mo separator="true">,</mo><mi>V</mi></mrow></msub></mrow><annotation encoding="application/x-tex">dF = -S dT - p dV + \mu dN \Rightarrow \mu = \left(\frac{\partial F}{\partial N}\right)_{T,V}
+</annotation></semantics></math></span></span></span></p>
+<p>在粒子数不确定的体系中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><mover accent="true"><mrow><mi>N</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">N = \bar{N}</annotation></semantics></math></span></span>，满足 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo><mo>=</mo><mi>F</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>V</mi><mo separator="true">,</mo><mover accent="true"><mrow><mi>N</mi></mrow><mo>¯</mo></mover><mo>)</mo></mrow><annotation encoding="application/x-tex">F(T, V) = F(T, V, \bar{N})</annotation></semantics></math></span></span>。达到平衡时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mover accent="true"><mrow><mi>N</mi></mrow><mo>¯</mo></mover></mrow><annotation encoding="application/x-tex">\bar{N}</annotation></semantics></math></span></span>取值使自由能极小，因此<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\mu = 0</annotation></semantics></math></span></span>。</p>
+<h3 id="光子气体">光子气体</h3>
+<ul>
+<li>
+<p><strong>光子和声子</strong>的动量与能量关系：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mi mathvariant="normal">ℏ</mi><mi>k</mi><mo separator="true">,</mo><mspace width="1em"></mspace><mi>ϵ</mi><mo>(</mo><mi>p</mi><mo>)</mo><mo>=</mo><mi mathvariant="normal">ℏ</mi><mi>ω</mi><mo>=</mo><mi>c</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">p = \hbar k, \quad \epsilon(p) = \hbar \omega = c p 
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p>自旋/偏振自由度乘上粒子数密度：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>2</mn><mi>V</mi></mrow><mrow><msup><mi>h</mi><mn>3</mn></msup></mrow></mfrac><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mi>δ</mi><mo>(</mo><mi>ϵ</mi><mo>−</mo><mi>c</mi><mi>p</mi><mo>)</mo><msup><mi>p</mi><mn>2</mn></msup><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">g(\epsilon) = \frac{2V}{h^3} \int_0^\infty \delta(\epsilon - c p) p^2 dp 
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p>能量密度分布为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>8</mn><mi>π</mi><mi>V</mi></mrow><mrow><msup><mi>h</mi><mn>3</mn></msup><msup><mi>c</mi><mn>3</mn></msup></mrow></mfrac><msup><mi>ϵ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">g(\epsilon) = \frac{8\pi V}{h^3 c^3} \epsilon^2 
+</annotation></semantics></math></span></span></span></p>
+</li>
+</ul>
+<h3 id="黑体辐射">黑体辐射</h3>
+<p>黑体辐射的配分函数为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ln</mi><mi mathvariant="normal">Ξ</mi><mo>=</mo><mo>−</mo><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>ln</mi><mrow><mo fence="true">(</mo><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>β</mi><mi>ϵ</mi></mrow></msup><mo fence="true">)</mo></mrow><mi>d</mi><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\ln \Xi = - \int_0^\infty g(\epsilon) \ln \left( 1 - e^{-\beta \epsilon} \right) d\epsilon
+</annotation></semantics></math></span></span></span></p>
+<p>并且使用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">g(\epsilon)</annotation></semantics></math></span></span>，黑体辐射的辐射功率密度分布为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>(</mo><mi>ω</mi><mo separator="true">,</mo><mi>T</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ℏ</mi><msup><mi>ω</mi><mn>3</mn></msup></mrow><mrow><msup><mi>π</mi><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup></mrow></mfrac><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mrow></msup><mo>−</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">u(\omega, T) = \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{e^{\beta \hbar \omega} - 1}
+</annotation></semantics></math></span></span></span></p>
+<h3 id="Planck’s-law">Planck’s law</h3>
+<p>黑体辐射谱符合 Planck’s law：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>(</mo><mi>ω</mi><mo separator="true">,</mo><mi>T</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ℏ</mi><msup><mi>ω</mi><mn>3</mn></msup></mrow><mrow><msup><mi>π</mi><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup></mrow></mfrac><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mrow></msup><mo>−</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">u(\omega, T) = \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{e^{\beta \hbar \omega} - 1}
+</annotation></semantics></math></span></span></span></p>
+<p><strong>图示：</strong></p>
+<ul>
+<li>黑体辐射谱随温度变化的图像显示了不同温度下的辐射强度与频率的关系【图在页面 4】。</li>
+</ul>
+<h3 id="从分布函数直接计算黑体辐射谱">从分布函数直接计算黑体辐射谱</h3>
+<ul>
+<li>
+<p>能量密度为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>u</mi><mo>(</mo><mi>ω</mi><mo separator="true">,</mo><mi>T</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ℏ</mi><msup><mi>ω</mi><mn>3</mn></msup></mrow><mrow><msup><mi>π</mi><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup></mrow></mfrac><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mrow></msup><mo>−</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">u(\omega, T) = \frac{\hbar \omega^3}{\pi^2 c^3} \frac{1}{e^{\beta \hbar \omega} - 1} 
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p>Rayleigh–Jeans law 和 Wien’s law 表示了黑体辐射在不同温度下的极限行为【图示在页面 4】。</p>
+</li>
+</ul>
+<h3 id="Stephan-Boltzmann-常数">Stephan-Boltzmann 常数</h3>
+<ul>
+<li>
+<p>Stefan-Boltzmann 定律：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mo>(</mo><mi>T</mi><mo>)</mo><mo>=</mo><mi>σ</mi><msup><mi>T</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">J(T) = \sigma T^4 
+</annotation></semantics></math></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi></mrow><annotation encoding="application/x-tex">\sigma</annotation></semantics></math></span></span> 是 Stefan-Boltzmann 常数：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>σ</mi><mo>=</mo><mfrac><mrow><msup><mi>π</mi><mn>2</mn></msup><msubsup><mi>k</mi><mi>B</mi><mn>4</mn></msubsup></mrow><mrow><mn>6</mn><mn>0</mn><msup><mi mathvariant="normal">ℏ</mi><mn>3</mn></msup><msup><mi>c</mi><mn>3</mn></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\sigma = \frac{\pi^2 k_B^4}{60 \hbar^3 c^3} 
+</annotation></semantics></math></span></span></span></p>
+</li>
+</ul>
+<h3 id="Euler-公式">Euler 公式</h3>
+<p>Euler公式给出了一些特殊的积分计算方法：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>sin</mi><mi>z</mi><mi mathvariant="normal">/</mi><mi>z</mi><mo>=</mo><mo>(</mo><mn>1</mn><mo>−</mo><mi>z</mi><mi mathvariant="normal">/</mi><mi>π</mi><mo>)</mo><mo>(</mo><mn>1</mn><mo>−</mo><mi>z</mi><mi mathvariant="normal">/</mi><mo>−</mo><mi>π</mi><mo>)</mo><mo>(</mo><mn>1</mn><mo>−</mo><mi>z</mi><mi mathvariant="normal">/</mi><mn>2</mn><mi>π</mi><mo>)</mo><mo>(</mo><mn>1</mn><mo>−</mo><mi>z</mi><mi mathvariant="normal">/</mi><mo>−</mo><mn>2</mn><mi>π</mi><mo>)</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">\sin z / z = (1 - z/\pi)(1 - z/-\pi)(1 - z/2\pi)(1 - z/-2\pi) \cdots
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ζ</mi><mo>(</mo><mi>n</mi><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>p</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>p</mi><mi>n</mi></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\zeta(n) = \sum_{p=1}^{\infty} \frac{1}{p^n}
+</annotation></semantics></math></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ζ</mi><mo>(</mo><mn>2</mn><mo>)</mo><mo>=</mo><mfrac><mrow><msup><mi>π</mi><mn>2</mn></msup></mrow><mrow><mn>6</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\zeta(2) = \frac{\pi^2}{6}</annotation></semantics></math></span></span> 和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ζ</mi><mo>(</mo><mn>4</mn><mo>)</mo><mo>=</mo><mfrac><mrow><msup><mi>π</mi><mn>4</mn></msup></mrow><mrow><mn>9</mn><mn>0</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">\zeta(4) = \frac{\pi^4}{90}</annotation></semantics></math></span></span> 等。</p>
+<p><strong>图示：</strong></p>
+<ul>
+<li>页面 6 显示了一个积分的图例与 Euler 公式的解释。</li>
+</ul>
+<h2 id="Wien’s-位移定律">Wien’s 位移定律</h2>
+<p>当辐射的频率<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ω</mi><mi>m</mi></msub></mrow><annotation encoding="application/x-tex">\omega_m</annotation></semantics></math></span></span>达到最大时，满足以下条件：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>J</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>ω</mi></mrow></mfrac><msub><mo fence="false">∣</mo><mrow><mi>ω</mi><mo>=</mo><msub><mi>ω</mi><mi>m</mi></msub></mrow></msub><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\frac{\partial J}{\partial \omega} \Bigg|_{\omega = \omega_m} = 0
+</annotation></semantics></math></span></span></span></p>
+<p>由此可得：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ω</mi><mi>m</mi></msub><mo>=</mo><msub><mi>x</mi><mi>m</mi></msub><mfrac><mrow><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><mrow><mi mathvariant="normal">ℏ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\omega_m = x_m \frac{k_B T}{\hbar}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>x</mi><mi>m</mi></msub><mo>≈</mo><mn>2</mn><mi mathvariant="normal">.</mi><mn>8</mn><mn>2</mn></mrow><annotation encoding="application/x-tex">x_m \approx 2.82</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ω</mi><mi>m</mi></msub><mo>∝</mo><mi>T</mi></mrow><annotation encoding="application/x-tex">\omega_m \propto T</annotation></semantics></math></span></span></li>
+</ul>
+<p>能量密度为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mi>u</mi><mi>V</mi><mo>=</mo><mi>V</mi><mfrac><mrow><msup><mi>π</mi><mn>2</mn></msup><msubsup><mi>k</mi><mi>B</mi><mn>4</mn></msubsup></mrow><mrow><mn>1</mn><mn>5</mn><msup><mi>c</mi><mn>3</mn></msup><msup><mi mathvariant="normal">ℏ</mi><mn>3</mn></msup></mrow></mfrac><msup><mi>T</mi><mn>4</mn></msup></mrow><annotation encoding="application/x-tex">U = uV = V \frac{\pi^2 k_B^4}{15 c^3 \hbar^3} T^4
+</annotation></semantics></math></span></span></span></p>
+<p>热容为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><msub><mrow><mo fence="true">(</mo><mfrac><mrow><mi mathvariant="normal">∂</mi><mi>U</mi></mrow><mrow><mi mathvariant="normal">∂</mi><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mi>V</mi></msub><mo>=</mo><mn>4</mn><mi>V</mi><mfrac><mrow><msup><mi>π</mi><mn>2</mn></msup><msubsup><mi>k</mi><mi>B</mi><mn>4</mn></msubsup></mrow><mrow><mn>1</mn><mn>5</mn><msup><mi>c</mi><mn>3</mn></msup><msup><mi mathvariant="normal">ℏ</mi><mn>3</mn></msup></mrow></mfrac><msup><mi>T</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">C_V = \left(\frac{\partial U}{\partial T}\right)_V = 4V \frac{\pi^2 k_B^4}{15 c^3 \hbar^3} T^3
+</annotation></semantics></math></span></span></span></p>
+<h3 id="粒子数">粒子数</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mi>g</mi><mo>(</mo><mi>ω</mi><mo>)</mo><mi>f</mi><mo>(</mo><mi mathvariant="normal">ℏ</mi><mi>ω</mi><mo>)</mo><mi>d</mi><mi>ω</mi><mo>=</mo><mfrac><mrow><mi>V</mi></mrow><mrow><msup><mi>π</mi><mn>2</mn></msup><msup><mi>c</mi><mn>3</mn></msup></mrow></mfrac><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><msup><mi>ω</mi><mn>2</mn></msup><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mrow></msup><mo>−</mo><mn>1</mn></mrow></mfrac><mi>d</mi><mi>ω</mi></mrow><annotation encoding="application/x-tex">N = \int_0^\infty g(\omega) f(\hbar \omega) d\omega = \frac{V}{\pi^2 c^3} \int_0^\infty \omega^2 \frac{1}{e^{\beta \hbar \omega} - 1} d\omega
+</annotation></semantics></math></span></span></span></p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∝</mo><msup><mi>T</mi><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\propto T^3
+</annotation></semantics></math></span></span></span></p>
+<p>每个光子对热容的贡献大约为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">k_B</annotation></semantics></math></span></span>，即能量均分原理。</p>
+<h2 id="零点振动和-Casimir-效应">零点振动和 Casimir 效应</h2>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mo>∫</mo><mi>g</mi><mo>(</mo><mi>ω</mi><mo>)</mo><mrow><mo fence="true">[</mo><mi>n</mi><mo>(</mo><mi>ω</mi><mo>)</mo><mo>+</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mo fence="true">]</mo></mrow><mi mathvariant="normal">ℏ</mi><mi>ω</mi><mi>d</mi><mi>ω</mi></mrow><annotation encoding="application/x-tex">U = \int g(\omega) \left[n(\omega) + \frac{1}{2}\right] \hbar \omega d\omega
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li><strong>零点能量</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><mi mathvariant="normal">ℏ</mi><mi>ω</mi></mrow><annotation encoding="application/x-tex">\frac{1}{2} \hbar \omega</annotation></semantics></math></span></span></li>
+<li><strong>Casimir 效应</strong>：考虑两个平行金属板之间的辐射效应。</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ψ</mi><mi>n</mi></msub><mo>(</mo><msub><mi>k</mi><mi>x</mi></msub><mo separator="true">,</mo><msub><mi>k</mi><mi>y</mi></msub><mo>)</mo><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>i</mi><msub><mi>ω</mi><mi>n</mi></msub><mo>(</mo><msub><mi>k</mi><mi>x</mi></msub><mo separator="true">,</mo><msub><mi>k</mi><mi>y</mi></msub><mo>)</mo><mi>t</mi><mo>+</mo><msub><mi>k</mi><mi>x</mi></msub><mi>x</mi><mo>+</mo><msub><mi>k</mi><mi>y</mi></msub><mi>y</mi></mrow></msup><mi>sin</mi><mfrac><mrow><mi>n</mi><mi>π</mi><mi>z</mi></mrow><mrow><mi>a</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">\psi_n(k_x, k_y) = e^{-i \omega_n(k_x, k_y)t + k_x x + k_y y} \sin \frac{n \pi z}{a}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>讨论了辐射的量子化和距离依赖的效应，最终得到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>F</mi></mrow><annotation encoding="application/x-tex">F</annotation></semantics></math></span></span>的表达式。</li>
+</ul>
+<h3 id="声子气体、固体热容">声子气体、固体热容</h3>
+<ul>
+<li>
+<p>声子气体中的动量与能量关系：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mi mathvariant="normal">ℏ</mi><mi>k</mi><mo separator="true">,</mo><mspace width="1em"></mspace><mi>ϵ</mi><mo>(</mo><mi>p</mi><mo>)</mo><mo>=</mo><mi mathvariant="normal">ℏ</mi><mi>ω</mi><mo>=</mo><msub><mi>v</mi><mi>s</mi></msub><mi>p</mi></mrow><annotation encoding="application/x-tex">p = \hbar k, \quad \epsilon(p) = \hbar \omega = v_s p 
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p>声子的密度状态函数：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mo>=</mo><mn>1</mn><mn>2</mn><mi>π</mi><mi>V</mi><mfrac><mrow><msup><mi>ϵ</mi><mn>2</mn></msup></mrow><mrow><msup><mi mathvariant="normal">ℏ</mi><mn>3</mn></msup><msubsup><mi>v</mi><mi>s</mi><mn>3</mn></msubsup></mrow></mfrac></mrow><annotation encoding="application/x-tex">g(\epsilon) = 12 \pi V \frac{\epsilon^2}{\hbar^3 v_s^3} 
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p>能量密度的分布和热容：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn><mn>2</mn><mi>π</mi></mrow><mrow><mn>5</mn></mrow></mfrac><mfrac><mrow><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><msup><mi>T</mi><mn>3</mn></msup></mrow><mrow><msubsup><mi mathvariant="normal">Θ</mi><mi>D</mi><mn>3</mn></msubsup></mrow></mfrac></mrow><annotation encoding="application/x-tex">C_V = \frac{12 \pi}{5} \frac{N k_B T^3}{\Theta_D^3} 
+</annotation></semantics></math></span></span></span></p>
+<p>其中 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi mathvariant="normal">Θ</mi><mi>D</mi></msub></mrow><annotation encoding="application/x-tex">\Theta_D</annotation></semantics></math></span></span> 为 Debye 温度。</p>
+</li>
+</ul>
+<h3 id="低温极限">低温极限</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mrow><mo fence="true">(</mo><mfrac><mrow><mn>3</mn><mi>π</mi></mrow><mrow><mn>4</mn></mrow></mfrac><msup><mi>T</mi><mn>3</mn></msup><mo fence="true">)</mo></mrow><mi mathvariant="normal">/</mi><msub><mi mathvariant="normal">Θ</mi><mi>D</mi></msub></mrow><annotation encoding="application/x-tex">U = N k_B \left(\frac{3\pi}{4} T^3 \right) / \Theta_D
+</annotation></semantics></math></span></span></span></p>
+<h3 id="高温极限">高温极限</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><mn>3</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mspace width="1em"></mspace><mo>⇒</mo><mspace width="1em"></mspace><msub><mi>C</mi><mi>V</mi></msub><mo>=</mo><mn>3</mn><mi>N</mi><msub><mi>k</mi><mi>B</mi></msub></mrow><annotation encoding="application/x-tex">U = 3N k_B T \quad \Rightarrow \quad C_V = 3N k_B
+</annotation></semantics></math></span></span></span></p>
+<h2 id="6-13-强简并-Fermi-气体">6.13 强简并 Fermi 气体</h2>
+<h3 id="判据">判据</h3>
+<ul>
+<li>
+<p>强简并条件：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>=</mo><msup><mi>e</mi><mrow><mi>β</mi><mi>μ</mi></mrow></msup><mo>≫</mo><mn>1</mn><mo>⇒</mo><mi>μ</mi><mi mathvariant="normal">/</mi><mo>(</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mo>)</mo><mo>≫</mo><mn>1</mn><mo>⇒</mo><mi>μ</mi><mo>≫</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><annotation encoding="application/x-tex">\lambda = e^{\beta \mu} \gg 1 \Rightarrow \mu / (k_B T) \gg 1 \Rightarrow \mu \gg k_B T 
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p>弱简并条件：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>λ</mi><mo>∼</mo><mi>y</mi><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><mn>2</mn></mrow></mfrac><msup><mrow><mo fence="true">(</mo><mfrac><mrow><msup><mi mathvariant="normal">ℏ</mi><mn>2</mn></msup></mrow><mrow><mn>2</mn><mi>π</mi><mi>m</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><mfrac><mrow><mi>N</mi></mrow><mrow><mi>V</mi></mrow></mfrac><mo>≪</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">\lambda \sim y = \frac{1}{2} \left( \frac{\hbar^2}{2 \pi m k_B T} \right)^{3/2} \frac{N}{V} \ll 1 
+</annotation></semantics></math></span></span></span></p>
+</li>
+</ul>
+<h3 id="系统的基态">系统的基态</h3>
+<p>全同Fermion系统的波函数是单粒子的Slater行列式。每个粒子只能占据一个单粒子态，这就导致了Pauli不相容原理的出现。Fermion系统通过Pauli不相容原理把粒子逐个填充到单粒子态上，最终形成Fermi球。</p>
+<p>Fermi面是占据态与非占据态的分界面，其对应的能量被称为Fermi能量。</p>
+<p><img src="https://via.placeholder.com/150" class="lazyload placeholder" data-srcset="https://via.placeholder.com/150" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="系统的基态"></p>
+<h3 id="系统的低能激发态">系统的低能激发态</h3>
+<p>Fermi面下的占据态被激发到Fermi面以上的空态。由于Pauli不相容原理，系统的基态和低能激发态反映的是Fermi面及其附近态的性质。</p>
+<p>低能激发能量：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><msub><mi>E</mi><mrow><mtext><mi mathvariant="normal">e</mi><mi mathvariant="normal">x</mi></mtext></mrow></msub><mo>=</mo><mi>E</mi><mo>−</mo><msub><mi>E</mi><mi>g</mi></msub><mo>=</mo><msub><mi>ϵ</mi><mn>2</mn></msub><mo>−</mo><msub><mi>ϵ</mi><mn>1</mn></msub><mspace width="1em"></mspace><mo>(</mo><msub><mi>ϵ</mi><mn>2</mn></msub><mo>∼</mo><msub><mi>ϵ</mi><mi>F</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">\Delta E_{\text{ex}} = E - E_g = \epsilon_2 - \epsilon_1 \quad (\epsilon_2 \sim \epsilon_F)
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>粒子型激发能量：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ϵ</mi><mi>p</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon_p \geq 0</annotation></semantics></math></span></span></li>
+<li>空穴型激发能量：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ϵ</mi><mi>h</mi></msub><mo>≥</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\epsilon_h \geq 0</annotation></semantics></math></span></span></li>
+</ul>
+<p>系统的低能激发态能量可以表示为粒子型激发的能量和空穴型激发的能量之和。</p>
+<h3 id="Fermi-面">Fermi 面</h3>
+<p>Fermi面在强简并Fermion体系中扮演着非常重要的角色。定义了一系列与Fermi面相关的物理量：</p>
+<ul>
+<li><strong>Fermi能量</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ϵ</mi><mi>F</mi></msub></mrow><annotation encoding="application/x-tex">\epsilon_F</annotation></semantics></math></span></span></li>
+<li><strong>Fermi温度</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mi>F</mi></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>k</mi><mi>B</mi></msub><msub><mi>T</mi><mi>F</mi></msub><mo>=</mo><msub><mi>ϵ</mi><mi>F</mi></msub></mrow><annotation encoding="application/x-tex">T_F, \quad k_B T_F = \epsilon_F</annotation></semantics></math></span></span></li>
+<li><strong>Fermi动量</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>F</mi></msub><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>ϵ</mi><mi>F</mi></msub><mo>=</mo><mfrac><mrow><msubsup><mi>p</mi><mi>F</mi><mn>2</mn></msubsup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>p</mi><mi>F</mi></msub><mo>=</mo><msqrt><mrow><mn>2</mn><mi>m</mi><msub><mi>ϵ</mi><mi>F</mi></msub></mrow></msqrt></mrow><annotation encoding="application/x-tex">p_F, \quad \epsilon_F = \frac{p_F^2}{2m}, \quad p_F = \sqrt{2m \epsilon_F}</annotation></semantics></math></span></span></li>
+<li><strong>Fermi波矢</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mi>F</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>p</mi><mi>F</mi></msub></mrow><mrow><mi mathvariant="normal">ℏ</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><msqrt><mrow><mn>2</mn><mi>m</mi><msub><mi>ϵ</mi><mi>F</mi></msub></mrow></msqrt></mrow><mrow><mi mathvariant="normal">ℏ</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">k_F = \frac{p_F}{\hbar} = \frac{\sqrt{2m \epsilon_F}}{\hbar}</annotation></semantics></math></span></span></li>
+<li><strong>Fermi速度</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>F</mi></msub><mo>=</mo><mfrac><mrow><msub><mi>p</mi><mi>F</mi></msub></mrow><mrow><mi>m</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mi mathvariant="normal">ℏ</mi><msub><mi>k</mi><mi>F</mi></msub></mrow><mrow><mi>m</mi></mrow></mfrac></mrow><annotation encoding="application/x-tex">v_F = \frac{p_F}{m} = \frac{\hbar k_F}{m}</annotation></semantics></math></span></span></li>
+</ul>
+<p>在金属中的电子气是一个典型的强简并Fermion体系，其特性如：</p>
+<ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>T</mi><mi>F</mi></msub><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mn>4</mn></msup><mo>−</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">K</mi></mtext></mrow><annotation encoding="application/x-tex">T_F \sim 10^4 - 10^5 \, \text{K}</annotation></semantics></math></span></span></li>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>v</mi><mi>F</mi></msub><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">m</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">s</mi></mtext></mrow><annotation encoding="application/x-tex">v_F \sim 10^6 \, \text{m/s}</annotation></semantics></math></span></span></li>
+</ul>
+<h3 id="T-0-text-K-时的Fermi分布"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mn>0</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">K</mi></mtext></mrow><annotation encoding="application/x-tex">T = 0 \, \text{K}</annotation></semantics></math></span></span>时的Fermi分布</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>s</mi></msub><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mo>(</mo><msub><mi>ϵ</mi><mi>s</mi></msub><mo>−</mo><mi>μ</mi><mo>)</mo></mrow></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo>=</mo><mi>f</mi><mo>(</mo><msub><mi>ϵ</mi><mi>s</mi></msub><mo separator="true">,</mo><mi>T</mi><mo>=</mo><mn>0</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">a_s = \frac{1}{e^{\beta (\epsilon_s - \mu)} + 1} = f(\epsilon_s, T = 0)
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>当能量低于化学势<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span>时，单粒子态被完全占据；当能量高于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span>时，单粒子态为空。</li>
+</ul>
+<p>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">T = 0</annotation></semantics></math></span></span> K时，化学势与Fermi能量相同：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>(</mo><mi>T</mi><mo>=</mo><mn>0</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">K</mi></mtext><mo>)</mo><mo>=</mo><msub><mi>ϵ</mi><mi>F</mi></msub></mrow><annotation encoding="application/x-tex">\mu(T = 0 \, \text{K}) = \epsilon_F
+</annotation></semantics></math></span></span></span></p>
+<h3 id="Fermi-面的粒子数">Fermi 面的粒子数</h3>
+<p>总粒子数为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mrow><msub><mi>ϵ</mi><mi>F</mi></msub></mrow></msubsup><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>d</mi><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">N = \int_0^{\epsilon_F} g(\epsilon) d\epsilon
+</annotation></semantics></math></span></span></span></p>
+<p>通过计算得到：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>F</mi></msub><mo>=</mo><mi mathvariant="normal">ℏ</mi><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mn>3</mn><mi>N</mi></mrow><mrow><mn>8</mn><mi>π</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>ϵ</mi><mi>F</mi></msub><mo>=</mo><mfrac><mrow><msubsup><mi>p</mi><mi>F</mi><mn>2</mn></msubsup></mrow><mrow><mn>2</mn><mi>m</mi></mrow></mfrac><mo>=</mo><msup><mi mathvariant="normal">ℏ</mi><mn>2</mn></msup><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mn>3</mn><mi>N</mi></mrow><mrow><mn>8</mn><mi>π</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mn>2</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup><mi mathvariant="normal">/</mi><mn>2</mn><mi>m</mi></mrow><annotation encoding="application/x-tex">p_F = \hbar \left( \frac{3N}{8 \pi V} \right)^{1/3}, \quad \epsilon_F = \frac{p_F^2}{2m} = \hbar^2 \left( \frac{3N}{8 \pi V} \right)^{2/3} / 2m
+</annotation></semantics></math></span></span></span></p>
+<h3 id="系统的基态能量">系统的基态能量</h3>
+<p>系统的基态能量为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mrow><msub><mi>ϵ</mi><mi>F</mi></msub></mrow></msubsup><mi>ϵ</mi><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>d</mi><mi>ϵ</mi><mo>=</mo><mfrac><mrow><mn>8</mn><mi>π</mi><mi>V</mi></mrow><mrow><mn>5</mn></mrow></mfrac><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mn>2</mn><mi>m</mi></mrow><mrow><msup><mi mathvariant="normal">ℏ</mi><mn>2</mn></msup></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mn>3</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msup><msubsup><mi>ϵ</mi><mi>F</mi><mrow><mn>5</mn><mi mathvariant="normal">/</mi><mn>2</mn></mrow></msubsup></mrow><annotation encoding="application/x-tex">U = \int_0^{\epsilon_F} \epsilon g(\epsilon) d\epsilon = \frac{8 \pi V}{5} \left( \frac{2m}{\hbar^2} \right)^{3/2} \epsilon_F^{5/2}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>平均能量为：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>u</mi><mn>0</mn></msub><mo>=</mo><mfrac><mrow><mi>U</mi></mrow><mrow><mi>N</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mn>3</mn></mrow><mrow><mn>5</mn></mrow></mfrac><msub><mi>ϵ</mi><mi>F</mi></msub></mrow><annotation encoding="application/x-tex">u_0 = \frac{U}{N} = \frac{3}{5} \epsilon_F</annotation></semantics></math></span></span></li>
+</ul>
+<p>即使在绝对零度，强简并的Fermion仍有相当大的平均能量，这与经典结果截然不同。</p>
+<h2 id="简并压">简并压</h2>
+<p>简并压在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">T = 0</annotation></semantics></math></span></span>时的Fermi气体对外仍然有很大的压强。简并压对金属的压缩系数或体模量有重要贡献，且在某些条件下对星体的稳定性起到重要作用，如白矮星和中子星。</p>
+<ul>
+<li><strong>白矮星</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ρ</mi><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mn>9</mn></msup><mspace width="0.16667em"></mspace><msup><mtext><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">m</mi></mtext><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\rho \sim 10^9 \, \text{kg/m}^3</annotation></semantics></math></span></span>，电子简并压阻止引力塌缩，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo>&lt;</mo><mn>1</mn><mi mathvariant="normal">.</mi><mn>4</mn><mn>4</mn><msub><mi>M</mi><mrow><mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">n</mi></mtext></mrow></msub></mrow><annotation encoding="application/x-tex">M &lt; 1.44 M_{\text{sun}}</annotation></semantics></math></span></span>（Chandrasekhar 极限）</li>
+<li><strong>中子星</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ρ</mi><mo>∼</mo><mn>1</mn><msup><mn>0</mn><mrow><mn>1</mn><mn>7</mn></mrow></msup><mspace width="0.16667em"></mspace><msup><mtext><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi><mi mathvariant="normal">/</mi><mi mathvariant="normal">m</mi></mtext><mn>3</mn></msup></mrow><annotation encoding="application/x-tex">\rho \sim 10^{17} \, \text{kg/m}^3</annotation></semantics></math></span></span>，中子简并压阻止引力塌缩，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mo>&lt;</mo><mn>2</mn><mi mathvariant="normal">.</mi><mn>1</mn><msub><mi>M</mi><mrow><mtext><mi mathvariant="normal">s</mi><mi mathvariant="normal">u</mi><mi mathvariant="normal">n</mi></mtext></mrow></msub></mrow><annotation encoding="application/x-tex">M &lt; 2.1 M_{\text{sun}}</annotation></semantics></math></span></span>（Tolman–Oppenheimer–Volkoff 极限）</li>
+</ul>
+<h3 id="有限温度下的结果">有限温度下的结果</h3>
+<p>分布函数为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mo>(</mo><mi>ϵ</mi><mo>−</mo><mi>μ</mi><mo>)</mo></mrow></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">f(\epsilon) = \frac{1}{e^{\beta (\epsilon - \mu)} + 1}
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi><mo>&lt;</mo><mi>μ</mi></mrow><annotation encoding="application/x-tex">\epsilon &lt; \mu</annotation></semantics></math></span></span>时，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mo>&lt;</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">f(\epsilon) &lt; 1</annotation></semantics></math></span></span>，有一部分粒子被激发出去。</li>
+<li>Fermi面下的粒子数减少，对应于空穴型激发数目：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>f</mi><mi>h</mi></msub><mo>=</mo><mn>1</mn><mo>−</mo><mi>f</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f_h = 1 - f(\epsilon)</annotation></semantics></math></span></span>。</li>
+</ul>
+<p>在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mn>0</mn><mspace width="0.16667em"></mspace><mtext><mi mathvariant="normal">K</mi></mtext></mrow><annotation encoding="application/x-tex">T = 0 \, \text{K}</annotation></semantics></math></span></span>时，化学势<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi><mo>=</mo><msub><mi>ϵ</mi><mi>F</mi></msub></mrow><annotation encoding="application/x-tex">\mu = \epsilon_F</annotation></semantics></math></span></span>。</p>
+<p><strong>图示：</strong></p>
+<ul>
+<li><strong>分布函数的图像</strong>显示了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>&gt;</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">T &gt; 0</annotation></semantics></math></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">T = 0</annotation></semantics></math></span></span>的区别【图在页面 2】。</li>
+</ul>
+<h3 id="分布函数的具体计算">分布函数的具体计算</h3>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>f</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>d</mi><mi>ϵ</mi><mo separator="true">,</mo><mspace width="1em"></mspace><mi>U</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mi>ϵ</mi><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>f</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>d</mi><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">N = \int_0^\infty g(\epsilon) f(\epsilon) d\epsilon, \quad U = \int_0^\infty \epsilon g(\epsilon) f(\epsilon) d\epsilon
+</annotation></semantics></math></span></span></span></p>
+<p>从<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><mi>N</mi><mo>(</mo><mi>T</mi><mo separator="true">,</mo><mi>μ</mi><mo separator="true">,</mo><mi>V</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">N = N(T, \mu, V)</annotation></semantics></math></span></span>求解出<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span>，然后得到<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span>等物理量。</p>
+<h3 id="Sommerfeld-展开">Sommerfeld 展开</h3>
+<p>在低温下，使用Sommerfeld展开来简化计算。首先进行积分分解，得到不同激发态的贡献。</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>I</mi><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mi>I</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>f</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>d</mi><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">I = \int_0^\infty I(\epsilon) f(\epsilon) d\epsilon
+</annotation></semantics></math></span></span></span></p>
+<p>展开为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>I</mi><mn>0</mn></msub><mo>+</mo><mn>2</mn><msup><mi>I</mi><mrow><mi mathvariant="normal">′</mi></mrow></msup><mo>(</mo><mi>μ</mi><mo>)</mo><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mfrac><mrow><mi>ϵ</mi></mrow><mrow><msup><mi>e</mi><mrow><mi>ϵ</mi><mi mathvariant="normal">/</mi><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mi>d</mi><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">I_0 + 2I'(\mu) \int_0^\infty \frac{\epsilon}{e^{\epsilon / k_B T} + 1} d\epsilon
+</annotation></semantics></math></span></span></span></p>
+<p>并使用Riemann<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ζ</mi></mrow><annotation encoding="application/x-tex">\zeta</annotation></semantics></math></span></span>函数进行求解【公式和过程见页面 5】。</p>
+<h2 id="化学势随温度的变化">化学势随温度的变化</h2>
+<ul>
+<li>
+<p>热激发沿<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span>对称分布：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo>(</mo><mi>μ</mi><mo>+</mo><mi mathvariant="normal">Δ</mi><mi>ϵ</mi><mo>)</mo><mo>=</mo><mn>1</mn><mo>−</mo><mi>f</mi><mo>(</mo><mi>μ</mi><mo>−</mo><mi mathvariant="normal">Δ</mi><mi>ϵ</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">f(\mu + \Delta \epsilon) = 1 - f(\mu - \Delta \epsilon) 
+</annotation></semantics></math></span></span></span></p>
+</li>
+<li>
+<p>总粒子数：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><mo>∫</mo><mi>f</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>d</mi><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">N = \int f(\epsilon) g(\epsilon) d\epsilon 
+</annotation></semantics></math></span></span></span></p>
+</li>
+</ul>
+<p>为了保持总粒子数不变，化学势必然随温度改变。</p>
+<h3 id="低温下的化学势变化">低温下的化学势变化</h3>
+<p>当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Δ</mi><mi>μ</mi><mo>∼</mo><mo>−</mo><mo>(</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><msup><mo>)</mo><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\Delta \mu \sim -(k_B T)^2</annotation></semantics></math></span></span>时，Fermi面附近的态对化学势的变化影响最大。</p>
+<p><strong>图示：</strong></p>
+<ul>
+<li>图中展示了<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span></span>随温度变化的过程【图在页面2】。</li>
+</ul>
+<h3 id="Gibbs-Duhem-方程">Gibbs-Duhem 方程</h3>
+<p>在Fermi气体中，化学势与温度的关系遵循Gibbs-Duhem方程：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>μ</mi><mo>=</mo><mo>−</mo><mi>s</mi><mi>d</mi><mi>T</mi><mo>+</mo><mi>v</mi><mi>d</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">d\mu = -s dT + v dp 
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi></mrow><annotation encoding="application/x-tex">s</annotation></semantics></math></span></span>为熵，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>v</mi></mrow><annotation encoding="application/x-tex">v</annotation></semantics></math></span></span>为体积。</li>
+</ul>
+<h3 id="Fermi-函数积分的-Polylogarithm-表示">Fermi 函数积分的 Polylogarithm 表示</h3>
+<p>在数值计算时，通常使用Polylogarithm表示Fermi函数的积分，得出简化的计算结果。</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mtext><mi mathvariant="normal">L</mi><mi mathvariant="normal">i</mi></mtext><mi>s</mi></msub><mo>(</mo><mi>z</mi><mo>)</mo><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>l</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi mathvariant="normal">∞</mi></mrow></msubsup><mfrac><mrow><msup><mi>z</mi><mi>l</mi></msup></mrow><mrow><msup><mi>l</mi><mi>s</mi></msup></mrow></mfrac></mrow><annotation encoding="application/x-tex">\text{Li}_s(z) = \sum_{l=1}^{\infty} \frac{z^l}{l^s} 
+</annotation></semantics></math></span></span></span></p>
+<h3 id="电子热容">电子热容</h3>
+<p>强简并时，只有Fermi面附近<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><annotation encoding="application/x-tex">k_B T</annotation></semantics></math></span></span>的少数电子才能受到热激发，参与热容的贡献。其它大部分粒子无法被激发，对热容没有贡献。</p>
+<h4 id="参与热容贡献的大体估计：">参与热容贡献的大体估计：</h4>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>t</mi></msub><mo>∼</mo><mi>g</mi><mo>(</mo><msub><mi>ϵ</mi><mi>F</mi></msub><mo>)</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><annotation encoding="application/x-tex">N_t \sim g(\epsilon_F) k_B T 
+</annotation></semantics></math></span></span></span></p>
+<ul>
+<li>每个电子的热激发能量约为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>3</mn><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">3 k_B T / 2</annotation></semantics></math></span></span>。</li>
+</ul>
+<p><strong>图示：</strong></p>
+<ul>
+<li>图展示了Fermi气体的热容与温度的关系【图在页面7】。</li>
+</ul>
+<h3 id="Sommerfeld-展开-2">Sommerfeld 展开</h3>
+<p>严格计算热容时，需要使用Sommerfeld展开：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>U</mi><mn>0</mn></msub><mo>=</mo><msubsup><mo>∫</mo><mn>0</mn><mrow><msub><mi>ϵ</mi><mi>F</mi></msub></mrow></msubsup><mi>g</mi><mo>(</mo><mi>ϵ</mi><mo>)</mo><mi>ϵ</mi><mi>d</mi><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">U_0 = \int_0^{\epsilon_F} g(\epsilon) \epsilon d\epsilon 
+</annotation></semantics></math></span></span></span></p>
+<p>展开得到热容贡献的各项式，最后以<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>T</mi><mi mathvariant="normal">/</mi><msub><mi>T</mi><mi>F</mi></msub></mrow><annotation encoding="application/x-tex">T/T_F</annotation></semantics></math></span></span>为依赖关系。</p>
+<h2 id="相互作用对电子气体的影响：排斥相互作用">相互作用对电子气体的影响：排斥相互作用</h2>
+<ul>
+<li>
+<p><strong>Wigner-Seitz半径</strong>：粒子间距：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mn>3</mn><mi>N</mi></mrow><mrow><mn>4</mn><mi>π</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r_s = \left( \frac{3N}{4 \pi V} \right)^{1/3} 
+</annotation></semantics></math></span></span></span></p>
+<p>低密度时，粒子之间的动能远大于相互作用能，表现为气体行为。高密度时，相互作用占主导作用，形成晶体。</p>
+</li>
+<li>
+<p>在强简并Fermion系统中，密度越大，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">r_s</annotation></semantics></math></span></span>越小，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>K</mi></mrow><annotation encoding="application/x-tex">K</annotation></semantics></math></span></span>相对于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>U</mi></mrow><annotation encoding="application/x-tex">U</annotation></semantics></math></span></span>越大，电子行为接近独立。</p>
+</li>
+</ul>
+<h3 id="Landau-Fermi-液体理论">Landau Fermi 液体理论</h3>
+<p>即使考虑相互作用，低能的激发与独立粒子类似。</p>
+<ul>
+<li>零温下仍然存在Fermi面，热容等物理量仍然与温度成正比。</li>
+</ul>
+<h3 id="吸引作用-⇒-BCS-基态">吸引作用 ⇒ BCS 基态</h3>
+<ul>
+<li>
+<p>Fermi面与吸引作用导致Cooper对形成，降低能量，导致基态不再是Fermi球，而是BCS基态。</p>
+</li>
+<li>
+<p>低能激发不再是无能隙的粒子—空穴对激发，而是存在能隙的BCS激发。</p>
+</li>
+</ul>
+<p><strong>图示：</strong></p>
+<ul>
+<li>图展示了吸引作用引发的BCS基态与Fermi面之间的关系【图在页面10】。</li>
+</ul>
+<h2 id="分数统计">分数统计</h2>
+<p>二维系统中存在介乎玻色和费米子之间的“粒子”——<strong>anyons</strong>。其波函数满足：</p>
+<ul>
+<li><strong>Fermion</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>=</mo><mo>(</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mi>π</mi><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mi>ψ</mi><mo>(</mo><mrow><msub><mi mathvariant="bold">r</mi><mn mathvariant="bold">1</mn></msub></mrow><mo separator="true">,</mo><mrow><msub><mi mathvariant="bold">r</mi><mn mathvariant="bold">2</mn></msub></mrow><mo>)</mo><mo>=</mo><mo>−</mo><mi>ψ</mi><mo>(</mo><mrow><msub><mi mathvariant="bold">r</mi><mn mathvariant="bold">2</mn></msub></mrow><mo separator="true">,</mo><mrow><msub><mi mathvariant="bold">r</mi><mn mathvariant="bold">1</mn></msub></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\theta = (2n + 1)\pi, \, \psi(\mathbf{r_1}, \mathbf{r_2}) = -\psi(\mathbf{r_2}, \mathbf{r_1})</annotation></semantics></math></span></span></li>
+<li><strong>Boson</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>=</mo><mn>2</mn><mi>n</mi><mi>π</mi><mo separator="true">,</mo><mspace width="0.16667em"></mspace><mi>ψ</mi><mo>(</mo><mrow><msub><mi mathvariant="bold">r</mi><mn mathvariant="bold">1</mn></msub></mrow><mo separator="true">,</mo><mrow><msub><mi mathvariant="bold">r</mi><mn mathvariant="bold">2</mn></msub></mrow><mo>)</mo><mo>=</mo><mi>ψ</mi><mo>(</mo><mrow><msub><mi mathvariant="bold">r</mi><mn mathvariant="bold">2</mn></msub></mrow><mo separator="true">,</mo><mrow><msub><mi mathvariant="bold">r</mi><mn mathvariant="bold">1</mn></msub></mrow><mo>)</mo></mrow><annotation encoding="application/x-tex">\theta = 2n\pi, \, \psi(\mathbf{r_1}, \mathbf{r_2}) = \psi(\mathbf{r_2}, \mathbf{r_1})</annotation></semantics></math></span></span></li>
+<li><strong>Anyons</strong>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>θ</mi><mo>≠</mo><mi>n</mi><mi>π</mi></mrow><annotation encoding="application/x-tex">\theta \neq n\pi</annotation></semantics></math></span></span></li>
+</ul>
+<p>Anyon系统的统计规律复杂，无法用单粒子分布函数来描述。即使没有相互作用，多粒子anyons系统的本征能量也无法简单表示为单粒子能量之和。</p>
+<h3 id="参考资料">参考资料</h3>
+<ul>
+<li>“Fractional Statistics and Quantum Theory”, 2nd ed, A. Khar, World Scientific (2005)</li>
+<li>“Anyons: Quantum Mechanics of Particles with Fractional Statistics”, A. Lerda, Springer (1992)</li>
+</ul>
+<h2 id="复杂系统的统计">复杂系统的统计</h2>
+<h3 id="两相共存的系统">两相共存的系统</h3>
+<ul>
+<li>系统具有两种相，单粒子本征能级和简并度分别为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ϵ</mi><mrow><mi>σ</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\epsilon_{\sigma l}</annotation></semantics></math></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>ω</mi><mrow><mi>σ</mi><mi>l</mi></mrow></msub></mrow><annotation encoding="application/x-tex">\omega_{\sigma l}</annotation></semantics></math></span></span>。</li>
+<li>对应的分布函数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>a</mi><mrow><mi>σ</mi><mi>l</mi></mrow></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{a_{\sigma l}\}</annotation></semantics></math></span></span>，微观状态数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">Ω</mi><mo>=</mo><mi mathvariant="normal">Ω</mi><mo>(</mo><mo>{</mo><msub><mi>a</mi><mrow><mi>σ</mi><mi>l</mi></mrow></msub><mo>}</mo><mo>)</mo></mrow><annotation encoding="application/x-tex">\Omega = \Omega(\{a_{\sigma l}\})</annotation></semantics></math></span></span>。</li>
+</ul>
+<h4 id="约束条件：">约束条件：</h4>
+<ol>
+<li>粒子数守恒：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>N</mi><mo>=</mo><msub><mi>N</mi><mi>I</mi></msub><mo>+</mo><msub><mi>N</mi><mrow><mi>I</mi><mi>I</mi></mrow></msub></mrow><annotation encoding="application/x-tex">N = N_I + N_{II}</annotation></semantics></math></span></span></li>
+<li>能量守恒：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mo>=</mo><msub><mi>E</mi><mi>I</mi></msub><mo>+</mo><msub><mi>E</mi><mrow><mi>I</mi><mi>I</mi></mrow></msub></mrow><annotation encoding="application/x-tex">E = E_I + E_{II}</annotation></semantics></math></span></span></li>
+</ol>
+<p>引入拉格朗日乘子<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span></span>和<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>β</mi></mrow><annotation encoding="application/x-tex">\beta</annotation></semantics></math></span></span>，求解最优分布$ a_{\sigma l} = a_{\sigma l}(\alpha, \beta)$，从而得到两相共存时的化学势和温度。</p>
+<h3 id="化学反应">化学反应</h3>
+<p>例如：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mn>2</mn></msub><mo>+</mo><mn>3</mn><msub><mi>H</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn><mi>N</mi><msub><mi>H</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">N_2 + 3H_2 = 2NH_3</annotation></semantics></math></span></span></p>
+<ul>
+<li>各物质的分布函数为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>{</mo><msub><mi>a</mi><mrow><mi>i</mi><mi>l</mi></mrow></msub><mo>}</mo></mrow><annotation encoding="application/x-tex">\{a_{i l}\}</annotation></semantics></math></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>i</mi><mo>=</mo><msub><mi>H</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>N</mi><mn>2</mn></msub><mo separator="true">,</mo><mi>N</mi><msub><mi>H</mi><mn>3</mn></msub></mrow><annotation encoding="application/x-tex">i = H_2, N_2, NH_3</annotation></semantics></math></span></span>，并且存在约束条件：
+<ul>
+<li>原子数守恒：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>H</mi></msub><mo>=</mo><mn>2</mn><msub><mi>N</mi><mrow><msub><mi>H</mi><mn>2</mn></msub></mrow></msub><mo>+</mo><msub><mi>N</mi><mrow><mi>N</mi><msub><mi>H</mi><mn>3</mn></msub></mrow></msub></mrow><annotation encoding="application/x-tex">N_H = 2N_{H_2} + N_{NH_3}</annotation></semantics></math></span></span></li>
+<li>氢原子数守恒：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>N</mi></msub><mo>=</mo><mn>2</mn><msub><mi>N</mi><mrow><msub><mi>N</mi><mn>2</mn></msub></mrow></msub><mo>+</mo><mn>3</mn><msub><mi>N</mi><mrow><mi>N</mi><msub><mi>H</mi><mn>3</mn></msub></mrow></msub></mrow><annotation encoding="application/x-tex">N_N = 2N_{N_2} + 3N_{NH_3}</annotation></semantics></math></span></span></li>
+</ul>
+</li>
+</ul>
+<h4 id="约束条件下的平衡分布：">约束条件下的平衡分布：</h4>
+<ul>
+<li>通过引入拉格朗日乘子<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>α</mi><mi>N</mi></msub><mo separator="true">,</mo><msub><mi>α</mi><mi>H</mi></msub><mo separator="true">,</mo><mi>β</mi></mrow><annotation encoding="application/x-tex">\alpha_N, \alpha_H, \beta</annotation></semantics></math></span></span>，得到平衡分布。</li>
+</ul>
+<h3 id="相对论粒子">相对论粒子</h3>
+<ul>
+<li>
+<p>例如，电子和正电子不守恒，但总电荷守恒，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>N</mi><mi>e</mi></msub><mo>−</mo><msub><mi>N</mi><mi>p</mi></msub><mo>=</mo><mo>−</mo><mi>Q</mi><mi mathvariant="normal">/</mi><mi>e</mi></mrow><annotation encoding="application/x-tex">N_e - N_p = -Q/e</annotation></semantics></math></span></span>。</p>
+</li>
+<li>
+<p>电子和正电子的分布函数为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>a</mi><mi>e</mi></msub><mo>(</mo><mi>p</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mo>(</mo><mi>ϵ</mi><mo>(</mo><mi>p</mi><mo>)</mo><mo>−</mo><msub><mi>μ</mi><mi>e</mi></msub><mo>)</mo></mrow></msup><mo>+</mo><mn>1</mn></mrow></mfrac><mo separator="true">,</mo><mspace width="1em"></mspace><msub><mi>a</mi><mi>p</mi></msub><mo>(</mo><mi>p</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mn>1</mn></mrow><mrow><msup><mi>e</mi><mrow><mi>β</mi><mo>(</mo><mi>ϵ</mi><mo>(</mo><mi>p</mi><mo>)</mo><mo>+</mo><msub><mi>μ</mi><mi>p</mi></msub><mo>)</mo></mrow></msup><mo>+</mo><mn>1</mn></mrow></mfrac></mrow><annotation encoding="application/x-tex">a_e(p) = \frac{1}{e^{\beta (\epsilon(p) - \mu_e)} + 1}, \quad a_p(p) = \frac{1}{e^{\beta (\epsilon(p) + \mu_p)} + 1} 
+</annotation></semantics></math></span></span></span></p>
+<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>ϵ</mi><mo>(</mo><mi>p</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">\epsilon(p)</annotation></semantics></math></span></span>为粒子的能量。</p>
+</li>
+</ul>
+<h4 id="电子和正电子的关系：">电子和正电子的关系：</h4>
+<ul>
+<li>$ \mu_p = - \mu_e $</li>
+</ul>
+<h3 id="电子气体">电子气体</h3>
+<ul>
+<li>
+<p>在低温下，只有位于Fermi面附近的少数电子参与热激发，对热容有贡献。</p>
+</li>
+<li>
+<p>热容公式：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>C</mi><mi>e</mi></msub><mo>∼</mo><mn>3</mn><mi>g</mi><mo>(</mo><msub><mi>ϵ</mi><mi>F</mi></msub><mo>)</mo><msub><mi>k</mi><mi>B</mi></msub><mi>T</mi></mrow><annotation encoding="application/x-tex">C_e \sim 3g(\epsilon_F) k_B T 
+</annotation></semantics></math></span></span></span></p>
+<p>其中，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>g</mi><mo>(</mo><msub><mi>ϵ</mi><mi>F</mi></msub><mo>)</mo></mrow><annotation encoding="application/x-tex">g(\epsilon_F)</annotation></semantics></math></span></span>是Fermi面态密度。</p>
+</li>
+</ul>
+<p><strong>图示：</strong></p>
+<ul>
+<li>图展示了电子气体中热容与温度的关系【图在页面 6】。</li>
+</ul>
+<h3 id="相互作用对电子气体的影响">相互作用对电子气体的影响</h3>
+<ul>
+<li>
+<p><strong>Wigner-Seitz 半径</strong>：粒子间距为：</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub><mo>=</mo><msup><mrow><mo fence="true">(</mo><mfrac><mrow><mn>3</mn><mi>N</mi></mrow><mrow><mn>4</mn><mi>π</mi><mi>V</mi></mrow></mfrac><mo fence="true">)</mo></mrow><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mn>3</mn></mrow></msup></mrow><annotation encoding="application/x-tex">r_s = \left( \frac{3N}{4 \pi V} \right)^{1/3} 
+</annotation></semantics></math></span></span></span></p>
+<p>密度越大，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>r</mi><mi>s</mi></msub></mrow><annotation encoding="application/x-tex">r_s</annotation></semantics></math></span></span>越小，相互作用对电子气体的影响越大。</p>
+</li>
+</ul>
+<h4 id="Fermi统计的特点：">Fermi统计的特点：</h4>
+<ul>
+<li>电子气体在高密度时趋近于独立电子行为，而低密度下相互作用主导，可能形成Wigner晶体。</li>
+</ul>
+<h3 id="Landau-Fermi-液体理论-2">Landau Fermi 液体理论</h3>
+<ul>
+<li>相互作用不改变低能的激发和独立粒子的性质，低能激发仍然与Fermi面相关。</li>
+<li>热容等物理量仍然与温度成正比。</li>
+</ul>
+<h3 id="吸引作用-⇒-BCS-基态-2">吸引作用 ⇒ BCS 基态</h3>
+<ul>
+<li>Fermi面和吸引作用导致Cooper对的形成，基态由Fermi球变为BCS基态。此时，低能激发不再是无能隙的粒子—空穴对激发，而是存在能隙的BCS激发。</li>
+</ul>
+<p><strong>图示：</strong></p>
+<ul>
+<li>图展示了Fermi面和吸引作用引发的BCS基态【图在页面 10】。</li>
+</ul>
+
       </div>
       <div class="post-tags-categories">
         
@@ -431,45 +1168,23 @@
 
 
 
-  
-  <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img" style="background-size: cover; 
-      background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-    </div>
-    <a href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%BA%8C%E5%AE%9A%E5%BE%8B/" class="post-nav-link">
-      <div class="title">
-        <i class="fas fa-angle-left"></i> Prev:
-        <div class="title-text">热力学第二定律</div>
-      </div>
-      
-      <!-- <div class="content">
-        热力学第二定律
-定义
-可逆过程：过程中每一步都可以沿相反方向发生，并且不引起外界的其他改变。
-不可逆过程的特点：不能反向
-      </div> -->
-    </a>
-  </div>
-
 
 
   
   <div class="post-nav-next post-nav-item">
     <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
-      <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" class="lazyload placeholder" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+      <img class="lazyload lazyload placeholder" src="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" class="lazyload placeholder" data-srcset="https://pic4.zhimg.com/80/v2-ac37895e01321f2759ea5af591e4c581_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
     </div>
-    <a href="/physics/ReTong/%E5%BC%95%E8%A8%80%E3%80%81%E7%83%AD%E5%8A%9B%E5%AD%A6%E7%AC%AC%E4%B8%80%E5%AE%9A%E5%BE%8B/" class="post-nav-link">
+    <a href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABoltzmann%E7%BB%9F%E8%AE%A1/" class="post-nav-link">
       <div class="title">
         Next: <i class="fas fa-angle-right"></i>
-        <div class="title-text">引言、热力学第一定律</div>
+        <div class="title-text">几率法：Boltzmann 统计</div>
       </div>
       <!-- <div class="content">
-        引言、热力学第一定律
-定义
-系统：研究对象，通常指占据某个特定空间内的东西
-环境：宇宙中对象（系统）之外的其它部分，远大
+        几率法：Boltzmann 统计
+基本概念
+为了阐明 Boltzmann 统计的定义，需要先了解近独立子系组成的系统，全
       </div> -->
     </a>
   </div>
@@ -587,7 +1302,7 @@
   <div class="content">
     <div class="toc-main">
       <div class="toc-content">
-        <!--  -->
+        <!-- <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">几率法：Bose统计和Fermi统计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A8%E9%85%8D%E5%88%86%E5%87%BD%E6%95%B0"><span class="toc-text">巨配分函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E7%AE%80%E5%B9%B6%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93"><span class="toc-text">弱简并理想气体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%BA%E5%BC%B1%E7%AE%80%E5%B9%B6%E5%88%A4%E6%8D%AE"><span class="toc-text">强弱简并判据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E7%AE%80%E5%B9%B6%E7%90%86%E6%83%B3%E6%B0%94%E4%BD%93-2"><span class="toc-text">弱简并理想气体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89%EF%BC%9A"><span class="toc-text">定义：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC%E4%B8%8E%E5%8C%96%E5%AD%A6%E5%8A%BF%E5%8F%8D%E6%BC%94"><span class="toc-text">关键公式推导与化学势反演</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E8%83%BD%E5%92%8C%E7%83%AD%E5%AE%B9"><span class="toc-text">内能和热容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%AE%B9"><span class="toc-text">热容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%AE%B9%E7%9A%84%E5%8F%A6%E5%A4%96%E4%B8%80%E7%A7%8D%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">热容的另外一种表达式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8E%8B%E5%BC%BA"><span class="toc-text">压强</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%8F%E5%85%B8%E6%9E%81%E9%99%90"><span class="toc-text">经典极限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E7%AE%80%E5%B9%B6%E6%9D%A1%E4%BB%B6"><span class="toc-text">弱简并条件</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%B1%E7%AE%80%E5%B9%B6%E6%9E%81%E9%99%90"><span class="toc-text">弱简并极限</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E7%BB%9F%E8%AE%A1%E7%9A%84%E5%BE%AE%E8%A7%82%E6%80%81%E6%95%B0%E7%9B%AE"><span class="toc-text">不同统计的微观态数目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gibbs%E2%80%99-paradox"><span class="toc-text">Gibbs’ paradox</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-11-Bose-Einstein-%E5%87%9D%E8%81%9A"><span class="toc-text">6.11 Bose-Einstein 凝聚</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E8%83%BD%E7%BA%A7%E4%BD%93%E7%B3%BB%E7%9A%84-BEC"><span class="toc-text">两能级体系的 BEC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bose-%E5%88%86%E5%B8%83"><span class="toc-text">Bose 分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E7%83%AD%E5%8A%9B%E5%AD%A6%E8%A7%92%E5%BA%A6%E7%90%86%E8%A7%A3%E4%B8%A4%E8%83%BD%E7%BA%A7%E4%BD%93%E7%B3%BB%E7%9A%84-BEC"><span class="toc-text">从热力学角度理解两能级体系的 BEC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%B1%E7%AE%80%E5%B9%B6%E7%9A%84%E4%B8%89%E7%BB%B4-Bose-%E6%B0%94%E4%BD%93"><span class="toc-text">弱简并的三维 Bose 气体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%BB%B4-Bose-%E6%B0%94%E4%BD%93%E7%9A%84-BEC"><span class="toc-text">三维 Bose 气体的 BEC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%8F%98%E6%B8%A9%E5%BA%A6"><span class="toc-text">相变温度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%83%AD%E5%AE%B9-2"><span class="toc-text">热容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BEC-%E7%9B%B8%E5%8F%98%E7%B1%BB%E5%9E%8B"><span class="toc-text">BEC 相变类型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AD%89%E6%B8%A9%E6%83%85%E5%86%B5%E4%B8%8B%E4%BD%93%E7%A7%AF%E5%8F%98%E5%8A%A8%E5%AF%BC%E8%87%B4%E7%9A%84-BEC"><span class="toc-text">等温情况下体积变动导致的 BEC</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BEC-%E7%8A%B6%E6%80%81%E6%96%B9%E7%A8%8B"><span class="toc-text">BEC 状态方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BEC-%E5%AE%9E%E9%AA%8C%E5%AE%9E%E7%8E%B0"><span class="toc-text">BEC 实验实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%B8%E6%94%B6%E6%88%90%E5%83%8F"><span class="toc-text">吸收成像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E7%9B%B8%E5%B9%B2%E6%B5%8B%E9%87%8F"><span class="toc-text">量子相干测量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E8%A7%92%E9%95%BF%E7%A8%8B%E5%BA%8F"><span class="toc-text">非对角长程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E8%A7%92%E9%95%BF%E7%A8%8B%E5%BA%8F"><span class="toc-text">对角长程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E8%A7%92%E9%95%BF%E7%A8%8B%E5%BA%8F%E7%9A%84%E6%B5%8B%E9%87%8F"><span class="toc-text">非对角长程序的测量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BEC-%E7%9A%84%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">BEC 的实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9F%E5%BA%A6%E5%88%86%E5%B8%83%E6%B5%8B%E9%87%8F%E6%96%B9%E6%B3%95"><span class="toc-text">速度分布测量方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%B8%E6%94%B6%E6%88%90%E5%83%8F-2"><span class="toc-text">吸收成像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%AD%90%E7%9B%B8%E5%B9%B2%E6%B5%8B%E9%87%8F-2"><span class="toc-text">量子相干测量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E5%AF%B9%E8%A7%92%E9%95%BF%E7%A8%8B%E5%BA%8F-2"><span class="toc-text">非对角长程序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-12-%E5%85%89%E5%AD%90-%E5%A3%B0%E5%AD%90%E6%B0%94%E4%BD%93"><span class="toc-text">6.12 光子&#x2F;声子气体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%89%E5%AD%90%E6%B0%94%E4%BD%93"><span class="toc-text">光子气体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%BB%91%E4%BD%93%E8%BE%90%E5%B0%84"><span class="toc-text">黑体辐射</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Planck%E2%80%99s-law"><span class="toc-text">Planck’s law</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8E%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E7%9B%B4%E6%8E%A5%E8%AE%A1%E7%AE%97%E9%BB%91%E4%BD%93%E8%BE%90%E5%B0%84%E8%B0%B1"><span class="toc-text">从分布函数直接计算黑体辐射谱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Stephan-Boltzmann-%E5%B8%B8%E6%95%B0"><span class="toc-text">Stephan-Boltzmann 常数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Euler-%E5%85%AC%E5%BC%8F"><span class="toc-text">Euler 公式</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Wien%E2%80%99s-%E4%BD%8D%E7%A7%BB%E5%AE%9A%E5%BE%8B"><span class="toc-text">Wien’s 位移定律</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B2%92%E5%AD%90%E6%95%B0"><span class="toc-text">粒子数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9B%B6%E7%82%B9%E6%8C%AF%E5%8A%A8%E5%92%8C-Casimir-%E6%95%88%E5%BA%94"><span class="toc-text">零点振动和 Casimir 效应</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A3%B0%E5%AD%90%E6%B0%94%E4%BD%93%E3%80%81%E5%9B%BA%E4%BD%93%E7%83%AD%E5%AE%B9"><span class="toc-text">声子气体、固体热容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8E%E6%B8%A9%E6%9E%81%E9%99%90"><span class="toc-text">低温极限</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E6%B8%A9%E6%9E%81%E9%99%90"><span class="toc-text">高温极限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-13-%E5%BC%BA%E7%AE%80%E5%B9%B6-Fermi-%E6%B0%94%E4%BD%93"><span class="toc-text">6.13 强简并 Fermi 气体</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A4%E6%8D%AE"><span class="toc-text">判据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%80%81"><span class="toc-text">系统的基态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%8E%E8%83%BD%E6%BF%80%E5%8F%91%E6%80%81"><span class="toc-text">系统的低能激发态</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermi-%E9%9D%A2"><span class="toc-text">Fermi 面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#T-0-text-K-%E6%97%B6%E7%9A%84Fermi%E5%88%86%E5%B8%83"><span class="toc-text">T&#x3D;0KT &#x3D; 0 \, \text{K}T&#x3D;0K时的Fermi分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermi-%E9%9D%A2%E7%9A%84%E7%B2%92%E5%AD%90%E6%95%B0"><span class="toc-text">Fermi 面的粒子数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%9A%84%E5%9F%BA%E6%80%81%E8%83%BD%E9%87%8F"><span class="toc-text">系统的基态能量</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%B9%B6%E5%8E%8B"><span class="toc-text">简并压</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%89%E9%99%90%E6%B8%A9%E5%BA%A6%E4%B8%8B%E7%9A%84%E7%BB%93%E6%9E%9C"><span class="toc-text">有限温度下的结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%B7%E4%BD%93%E8%AE%A1%E7%AE%97"><span class="toc-text">分布函数的具体计算</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sommerfeld-%E5%B1%95%E5%BC%80"><span class="toc-text">Sommerfeld 展开</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%96%E5%AD%A6%E5%8A%BF%E9%9A%8F%E6%B8%A9%E5%BA%A6%E7%9A%84%E5%8F%98%E5%8C%96"><span class="toc-text">化学势随温度的变化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%8E%E6%B8%A9%E4%B8%8B%E7%9A%84%E5%8C%96%E5%AD%A6%E5%8A%BF%E5%8F%98%E5%8C%96"><span class="toc-text">低温下的化学势变化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gibbs-Duhem-%E6%96%B9%E7%A8%8B"><span class="toc-text">Gibbs-Duhem 方程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Fermi-%E5%87%BD%E6%95%B0%E7%A7%AF%E5%88%86%E7%9A%84-Polylogarithm-%E8%A1%A8%E7%A4%BA"><span class="toc-text">Fermi 函数积分的 Polylogarithm 表示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%AD%90%E7%83%AD%E5%AE%B9"><span class="toc-text">电子热容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%82%E4%B8%8E%E7%83%AD%E5%AE%B9%E8%B4%A1%E7%8C%AE%E7%9A%84%E5%A4%A7%E4%BD%93%E4%BC%B0%E8%AE%A1%EF%BC%9A"><span class="toc-text">参与热容贡献的大体估计：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sommerfeld-%E5%B1%95%E5%BC%80-2"><span class="toc-text">Sommerfeld 展开</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E5%AF%B9%E7%94%B5%E5%AD%90%E6%B0%94%E4%BD%93%E7%9A%84%E5%BD%B1%E5%93%8D%EF%BC%9A%E6%8E%92%E6%96%A5%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8"><span class="toc-text">相互作用对电子气体的影响：排斥相互作用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Landau-Fermi-%E6%B6%B2%E4%BD%93%E7%90%86%E8%AE%BA"><span class="toc-text">Landau Fermi 液体理论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%B8%E5%BC%95%E4%BD%9C%E7%94%A8-%E2%87%92-BCS-%E5%9F%BA%E6%80%81"><span class="toc-text">吸引作用 ⇒ BCS 基态</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%95%B0%E7%BB%9F%E8%AE%A1"><span class="toc-text">分数统计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BB%9F%E8%AE%A1"><span class="toc-text">复杂系统的统计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%A4%E7%9B%B8%E5%85%B1%E5%AD%98%E7%9A%84%E7%B3%BB%E7%BB%9F"><span class="toc-text">两相共存的系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6%EF%BC%9A"><span class="toc-text">约束条件：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%96%E5%AD%A6%E5%8F%8D%E5%BA%94"><span class="toc-text">化学反应</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BA%A6%E6%9D%9F%E6%9D%A1%E4%BB%B6%E4%B8%8B%E7%9A%84%E5%B9%B3%E8%A1%A1%E5%88%86%E5%B8%83%EF%BC%9A"><span class="toc-text">约束条件下的平衡分布：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%AF%B9%E8%AE%BA%E7%B2%92%E5%AD%90"><span class="toc-text">相对论粒子</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%B5%E5%AD%90%E5%92%8C%E6%AD%A3%E7%94%B5%E5%AD%90%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A"><span class="toc-text">电子和正电子的关系：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%B5%E5%AD%90%E6%B0%94%E4%BD%93"><span class="toc-text">电子气体</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BA%92%E4%BD%9C%E7%94%A8%E5%AF%B9%E7%94%B5%E5%AD%90%E6%B0%94%E4%BD%93%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-text">相互作用对电子气体的影响</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Fermi%E7%BB%9F%E8%AE%A1%E7%9A%84%E7%89%B9%E7%82%B9%EF%BC%9A"><span class="toc-text">Fermi统计的特点：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Landau-Fermi-%E6%B6%B2%E4%BD%93%E7%90%86%E8%AE%BA-2"><span class="toc-text">Landau Fermi 液体理论</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%B8%E5%BC%95%E4%BD%9C%E7%94%A8-%E2%87%92-BCS-%E5%9F%BA%E6%80%81-2"><span class="toc-text">吸引作用 ⇒ BCS 基态</span></a></li></ol></li></ol></li></ol> -->
         <div class="toc"></div>
       </div>
     </div>
@@ -613,6 +1328,27 @@
       <!-- hash算法 -->
       
       <div class="aside-list">
+        
+          <div class="aside-list-item">
+            
+            
+            
+
+            <div class="post-img-box">
+              <a href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABose%E7%BB%9F%E8%AE%A1%E5%92%8CFermi%E7%BB%9F%E8%AE%A1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                
+                  <span class="post-date">03-01</span>
+                
+              </div>
+              <a class="post-title" href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABose%E7%BB%9F%E8%AE%A1%E5%92%8CFermi%E7%BB%9F%E8%AE%A1/">几率法：Bose统计和Fermi统计</a>
+            </div>
+          </div>
         
           <div class="aside-list-item">
             
@@ -695,27 +1431,6 @@
                 
               </div>
               <a class="post-title" href="/physics/ReTong/%E7%9B%B8%E5%8F%98/">相变</a>
-            </div>
-          </div>
-        
-          <div class="aside-list-item">
-            
-            
-            
-
-            <div class="post-img-box">
-              <a href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%87%BD%E6%95%B0/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" style="width:100%;height:100%;object-fit:cover;" data-src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" class="lazyload placeholder" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                
-                  <span class="post-date">02-14</span>
-                
-              </div>
-              <a class="post-title" href="/physics/ReTong/%E7%83%AD%E5%8A%9B%E5%AD%A6%E5%87%BD%E6%95%B0/">热力学函数</a>
             </div>
           </div>
         
