@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>tianyi</title>
   <icon>https://kotokowa.github.io/physics/icon.png</icon>
@@ -6,7 +6,7 @@
   <link href="https://kotokowa.github.io/physics/atom.xml" rel="self"/>
   
   <link href="https://kotokowa.github.io/physics/"/>
-  <updated>2026-03-07T04:44:25.937Z</updated>
+  <updated>2026-10-27T14:00:00Z</updated>
   <id>https://kotokowa.github.io/physics/</id>
   
   <author>
@@ -16,7 +16,7 @@
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
-  <entry>
+  <entry><title>电动力学1-5章</title><link href="https://kotokowa.github.io/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A61-5%E7%AB%A0/"/><id>https://kotokowa.github.io/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A61-5%E7%AB%A0/</id><published>2026-10-27T14:00:00Z</published><updated>2026-10-27T14:00:00Z</updated><summary>前五章复习讲义：96 个小课题，保留连续公式推导、定位注释与重点结论。</summary><content type="html">&lt;p&gt;前五章复习讲义：96 个小课题，保留连续公式推导、定位注释与重点结论。&lt;/p&gt;&lt;p&gt;&lt;a href="https://kotokowa.github.io/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A61-5%E7%AB%A0/"&gt;在线阅读全文&lt;/a&gt;&lt;/p&gt;</content><category term="电动力学" scheme="https://kotokowa.github.io/physics/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/"/></entry><entry><title>电动力学期中模拟1</title><link href="https://kotokowa.github.io/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F1/"/><id>https://kotokowa.github.io/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F1/</id><published>2026-10-27T14:00:00Z</published><updated>2026-10-27T14:00:00Z</updated><summary>5 道填空、1 道简答、3 道解答题，含完整参考推导。重点：介质球、能量守恒、磁偶极。</summary><content type="html">&lt;p&gt;5 道填空、1 道简答、3 道解答题，含完整参考推导。重点：介质球、能量守恒、磁偶极。&lt;/p&gt;&lt;p&gt;&lt;a href="https://kotokowa.github.io/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F1/"&gt;在线阅读全文&lt;/a&gt;&lt;/p&gt;</content><category term="电动力学" scheme="https://kotokowa.github.io/physics/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/"/></entry><entry><title>电动力学期中模拟2</title><link href="https://kotokowa.github.io/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F2/"/><id>https://kotokowa.github.io/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F2/</id><published>2026-10-27T14:00:00Z</published><updated>2026-10-27T14:00:00Z</updated><summary>5 道填空、1 道简答、3 道解答题，含完整参考推导。重点：导体边值、多极矩、磁化与场动量。</summary><content type="html">&lt;p&gt;5 道填空、1 道简答、3 道解答题，含完整参考推导。重点：导体边值、多极矩、磁化与场动量。&lt;/p&gt;&lt;p&gt;&lt;a href="https://kotokowa.github.io/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F2/"&gt;在线阅读全文&lt;/a&gt;&lt;/p&gt;</content><category term="电动力学" scheme="https://kotokowa.github.io/physics/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/"/></entry><entry>
     <title>涨落</title>
     <link href="https://kotokowa.github.io/physics/ReTong/%E6%B6%A8%E8%90%BD/"/>
     <id>https://kotokowa.github.io/physics/ReTong/%E6%B6%A8%E8%90%BD/</id>
@@ -29,9 +29,9 @@
       
       
     <summary type="html">&lt;h1&gt;涨落&lt;/h1&gt;
-&lt;h2 id=&quot;广义系综理论&quot;&gt;广义系综理论&lt;/h2&gt;
+&lt;h2 id="广义系综理论"&gt;广义系综理论&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;广延量与强度量&lt;/strong&gt;&lt;br&gt;
-广延量：&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math&gt;&lt;semantics&gt;</summary>
+广延量：&lt;span class="katex"&gt;&lt;span class="katex-mathml"&gt;&lt;math&gt;&lt;semantics&gt;</summary>
       
     
     
@@ -56,7 +56,7 @@
       
       
     <summary type="html">&lt;h1&gt;系综统计&lt;/h1&gt;
-&lt;h2 id=&quot;引言&quot;&gt;引言&lt;/h2&gt;
+&lt;h2 id="引言"&gt;引言&lt;/h2&gt;
 &lt;p&gt;Coarse graining：宏观物理量是微观量在大空间、长时间下的平均 ⇔ 在一段时间内对系统多次测量的平均 ⇔ 多个具有相同宏观性质但是微观状态不同的假想系统的平均&lt;/p&gt;
 &lt;p&gt;系综：假想系统的集合</summary>
       
@@ -83,8 +83,8 @@
       
       
     <summary type="html">&lt;h1&gt;几率法：Bose统计和Fermi统计&lt;/h1&gt;
-&lt;h2 id=&quot;巨配分函数&quot;&gt;巨配分函数&lt;/h2&gt;
-&lt;p&gt;单粒子态：&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;m</summary>
+&lt;h2 id="巨配分函数"&gt;巨配分函数&lt;/h2&gt;
+&lt;p&gt;单粒子态：&lt;span class="katex"&gt;&lt;span class="katex-mathml"&gt;&lt;math&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mrow&gt;&lt;m</summary>
       
     
     
@@ -109,9 +109,9 @@
       
       
     <summary type="html">&lt;h1&gt;几率法：Boltzmann 统计&lt;/h1&gt;
-&lt;h2 id=&quot;基本概念&quot;&gt;基本概念&lt;/h2&gt;
+&lt;h2 id="基本概念"&gt;基本概念&lt;/h2&gt;
 &lt;p&gt;为了阐明 Boltzmann 统计的定义，需要先了解近独立子系组成的系统，全同和非全同粒子的系统态（多粒子态）和单粒子态&lt;/p&gt;
-&lt;h3 id=&quot;近独立子系组成的系统&quot;&gt;近独</summary>
+&lt;h3 id="近独立子系组成的系统"&gt;近独</summary>
       
     
     
@@ -162,10 +162,10 @@
       
       
     <summary type="html">&lt;h1&gt;多组元系统、化学平衡&lt;/h1&gt;
-&lt;h2 id=&quot;多组元单相系统&quot;&gt;多组元单相系统&lt;/h2&gt;
-&lt;h3 id=&quot;系统描述与基本参量&quot;&gt;系统描述与基本参量&lt;/h3&gt;
-&lt;h4 id=&quot;系统定义&quot;&gt;系统定义&lt;/h4&gt;
-&lt;p&gt;均匀的、含有 &lt;span class=&quot;katex&quot;&gt;&lt;s</summary>
+&lt;h2 id="多组元单相系统"&gt;多组元单相系统&lt;/h2&gt;
+&lt;h3 id="系统描述与基本参量"&gt;系统描述与基本参量&lt;/h3&gt;
+&lt;h4 id="系统定义"&gt;系统定义&lt;/h4&gt;
+&lt;p&gt;均匀的、含有 &lt;span class="katex"&gt;&lt;s</summary>
       
     
     
@@ -217,7 +217,7 @@
       
       
     <summary type="html">&lt;h1&gt;热力学函数&lt;/h1&gt;
-&lt;h2 id=&quot;热力学函数的引入&quot;&gt;热力学函数的引入&lt;/h2&gt;
+&lt;h2 id="热力学函数的引入"&gt;热力学函数的引入&lt;/h2&gt;
 &lt;p&gt;热力学系统的宏观状态&lt;strong&gt;原始参量&lt;/strong&gt;：几何𝑉、力学𝑝、电磁学、化学参量𝑁&lt;/p&gt;
 &lt;p&gt;从热力学定律可推出&lt;strong&gt;高级参量&lt;/strong&gt;</summary>
       
@@ -244,7 +244,7 @@
       
       
     <summary type="html">&lt;h1&gt;热力学第二定律&lt;/h1&gt;
-&lt;h2 id=&quot;定义&quot;&gt;定义&lt;/h2&gt;
+&lt;h2 id="定义"&gt;定义&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;可逆过程&lt;/strong&gt;：过程中每一步都可以沿相反方向发生，并且不引起外界的其他改变。&lt;/p&gt;
 &lt;p&gt;不可逆过程的特点：不能反向发生 / 反向发生引起外界的变化&lt;/p&gt;
 &lt;p&gt;&lt;st</summary>
@@ -272,7 +272,7 @@
       
       
     <summary type="html">&lt;h1&gt;引言、热力学第一定律&lt;/h1&gt;
-&lt;h2 id=&quot;定义&quot;&gt;定义&lt;/h2&gt;
+&lt;h2 id="定义"&gt;定义&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;系统&lt;/strong&gt;：研究对象，通常指占据某个特定空间内的东西&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;环境&lt;/strong&gt;：宇宙中对象（系统）之外的其它部分，远大于系统&lt;/p&gt;
 &lt;p</summary>
@@ -317,7 +317,7 @@
       
       
     <summary type="html">&lt;h1&gt;粒子物理标准模型与夸克-轻子基本作用&lt;/h1&gt;
-&lt;h2 id=&quot;总览&quot;&gt;总览&lt;/h2&gt;
+&lt;h2 id="总览"&gt;总览&lt;/h2&gt;
 &lt;p&gt;物质结构可由分子, 原子, 原子核(核子+电子), 进一步下探到夸克与轻子. 一个核心思想是: 若要求理论在局域规范变换下形式不变, 就必须引入规范场, 其量子对应规范玻色子. </summary>
       
     
@@ -343,7 +343,7 @@
       
       
     <summary type="html">&lt;h1&gt;核合成与强子对称性&lt;/h1&gt;
-&lt;h2 id=&quot;核素起源与核合成&quot;&gt;核素起源与核合成&lt;/h2&gt;
+&lt;h2 id="核素起源与核合成"&gt;核素起源与核合成&lt;/h2&gt;
 &lt;p&gt;这一部分回答一个问题: 宇宙中的元素从何而来. 关键结论是: 轻元素主要来自早期宇宙核合成(BBN), 重元素主要来自恒星内部的核燃烧与天体爆发现象中的俘获过程.&lt;/p&gt;
 </summary>
       
@@ -370,8 +370,8 @@
       
       
     <summary type="html">&lt;h1&gt;原子核基本性质、放射性、核反应与核模型&lt;/h1&gt;
-&lt;h2 id=&quot;原子核与核物理的基本图景&quot;&gt;原子核与核物理的基本图景&lt;/h2&gt;
-&lt;h3 id=&quot;为什么研究原子核更复杂&quot;&gt;为什么研究原子核更复杂&lt;/h3&gt;
+&lt;h2 id="原子核与核物理的基本图景"&gt;原子核与核物理的基本图景&lt;/h2&gt;
+&lt;h3 id="为什么研究原子核更复杂"&gt;为什么研究原子核更复杂&lt;/h3&gt;
 &lt;p&gt;在原子物理中，常把原子核近似为点电荷来研究电子能级与光谱；但</summary>
       
     
@@ -397,8 +397,8 @@
       
       
     <summary type="html">&lt;h1&gt;多电子原子、磁场效应与分子光谱&lt;/h1&gt;
-&lt;h2 id=&quot;多电子原子的能级结构：从“单电子图像”到“多体效应”&quot;&gt;多电子原子的能级结构：从“单电子图像”到“多体效应”&lt;/h2&gt;
-&lt;h3 id=&quot;为什么多电子原子能级更复杂&quot;&gt;为什么多电子原子能级更复杂&lt;/h3&gt;
+&lt;h2 id="多电子原子的能级结构：从“单电子图像”到“多体效应”"&gt;多电子原子的能级结构：从“单电子图像”到“多体效应”&lt;/h2&gt;
+&lt;h3 id="为什么多电子原子能级更复杂"&gt;为什么多电子原子能级更复杂&lt;/h3&gt;
 &lt;h4 i</summary>
       
     
@@ -424,9 +424,9 @@
       
       
     <summary type="html">&lt;h1&gt;从旧量子论到多电子原子结构：氢原子精确解、类氢标度律与交换效应&lt;/h1&gt;
-&lt;h2 id=&quot;全局主线与核心问题&quot;&gt;全局主线与核心问题&lt;/h2&gt;
-&lt;h3 id=&quot;实验“逼问”理论的三个问题&quot;&gt;实验“逼问”理论的三个问题&lt;/h3&gt;
-&lt;h4 id=&quot;原子为何稳定？&quot;&gt;原子为何稳定</summary>
+&lt;h2 id="全局主线与核心问题"&gt;全局主线与核心问题&lt;/h2&gt;
+&lt;h3 id="实验“逼问”理论的三个问题"&gt;实验“逼问”理论的三个问题&lt;/h3&gt;
+&lt;h4 id="原子为何稳定？"&gt;原子为何稳定</summary>
       
     
     
@@ -451,9 +451,9 @@
       
       
     <summary type="html">&lt;h1&gt;薛定谔方程、典型模型、自旋与光子、双态系统&lt;/h1&gt;
-&lt;h2 id=&quot;薛定谔方程与量子态的描述方式&quot;&gt;薛定谔方程与量子态的描述方式&lt;/h2&gt;
-&lt;h3 id=&quot;量子态、波函数与可观测量&quot;&gt;量子态、波函数与可观测量&lt;/h3&gt;
-&lt;h4 id=&quot;波函数与概率解释&quot;&gt;波函数与概率解</summary>
+&lt;h2 id="薛定谔方程与量子态的描述方式"&gt;薛定谔方程与量子态的描述方式&lt;/h2&gt;
+&lt;h3 id="量子态、波函数与可观测量"&gt;量子态、波函数与可观测量&lt;/h3&gt;
+&lt;h4 id="波函数与概率解释"&gt;波函数与概率解</summary>
       
     
     
@@ -478,10 +478,10 @@
       
       
     <summary type="html">&lt;h1&gt;量子力学中的算符、测量与轨道角动量：一份整合笔记&lt;/h1&gt;
-&lt;h2 id=&quot;量子态与概率诠释&quot;&gt;量子态与概率诠释&lt;/h2&gt;
-&lt;h3 id=&quot;波函数与概率密度&quot;&gt;波函数与概率密度&lt;/h3&gt;
+&lt;h2 id="量子态与概率诠释"&gt;量子态与概率诠释&lt;/h2&gt;
+&lt;h3 id="波函数与概率密度"&gt;波函数与概率密度&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;用波函数 &lt;span class=&quot;katex&quot;&gt;&lt;span cl</summary>
+&lt;li&gt;用波函数 &lt;span class="katex"&gt;&lt;span cl</summary>
       
     
     
@@ -506,10 +506,10 @@
       
       
     <summary type="html">&lt;h1&gt;热辐射、光子与物质波：量子化的诞生与波粒二象性&lt;/h1&gt;
-&lt;h2 id=&quot;辐射场的定量描述&quot;&gt;辐射场的定量描述&lt;/h2&gt;
-&lt;h3 id=&quot;分布函数与能量密度&quot;&gt;分布函数与能量密度&lt;/h3&gt;
+&lt;h2 id="辐射场的定量描述"&gt;辐射场的定量描述&lt;/h2&gt;
+&lt;h3 id="分布函数与能量密度"&gt;分布函数与能量密度&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;用分布函数 &lt;span class=&quot;katex&quot;&gt;&lt;span </summary>
+&lt;li&gt;用分布函数 &lt;span class="katex"&gt;&lt;span </summary>
       
     
     
@@ -534,7 +534,7 @@
       
       
     <summary type="html">&lt;h1&gt;超精细相互作用&lt;/h1&gt;
-&lt;h2 id=&quot;引言&quot;&gt;引言&lt;/h2&gt;
+&lt;h2 id="引言"&gt;引言&lt;/h2&gt;
 &lt;p&gt;在第二章讨论原子中的电子运动时，我们只考虑了电子与原子核之间的库仑相互作用。随着研究的深入，到了第四章，引入了电子的自旋概念，从而产生了光谱的精细结构。但在这里，我们仍把原子核看作是一个点电荷，主要贡</summary>
       
     

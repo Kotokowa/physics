@@ -1,0 +1,27 @@
+
+.post-content.ed-article{font-size:17px;line-height:1.85;overflow-wrap:break-word;color:#17232d;min-width:0}
+.ed-article .ed-focus{background:#66ccff;color:#17232d;padding:14px 20px;margin:24px 0;border-radius:0}
+.ed-article .katex-display{overflow-x:auto;overflow-y:hidden;padding:12px 2px;margin:18px 0;text-align:left}
+.ed-article .katex-display>.katex{display:block;width:max-content;min-width:100%;text-align:left}
+.ed-article .katex{font-size:1.08em;line-height:1.25}
+.ed-article p{margin:14px 0;line-height:1.85}
+.ed-article h2{margin:56px 0 24px;padding-top:18px;border-top:2px solid #66ccff;scroll-margin-top:90px}
+.ed-article h3{margin:38px 0 20px;scroll-margin-top:90px}
+.ed-article h2 .katex,.ed-article h3 .katex{font-size:1em}
+.ed-article .ed-toc{margin:20px 0;padding:12px 16px;border:1px solid #c8d8df;background:#fff}
+.ed-article .ed-toc summary{cursor:pointer;font-size:17px;line-height:1.8;margin:0}
+.ed-article .ed-toc details{margin:4px 0;border:0;background:none;box-shadow:none;padding:0}
+.ed-article .ed-toc details summary{padding:0;background:none;border:0}
+.ed-article .ed-toc ol{margin:6px 0;padding-left:0;counter-reset:ed-item;list-style:none}
+.ed-article .ed-toc li{counter-increment:ed-item;margin:3px 0;padding:0 0 0 2.8em;position:relative}
+.ed-article .ed-toc li:before{content:counters(ed-item,".") ".";counter-increment:none;position:absolute;left:0;top:0;width:2.4em;height:auto;line-height:inherit;white-space:nowrap;text-align:right;background:none;color:inherit;border-radius:0;font-size:inherit}
+.ed-article .ed-toc li a:before{display:none}
+.ed-article .ed-toc a{color:#24465c!important;font-weight:normal}
+body:has(.ed-article) .post-detail-header{height:220px!important;min-height:220px!important;background:#edf6fa!important}
+body:has(.ed-article) .post-detail-header_info-box,body:has(.ed-article) .post-detail-header .title{color:#17232d!important;text-shadow:none!important}
+body:has(.ed-article) .post-detail-header .mask-box{display:none}
+body:has(.ed-article) .post-detail-content{max-width:1320px;margin:auto}
+body:has(.ed-article) .main-content{min-width:0}
+body:has(.ed-article) .bg-light-floor-post{background:#f6f8fa!important}
+body:has(.ed-article) canvas{display:none!important}
+@media(max-width:700px){.post-content.ed-article{font-size:16px}.ed-article .ed-focus{padding:10px 12px;margin:20px 0}.ed-article .katex{font-size:1em}.ed-article .ed-toc{padding:10px}.ed-article h2{margin-top:40px}}
