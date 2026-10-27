@@ -173,11 +173,11 @@
     <div class="bars">
       <div id="appDrawer" class="sidebar-image">
   <div class="drawer-box-icon">
-    <i class="fas fa-bars" aria-hidden="true"></i>
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
   </div>
   
   <transition name="fade">
-    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
     </div>
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
@@ -264,19 +264,19 @@
       
       
         <div id="appSearch">
-  <div class="search"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
   <transition name="fade">
-    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
       <div class="message-box animated bounceInDown">
         <h2>
           <span>
             <i class="fas fa-search" aria-hidden="true"></i>
             <span class="title">Search</span>
           </span>
-          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true"></i>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
         </h2>
         <form class="site-search-form">
-          <input type="text" placeholder="Please enter keywords" id="local-search-input" class="st-search-input" v-model="searchInput">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" class="st-search-input" v-model="searchInput" @click="getSearchFile()">
         </form>
         <div class="result-wrapper">
           <div id="local-search-result" class="local-search-result-cls"></div>
@@ -418,7 +418,58 @@
                 <a href="/physics/archives/2026">2026</a>
             </div>
           
-          <li class="post-item"><div class="post-date-title"><div><span class="post-date">10-27</span></div><a class="post-title" href="/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A61-5%E7%AB%A0/">电动力学1-5章</a></div></li><li class="post-item"><div class="post-date-title"><div><span class="post-date">10-27</span></div><a class="post-title" href="/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F1/">电动力学期中模拟1</a></div></li><li class="post-item"><div class="post-date-title"><div><span class="post-date">10-27</span></div><a class="post-title" href="/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F2/">电动力学期中模拟2</a></div></li><li class="post-item" data-aos="fade-left">
+          <li class="post-item" data-aos="fade-left">
+            
+            <div class="post-img-box">
+              <a href="/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A61-5%E7%AB%A0/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                <span class="post-date">10-27</span>
+              </div>
+              <a class="post-title" href="/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A61-5%E7%AB%A0/">电动力学1-5章</a>
+            </div>
+          </li>
+        
+          
+          <li class="post-item" data-aos="fade-left">
+            
+            <div class="post-img-box">
+              <a href="/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F1/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" src="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" data-srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" srcset="https://pic2.zhimg.com/80/v2-60492f59bde9561e30d21c65cb665e51_1440w.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                <span class="post-date">10-27</span>
+              </div>
+              <a class="post-title" href="/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F1/">电动力学期中模拟1</a>
+            </div>
+          </li>
+        
+          
+          <li class="post-item" data-aos="fade-left">
+            
+            <div class="post-img-box">
+              <a href="/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F2/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" src="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" data-srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" srcset="https://pic3.zhimg.com/80/v2-5ed6526e31000279f5b6631abf906f5c_1440w.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                <span class="post-date">10-27</span>
+              </div>
+              <a class="post-title" href="/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F2/">电动力学期中模拟2</a>
+            </div>
+          </li>
+        
+          
+          <li class="post-item" data-aos="fade-left">
             
             <div class="post-img-box">
               <a href="/physics/ReTong/%E6%B6%A8%E8%90%BD/" class="post-img " style="background-size: cover; 

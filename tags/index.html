@@ -173,11 +173,11 @@
     <div class="bars">
       <div id="appDrawer" class="sidebar-image">
   <div class="drawer-box-icon">
-    <i class="fas fa-bars" aria-hidden="true"></i>
+    <i class="fas fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
   </div>
   
   <transition name="fade">
-    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible">
+    <div class="drawer-box_mask" v-cloak="" style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
     </div>
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
@@ -264,19 +264,19 @@
       
       
         <div id="appSearch">
-  <div class="search"><i class="fas fa-search" aria-hidden="true"></i></div>
+  <div class="search" @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
   <transition name="fade">
-    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible">
+    <div class="message-box_wrapper" style="display: none;" v-cloak="" v-show="dialogVisible" @click.self="cancelDialogVisible()">
       <div class="message-box animated bounceInDown">
         <h2>
           <span>
             <i class="fas fa-search" aria-hidden="true"></i>
             <span class="title">Search</span>
           </span>
-          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true"></i>
+          <i class="fas fa-times close" pointer="" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
         </h2>
         <form class="site-search-form">
-          <input type="text" placeholder="Please enter keywords" id="local-search-input" class="st-search-input" v-model="searchInput">
+          <input type="text" placeholder="Please enter keywords" id="local-search-input" class="st-search-input" v-model="searchInput" @click="getSearchFile()">
         </form>
         <div class="result-wrapper">
           <div id="local-search-result" class="local-search-result-cls"></div>
@@ -466,7 +466,7 @@
                     </span>
                 </a>
                 
-            <a href="/physics/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/" title="电动力学: 3"><span class="tag-content" title="电动力学" style="background-color:#66ccff">电动力学<span class="tag-length">3</span></span></a></div>
+            <a href="/physics/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/" title="电动力学: 3"><span class="tag-content" title="电动力学" style="background-color:#E8F8F5;">电动力学<span class="tag-length">3</span></span></a></div>
         </div>
     </div>
 </div>
