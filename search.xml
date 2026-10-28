@@ -51559,10 +51559,36 @@ $$
 
 **题 8｜充电电容器的能量从哪里进入（24 分）。** 真空平行板电容器的圆形极板半径为 $R$、间距为 $d\ll R$。忽略边缘效应，下极板带 $+Q(t)$，上极板带 $-Q(t)$，$Q(t)=Q_0+It$，$I>0$ 为常量，电场沿 $+z$。在已越过开关暂态、变化足够缓慢的阶段讨论；端口电压指两板的静电电势差。
 
-（a，6 分）从积分形式场方程求板间的 $E_z(t)$ 与 $B_\varphi(s)$，其中 $00),\\
+（a，6 分）从积分形式场方程求板间的 $E_z(t)$ 与 $B_\varphi(s)$，其中 $00$ 处，$\nabla f(r)=$ ______，$\nabla\cdot\hat{\boldsymbol r}=$ ______。在包含原点的整个空间中，$\nabla^2(1/r)=$ ______，最后一空按分布理解。
+
+**解答。**
+
+**题 1。** 三空依次为 $f'(r)\hat{\boldsymbol r}$、$2/r$、$-4\pi\delta^{(3)}(\boldsymbol r)$。
+
+$$
+\begin{aligned}
+\partial_i r&=\frac{x_i}{r},\qquad
+\nabla f=f'(r)\frac{\boldsymbol r}{r},\\
+\nabla\cdot\hat{\boldsymbol r}
+&=\sum_{i=1}^3\partial_i\frac{x_i}{r}
+=\frac3r-\frac{x^2+y^2+z^2}{r^3}=\frac2r,\\
+\nabla\frac1r&=-\frac{\hat{\boldsymbol r}}{r^2},\qquad
+\nabla^2\frac1r=0\quad(r>0),\\
 \int_{rU(0)$，这与球面平均恰为 $U(0)$ 矛盾。即使二阶导数恰好全为零，这一论证仍然有效。结论针对静止外源、纯静电力、无约束点电荷；不排除机械约束、时变场或其他相互作用形成的稳定束缚。
 
 ### 介质球：从分离变量到束缚电荷
+
+**题目回顾。**
+
+**题 7｜均匀外场中的介质球（24 分）。** 半径 $R$ 的介质球介电常数为 $\varepsilon_2$，外部无限介质介电常数为 $\varepsilon_1$。两者均为正实数，界面无自由电荷。远处电场为 $E_0\boldsymbol e_z$，球心为原点，$\theta$ 从 $+z$ 轴量起。
+
+（a，8 分）从静电方程出发，求球内、球外电势的可用形式，并写出界面条件。不得直接引用介质球的场公式。
+
+（b，8 分）求全部系数、球内电场及球外诱导场对应的有效电偶极矩；有效电偶极矩按介电常数为 $\varepsilon_1$ 的均匀背景中的偶极势定义。
+
+（c，8 分）令外部为真空。求球的 $\boldsymbol P$、$\rho_b$、$\sigma_b$，直接积分验证电偶极矩；检查 $\varepsilon_2=\varepsilon_0$ 与 $\varepsilon_2\to\infty$ 的极限。
+
+**解答。**
 
 **题 7（a）。** 在每个均匀无自由电荷区域，$\nabla\times\boldsymbol E=0$、$\nabla\cdot(\varepsilon\boldsymbol E)=0$。外场仅含轴对称的 $\cos\theta$ 角分布，球形边界不混合各角阶；取 $\phi=f(r)\cos\theta$：
 
@@ -51596,8 +51622,6 @@ C=\frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+2\varepsilon_1}E_0R^3.
 \end{aligned}
 $$
 
-
-
 $$
 \begin{aligned}
 \phi_{\rm in}&=-\frac{3\varepsilon_1E_0}{\varepsilon_2+2\varepsilon_1}r\cos\theta,\\
@@ -51611,8 +51635,6 @@ $$
 \end{aligned}
 $$
 
-
-
 **（c）** 此时取 $\varepsilon_1=\varepsilon_0$。设 $P$ 表示均匀极化强度的 $z$ 分量：
 
 $$
@@ -51620,44 +51642,9 @@ $$
 \boldsymbol P&=(\varepsilon_2-\varepsilon_0)\boldsymbol E_{\rm in}
 =\frac{3\varepsilon_0(\varepsilon_2-\varepsilon_0)}{\varepsilon_2+2\varepsilon_0}E_0\boldsymbol e_z
 \equiv P\boldsymbol e_z,\\
-\rho_b&=-\nabla\cdot\boldsymbol P=0\quad(r
+\rho_b&=-\nabla\cdot\boldsymbol P=0\quad(r0$ 为常量，电场沿 $+z$。在已越过开关暂态、变化足够缓慢的阶段讨论；端口电压指两板的静电电势差。
 
-$$
-\begin{aligned}
-\sigma&=\frac Q{\pi R^2},\qquad E_{\rm gap}=\frac\sigma{\varepsilon_0},
-\qquad E_{\rm other}=\frac\sigma{2\varepsilon_0},\\
-F&=Q E_{\rm other}=\frac{Q^2}{2\varepsilon_0\pi R^2},\qquad
-p=\frac F{\pi R^2}=\frac{\varepsilon_0E_{\rm gap}^2}2.
-\end{aligned}
-$$
-
-
-
-力指向另一极板。直接用 $QE_{\rm gap}$ 会多一倍；本问没有计入较高阶磁应力和边缘场。
-
-### 电流环：从线积分到磁偶极
-
-**题 9（a）。** 以下重复指标求和。先把线积分的一阶矩化为反对称形式：
-
-$$
-\begin{aligned}
-\frac1{|\boldsymbol r-\boldsymbol r'|}
-&=\frac1r+\frac{r_jr'_j}{r^3}+O(r^{-3}),\qquad
-\oint\mathrm dr'_i=0,\\
-0&=\oint\mathrm d(r'_ir'_j)
-=\oint r'_i\,\mathrm dr'_j+\oint r'_j\,\mathrm dr'_i,\\
-m_k&\equiv\frac I2\epsilon_{k\ell n}\oint r'_\ell\,\mathrm dr'_n,\qquad
-I\oint r'_j\,\mathrm dr'_i=-\epsilon_{ijk}m_k,\\
-A_i&=\frac{\mu_0I}{4\pi}\frac{r_j}{r^3}\oint r'_j\,\mathrm dr'_i
-=\frac{\mu_0}{4\pi}\frac{(\boldsymbol m\times\boldsymbol r)_i}{r^3},\\
-\boldsymbol r'(u)&=(a\cos u,b\sin u,0),\qquad
-\boldsymbol r'\times\mathrm d\boldsymbol r'=ab\boldsymbol e_z\,\mathrm du,\\
-\boldsymbol m&=\frac I2\int_0^{2\pi}ab\boldsymbol e_z\,\mathrm du
-=I\pi ab\boldsymbol e_z.
-\end{aligned}
-$$
-
-零阶项消失是闭合曲线净位移为零，而非电流为零。令 $\boldsymbol f=\boldsymbol r/r^3$，对源外 $r>0$ 的矢势取旋度：
+（a，6 分）从积分形式场方程求板间的 $E_z(t)$ 与 $B_\varphi(s)$，其中 $00$ 的矢势取旋度：
 
 $$
 \begin{aligned}
@@ -51695,8 +51682,6 @@ $$
 
 **（c）** 代入给定场即可，不需要重新积分整个椭圆：
 
-
-
 $$
 \begin{aligned}
 \nabla\cdot\boldsymbol B_{\rm ext}&=G+G-2G=0,\qquad
@@ -51707,8 +51692,6 @@ $$
 &=mG(x_0\boldsymbol e_y-y_0\boldsymbol e_x),\qquad m=I\pi ab.
 \end{aligned}
 $$
-
-
 
 当环心在 $z$ 轴上时力矩为零，但若 $G\ne0$，合力仍不为零。
 ]]></content></entry><entry><title>电动力学期中模拟2</title><url>/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F2/</url><content><![CDATA[建议用时 120 分钟，满分 100 分。采用 SI 制；第 5 题涉及第五章，其余重点覆盖前四章。先完成试题，再阅读同篇后半部分的参考解答。
@@ -51760,13 +51743,62 @@ $$
 
 （c，8 分）由束缚面电流直接计算磁偶极矩，与球外场比较；在球面处核对 $B_r$ 连续及 $\boldsymbol n\times(\boldsymbol B_{\rm out}-\boldsymbol B_{\rm in})=\mu_0\boldsymbol K_b$。
 
-**题 9｜同轴线中的能量和动量（22 分）。** 真空同轴线内、外导体半径分别为 $a,b$，$b>a$。内导体每单位长度电荷 $+\lambda$，外导体相应为 $-\lambda$；内导体电流 $I$ 沿 $+z$，回流在外导体。忽略端部，取长度为 $\ell$ 的均匀段，只计算 $a0
+**题 9｜同轴线中的能量和动量（22 分）。** 真空同轴线内、外导体半径分别为 $a,b$，$b>a$。内导体每单位长度电荷 $+\lambda$，外导体相应为 $-\lambda$；内导体电流 $I$ 沿 $+z$，回流在外导体。忽略端部，取长度为 $\ell$ 的均匀段，只计算 $a0$ 的无源耗散介质，在本题时间约定下应有 $\operatorname{Im}\widetilde\chi(\omega)\ge$ ______。
+
+**解答。**
+
+**题 4。** 五空为 $\displaystyle\int_0^\infty\chi(\tau)e^{i\omega\tau}\mathrm d\tau$、$\widetilde\chi(\omega)^*$、偶、奇、$0$。
+
+$$
+\begin{aligned}
+\boldsymbol E(t-\tau)&\leftrightarrow\boldsymbol E_\omega e^{-i\omega t}e^{i\omega\tau},\\
+\boldsymbol P_\omega&=\varepsilon_0\widetilde\chi(\omega)\boldsymbol E_\omega,
+\qquad\widetilde\chi(\omega)=\int_0^\infty\chi(\tau)e^{i\omega\tau}\,\mathrm d\tau,\\
+\widetilde\chi(-\omega)&=\int_0^\infty\chi(\tau)e^{-i\omega\tau}\,\mathrm d\tau
+=\widetilde\chi(\omega)^*,\\
+\operatorname{Re}\widetilde\chi(-\omega)&=\operatorname{Re}\widetilde\chi(\omega),\qquad
+\operatorname{Im}\widetilde\chi(-\omega)=-\operatorname{Im}\widetilde\chi(\omega),\\
+\left\langle\boldsymbol E\cdot\partial_t\boldsymbol P\right\rangle
+&=\frac12\operatorname{Re}\left[\boldsymbol E_\omega^*\cdot(-i\omega\boldsymbol P_\omega)\right]
+=\frac{\omega\varepsilon_0}{2}\operatorname{Im}\widetilde\chi\,|\boldsymbol E_\omega|^2\ge0.
+\end{aligned}
+$$
+
+最后一行适用于稳定周期响应，说明虚部符号必须与 $e^{-i\omega t}$ 的约定一起记忆。
+
+**题目回顾。**
+
+**题 5｜导体中的两个尺度。** 均匀欧姆导体满足 $\boldsymbol J=\sigma\boldsymbol E$，介电常数 $\varepsilon$、磁导率 $\mu$ 为正实常量。体电荷弛豫时间 $\tau=$ ______。在 $\omega\varepsilon/\sigma\ll1$ 时，趋肤深度 $\delta=$ ______。若导体位于 $z>0$ 且采用 $e^{-i\omega t}$，场随深度的衰减因子应为 $\exp($ ______ $)$，要求同时含衰减和相位。
+
+**解答。**
+
+**题 5。** 三空为 $\varepsilon/\sigma$、$\sqrt{2/(\omega\mu\sigma)}$、$-(1-i)z/\delta$。
+
+$$
+\begin{aligned}
+\partial_t\rho+\nabla\cdot\boldsymbol J&=0,\qquad
+\nabla\cdot\boldsymbol E=\frac\rho\varepsilon,\qquad\boldsymbol J=\sigma\boldsymbol E,\\
+\partial_t\rho+\frac\sigma\varepsilon\rho&=0
+\ \Longrightarrow\ \rho(t)=\rho(0)e^{-t/\tau},\quad\tau=\frac\varepsilon\sigma,\\
+\nabla\times\boldsymbol B&\simeq\mu\sigma\boldsymbol E,\qquad
+\nabla\times\boldsymbol E=-\partial_t\boldsymbol B,\qquad\nabla\cdot\boldsymbol B=0,\\
+-\nabla^2\boldsymbol B&=-\mu\sigma\partial_t\boldsymbol B
+\ \Longrightarrow\ \partial_t\boldsymbol B=\frac1{\mu\sigma}\nabla^2\boldsymbol B,\\
+\boldsymbol B(z,t)&=\operatorname{Re}\left[\boldsymbol B_0e^{-\kappa z}e^{-i\omega t}\right],\qquad
+\kappa^2=-i\omega\mu\sigma,\\
+\operatorname{Re}\kappa&>0
 \ \Longrightarrow\ \kappa=\frac{1-i}{\delta},\qquad
 \delta=\sqrt{\frac2{\omega\mu\sigma}}.
 \end{aligned}
 $$
 
 电荷弛豫与磁扩散是不同过程；$\omega\varepsilon/\sigma\ll1$ 用于忽略导体中的位移电流，并不能单独替代整个装置的准静态尺度条件。
+
+**题目回顾。**
+
+**题 6｜简答。** 一个孤立导体给定总电荷，周围其他导体给定电势，外边界条件也固定。为什么该导体表面的未知常数电势不妨碍静电解的唯一性？说明“给定总电荷”为什么不等于“给定表面每一点的法向电场”。假定场区为真空、导体位置固定。
+
+**解答。**
 
 **题 6。** 设 $\phi_1,\phi_2$ 是相同源和边界数据的两解，$u=\phi_1-\phi_2$。在场区 $\Omega$ 内，$u$ 满足拉普拉斯方程。各导体表面上 $u=c_i$ 为常数；固定电势导体有 $c_i=0$，固定总电荷导体有 $\Delta Q_i=0$：
 
@@ -51785,6 +51817,29 @@ $$
 场区外法线在导体边界处指向导体内部，故 $\partial_{n_\Omega}\phi=\sigma/\varepsilon_0$。外边界项因相同边界条件消失。因此电场唯一；有电势参考时势也唯一，否则只差一个共同常数。给定总电荷只规定 $\int\sigma\,\mathrm dS$，不规定每一点的 $\sigma$；表面电荷仍要重新分布以维持等势。
 
 ### 导体球：边界条件、多极矩与应力
+
+**题目回顾。**
+
+**题 7｜带电导体球、诱导多极矩与合力（24 分）。** 真空中半径 $R$ 的理想导体球总电荷为 $Q$。外部电极在球附近产生背景势
+
+$$
+\phi_{\rm ext}=-E_0rP_1(\cos\theta)-Gr^2P_2(\cos\theta),\qquad
+P_1(u)=u,\quad P_2(u)=\frac{3u^2-1}{2}.
+$$
+
+以此调和多项式作为球外边值模型的给定增长项，要求诱导势在远处衰减；无需把增长项理解为有限装置在整个无穷远处的真实场。$G$ 的量纲为电势除以长度平方。
+
+（a，8 分）从拉普拉斯方程求球外总电势和球的电势。球面电势未知，但必须为常数。
+
+（b，8 分）求面电荷密度、偶极矩 $p_z$ 和无迹四极矩 $\Theta_{zz}$，其中
+
+$$
+\Theta_{ij}=\int\rho(\boldsymbol r')\left(3x'_ix'_j-r'^2\delta_{ij}\right)\mathrm d^3r'.
+$$
+
+（c，8 分）从球面电压力积分求沿 $z$ 的合力，不直接引用偶极子受力公式。
+
+**解答。**
 
 **题 7（a）。** 对轴对称的第 $l$ 阶，令 $\phi_l=f_l(r)P_l(\cos\theta)$，将勒让德方程代入拉普拉斯方程：
 
@@ -51806,8 +51861,6 @@ $$
 
 非零角阶在球面上的平均为零，故总电荷只固定单极项。采用题给背景势的零点：
 
-
-
 $$
 \begin{aligned}
 \phi_{\rm out}&=\frac Q{4\pi\varepsilon_0r}
@@ -51816,8 +51869,6 @@ $$
 \phi_{\rm in}&=V_s=\frac Q{4\pi\varepsilon_0R}.
 \end{aligned}
 $$
-
-
 
 **（b）** 用内场为零的高斯边界条件求面电荷，再直接做矩积分。令 $u=\cos\theta$：
 
@@ -51870,60 +51921,31 @@ $$
 
 ### 磁化球：区分 H、B 与束缚电流
 
+**题目回顾。**
+
+**题 8｜永久均匀磁化球（24 分）。** 真空中半径 $R$ 的球保持给定的均匀磁化 $\boldsymbol M=M_0\boldsymbol e_z$，球外 $\boldsymbol M=0$。没有自由电流，也没有另加外磁场；不另设线性磁化率关系。
+
+（a，6 分）求束缚体电流和面电流；引入 $\boldsymbol H=-\nabla\psi$，由场方程写出球内外 $\psi$ 的方程与界面条件。
+
+（b，10 分）解出球内外 $\psi,\boldsymbol H,\boldsymbol B$。
+
+（c，8 分）由束缚面电流直接计算磁偶极矩，与球外场比较；在球面处核对 $B_r$ 连续及 $\boldsymbol n\times(\boldsymbol B_{\rm out}-\boldsymbol B_{\rm in})=\mu_0\boldsymbol K_b$。
+
+**解答。**
+
 **题 8（a）。** 先写材料内部的体电流以及边界上单独出现的面电流：
 
 $$
 \begin{aligned}
-\boldsymbol J_b&=\nabla\times\boldsymbol M=0\quad(r
+\boldsymbol J_b&=\nabla\times\boldsymbol M=0\quad(ra$。内导体每单位长度电荷 $+\lambda$，外导体相应为 $-\lambda$；内导体电流 $I$ 沿 $+z$，回流在外导体。忽略端部，取长度为 $\ell$ 的均匀段，只计算 $a<s<b$ 的场。
 
-$$
-\begin{aligned}
-\psi_{\rm in}&=\frac{M_0}3r\cos\theta,\qquad
-\boldsymbol H_{\rm in}=-\frac{M_0}3\boldsymbol e_z,\qquad
-\boldsymbol B_{\rm in}=\frac{2\mu_0M_0}3\boldsymbol e_z,\\
-\psi_{\rm out}&=\frac{M_0R^3}{3r^2}\cos\theta,\\
-\boldsymbol H_{\rm out}&=\frac{M_0R^3}{3r^3}
-(2\cos\theta\boldsymbol e_r+\sin\theta\boldsymbol e_\theta),\qquad
-\boldsymbol B_{\rm out}=\mu_0\boldsymbol H_{\rm out}.
-\end{aligned}
-$$
+（a，7 分）从积分场方程求 $\boldsymbol E,\boldsymbol B$；再由场能积分求单位长度电容 $C'$、外部电感 $L'$ 及两导体间电压 $V$。
 
+（b，7 分）求穿过横截面的能流功率与该段电磁动量，验证功率为 $VI$。
 
+（c，8 分）保持 $\lambda$ 不变，使 $I(t)$ 从 $I_0$ 缓慢降到零。求两导体表面感生纵向电场之差，进而求该段导体所受总纵向电磁力及累计冲量，并与场动量减少量比较。采用忽略端部、辐射及高阶准静态修正的局域模型，允许保持电荷和电流变化所需的外部装置存在。
 
-球内 $\boldsymbol H$ 与磁化反向，$\boldsymbol B$ 与磁化同向；两者不能共用同一个内场系数。
-
-**（c）** 从局域稳恒电流的磁矩积分出发，面电流对应体电流的薄层极限：
-
-$$
-\begin{aligned}
-\boldsymbol m&=\frac12\oint\boldsymbol r\times\boldsymbol K_b\,\mathrm dS,\\
-\boldsymbol r\times\boldsymbol K_b
-&=RM_0\sin\theta(\boldsymbol e_r\times\boldsymbol e_\varphi)
-=-RM_0\sin\theta\boldsymbol e_\theta,\\
-m_z&=\frac12RM_0\int_0^{2\pi}\!\mathrm d\varphi\int_0^\pi\sin^2\theta\,R^2\sin\theta\,\mathrm d\theta
-=\frac{4\pi R^3}3M_0,\\
-\psi_{\rm out}&=\frac{\boldsymbol m\cdot\hat{\boldsymbol r}}{4\pi r^2},\qquad
-\boldsymbol B_{\rm out}=\frac{\mu_0}{4\pi r^3}
-\left[3(\boldsymbol m\cdot\hat{\boldsymbol r})\hat{\boldsymbol r}-\boldsymbol m\right].
-\end{aligned}
-$$
-
-再将 $\boldsymbol e_z=\cos\theta\boldsymbol e_r-\sin\theta\boldsymbol e_\theta$ 代入球内场，逐个核对界面分量：
-
-$$
-\begin{aligned}
-B_{r,\rm out}(R)&=\frac{2\mu_0M_0}3\cos\theta=B_{r,\rm in}(R),\\
-B_{\theta,\rm out}(R)-B_{\theta,\rm in}(R)
-&=\frac{\mu_0M_0}3\sin\theta-\left(-\frac{2\mu_0M_0}3\sin\theta\right)
-=\mu_0M_0\sin\theta,\\
-\boldsymbol e_r\times(\boldsymbol B_{\rm out}-\boldsymbol B_{\rm in})
-&=\mu_0M_0\sin\theta\boldsymbol e_\varphi=\mu_0\boldsymbol K_b.
-\end{aligned}
-$$
-
-切向连续的是无自由面电流时的 $\boldsymbol H$；$\boldsymbol B$ 的切向跃变恰好由束缚面电流承担。
-
-### 同轴线：能流、场动量与感应冲量
+**解答。**
 
 **题 9（a）。** 对半径 $s$ 的柱面使用高斯定律，对圆周使用安培定律：
 
@@ -51996,8 +52018,6 @@ F_z&=(\lambda\ell)E_z(a)+(-\lambda\ell)E_z(b)\\
 \end{aligned}
 $$
 
-
-
 $$
 \begin{aligned}
 \boldsymbol{\mathcal I}_{\rm matter}
@@ -52007,8 +52027,6 @@ $$
 =\boldsymbol P_{\rm em}(t_i)-\boldsymbol P_{\rm em}(t_f).
 \end{aligned}
 $$
-
-
 
 两导体所带电荷等量异号，未知共同纵向电场在总力中相消。电流沿 $z$、磁场沿 $\varphi$，磁力是径向的，不贡献本问的纵向力。若导体被固定，这个电磁冲量由支撑承受；支撑施加给导体的约束冲量方向相反。
 ]]></content></entry><entry><title>期中复习-讲义思考题解答和作业选题</title><url>/physics/DianDongLiXue/%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0-%E8%AE%B2%E4%B9%89%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94%E5%92%8C%E4%BD%9C%E4%B8%9A%E9%80%89%E9%A2%98/</url><content><![CDATA[前四章的页码均指《电动力学讲义 dk+zl.pdf》的实际 PDF 页码；第五章按《Lecture_note_chapter05_1026.pdf》单独计页。编号例题和正文要求自行推导、证明、检查的内容一并收入；作业题允许合并改编。第五章没有单列习题栏，相关题目据原文演算整理。以下采用 SI 单位制，重复指标求和，柱坐标径向距离记为 $s$。
@@ -52184,8 +52202,6 @@ $$
 \end{aligned}
 $$
 
-
-
 $$
 \begin{aligned}
 \nabla\times(\psi\mathbf A)&=\nabla\psi\times\mathbf A+\psi\nabla\times\mathbf A,\\
@@ -52197,8 +52213,6 @@ $$
 +(\mathbf B\cdot\nabla)\mathbf A-(\mathbf A\cdot\nabla)\mathbf B.
 \end{aligned}
 $$
-
-
 
 $\nabla$ 的位置同时规定求导对象，不能把它当普通向量随意移过含位置的函数。最后两式最稳妥的记法是先写指标式，再用乘积法则展开。
 
@@ -52302,8 +52316,6 @@ $$
 
 磁偶极子可由 $\mathbf j=\nabla\times[\mathbf m\delta(\mathbf r)]$ 表示。分部积分给出 $\mathbf A=-\mu_0\mathbf m\times\nabla(1/r)/(4\pi)$。把刚证明的二阶导数代入，而非只用远场结论：
 
-
-
 $$
 \begin{aligned}
 \mathbf E_p&=\frac1{4\pi\varepsilon_0}(\mathbf p\cdot\nabla)\nabla\frac1r
@@ -52314,8 +52326,6 @@ $$
 +\frac{2\mu_0\mathbf m}{3}\delta(\mathbf r).
 \end{aligned}
 $$
-
-
 
 这里将偶极子移到原点书写。两种场在原点外形状相同，原点处的接触项不同；作业的数值画图只能显示原点外部分，不能用有限网格图证明 $\delta$ 项。
 
@@ -52428,8 +52438,6 @@ $$
 
 将各式代入宏观麦克斯韦方程，比较 $\delta_S$ 系数即可。在没有奇异面极化层、且场本身只有有限跳跃的通常界面上：
 
-
-
 $$
 \begin{aligned}
 \mathbf n\cdot(\mathbf D_2-\mathbf D_1)&=\sigma_f,&
@@ -52438,8 +52446,6 @@ $$
 \mathbf n\times(\mathbf H_2-\mathbf H_1)&=\mathbf K_f.
 \end{aligned}
 $$
-
-
 
 若 $g=z-f(x,y)$，就有 $|\nabla g|=\sqrt{1+f_x^2+f_y^2}$。这个因子把 $\delta(g)$ 换成真正的单位面积电荷，不能省略后直接把系数当面密度。
 
@@ -52506,51 +52512,7 @@ B_\varphi(s)&=\begin{cases}\mu_0\varepsilon_0s\dot E/2,&s\le R,\\
 \mu_0\varepsilon_0R^2\dot E/(2s),&s>R,\end{cases}\\
 \mathbf S(s)&=\frac1{\mu_0}E\hat{\mathbf z}\times B_\varphi\hat{\boldsymbol\varphi}
 =-\frac{\varepsilon_0s}{2}E\dot E\,\hat{\mathbf s}\quad(sR),\qquad
-\Phi_2=-ar\cos\theta\quad(r
-
-$$
-\begin{aligned}
-\Phi_2&=-\frac{3\varepsilon_1}{\varepsilon_2+2\varepsilon_1}E_0r\cos\theta,\\
-\Phi_1&=-E_0r\cos\theta+
-\frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+2\varepsilon_1}\frac{E_0R^3\cos\theta}{r^2},\\
-\mathbf E_2&=\frac{3\varepsilon_1}{\varepsilon_2+2\varepsilon_1}\mathbf E_0,\qquad
-\mathbf p_{\rm eff}=4\pi\varepsilon_1R^3\frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+2\varepsilon_1}\mathbf E_0.
-\end{aligned}
-$$
-
-
-
-$\mathbf p_{\rm eff}$ 是按背景介质的偶极势定义的等效矩。若要实际束缚电荷，应先求 $\mathbf P_i=(\varepsilon_i-\varepsilon_0)\mathbf E_i$，界面净束缚面密度为 $(\mathbf P_2-\mathbf P_1)\cdot\hat{\mathbf r}$，不能在背景也极化时只算球内 $\mathbf P_2$。
-
-### 带电导体圆柱与二维电偶极子
-
-**原题：** 例题 4(iii)。无限长导体圆柱半径 $R$、线电荷密度 $\lambda$，轴沿 $z$，处在横向匀强场 $E_0\hat{\mathbf x}$，求电场。正文另要求从两条 $\pm\lambda$ 线电荷检查二维偶极子定义。来源：PDF 第 98–99 页。
-
-柱外的二维调和通解含 $1,\ln s,s^n\cos n\varphi,s^{-n}\cos n\varphi$ 及正弦项。均匀外场选出 $n=1$，总电荷选出对数项：
-
-$$
-\begin{aligned}
-\Phi&=C+b_0\ln(s/R)+(-E_0s+b_1/s)\cos\varphi,\\
-\Phi(R,\varphi)=C&\Longrightarrow b_1=E_0R^2,\\
-\lambda&=\varepsilon_0\int_0^{2\pi}[-\partial_s\Phi]_{s=R}R\,d\varphi
-=-2\pi\varepsilon_0b_0,\\
-\Phi&=C-\frac\lambda{2\pi\varepsilon_0}\ln\frac sR
--E_0\left(s-\frac{R^2}s\right)\cos\varphi,\\
-E_s&=\frac\lambda{2\pi\varepsilon_0s}+E_0\left(1+\frac{R^2}{s^2}\right)\cos\varphi,\\
-E_\varphi&=-E_0\left(1-\frac{R^2}{s^2}\right)\sin\varphi,\qquad
-\sigma_f=\frac\lambda{2\pi R}+2\varepsilon_0E_0\cos\varphi.
-\end{aligned}
-$$
-
-柱内场为零。二维点源实际是一条无限长线电荷；将正、负线电荷放在 $\pm\mathbf d/2$，保持每单位轴长的偶极矩 $\mathbf p_\ell=\lambda\mathbf d$，则
-
-$$
-\begin{aligned}
-\Phi_d&=-\frac\lambda{2\pi\varepsilon_0}
-\left[\ln|\mathbf s-\mathbf d/2|-\ln|\mathbf s+\mathbf d/2|\right]\\
-&\longrightarrow\frac{\mathbf p_\ell\cdot\mathbf s}{2\pi\varepsilon_0s^2},\\
-\partial_i\frac{s_j}{s^2}&=\frac{\delta_{ij}-2n_in_j}{s^2},\\
-\mathbf E_d&=\frac{2(\mathbf p_\ell\cdot\mathbf n)\mathbf n-\mathbf p_\ell}{2\pi\varepsilon_0s^2}\quad(s>0),\\
+\Phi_2=-ar\cos\theta\quad(r0),\\
 \mathbf p_{\ell,\rm induced}&=2\pi\varepsilon_0R^2E_0\hat{\mathbf x}.
 \end{aligned}
 $$
@@ -52737,8 +52699,6 @@ $$
 
 若改用 $\mathbf A'=\mu_0K\mathbf J$，其与 $\mathbf A_D$ 相差梯度；例如取 $\Lambda=\mu_0K^2\partial_t\rho$，便有 $\mathbf A'=\mathbf A_D+\nabla\Lambda$。必须同时用 $\Phi'=\Phi_C-\partial_t\Lambda$，不能仅替换矢势而保留标势。
 
-
-
 $$
 \begin{aligned}
 \text{Darwin：}\quad&\nabla\times\mathbf E_D=-\partial_t\mathbf B_D,\quad
@@ -52749,8 +52709,6 @@ $$
 \nabla\times\mathbf B\simeq\mu_0\mathbf J,\quad\nabla\times\mathbf E=-\partial_t\mathbf B.
 \end{aligned}
 $$
-
-
 
 EQS、MQS 是依据主导效应选择的进一步近似。$a=LB_{\rm typ}/(\tau E_{\rm typ})$、$b=LE_{\rm typ}/(c^2\tau B_{\rm typ})$ 虽满足 $ab=\eta^2$，但乘积小不代表两者都小。MQS 还要求所保留阶上的 $\nabla\cdot\mathbf J=0$，不能同时输入同阶的任意快速积累电荷。
 
@@ -53034,7 +52992,7 @@ $$
 
 ### 用应力张量重算电荷力与导线力
 
-**据作业答案改编：** 第三章作业中已有点电荷、长直电流和两同号电荷的应力积分。统一使用真空静态应力，保留交叉项，可以同时掌握三个题型。
+**据作业答案改编：** 第三章作业中已有点电荷、长直电流和两同号电荷的应力积分。点电荷与长直电流使用真空静态应力；两同号电荷按原题保留均匀介质的介电常数。
 
 设点电荷 $q$ 位于均匀外场 $\mathbf E_0$ 中，以半径 $a$ 的小球包围它，球面自场为 $\mathbf E_q=e\mathbf n$，$e=q/(4\pi\varepsilon_0a^2)$。由 $\mathbf F=\oint T\cdot\mathbf n\,dS$：
 
@@ -53062,17 +53020,17 @@ T_{\rm cross}\cdot\hat{\mathbf s}
 \end{aligned}
 $$
 
-再将两个同号电荷 $q$ 放在 $z=\pm d/2$。在中垂面 $z=0$，法向电场相消，切向电场相加；用上半空间作积分体，其底面外法线是 $-\hat{\mathbf z}$：
+再将两个同号自由电荷 $q$ 放在 $z=\pm d/2$，周围为绝对介电常数 $\varepsilon$ 的无限均匀线性各向同性介质。按讲义的宏观应力 $T=\varepsilon(\mathbf E\mathbf E-E^2I/2)$ 计算，不另计电致伸缩。在中垂面 $z=0$，法向电场相消，切向电场相加；用上半空间作积分体，其底面外法线是 $-\hat{\mathbf z}$：
 
 $$
 \begin{aligned}
-E_s(s,0)&=\frac{qs}{2\pi\varepsilon_0(s^2+d^2/4)^{3/2}},\qquad
-T\cdot(-\hat{\mathbf z})=\frac{\varepsilon_0E_s^2}{2}\hat{\mathbf z},\\
-F_z&=\int_0^\infty\frac{\varepsilon_0E_s^2}{2}2\pi s\,ds
-=\frac{q^2}{4\pi\varepsilon_0}\int_0^\infty\frac{s^3ds}{(s^2+d^2/4)^3},\\
+E_s(s,0)&=\frac{qs}{2\pi\varepsilon(s^2+d^2/4)^{3/2}},\qquad
+T\cdot(-\hat{\mathbf z})=\frac{\varepsilon E_s^2}{2}\hat{\mathbf z},\\
+F_z&=\int_0^\infty\frac{\varepsilon E_s^2}{2}2\pi s\,ds
+=\frac{q^2}{4\pi\varepsilon}\int_0^\infty\frac{s^3ds}{(s^2+d^2/4)^3},\\
 \int_0^\infty\frac{s^3ds}{(s^2+c^2)^3}
 &=\frac12\int_0^\infty\frac{u\,du}{(u+c^2)^3}=\frac1{4c^2},\\
-\mathbf F&=\frac{q^2}{4\pi\varepsilon_0d^2}\hat{\mathbf z}.
+\mathbf F&=\frac{q^2}{4\pi\varepsilon d^2}\hat{\mathbf z}.
 \end{aligned}
 $$
 
@@ -53095,4 +53053,317 @@ P_J&=\int\mathbf j\cdot\mathbf E\,dV
 $$
 
 在这个稳态模型中，导体的场能不随时间增加，侧面流入的电磁功率全部变成热。它与充电电容器的侧面流入能流有相同几何方向，去向则分别是耗散和储能。
+]]></content></entry><entry><title>电动力学期中模拟3</title><url>/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F3/</url><content><![CDATA[建议用时 120 分钟，满分 100 分，采用 SI 制；重复指标求和。范围为讲义第一至第四章，不含第五章。两道大题集中考查第四章的静电、静磁边值与物理解释，另一道大题考查能量和应力；小题补足矢量分析、介质关系及对称性。参考解答重复完整题干。
+
+## 试题
+
+### 填空与简答
+
+每题 5 分，共 30 分。
+
+**题 1｜径向场与奇点。** 在三维空间，$r>0$ 时 $\nabla\cdot(\boldsymbol r/r)=$ ______，$\nabla^2 f(r)=$ ______；在整个空间按分布理解，$\nabla\cdot(\boldsymbol r/r^3)=$ ______。
+
+**题 2｜宏观方程与电边界。** $\nabla\times\boldsymbol H=$ ______，$\nabla\cdot\boldsymbol D=$ ______。静止界面法线 $\boldsymbol n$ 从介质 1 指向介质 2，自由面电荷为 $\sigma_f$，则 $\boldsymbol n\cdot(\boldsymbol D_2-\boldsymbol D_1)=$ ______，$\boldsymbol n\times(\boldsymbol E_2-\boldsymbol E_1)=$ ______。场在界面两侧有限。
+
+**题 3｜介质张量。** 实、瞬时、线性介质满足 $D_i=\varepsilon_{ij}E_j$、$B_i=\mu_{ij}H_j$。$(\varepsilon^T)_{ij}=$ ______；$\mu^T=\mu$ 的分量含义是 ______。对称张量是否必定各向同性？______。若 $\varepsilon$ 对称且空间均匀，且 $[\nabla_E(\boldsymbol D\cdot\boldsymbol E)]_i=D_j\partial_iE_j$，则 $\nabla_E(\boldsymbol D\cdot\boldsymbol E)=$ ______。这里上标 $T$ 表示 ______。
+
+**题 4｜极化与偶极矩。** 束缚电荷密度 $\rho_b=$ ______，表面束缚电荷密度 $\sigma_b=$ ______（$\boldsymbol n$ 为介质外法线）。局域电荷分布总电荷为 $Q$、偶极矩为 $\boldsymbol p$，原点平移到原坐标 $\boldsymbol b$ 后 $\boldsymbol p'=$ ______；偶极矩与原点无关的条件是 ______。
+
+**题 5｜中垂面上的应力。** 两个相同自由点电荷 $q$ 位于 $z=\pm d/2$，周围是无限均匀、线性、各向同性介质，绝对介电常数为 $\varepsilon$。本题按讲义的宏观静电应力 $T_{ij}=\varepsilon(E_iE_j-\tfrac12 E^2\delta_{ij})$ 计算，不另计电致伸缩。中垂面 $z=0$ 上 $E_z=$ ______，$T_{zz}=$ ______（用该处 $E$ 表示）；取上半空间体积，中垂面外法线是 ______，由此得到上方电荷沿 $+z$ 方向的合力大小 ______。
+
+**题 6｜对称性简答。** 真空中 $\boldsymbol S=\boldsymbol E\times\boldsymbol B/\mu_0$，$T_{ij}=\varepsilon_0(E_iE_j-E^2\delta_{ij}/2)+(B_iB_j-B^2\delta_{ij}/2)/\mu_0$。对主动正交旋转 $\boldsymbol r'=R\boldsymbol r$、$\det R=1$，写出 $\boldsymbol S'$、$T'$ 的变换；分别指出它们在空间倒反和时间反演下的奇偶性。请写明变换后场对应的取值位置或时刻。
+
+### 解答题
+
+**题 7｜载流导线：能流与应力（24 分）。** 无限长圆柱导线半径 $a$、电导率 $\sigma_c$，稳定均匀电流密度 $\boldsymbol j=j\boldsymbol e_z$，磁导率为 $\mu_0$；导线周围是真空。电源维持稳恒电流，忽略端部。
+
+（a，6 分）由欧姆定律和安培环路定律求导线内部的 $\boldsymbol E,\boldsymbol B$，以及表面内外连续的切向电场与磁场。
+
+（b，10 分）从麦克斯韦旋度方程推导真空形式的坡印廷定理，以 $\boldsymbol j\cdot\boldsymbol E$ 为能量转移项；计算单位长度导线表面流入的功率，与体内焦耳热比较。解释为什么恒定的场仍然可以传递能量。
+
+（c，8 分）另施加均匀外磁场 $\boldsymbol B_0=B_0\boldsymbol e_x$，电流 $I=\pi a^2j$ 不变。在导线外半径 $b>a$ 的同轴圆柱面上，从磁应力张量积分求单位长度的磁力，分别处理自场项、外场项和交叉项，并与洛伦兹力比较。只求磁力；两端面的贡献按平移对称性相消。
+
+**题 8｜导体球的边值解与电应力（24 分）。** 真空中半径 $R$ 的孤立理想导体球总电荷为 $Q$，远处均匀电场为 $E_0\boldsymbol e_z$；背景电势选为 $-E_0r\cos\theta$，球心为原点。
+
+（a，10 分）从场方程和球面等势条件求球内、球外电势及面电荷密度，不引用导体球的现成结果。
+
+（b，8 分）由真空麦克斯韦应力求球面电压力，再积分求球受到的合力；说明纯自场项、纯外场诱导项与交叉项各有什么贡献。
+
+（c，6 分）令 $E_0=0$，球相对无穷远的电势为 $V$。沿过球心平面把球分成两半，求分离开始时两半之间的电斥力，用 $V,R$ 及用 $Q,R$ 分别表示。按零宽度切口的极限计算，不讨论有限间隙形成后的电荷重分布。
+
+**题 9｜横向匀强场中的磁介质圆柱（22 分）。** 无限长圆柱轴沿 $z$，半径 $R$，内部为线性、均匀、各向同性磁介质，绝对磁导率为常量 $\mu>0$；外部为真空。远处 $\boldsymbol H\to H_0\boldsymbol e_x$，各处没有自由电流。用柱坐标 $(s,\varphi,z)$，其中 $x=s\cos\varphi$。
+
+（a，4 分）从静磁方程引入磁标势 $\boldsymbol H=-\nabla\psi$，写出本题所用的二维拉普拉斯方程，以及 $s=R$ 处的两个边界条件。
+
+（b，10 分）通过分离变量求内、外磁标势和磁场 $\boldsymbol H,\boldsymbol B$，不得引用磁介质圆柱的现成结果。
+
+（c，8 分）求束缚体电流和面电流；把面电流分解为无限长直电流，用毕奥–萨伐尔定律核对圆柱轴线处的磁感应强度。检查 $\mu=\mu_0$ 与 $\mu\to\infty$ 的极限，并说明大磁导率是否意味着内部 $B$ 为零。
+
+## 参考解答
+
+### 填空与简答的推导
+
+**题目回顾。**
+
+**题 1｜径向场与奇点。** 在三维空间，$r>0$ 时 $\nabla\cdot(\boldsymbol r/r)=$ ______，$\nabla^2 f(r)=$ ______；在整个空间按分布理解，$\nabla\cdot(\boldsymbol r/r^3)=$ ______。
+
+**解答。**
+
+**题 1。** 三空依次为 $2/r$、$r^{-2}\dfrac{\mathrm d}{\mathrm dr}(r^2 f')$、$4\pi\delta^{(3)}(\boldsymbol r)$。
+
+$$
+\begin{aligned}
+\partial_i r&=x_i/r,\qquad
+\partial_i(x_i/r)=3/r-x_ix_i/r^3=2/r,\\
+\nabla^2 f(r)&=\partial_i\left(f'(r)x_i/r\right)
+=f''(r)+2f'(r)/r=\frac1{r^2}\frac{\mathrm d}{\mathrm dr}\left(r^2f'(r)\right),\\
+\nabla\cdot\frac{\boldsymbol r}{r^3}&=0\quad(r>0),\qquad
+\oint_{r=a}\frac{\boldsymbol r}{r^3}\cdot\boldsymbol n\,\mathrm dS=4\pi,\\
+\left\langle\nabla\cdot\frac{\boldsymbol r}{r^3},\eta\right\rangle
+&=-\lim_{a\to0}\int_{r>a}\frac{\boldsymbol r}{r^3}\cdot\nabla\eta\,\mathrm dV
+=\lim_{a\to0}\int_{S^2}\eta(a\boldsymbol n)\,\mathrm d\Omega
+=4\pi\eta(0).
+\end{aligned}
+$$
+
+最后一行对任意光滑紧支撑试验函数 $\eta$ 成立，补上了原点处的分布贡献。
+
+**题目回顾。**
+
+**题 2｜宏观方程与电边界。** $\nabla\times\boldsymbol H=$ ______，$\nabla\cdot\boldsymbol D=$ ______。静止界面法线 $\boldsymbol n$ 从介质 1 指向介质 2，自由面电荷为 $\sigma_f$，则 $\boldsymbol n\cdot(\boldsymbol D_2-\boldsymbol D_1)=$ ______，$\boldsymbol n\times(\boldsymbol E_2-\boldsymbol E_1)=$ ______。场在界面两侧有限。
+
+**解答。**
+
+**题 2。** 四空为 $\boldsymbol J_f+\partial_t\boldsymbol D$、$\rho_f$、$\sigma_f$、$\boldsymbol0$。前两空是宏观麦克斯韦方程；后两空由跨界面薄柱和窄矩形环路得到：
+
+$$
+\begin{aligned}
+\oint_{\partial\Omega}\boldsymbol D\cdot\mathrm d\boldsymbol S
+&=\int_\Omega\rho_f\,\mathrm dV
+\ \Longrightarrow\ (D_{2n}-D_{1n})\Delta S=\sigma_f\Delta S,\\
+\oint_C\boldsymbol E\cdot\mathrm d\boldsymbol\ell
+&=-\frac{\mathrm d}{\mathrm dt}\int_S\boldsymbol B\cdot\mathrm d\boldsymbol S
+\ \Longrightarrow\ (E_{2t}-E_{1t})\Delta\ell=0,\\
+\boldsymbol n\cdot(\boldsymbol D_2-\boldsymbol D_1)&=\sigma_f,\qquad
+\boldsymbol n\times(\boldsymbol E_2-\boldsymbol E_1)=\boldsymbol0.
+\end{aligned}
+$$
+
+环路高度趋于零时，有限磁场的磁通变化项趋于零。
+
+**题目回顾。**
+
+**题 3｜介质张量。** 实、瞬时、线性介质满足 $D_i=\varepsilon_{ij}E_j$、$B_i=\mu_{ij}H_j$。$(\varepsilon^T)_{ij}=$ ______；$\mu^T=\mu$ 的分量含义是 ______。对称张量是否必定各向同性？______。若 $\varepsilon$ 对称且空间均匀，且 $[\nabla_E(\boldsymbol D\cdot\boldsymbol E)]_i=D_j\partial_iE_j$，则 $\nabla_E(\boldsymbol D\cdot\boldsymbol E)=$ ______。这里上标 $T$ 表示 ______。
+
+**解答。**
+
+**题 3。** 上标 $T$ 表示交换矩阵的行列，不表示时间反演，也不表示取倒数。对称性只要求非对角元素成对相等，各向同性还要求所有方向的响应相同：
+
+$$
+\begin{aligned}
+(\varepsilon^T)_{ij}&=\varepsilon_{ji},\qquad
+\varepsilon^T=\varepsilon\iff\varepsilon_{ij}=\varepsilon_{ji},\\
+(\mu^T)_{ij}&=\mu_{ji},\qquad
+\mu^T=\mu\iff\mu_{ij}=\mu_{ji},\\
+\varepsilon&=\varepsilon_0\begin{pmatrix}2&0&0\\0&3&0\\0&0&4\end{pmatrix},
+\qquad \boldsymbol E=(1,1,0)E_*\ \Longrightarrow\ 
+\boldsymbol D=(2,3,0)\varepsilon_0E_*,\\
+\text{各向同性：}\quad \varepsilon_{ij}&=\varepsilon\delta_{ij},\qquad
+\mu_{ij}=\mu\delta_{ij}.
+\end{aligned}
+$$
+
+例中的矩阵对称，但 $\boldsymbol D$ 一般不平行于 $\boldsymbol E$。实对称矩阵可通过正交变换选取主轴；“在主轴系对角化”不等于“三个主值相等”。复数频域张量的转置与共轭转置也不同，本题的实、瞬时假设不能直接替代有色散、有耗散时的条件。
+
+先保留介电张量的位置依赖，再利用对称性合并两项：
+
+$$
+\begin{aligned}
+\partial_i(\boldsymbol D\cdot\boldsymbol E)
+&=\partial_i(\varepsilon_{jk}E_kE_j)\\
+&=(\partial_i\varepsilon_{jk})E_jE_k
++\varepsilon_{jk}(\partial_iE_k)E_j
++\varepsilon_{jk}E_k\partial_iE_j\\
+&\overset{[a]}{=}(\partial_i\varepsilon_{jk})E_jE_k
++2D_j\partial_iE_j,\\
+[\nabla_E(\boldsymbol D\cdot\boldsymbol E)]_i
+&=\frac12\partial_i(\boldsymbol D\cdot\boldsymbol E)
+-\frac12E_j(\partial_i\varepsilon_{jk})E_k,\\
+\partial_i\varepsilon_{jk}=0\quad&\Longrightarrow\quad
+\nabla_E(\boldsymbol D\cdot\boldsymbol E)
+=\frac12\nabla(\boldsymbol D\cdot\boldsymbol E).
+\end{aligned}
+$$
+
+[a] 将中间项的哑指标 $j,k$ 交换，并用 $\varepsilon_{kj}=\varepsilon_{jk}$。仅有对称性还不够消去材料梯度；均匀性是最后一行成立的另一个条件。
+
+ 现在求导变量是场分量，$\partial E_j/\partial E_i=\delta_{ji}$，两个含场因子都要求导：
+
+$$
+\begin{aligned}
+\frac{\partial}{\partial E_i}(\varepsilon_{jk}E_jE_k)
+&=\varepsilon_{jk}(\delta_{ji}E_k+E_j\delta_{ki})
+=\varepsilon_{ik}E_k+\varepsilon_{ji}E_j
+=[(\varepsilon+\varepsilon^T)\boldsymbol E]_i,\\
+\varepsilon^T=\varepsilon\quad&\Longrightarrow\quad
+\frac{\partial(\boldsymbol D\cdot\boldsymbol E)}{\partial E_i}=2D_i,\\
+B_j=\mu_{jk}H_k,\quad\mu^T=\mu,\quad\partial_i\mu_{jk}=0
+\quad&\Longrightarrow\quad
+[\nabla_H(\boldsymbol B\cdot\boldsymbol H)]_i
+=B_j\partial_iH_j=\frac12\partial_i(\boldsymbol B\cdot\boldsymbol H).
+\end{aligned}
+$$
+
+前一种运算是对位置求导且只作用于被标记的因子；后一种是对场分量求导且考虑 $\boldsymbol D$ 对 $\boldsymbol E$ 的依赖。两种运算连量纲也不同，不能只凭下标 $E$ 将它们混用。
+
+**题目回顾。**
+
+**题 4｜极化与偶极矩。** 束缚电荷密度 $\rho_b=$ ______，表面束缚电荷密度 $\sigma_b=$ ______（$\boldsymbol n$ 为介质外法线）。局域电荷分布总电荷为 $Q$、偶极矩为 $\boldsymbol p$，原点平移到原坐标 $\boldsymbol b$ 后 $\boldsymbol p'=$ ______；偶极矩与原点无关的条件是 ______。
+
+**解答。**
+
+**题 4。** 四空为 $-\nabla\cdot\boldsymbol P$、$\boldsymbol P\cdot\boldsymbol n$、$\boldsymbol p-Q\boldsymbol b$、$Q=0$。用介质区域的示性函数 $\eta$ 合并体、面贡献：
+
+$$
+\begin{aligned}
+\nabla\cdot\boldsymbol D&=\rho_f,\qquad
+\boldsymbol D=\varepsilon_0\boldsymbol E+\eta\boldsymbol P,\qquad
+\varepsilon_0\nabla\cdot\boldsymbol E=\rho_f+\rho_b^{\rm all},\\
+\rho_b^{\rm all}&=-\nabla\cdot(\eta\boldsymbol P)
+=-\eta\nabla\cdot\boldsymbol P+(\boldsymbol P\cdot\boldsymbol n)\delta_S,\\
+\boldsymbol p'&=\int(\boldsymbol r-\boldsymbol b)\rho(\boldsymbol r)\,\mathrm dV
+=\boldsymbol p-\boldsymbol b\int\rho\,\mathrm dV=\boldsymbol p-Q\boldsymbol b.
+\end{aligned}
+$$
+
+**题目回顾。**
+
+**题 5｜中垂面上的应力。** 两个相同自由点电荷 $q$ 位于 $z=\pm d/2$，周围是无限均匀、线性、各向同性介质，绝对介电常数为 $\varepsilon$。本题按讲义的宏观静电应力 $T_{ij}=\varepsilon(E_iE_j-\tfrac12 E^2\delta_{ij})$ 计算，不另计电致伸缩。中垂面 $z=0$ 上 $E_z=$ ______，$T_{zz}=$ ______（用该处 $E$ 表示）；取上半空间体积，中垂面外法线是 ______，由此得到上方电荷沿 $+z$ 方向的合力大小 ______。
+
+**解答。**
+
+**题 5。** 四空为 $0$、$-\varepsilon E^2/2$、$-\boldsymbol e_z$、$q^2/(4\pi\varepsilon d^2)$。令 $h=d/2$，中垂面柱坐标半径为 $s$；由 $\nabla\cdot\boldsymbol D=\rho_f$ 得到单个点源的径向场，再叠加：
+
+$$
+\begin{aligned}
+4\pi r^2\varepsilon E_q(r)&=q\quad\Longrightarrow\quad
+\boldsymbol E_q=\frac q{4\pi\varepsilon}\frac{\boldsymbol r}{r^3},\\
+\boldsymbol E(s,0)&=\frac q{4\pi\varepsilon}
+\frac{(s\boldsymbol e_s-h\boldsymbol e_z)+(s\boldsymbol e_s+h\boldsymbol e_z)}{(s^2+h^2)^{3/2}}
+=\frac{qs}{2\pi\varepsilon(s^2+h^2)^{3/2}}\boldsymbol e_s,\\
+\boldsymbol T\cdot(-\boldsymbol e_z)&=\frac{\varepsilon E^2}{2}\boldsymbol e_z,\\
+F_z&=\int_0^\infty\frac{\varepsilon}{2}
+\frac{q^2s^2}{4\pi^2\varepsilon^2(s^2+h^2)^3}\,2\pi s\,\mathrm ds
+=\frac{q^2}{4\pi\varepsilon}\int_0^\infty\frac{s^3\,\mathrm ds}{(s^2+h^2)^3},\\
+\int_0^\infty\frac{s^3\,\mathrm ds}{(s^2+h^2)^3}
+&=\frac12\int_{h^2}^\infty\left(u^{-2}-h^2u^{-3}\right)\mathrm du
+=\frac1{4h^2}=\frac1{d^2},\\
+F_z&=\frac{q^2}{4\pi\varepsilon d^2}.
+\end{aligned}
+$$
+
+远处半球上的应力积分为零。$T_{zz}a$ 的同轴圆柱面上，从磁应力张量积分求单位长度的磁力，分别处理自场项、外场项和交叉项，并与洛伦兹力比较。只求磁力；两端面的贡献按平移对称性相消。
+
+**解答。**
+
+**题 7（a）。** 用 $s$ 表示柱坐标半径：
+
+$$
+\begin{aligned}
+\boldsymbol j=\sigma_c\boldsymbol E
+&\ \Longrightarrow\ \boldsymbol E_{\rm in}=\frac j{\sigma_c}\boldsymbol e_z,\\
+\oint_{s}\boldsymbol B\cdot\mathrm d\boldsymbol\ell
+&=\mu_0j\pi s^2
+\ \Longrightarrow\ \boldsymbol B_{\rm in}=\frac{\mu_0js}{2}\boldsymbol e_\varphi
+\quad(s0$；外部为真空。远处 $\boldsymbol H\to H_0\boldsymbol e_x$，各处没有自由电流。用柱坐标 $(s,\varphi,z)$，其中 $x=s\cos\varphi$。
+
+（a，4 分）从静磁方程引入磁标势 $\boldsymbol H=-\nabla\psi$，写出本题所用的二维拉普拉斯方程，以及 $s=R$ 处的两个边界条件。
+
+（b，10 分）通过分离变量求内、外磁标势和磁场 $\boldsymbol H,\boldsymbol B$，不得引用磁介质圆柱的现成结果。
+
+（c，8 分）求束缚体电流和面电流；把面电流分解为无限长直电流，用毕奥–萨伐尔定律核对圆柱轴线处的磁感应强度。检查 $\mu=\mu_0$ 与 $\mu\to\infty$ 的极限，并说明大磁导率是否意味着内部 $B$ 为零。
+
+**解答。**
+
+**题 9（a）。** 全空间没有自由电流，且没有穿过场区的另设电流源，故可选单值磁标势。每个均匀区域内：
+
+$$
+\begin{aligned}
+\nabla\times\boldsymbol H&=0,\qquad \boldsymbol H=-\nabla\psi,\qquad
+\nabla\cdot\boldsymbol B=0,\qquad \boldsymbol B=\mu\boldsymbol H,\\
+\nabla^2\psi&=\frac1s\partial_s(s\partial_s\psi)
++\frac1{s^2}\partial_\varphi^2\psi=0,\\
+H_{\varphi,\rm out}&=H_{\varphi,\rm in},\qquad
+B_{s,\rm out}=B_{s,\rm in},\\
+\psi_{\rm out}(R,\varphi)&=\psi_{\rm in}(R,\varphi),\qquad
+\mu_0\partial_s\psi_{\rm out}(R,\varphi)
+=\mu\partial_s\psi_{\rm in}(R,\varphi).
+\end{aligned}
+$$
+
+最后两式中已调整磁标势的任意常数，使界面两侧势相等。
+
+**题 9（b）。** 远场势为 $-H_0s\cos\varphi$，圆形边界不混合角阶；内场在轴线上有限，外部扰动在无穷远衰减：
+
+$$
+\begin{aligned}
+\psi&=f(s)\cos\varphi,\qquad
+s^2f''+sf'-f=0,\qquad f=As+B/s,\\
+\psi_{\rm in}&=-Cs\cos\varphi,\qquad
+\psi_{\rm out}=\left(-H_0s+\frac D s\right)\cos\varphi,\\
+-CR&=-H_0R+D/R,\qquad
+\mu C=\mu_0(H_0+D/R^2),\\
+C&=\frac{2\mu_0}{\mu+\mu_0}H_0,\qquad
+D=\frac{\mu-\mu_0}{\mu+\mu_0}H_0R^2,\qquad
+\alpha=\frac{\mu-\mu_0}{\mu+\mu_0},\\
+\psi_{\rm in}&=-\frac{2\mu_0H_0}{\mu+\mu_0}s\cos\varphi,\qquad
+\psi_{\rm out}=-H_0\left(s-\frac{\alpha R^2}s\right)\cos\varphi,\\
+\boldsymbol H_{\rm in}&=\frac{2\mu_0H_0}{\mu+\mu_0}\boldsymbol e_x,\qquad
+\boldsymbol B_{\rm in}=\frac{2\mu\mu_0H_0}{\mu+\mu_0}\boldsymbol e_x,\\
+\boldsymbol H_{\rm out}&=H_0\left[
+\left(1+\frac{\alpha R^2}{s^2}\right)\cos\varphi\,\boldsymbol e_s
+-\left(1-\frac{\alpha R^2}{s^2}\right)\sin\varphi\,\boldsymbol e_\varphi\right],\\
+\boldsymbol B_{\rm out}&=\mu_0\boldsymbol H_{\rm out}.
+\end{aligned}
+$$
+
+注意 $H_\varphi=-s^{-1}\partial_\varphi\psi$；二维柱面问题的扰动势为 $\cos\varphi/s$，不要把三维球的径向幂次移过来。
+
+**题 9（c）。** 用 $\boldsymbol B=\mu_0(\boldsymbol H+\boldsymbol M)$ 求磁化，再由束缚电流建立独立核对：
+
+$$
+\begin{aligned}
+\boldsymbol M&=\left(\frac\mu{\mu_0}-1\right)\boldsymbol H_{\rm in}
+=2\alpha H_0\boldsymbol e_x=M\boldsymbol e_x,\\
+\boldsymbol J_b&=\nabla\times\boldsymbol M=0,\qquad
+\boldsymbol K_b=\boldsymbol M\times\boldsymbol e_s
+=M\sin\varphi\,\boldsymbol e_z,\\
+\mathrm dI&=MR\sin\varphi\,\mathrm d\varphi,\\
+\mathrm d\boldsymbol B_M(0)
+&=\frac{\mu_0\mathrm dI}{4\pi}
+\int_{-\infty}^\infty
+\frac{\boldsymbol e_z\times(-R\boldsymbol e_s-z'\boldsymbol e_z)}{(R^2+z'^2)^{3/2}}\,\mathrm dz'\\
+&=-\frac{\mu_0\mathrm dI}{2\pi R}\boldsymbol e_\varphi,\\
+\boldsymbol B_M(0)&=-\frac{\mu_0M}{2\pi}\int_0^{2\pi}
+\sin\varphi(-\sin\varphi\boldsymbol e_x+\cos\varphi\boldsymbol e_y)\,\mathrm d\varphi
+=\frac{\mu_0M}{2}\boldsymbol e_x,\\
+\boldsymbol B(0)&=\mu_0H_0\boldsymbol e_x+\boldsymbol B_M(0)
+=\mu_0H_0(1+\alpha)\boldsymbol e_x
+=\frac{2\mu\mu_0H_0}{\mu+\mu_0}\boldsymbol e_x,\\
+\mu=\mu_0:&\quad \alpha=0,\quad\boldsymbol M=0,\quad
+\boldsymbol B=\mu_0H_0\boldsymbol e_x\quad\text{处处成立},\\
+\mu\to\infty:&\quad \boldsymbol H_{\rm in}\to0,\quad
+\boldsymbol B_{\rm in}\to2\mu_0H_0\boldsymbol e_x.
+\end{aligned}
+$$
+
+高磁导率极限中，趋零的是内部 $H$，$B=\mu H$ 仍可保持有限；这与排斥内部磁通的条件不同。
+
+## 题目与课程内容的对应
+
+按讲义章节划分，第一章对应题 1、4 的矢量分析与偶极矩；第二章对应题 2、3 的宏观方程和介质张量；第三章对应题 3、5、6、7 的梯度恒等式、对称性、能流与应力；第四章集中对应题 8、9 的静电与静磁边值问题，共 46 分。部分题目跨章，不宜把同一题重复计入各章分数。
+
+题 3、6 对应第二次作业的张量恒等式和变换题；题 7 对应蔡圣善教材习题 2.1、2.4；题 5 对应习题 2.5。题 8 将讲义导体球边值题与电应力结合，最后一问对应截图完整可见的教材习题 2.3，属于补充变式。教材习题 2.2 的点电荷与均匀外场可与题 8（b）对照，但场分布不同。题 9 对应讲义例 4(vii) 及作业中的磁介质圆柱。
+
+三套卷中，模拟 1 适合基础综合，模拟 2 适合较长的边值与多极推导，模拟 3 更接近讲义例题和已布置作业，并把第四章作为大题重点。模拟 2 的第 5 小题涉及第五章，按目前复习重点可以暂缓。三套卷均不代表对实际考题的预测，原题覆盖请结合《期中复习-讲义思考题解答和作业选题》。
 ]]></content></entry></search>
