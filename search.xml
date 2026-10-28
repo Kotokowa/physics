@@ -52011,4 +52011,1088 @@ $$
 
 
 两导体所带电荷等量异号，未知共同纵向电场在总力中相消。电流沿 $z$、磁场沿 $\varphi$，磁力是径向的，不贡献本问的纵向力。若导体被固定，这个电磁冲量由支撑承受；支撑施加给导体的约束冲量方向相反。
+]]></content></entry><entry><title>期中复习-讲义思考题解答和作业选题</title><url>/physics/DianDongLiXue/%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0-%E8%AE%B2%E4%B9%89%E6%80%9D%E8%80%83%E9%A2%98%E8%A7%A3%E7%AD%94%E5%92%8C%E4%BD%9C%E4%B8%9A%E9%80%89%E9%A2%98/</url><content><![CDATA[前四章的页码均指《电动力学讲义 dk+zl.pdf》的实际 PDF 页码；第五章按《Lecture_note_chapter05_1026.pdf》单独计页。编号例题和正文要求自行推导、证明、检查的内容一并收入；作业题允许合并改编。第五章没有单列习题栏，相关题目据原文演算整理。以下采用 SI 单位制，重复指标求和，柱坐标径向距离记为 $s$。
+
+## 麦克斯韦方程速查
+
+### 微观形式：总电荷与总电流
+
+$\rho,\mathbf j$ 是总源，$c^{-2}=\varepsilon_0\mu_0$。下列积分式的体积 $V$、曲面 $S$ 和边界曲线 $C=\partial S$ 固定，$C$ 与 $S$ 取右手定向。
+
+
+
+$$
+\begin{aligned}
+\nabla\cdot\mathbf E=\frac\rho{\varepsilon_0}
+&\quad\Longleftrightarrow\quad\oiint_{\partial V}\mathbf E\cdot d\mathbf S=\frac{Q_V}{\varepsilon_0},\\
+\nabla\cdot\mathbf B=0
+&\quad\Longleftrightarrow\quad\oiint_{\partial V}\mathbf B\cdot d\mathbf S=0,\\
+\nabla\times\mathbf E=-\partial_t\mathbf B
+&\quad\Longleftrightarrow\quad\oint_C\mathbf E\cdot d\mathbf l=-\frac d{dt}\int_S\mathbf B\cdot d\mathbf S,\\
+\nabla\times\mathbf B=\mu_0\mathbf j+\mu_0\varepsilon_0\partial_t\mathbf E
+&\quad\Longleftrightarrow\quad\oint_C\mathbf B\cdot d\mathbf l
+=\mu_0I_S+\mu_0\varepsilon_0\frac d{dt}\int_S\mathbf E\cdot d\mathbf S.
+\end{aligned}
+$$
+
+
+
+运动回路的电动势另写为 $\mathcal E=\oint_{C(t)}(\mathbf E+\mathbf u\times\mathbf B)\cdot d\mathbf l=-d\int_{S(t)}\mathbf B\cdot d\mathbf S/dt$。由安培—麦克斯韦方程取散度并用高斯定律，得到 $\partial_t\rho+\nabla\cdot\mathbf j=0$。
+
+### 宏观形式：自由源与极化、磁化
+
+定义 $\mathbf D=\varepsilon_0\mathbf E+\mathbf P$、$\mathbf H=\mathbf B/\mu_0-\mathbf M$。最低电偶极、磁偶极阶的束缚源为 $\rho_b=-\nabla\cdot\mathbf P$、$\mathbf j_b=\partial_t\mathbf P+\nabla\times\mathbf M$；宏观总源为自由源与束缚源之和。
+
+
+
+$$
+\begin{aligned}
+\nabla\cdot\mathbf D=\rho_f
+&\quad\Longleftrightarrow\quad\oiint_{\partial V}\mathbf D\cdot d\mathbf S=Q_{f,V},\\
+\nabla\cdot\mathbf B=0
+&\quad\Longleftrightarrow\quad\oiint_{\partial V}\mathbf B\cdot d\mathbf S=0,\\
+\nabla\times\mathbf E=-\partial_t\mathbf B
+&\quad\Longleftrightarrow\quad\oint_C\mathbf E\cdot d\mathbf l=-\frac d{dt}\int_S\mathbf B\cdot d\mathbf S,\\
+\nabla\times\mathbf H=\mathbf j_f+\partial_t\mathbf D
+&\quad\Longleftrightarrow\quad\oint_C\mathbf H\cdot d\mathbf l=I_{f,S}+\frac d{dt}\int_S\mathbf D\cdot d\mathbf S.
+\end{aligned}
+$$
+
+
+
+自由源满足 $\partial_t\rho_f+\nabla\cdot\mathbf j_f=0$。本构关系是额外的材料信息，常见局域线性模型为 $\mathbf D=\varepsilon\mathbf E$、$\mathbf B=\mu\mathbf H$、$\mathbf j_c=\sigma_c\mathbf E$；$\varepsilon,\mu$ 可以是张量，色散介质在时域一般需要卷积，不能默认是常数。
+
+### 界面与静态形式
+
+普通固定界面无奇异面极化层，$\mathbf n$ 从区域 1 指向区域 2，$\sigma_f,\mathbf K_f$ 分别为自由面电荷、面电流：
+
+$$
+\begin{aligned}
+\mathbf n\cdot(\mathbf D_2-\mathbf D_1)&=\sigma_f,&
+\mathbf n\cdot(\mathbf B_2-\mathbf B_1)&=0,\\
+\mathbf n\times(\mathbf E_2-\mathbf E_1)&=0,&
+\mathbf n\times(\mathbf H_2-\mathbf H_1)&=\mathbf K_f.
+\end{aligned}
+$$
+
+静态条件为所有场和源不显含时间。电、磁两组解耦：
+
+$$
+\begin{aligned}
+\text{静电：}\quad&\nabla\times\mathbf E=0,\quad\mathbf E=-\nabla\Phi,\quad
+\nabla\cdot\mathbf D=\rho_f,\\
+&\nabla\cdot(\varepsilon\nabla\Phi)=-\rho_f
+\quad\xrightarrow{\varepsilon\text{ 为常标量}}\quad\nabla^2\Phi=-\rho_f/\varepsilon;\\
+\text{静磁：}\quad&\nabla\cdot\mathbf B=0,\quad\nabla\times\mathbf H=\mathbf j_f,\quad
+\nabla\cdot\mathbf j_f=0,\\
+&\mathbf B=\nabla\times\mathbf A,\quad\nabla\cdot\mathbf A=0
+\quad\xrightarrow{\mu\text{ 为常标量}}\quad\nabla^2\mathbf A=-\mu\mathbf j_f;\\
+\mathbf j_f=0:\quad&\mathbf H=-\nabla\Phi_m,\quad\nabla\cdot(\mu\nabla\Phi_m)=0.
+\end{aligned}
+$$
+
+磁标势写成全局单值函数还需无非零环流的拓扑条件。真空中换成 $\varepsilon_0,\mu_0$ 和总源即可；含给定永久磁化时应使用 $\nabla^2\Phi_m=\nabla\cdot\mathbf M$，不能误用单一线性 $\mu$ 模型。
+
+### 势函数形式与两种规范
+
+从 $\mathbf B=\nabla\times\mathbf A$、$\mathbf E=-\nabla\Phi-\partial_t\mathbf A$ 自动满足两条无源方程。微观方程的另外两条等价于
+
+$$
+\begin{aligned}
+\nabla^2\Phi+\partial_t\nabla\cdot\mathbf A&=-\rho/\varepsilon_0,\\
+(\nabla^2-c^{-2}\partial_t^2)\mathbf A
+-\nabla(\nabla\cdot\mathbf A+c^{-2}\partial_t\Phi)&=-\mu_0\mathbf j.
+\end{aligned}
+$$
+
+
+
+$$
+\begin{aligned}
+\text{洛伦兹规范：}\quad&\nabla\cdot\mathbf A+c^{-2}\partial_t\Phi=0,\\
+&(\nabla^2-c^{-2}\partial_t^2)\Phi=-\rho/\varepsilon_0,\qquad
+(\nabla^2-c^{-2}\partial_t^2)\mathbf A=-\mu_0\mathbf j;\\
+\text{库仑规范：}\quad&\nabla\cdot\mathbf A=0,\qquad \nabla^2\Phi=-\rho/\varepsilon_0,\\
+&(\nabla^2-c^{-2}\partial_t^2)\mathbf A
+=-\mu_0\mathbf j+c^{-2}\nabla\partial_t\Phi.
+\end{aligned}
+$$
+
+
+
+规范变化 $\mathbf A\mapsto\mathbf A+\nabla\Lambda$、$\Phi\mapsto\Phi-\partial_t\Lambda$ 不改场。库仑规范中的瞬时标势不表示可以删去矢势中的传播效应。
+
+### 频域形式
+
+统一采用 $\mathbf F(\mathbf r,t)=\operatorname{Re}[\widetilde{\mathbf F}(\mathbf r)e^{-i\omega t}]$，因此 $\partial_t\mapsto-i\omega$：
+
+$$
+\begin{aligned}
+\nabla\cdot\widetilde{\mathbf D}&=\widetilde\rho_f,&
+\nabla\cdot\widetilde{\mathbf B}&=0,\\
+\nabla\times\widetilde{\mathbf E}&=i\omega\widetilde{\mathbf B},&
+\nabla\times\widetilde{\mathbf H}&=\widetilde{\mathbf j}_f-i\omega\widetilde{\mathbf D},\\
+\nabla\cdot\widetilde{\mathbf j}_f&=i\omega\widetilde\rho_f.&&
+\end{aligned}
+$$
+
+均匀各向同性无源介质中，$k^2=\omega^2\mu\varepsilon$，$ (\nabla^2+k^2)\widetilde{\mathbf E}=0$，$ (\nabla^2+k^2)\widetilde{\mathbf H}=0$。若把欧姆传导电流吸收进介电常数，$\varepsilon_{\rm eff}=\varepsilon+i\sigma_c/\omega$，则 $k^2=\omega^2\mu\varepsilon+i\omega\mu\sigma_c$；此时右边的显式电流只保留外加源，不能再重复加入 $\sigma_c\widetilde{\mathbf E}$。
+
+### 准静形式与磁扩散
+
+以下 Darwin、EQS、MQS 比较用真空形式书写，$\mathbf E_C$ 是由高斯定律确定的纵向库仑场；三者均保留 $\nabla\cdot\mathbf E=\rho/\varepsilon_0$、$\nabla\cdot\mathbf B=0$。
+
+$$
+\begin{aligned}
+\text{Darwin：}\quad&\nabla\times\mathbf E=-\partial_t\mathbf B,\quad
+\nabla\times\mathbf B=\mu_0\mathbf j+c^{-2}\partial_t\mathbf E_C;\\
+\text{EQS：}\quad&\nabla\times\mathbf E\simeq0,\quad
+\nabla\times\mathbf B\simeq\mu_0\mathbf j+c^{-2}\partial_t\mathbf E;\\
+\text{MQS：}\quad&\nabla\times\mathbf E=-\partial_t\mathbf B,\quad
+\nabla\times\mathbf B\simeq\mu_0\mathbf j.
+\end{aligned}
+$$
+
+对均匀欧姆导体，MQS 使用 $\nabla\times\mathbf H\simeq\sigma_c\mathbf E$、$\nabla\times\mathbf E=-\mu\partial_t\mathbf H$，从而 $\partial_t\mathbf F=(\mu\sigma_c)^{-1}\nabla^2\mathbf F$，其中 $\mathbf F=\mathbf E,\mathbf H,\mathbf J$。条件包括 $\omega\varepsilon/\sigma_c\ll1$、相应的空间尺度条件及材料模型有效性。各近似删去的项不同，不能一律记成“低频就删位移电流”。
+
+## 第一章：讲义例题与自证题
+
+### 矢量微分恒等式
+
+**原题：** 例题 1(i) 展开 $\nabla\times(\psi\mathbf A)$、$\nabla\cdot(\mathbf A\times\mathbf B)$ 和 $\nabla\times(\nabla\times\mathbf A)$；随后练习要求推导 $\nabla(\mathbf A\cdot\mathbf B)$ 和 $\nabla\times(\mathbf A\times\mathbf B)$。来源：PDF 第 5–6 页，式 (1.1.21)–(1.1.29)；与第一次作业第 1 题合并。
+
+在直角坐标中用乘积求导与 $\epsilon_{ijk}\epsilon_{klm}=\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl}$，可以把全部推导连续写完：
+
+$$
+\begin{aligned}
+[\nabla\times(\psi\mathbf A)]_i
+&=\epsilon_{ijk}\partial_j(\psi A_k)
+=\epsilon_{ijk}(\partial_j\psi)A_k+\psi\epsilon_{ijk}\partial_jA_k,\\
+\nabla\cdot(\mathbf A\times\mathbf B)
+&=\epsilon_{ijk}\partial_i(A_jB_k)
+=B_k\epsilon_{kij}\partial_iA_j-A_j\epsilon_{jik}\partial_iB_k,\\
+[\nabla\times(\nabla\times\mathbf A)]_i
+&=\epsilon_{ijk}\epsilon_{klm}\partial_j\partial_lA_m
+=\partial_i\partial_jA_j-\partial_j\partial_jA_i,\\
+[\mathbf B\times(\nabla\times\mathbf A)]_i
+&=B_j\partial_iA_j-B_j\partial_jA_i,\\
+\partial_i(A_jB_j)
+&=B_j\partial_iA_j+A_j\partial_iB_j,\\
+[\nabla\times(\mathbf A\times\mathbf B)]_i
+&=(\delta_{il}\delta_{jm}-\delta_{im}\delta_{jl})\partial_j(A_lB_m)\\
+&=B_j\partial_jA_i+A_i\partial_jB_j-B_i\partial_jA_j-A_j\partial_jB_i.
+\end{aligned}
+$$
+
+
+
+$$
+\begin{aligned}
+\nabla\times(\psi\mathbf A)&=\nabla\psi\times\mathbf A+\psi\nabla\times\mathbf A,\\
+\nabla\cdot(\mathbf A\times\mathbf B)&=\mathbf B\cdot\nabla\times\mathbf A-\mathbf A\cdot\nabla\times\mathbf B,\\
+\nabla\times(\nabla\times\mathbf A)&=\nabla(\nabla\cdot\mathbf A)-\nabla^2\mathbf A,\\
+\nabla(\mathbf A\cdot\mathbf B)&=\mathbf B\times(\nabla\times\mathbf A)+(\mathbf B\cdot\nabla)\mathbf A\\
+&\quad+\mathbf A\times(\nabla\times\mathbf B)+(\mathbf A\cdot\nabla)\mathbf B,\\
+\nabla\times(\mathbf A\times\mathbf B)&=\mathbf A\nabla\cdot\mathbf B-\mathbf B\nabla\cdot\mathbf A
++(\mathbf B\cdot\nabla)\mathbf A-(\mathbf A\cdot\nabla)\mathbf B.
+\end{aligned}
+$$
+
+
+
+$\nabla$ 的位置同时规定求导对象，不能把它当普通向量随意移过含位置的函数。最后两式最稳妥的记法是先写指标式，再用乘积法则展开。
+
+### 正交曲线坐标中的旋度与拉普拉斯算子
+
+**原题：** 推导并检查正交曲线坐标中的旋度、标量拉普拉斯算子，式 (1.1.37)、(1.1.38)。来源：PDF 第 7 页；并入第一次作业第 2 题的柱坐标、球坐标特例。
+
+令 $\mathbf r=\mathbf r(q_1,q_2,q_3)$，$h_i=|\partial\mathbf r/\partial q_i|$，$\hat{\mathbf e}_i=h_i^{-1}\partial\mathbf r/\partial q_i$，取右手系。$h_i$ 把坐标增量转换成实际长度：
+
+$$
+\begin{aligned}
+d\mathbf r&=\sum_i h_i\hat{\mathbf e}_i\,dq_i,
+&dV&=h_1h_2h_3\,dq_1dq_2dq_3,\\
+d\Phi&=\sum_i\partial_i\Phi\,dq_i=\nabla\Phi\cdot d\mathbf r,
+&\nabla\Phi&=\sum_i\hat{\mathbf e}_i\frac{\partial_i\Phi}{h_i},\\
+\oint_{\partial V}\mathbf A\cdot d\mathbf S
+&=\sum_{\mathrm{cyc}}\partial_i(h_jh_kA_i)\,dq_1dq_2dq_3,
+&\nabla\cdot\mathbf A&=\frac{\sum_{\mathrm{cyc}}\partial_i(h_jh_kA_i)}{h_1h_2h_3}.
+\end{aligned}
+$$
+
+对法线沿 $\hat{\mathbf e}_1$ 的微小矩形使用斯托克斯定理，上、下两条边的线积分之差为 $\partial_2(h_3A_3)dq_2dq_3$，另外两边之差为 $-\partial_3(h_2A_2)dq_2dq_3$，因此
+
+$$
+\begin{aligned}
+(\nabla\times\mathbf A)_1h_2h_3dq_2dq_3
+&=[\partial_2(h_3A_3)-\partial_3(h_2A_2)]dq_2dq_3,\\
+\nabla\times\mathbf A
+&=\frac1{h_1h_2h_3}
+\begin{vmatrix}
+h_1\hat{\mathbf e}_1&h_2\hat{\mathbf e}_2&h_3\hat{\mathbf e}_3\\
+\partial_1&\partial_2&\partial_3\\
+h_1A_1&h_2A_2&h_3A_3
+\end{vmatrix},\\
+\nabla^2\Phi=\nabla\cdot\nabla\Phi
+&=\frac1{h_1h_2h_3}\sum_{\mathrm{cyc}}
+\partial_i\left(\frac{h_jh_k}{h_i}\partial_i\Phi\right).
+\end{aligned}
+$$
+
+这里的行列式按旋度公式展开，导数作用于第三行对应的量。代入两组尺度因子即得
+
+$$
+\begin{aligned}
+(s,\varphi,z):\quad &(h_s,h_\varphi,h_z)=(1,s,1),\\
+\nabla^2\Phi&=\frac1s\partial_s(s\partial_s\Phi)+\frac1{s^2}\partial_\varphi^2\Phi+\partial_z^2\Phi,\\
+(r,\theta,\varphi):\quad &(h_r,h_\theta,h_\varphi)=(1,r,r\sin\theta),\\
+\nabla^2\Phi&=\frac1{r^2}\partial_r(r^2\partial_r\Phi)
++\frac1{r^2\sin\theta}\partial_\theta(\sin\theta\partial_\theta\Phi)
++\frac1{r^2\sin^2\theta}\partial_\varphi^2\Phi.
+\end{aligned}
+$$
+
+基矢不能当常量。由混合偏导相等和基矢正交性，可补出原讲义容易跳过的步骤：
+
+$$
+\begin{aligned}
+\partial_i(h_j\hat{\mathbf e}_j)&=\partial_j(h_i\hat{\mathbf e}_i),\\
+\partial_i\hat{\mathbf e}_j&=\frac{\partial_jh_i}{h_j}\hat{\mathbf e}_i\quad(i\ne j),\\
+\hat{\mathbf e}_j\cdot\partial_i\hat{\mathbf e}_i
+&=-\hat{\mathbf e}_i\cdot\partial_i\hat{\mathbf e}_j
+=-\frac{\partial_jh_i}{h_j},\\
+\partial_i\hat{\mathbf e}_i&=-\sum_{j\ne i}\frac{\partial_jh_i}{h_j}\hat{\mathbf e}_j,\\
+\nabla\cdot\frac{\mathbf r}{r}
+&=\frac1{r^2}\frac{d(r^2)}{dr}=\frac2r\qquad(r>0).
+\end{aligned}
+$$
+
+### 原点奇性与电、磁偶极子的接触项
+
+**原题：** 例题 1(ii) 证明 $\nabla^2(1/r)=-4\pi\delta(\mathbf r)$；正文要求补证 $\nabla\nabla(1/r)$ 的完整形式。来源：PDF 第 8–9 页，式 (1.1.48)、(1.1.53)。合并第一次作业第 3、4 题的点偶极源与全空间磁场。
+
+取光滑紧支撑测试函数 $f$，从积分意义求导。在挖去小球的区域 $r>a$ 上，内边界的外法线为 $-\hat{\mathbf r}$。利用 $\partial_i(x_j/r^3)=\delta_{ij}/r^3-3x_ix_j/r^5$，有
+
+$$
+\begin{aligned}
+\left\langle\partial_i\frac{x_j}{r^3},f\right\rangle
+&=-\lim_{a\to0}\int_{r>a}\frac{x_j}{r^3}\partial_if\,d^3r\\
+&=\lim_{a\to0}\left[
+\int_{r>a}\left(\frac{\delta_{ij}}{r^3}-\frac{3x_ix_j}{r^5}\right)f\,d^3r
++\int_{S^2}n_in_jf(a\mathbf n)\,d\Omega\right],\\
+\int_{S^2}n_in_j\,d\Omega&=\frac{4\pi}{3}\delta_{ij},\\
+\partial_i\partial_j\frac1r
+&=\operatorname{PV}\frac{3n_in_j-\delta_{ij}}{r^3}
+-\frac{4\pi}{3}\delta_{ij}\delta(\mathbf r),\\
+\nabla^2\frac1r
+&=\sum_i\partial_i^2\frac1r=-4\pi\delta(\mathbf r).
+\end{aligned}
+$$
+
+$\operatorname{PV}$ 表示球形挖孔主值；只在 $r\ne0$ 求导会漏掉最后一项。点偶极源同样由分布极限得到：
+
+$$
+\begin{aligned}
+\rho(\mathbf r)&=\lim_{d\to0}q[\delta(\mathbf r-\mathbf r_0-\mathbf d)-\delta(\mathbf r-\mathbf r_0)]
+=-\mathbf p\cdot\nabla\delta(\mathbf r-\mathbf r_0),\quad q\mathbf d=\mathbf p,\\
+\Phi_p(\mathbf r)&=\frac1{4\pi\varepsilon_0}\int\frac{\rho(\mathbf r')}{|\mathbf r-\mathbf r'|}\,d^3r'
+=-\frac{\mathbf p\cdot\nabla}{4\pi\varepsilon_0}\frac1{|\mathbf r-\mathbf r_0|}.
+\end{aligned}
+$$
+
+磁偶极子可由 $\mathbf j=\nabla\times[\mathbf m\delta(\mathbf r)]$ 表示。分部积分给出 $\mathbf A=-\mu_0\mathbf m\times\nabla(1/r)/(4\pi)$。把刚证明的二阶导数代入，而非只用远场结论：
+
+
+
+$$
+\begin{aligned}
+\mathbf E_p&=\frac1{4\pi\varepsilon_0}(\mathbf p\cdot\nabla)\nabla\frac1r
+=\frac1{4\pi\varepsilon_0}\operatorname{PV}\frac{3(\mathbf p\cdot\mathbf n)\mathbf n-\mathbf p}{r^3}
+-\frac{\mathbf p}{3\varepsilon_0}\delta(\mathbf r),\\
+\mathbf B_m&=-\frac{\mu_0}{4\pi}\left[\mathbf m\nabla^2\frac1r-(\mathbf m\cdot\nabla)\nabla\frac1r\right]\\
+&=\frac{\mu_0}{4\pi}\operatorname{PV}\frac{3(\mathbf m\cdot\mathbf n)\mathbf n-\mathbf m}{r^3}
++\frac{2\mu_0\mathbf m}{3}\delta(\mathbf r).
+\end{aligned}
+$$
+
+
+
+这里将偶极子移到原点书写。两种场在原点外形状相同，原点处的接触项不同；作业的数值画图只能显示原点外部分，不能用有限网格图证明 $\delta$ 项。
+
+PDF 第 13 页还提到检查积分偶极矩与两点电荷定义的一致性。对 $+q,-q$ 位于 $\mathbf r_+,\mathbf r_-$，直接有 $\int\mathbf r\rho\,dV=q(\mathbf r_+-\mathbf r_-)=\mathbf p$。一般将参考原点移到 $\mathbf a$ 时，$\mathbf p'=\int(\mathbf r-\mathbf a)\rho\,dV=\mathbf p-Q\mathbf a$；只有总电荷 $Q=0$ 时偶极矩与原点无关。
+
+### 亥姆霍兹定理与边界项
+
+**讲义自学要求：** 学习亥姆霍兹定理的证明。来源：PDF 第 9–10 页，式 (1.1.54)–(1.1.67)。
+
+记 $G=1/(4\pi|\mathbf r-\mathbf r'|)$，$\mathbf C=\int_VG\mathbf F'\,dV'$。对 $\mathbf r\in V$，从刚证明的 $-\nabla^2G=\delta(\mathbf r-\mathbf r')$ 出发：
+
+$$
+\begin{aligned}
+\mathbf F&=-\nabla^2\mathbf C=-\nabla(\nabla\cdot\mathbf C)+\nabla\times(\nabla\times\mathbf C),\\
+\nabla\cdot\mathbf C
+&=-\int_V\nabla'G\cdot\mathbf F'\,dV'
+=\int_VG\nabla'\cdot\mathbf F'\,dV'-\oint_{\partial V}G\mathbf n'\cdot\mathbf F'\,dS',\\
+\nabla\times\mathbf C
+&=-\int_V\nabla'G\times\mathbf F'\,dV'
+=\int_VG\nabla'\times\mathbf F'\,dV'-\oint_{\partial V}G\mathbf n'\times\mathbf F'\,dS',\\
+\mathbf F&=-\nabla\left[\int_VG\nabla'\cdot\mathbf F'\,dV'-\oint_{\partial V}G\mathbf n'\cdot\mathbf F'\,dS'\right]\\
+&\quad+\nabla\times\left[\int_VG\nabla'\times\mathbf F'\,dV'-\oint_{\partial V}G\mathbf n'\times\mathbf F'\,dS'\right].
+\end{aligned}
+$$
+
+全空间且边界项消失时才得到常用的体积分形式。若两场有相同散度、旋度和足够的衰减条件，其差的这两个体积分都为零，因而两场相等；有限区域不能直接丢掉表面积分。
+
+### 规范变换、作用量与电荷守恒
+
+**讲义核查：** 验证式 (1.3.28) 不改变场，并解释规范变化与运动方程、守恒律的关系。来源：PDF 第 27–30 页。
+
+$$
+\begin{aligned}
+\mathbf A'&=\mathbf A+\nabla\Lambda,\qquad \Phi'=\Phi-\partial_t\Lambda,\\
+\mathbf B'&=\nabla\times\mathbf A+\nabla\times\nabla\Lambda=\mathbf B,\\
+\mathbf E'&=-\nabla\Phi+\nabla\partial_t\Lambda-\partial_t\mathbf A-\partial_t\nabla\Lambda=\mathbf E,\\
+L' -L&=-q(\Phi'-\Phi)+q\mathbf v\cdot(\mathbf A'-\mathbf A)
+=q(\partial_t+\mathbf v\cdot\nabla)\Lambda=q\frac{d\Lambda}{dt},\\
+S'-S&=q[\Lambda(\mathbf r_f,t_f)-\Lambda(\mathbf r_i,t_i)].
+\end{aligned}
+$$
+
+固定端点变分时，边界项不改变欧拉—拉格朗日方程。对连续源的耦合项，取边界上消失的 $\Lambda$，则
+
+$$
+\begin{aligned}
+S_{\rm int}&=\int(\mathbf j\cdot\mathbf A-\rho\Phi)\,d^3r\,dt,\\
+\Delta S_{\rm int}
+&=\int(\mathbf j\cdot\nabla\Lambda+\rho\partial_t\Lambda)\,d^3r\,dt\\
+&=-\int\Lambda(\nabla\cdot\mathbf j+\partial_t\rho)\,d^3r\,dt,\\
+\Delta S_{\rm int}=0\quad\text{对任意 }\Lambda
+&\Longrightarrow\partial_t\rho+\nabla\cdot\mathbf j=0.
+\end{aligned}
+$$
+
+这是源耦合的规范不变性所要求的相容条件；仅改变势的写法不会改变真实场。
+
+## 第二章：介质与边界条件选题
+
+### 局域场、介电函数与因果性
+
+**作业改编：** 第一次作业第 6 题给定 $\alpha_e(\omega)=e^2/[m(\omega_0^2-\omega^2-i\gamma\omega)]$，求介电函数并检查 K–K 关系。这里保留解析推导，以实、虚部的式子代替示意图。
+
+采用 $e^{-i\omega t}$，在适用洛伦兹球形空腔模型的均匀各向同性介质中，$\mathbf E_{\rm loc}=\mathbf E+\mathbf P/(3\varepsilon_0)$。令 $N$ 为分子数密度，先推本构关系，再代入振子模型：
+
+$$
+\begin{aligned}
+\mathbf P&=N\alpha_e\left(\mathbf E+\frac{\mathbf P}{3\varepsilon_0}\right)
+=\varepsilon_0(\varepsilon_r-1)\mathbf E,\\
+\frac{\varepsilon_r-1}{\varepsilon_r+2}&=\frac{N\alpha_e}{3\varepsilon_0},\qquad
+\omega_p^2=\frac{Ne^2}{m\varepsilon_0},\quad\Omega^2=\omega_0^2-\frac{\omega_p^2}{3},\\
+\varepsilon_r(\omega)&=1+\frac{\omega_p^2}{\Omega^2-\omega^2-i\gamma\omega},\\
+\varepsilon_r'&=1+\frac{\omega_p^2(\Omega^2-\omega^2)}{(\Omega^2-\omega^2)^2+\gamma^2\omega^2},\\
+\varepsilon_r''&=\frac{\omega_p^2\gamma\omega}{(\Omega^2-\omega^2)^2+\gamma^2\omega^2}.
+\end{aligned}
+$$
+
+绝对介电常数为 $\varepsilon=\varepsilon_0\varepsilon_r$。稳定的这一线性模型要求 $\Omega^2>0,\gamma>0$；此时极点 $z_\pm=-i\gamma/2\pm\sqrt{\Omega^2-\gamma^2/4}$ 均在下半平面。设 $F(z)=\varepsilon_r(z)-1=O(z^{-2})$，上半平面闭合围道给出
+
+$$
+\begin{aligned}
+F(\omega)&=\frac1{\pi i}\operatorname{PV}\int_{-\infty}^{\infty}\frac{F(\omega')}{\omega'-\omega}\,d\omega',\\
+\varepsilon_r'(\omega)-1
+&=\frac1\pi\operatorname{PV}\int_{-\infty}^{\infty}\frac{\varepsilon_r''(\omega')}{\omega'-\omega}\,d\omega',\\
+\varepsilon_r''(\omega)
+&=-\frac1\pi\operatorname{PV}\int_{-\infty}^{\infty}\frac{\varepsilon_r'(\omega')-1}{\omega'-\omega}\,d\omega'.
+\end{aligned}
+$$
+
+实部为偶函数，虚部为奇函数，且 $\omega>0$ 时虚部非负；这同时检查时间约定与耗散符号。这里的 K–K 关系对 $\varepsilon_r-1$ 使用，不能漏掉无穷频常数。
+
+### 用阶跃函数一次推出四个界面条件
+
+**作业改编：** 第一次作业第 8 题要求由讲义式 (2.3.15) 推导 $\mathbf D$ 的边界条件；扩展为四个条件。来源：PDF 第 49–52 页。
+
+设固定界面为 $g(\mathbf r)=0$，$\mathbf n=\nabla g/|\nabla g|$ 从区域 1 指向区域 2，$\delta_S=\delta(g)|\nabla g|$。分段场写成 $\mathbf F=\mathbf F_1\Theta(-g)+\mathbf F_2\Theta(g)$，则
+
+$$
+\begin{aligned}
+\nabla\cdot\mathbf F
+&=\Theta(-g)\nabla\cdot\mathbf F_1+\Theta(g)\nabla\cdot\mathbf F_2
++\mathbf n\cdot(\mathbf F_2-\mathbf F_1)\delta_S,\\
+\nabla\times\mathbf F
+&=\Theta(-g)\nabla\times\mathbf F_1+\Theta(g)\nabla\times\mathbf F_2
++\mathbf n\times(\mathbf F_2-\mathbf F_1)\delta_S,\\
+\rho_f&=\rho_{f,\rm bulk}+\sigma_f\delta_S,\qquad
+\mathbf j_f=\mathbf j_{f,\rm bulk}+\mathbf K_f\delta_S.
+\end{aligned}
+$$
+
+将各式代入宏观麦克斯韦方程，比较 $\delta_S$ 系数即可。在没有奇异面极化层、且场本身只有有限跳跃的通常界面上：
+
+
+
+$$
+\begin{aligned}
+\mathbf n\cdot(\mathbf D_2-\mathbf D_1)&=\sigma_f,&
+\mathbf n\cdot(\mathbf B_2-\mathbf B_1)&=0,\\
+\mathbf n\times(\mathbf E_2-\mathbf E_1)&=0,&
+\mathbf n\times(\mathbf H_2-\mathbf H_1)&=\mathbf K_f.
+\end{aligned}
+$$
+
+
+
+若 $g=z-f(x,y)$，就有 $|\nabla g|=\sqrt{1+f_x^2+f_y^2}$。这个因子把 $\delta(g)$ 换成真正的单位面积电荷，不能省略后直接把系数当面密度。
+
+## 第三章：对称性与守恒定律
+
+### 并矢、矢积和麦克斯韦方程的变换
+
+**讲义自证要求：** 推导矢量、赝矢量在并矢、双点积、多重矢积下的变换，检查物理方程的倒反性质。来源：PDF 第 58–60 页。合并第三章作业第 1 题关于 $\mathbf S$、$\mathbf T$ 的变换。
+
+用正交矩阵 $R$ 表示空间变换，$d=\det R=\pm1$。普通向量变为 $\mathbf a'=R\mathbf a$，轴向量变为 $\mathbf b'=dR\mathbf b$；取 $\mathbf u'=d^{p_u}R\mathbf u$，$p_u=0,1$，则
+
+$$
+\begin{aligned}
+(\mathbf u\cdot\mathbf v)'&=d^{p_u+p_v}\mathbf u\cdot\mathbf v,\\
+(\mathbf u\times\mathbf v)'&=d^{p_u+p_v+1}R(\mathbf u\times\mathbf v),\\
+(\mathbf u\mathbf v)'&=d^{p_u+p_v}R(\mathbf u\mathbf v)R^{\mathsf T},\\
+(A:B)'&=d^{p_A+p_B}(A:B),\\
+[\mathbf u\times(\mathbf v\times\mathbf w)]'
+&=d^{p_u+p_v+p_w}R[\mathbf u\times(\mathbf v\times\mathbf w)].
+\end{aligned}
+$$
+
+其中双点积为 $A:B=\sum_{ij}A_{ij}B_{ij}$。纯转动 $d=1$ 时普通量与赝量的变换相同；空间倒反 $R=-I$ 时才显出区别。由 $\rho'=\rho$、$\mathbf j'=-\mathbf j$ 和麦克斯韦方程可取 $\mathbf E'=-\mathbf E,\mathbf B'=\mathbf B$。例如
+
+$$
+\begin{aligned}
+\nabla'\cdot\mathbf E'&=(-\nabla)\cdot(-\mathbf E)=\rho/\varepsilon_0,\\
+\nabla'\cdot\mathbf B'&=-\nabla\cdot\mathbf B=0,\\
+\nabla'\times\mathbf E'&=\nabla\times\mathbf E=-\partial_t\mathbf B',\\
+\nabla'\times\mathbf B'&=-\nabla\times\mathbf B
+=\mu_0\mathbf j'+c^{-2}\partial_t\mathbf E'.
+\end{aligned}
+$$
+
+时间反演取 $t'=-t$，$\rho'=\rho,\mathbf j'=-\mathbf j,\mathbf E'=\mathbf E,\mathbf B'=-\mathbf B$；各未加撇场在 $-t'$ 取值。法拉第方程两边均为偶，安培方程两边均为奇，散度方程也保持形式。于是
+
+$$
+\begin{aligned}
+\mathbf S&=\frac1{\mu_0}\mathbf E\times\mathbf B,\qquad
+T_{ij}=\varepsilon_0E_iE_j+\frac{B_iB_j}{\mu_0}
+-\frac12\left(\varepsilon_0E^2+\frac{B^2}{\mu_0}\right)\delta_{ij},\\
+\text{转动：}\quad&\mathbf S'=R\mathbf S,\quad T'=RTR^{\mathsf T},\\
+\text{空间倒反：}\quad&\mathbf S'=-\mathbf S,\quad T'=T,\\
+\text{时间反演：}\quad&\mathbf S'(\mathbf r,t')=-\mathbf S(\mathbf r,-t'),\quad
+T'(\mathbf r,t')=T(\mathbf r,-t').
+\end{aligned}
+$$
+
+含耗散的材料本构关系未必在反演下不变，不能由麦克斯韦方程形式不变推断任意材料都具有时间反演对称性。
+
+PDF 第 60 页的“分析其他熟知物理量”可用同一乘法规则完成：$\mathbf p=m\dot{\mathbf r}$ 在空间倒反、时间反演下都为奇；$\mathbf L=\mathbf r\times\mathbf p$ 分别为偶、奇；$\mathbf F=\dot{\mathbf p}$ 分别为奇、偶；$\boldsymbol\tau=\mathbf r\times\mathbf F$ 都为偶；能量 $u\sim E^2+B^2$ 都为偶。$\mathbf g=\varepsilon_0\mathbf E\times\mathbf B$ 与 $\mathbf S$ 同为极向量，时间反演为奇。
+
+### 缓慢充电的圆板电容器
+
+**原题：** 例题 3(i)。两圆形平板半径 $R$、间距 $h$，电池缓慢充电，电量为 $Q(t)$，计算能流和能量密度。来源：PDF 第 64–65 页。
+
+忽略边缘场，令 $\mathbf E=E(t)\hat{\mathbf z}$。高斯定律和位移电流给出
+
+$$
+\begin{aligned}
+E(t)&=\frac{Q(t)}{\varepsilon_0\pi R^2},\qquad
+2\pi sB_\varphi(s)=\mu_0\varepsilon_0\dot E\,\pi\min(s^2,R^2),\\
+B_\varphi(s)&=\begin{cases}\mu_0\varepsilon_0s\dot E/2,&s\le R,\\
+\mu_0\varepsilon_0R^2\dot E/(2s),&s>R,\end{cases}\\
+\mathbf S(s)&=\frac1{\mu_0}E\hat{\mathbf z}\times B_\varphi\hat{\boldsymbol\varphi}
+=-\frac{\varepsilon_0s}{2}E\dot E\,\hat{\mathbf s}\quad(sR),\qquad
+\Phi_2=-ar\cos\theta\quad(r
+
+$$
+\begin{aligned}
+\Phi_2&=-\frac{3\varepsilon_1}{\varepsilon_2+2\varepsilon_1}E_0r\cos\theta,\\
+\Phi_1&=-E_0r\cos\theta+
+\frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+2\varepsilon_1}\frac{E_0R^3\cos\theta}{r^2},\\
+\mathbf E_2&=\frac{3\varepsilon_1}{\varepsilon_2+2\varepsilon_1}\mathbf E_0,\qquad
+\mathbf p_{\rm eff}=4\pi\varepsilon_1R^3\frac{\varepsilon_2-\varepsilon_1}{\varepsilon_2+2\varepsilon_1}\mathbf E_0.
+\end{aligned}
+$$
+
+
+
+$\mathbf p_{\rm eff}$ 是按背景介质的偶极势定义的等效矩。若要实际束缚电荷，应先求 $\mathbf P_i=(\varepsilon_i-\varepsilon_0)\mathbf E_i$，界面净束缚面密度为 $(\mathbf P_2-\mathbf P_1)\cdot\hat{\mathbf r}$，不能在背景也极化时只算球内 $\mathbf P_2$。
+
+### 带电导体圆柱与二维电偶极子
+
+**原题：** 例题 4(iii)。无限长导体圆柱半径 $R$、线电荷密度 $\lambda$，轴沿 $z$，处在横向匀强场 $E_0\hat{\mathbf x}$，求电场。正文另要求从两条 $\pm\lambda$ 线电荷检查二维偶极子定义。来源：PDF 第 98–99 页。
+
+柱外的二维调和通解含 $1,\ln s,s^n\cos n\varphi,s^{-n}\cos n\varphi$ 及正弦项。均匀外场选出 $n=1$，总电荷选出对数项：
+
+$$
+\begin{aligned}
+\Phi&=C+b_0\ln(s/R)+(-E_0s+b_1/s)\cos\varphi,\\
+\Phi(R,\varphi)=C&\Longrightarrow b_1=E_0R^2,\\
+\lambda&=\varepsilon_0\int_0^{2\pi}[-\partial_s\Phi]_{s=R}R\,d\varphi
+=-2\pi\varepsilon_0b_0,\\
+\Phi&=C-\frac\lambda{2\pi\varepsilon_0}\ln\frac sR
+-E_0\left(s-\frac{R^2}s\right)\cos\varphi,\\
+E_s&=\frac\lambda{2\pi\varepsilon_0s}+E_0\left(1+\frac{R^2}{s^2}\right)\cos\varphi,\\
+E_\varphi&=-E_0\left(1-\frac{R^2}{s^2}\right)\sin\varphi,\qquad
+\sigma_f=\frac\lambda{2\pi R}+2\varepsilon_0E_0\cos\varphi.
+\end{aligned}
+$$
+
+柱内场为零。二维点源实际是一条无限长线电荷；将正、负线电荷放在 $\pm\mathbf d/2$，保持每单位轴长的偶极矩 $\mathbf p_\ell=\lambda\mathbf d$，则
+
+$$
+\begin{aligned}
+\Phi_d&=-\frac\lambda{2\pi\varepsilon_0}
+\left[\ln|\mathbf s-\mathbf d/2|-\ln|\mathbf s+\mathbf d/2|\right]\\
+&\longrightarrow\frac{\mathbf p_\ell\cdot\mathbf s}{2\pi\varepsilon_0s^2},\\
+\partial_i\frac{s_j}{s^2}&=\frac{\delta_{ij}-2n_in_j}{s^2},\\
+\mathbf E_d&=\frac{2(\mathbf p_\ell\cdot\mathbf n)\mathbf n-\mathbf p_\ell}{2\pi\varepsilon_0s^2}\quad(s>0),\\
+\mathbf p_{\ell,\rm induced}&=2\pi\varepsilon_0R^2E_0\hat{\mathbf x}.
+\end{aligned}
+$$
+
+二维偶极势按 $s^{-1}$ 衰减，三维偶极势按 $r^{-2}$ 衰减；两者的偶极矩量纲也相差一个长度。
+
+### 均匀带电棒的四极展开
+
+**原题：** 例题 4(iv)。用多极展开求长 $L$、线密度 $\lambda$ 的均匀带电棒的电势，保留到电四极矩。来源：PDF 第 101 页。
+
+以棒中心为原点、棒沿 $z$。先展开库仑核，再做源积分；记无迹四极矩为 $\Theta_{ij}=\int\rho(3x_i'x_j'-r'^2\delta_{ij})dV'$，避免与总电荷 $Q$ 混淆：
+
+$$
+\begin{aligned}
+\frac1{|\mathbf r-\mathbf r'|}
+&=\frac1r+\frac{\mathbf n\cdot\mathbf r'}{r^2}
++\frac{3(\mathbf n\cdot\mathbf r')^2-r'^2}{2r^3}+\cdots,\\
+Q&=\lambda\int_{-L/2}^{L/2}dz'=\lambda L,\qquad
+\mathbf p=\lambda\hat{\mathbf z}\int_{-L/2}^{L/2}z'\,dz'=0,\\
+\int z'^2dq&=\lambda\int_{-L/2}^{L/2}z'^2dz'=\frac{\lambda L^3}{12},\\
+\Theta&=\frac{\lambda L^3}{12}\operatorname{diag}(-1,-1,2),\\
+\Phi(r,\theta)&=\frac1{4\pi\varepsilon_0}
+\left[\frac{\lambda L}{r}+\frac{\Theta_{ij}n_in_j}{2r^3}+O\!\left(\frac{\lambda L^5}{r^5}\right)\right]\\
+&=\frac1{4\pi\varepsilon_0}
+\left[\frac{\lambda L}{r}+\frac{\lambda L^3}{24r^3}(3\cos^2\theta-1)+\cdots\right],\quad r\gg L.
+\end{aligned}
+$$
+
+棒关于原点反演对称，所有奇阶矩为零。不要将去迹前的 $3\int x_i'x_j'dq$ 与这里的 $\Theta_{ij}$ 混用。
+
+### 长直电流的矢势与二维格林函数
+
+**原题：** 例题 4(v)。沿 $z$ 的无限长直导线载流 $I$，求矢势；补证 $\nabla_\perp^2\ln s=2\pi\delta(x)\delta(y)$。来源：PDF 第 108–109 页。
+
+$$
+\begin{aligned}
+\oint\mathbf B\cdot d\mathbf l&=2\pi sB_\varphi=\mu_0I,\\
+\mathbf A&=A_z(s)\hat{\mathbf z},\qquad
+B_\varphi=-\frac{dA_z}{ds}=\frac{\mu_0I}{2\pi s},\\
+A_z(s)&=-\frac{\mu_0I}{2\pi}\ln\frac{s}{s_0}.
+\end{aligned}
+$$
+
+不能规定无限长线源的势在无穷远为零；$s_0$ 指定参考常量。对二维光滑测试函数 $f$，挖去半径 $a$ 的圆盘，用格林第二恒等式：
+
+$$
+\begin{aligned}
+\langle\nabla_\perp^2\ln s,f\rangle
+&=\lim_{a\to0}\int_{s>a}\ln s\,\nabla_\perp^2f\,d^2s\\
+&=\lim_{a\to0}\int_0^{2\pi}
+[-a\ln a\,\partial_sf(a,\varphi)+f(a,\varphi)]\,d\varphi\\
+&=2\pi f(0),\\
+\nabla_\perp^2A_z&=-\mu_0I\delta(x)\delta(y).
+\end{aligned}
+$$
+
+这也补齐了二维偶极子所用的对数基本解，不需要借助三维结果猜归一化系数。
+
+### 均匀磁场的矢势与规范选择
+
+**原题：** 例题 4(vi)。求 $\mathbf B=B_0\hat{\mathbf x}$ 的矢势。来源：PDF 第 109 页。
+
+$$
+\begin{aligned}
+\mathbf A_1&=A_z(x,y)\hat{\mathbf z},\qquad
+\nabla\times\mathbf A_1=(\partial_yA_z)\hat{\mathbf x}-(\partial_xA_z)\hat{\mathbf y},\\
+\partial_yA_z=B_0,\quad\partial_xA_z=0
+&\Longrightarrow\mathbf A_1=B_0y\hat{\mathbf z},\\
+\mathbf A_2&=\frac12\mathbf B_0\times\mathbf r
+=\frac{B_0}{2}(y\hat{\mathbf z}-z\hat{\mathbf y}),\\
+\mathbf A_1-\mathbf A_2
+&=\frac{B_0}{2}(z\hat{\mathbf y}+y\hat{\mathbf z})
+=\nabla\left(\frac{B_0yz}{2}\right).
+\end{aligned}
+$$
+
+两者旋度相同，且都满足 $\nabla\cdot\mathbf A=0$。这说明仅指定库仑规范仍可能存在满足 $\nabla^2\Lambda=0$ 的剩余规范自由度，还需要相应边界条件。
+
+### 横向匀强场中的磁介质圆柱
+
+**原题：** 例题 4(vii)。半径 $R$、磁导率 $\mu_2$ 的无限圆柱沿 $z$，外介质磁导率 $\mu_1$，施加 $\mathbf B_0=B_0\hat{\mathbf x}$，求空间矢势。来源：PDF 第 109–110 页；并入《电动3》第 8 题的磁标势检验。
+
+无自由面电流，取 $\mathbf A=A_z\hat{\mathbf z}$，各均匀区域满足 $\nabla_\perp^2A_z=0$。由无穷远、轴线有限性和角向结构：
+
+$$
+\begin{aligned}
+A_{z1}&=(B_0s+b/s)\sin\varphi+C,\qquad
+A_{z2}=as\sin\varphi+C,\\
+A_{z1}(R)=A_{z2}(R)&\Longrightarrow a=B_0+b/R^2,\\
+\frac1{\mu_1}\partial_sA_{z1}(R)=\frac1{\mu_2}\partial_sA_{z2}(R)
+&\Longrightarrow\mu_2(B_0-b/R^2)=\mu_1a,\\
+b&=B_0R^2\frac{\mu_2-\mu_1}{\mu_2+\mu_1},\qquad
+a=\frac{2\mu_2B_0}{\mu_1+\mu_2},\\
+\mathbf B_1&=(B_0+b/s^2)\cos\varphi\,\hat{\mathbf s}
+-(B_0-b/s^2)\sin\varphi\,\hat{\boldsymbol\varphi},\\
+\mathbf B_2&=a\hat{\mathbf x}.
+\end{aligned}
+$$
+
+再用 $\mathbf H=-\nabla\Phi_m$ 检查。令 $H_0=B_0/\mu_1$，$d=H_0R^2(\mu_2-\mu_1)/(\mu_2+\mu_1)$，则
+
+$$
+\begin{aligned}
+\Phi_{m1}&=(-H_0s+d/s)\cos\varphi,\qquad
+\Phi_{m2}=-\frac{2\mu_1H_0}{\mu_1+\mu_2}s\cos\varphi,\\
+\mathbf H_1&=H_0\hat{\mathbf x}
++\frac d{s^2}(\cos\varphi\,\hat{\mathbf s}+\sin\varphi\,\hat{\boldsymbol\varphi}),\\
+\mu_1\mathbf H_1&=\mathbf B_1,\qquad \mu_2\mathbf H_2=\mathbf B_2.
+\end{aligned}
+$$
+
+二维偶极场的附加径向系数是 $\cos\varphi$。已有《电动3》答案写成 $2\cos\varphi$ 的位置应按上式修正，否则法向 $B$ 不连续。
+
+### 均匀磁化的永久磁铁球
+
+**原题：** 例题 4(viii)。半径 $R$ 的球被饱和磁化，$\mathbf M=M_0\hat{\mathbf z}$，求磁场。来源：PDF 第 113–114 页。
+
+无自由电流，所以 $\mathbf H=-\nabla\Phi_m$；球内 $\nabla\cdot\mathbf M=0$，内外均满足拉普拉斯方程。这里 $\mathbf M$ 是给定值，不是待求的线性磁化率响应。
+
+$$
+\begin{aligned}
+\Phi_{m1}&=b\cos\theta/r^2,\qquad \Phi_{m2}=ar\cos\theta,\\
+H_{1\theta}(R)=H_{2\theta}(R)&\Longrightarrow b=aR^3,\\
+B_{1r}(R)=B_{2r}(R)
+&\Longrightarrow \frac{2b}{R^3}=-a+M_0,\\
+a&=M_0/3,\qquad b=M_0R^3/3,\\
+\mathbf H_{\rm in}&=-\frac13\mathbf M,\qquad
+\mathbf B_{\rm in}=\mu_0(\mathbf H_{\rm in}+\mathbf M)=\frac{2\mu_0}{3}\mathbf M,\\
+\mathbf H_{\rm out}&=\frac1{4\pi r^3}[3(\mathbf m\cdot\hat{\mathbf r})\hat{\mathbf r}-\mathbf m],\qquad
+\mathbf m=\frac{4\pi R^3}{3}\mathbf M,\quad\mathbf B_{\rm out}=\mu_0\mathbf H_{\rm out}.
+\end{aligned}
+$$
+
+同一个球可以用两种等效源描述：
+
+$$
+\begin{aligned}
+\rho_m&=-\nabla\cdot\mathbf M=0\quad\text{（体内）},&
+\sigma_m&=\mathbf M\cdot\hat{\mathbf r}=M_0\cos\theta,\\
+\mathbf j_m&=\nabla\times\mathbf M=0\quad\text{（体内）},&
+\mathbf K_m&=\mathbf M\times\hat{\mathbf r}=M_0\sin\theta\,\hat{\boldsymbol\varphi}.
+\end{aligned}
+$$
+
+等效磁荷用于计算 $\mathbf H$，真实磁化电流用于计算 $\mathbf B$。球内 $\mathbf B$ 与 $\mathbf H$ 方向相反，正是 $\mathbf B=\mu_0(\mathbf H+\mathbf M)$ 的结果。
+
+## 第五章：原文推导与演算题解
+
+### 准静近似究竟删去了什么
+
+**据原文整理：** 用亥姆霍兹分解检查瞬时毕奥—萨伐尔场的旋度，说明 Darwin、EQS、MQS 的区别和适用条件。来源：第五章 PDF 第 1–5 页，式 (5.1.1)–(5.1.24)。
+
+定义 $Kf=(4\pi)^{-1}\int f(\mathbf r',t)/|\mathbf r-\mathbf r'|\,d^3r'$，$-\nabla^2Kf=f$。假设积分收敛且边界项消失，$K$ 与空间、时间微分可以交换。由亥姆霍兹定理和麦克斯韦方程连续消元：
+
+$$
+\begin{aligned}
+\mathbf E_C&=-\varepsilon_0^{-1}\nabla K\rho,\qquad
+\mathbf B_J=\mu_0\nabla\times K\mathbf J,\\
+\mathbf E&=\mathbf E_C-\nabla\times K\partial_t\mathbf B,\\
+\mathbf B&=\mathbf B_J+c^{-2}\nabla\times K\partial_t\mathbf E
+=\mathbf B_J-c^{-2}K\partial_t^2\mathbf B,\\
+\frac{|\delta\mathbf B|}{B_{\rm typ}}&\sim\frac{L^2}{c^2\tau^2}=\eta^2,\qquad
+\eta=\frac{L}{c\tau}\ll1,\\
+\nabla\times\mathbf B_J
+&=\mu_0[\nabla K(\nabla\cdot\mathbf J)-\nabla^2K\mathbf J]\\
+&=\mu_0[\mathbf J-\nabla K\partial_t\rho]
+=\mu_0\mathbf J+c^{-2}\partial_t\mathbf E_C.
+\end{aligned}
+$$
+
+因此把 $\mathbf B$ 近似成瞬时 $\mathbf B_J$ 不等于删掉全部位移电流。纵横分解与势的检查为
+
+$$
+\begin{aligned}
+\mathbf J_\parallel&=-\nabla K\nabla\cdot\mathbf J=-\varepsilon_0\partial_t\mathbf E_C,\qquad
+\mathbf J_\perp=\mathbf J+\varepsilon_0\partial_t\mathbf E_C,\\
+\mathbf A_D&=\mu_0K\mathbf J_\perp,\quad\nabla\cdot\mathbf A_D=0,\quad
+\mathbf B_D=\nabla\times\mathbf A_D=\mathbf B_J,\\
+\mathbf E_D&=\mathbf E_C-\partial_t\mathbf A_D,\\
+\nabla\times\mathbf B_D-\mu_0\mathbf J-c^{-2}\partial_t\mathbf E_D
+&=-c^{-2}\partial_t(\mathbf E_D-\mathbf E_C).
+\end{aligned}
+$$
+
+若改用 $\mathbf A'=\mu_0K\mathbf J$，其与 $\mathbf A_D$ 相差梯度；例如取 $\Lambda=\mu_0K^2\partial_t\rho$，便有 $\mathbf A'=\mathbf A_D+\nabla\Lambda$。必须同时用 $\Phi'=\Phi_C-\partial_t\Lambda$，不能仅替换矢势而保留标势。
+
+
+
+$$
+\begin{aligned}
+\text{Darwin：}\quad&\nabla\times\mathbf E_D=-\partial_t\mathbf B_D,\quad
+\nabla\times\mathbf B_D=\mu_0\mathbf J+c^{-2}\partial_t\mathbf E_C;\\
+\text{EQS：}\quad&|\mathbf E_{\rm ind}|\ll|\mathbf E_C|,\quad
+\nabla\times\mathbf E\simeq0,\quad\nabla\times\mathbf B\simeq\mu_0\mathbf J+c^{-2}\partial_t\mathbf E;\\
+\text{MQS：}\quad&\varepsilon_0|\partial_t\mathbf E_C|\ll J_{\rm typ},\quad
+\nabla\times\mathbf B\simeq\mu_0\mathbf J,\quad\nabla\times\mathbf E=-\partial_t\mathbf B.
+\end{aligned}
+$$
+
+
+
+EQS、MQS 是依据主导效应选择的进一步近似。$a=LB_{\rm typ}/(\tau E_{\rm typ})$、$b=LE_{\rm typ}/(c^2\tau B_{\rm typ})$ 虽满足 $ab=\eta^2$，但乘积小不代表两者都小。MQS 还要求所保留阶上的 $\nabla\cdot\mathbf J=0$，不能同时输入同阶的任意快速积累电荷。
+
+### 体电荷弛豫与磁扩散
+
+**据原文整理：** 推导均匀欧姆导体的体电荷弛豫，以及 $\mathbf H,\mathbf E,\mathbf J$ 的扩散方程，比较时间尺度。来源：第五章 PDF 第 5–7 页，式 (5.1.25)–(5.2.6)。
+
+从完整连续性方程、高斯定律和 $\mathbf J=\sigma_c\mathbf E$ 出发，而不是从已删去位移电流的 MQS 方程出发求暂态：
+
+$$
+\begin{aligned}
+\partial_t\rho_f&=-\nabla\cdot\mathbf J=-\sigma_c\nabla\cdot\mathbf E
+=-\frac{\sigma_c}{\varepsilon}\rho_f,\\
+\rho_f(\mathbf r,t)&=\rho_f(\mathbf r,0)e^{-t/\tau_q},\qquad
+\tau_q=\frac\varepsilon{\sigma_c},\qquad
+\frac{|\partial_t\mathbf D|}{|\mathbf J|}=\omega\tau_q\ll1.
+\end{aligned}
+$$
+
+在这一弛豫后的适用时间尺度，用 MQS 方程 $\nabla\times\mathbf H=\sigma_c\mathbf E$、$\nabla\times\mathbf E=-\mu\partial_t\mathbf H$：
+
+$$
+\begin{aligned}
+\nabla\cdot\mathbf E&=0,\qquad\nabla\cdot\mathbf H=0,\\
+-\nabla^2\mathbf H
+&=\nabla\times\nabla\times\mathbf H
+=\sigma_c\nabla\times\mathbf E=-\mu\sigma_c\partial_t\mathbf H,\\
+-\nabla^2\mathbf E
+&=\nabla\times\nabla\times\mathbf E
+=-\mu\partial_t\nabla\times\mathbf H=-\mu\sigma_c\partial_t\mathbf E,\\
+\partial_t\mathbf H&=D_m\nabla^2\mathbf H,\quad
+\partial_t\mathbf E=D_m\nabla^2\mathbf E,\quad
+\partial_t\mathbf J=D_m\nabla^2\mathbf J,\\
+D_m&=\frac1{\mu\sigma_c},\qquad\tau_m\sim\frac{L^2}{D_m}=\mu\sigma_cL^2,\\
+\mathbf H_{\mathbf k}(t)&=\mathbf H_{\mathbf k}(0)e^{-D_mk^2t}.
+\end{aligned}
+$$
+
+提高电导率使体电荷弛豫更快，却使磁场扩散更慢。瞬时欧姆模型本身有适用频段，不能将 $\tau_q$ 的极小估计用于任意短的微观过程；体电荷近似为零也不排除导体表面电荷。
+
+### 导体半空间的趋肤效应
+
+**据原文整理：** 均匀导体占 $z>0$，表面电场沿 $x$、复振幅为 $E_s$，求场的衰减和趋肤深度。来源：第五章 PDF 第 7 页，式 (5.2.7)–(5.2.11)。
+
+取 $e^{-i\omega t}$，把时谐形式代入扩散方程，衰减分支的选择必须与时间约定一起检查：
+
+$$
+\begin{aligned}
+-i\omega\widetilde E_x&=D_m\widetilde E_x'',\qquad
+\widetilde E_x''+k^2\widetilde E_x=0,\\
+k^2&=i\omega\mu\sigma_c,\qquad
+k=\frac{1+i}{\delta},\quad\delta=\sqrt{\frac2{\omega\mu\sigma_c}},\\
+\widetilde E_x&=Ae^{ikz}+Be^{-ikz},\qquad
+z\to\infty\text{ 不发散}\Longrightarrow B=0,\ A=E_s,\\
+E_x(z,t)&=E_se^{-z/\delta}\cos(\omega t-z/\delta)\quad(E_s\text{ 取实}),\\
+\widetilde J_x&=\sigma_cE_se^{ikz},\qquad
+(\nabla\times\widetilde{\mathbf E})_y=\partial_z\widetilde E_x=i\omega\mu\widetilde H_y,\\
+\widetilde H_y&=\frac{k}{\omega\mu}\widetilde E_x,\qquad
+Z_s=\frac{\widetilde E_x}{\widetilde H_y}=\frac{1-i}{\sigma_c\delta},\\
+\langle p_J\rangle&=\frac12\sigma_c|E_s|^2e^{-2z/\delta},\qquad
+\langle S_z\rangle=\frac{|E_s|^2}{2\omega\mu\delta}e^{-2z/\delta},\\
+-\frac{d\langle S_z\rangle}{dz}&=\frac{|E_s|^2}{\omega\mu\delta^2}e^{-2z/\delta}
+=\langle p_J\rangle.
+\end{aligned}
+$$
+
+场振幅的 $1/e$ 长度是 $\delta$，功率密度的是 $\delta/2$。最后一行直接验证能流耗散与焦耳热一致，亦检查所取分支的符号。
+
+### 圆柱导线的贝塞尔解与两个极限
+
+**据原文整理：** 半径 $R$ 的长直圆柱导线沿 $z$ 载流，总电流复振幅 $I$，求 $\widetilde J_z,\widetilde E_z,\widetilde H_\varphi$，验证环流关系并取低频、强趋肤极限。来源：第五章 PDF 第 7–8 页，式 (5.2.12)–(5.2.19)。
+
+忽略端部效应，令 $s$ 为径向坐标、$x=ks$，$k=(1+i)/\delta$，径向扩散方程化为零阶贝塞尔方程：
+
+$$
+\begin{aligned}
+\frac1s\frac d{ds}\left(s\frac{d\widetilde E_z}{ds}\right)+k^2\widetilde E_z&=0
+\Longrightarrow x^2y''+xy'+x^2y=0,\\
+\widetilde E_z&=CJ_0(ks)+DY_0(ks),\quad \widetilde E_z(0)\text{ 有限}\Longrightarrow D=0,\\
+I&=2\pi\sigma_cC\int_0^R sJ_0(ks)ds
+=\frac{2\pi\sigma_cCR}{k}J_1(kR),\\
+\widetilde J_z(s)&=\frac{Ik}{2\pi R}\frac{J_0(ks)}{J_1(kR)},\qquad
+\widetilde E_z(s)=\frac{\widetilde J_z(s)}{\sigma_c},\\
+\widetilde H_\varphi(s)
+&=\frac1{2\pi s}\int_0^s2\pi s'\widetilde J_z(s')ds'
+=\frac I{2\pi R}\frac{J_1(ks)}{J_1(kR)},\\
+-\partial_s\widetilde E_z&=CkJ_1(ks)
+=i\omega\mu\widetilde H_\varphi(s).
+\end{aligned}
+$$
+
+积分用了 $[xJ_1(x)]'=xJ_0(x)$；最后一行再以法拉第定律检查。两种极限为
+
+$$
+\begin{aligned}
+|kR|\ll1:\quad&J_0(ks)=1+O(k^2s^2),\quad J_1(kR)=kR/2+O(k^3R^3),\\
+&\widetilde J_z\simeq\frac I{\pi R^2},\qquad
+\widetilde H_\varphi\simeq\frac{Is}{2\pi R^2};\\
+R\gg\delta:\quad&J_0(z)\sim\frac{e^{-i(z-\pi/4)}}{\sqrt{2\pi z}}\quad(\operatorname{Im}z\gg1),\\
+&\frac{\widetilde J_z(s)}{\widetilde J_z(R)}
+\simeq\sqrt{\frac Rs}e^{ik(R-s)}
+=\sqrt{\frac Rs}\exp\left[-\frac{(1-i)(R-s)}\delta\right].
+\end{aligned}
+$$
+
+强趋肤近似只限靠近表面且 $|ks|\gg1$ 的区域，不能把 $s^{-1/2}$ 外推到轴线。用铜的 $\rho_{\rm el}=1.69\times10^{-8}\,\Omega\cdot\mathrm m$、$\mu=\mu_0$：
+
+$$
+\delta=\sqrt{\frac{\rho_{\rm el}}{\pi f\mu_0}}
+=\begin{cases}65.4\,\mu\mathrm m,&f=1\,\mathrm{MHz},\\2.07\,\mu\mathrm m,&f=1\,\mathrm{GHz}.\end{cases}
+$$
+
+准静的几何条件仍是 $\omega L/c\ll1$；铜的直流参数给出 $\sigma_c/\varepsilon_0\simeq6.7\times10^{18}\,\mathrm s^{-1}$，并不代表可以把这个常数电导模型用到可见光频率。
+
+原文的波长例子由 $\lambda_0=c/f$ 得到：$50\,\mathrm{Hz}\mapsto6000\,\mathrm{km}$，$800\,\mathrm{kHz}\mapsto375\,\mathrm m$，$1000\,\mathrm{Hz}\mapsto300\,\mathrm{km}$。实际代入的尺度判据为 $L\ll\lambda_0/(2\pi)$。
+
+## 作业选题：把常用方法串起来
+
+### 从相对论拉格朗日量到洛伦兹力
+
+**选自：** 第一次作业第 5 题。给定 $L=-mc^2\sqrt{1-v^2/c^2}-q\Phi+q\mathbf v\cdot\mathbf A$，求运动方程与经典极限。
+
+$$
+\begin{aligned}
+\gamma&=(1-v^2/c^2)^{-1/2},\qquad
+\frac{\partial L}{\partial v_i}=\gamma mv_i+qA_i,\\
+\frac d{dt}\frac{\partial L}{\partial v_i}
+&=\frac d{dt}(\gamma mv_i)+q\partial_tA_i+qv_j\partial_jA_i,\\
+\frac{\partial L}{\partial x_i}&=-q\partial_i\Phi+qv_j\partial_iA_j,\\
+\frac d{dt}(\gamma mv_i)
+&=q[-\partial_i\Phi-\partial_tA_i+v_j(\partial_iA_j-\partial_jA_i)]\\
+&=q[E_i+(\mathbf v\times\mathbf B)_i],\\
+v\ll c:\quad\gamma&=1+\frac{v^2}{2c^2}+\cdots
+\Longrightarrow m\dot{\mathbf v}=q(\mathbf E+\mathbf v\times\mathbf B).
+\end{aligned}
+$$
+
+正则动量为 $\boldsymbol\pi=\gamma m\mathbf v+q\mathbf A$，机械动量是 $\gamma m\mathbf v$。把两者混用会多出或漏掉 $q\dot{\mathbf A}$。
+
+### 球的自能、球形电容器与能量求力
+
+**合并改编：** 《电动3》第 1、2 题。计算均匀带电球壳、均匀带电实心球的自能，以及两同心球壳的电容，并用能量计算电容器内球所受表面压力。
+
+球对称时先由高斯定律求场，再积分能量：
+
+$$
+\begin{aligned}
+E_r(r)&=\frac{Q_{\rm enc}(r)}{4\pi\varepsilon_0r^2},\qquad
+U=\int_0^\infty\frac{\varepsilon_0E_r^2}{2}4\pi r^2dr,\\
+\text{球壳：}\quad U_{\rm sh}
+&=\frac{Q^2}{8\pi\varepsilon_0}\int_R^\infty\frac{dr}{r^2}
+=\frac{Q^2}{8\pi\varepsilon_0R},\\
+\text{实心球：}\quad Q_{\rm enc}(r)&=Q(r/R)^3\quad(rR$，求球上的感应总电荷。
+
+先推互易式。两组静电源 $\rho_A,\rho_B$ 的库仑核对称，故
+
+$$
+\begin{aligned}
+\int\rho_A\Phi_B\,dV
+&=\iint\frac{\rho_A(\mathbf r)\rho_B(\mathbf r')}{4\pi\varepsilon_0|\mathbf r-\mathbf r'|}\,dVdV'
+=\int\rho_B\Phi_A\,dV.
+\end{aligned}
+$$
+
+系统 A 为原问题。系统 B 取**没有外点电荷、带总电荷 $Q_B$ 的孤立导体球**，则 $\Phi_B(r)=Q_B/(4\pi\varepsilon_0r)$。两系统都把导体表面电荷计入积分：
+
+$$
+\begin{aligned}
+q\Phi_B(r_0)+\int_S\sigma_A\Phi_B(R)dS
+&=\int_S\sigma_B\underbrace{\Phi_A(R)}_{0}dS=0,\\
+\frac{qQ_B}{4\pi\varepsilon_0r_0}
++\frac{Q_{\rm ind}Q_B}{4\pi\varepsilon_0R}&=0,\\
+Q_{\rm ind}&=-q\frac R{r_0}.
+\end{aligned}
+$$
+
+辅助系统 B 不能写成“仍接地但球面电势为 $Q_B/(4\pi\varepsilon_0R)$”；这两种条件互相矛盾。原作业答案中该处辅助系统的文字应以上面的定义为准。
+
+### 金属球外包介质层
+
+**选自：** 《电动3》第 4 题。半径 $a$ 的中性金属球外包介电常数 $\varepsilon$、外半径 $b$ 的介质层，外部真空，施加 $E_0\hat{\mathbf z}$。求电势和界面自由、束缚电荷。
+
+中性条件排除单极项，$l=1$ 的边界方程不与其他阶耦合。设 $u=(a/b)^3$：
+
+$$
+\begin{aligned}
+\Phi_c&=0,\quad\Phi_s=(Ar+B/r^2)\cos\theta,\quad
+\Phi_o=(-E_0r+C/r^2)\cos\theta,\\
+\Phi_s(a)=0&\Longrightarrow B=-Aa^3,\\
+\Phi_s(b)=\Phi_o(b)&\Longrightarrow C=b^3E_0+A(b^3-a^3),\\
+\varepsilon E_{sr}(b)=\varepsilon_0E_{or}(b)
+&\Longrightarrow-\varepsilon A(1+2u)=\varepsilon_0[E_0+2C/b^3],\\
+\Delta&=\varepsilon(1+2u)+2\varepsilon_0(1-u),\qquad
+A=-\frac{3\varepsilon_0E_0}{\Delta},\\
+E_{sr}(r)&=-A\left(1+\frac{2a^3}{r^3}\right)\cos\theta,\\
+\sigma_f(a)&=\varepsilon E_{sr}(a)=-3\varepsilon A\cos\theta,\qquad\sigma_f(b)=0,\\
+\sigma_b(a)&=\mathbf P_s\cdot(-\hat{\mathbf r})=3(\varepsilon-\varepsilon_0)A\cos\theta,\\
+\sigma_b(b)&=\mathbf P_s\cdot\hat{\mathbf r}=-(\varepsilon-\varepsilon_0)A(1+2u)\cos\theta.
+\end{aligned}
+$$
+
+内界面的介质外法线是 $-\hat{\mathbf r}$，这是两处束缚电荷符号不同的原因。介质内部 $\rho_b=-\nabla\cdot\mathbf P_s=0$。检查 $\varepsilon=\varepsilon_0$ 或 $b=a$，均恢复裸金属球。
+
+### 磁介质球壳的屏蔽
+
+**选自：** 《电动3》第 9 题。磁导率 $\mu$ 的球壳内外半径 $a,b$，空腔和外部均真空，外加均匀磁场 $\mathbf H_0$，求各区域 $\mathbf H$。利用旋转对称性把 $\mathbf H_0$ 方向记为 $\hat{\mathbf z}$，最后可旋回原题的 $\hat{\mathbf x}$。
+
+设 $k=\mu/\mu_0$、$u=(a/b)^3$，无自由电流，令 $\mathbf H=-\nabla\Phi_m$：
+
+$$
+\begin{aligned}
+\Phi_i&=-Dr\cos\theta,\quad\Phi_s=(Br+C/r^2)\cos\theta,\quad
+\Phi_o=(-H_0r+A/r^2)\cos\theta,\\
+r=a:\quad -D&=B+C/a^3,\qquad
+D=k(-B+2C/a^3),\\
+C&=\frac{k-1}{2k+1}Ba^3,\qquad D=-\frac{3k}{2k+1}B,\\
+r=b:\quad B+C/b^3&=-H_0+A/b^3,\qquad
+k(-B+2C/b^3)=H_0+2A/b^3,\\
+(k+2)B-2(k-1)C/b^3&=-3H_0,\\
+\Delta&=(k+2)(2k+1)-2u(k-1)^2,\\
+B&=-\frac{3H_0(2k+1)}\Delta,\quad
+C=-\frac{3H_0a^3(k-1)}\Delta,\quad D=\frac{9kH_0}\Delta,\\
+A&=\frac{H_0b^3(k-1)(2k+1)(1-u)}\Delta.
+\end{aligned}
+$$
+
+对势逐项求梯度，$\nabla(r\cos\theta)=\hat{\mathbf z}$、$\nabla(\cos\theta/r^2)=(\hat{\mathbf z}-3\cos\theta\hat{\mathbf r})/r^3$，所以
+
+$$
+\begin{aligned}
+\mathbf H_i&=D\hat{\mathbf z},\\
+\mathbf H_s&=-B\hat{\mathbf z}+\frac C{r^3}(3\cos\theta\hat{\mathbf r}-\hat{\mathbf z}),\\
+\mathbf H_o&=H_0\hat{\mathbf z}+\frac A{r^3}(3\cos\theta\hat{\mathbf r}-\hat{\mathbf z}).
+\end{aligned}
+$$
+
+$k=1$ 或 $a=b$ 时 $D=H_0$。固定非零壳厚且 $k\gg1$，$D/H_0\simeq9/[2k(1-u)]$，体现空腔屏蔽；不能在近似式中同时令壳厚趋零。
+
+### 圆环四极矩与两个偶极子的相互作用
+
+**合并改编：** 《电动3》第 5、6 题。先求 $xy$ 面内半径 $R$、总电荷 $Q$ 的均匀圆环的远势；再求两个固定平行电偶极子在轴向、侧向排列时的能量和力。
+
+圆环 $dq=Qd\varphi'/(2\pi)$，由库仑核二阶展开：
+
+$$
+\begin{aligned}
+\mathbf p&=0,\quad
+\int x'^2dq=\int y'^2dq=\frac{QR^2}{2},\quad\int z'^2dq=0,\\
+\Theta_{xx}&=\Theta_{yy}=\frac{QR^2}{2},\quad\Theta_{zz}=-QR^2,\quad\Theta_{i\ne j}=0,\\
+\Phi(r,\theta)&=\frac1{4\pi\varepsilon_0}
+\left[\frac Qr+\frac{\Theta_{ij}n_in_j}{2r^3}+\cdots\right]
+=\frac Q{4\pi\varepsilon_0r}-\frac{QR^2}{8\pi\varepsilon_0r^3}P_2(\cos\theta)+\cdots.
+\end{aligned}
+$$
+
+两偶极子的相互作用能从电荷在外势中的能量展开，不另乘 $1/2$：
+
+$$
+\begin{aligned}
+U_{12}&=\int\rho_2(\mathbf r_2+\boldsymbol\xi)\Phi_1(\mathbf r_2+\boldsymbol\xi)d^3\xi\\
+&=\underbrace{Q_2}_{0}\Phi_1+\mathbf p_2\cdot\nabla\Phi_1+\cdots
+=-\mathbf p_2\cdot\mathbf E_1,\\
+\mathbf E_1&=-\nabla\frac{\mathbf p_1\cdot\mathbf R}{4\pi\varepsilon_0R^3}
+=\frac{3(\mathbf p_1\cdot\hat{\mathbf R})\hat{\mathbf R}-\mathbf p_1}{4\pi\varepsilon_0R^3},\\
+U_{12}&=\frac{\mathbf p_1\cdot\mathbf p_2-3(\mathbf p_1\cdot\hat{\mathbf R})(\mathbf p_2\cdot\hat{\mathbf R})}{4\pi\varepsilon_0R^3}.
+\end{aligned}
+$$
+
+若两矩均为 $p\hat{\mathbf z}$，$U=K(1-3\cos^2\theta)/R^3$，$K=p^2/(4\pi\varepsilon_0)$，则
+
+$$
+\begin{aligned}
+F_R&=-\partial_RU=\frac{3K(1-3\cos^2\theta)}{R^4},\qquad
+F_\theta=-\frac1R\partial_\theta U=-\frac{6K\sin\theta\cos\theta}{R^4},\\
+\theta=\pi/2:\quad&U=K/R^3,\quad\mathbf F=3K\hat{\mathbf R}/R^4,\\
+\theta=0:\quad&U=-2K/R^3,\quad\mathbf F=-6K\hat{\mathbf R}/R^4.
+\end{aligned}
+$$
+
+一般角度不能只求 $-\partial_RU$；本题的两个特殊角度恰好令 $F_\theta=0$。固定偶极子的 $-\mathbf p\cdot\mathbf E$ 与线性诱导偶极子的 $-\alpha E^2/2$ 也不同。
+
+### 用应力张量重算电荷力与导线力
+
+**据作业答案改编：** 第三章作业中已有点电荷、长直电流和两同号电荷的应力积分。统一使用真空静态应力，保留交叉项，可以同时掌握三个题型。
+
+设点电荷 $q$ 位于均匀外场 $\mathbf E_0$ 中，以半径 $a$ 的小球包围它，球面自场为 $\mathbf E_q=e\mathbf n$，$e=q/(4\pi\varepsilon_0a^2)$。由 $\mathbf F=\oint T\cdot\mathbf n\,dS$：
+
+$$
+\begin{aligned}
+T&=\varepsilon_0(\mathbf E\mathbf E-E^2I/2),\quad\mathbf E=\mathbf E_0+e\mathbf n,\\
+T_{\rm cross}\cdot\mathbf n
+&=\varepsilon_0e[\mathbf E_0+\mathbf n(\mathbf E_0\cdot\mathbf n)-(\mathbf E_0\cdot\mathbf n)\mathbf n]
+=\varepsilon_0e\mathbf E_0,\\
+\mathbf F&=\varepsilon_0e\mathbf E_0\,4\pi a^2=q\mathbf E_0.
+\end{aligned}
+$$
+
+自场平方项的积分因 $\oint\mathbf n\,d\Omega=0$ 为零，均匀外场单独的应力通量也为零。长直电流沿 $z$、外磁场 $B_0\hat{\mathbf x}$ 时，在半径 $a$ 的柱面上令 $b=\mu_0I/(2\pi a)$：
+
+$$
+\begin{aligned}
+\mathbf B&=B_0\hat{\mathbf x}+b\hat{\boldsymbol\varphi},\qquad
+T=\mu_0^{-1}(\mathbf B\mathbf B-B^2I/2),\\
+T_{\rm cross}\cdot\hat{\mathbf s}
+&=\frac{bB_0}{\mu_0}(\cos\varphi\hat{\boldsymbol\varphi}+\sin\varphi\hat{\mathbf s})
+=\frac{bB_0}{\mu_0}\hat{\mathbf y},\\
+\frac{\mathbf F}{\ell}&=\int_0^{2\pi}a(T_{\rm cross}\cdot\hat{\mathbf s})d\varphi
+=IB_0\hat{\mathbf y}=I\hat{\mathbf z}\times\mathbf B_0.
+\end{aligned}
+$$
+
+再将两个同号电荷 $q$ 放在 $z=\pm d/2$。在中垂面 $z=0$，法向电场相消，切向电场相加；用上半空间作积分体，其底面外法线是 $-\hat{\mathbf z}$：
+
+$$
+\begin{aligned}
+E_s(s,0)&=\frac{qs}{2\pi\varepsilon_0(s^2+d^2/4)^{3/2}},\qquad
+T\cdot(-\hat{\mathbf z})=\frac{\varepsilon_0E_s^2}{2}\hat{\mathbf z},\\
+F_z&=\int_0^\infty\frac{\varepsilon_0E_s^2}{2}2\pi s\,ds
+=\frac{q^2}{4\pi\varepsilon_0}\int_0^\infty\frac{s^3ds}{(s^2+d^2/4)^3},\\
+\int_0^\infty\frac{s^3ds}{(s^2+c^2)^3}
+&=\frac12\int_0^\infty\frac{u\,du}{(u+c^2)^3}=\frac1{4c^2},\\
+\mathbf F&=\frac{q^2}{4\pi\varepsilon_0d^2}\hat{\mathbf z}.
+\end{aligned}
+$$
+
+三题都从总场算应力；不能先删去自场再对剩下的外场应力积分，否则恰好会丢掉产生相互作用力的交叉项。
+
+### 导体中的焦耳热从哪里流入
+
+**据作业答案改编：** 第三章作业第 2 题的解法。半径 $R$、长度 $\ell$ 的均匀圆柱导体载稳定电流密度 $\mathbf j=j\hat{\mathbf z}$，电导率 $\sigma_c$，证明流入能流等于焦耳热。
+
+$$
+\begin{aligned}
+\mathbf E&=\frac j{\sigma_c}\hat{\mathbf z},\qquad
+2\pi sH_\varphi=j\pi s^2\Longrightarrow H_\varphi=js/2,\\
+\mathbf S&=\mathbf E\times\mathbf H=-\frac{j^2s}{2\sigma_c}\hat{\mathbf s},\\
+P_{\rm in}&=-S_s(R)\,2\pi R\ell
+=\frac{j^2}{\sigma_c}\pi R^2\ell,\\
+P_J&=\int\mathbf j\cdot\mathbf E\,dV
+=\frac{j^2}{\sigma_c}\pi R^2\ell=P_{\rm in}=I^2\frac{\ell}{\sigma_c\pi R^2}.
+\end{aligned}
+$$
+
+在这个稳态模型中，导体的场能不随时间增加，侧面流入的电磁功率全部变成热。它与充电电容器的侧面流入能流有相同几何方向，去向则分别是耗散和储能。
 ]]></content></entry></search>
