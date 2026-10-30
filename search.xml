@@ -53366,4 +53366,1065 @@ $$
 题 3、6 对应第二次作业的张量恒等式和变换题；题 7 对应蔡圣善教材习题 2.1、2.4；题 5 对应习题 2.5。题 8 将讲义导体球边值题与电应力结合，最后一问对应截图完整可见的教材习题 2.3，属于补充变式。教材习题 2.2 的点电荷与均匀外场可与题 8（b）对照，但场分布不同。题 9 对应讲义例 4(vii) 及作业中的磁介质圆柱。
 
 三套卷中，模拟 1 适合基础综合，模拟 2 适合较长的边值与多极推导，模拟 3 更接近讲义例题和已布置作业，并把第四章作为大题重点。模拟 2 的第 5 小题涉及第五章，按目前复习重点可以暂缓。三套卷均不代表对实际考题的预测，原题覆盖请结合《期中复习-讲义思考题解答和作业选题》。
+]]></content></entry><entry><title>计算物理基础期中复习</title><url>/physics/ComputationalPhysics/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E5%9F%BA%E7%A1%80%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/</url><content><![CDATA[复习主线是数值误差、求根与最优化、矩阵、插值拟合、微分积分。各节把公式、成立条件和实现流程放在一起，例子参考课件与四次作业说明。Fortran 只保留读懂算法所需的内容。明确标注不用学的 Linux 不纳入；南京大学汇报只提取计算方法联系。
+
+## 数值计算与误差判断
+
+### 从物理问题到可核验的计算
+
+先确定未知量、已知数据和边界条件，再把问题化成方程、矩阵或积分。算法给出有限步骤的近似结果，程序负责执行；最后必须核验精度。数学模型是否合适、数值方法是否准确、代码是否正确，是三个不同问题。
+
+$$
+\text{物理模型}\longrightarrow\text{数学问题}\longrightarrow
+\text{离散或迭代公式}\longrightarrow\text{算法实现}\longrightarrow\text{核验}.
+$$
+
+程序的共同结构是：读入并检查数据，初始化，重复更新，检查停止或失败条件，输出结果与误差信息。伪代码首先写清输入、输出和每轮保留哪些量；不要把“调用某个求解器”当成对算法的解释。
+
+### 误差、精度和收敛阶
+
+设真值为 $x$，近似值为 $\widetilde x$；连续问题的步长近似记为 $F_h$，迭代近似记为 $x_k$。以下两种“阶”分别讨论步长趋零和迭代次数增大：
+
+$$
+\begin{aligned}
+e&=\widetilde x-x,\qquad e_{\rm abs}=|\widetilde x-x|,
+\qquad e_{\rm rel}=\frac{|\widetilde x-x|}{|x|}\quad(x\ne0),\\
+F_h-F&=Ch^p+o(h^p)
+\ \Longrightarrow\ \frac{F_h-F}{F_{h/2}-F}\to2^p\quad(C\ne0),\\
+F_h-F_{h/2}&\simeq Ch^p(1-2^{-p}),\\
+|F_{h/2}-F|&\simeq\frac{|F_h-F_{h/2}|}{2^p-1},\\
+e_k&=x_k-x_*,\qquad
+\lim_{k\to\infty}\frac{|e_{k+1}|}{|e_k|^p}=C_*>0.
+\end{aligned}
+$$
+
+最后一行定义迭代的收敛阶；$p=1$ 且 $C_*<1$ 为线性收敛，$p=2$ 为二次收敛。步长误差比仅在主导误差项控制结果时成立；舍入误差占优、系数恰好为零或函数不够光滑时不能机械套用。真值接近零时，以绝对误差或问题的特征尺度代替直接除以真值。
+
+截断误差来自有限泰勒项、有限网格等数学近似；舍入误差来自有限位表示与计算。输入误差和迭代未完成的误差也应分别检查。precision 指表示或结果重复的精细程度，accuracy 指接近真值的程度；打印很多位小数不等于那些位都准确。
+
+### 浮点数、相消与稳定改写
+
+二进制浮点数的正规化形式和常用舍入模型为
+
+$$
+x=(-1)^s(1.f)_2\,2^{e-B},\qquad
+\operatorname{fl}(a\circ b)=(a\circ b)(1+\delta),\quad |\delta|\le u.
+$$
+
+后一模型用于正常范围内、舍入到最近值的基本运算；下溢等特殊情形需另看。binary32 有 24 位二进制有效数，binary64 有 53 位，约对应 7 和 16 位十进制有效数字。若把 $1$ 与下一个可表示数的距离记为 $\varepsilon_{\rm mach}$，两者分别为 $2^{-23}$、$2^{-52}$，而最近舍入的 $u=\varepsilon_{\rm mach}/2$。不同资料对“机器精度”的命名可能不同。
+
+相近量相减危险在于结果很小，而操作数已有误差仍然留下。设操作数相对误差不超过 $u$：
+
+$$
+\begin{aligned}
+\widetilde b&=b(1+\delta_b),\quad\widetilde c=c(1+\delta_c),\\
+\frac{|(\widetilde b-\widetilde c)-(b-c)|}{|b-c|}
+&\le\frac{|b|+|c|}{|b-c|}\,u,\\
+\sqrt{x+1}-\sqrt x&=\frac1{\sqrt{x+1}+\sqrt x},\\
+ax^2+bx+c=0:\quad
+q&=-\frac12\left(b+\operatorname{sgn}_+(b)\sqrt{b^2-4ac}\right),\\
+x_1&=q/a,\qquad x_2=c/q,\qquad
+\operatorname{sgn}_+(b)=\begin{cases}1,&b\ge0,\\-1,&b<0.\end{cases}
+\end{aligned}
+$$
+
+二次方程先求不发生相消的根，再用 $x_1x_2=c/a$ 求另一根；假设 $a\ne0$、实判别式非负且 $q\ne0$。$c=0$ 或重复零根需单独处理，系数极大时还应缩放，避免计算 $b^2$ 时先上溢。
+
+另外三类常见现象是：小量被大数吸收；不同求和顺序产生不同舍入，故浮点加法不满足结合律；超出范围产生上溢或下溢，非法实运算可能产生 NaN。小分母本身并不意味着溢出，分子可能同时趋零：
+
+$$
+\begin{aligned}
+\frac{\sin x}{x}&=1-\frac{x^2}{6}+\frac{x^4}{120}+O(x^6),\qquad
+\left.\frac{\sin x}{x}\right|_{x=0}:=1,\\
+\frac1{1+e^{-x}}&=
+\begin{cases}(1+e^{-x})^{-1},&x\ge0,\\e^x/(1+e^x),&x<0.\end{cases}
+\end{aligned}
+$$
+
+代码据 $x$ 的大小选择展开或稳定分支。很小的 $x$ 下计算 $e^x-1$、$\log(1+x)$，优先使用适合该问题的 `expm1`、`log1p` 等实现；没有对应函数时再按精度需要使用展开。
+
+### 病态性、算法稳定性与停止条件
+
+条件性属于问题，描述输入扰动如何改变解；稳定性属于算法，描述运算是否额外放大误差。对单变量函数与可逆线性系统：
+
+$$
+\begin{aligned}
+\delta y&\simeq f'(x)\delta x,\qquad
+\kappa_f(x)=\left|\frac{xf'(x)}{f(x)}\right|\quad(xf(x)\ne0),\\
+Ax=b,\quad A\delta x=\delta b
+&\ \Longrightarrow\ 
+\frac{\|\delta x\|}{\|x\|}\le\kappa(A)\frac{\|\delta b\|}{\|b\|},
+\qquad\kappa(A)=\|A\|\|A^{-1}\|,\\
+r=b-A\widetilde x
+&\ \Longrightarrow\ 
+\widetilde x-x=-A^{-1}r.
+\end{aligned}
+$$
+
+所以小残差不一定代表小解误差；还取决于问题是否病态。收敛性则问“步长减小或迭代增加时是否趋向目标”。程序通常同时观察步长和残差，并设置最大次数，例如
+
+$$
+|x_{k+1}-x_k|\le\tau_a+\tau_r\max(|x_k|,|x_{k+1}|),\qquad
+|f(x_{k+1})|\le\tau_f.
+$$
+
+$\tau_a$ 有 $x$ 的量纲，$\tau_f$ 有函数值的量纲；不要拿一个无尺度的小数通吃所有问题。算法因舍入停滞也会产生很小的更新量，故需判断残差、区间宽度或其他可靠界。验证流程是改步长、改容差、比较独立算法，再检查解析极限与守恒关系。
+
+## 方程求根与函数最优化
+
+### 包围根与二分法
+
+目标统一写成 $f(x)=0$。若 $f$ 在 $[a,b]$ 连续且 $f(a)f(b)<0$，至少有一个根。符号变化不保证只有一个根；偶重根可能不变号；极点两侧变号也不能作为根的依据。
+
+$$
+\begin{aligned}
+c_k&=a_k+\frac{b_k-a_k}{2},\\
+(a_{k+1},b_{k+1})&=
+\begin{cases}(a_k,c_k),&f(a_k)f(c_k)<0,\\(c_k,b_k),&f(c_k)f(b_k)<0,
+\end{cases}\\
+b_n-a_n&=\frac{b_0-a_0}{2^n},\qquad
+\left|\frac{a_n+b_n}{2}-x_*\right|\le\frac{b_0-a_0}{2^{n+1}},\\
+|x-x_*|\le\tau\quad&\Leftarrow\quad
+n\ge\max\left(0,\left\lceil\log_2\frac{b_0-a_0}{2\tau}\right\rceil\right).
+\end{aligned}
+$$
+
+这里 $n$ 是完成的区间减半次数，返回最后区间的中点。代码先检查端点是否已是根，再判断变号；每轮只新算一个中点函数值，保留另一个端点的旧值。区间误差界比“残差看起来小”更可靠。扫网格用于寻找候选区间，但步长过大可能漏掉成对的根或狭窄分支。
+
+### 虚位法、割线法与它们的区别
+
+两点连线与横轴交点给出共同的计算公式：
+
+$$
+\begin{aligned}
+\ell(x)&=f(a)+\frac{f(b)-f(a)}{b-a}(x-a),\\
+\ell(c)=0&\ \Longrightarrow\ 
+c=b-f(b)\frac{b-a}{f(b)-f(a)}
+=\frac{af(b)-bf(a)}{f(b)-f(a)},\\
+\text{割线：}\quad
+x_{k+1}&=x_k-f(x_k)\frac{x_k-x_{k-1}}{f(x_k)-f(x_{k-1})}.
+\end{aligned}
+$$
+
+虚位法每次保留异号端点，维持根的包围；可能一端长时间不动、收敛很慢。割线法每次保留最近两个迭代点，无包围保证，但不需显式导数。在简单根、足够光滑且初值合适时，割线法满足 $e_{k+1}\simeq C e_ke_{k-1}$。若 $|e_k|\sim|e_{k-1}|^p$，则 $p=1+1/p$，得到 $p=(1+\sqrt5)/2\approx1.618$。两种方法都需防止差商分母太小。
+
+### Newton 法的公式、收敛与失败情形
+
+对当前位置作一阶展开并令近似函数为零，得到更新；用根处的二阶展开分析误差：
+
+$$
+\begin{aligned}
+0&\approx f(x_k)+f'(x_k)(x_{k+1}-x_k),\qquad
+x_{k+1}=x_k-\frac{f(x_k)}{f'(x_k)},\\
+0=f(x_*)&=f(x_k)-f'(x_k)e_k+\frac12f''(\xi_k)e_k^2,\\
+e_{k+1}&=e_k-\frac{f(x_k)}{f'(x_k)}
+=\frac{f''(\xi_k)}{2f'(x_k)}e_k^2
+\longrightarrow\frac{f''(x_*)}{2f'(x_*)}e_k^2.
+\end{aligned}
+$$
+
+二次收敛需要简单根 $f'(x_*)\ne0$、足够光滑和足够接近的初值。重数为 $m>1$ 时通常只有线性收敛：
+
+$$
+f(x)=(x-x_*)^m g(x),\quad g(x_*)\ne0
+\ \Longrightarrow\ e_{k+1}\simeq\left(1-\frac1m\right)e_k.
+$$
+
+已知重数时用 $x_{k+1}=x_k-mf(x_k)/f'(x_k)$ 可恢复局部二次收敛。导数为零或过小、越过定义域、陷入周期、初值落入错误根的吸引域，都可能失败。例如 $f(x)=x^{1/3}$ 在非零处给出 $x_{k+1}=-2x_k$，反而远离零。
+
+安全混合法维持异号区间，尝试 Newton 候选步；候选越界、导数不可靠或下降不足时改用二分。更新后仍按符号收缩区间。越过根本身不是失败，关键在于是否保留包围及取得足够进展。
+
+```text
+检查端点并保存异号区间 [a,b]，选当前点 x
+重复直到区间宽度或可靠误差指标满足要求：
+    若导数可靠，计算 Newton 候选 y
+    若 y 越界或进展不足，令 y 为区间中点
+    计算 f(y)，按符号更新 [a,b]
+    保存 y 为新的当前点；检查非有限数和迭代上限
+```
+
+作业中的 $x^3-5x+3=0$ 有三个实根，所求是两个正根，分别在 $(0,1)$、$(1,2)$：约为 $0.65662043104711$ 和 $1.83424318431392$。先二分到四位小数，再 Newton 提精度；核验时同时代回多项式，不能把 README 中“两个实根”的措辞理解为全方程只有两个根。
+
+### 多变量 Newton、最速下降与二阶判断
+
+多变量求根先解修正量的线性系统；求极值则把梯度等于零作为方程：
+
+$$
+\begin{aligned}
+F(x+\Delta x)&\approx F(x)+J(x)\Delta x,\qquad J_{ij}=\partial F_i/\partial x_j,\\
+J(x_k)\Delta x_k&=-F(x_k),\qquad x_{k+1}=x_k+\Delta x_k,\\
+\nabla g(x_*)&=0,\qquad H_{ij}=\partial_i\partial_jg,\\
+H(x_*)\succ0&\Rightarrow\text{严格局部极小},\qquad
+H(x_*)\prec0\Rightarrow\text{严格局部极大},\\
+\text{Newton 极值：}\quad H(x_k)\Delta x_k&=-\nabla g(x_k),\\
+\text{最速下降：}\quad x_{k+1}&=x_k-\alpha_k\nabla g(x_k),\qquad\alpha_k>0,\\
+g(x_k-\alpha\nabla g_k)&=g(x_k)-\alpha\|\nabla g_k\|^2+O(\alpha^2).
+\end{aligned}
+$$
+
+Hessian 不定时为鞍点，半正定时二阶检验不足。实现多变量 Newton 时解线性方程即可，不必显式形成 $J^{-1}$。最速下降的步长过大可能上升；可用回溯线搜索：从给定步长开始不断乘 $\beta\in(0,1)$，直到 $g(x-\alpha\nabla g)\le g(x)-c\alpha\|\nabla g\|^2$，其中 $0<c<1$。
+
+作业的周期函数可直接建立一个全球下界来检查数值结果：
+
+$$
+\begin{aligned}
+g(x,y)&=\sin(x+y)+\cos(x+2y)\ge-2,\\
+\nabla g&=\begin{pmatrix}\cos(x+y)-\sin(x+2y)\\\cos(x+y)-2\sin(x+2y)\end{pmatrix},\\
+g(0,3\pi/2)&=-2.
+\end{aligned}
+$$
+
+因此该点确实达到全局最小值。一般问题没有这种下界证明，单次梯度下降只能给局部结果。粗网格找多个候选点后分别优化，比仅用一个初值更能发现不同极小值。
+
+### 共轭梯度与全局搜索
+
+对 $A=A^T\succ0$ 的二次函数 $g(x)=\tfrac12x^TAx-b^Tx$，极小点满足 $Ax=b$。令残差 $r=b-Ax=-\nabla g$；共轭梯度使用 $A$-共轭方向，而不是重复沿负梯度走：
+
+$$
+\begin{aligned}
+r_0&=b-Ax_0,\qquad p_0=r_0,\\
+\alpha_k&=\frac{r_k^Tr_k}{p_k^TAp_k},\qquad
+x_{k+1}=x_k+\alpha_kp_k,\\
+r_{k+1}&=r_k-\alpha_kAp_k,\qquad
+\beta_k=\frac{r_{k+1}^Tr_{k+1}}{r_k^Tr_k},\\
+p_{k+1}&=r_{k+1}+\beta_kp_k,\qquad
+p_i^TAp_j=0\quad(i\ne j).
+\end{aligned}
+$$
+
+$\alpha_k$ 来自沿 $p_k$ 精确极小化；$\beta_k$ 保持方向共轭。在精确算术下，至多 $n$ 步可求解 $n$ 维正定系统；有限精度会破坏严格正交性。代码每步主要做一次矩阵向量乘法和少量内积，不储存全部历史方向。最速下降只有在精确线搜索等条件下，相邻梯度才正交；课件中的方向比较不能无条件使用。
+
+非线性共轭梯度仍用 $p_{k+1}=-\nabla g_{k+1}+\beta_kp_k$ 配线搜索，但不再有“$n$ 步求解”的保证。拟 Newton 用梯度变化近似 Hessian；以逆 Hessian 的 BFGS 更新为例，记 $s=x_{k+1}-x_k$、$y=\nabla g_{k+1}-\nabla g_k$、$\rho=(y^Ts)^{-1}$：
+
+$$
+B_{k+1}=(I-\rho sy^T)B_k(I-\rho ys^T)+\rho ss^T,\qquad
+p_k=-B_k\nabla g_k.
+$$
+
+这里 $B$ 表示逆 Hessian 近似；$y^Ts>0$ 有助于保持正定。该式用于理解课件点到的拟 Newton 思路，重点仍是上述基本迭代。
+
+全局搜索允许越过局部低谷。课件只概述的方法可用以下规则识别，不必把它们当成同等篇幅的推导重点：
+
+- 模拟退火：对称提议下，以 $\min(1,e^{-\Delta g/T})$ 接受候选，逐渐降低 $T$；早期能接受上坡步，普通有限降温流程不保证全局最优。
+- 遗传算法：保留较优个体、交叉和变异，例如子代 $z=\lambda x+(1-\lambda)y$ 后加扰动；算子依问题设计，没有唯一更新公式。
+- 粒子群：$v_i\leftarrow\omega v_i+c_1r_1(p_i-x_i)+c_2r_2(p_g-x_i)$，$x_i\leftarrow x_i+v_i$；结合个体和群体历史最优。
+- 差分进化：变异 $v=x_{r_1}+F(x_{r_2}-x_{r_3})$，再与目标个体交叉、择优保留。每种方法都要处理边界、随机种子和评价次数。
+
+### 平衡键长、势阱与等值线
+
+NaCl 简化势 $V(r)=-C/r+V_0e^{-r/r_0}$ 的平衡位置满足力为零；找到根后还需检查是极小值：
+
+$$
+F(r)=-V'(r)=-\frac C{r^2}+\frac{V_0}{r_0}e^{-r/r_0}=0,\qquad
+V''(r)=-\frac{2C}{r^3}+\frac{V_0}{r_0^2}e^{-r/r_0}>0.
+$$
+
+有限方势阱按“阱内 $V=0$、半宽 $a$、阱外 $V_0$”约定，束缚态 $0<E<V_0$。波函数在阱外衰减，连续匹配函数与导数：
+
+$$
+\begin{aligned}
+k&=\sqrt{2mE}/\hbar,\qquad\kappa=\sqrt{2m(V_0-E)}/\hbar,\\
+\psi_{\rm even}(x)&=A\cos kx\quad(|x|<a),\qquad
+\psi(x)=C e^{-\kappa(x-a)}\quad(x>a),\\
+A\cos ka=C,\quad -Ak\sin ka&=-\kappa C
+\ \Longrightarrow\ k\tan ka=\kappa,\\
+\psi_{\rm odd}(x)&=A\sin kx\quad(|x|<a)
+\ \Longrightarrow\ -k\cot ka=\kappa,\\
+z&=ka,\quad z_0=a\sqrt{2mV_0}/\hbar,\quad
+\kappa a=\sqrt{z_0^2-z^2}.
+\end{aligned}
+$$
+
+逐个无极点区间寻找根，按 $E=\hbar^2z^2/(2ma^2)$ 排序，再由匹配条件与归一化求波函数。根的数量取决于阱深和宽度，不能先假定一定有四个束缚态；这是课件的选做应用。
+
+费米等值线课题把问题写成
+
+$$
+F(r,\theta)=[1+\eta\cos2(\theta-\phi)]r^2
++\lambda r^3\cos3\theta+r^4-\mu=0.
+$$
+
+固定角度后扫描 $r\ge0$ 并逐区间求根，保留全部合法分支；不能每个角度只取一个根。另一条路线是在直角坐标中追踪 $F(x,y)=0$：
+
+$$
+t=\frac{(-F_y,F_x)}{\|\nabla F\|},\qquad
+x_{\rm pred}=x_k+\Delta s\,t,\qquad
+x\leftarrow x-\frac{F(x)}{\|\nabla F(x)\|^2}\nabla F(x).
+$$
+
+前一步沿切向预测，后一步沿法向校正。梯度接近零、分支相交或曲率很大时应减步长并重新判定分支。代码核验每个点的 $|F|$、曲线闭合性和参数极限。
+
+## 矩阵、线性方程组与本征值
+
+### 矩阵概念与物理建模
+
+矩阵乘法按行列配对；转置和共轭转置必须分清。对实矩阵用 $T$，复矩阵用 $\dagger$：
+
+$$
+\begin{aligned}
+(AB)_{ij}&=\sum_kA_{ik}B_{kj},\quad (AB)^T=B^TA^T,\quad
+(A^\dagger)_{ij}=A_{ji}^*,\\
+\operatorname{tr}A&=\sum_iA_{ii},\quad
+\det A=\sum_j(-1)^{i+j}A_{ij}\det A^{(ij)},\\
+A^{-1}&=\frac{\operatorname{adj}A}{\det A}\quad(\det A\ne0),\qquad
+\operatorname{rank}A=\dim\operatorname{span}\{\text{列向量}\},\\
+\langle u,v\rangle&=u^\dagger v,\quad\|v\|_2=\sqrt{v^\dagger v},\quad
+\widehat v=v/\|v\|_2\quad(v\ne0).
+\end{aligned}
+$$
+
+对称为 $A^T=A$，反对称为 $A^T=-A$，Hermitian 为 $A^\dagger=A$；正交为 $Q^TQ=I$，幺正为 $U^\dagger U=I$。上、下三角矩阵分别在对角线下、上为零；三对角矩阵仅主对角与相邻两条对角可非零。伴随矩阵求逆适合理论理解，数值程序一般用分解。
+
+物理问题的矩阵化首先要指出未知量：电路中节点电势或支路电流组成向量；分子振动中位移组成向量，刚度和质量给出 $Ku=\omega^2Mu$；给定基底 $\phi_i$ 后，量子算符的元素为 $H_{ij}=\langle\phi_i|\hat H|\phi_j\rangle$。自旋相互作用 $S_i^TJS_j$ 中，矩阵的对角化对应选择主轴，而不是改变物理相互作用。
+
+### 消元、回代与部分主元
+
+线性系统可解条件为 $\operatorname{rank}A=\operatorname{rank}[A|b]$；等于未知数个数时唯一，小于时有自由变量。下面针对数值上非奇异的方阵，用增广矩阵同步更新：
+
+$$
+\begin{aligned}
+p&=\underset{i=k,\ldots,n}{\arg\max}\ |a_{ik}|,
+\qquad\text{交换第 }p,k\text{ 行及对应 }b,\\
+m_{ik}&=a_{ik}/a_{kk},\qquad i=k+1,\ldots,n,\\
+a_{ij}&\leftarrow a_{ij}-m_{ik}a_{kj},\quad j=k+1,\ldots,n,\\
+b_i&\leftarrow b_i-m_{ik}b_k,\qquad a_{ik}\leftarrow0,\\
+x_n&=b_n/a_{nn},\qquad
+x_i=\frac{b_i-\sum_{j=i+1}^na_{ij}x_j}{a_{ii}}quad(i=n-1,\ldots,1).
+\end{aligned}
+$$
+
+主元选绝对值最大项，不是带符号的最大数；换行必须覆盖完整增广行。主元为零说明当前求解不能继续；非常小的主元要相对矩阵尺度判断。部分主元能减少许多不稳定情形，但不是任意矩阵的绝对稳定保证。
+
+第 $k$ 步更新 $(n-k)^2$ 个元素，并求 $n-k$ 个乘子；按乘、减、除各算一次基本运算：
+
+$$
+\begin{aligned}
+T(n)&=\sum_{k=1}^{n-1}\big[2(n-k)^2+(n-k)\big]\\
+&=\frac{n(n-1)(2n-1)}3+\frac{n(n-1)}2
+=\frac23n^3-\frac12n^2-\frac16n=O(n^3).
+\end{aligned}
+$$
+
+回代为 $O(n^2)$，不改变总阶数。RREF 比普通阶梯形多要求主元为 1，且主元所在列其他项为零；Gauss–Jordan 对 $[A|I]$ 作完整消元得到 $[I|A^{-1}]$。作业的例子是
+
+$$
+A=\begin{pmatrix}2&3&5\\3&4&8\\1&3&3\end{pmatrix},\quad
+b=\begin{pmatrix}5\\6\\5\end{pmatrix},\quad
+A^{-1}=\begin{pmatrix}6&-3&-2\\1/2&-1/2&1/2\\-5/2&3/2&1/2\end{pmatrix},\quad
+x=\begin{pmatrix}2\\2\\-1\end{pmatrix}.
+$$
+
+求逆可作为作业要求；一般只求一个 $x$ 时，直接消元回代更省工作。最后代回原始 $A,b$ 检查残差，不能拿已被消元覆盖的数据冒充原问题。
+
+### LU 分解、置换与多右端项
+
+课件 Crout 约定让 $U$ 的对角为 1；由 $(LU)_{ij}=A_{ij}$ 按先列后行求系数：
+
+$$
+\begin{aligned}
+L_{ij}&=A_{ij}-\sum_{k=1}^{j-1}L_{ik}U_{kj},\quad i=j,\ldots,n,\\
+U_{ji}&=\frac{A_{ji}-\sum_{k=1}^{j-1}L_{jk}U_{ki}}{L_{jj}},\quad i=j+1,\ldots,n,\qquad U_{jj}=1,\\
+PA&=LU,\qquad Ly=Pb,\qquad Ux=y,\\
+y_i&=\frac{(Pb)_i-\sum_{j<i}L_{ij}y_j}{L_{ii}},\qquad
+x_i=\frac{y_i-\sum_{j>i}U_{ij}x_j}{U_{ii}},\\
+\det A&=(-1)^{N_{\rm swap}}\prod_iL_{ii}\prod_iU_{ii},\\
+Az_j&=e_j\quad(j=1,\ldots,n)
+\ \Longrightarrow\ A^{-1}=(z_1,\ldots,z_n).
+\end{aligned}
+$$
+
+无换行时 $P=I$；一般不能假定任意可逆矩阵都有可直接进行的无主元 LU。Doolittle 约定相反，令 $L_{ii}=1$，消元乘子存于 $L$。使用带主元分解时，后续换行还要同步交换 $L$ 已算出的列。分解只做一次，之后每个新右端项只需两次三角求解，共 $O(n^2)$。
+
+### Thomas 追赶法
+
+三对角系统写成 $a_ix_{i-1}+b_ix_i+c_ix_{i+1}=d_i$，其中 $a_1=c_n=0$。只存三条对角，先向前消元，再向后回代：
+
+$$
+\begin{aligned}
+\widetilde b_1&=b_1,\qquad\widetilde d_1=d_1,\\
+m_i&=a_i/\widetilde b_{i-1},\qquad
+\widetilde b_i=b_i-m_ic_{i-1},\qquad
+\widetilde d_i=d_i-m_i\widetilde d_{i-1},\quad i=2,\ldots,n,\\
+x_n&=\widetilde d_n/\widetilde b_n,\qquad
+x_i=(\widetilde d_i-c_ix_{i+1})/\widetilde b_i.
+\end{aligned}
+$$
+
+每步常数次运算，因此时间和存储都是 $O(n)$。它是利用结构简化的 LU，不是新的一套方程原理。一般三对角矩阵也可能出现零主元；正定或适当严格对角占优条件可保证良好性质，不能只看到“三对角”就忽略分母检查。自然样条将直接用到它。
+
+### Cholesky 与 QR
+
+实对称正定矩阵可写成 $A=LL^T$，正对角约定下分解唯一；复 Hermitian 正定情形将转置改为共轭转置：
+
+$$
+L_{jj}=\sqrt{A_{jj}-\sum_{k<j}L_{jk}^2},\qquad
+L_{ij}=\frac{A_{ij}-\sum_{k<j}L_{ik}L_{jk}}{L_{jj}}\quad(i>j).
+$$
+
+若根号内非正，检查输入是否确为正定以及数值精度。解方程仍是 $Ly=b$、$L^Tx=y$；计算量约为一般 LU 的一半，阶数仍为 $O(n^3)$。
+
+对 $m\times n$、$m\ge n$、列满秩的实矩阵，薄 QR 写成 $A=QR$，$Q^TQ=I_n$、$R$ 为上三角。Gram–Schmidt 的基本公式为
+
+$$
+\begin{aligned}
+v_j&=a_j-\sum_{i<j}(q_i^Ta_j)q_i,\qquad
+r_{ij}=q_i^Ta_j\quad(i<j),\\
+r_{jj}&=\|v_j\|_2,\qquad q_j=v_j/r_{jj},\qquad A=QR.
+\end{aligned}
+$$
+
+代码中改进 Gram–Schmidt 每减去一个方向就用最新的 $v_j$ 求下一投影，通常比一次按原列求所有投影更稳健；高质量库多用 Householder 反射。QR 也会在最小二乘中把问题化成三角系统。
+
+### SVD、秩与伪逆
+
+任何实矩阵 $A\in\mathbb R^{m\times n}$ 都可作 SVD；这里写全尺寸形式，非零奇异值数为秩 $r$：
+
+$$
+\begin{aligned}
+A&=U\Sigma V^T=\sum_{i=1}^r\sigma_i u_iv_i^T,\quad
+\sigma_1\ge\cdots\ge\sigma_r>0,\\
+A^TA&=V\Sigma^T\Sigma V^T,\qquad
+AA^T=U\Sigma\Sigma^TU^T,\\
+\lambda_i(A^TA)&=\sigma_i^2,\qquad
+Av_i=\sigma_i u_i,\qquad A^Tu_i=\sigma_i v_i,\\
+A^+&=V\Sigma^+U^T=\sum_{i=1}^r\frac1{\sigma_i}v_iu_i^T,\\
+x_{\rm LS}&=A^+b,\qquad
+A_k=\sum_{i=1}^k\sigma_i u_iv_i^T,\quad
+\|A-A_k\|_F^2=\sum_{i>k}\sigma_i^2.
+\end{aligned}
+$$
+
+$\Sigma$ 为 $m\times n$，$\Sigma^+$ 为 $n\times m$；复数情况把 $T$ 换成 $\dagger$。奇异值是 $A^TA$ 非负本征值的平方根，不是本征值本身。$A^+b$ 给出最小范数最小二乘解。很小的奇异值会放大噪声；数值秩需按尺度设置阈值，舍弃小奇异值的截断 SVD 改变了求解问题，是一种正则化选择。
+
+### 本征值、对角化与数值检验
+
+$$
+\begin{aligned}
+Ax&=\lambda x,\quad x\ne0,\qquad\det(A-\lambda I)=0,\\
+P&=(x_1,\ldots,x_n),\quad \Lambda=\operatorname{diag}(\lambda_1,\ldots,\lambda_n),\\
+AP=P\Lambda&\ \Longrightarrow\ P^{-1}AP=\Lambda,\\
+A=A^\dagger&\ \Longrightarrow\ 
+\lambda\,x^\dagger x=x^\dagger Ax=(x^\dagger Ax)^*
+\ \Longrightarrow\ \lambda\in\mathbb R,\\
+(\lambda_j-\lambda_i)x_i^\dagger x_j&=0,\qquad
+U^\dagger AU=\Lambda,\qquad U^\dagger U=I.
+\end{aligned}
+$$
+
+一般矩阵可对角化当且仅当有 $n$ 个线性无关本征向量；Hermitian 矩阵总能选一组正交归一本征向量，简并子空间内也可正交化。特征多项式适合手算小矩阵，不是数值求大型本征值的推荐路线。
+
+对 Hermitian 正定 $S$，谱分解还给出
+
+$$
+S=U\operatorname{diag}(s_i)U^\dagger,\qquad
+S^{1/2}=U\operatorname{diag}(\sqrt{s_i})U^\dagger,\qquad
+S^{-1/2}=U\operatorname{diag}(s_i^{-1/2})U^\dagger.
+$$
+
+半正定矩阵有主平方根，但不能直接对零本征值取逆。数值结果应检查 $\|Ax_i-\lambda_ix_i\|$、$x_i^\dagger x_i=1$ 及正交性。课件的 LAPACK 调用对应：`DSYEV` 对称本征值、`DPOTRF` Cholesky、`DGESVD` SVD、`DGEQRF` QR；理解输入矩阵结构、输出和 `INFO` 状态比背参数顺序重要。
+
+### Rayleigh–Ritz、非正交基与高斯基
+
+以有限基展开 $\psi=\sum_jc_j\phi_j$，变分能量是一个 Rayleigh 商。对 $c^*$ 变分即可把微分算符问题化为矩阵问题：
+
+$$
+\begin{aligned}
+H_{ij}&=\langle\phi_i|\hat H|\phi_j\rangle,\qquad
+S_{ij}=\langle\phi_i|\phi_j\rangle,\\
+E[c]&=\frac{c^\dagger Hc}{c^\dagger Sc},\qquad
+\delta\big(c^\dagger Hc-Ec^\dagger Sc\big)=0\\
+&\ \Longrightarrow\ Hc=ESc,\\
+y=S^{1/2}c&\ \Longrightarrow\ 
+(S^{-1/2}HS^{-1/2})y=Ey,\qquad c=S^{-1/2}y.
+\end{aligned}
+$$
+
+正交基有 $S=I$，非正交但线性无关的基给出正定 $S$。若基函数几乎线性相关，小重叠本征值会造成病态，应检查数值秩而非盲目求逆平方根。Ritz 的基态能量是对真实基态的上界；在嵌套、逐渐扩大的基空间中，其最小值不会升高，但不等于任何随意换基方案都单调收敛。
+
+课件的高斯基可取归一化形式 $\phi_i=N_i e^{-\nu_i(x-s_i)^2}$，$N_i=(2\nu_i/\pi)^{1/4}$、$\nu_i>0$。令 $p=\nu_i+\nu_j$、$\bar x=(\nu_is_i+\nu_js_j)/p$：
+
+$$
+\begin{aligned}
+\nu_i(x-s_i)^2+\nu_j(x-s_j)^2
+&=p(x-\bar x)^2+\frac{\nu_i\nu_j}{p}(s_i-s_j)^2,\\
+S_{ij}&=N_iN_j\sqrt{\frac\pi p}
+\exp\left[-\frac{\nu_i\nu_j}{p}(s_i-s_j)^2\right],\\
+T_{ij}&=\frac{\hbar^2}{2m}\int\phi_i'(x)\phi_j'(x)\,dx\\
+&=\frac{\hbar^2}{2m}\frac{2\nu_i\nu_j}{p}
+\left[1-\frac{2\nu_i\nu_j}{p}(s_i-s_j)^2\right]S_{ij},\\
+\langle x^2\rangle_{ij}/S_{ij}&=\bar x^2+\frac1{2p},\\
+\langle x^4\rangle_{ij}/S_{ij}&=\bar x^4+\frac{3\bar x^2}{p}+\frac3{4p^2}.
+\end{aligned}
+$$
+
+据此构造 $V=x^2$ 或 $V=x^4-x^2$ 的势能矩阵；若使用无量纲哈密顿量，按其约定替换 $\hbar^2/(2m)$。代码先形成 $H,S$，转为标准本征问题，排序取最低三个能级，再重构波函数并检查 $c_i^\dagger Sc_j=\delta_{ij}$。改变基函数个数、宽度或中心位置，才能判断低能结果是否收敛。
+
+## 插值、样条与数据拟合
+
+### 线性与 Lagrange 插值
+
+插值要求曲线通过给定节点；拟合主要描述整体趋势，不要求通过每一点。设 $n+1$ 个不同横坐标 $x_0,\ldots,x_n$ 对应函数值 $y_i$。先构造“在自己的节点为 1、在别人的节点为 0”的基函数：
+
+$$
+\begin{aligned}
+P_1(x)&=y_0\frac{x_1-x}{x_1-x_0}+y_1\frac{x-x_0}{x_1-x_0},\\
+L_j(x)&=\prod_{\substack{k=0\\k\ne j}}^n\frac{x-x_k}{x_j-x_k},\qquad
+L_j(x_i)=\delta_{ij},\\
+P_n(x)&=\sum_{j=0}^ny_jL_j(x),\qquad P_n(x_i)=y_i.
+\end{aligned}
+$$
+
+若两个次数不超过 $n$ 的多项式都通过这些点，它们之差有 $n+1$ 个不同零点，只能恒为零，因此插值多项式唯一。程序对每个 $j$ 累乘基函数，再累加 $y_jL_j$；直接算法每个求值点需 $O(n^2)$。节点重复会使分母为零；外推到节点区间外没有同样可靠的误差表现。
+
+### Newton 差商、嵌套求值与误差
+
+Newton 形式将新增节点的影响放在一个新系数里；差商递推为
+
+$$
+\begin{aligned}
+f[x_i]&=y_i,\qquad
+f[x_i,x_{i+1}]=\frac{y_{i+1}-y_i}{x_{i+1}-x_i},\\
+f[x_i,\ldots,x_{i+k}]&=
+\frac{f[x_{i+1},\ldots,x_{i+k}]-f[x_i,\ldots,x_{i+k-1}]}{x_{i+k}-x_i},\\
+c_k&=f[x_0,\ldots,x_k],\qquad
+P_n(x)=c_0+\sum_{k=1}^nc_k\prod_{j=0}^{k-1}(x-x_j),\\
+P_n(x)&=c_0+(x-x_0)\big[c_1+(x-x_1)[\cdots+(x-x_{n-1})c_n]\big],\\
+f[x_0,\ldots,x_k]&=\sum_{j=0}^k\frac{f(x_j)}{\prod_{\ell\ne j}(x_j-x_\ell)}.
+\end{aligned}
+$$
+
+最后一行表明差商对同一组节点的排列不变；但某一级 Newton 系数用了哪组“前缀节点”可能随整体顺序改变。Lagrange 与 Newton 只是同一唯一多项式的两种表示，不是两条不同的插值曲线；浮点实现可能出现微小数值差异。
+
+```text
+d[i] = y[i]，i = 0,...,n
+对阶数 k = 1,...,n：
+    对 i = n,n-1,...,k：
+        d[i] = (d[i]-d[i-1])/(x[i]-x[i-k])
+此时 d[k] 就是 c[k]
+求值：p = c[n]
+对 k = n-1,...,0：p = c[k] + (x-x[k])*p
+```
+
+倒序更新差商是为了不覆盖上一阶仍要使用的量；建表 $O(n^2)$，每次嵌套求值 $O(n)$。若 $f\in C^{n+1}$，包含节点与目标点的区间内存在 $\xi$ 使
+
+$$
+f(x)-P_n(x)=\frac{f^{(n+1)}(\xi)}{(n+1)!}\prod_{j=0}^n(x-x_j).
+$$
+
+提高次数同时改变高阶导数和节点乘积，不能据分母的阶乘断言误差必降。Runge 函数 $1/(1+25x^2)$ 的等距高阶插值会在端部振荡。更合理的节点分布或分段低阶插值可改善结果；“网格上测到的最大误差”也不等于严格的全区间解析上界。
+
+### 线性样条与二次样条
+
+取有序节点 $x_0<\cdots<x_n$、$h_i=x_{i+1}-x_i$。线性样条逐段使用两点直线，函数连续但一阶导数通常跳变。二次样条可在每段写成局部坐标形式：
+
+$$
+\begin{aligned}
+S_i(x)&=y_i+b_i(x-x_i)+a_i(x-x_i)^2,\\
+S_i(x_{i+1})=y_{i+1}&\ \Longrightarrow\ 
+a_ih_i^2+b_ih_i=y_{i+1}-y_i,\\
+S_i'(x_{i+1})=S_{i+1}'(x_{i+1})
+&\ \Longrightarrow\ b_{i+1}=b_i+2a_ih_i,\\
+a_0=0&\ \Longrightarrow\ b_0=(y_1-y_0)/h_0,\\
+a_i&=\frac{y_{i+1}-y_i-b_ih_i}{h_i^2},\qquad
+b_{i+1}=2\frac{y_{i+1}-y_i}{h_i}-b_i.
+\end{aligned}
+$$
+
+课件选择第一段为直线来补足一个条件；也可根据问题给定端点斜率。对 $n$ 段共 $3n$ 个原始系数，节点值提供 $2n$ 个条件，一阶连续给出 $n-1$ 个，再补一个边界条件。简单地“每三个点拟合一个二次式”通常不能自动保证相邻段导数连续。
+
+### 自然三次样条与三对角方程
+
+三次样条要求函数、一阶和二阶导数在内部节点连续。令 $M_i=S''(x_i)$，则每段二阶导数是两个端值的线性插值；积分两次并匹配端点函数值：
+
+$$
+\begin{aligned}
+S_i''(x)&=M_i\frac{x_{i+1}-x}{h_i}+M_{i+1}\frac{x-x_i}{h_i},\\
+S_i(x)&=\frac{M_i(x_{i+1}-x)^3+M_{i+1}(x-x_i)^3}{6h_i}\\
+&\quad+\left(y_i-\frac{M_ih_i^2}{6}\right)\frac{x_{i+1}-x}{h_i}
++\left(y_{i+1}-\frac{M_{i+1}h_i^2}{6}\right)\frac{x-x_i}{h_i},\\
+S_i'(x_i^+)&=\frac{y_{i+1}-y_i}{h_i}-\frac{h_i}{6}(2M_i+M_{i+1}),\\
+S_{i-1}'(x_i^-)&=\frac{y_i-y_{i-1}}{h_{i-1}}+\frac{h_{i-1}}6(M_{i-1}+2M_i),\\
+S_i'(x_i^+)=S_{i-1}'(x_i^-)&\ \Longrightarrow\ 
+h_{i-1}M_{i-1}+2(h_{i-1}+h_i)M_i+h_iM_{i+1}\\
+&\qquad=6\left(\frac{y_{i+1}-y_i}{h_i}-\frac{y_i-y_{i-1}}{h_{i-1}}\right),\quad i=1,\ldots,n-1,\\
+\text{自然边界：}\quad M_0&=M_n=0.
+\end{aligned}
+$$
+
+三次多项式每段四个系数，共 $4n$ 个；节点值给 $2n$ 个条件，一、二阶连续各给 $n-1$ 个，剩下两个来自边界。用 $M_i$ 作未知量可把大系数系统化为三对角方程，先追赶求 $M_i$，再查找目标点所属区间并代入段内公式。
+
+若已知端点斜率 $d_0,d_n$，可用夹持边界代替自然边界：
+
+$$
+2h_0M_0+h_0M_1=6\left(\frac{y_1-y_0}{h_0}-d_0\right),\qquad
+h_{n-1}M_{n-1}+2h_{n-1}M_n=6\left(d_n-\frac{y_n-y_{n-1}}{h_{n-1}}\right).
+$$
+
+作业使用含两端点的 10 个节点，即 $x_i=a+i(b-a)/9$。对 $\cos x$，自然条件与真实的 $f''(0)=-1$、$f''(\pi)=1$ 不匹配，因此自然样条端部误差较大；README 的网格比较中，Newton 最大误差约 $4.06\times10^{-8}$，自然样条约 $6.08\times10^{-3}$。对 Runge 函数，同样节点下自然样条整体最大误差更小，但不意味着每一点都更准确。节点、边界条件和函数形状共同决定效果。
+
+### 最小二乘与正规方程
+
+拟合模型对未知系数线性即可，不要求它对 $x$ 是直线。设 $p(x)=\sum_{j=0}^mc_j\phi_j(x)$，$A_{ij}=\phi_j(x_i)$，有 $N$ 个数据点：
+
+$$
+\begin{aligned}
+Q(c)&=\sum_{i=1}^N\left[y_i-\sum_{j=0}^mc_j\phi_j(x_i)\right]^2
+=(Ac-y)^T(Ac-y),\\
+Q(c)&=c^TA^TAc-2c^TA^Ty+y^Ty,\\
+\nabla_cQ&=2A^T(Ac-y)=0
+\ \Longrightarrow\ A^TAc=A^Ty,\\
+\sum_{j=0}^m\left[\sum_{i=1}^N\phi_k(x_i)\phi_j(x_i)\right]c_j
+&=\sum_{i=1}^N\phi_k(x_i)y_i,\quad k=0,\ldots,m.
+\end{aligned}
+$$
+
+$A$ 列满秩时解唯一；这要求数据数不少于参数数，但仅有足够数据数还不够。残差是模型与观测的差，测量误差条是测量不确定度，两者不能混为一谈。若独立观测的标准差为 $s_i$，加权最小二乘使用 $W_{ii}=s_i^{-2}$，正规方程成为 $A^TWAc=A^TWy$。
+
+直线 $p=a+bx$ 与二次多项式的具体方程是
+
+$$
+\begin{aligned}
+\begin{pmatrix}N&\sum x_i\\\sum x_i&\sum x_i^2\end{pmatrix}
+\begin{pmatrix}a\\b\end{pmatrix}
+&=\begin{pmatrix}\sum y_i\\\sum x_iy_i\end{pmatrix},\\
+b&=\frac{N\sum x_iy_i-(\sum x_i)(\sum y_i)}{N\sum x_i^2-(\sum x_i)^2},\qquad
+a=\overline y-b\overline x,\\
+\begin{pmatrix}N&\sum x_i&\sum x_i^2\\\sum x_i&\sum x_i^2&\sum x_i^3\\\sum x_i^2&\sum x_i^3&\sum x_i^4\end{pmatrix}
+\begin{pmatrix}a\\b\\c\end{pmatrix}
+&=\begin{pmatrix}\sum y_i\\\sum x_iy_i\\\sum x_i^2y_i\end{pmatrix}.
+\end{aligned}
+$$
+
+代码逐点累加和式，再解小线性系统。Millikan 例中令 $y_i=q_i$、$x_i=k_i$，拟合斜率即电荷单位，截距可反映零点偏移。温度作业数据的拟合结果为 $T_L=0.888888888889+10.0733333333x$，$T_Q=8.26190476190+6.05168831169x+0.402164502165x^2$；把它们代回正规方程是比只看图更直接的检查。
+
+### QR、SVD 与模型线性化
+
+正规方程会把二范数条件数平方：$\kappa_2(A^TA)=\kappa_2(A)^2$（列满秩）。更稳定的求解路线不显式形成 $A^TA$：
+
+$$
+\begin{aligned}
+A=QR:\quad \|Ac-y\|_2^2
+&=\|Rc-Q^Ty\|_2^2+\|(I-QQ^T)y\|_2^2,\\
+Rc&=Q^Ty,\\
+A=U\Sigma V^T:\quad c&=A^+y
+=\sum_{i=1}^r\frac{u_i^Ty}{\sigma_i}v_i.
+\end{aligned}
+$$
+
+QR 后回代适用于列满秩系统；SVD 还能显示秩亏和敏感方向。切勿把 $(A^TA)^{-1}A^T$ 当成所有秩亏矩阵都适用的伪逆公式。
+
+多元模型 $y=\beta_0+\beta_1x_1+\beta_2x_2$ 只需把设计矩阵一行写为 $(1,x_1,x_2)$。原变量的多项式或乘积也可当新特征；以下模型可通过换元变成系数线性问题：
+
+$$
+\begin{aligned}
+y=ax^b&\ \Longrightarrow\ \log y=\log a+b\log x\quad(x,y>0),\\
+y=ae^{bx}&\ \Longrightarrow\ \log y=\log a+bx\quad(y>0),\\
+y=a\prod_jx_j^{b_j}&\ \Longrightarrow\ \log y=\log a+\sum_jb_j\log x_j,\\
+y=\frac1{a+bx}&\ \Longrightarrow\ \frac1y=a+bx\quad(y\ne0).
+\end{aligned}
+$$
+
+变换后最小化的是变换变量的残差，不再等同于原始 $y$ 的等权平方误差。公式可线性化不意味着统计意义自动不变；先看误差模型和数据允许的定义域。
+
+### 自旋模型拟合：把物理表达式变成特征
+
+第三次作业的未知参数为 $\theta=(J_1,J_2,J_3,B)^T$。每一个磁构型是一条样本，其自旋点积和是已知特征；即使自旋依赖非线性，能量对这四个待拟合参数仍然线性：
+
+$$
+\begin{aligned}
+Y_n^{(k)}&=\sum_{\langle ij\rangle_n}S_i^{(k)}\cdot S_j^{(k)},\quad n=1,2,3,\\
+Y_4^{(k)}&=\sum_{\langle ij\rangle_1}(S_i^{(k)}\cdot S_j^{(k)})^2,\\
+E_k&=J_1Y_1^{(k)}+J_2Y_2^{(k)}+J_3Y_3^{(k)}+BY_4^{(k)},\\
+A_{kn}&=Y_n^{(k)},\qquad \min_\theta\|A\theta-E\|_2^2,\qquad
+A^TA\theta=A^TE.
+\end{aligned}
+$$
+
+不另加常数项是这份作业给定模型的约定，不是所有能量拟合的通则。随机单位自旋的均匀生成也有数学依据：
+
+$$
+z=2u-1,\quad\varphi=2\pi v,\quad
+S=(\sqrt{1-z^2}\cos\varphi,\sqrt{1-z^2}\sin\varphi,z),\qquad
+d\Omega=d\varphi\,dz,
+$$
+
+其中 $u,v$ 独立均匀分布在 $[0,1)$。均匀抽极角并不产生球面均匀分布。代码固定随机种子生成构型，构造邻居表，计算特征，读取能量，然后拟合并检查残差、矩阵秩和独立验证样本。
+
+周期边界要把“几何上不同的周期键”与“同一键的重复遍历”分清。在该 $4\times4$ 作业约定下，长度为 4 的方向上第三近邻的两个周期键不能只按端点标签去重；三个近邻壳层各有 32 条键。README 的参数为 $(-1.5,0.8,-0.05,-0.2)$，它们适合核对这份给定数据，不是某种材料的普适常数。
+
+## 数值微分与 Richardson 外推
+
+### 一阶差分：从泰勒展开到公式
+
+记 $f_j=f(x+jh)$。先将正、负方向展开排列在一起，就能看清哪些项被相加或相减消去：
+
+$$
+\begin{aligned}
+f_{\pm1}&=f_0\pm hf'+\frac{h^2}{2}f''\pm\frac{h^3}{6}f^{(3)}+\frac{h^4}{24}f^{(4)}\pm\frac{h^5}{120}f^{(5)}+O(h^6),\\
+D_+&=\frac{f_1-f_0}{h}=f'+\frac h2f''+O(h^2),\\
+D_-&=\frac{f_0-f_{-1}}h=f'-\frac h2f''+O(h^2),\\
+D_0&=\frac{f_1-f_{-1}}{2h}=f'+\frac{h^2}{6}f^{(3)}+O(h^4),\\
+D_5&=\frac{f_{-2}-8f_{-1}+8f_1-f_2}{12h}
+=f'-\frac{h^4}{30}f^{(5)}+O(h^6).
+\end{aligned}
+$$
+
+前向、后向为一阶精度，中心为二阶，五点中心为四阶；五点模板的中心系数为零，实际只用四个非零权重的函数值。五点式可由 $8(f_1-f_{-1})-(f_2-f_{-2})$ 消去三阶项得到。靠近边界时，中心模板可能超出定义域，需换单边模板而非让程序越界。
+
+### 二阶差分与五点推导
+
+$$
+\begin{aligned}
+D^{(2)}_+&=\frac{f_2-2f_1+f_0}{h^2}=f''+hf^{(3)}+O(h^2),\\
+D^{(2)}_-&=\frac{f_0-2f_{-1}+f_{-2}}{h^2}=f''-hf^{(3)}+O(h^2),\\
+D^{(2)}_0&=\frac{f_1-2f_0+f_{-1}}{h^2}=f''+\frac{h^2}{12}f^{(4)}+O(h^4),\\
+A=f_1+f_{-1}&=2f_0+h^2f''+\frac{h^4}{12}f^{(4)}+\frac{h^6}{360}f^{(6)}+O(h^8),\\
+B=f_2+f_{-2}&=2f_0+4h^2f''+\frac{4h^4}{3}f^{(4)}+\frac{8h^6}{45}f^{(6)}+O(h^8),\\
+16A-B&=30f_0+12h^2f''-\frac{2h^6}{15}f^{(6)}+O(h^8),\\
+D^{(2)}_5&=\frac{-f_2+16f_1-30f_0+16f_{-1}-f_{-2}}{12h^2}
+=f''-\frac{h^4}{90}f^{(6)}+O(h^6).
+\end{aligned}
+$$
+
+第四次作业的关键就是先用对称和消去奇数阶，再用 $16A-B$ 消去四阶项。不要把“公式值减真值”与“真值减公式值”的误差符号混用；上面统一写公式值的展开。非等距节点不能直接套这些常数权重，可先作插值再求导：$f^{(m)}(x)\approx\sum_j y_jL_j^{(m)}(x)$。
+
+### 最佳步长与舍入误差竞争
+
+假设函数值有量级为 $u$ 的相对误差，且已按问题尺度归一化。一阶导数差分中的函数值误差经除以 $h$ 放大；二阶导数经除以 $h^2$ 放大。一般估计为
+
+$$
+E(h)\approx C_t h^p+C_r\frac u{h^m},\qquad
+E'(h)=0\ \Longrightarrow\ 
+h_{\rm opt}\approx\left(\frac{mC_ru}{pC_t}\right)^{1/(p+m)}.
+$$
+
+对前向一阶导数 $p=m=1$，量级为 $u^{1/2}$；中心一阶导数为 $u^{1/3}$；中心二阶导数为 $u^{1/4}$。这些是尺度化后的估计，常数取决于函数值与高阶导数，不能把机器精度的幂直接当所有问题的固定步长。代码对一串步长计算误差或相邻近似差，观察先降后升的趋势。
+
+### Richardson 外推与三角表
+
+只要近似值存在可预测的误差幂次，就能把主误差消去。设 $F(h)=L+ah^p+O(h^{p+q})$：
+
+$$
+\begin{aligned}
+F(h/2)&=L+\frac{ah^p}{2^p}+O(h^{p+q}),\\
+\frac{2^pF(h/2)-F(h)}{2^p-1}
+&=L+O(h^{p+q}).
+\end{aligned}
+$$
+
+中心差分的误差只含偶次幂，令 $h_k=h_0/2^k$，逐级消去 $h^2,h^4,\ldots$：
+
+$$
+\begin{aligned}
+D_{k,0}&=\frac{f(x+h_k)-f(x-h_k)}{2h_k},\\
+D_{k,j}&=D_{k,j-1}+\frac{D_{k,j-1}-D_{k-1,j-1}}{4^j-1},\quad1\le j\le k,\\
+D_{k,j}-f'(x)&=O(h_k^{2j+2})\quad\text{在光滑、截断误差主导的条件下}.
+\end{aligned}
+$$
+
+实现时先计算本行的 $D_{k,0}$，再从 $j=1$ 向右填；需保留上一行对应项。不要把所有外推分母都写成 3，它依次为 $3,15,63,\ldots$。对 $f(x)=x^3$，中心差分为 $3x^2+h^2$，一次外推恰好消掉全部误差；这不说明任意函数都会精确。表格深到舍入误差占优时，应停止继续外推。
+
+## 数值积分、求积公式与网格选择
+
+### 梯形公式与局部、整体误差
+
+在单段 $[a,b]$ 上令 $h=b-a$，将两点线性插值积分得到梯形公式。设 $f\in C^2$：
+
+$$
+\begin{aligned}
+\int_a^bP_1(x)\,dx&=\frac h2[f(a)+f(b)]=T,\\
+f(x)-P_1(x)&=\frac{f''(\xi_x)}2(x-a)(x-b),\\
+I-T&=-\frac{h^3}{12}f''(\xi),\\
+x_i=a+ih,\quad h=\frac{b-a}{n}:\quad
+T_n&=h\left[\frac{f_0+f_n}{2}+\sum_{i=1}^{n-1}f_i\right],\\
+I-T_n&=-\frac{(b-a)h^2}{12}f''(\xi).
+\end{aligned}
+$$
+
+余项积分时，$(x-a)(x-b)$ 在单段内不变号，才能用积分中值定理合并为一个 $\xi$。单段误差 $O(h^3)$，固定总区间分成 $O(1/h)$ 段后整体误差为 $O(h^2)$；这两种阶不是矛盾。梯形对一次及以下多项式精确。
+
+非等距数据可直接用 $\sum_i(x_{i+1}-x_i)(f_i+f_{i+1})/2$。代码端点权重为一半、内部为一；数据代表速度时，先确认积分变量是时间还是面积。
+
+### Simpson 公式与权重
+
+三点二次插值在 $[x_0,x_2]$ 积分，令等距 $x_1=x_0+h$、$x_2=x_0+2h$；标准坐标 $t=(x-x_1)/h$ 的三个 Lagrange 基函数分别为 $t(t-1)/2$、$1-t^2$、$t(t+1)/2$：
+
+$$
+\begin{aligned}
+\int_{x_0}^{x_2}f(x)\,dx
+&\approx h\int_{-1}^1\left[\frac{t(t-1)}2f_0+(1-t^2)f_1+\frac{t(t+1)}2f_2\right]dt\\
+&=\frac h3(f_0+4f_1+f_2),\\
+I-S_{\rm panel}&=-\frac{h^5}{90}f^{(4)}(\xi),\\
+S_n&=\frac h3\left[f_0+f_n+4\sum_{\substack{i=1\\i\text{ 奇}}}^{n-1}f_i
++2\sum_{\substack{i=2\\i\text{ 偶}}}^{n-2}f_i\right],\quad n\text{ 偶},\\
+I-S_n&=-\frac{(b-a)h^4}{180}f^{(4)}(\xi).
+\end{aligned}
+$$
+
+虽然从二次插值出发，对称性还使三次项精确积分，因此 Simpson 的代数精度为 3，整体误差为四阶。用中点展开时，积分与公式的奇数项都相消；四阶项分别为 $h^5f^{(4)}/60$ 与 $h^5f^{(4)}/36$，差为 $-h^5f^{(4)}/90$。$n$ 为偶数个子区间，意味着节点数 $N=n+1$ 为奇数。标准 $1,4,2,4,\ldots,1$ 权重不能直接用于任意不等距物理节点。
+
+管道体积流量是面积积分，圆对称时
+
+$$
+Q=\int_Av\,dA=2\pi\int_0^Rv(r)r\,dr.
+$$
+
+应对 $g(r)=2\pi rv(r)$ 作梯形或 Simpson，而不是只积 $v(r)$。量纲也能检查：速度乘面积才是单位时间流过的体积。
+
+### Romberg 积分与函数值复用
+
+Romberg 用复合梯形的偶次幂误差作 Richardson 外推。第 $k$ 层有 $2^k$ 个子区间、步长 $h_k=(b-a)/2^k$；新节点只有上一网格的中点：
+
+$$
+\begin{aligned}
+R_{0,0}&=\frac{b-a}{2}[f(a)+f(b)],\\
+R_{k,0}&=\frac12R_{k-1,0}
++h_k\sum_{i=1}^{2^{k-1}}f\big(a+(2i-1)h_k\big),\\
+R_{k,j}&=R_{k,j-1}+\frac{R_{k,j-1}-R_{k-1,j-1}}{4^j-1},\quad1\le j\le k.
+\end{aligned}
+$$
+
+先把旧梯形值减半，再加新出现的点；若每次重新计算所有旧节点，会浪费函数调用。对足够光滑的被积函数，$R_{k,j}$ 对应 $O(h_k^{2j+2})$ 的截断阶；端点奇性会破坏该误差结构，不能只靠增加表格层数补救。
+
+```text
+第一行只计算两个端点
+对 k = 1,...,最大层数-1：
+    步长减半，只计算新加入的奇数编号节点
+    按梯形递推形成 R[k,0]
+    对 j = 1,...,k：按分母 4^j-1 向右外推
+    比较相邻对角结果，并检查是否停滞
+```
+
+作业的 $I=\int_0^1e^{-x^2}dx$ 可用 $\sqrt\pi\operatorname{erf}(1)/2$ 作独立参考。前四层为
+
+$$
+\begin{array}{c|rrrr}
+k&j=0&j=1&j=2&j=3\\\hline
+0&0.683939720586&&&\\
+1&0.731370251829&0.747180428910&&\\
+2&0.742984097800&0.746855379791&0.746833709850&\\
+3&0.745865614846&0.746826120527&0.746824169910&0.746824018482
+\end{array}
+$$
+
+五层的 $R_{4,4}\approx0.746824133095094$，六层的 $R_{5,5}\approx0.746824132812244$。相邻对角差约 $2.83\times10^{-10}$ 是经验变化量，不是严格误差上界，也不等于六层结果的真实误差；若有解析参考值，应另外直接比较。
+
+### Gauss–Legendre：节点也作为未知量
+
+Gauss 求积同时选节点和权重。在 $[-1,1]$ 上要求对尽可能高次的单项式精确：
+
+$$
+\int_{-1}^1f(t)\,dt\approx\sum_{i=1}^nw_if(t_i),\qquad
+\sum_{i=1}^nw_it_i^k=\int_{-1}^1t^kdt
+=\begin{cases}0,&k\text{ 奇},\\2/(k+1),&k\text{ 偶}.\end{cases}
+$$
+
+一个节点时，常数和一次矩给 $w_1=2,t_1=0$。两个节点利用对称性设为 $\pm t$、同权 $w$，常数和二次矩确定两未知数：
+
+$$
+2w=2,\qquad2wt^2=\frac23
+\ \Longrightarrow\ w=1,\ t=\frac1{\sqrt3},\qquad
+\int_{-1}^1f(t)dt\approx f(-1/\sqrt3)+f(1/\sqrt3).
+$$
+
+对称性自动满足一次、三次矩，因此两点公式精确到三次。一般 $n$ 点 Gauss–Legendre 取 Legendre 多项式 $P_n$ 的根，权重为
+
+$$
+\begin{aligned}
+P_0(t)&=1,\quad P_1(t)=t,\quad
+(n+1)P_{n+1}=(2n+1)tP_n-nP_{n-1},\\
+P_n(t_i)&=0,\qquad
+w_i=\frac2{(1-t_i^2)[P_n'(t_i)]^2},\\
+P_n'(t)&=\frac{n[tP_n(t)-P_{n-1}(t)]}{t^2-1}\quad(|t|<1),\\
+x&=\frac{a+b}{2}+\frac{b-a}{2}t,\qquad
+\int_a^bf(x)dx\approx\frac{b-a}{2}\sum_iw_if\left(\frac{a+b}{2}+\frac{b-a}{2}t_i\right).
+\end{aligned}
+$$
+
+为什么是 $2n-1$ 次？任意次数不超过 $2n-1$ 的多项式可写成 $p=qP_n+r$，其中 $\deg q,\deg r\le n-1$。正交性使 $\int qP_n=0$；节点上 $P_n(t_i)=0$；而权重对 $r$ 的插值积分精确。因此两边只剩同一个 $r$。对足够光滑的 $f$，误差为
+
+$$
+I-Q_n=\frac{2^{2n+1}(n!)^4}{(2n+1)[(2n)!]^3}f^{(2n)}(\xi),\quad -1<\xi<1.
+$$
+
+代码可查节点权重表，或由递推和求根计算；检查 $\sum_iw_i=2$、对称性及低阶矩。变换到一般区间时，外面的 $(b-a)/2$ 不能漏。Gauss 对光滑函数很有效，但“次数高”不保证对任意不光滑或强局部变化的函数都最优。
+
+### 带权 Gauss 公式与正态期望
+
+一般形式是 $\int_a^b w(x)f(x)dx\approx\sum_iW_if(x_i)$，节点来自权函数对应的正交多项式。下表中的 $f$ 是去除指定权函数后剩下的部分：
+
+| 公式 | 区间与权函数 | 节点与权重 |
+|---|---|---|
+| Legendre | $[-1,1]$，$w=1$ | $P_n$ 的根及上一节权重 |
+| Chebyshev 第一类 | $[-1,1]$，$w=(1-x^2)^{-1/2}$ | $x_i=\cos[(2i-1)\pi/(2n)]$，$W_i=\pi/n$ |
+| Jacobi | $[-1,1]$，$w=(1-x)^\alpha(1+x)^\beta$，$\alpha,\beta>-1$ | $P_n^{(\alpha,\beta)}$ 的根；权重按该权函数确定 |
+| Laguerre（标准） | $[0,\infty)$，$w=e^{-x}$ | $L_n(x_i)=0$，$W_i=x_i/[(n+1)^2L_{n+1}(x_i)^2]$ |
+| Hermite（物理学家约定） | $(-\infty,\infty)$，$w=e^{-x^2}$ | $H_n(x_i)=0$，$W_i=2^{n-1}n!\sqrt\pi/[n^2H_{n-1}(x_i)^2]$ |
+
+Jacobi 或其他带权规则也可用统一定义理解权重，无需记一长串特殊函数系数：
+
+$$
+\ell_i(x)=\prod_{j\ne i}\frac{x-x_j}{x_i-x_j},\qquad
+W_i=\int_a^b w(x)\ell_i(x)\,dx,\qquad
+\int_a^bw(x)p_k(x)p_\ell(x)dx=0\quad(k\ne\ell).
+$$
+
+节点是 $p_n$ 的零点时，沿用上一节多项式除法证明，即得到对 $2n-1$ 次以下多项式的精确性。标准 Laguerre 和物理学家 Hermite 分别满足
+
+$$
+\begin{aligned}
+L_0&=1,\quad L_1=1-x,\quad
+(n+1)L_{n+1}=(2n+1-x)L_n-nL_{n-1},\\
+H_0&=1,\quad H_1=2x,\quad
+H_{n+1}=2xH_n-2nH_{n-1}.
+\end{aligned}
+$$
+
+若 $X\sim N(\mu,\sigma^2)$，采用 $e^{-t^2}$ 的 Hermite 表时，令 $x=\mu+\sqrt2\sigma t$：
+
+$$
+\begin{aligned}
+\mathbb E[g(X)]
+&=\frac1{\sqrt{2\pi}\sigma}\int_{-\infty}^{\infty}
+g(x)e^{-(x-\mu)^2/(2\sigma^2)}dx\\
+&=\frac1{\sqrt\pi}\int_{-\infty}^{\infty}e^{-t^2}
+g(\mu+\sqrt2\sigma t)dt
+\approx\frac1{\sqrt\pi}\sum_iW_i g(\mu+\sqrt2\sigma x_i).
+\end{aligned}
+$$
+
+三点 Hermite 的节点为 $0,\pm\sqrt{3/2}$，权重为 $2\sqrt\pi/3,\sqrt\pi/6,\sqrt\pi/6$。检查 $g=1$ 应得到 1，$g(x)=x^2$ 应得到 $\mu^2+\sigma^2$。如果查的是权重 $e^{-t^2/2}$ 的另一种约定，节点尺度和归一化因子必须一起变。
+
+### 奇点、变量代换与径向积分
+
+先判断奇点是否可去，或虽无界但可积。例如
+
+$$
+\int_0^1\frac{g(x)}{\sqrt x}\,dx
+\overset{x=t^2}{=}2\int_0^1g(t^2)dt.
+$$
+
+变换后再用等距规则，比在 $x=0$ 直接求无穷大的被积函数更合理。变量代换总要同时处理积分区间和 Jacobian；不只是把节点挪个位置。
+
+第四次作业采用 $Z=14$、$\rho=2Zr/3$，径向波函数与归一化检查为
+
+$$
+\begin{aligned}
+R_{3s}(r)&=\frac{Z^{3/2}}{9\sqrt3}(6-6\rho+\rho^2)e^{-\rho/2},\qquad
+F(r)=R_{3s}(r)^2r^2,\\
+\int_0^\infty F(r)dr
+&=\frac1{72}\int_0^\infty
+(\rho^6-12\rho^5+48\rho^4-72\rho^3+36\rho^2)e^{-\rho}d\rho\\
+&=\frac{6!-12\cdot5!+48\cdot4!-72\cdot3!+36\cdot2!}{72}=1.
+\end{aligned}
+$$
+
+$r^2dr$ 来自径向体积元；这里角部分已按单位归一化，所以不能再随意多乘 $4\pi$。实际作业截到 $r=40$，对于这组参数尾部极小。统一比较同样节点数 $N$（奇数），均匀 $r$ 网格步长为 $40/(N-1)$；指数变换使用 $r_0=0.0005$：
+
+$$
+\begin{aligned}
+r&=r_0(e^t-1),\qquad dr=r_0e^t dt,\qquad T=\log(1+40/r_0),\\
+\int_0^{40}F(r)dr&=\int_0^T F\big(r_0(e^t-1)\big)r_0e^t dt,\\
+t_i&=iT/(N-1),\qquad g_i=F(r_i)r_0e^{t_i},\\
+I_N&=\frac{T}{3(N-1)}
+\left[g_0+g_{N-1}+4\sum_{i\text{ 奇}}g_i+2\sum_{\substack{i\text{ 偶}\\0<i<N-1}}g_i\right].
+\end{aligned}
+$$
+
+在 $t$ 上均匀，才可以使用标准 Simpson；物理半径 $r_i$ 并不等距。小半径区间分配更多节点、远尾分配更少，适合这个波函数的变化尺度。README 中 $N=81$ 时，均匀网格结果约 $0.662906169373$，指数网格约 $0.999999991452$。粗网格结果可能上下摆动，必须增加节点并比较；这不是“非均匀网格对任何函数都更好”的结论。
+
+## 算法实现所需的程序基础
+
+### 类型、循环与模块只记和计算有关的部分
+
+数值程序最常见的错误不是推导公式错，而是整数除法、精度、下标和更新顺序不对。`3/2` 先做整数除法得到 1，即使赋给实数也只能得到实数 1；`3.0/2` 才是 1.5。Fortran 的 `**` 是乘幂，连续乘幂右结合；变量名不区分大小写。使用 `implicit none` 防止拼写错误被当成新变量。
+
+`kind` 的数值不是语言标准规定的字节数，具体由处理器和编译器决定；用 `selected_real_kind` 或标准模块中的精度常量更可移植。实常量的精度也要匹配，不能先在默认精度生成常量再指望赋值自动恢复丢失位。`huge`、`tiny`、`precision`、`range` 分别帮助查询范围、正规化下限、精度和指数范围。
+
+```fortran
+program example
+  implicit none
+  integer, parameter :: dp = selected_real_kind(15, 300)
+  real(dp) :: x, y
+  x = 1.0_dp / 3.0_dp
+  y = f(x)
+  print *, x, y
+contains
+  function f(t) result(v)
+    real(dp), intent(in) :: t
+    real(dp) :: v
+    v = sin(t) - 0.5_dp
+  end function f
+end program example
+```
+
+`if` 与 `select case` 实现分支；`do i=a,b,s` 的步长不能为零，端点按步长方向判断；`exit` 结束循环，`cycle` 跳到下一轮。`function` 返回函数结果，`subroutine` 通过参数返回结果并用 `call` 调用；`module`、`use` 和明确接口用于共享类型及例程。数组边界、输出参数和被原位修改的数据应在接口中写清。
+
+输入输出只需掌握表控 `read/print`、文件 `open/read/write/close` 和格式宽度。读取提前结束或用斜杠终止输入，不会自动把未赋值变量可靠地变为零；所有计算用到的变量要先初始化。固定格式老程序有列位置规则，阅读时注意，编写时采用自由格式即可。
+
+### 枚举、预计算与复杂度
+
+五次幂搜索 $a^5+b^5+c^5+d^5=e^5$ 是用来练习如何减少重复工作。先确定取值 $0\le a,b,c,d,e\le M$，预存 $P_i=i^5$，并用足够宽的整数：$200^5=320000000000$，已经超出有符号 32 位整数范围。
+
+$$
+a\le b\le c\le d\le e\quad\Longrightarrow\quad
+P_a+P_b+P_c+P_d=P_e.
+$$
+
+按非降序枚举可以减少等价排列，但仅靠这种排序并未改变五重循环的渐近阶数。更直接的改进是四重枚举左边的和，再在幂表中二分查找 $e$，或用整数哈希表查询；还可把两数之和预存后进行组合搜索，但必须说明存储代价和重复解处理。检查示例 $27^5+84^5+110^5+133^5=144^5$，并区分含零的平凡解与非平凡解。
+
+24 点选做题的通用思路是：从当前数集中取两个数，尝试合法运算，得到一个新数后递归处理更短的集合，直到只剩一个结果。减法和除法要考虑顺序，除法检查零分母；小整数输入可用有理数表示避免浮点等号误判。若要输出所有不同表达式，还需规定交换、结合造成的重复如何处理。
+
+性能比较记录输入规模、算法、精度、编译选项和函数评价次数。把循环不变量提出可减少重复计算；“乘法总比除法快”不是脱离硬件和编译优化仍成立的定理。计时之前必须先核对结果。
+
+## 南京大学汇报中的计算方法联系
+
+### 从样本拟合到模拟与优化
+
+这份汇报用于理解计算流程，不要求展开材料磁性、相图或磁电耦合的物理机理。可提取的主线是：生成构型并计算参考能量，借助对称性约束构造特征，拟合有效模型，再用优化或统计模拟研究模型结果。
+
+$$
+E^{(k)}\approx\sum_\alpha\theta_\alpha\Phi_\alpha(S^{(k)}),\qquad
+\min_\theta\sum_k\left[E^{(k)}-\sum_\alpha\theta_\alpha\Phi_\alpha(S^{(k)})\right]^2.
+$$
+
+对称性可使某些项消失、某些系数相等，从而减少独立未知量；这与作业的特征矩阵和最小二乘是同一个数学结构。DFT 提供参考能量与力，机器学习模型或势函数负责近似它们；训练误差低不代表新构型上也可靠，需用独立构型验证，并检查样本是否覆盖将要模拟的区域。
+
+共轭梯度主要用于寻找能量的局部极小构型；Monte Carlo 则可按热平衡分布采样。对能量 $E$、温度 $T$，目标概率和对称提议下的 Metropolis 接受率为
+
+$$
+\pi(S)=Z^{-1}e^{-E(S)/(k_BT)},\qquad
+P_{\rm acc}(S\to S')=\min\left(1,e^{-[E(S')-E(S)]/(k_BT)}\right),\qquad
+\langle O\rangle\approx\frac1N\sum_{k=1}^NO(S^{(k)}).
+$$
+
+这组公式用于补足汇报中“MC”的基本含义，并不表示汇报已系统讲完采样理论。先热化再统计，注意样本相关性；优化得到一个低能态和采样得到温度下的平均值，回答的是不同问题。自旋模长固定时，优化更新还必须保持约束。DFT 的截断能、网格、力容差应做收敛检查，而不必背某个材料算例的具体数值。
+
+## 方法比较与考前检查
+
+### 用条件选择方法
+
+| 问题 | 方法与核心公式 | 首先检查 |
+|---|---|---|
+| 连续标量方程有异号区间 | 二分，$c=(a+b)/2$ | 连续性、区间宽度；极点不是根 |
+| 光滑简单根，有导数 | Newton，$x\leftarrow x-f/f'$ | 初值、导数、残差、越界 |
+| 不便求导 | 割线，用两点差商替代导数 | 两次函数值之差、是否保留包围 |
+| 一般稠密线性方程 | 带主元消元／LU，$PA=LU$ | 主元、条件性、原方程残差 |
+| 三对角方程 | Thomas，前消后代 | 递推主元非零，三条对角的存储 |
+| 对称正定系统 | Cholesky 或 CG | 正定性；CG 的迭代残差 |
+| 同一节点的全局多项式插值 | Lagrange／Newton | 节点不同、差商更新、Runge 现象 |
+| 分段平滑插值 | 三次样条，求 $M_i$ | 边界条件与三对角方程 |
+| 带噪数据拟合 | 最小二乘；QR／SVD | 模型、秩、误差权重、过拟合 |
+| 光滑函数求导 | 中心差分、五点、Richardson | 定义域、误差阶和舍入竞争 |
+| 等距离散数据求积 | 梯形／Simpson | 节点间距、子区间奇偶和权重 |
+| 可继续细分的光滑积分 | Romberg | 新点复用、偶次误差结构、停滞 |
+| 光滑或有已知权函数的积分 | Gauss 类 | 权函数、区间、节点及 Jacobian |
+
+### 把公式落到代码时的检查顺序
+
+先检查输入和数学条件，再检查更新依赖：差商原位更新通常倒序；回代从下向上；Romberg 每行从左向右；主元换行必须带着右端项一起走。随后确认精度、下标和分母，最后用原始问题的残差、解析极限、网格加密和独立算法核验。
+
+读到一个方法时应能回答：未知量是什么；一次更新由哪条公式产生；需要保存哪些旧量；为什么会收敛或有该误差阶；什么情况下失效。记忆公式时优先记构造原则：Newton 来自线性化，差分和外推来自消去泰勒项，求积来自插值或矩匹配，分解把大系统转成三角系统，最小二乘来自残差平方和的驻点。
+
+本页按课件中实际展开的主题整理；导论中的机器型号与历史沿革压缩，Linux 排除。求根、矩阵、插值、微分积分课件及《数值误差与稳定计算》构成主线，四份 README 用于选取作业例子；南京大学汇报仅保留方法联系。作业没有覆盖的内容仍按课件纳入，选做或概述性方法不等于老师已确定的考点。
 ]]></content></entry></search>

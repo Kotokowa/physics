@@ -466,7 +466,11 @@
                     </span>
                 </a>
                 
-            <a href="/physics/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/" title="电动力学: 5"><span class="tag-content" title="电动力学" style="background-color:#E8F8F5;">电动力学<span class="tag-length">5</span></span></a></div>
+            <a href="/physics/tags/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6/" title="电动力学: 5"><span class="tag-content" title="电动力学" style="background-color:#E8F8F5;">电动力学<span class="tag-length">5</span></span></a><a href="/physics/tags/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E5%9F%BA%E7%A1%80/" title="计算物理基础: 1">
+                    <span class="tag-content" title="计算物理基础" style="background-color: #E8F8F5;">计算物理基础<span class="tag-length">1</span></span></a>
+                
+                
+                </div>
         </div>
     </div>
 </div>
@@ -845,6 +849,7 @@
   const autoScrollToc = function () {
     const $activeItem = document.querySelector('.is-active-link');
     const $cardToc = document.querySelector('.toc-content');
+    if (!$activeItem || !$cardToc) return;
     const activePosition = $activeItem.getBoundingClientRect().top
     const sidebarScrollTop = $cardToc.scrollTop
     if (activePosition > (document.documentElement.clientHeight - 100)) {

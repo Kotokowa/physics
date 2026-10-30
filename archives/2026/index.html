@@ -411,6 +411,23 @@
       <ul class="post-archive"><div class="year" data-aos="zoom-in-up"><div class="bullet"></div><a href="/physics/archives/2026/">2026</a></div><li class="post-item" data-aos="fade-left">
             
             <div class="post-img-box">
+              <a href="/physics/ComputationalPhysics/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E5%9F%BA%E7%A1%80%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload lazyload placeholder" src="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" data-srcset="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" srcset="https://pica.zhimg.com/80/v2-91a2a882dcf2005bfd4faf9669d2a1d8_1440w.webp" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                <span class="post-date">10-30</span>
+              </div>
+              <a class="post-title" href="/physics/ComputationalPhysics/%E8%AE%A1%E7%AE%97%E7%89%A9%E7%90%86%E5%9F%BA%E7%A1%80%E6%9C%9F%E4%B8%AD%E5%A4%8D%E4%B9%A0/">计算物理基础期中复习</a>
+            </div>
+          </li>
+        
+          
+          <li class="post-item" data-aos="fade-left">
+            
+            <div class="post-img-box">
               <a href="/physics/DianDongLiXue/%E7%94%B5%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%9C%9F%E4%B8%AD%E6%A8%A1%E6%8B%9F3/" class="post-img " style="background-size: cover; 
                 background-position: center center;">
                 <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" data-srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" srcset="https://picx.zhimg.com/80/v2-1f349f28bbad503626fcf16789255c55_1440w.webp" alt="">
@@ -557,23 +574,6 @@
                 <span class="post-date">02-28</span>
               </div>
               <a class="post-title" href="/physics/ReTong/%E5%87%A0%E7%8E%87%E6%B3%95%EF%BC%9ABoltzmann%E7%BB%9F%E8%AE%A1/">几率法：Boltzmann 统计</a>
-            </div>
-          </li>
-        
-          
-          <li class="post-item" data-aos="fade-left">
-            
-            <div class="post-img-box">
-              <a href="/physics/ReTong/%E7%AD%89%E5%87%A0%E7%8E%87%E5%81%87%E8%AE%BE/" class="post-img " style="background-size: cover; 
-                background-position: center center;">
-                <img class="lazyload lazyload placeholder" src="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" data-srcset="https://picx.zhimg.com/80/v2-25ed6418d95cf5e13cf77afe45e2e8e3_1440w.webp" srcset="https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp" alt="">
-              </a>
-            </div>
-            <div class="post-date-title">
-              <div>
-                <span class="post-date">02-27</span>
-              </div>
-              <a class="post-title" href="/physics/ReTong/%E7%AD%89%E5%87%A0%E7%8E%87%E5%81%87%E8%AE%BE/">等几率假设</a>
             </div>
           </li>
         
@@ -965,6 +965,7 @@
   const autoScrollToc = function () {
     const $activeItem = document.querySelector('.is-active-link');
     const $cardToc = document.querySelector('.toc-content');
+    if (!$activeItem || !$cardToc) return;
     const activePosition = $activeItem.getBoundingClientRect().top
     const sidebarScrollTop = $cardToc.scrollTop
     if (activePosition > (document.documentElement.clientHeight - 100)) {
