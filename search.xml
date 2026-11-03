@@ -53827,33 +53827,43 @@ $$
 - 差分进化：变异 $v=x_{r_1}+F(x_{r_2}-x_{r_3})$，再与目标个体交叉、择优保留。每种方法都要处理边界、随机种子和评价次数。
 
 
-展开例子：二维正定系统的两步共轭梯度
+展开例子：三维共轭梯度：第三个方向要与前两个都共轭
 
-要求解的是 $Ax=b$，其中 $A=\begin{pmatrix}1&0\\0&2\end{pmatrix}$、$b=\begin{pmatrix}1\\1\end{pmatrix}$，未知向量为 $x=\begin{pmatrix}x_1\\x_2\end{pmatrix}$。它等价于极小化 $g(x)=\tfrac12x^TAx-b^Tx$，因为 $\nabla g=Ax-b$。从 $x_0=0$ 开始，定义残差 $r_0=b-Ax_0=(1,1)^T$，它正是负梯度，先取搜索方向 $p_0=r_0$。
-
-先不背步长公式，直接沿这条线求最低点。令 $x=x_0+\alpha p_0=(\alpha,\alpha)^T$，把它代入目标函数：
+给定 $A=\operatorname{diag}(1,2,3)$、$b=(1,1,1)^T$，要求解 $Ax=b$。完整系统与等价极小化目标为
 
 $$
-g(\alpha,\alpha)=\frac32\alpha^2-2\alpha,\qquad
-\frac{d g}{d\alpha}=3\alpha-2=0\Rightarrow\alpha_0=\frac23.
+\begin{pmatrix}1&0&0\\0&2&0\\0&0&3\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}
+=\begin{pmatrix}1\\1\\1\end{pmatrix},\qquad
+g(x)=\frac12x^TAx-b^Tx.
 $$
 
-因此 $x_1=(2/3,2/3)^T$，新残差为 $r_1=b-Ax_1=(1/3,-1/3)^T$。第二次不直接沿 $r_1$，而试 $p_1=r_1+\beta p_0$；选 $\beta$ 使新方向与旧方向满足 $p_0^TAp_1=0$，避免破坏已经完成的方向优化：
+从 $x_0=0$ 开始，残差 $r_0=b-Ax_0$ 是负梯度，先取 $p_0=r_0=(1,1,1)^T$。沿 $x=x_0+\alpha p_0$ 有 $g=3\alpha^2-3\alpha$，最低点在 $\alpha_0=1/2$。得到新解和新残差后，令 $p_1=r_1+\beta_0p_0$，以 $p_0^TAp_1=0$ 确定系数：
 
 $$
 \begin{aligned}
-0=p_0^TA(r_1+\beta p_0)&=-\frac13+3\beta
-\Rightarrow\beta=\frac19,\\
-p_1&=(4/9,-2/9)^T,\\
-\frac{d}{d\alpha}g(x_1+\alpha p_1)
-&=p_1^T(Ax_1-b)+\alpha p_1^TAp_1\\
-&=-\frac29+\alpha\frac8{27}=0
-\Rightarrow\alpha_1=\frac34,\\
-x_2&=x_1+\frac34p_1=(1,1/2)^T,\qquad Ax_2=(1,1)^T=b.
+x_1&=(1/2,1/2,1/2)^T,\qquad r_1=(1/2,0,-1/2)^T,\\
+0=p_0^TA(r_1+\beta_0p_0)&=-1+6\beta_0
+\Rightarrow\beta_0=1/6,\qquad p_1=(2/3,1/6,-1/3)^T,\\
+\alpha_1&=\frac{p_1^Tr_1}{p_1^TAp_1}=\frac35,\qquad
+x_2=x_1+\alpha_1p_1=(9/10,3/5,3/10)^T,\\
+r_2&=b-Ax_2=(1/10,-1/5,1/10)^T.
 \end{aligned}
 $$
 
-所以步长来自“一维求极小”，方向系数来自“保持共轭”，不是凭空规定。一般 CG 的内积递推把这两件事整理成便于计算的公式。代码每轮保留解、残差和一个方向；本例两步精确解出依赖二维正定二次型和精确算术。
+步长来自沿该方向令目标的一阶导数为零。到第三步，用共轭梯度递推构造 $p_2$，并实际检查它不仅与 $p_1$、也与更早的 $p_0$ 共轭：
+
+$$
+\begin{aligned}
+\beta_1&=\frac{r_2^Tr_2}{r_1^Tr_1}=\frac3{25},\qquad
+p_2=r_2+\beta_1p_1=(9/50,-9/50,3/50)^T,\\
+p_0^TAp_2&=0,\qquad p_1^TAp_2=0,\\
+\alpha_2&=\frac{r_2^Tr_2}{p_2^TAp_2}=\frac59,\qquad
+x_3=x_2+\alpha_2p_2=(1,1/2,1/3)^T,\qquad Ax_3=b.
+\end{aligned}
+$$
+
+这展示了短递推的作用：不必重新存储和正交化所有过去方向，在精确算术的正定二次问题中，递推仍保持与全部旧方向的共轭关系。三步结束依赖这些条件，不能把它推广成任何三变量非线性目标都三步收敛。
 
 
 
@@ -53992,32 +54002,42 @@ $$
 求逆可作为作业要求；一般只求一个 $x$ 时，直接消元回代更省工作。最后代回原始 $A,b$ 检查残差，不能拿已被消元覆盖的数据冒充原问题。
 
 
-展开例子：首个对角元为零，并不代表方程无解
+展开例子：三阶消元：换行后还要继续选主元
 
-要求解的方程是 $2x_2=4$、$x_1+x_2=3$，未知的是 $x_1,x_2$。按未知量顺序把各方程的系数放成一行，右端常数放在竖线后：
-
-$$
-Ax=b,\qquad A=\begin{pmatrix}0&2\\1&1\end{pmatrix},\quad
-x=\begin{pmatrix}x_1\\x_2\end{pmatrix},\quad b=\begin{pmatrix}4\\3\end{pmatrix},\qquad
-[A|b]=\left[\begin{array}{cc|c}0&2&4\\1&1&3\end{array}\right].
-$$
-
-消元的目的是先去掉后面各行的 $x_1$，但首行的 $x_1$ 系数为零，不能用它作除数。第一列下方还有一个 1，因此把两条方程整体交换；它只是改变书写顺序，不改变解：
+要求解 $Ax=b$，给定
 
 $$
-\left[\begin{array}{cc|c}0&2&4\\1&1&3\end{array}\right]
-\longrightarrow
-\left[\begin{array}{cc|c}1&1&3\\0&2&4\end{array}\right].
+A=\begin{pmatrix}0&2&1\\1&1&0\\2&1&1\end{pmatrix},\qquad
+x=\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix},\qquad
+b=\begin{pmatrix}7\\3\\7\end{pmatrix}.
 $$
 
-这个例子交换后已经是上三角系统。所谓回代，就是从只剩一个未知量的最后一行开始求，再代回上面一行：
+每一行是一条方程。第一行的 $x_1$ 系数为零，不能直接作主元；在第一列取绝对值最大的 2，将第一、三行连同右端项交换。再用新首行去掉第二行的 $x_1$：
 
 $$
-2x_2=4\Rightarrow x_2=2,\qquad
-x_1+x_2=3\Rightarrow x_1=1.
+\begin{aligned}
+[A|b]&=\left[\begin{array}{ccc|c}0&2&1&7\\1&1&0&3\\2&1&1&7\end{array}\right]
+\xrightarrow{R_1\leftrightarrow R_3}
+\left[\begin{array}{ccc|c}2&1&1&7\\1&1&0&3\\0&2&1&7\end{array}\right],\\
+R_2\leftarrow R_2-\tfrac12R_1:\quad
+&\left[\begin{array}{ccc|c}2&1&1&7\\0&1/2&-1/2&-1/2\\0&2&1&7\end{array}\right].
+\end{aligned}
 $$
 
-核验必须使用原方程：$2\cdot2=4$、$1+2=3$。如果交换系数行却没有同时交换右端项，得到的就会是另一组方程。较大系统也一样，只是交换后还需对下方各行减去适当倍数的主元行。
+现在第一列已经处理完，第二次只在尚未处理的第 2、3 行中选第二列主元。此时 2 比 $1/2$ 大，还要再换一次行；不能仅在最开始选一次主元：
+
+$$
+\begin{aligned}
+R_2\leftrightarrow R_3:\quad
+&\left[\begin{array}{ccc|c}2&1&1&7\\0&2&1&7\\0&1/2&-1/2&-1/2\end{array}\right],\\
+R_3\leftarrow R_3-\tfrac14R_2:\quad
+&\left[\begin{array}{ccc|c}2&1&1&7\\0&2&1&7\\0&0&-3/4&-9/4\end{array}\right],\\
+x_3&=3,\qquad 2x_2+x_3=7\Rightarrow x_2=2,\qquad
+2x_1+x_2+x_3=7\Rightarrow x_1=1.
+\end{aligned}
+$$
+
+代回原矩阵，$A(1,2,3)^T=(7,3,7)^T=b$。这个三阶例子展示了两轮消元以及第二轮重新选主元；程序的列循环中，每轮都必须重新寻找剩余行的最大绝对值，并同步改变右端项。
 
 
 
@@ -54052,69 +54072,73 @@ $$
 无换行时 $P=I$；一般不能假定任意可逆矩阵都有可直接进行的无主元 LU。Doolittle 约定相反，令 $L_{ii}=1$，消元乘子存于 $L$。使用带主元分解时，后续换行还要同步交换 $L$ 已算出的列。分解只做一次，之后每个新右端项只需两次三角求解，共 $O(n^2)$。
 
 
-展开例子：一份 LU 分解解两个右端项
+展开例子：三阶 LU：分解的计算顺序与两个右端项
 
-已知系数矩阵 $A$ 和右端常数向量 $b$，要求解的是 $Ax=b$，不是 $Ax=y$。取
+已知 $A,b$，目标是解 $Ax=b$，其中
 
 $$
-\begin{cases}2x_1+x_2=3,\\4x_1+3x_2=7,\end{cases}\qquad
-A=\begin{pmatrix}2&1\\4&3\end{pmatrix},\quad
-b=\begin{pmatrix}3\\7\end{pmatrix},\quad
-x=\begin{pmatrix}x_1\\x_2\end{pmatrix}.
+A=\begin{pmatrix}2&2&4\\4&5&7\\-2&1&-5\end{pmatrix},\qquad
+b=\begin{pmatrix}2\\7\\5\end{pmatrix},\qquad
+x=\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}.
 $$
 
-LU 的想法是把同一个 $A$ 写成“下三角矩阵乘上三角矩阵”，这样原方程就能分两次逐行求解。此时 $L,U$ 都还不知道。按 Crout 约定把 $U$ 对角固定为 1，写出所有待定元素并真正相乘：
+先暂时不碰 $b$，只把 $A$ 分解为下三角 $L$ 与上三角 $U$。采用 Crout 约定，将 $U$ 的对角定为 1，其他元素待求：
 
 $$
 \begin{aligned}
-L&=\begin{pmatrix}\ell_{11}&0\\\ell_{21}&\ell_{22}\end{pmatrix},\qquad
-U=\begin{pmatrix}1&u_{12}\\0&1\end{pmatrix},\\
+L&=\begin{pmatrix}\ell_{11}&0&0\\\ell_{21}&\ell_{22}&0\\\ell_{31}&\ell_{32}&\ell_{33}\end{pmatrix},\qquad
+U=\begin{pmatrix}1&u_{12}&u_{13}\\0&1&u_{23}\\0&0&1\end{pmatrix},\\
 LU&=\begin{pmatrix}
-\ell_{11}&\ell_{11}u_{12}\\
-\ell_{21}&\ell_{21}u_{12}+\ell_{22}
-\end{pmatrix}
-\overset{[a]}{=}\begin{pmatrix}2&1\\4&3\end{pmatrix},\\
-\ell_{11}&=2,\quad\ell_{21}=4,\quad
-\ell_{11}u_{12}=1\Rightarrow u_{12}=\frac12,\\
-\ell_{21}u_{12}+\ell_{22}=3
-&\Rightarrow4\cdot\frac12+\ell_{22}=3\Rightarrow\ell_{22}=1,\\
-L&=\begin{pmatrix}2&0\\4&1\end{pmatrix},\qquad
-U=\begin{pmatrix}1&1/2\\0&1\end{pmatrix}.
+\ell_{11}&\ell_{11}u_{12}&\ell_{11}u_{13}\\
+\ell_{21}&\ell_{21}u_{12}+\ell_{22}&\ell_{21}u_{13}+\ell_{22}u_{23}\\
+\ell_{31}&\ell_{31}u_{12}+\ell_{32}&\ell_{31}u_{13}+\ell_{32}u_{23}+\ell_{33}
+\end{pmatrix}=A.
 \end{aligned}
 $$
 
-[a] 两矩阵相等，意味着相同位置的元素分别相等。先比较第一列得到 $\ell_{11},\ell_{21}$，再比较右上位置得到 $u_{12}$，最后比较右下位置得到 $\ell_{22}$。一般 Crout 公式中的“减去求和项”，就是把这里的 $\ell_{21}u_{12}$ 从已有矩阵元素中扣除；对角取 1 只是固定分解的尺度约定。
-
-现在才开始求 $x$。由 $Ax=b$ 得 $L(Ux)=b$，把括号里的向量临时命名为 $y=Ux$。$y$ 是算法引入的中间未知量，不是题目给定的右端项：
+比较相同位置的元素，但要按已有量能算出新量的顺序进行。先比较第一列，再比较第一行；随后处理第二列和第二行，最后处理右下角：
 
 $$
 \begin{aligned}
-Ly=b:\quad
-2y_1&=3\Rightarrow y_1=\frac32,\\
-4y_1+y_2&=7\Rightarrow y_2=7-4\cdot\frac32=1;\\[2pt]
-Ux=y:\quad
-x_2&=y_2=1,\\
-x_1+\frac12x_2&=y_1=\frac32
-\Rightarrow x_1=\frac32-\frac12=1.
+\text{第一列：}&\quad(\ell_{11},\ell_{21},\ell_{31})=(2,4,-2),\\
+\text{第一行：}&\quad u_{12}=2/2=1,\qquad u_{13}=4/2=2,\\
+\text{第二列：}&\quad \ell_{22}=5-4\cdot1=1,\qquad
+\ell_{32}=1-(-2)\cdot1=3,\\
+\text{第二行：}&\quad u_{23}=(7-4\cdot2)/1=-1,\\
+\text{第三列：}&\quad \ell_{33}=-5-(-2)\cdot2-3\cdot(-1)=2,\\
+L&=\begin{pmatrix}2&0&0\\4&1&0\\-2&3&2\end{pmatrix},\qquad
+U=\begin{pmatrix}1&1&2\\0&1&-1\\0&0&1\end{pmatrix}.
 \end{aligned}
 $$
 
-下三角系统从上往下算 $y$，上三角系统从下往上算 $x$。代回原方程，$2(1)+1=3$、$4(1)+3(1)=7$，解正确。
+三阶的右下角已经包含来自前两列的贡献 $\ell_{31}u_{13}+\ell_{32}u_{23}$，不能只减去一个乘积。这就是一般公式里求和项的来源；原矩阵的一个元素，往往是多个已算乘积加一个新未知量。
 
-若只把原方程的右端换成 $b'=(1,0)^T$，新的目标是 $Ax'=b'$。$A$ 没变，刚才算好的 $L,U$ 也不用变，只重新做两次三角求解：
+现在回到求解。由 $L(Ux)=b$ 引入中间向量 $y:=Ux$，先解 $Ly=b$，再解 $Ux=y$。两个系统具体是
 
 $$
-\begin{aligned}
-2y'_1=1&\Rightarrow y'_1=\frac12,\qquad
-4y'_1+y'_2=0\Rightarrow y'_2=-2,\\
-x'_2=y'_2&=-2,\qquad
-x'_1+\frac12x'_2=y'_1\Rightarrow x'_1=\frac32,\\
-Ax'&=\begin{pmatrix}2(3/2)-2\\4(3/2)+3(-2)\end{pmatrix}
-=\begin{pmatrix}1\\0\end{pmatrix}=b'.
-\end{aligned}
+\begin{gathered}
+\begin{pmatrix}2&0&0\\4&1&0\\-2&3&2\end{pmatrix}
+\begin{pmatrix}y_1\\y_2\\y_3\end{pmatrix}
+=\begin{pmatrix}2\\7\\5\end{pmatrix}
+\Rightarrow y=\begin{pmatrix}1\\3\\-1\end{pmatrix},\\
+\begin{pmatrix}1&1&2\\0&1&-1\\0&0&1\end{pmatrix}
+\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}
+=\begin{pmatrix}1\\3\\-1\end{pmatrix}
+\Rightarrow x=\begin{pmatrix}1\\2\\-1\end{pmatrix}.
+\end{gathered}
 $$
 
-这就是“一份分解解两个右端项”：第一次分解只用 $A$，后面的求解才用 $b$。程序也应区分这两个阶段。这个小矩阵不需换行；需要选主元时变成 $PA=LU$，第一步的右端必须相应使用 $Pb$。
+第一个系统从上向下求，第二个从下向上求；简单回代运算省略。核验 $Ax=(2,7,5)^T=b$。$y$ 只是这个过程中的临时量，原题的右端始终是 $b$。
+
+若给定另一个右端 $b'=(4,9,-1)^T$，只需沿用同一对 $L,U$：
+
+$$
+Ly'=b'\Rightarrow y'=(2,1,0)^T,\qquad
+Ux'=y'\Rightarrow x'=(1,1,0)^T,\qquad
+Ax'=(4,9,-1)^T=b'.
+$$
+
+因此分解只依赖 $A$，前代与回代才依赖具体右端。这里选出的各主元非零，不需换行；若实际算法进行了主元交换，分解应写为 $PA=LU$，第一步解 $Ly=Pb$。
 
 
 
@@ -54189,9 +54213,23 @@ L_{jj}=\sqrt{A_{jj}-\sum_{k<j}L_{jk}^2},\qquad
 L_{ij}=\frac{A_{ij}-\sum_{k<j}L_{ik}L_{jk}}{L_{jj}}\quad(i>j).
 $$
 
-若根号内非正，检查输入是否确为正定以及数值精度。解方程仍是 $Ly=b$、$L^Tx=y$；计算量约为一般 LU 的一半，阶数仍为 $O(n^3)$。
+若根号内非正，检查输入是否确为正定以及数值精度。解方程仍是 $Ly=b$、$L^Tx=y$；对稠密实 $n\times n$ 矩阵，Cholesky 的主要运算量约为 $n^3/3$，一般 LU 约为 $2n^3/3$；“一半”指运算次数的主项系数，二者都为 $O(n^3)$。这项比较只针对 Cholesky，不包括 QR。
 
-QR 的目标是将已知矩阵的各列表示在一组正交归一方向上；$Q$ 存这些方向，$R$ 存原列在这些方向上的系数。对 $m\times n$、$m\ge n$、列满秩的实矩阵，薄 QR 写成 $A=QR$，$Q^TQ=I_n$、$R$ 为上三角。Gram–Schmidt 的基本公式为
+QR 的目标是将已知矩阵的各列表示在一组正交归一方向上；$Q$ 存这些方向，$R$ 存原列在这些方向上的系数。对 $m\times n$、$m\ge n$、列满秩的实矩阵，薄 QR 的尺寸关系是
+
+$$
+A_{m\times n}=Q_{1,m\times n}R_{n\times n},\qquad Q_1^TQ_1=I_n.
+$$
+
+当 $m=n$ 时，$Q_1$ 是方阵；当 $m>n$ 时，$Q_1$ 是长方阵，它的列正交归一，但 $Q_1Q_1^T$ 是列空间投影，不等于 $I_m$。完整 QR 则补齐剩余正交方向：
+
+$$
+A_{m\times n}=Q_{{\rm full},m\times m}
+\begin{pmatrix}R_{n\times n}\\0_{(m-n)\times n}\end{pmatrix},\qquad
+Q_{\rm full}^TQ_{\rm full}=I_m.
+$$
+
+下面用 Gram–Schmidt 说明方向和系数怎样求得；公式中的 $Q$ 指薄 QR 的 $Q_1$，$R$ 为上三角。其基本公式为
 
 $$
 \begin{aligned}
@@ -54203,39 +54241,147 @@ $$
 
 代码中改进 Gram–Schmidt 每减去一个方向就用最新的 $v_j$ 求下一投影，通常比一次按原列求所有投影更稳健；高质量库多用 Householder 反射。QR 也会在最小二乘中把问题化成三角系统。
 
+对稠密 $m\times n$、$m\ge n$ 的矩阵，Gram–Schmidt 的主要运算量约为 $2mn^2$；Householder 分解约为 $2mn^2-2n^3/3$（用反射向量隐式保存 $Q$，未计显式生成完整 $Q$ 的额外工作）。因此方阵时 Householder 约为 $4n^3/3$，与 LU、Cholesky 都是三阶，系数不同；长方阵保留 $O(mn^2)$ 的双尺寸写法。示例用 Gram–Schmidt 便于看清投影，不能把 Householder 的精确计数直接套到该实现上。
 
-展开例子：亲手分解两个二阶矩阵
 
-先看 Cholesky。目标是把已知 $A=\begin{pmatrix}4&2\\2&3\end{pmatrix}$ 写成 $LL^T$，其中 $L$ 是对角为正的下三角矩阵。不是先猜答案，而是写出三个未知元素，再相乘比较：
+展开例子：三阶 Cholesky：对角项为什么要减去平方和？
+
+给定实对称正定矩阵
+
+$$
+A=\begin{pmatrix}4&2&2\\2&5&3\\2&3&6\end{pmatrix},\qquad
+L=\begin{pmatrix}a&0&0\\b&c&0\\d&e&f\end{pmatrix},\quad a,c,f>0.
+$$
+
+目标是求 $L$ 使 $A=LL^T$。三个正对角约定固定了平方根符号。先把乘积结构写出来，再逐列比较已知矩阵：
 
 $$
 \begin{aligned}
-L&=\begin{pmatrix}a&0\\b&c\end{pmatrix},\qquad
-LL^T=\begin{pmatrix}a^2&ab\\ab&b^2+c^2\end{pmatrix},\\
-a^2=4,\quad a>0&\Rightarrow a=2,\\
-ab=2&\Rightarrow b=1,\\
-b^2+c^2=3,\quad c>0&\Rightarrow c=\sqrt2,\\
-L&=\begin{pmatrix}2&0\\1&\sqrt2\end{pmatrix}.
+LL^T&=\begin{pmatrix}
+a^2&ab&ad\\ab&b^2+c^2&bd+ce\\ad&bd+ce&d^2+e^2+f^2
+\end{pmatrix}=A,\\
+a^2=4&\Rightarrow a=2,\qquad ab=2\Rightarrow b=1,\qquad ad=2\Rightarrow d=1,\\
+b^2+c^2=5&\Rightarrow c=\sqrt{5-1}=2,\\
+bd+ce=3&\Rightarrow e=(3-1\cdot1)/2=1,\\
+d^2+e^2+f^2=6&\Rightarrow f=\sqrt{6-1-1}=2,\\
+L&=\begin{pmatrix}2&0&0\\1&2&0\\1&1&2\end{pmatrix}.
 \end{aligned}
 $$
 
-一般公式里对角元素下的“减去前面平方和再开方”，对应这里从 3 中减去已算出的 $b^2$。实际回乘 $LL^T$ 得到原来的 $A$，分解得到核验。
+第三个对角 $f$ 已经需要扣除两个平方，非对角项 $e$ 则要扣除一个已有的交叉乘积。一般 Cholesky 公式正是将这些“前面各列的贡献”写成求和；不是给 $A$ 每个元素单独开平方。
 
-QR 解决的是另一种分解任务。给定 $B=\begin{pmatrix}1&1\\1&0\end{pmatrix}$，其两列分别为 $a_1=(1,1)^T,a_2=(1,0)^T$。希望先找相互垂直、长度为 1 的方向 $q_1,q_2$，再记录原来两列在这些方向上的系数。第一列直接除以自身长度；第二列先减去在第一方向上的投影：
+如果还要求解 $Ax=b$，例如 $b=(8,10,11)^T$，则由 $L(L^Tx)=b$ 定义 $y=L^Tx$，依次解
+
+$$
+Ly=b\Rightarrow y=(4,3,2)^T,\qquad
+L^Tx=y\Rightarrow x=(1,1,1)^T.
+$$
+
+核验 $LL^T=A$、$Ax=b$。由于另一因子由转置自动确定，只计算下三角就够了；这解释了它比一般 LU 少做一部分工作。若递推某个对角根号内非正，应检查正定条件和数值误差，不能强行取绝对值开方。
+
+
+
+
+展开例子：三阶 QR：第三列必须减去两个投影
+
+给定三列彼此独立的三阶矩阵
+
+$$
+A=\begin{pmatrix}1&1&0\\1&0&1\\0&1&1\end{pmatrix}
+=(a_1,a_2,a_3),\quad
+a_1=\begin{pmatrix}1\\1\\0\end{pmatrix},\quad
+a_2=\begin{pmatrix}1\\0\\1\end{pmatrix},\quad
+a_3=\begin{pmatrix}0\\1\\1\end{pmatrix}.
+$$
+
+目标是找一组正交归一列 $q_1,q_2,q_3$，用它们重新表达 $a_1,a_2,a_3$。$Q$ 保存方向，$R$ 保存展开系数。第一列只需归一化；第二列先减去在第一个方向上的投影：
 
 $$
 \begin{aligned}
-\|a_1\|&=\sqrt2,\qquad q_1=a_1/\sqrt2,\qquad r_{11}=\sqrt2,\\
-r_{12}&=q_1^Ta_2=1/\sqrt2,\\
-v_2&=a_2-r_{12}q_1=(1,0)^T-\tfrac12(1,1)^T=(1/2,-1/2)^T,\\
-\|v_2\|&=1/\sqrt2,\qquad q_2=v_2/\|v_2\|=(1,-1)^T/\sqrt2,\\
-a_1&=\sqrt2q_1,\qquad a_2=\tfrac1{\sqrt2}q_1+\tfrac1{\sqrt2}q_2,\\
-Q&=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad
-R=\begin{pmatrix}\sqrt2&1/\sqrt2\\0&1/\sqrt2\end{pmatrix},\qquad B=QR.
+r_{11}&=\|a_1\|=\sqrt2,\qquad q_1=\frac1{\sqrt2}(1,1,0)^T,\\
+r_{12}&=q_1^Ta_2=\frac1{\sqrt2},\qquad
+v_2=a_2-r_{12}q_1=(1/2,-1/2,1)^T,\\
+r_{22}&=\|v_2\|=\frac{\sqrt6}{2},\qquad q_2=\frac1{\sqrt6}(1,-1,2)^T.
 \end{aligned}
 $$
 
-$R$ 的每一列就是对应原列的展开系数。左下角为零，是因为第一列还不需要第二个方向。代码依次处理列，减投影、归一化、保存系数；最后同时检查 $QR=B$ 和 $Q^TQ=I$。
+到了第三列，必须减去两个方向上的投影。只减去 $q_2$，并不能保证结果也垂直于 $q_1$：
+
+$$
+\begin{aligned}
+r_{13}&=q_1^Ta_3=\frac1{\sqrt2},\qquad
+r_{23}=q_2^Ta_3=\frac1{\sqrt6},\\
+v_3&=a_3-r_{13}q_1-r_{23}q_2\\
+&=(0,1,1)^T-(1/2,1/2,0)^T-(1/6,-1/6,1/3)^T\\
+&=(-2/3,2/3,2/3)^T,\\
+r_{33}&=\|v_3\|=\frac2{\sqrt3},\qquad q_3=\frac1{\sqrt3}(-1,1,1)^T.
+\end{aligned}
+$$
+
+把方向与系数放回矩阵，具体得到
+
+$$
+Q=\begin{pmatrix}
+1/\sqrt2&1/\sqrt6&-1/\sqrt3\\
+1/\sqrt2&-1/\sqrt6&1/\sqrt3\\
+0&2/\sqrt6&1/\sqrt3
+\end{pmatrix},\qquad
+R=\begin{pmatrix}
+\sqrt2&1/\sqrt2&1/\sqrt2\\
+0&\sqrt6/2&1/\sqrt6\\
+0&0&2/\sqrt3
+\end{pmatrix}.
+$$
+
+$R$ 的第三列记录 $a_3=r_{13}q_1+r_{23}q_2+r_{33}q_3$；第二列不需要 $q_3$，第一列只需要 $q_1$，因此系数矩阵自然为上三角。核验 $Q^TQ=I_3$、$QR=A$。这比二阶多展示了一件重要的事：每个新方向都要对全部已生成方向正交化，而不只是对上一个方向。
+
+
+
+
+展开例子：长方阵 QR：四行三列怎样留下一个残差方向
+
+现在让行数严格多于列数。给定 $4\times3$ 矩阵，仍只需要三个独立列方向，因此薄 QR 的尺寸应为
+
+$$
+\underbrace{A}_{4\times3}
+=\underbrace{Q_1}_{4\times3}\underbrace{R}_{3\times3},\qquad
+A=\begin{pmatrix}1&1&2\\1&0&1\\1&1&0\\1&0&-1\end{pmatrix}.
+$$
+
+按列正交化，第一列长度为 2。第二列减去沿第一方向的投影后长度为 1；第三列减去前两个投影后长度为 2：
+
+$$
+\begin{aligned}
+q_1&=\tfrac12(1,1,1,1)^T,\qquad r_{11}=2,\\
+r_{12}&=q_1^Ta_2=1,\qquad
+v_2=a_2-q_1=\tfrac12(1,-1,1,-1)^T,\quad r_{22}=1,\quad q_2=v_2,\\
+r_{13}&=q_1^Ta_3=1,\qquad r_{23}=q_2^Ta_3=1,\\
+v_3&=a_3-q_1-q_2=(1,1,-1,-1)^T,\qquad r_{33}=2,\quad q_3=v_3/2,\\
+Q_1&=\frac12\begin{pmatrix}1&1&1\\1&-1&1\\1&1&-1\\1&-1&-1\end{pmatrix},\qquad
+R=\begin{pmatrix}2&1&1\\0&1&1\\0&0&2\end{pmatrix}.
+\end{aligned}
+$$
+
+这里 $Q_1^TQ_1=I_3$，但 $Q_1Q_1^T\ne I_4$：只有三个正交方向，不能覆盖四维空间。为了看到缺少的方向，补上一个与它们都正交的单位向量 $q_4=\tfrac12(1,-1,-1,1)^T$，得到完整 QR：
+
+$$
+Q_{\rm full}=\frac12\begin{pmatrix}1&1&1&1\\1&-1&1&-1\\1&1&-1&-1\\1&-1&-1&1\end{pmatrix},\qquad
+A=Q_{\rm full}\begin{pmatrix}2&1&1\\0&1&1\\0&0&2\\0&0&0\end{pmatrix}.
+$$
+
+薄 QR 省略了 $q_4$ 和最后一行零，因为它们不参与重构 $A$。但在最小二乘中，$q_4$ 方向正好可以承载无法拟合的残差。例如给定 $b=(5,1,1,-1)^T$，求使 $\|Ax-b\|$ 最小的 $x\in\mathbb R^3$：
+
+$$
+\begin{aligned}
+Q_1^Tb&=(3,3,3)^T,\qquad
+Rx=Q_1^Tb\Rightarrow x=(0,3/2,3/2)^T,\\
+Ax&=(9/2,3/2,3/2,-3/2)^T,\qquad
+r=b-Ax=(1/2,-1/2,-1/2,1/2)^T=q_4,\\
+Q_1^Tr&=0,\qquad \|r\|_2=1.
+\end{aligned}
+$$
+
+四条方程不一定有精确解，但 QR 能匹配数据在前三个方向上的分量；剩下正交方向的残差再怎么改变 $x$ 也消不掉。方阵例子看不到这一个“多出来的残差方向”。
 
 
 
@@ -54261,33 +54407,40 @@ $$
 $\Sigma$ 为 $m\times n$，$\Sigma^+$ 为 $n\times m$；复数情况把 $T$ 换成 $\dagger$。奇异值是 $A^TA$ 非负本征值的平方根，不是本征值本身。$A^+b$ 给出最小范数最小二乘解。很小的奇异值会放大噪声；数值秩需按尺度设置阈值，舍弃小奇异值的截断 SVD 改变了求解问题，是一种正则化选择。
 
 
-展开例子：一个小奇异值怎样放大数据误差？
+展开例子：三阶 SVD：可靠方向、敏感方向与完全丢失的方向
 
-先用容易看清方向的矩阵 $A=\operatorname{diag}(3,0.01)$。它把第一坐标方向放大 3 倍、第二方向缩小到 0.01 倍。SVD 要找的就是这样一组输入、输出正交方向及它们的缩放倍数。这个例子可以从 $A^TA$ 直接算出：
-
-$$
-A^TA=\begin{pmatrix}9&0\\0&0.0001\end{pmatrix},\qquad
-\sigma_1=\sqrt9=3,\quad\sigma_2=\sqrt{0.0001}=0.01,\quad U=V=I.
-$$
-
-现在要解 $Ax=b$，右端 $b=(3,0.01)^T$。两个方程分别是 $3x_1=3$、$0.01x_2=0.01$，所以解为 $(1,1)^T$。若数据的第二分量因噪声变成 0.02，求解就是除以同样的缩放倍数：
+取一个秩为 2 的三阶矩阵，目标是分清它对不同输入方向的作用，以及怎样求最小范数最小二乘解：
 
 $$
-\begin{aligned}
-\widetilde b&=(3,0.02)^T,\qquad
-\widetilde x=(3/3,0.02/0.01)^T=(1,2)^T,\\
-\delta b&=(0,0.01)^T,\qquad\delta x=(0,1)^T,\\
-A^{-1}&=\operatorname{diag}(1/3,100).
-\end{aligned}
+A=\begin{pmatrix}3/\sqrt2&3/\sqrt2&0\\0.01/\sqrt2&-0.01/\sqrt2&0\\0&0&0\end{pmatrix},\qquad
+v_1=\frac1{\sqrt2}\begin{pmatrix}1\\1\\0\end{pmatrix},\quad
+v_2=\frac1{\sqrt2}\begin{pmatrix}1\\-1\\0\end{pmatrix},\quad
+v_3=\begin{pmatrix}0\\0\\1\end{pmatrix}.
 $$
 
-小奇异值对应逆运算的大倍数，这就是噪声被放大的原因。假设判断第二个方向不可信，主动把它删去，近似矩阵变为 $A_1=\operatorname{diag}(3,0)$。此时没有普通逆矩阵，但仍可求最小二乘：
+这三个 $v$ 相互正交且长度为 1。将它们代入 $A$，直接得到 $Av_1=3e_1$、$Av_2=0.01e_2$、$Av_3=0$。因此完整 SVD 为
 
 $$
-\|A_1x-\widetilde b\|^2=(3x_1-3)^2+0.02^2.
+\begin{gathered}
+A=U\Sigma V^T,\qquad U=I_3,\qquad
+\Sigma=\begin{pmatrix}3&0&0\\0&0.01&0\\0&0&0\end{pmatrix},\qquad
+V=\begin{pmatrix}1/\sqrt2&1/\sqrt2&0\\1/\sqrt2&-1/\sqrt2&0\\0&0&1\end{pmatrix},\\
+A^TA=\begin{pmatrix}4.50005&4.49995&0\\4.49995&4.50005&0\\0&0&0\end{pmatrix},\qquad
+\lambda(A^TA)=9, 0.0001, 0.
+\end{gathered}
 $$
 
-取 $x_1=1$ 可使第一项为零；$x_2$ 取任何数都不影响残差。伪逆选择这些解中长度最小的一个，故取 $x_2=0$，得到 $A_1^+\widetilde b=(1,0)^T$。它稳定地放弃了不可靠方向，却没有恢复真实的第二分量 1；截断会带来偏差，阈值不能随意指定而不说明。
+奇异值是这些本征值的平方根。第一方向传递得较强，第二方向被缩小 100 倍，第三方向完全不可见；$A$ 没有普通逆，不能写 $\kappa(A)=3/0.01$ 来忽略那个零奇异值。
+
+例如参考右端为 $b=(3,0.01,0.2)^T$。第三行的左边恒为零，不可能精确等于 0.2，所以改求最小二乘。将未知量用右奇异向量展开 $x=z_1v_1+z_2v_2+z_3v_3$，残差平方和立即化为
+
+$$
+\|Ax-b\|^2=(3z_1-3)^2+(0.01z_2-0.01)^2+0.2^2.
+$$
+
+最小化给 $z_1=z_2=1$，而 $z_3$ 任意；最小范数要求 $z_3=0$，故 $x=A^+b=v_1+v_2=(\sqrt2,0,0)^T$，剩余残差为 $(0,0,0.2)^T$。
+
+若右端第二分量因噪声变成 0.02，得到 $z_2=2$，解沿 $v_2$ 改变了整整 1，而数据只变 0.01。若再主动截去奇异值 0.01，则只保留 $v_1$ 方向，求得 $x=v_1$：结果不再放大该方向的噪声，但也主动放弃了该方向的信息。零奇异值的秩亏与很小非零奇异值的敏感性是不同现象，本例把二者同时展示出来。
 
 
 
@@ -54319,36 +54472,50 @@ $$
 半正定矩阵有主平方根，但不能直接对零本征值取逆。数值结果应检查 $\|Ax_i-\lambda_ix_i\|$、$x_i^\dagger x_i=1$ 及正交性。课件的 LAPACK 调用对应：DSYEV 对称本征值、DPOTRF Cholesky、DGESVD SVD、DGEQRF QR；理解输入矩阵结构、输出和 INFO 状态比背参数顺序重要。
 
 
-展开例子：对角化就是换到两个独立的方向
+展开例子：三阶对角化：重根对应一整个本征平面
 
-给定 $A=\begin{pmatrix}2&1\\1&2\end{pmatrix}$，要寻找非零向量 $v$，使 $Av=\lambda v$。这句话的含义是：矩阵作用后只改变长度或符号，不改变所在直线。将未知数移到同一边得到 $(A-\lambda I)v=0$；若矩阵可逆，就只能有 $v=0$，所以非零解要求行列式为零：
+给定实对称矩阵 $A$，要寻找非零 $v$ 和数 $\lambda$ 使 $Av=\lambda v$。取
+
+$$
+A=\begin{pmatrix}2&1&1\\1&2&1\\1&1&2\end{pmatrix}
+=I_3+\begin{pmatrix}1&1&1\\1&1&1\\1&1&1\end{pmatrix}.
+$$
+
+后三行相同的矩阵作用在 $v=(x,y,z)^T$ 上，会把每个分量都变成 $s=x+y+z$。因此不必一开始就展开三次行列式，直接按“平行于 $(1,1,1)$”和“分量和为零”两种情况求解：
 
 $$
 \begin{aligned}
-\det(A-\lambda I)&=(2-\lambda)^2-1=0
-\Rightarrow\lambda=3\ \text{或}\ 1,\\
-\lambda=3:\quad -v_1+v_2&=0\Rightarrow v_2=v_1
-\Rightarrow u_1=(1,1)^T/\sqrt2,\\
-\lambda=1:\quad v_1+v_2&=0\Rightarrow v_2=-v_1
-\Rightarrow u_2=(1,-1)^T/\sqrt2.
+Av&=v+s(1,1,1)^T,\qquad s=x+y+z,\\
+v=(1,1,1)^T:&\quad Av=4v\Rightarrow\lambda_1=4,\quad u_1=(1,1,1)^T/\sqrt3,\\
+x+y+z=0:&\quad Av=v\Rightarrow\lambda=1.
 \end{aligned}
 $$
 
-除以 $\sqrt2$ 是为了把长度化为 1；两向量内积为零。把它们按列组成 $U$，任何向量都可写成 $v=Uz$，其中 $z$ 是新坐标。因为 $AU=U\operatorname{diag}(3,1)$，左右乘上 $U^T$ 就得到
+$x+y+z=0$ 是二维平面，所以本征值 1 有两个独立方向：它是二重本征值，但不是只有一个本征向量。先选平面内的 $v_2=(1,-1,0)^T$，再选 $v_3=(1,0,-1)^T$；二者虽独立，却不正交，需要再做一次正交化：
 
 $$
-U=\frac1{\sqrt2}\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad
-U^TAU=\operatorname{diag}(3,1),\qquad Av=U\begin{pmatrix}3z_1\\z_2\end{pmatrix}.
+\begin{aligned}
+u_2&=v_2/\sqrt2,\qquad
+w_3=v_3-(u_2^Tv_3)u_2=(1/2,1/2,-1)^T,\\
+u_3&=w_3/\|w_3\|=(1,1,-2)^T/\sqrt6,\\
+U&=\begin{pmatrix}
+1/\sqrt3&1/\sqrt2&1/\sqrt6\\
+1/\sqrt3&-1/\sqrt2&1/\sqrt6\\
+1/\sqrt3&0&-2/\sqrt6
+\end{pmatrix},\qquad U^TAU=\operatorname{diag}(4,1,1).
+\end{aligned}
 $$
 
-对角化就是把“两个坐标混着变化”改成“两个独立方向各乘一个数”。同理，主平方根矩阵应沿这些方向分别乘 $\sqrt3$ 和 1，作用两次才恢复 $A$：
+这里简并平面内的基并不唯一，但任意正交归一选择都能完成对角化。对称矩阵有重本征值也仍然可以正交对角化；不能把“重根”直接等同于“缺少本征向量”。
+
+沿 $u_1$ 的投影为 $P=u_1u_1^T$，其余平面投影为 $I-P$。于是 $A=4P+(I-P)$，主平方根为
 
 $$
-A^{1/2}=U\operatorname{diag}(\sqrt3,1)U^T
-=\frac12\begin{pmatrix}\sqrt3+1&\sqrt3-1\\\sqrt3-1&\sqrt3+1\end{pmatrix}.
+A^{1/2}=2P+(I-P)=I+P
+=\begin{pmatrix}4/3&1/3&1/3\\1/3&4/3&1/3\\1/3&1/3&4/3\end{pmatrix}.
 $$
 
-核验 $(A^{1/2})^2=A$。不要把原矩阵各元素直接开方，那样并不满足矩阵乘法意义下的平方根定义。
+核验 $U^TU=I$、$AU=U\operatorname{diag}(4,1,1)$ 和 $(A^{1/2})^2=A$。本例同时把矩阵对角化、正交投影和简并空间联系起来。
 
 
 
@@ -54389,44 +54556,45 @@ $$
 据此构造 $V=x^2$ 或 $V=x^4-x^2$ 的势能矩阵；若使用无量纲哈密顿量，按其约定替换 $\hbar^2/(2m)$。代码先形成 $H,S$，转为标准本征问题，排序取最低三个能级，再重构波函数并检查 $c_i^\dagger Sc_j=\delta_{ij}$。改变基函数个数、宽度或中心位置，才能判断低能结果是否收敛。
 
 
-展开例子：非正交基为什么不能直接对角化 H？
+展开例子：三个非正交基：相邻重叠怎样改变全部能量？
 
-用两个基函数近似波函数：$\psi=c_1\phi_1+c_2\phi_2$。假设每个基函数长度为 1，但二者不正交，重叠为 $\langle\phi_1|\phi_2\rangle=1/2$；已计算的哈密顿矩阵为 $H=2I$。给定的是 $H,S$，要找的是近似能量 $E$ 和系数 $c$：
-
-$$
-S=\begin{pmatrix}1&1/2\\1/2&1\end{pmatrix},\qquad
-H=\begin{pmatrix}2&0\\0&2\end{pmatrix}.
-$$
-
-从波函数本身求范数，会出现两个基函数的交叉项。对实系数展开可看清为什么不能用 $c_1^2+c_2^2$ 代替：
+设近似波函数为 $\psi=c_1\phi_1+c_2\phi_2+c_3\phi_3$，三基函数各自归一化，相邻重叠为 $1/2$，第一个与第三个正交。已算得
 
 $$
-\begin{aligned}
-\langle\psi|\psi\rangle&=c_1^2+c_2^2+2c_1c_2(1/2)=c^TSc,\\
-\langle\psi|\hat H|\psi\rangle&=2c_1^2+2c_2^2=c^THc,\\
-E(c)&=\frac{c^THc}{c^TSc},\\
-\frac{\partial}{\partial c}\big(c^THc-Ec^TSc\big)=0
-&\Rightarrow Hc=ESc.
-\end{aligned}
+S=\begin{pmatrix}1&1/2&0\\1/2&1&1/2\\0&1/2&1\end{pmatrix},\qquad
+H=\begin{pmatrix}2&0&0\\0&2&0\\0&0&2\end{pmatrix},\qquad
+c=\begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix}.
 $$
 
-最后一步是在固定范数的条件下找能量驻点，$E$ 同时成为约束乘子。将本例矩阵代入，非零系数要求
+目标是求能量驻值 $E$ 和对应系数 $c$。范数必须算实际波函数的重叠：$\langle\psi|\psi\rangle=c^TSc=c_1^2+c_2^2+c_3^2+c_1c_2+c_2c_3$。在范数约束下对能量变分，得到 $Hc=ESc$，即
 
 $$
-\det(H-ES)=\det\begin{pmatrix}2-E&-E/2\\-E/2&2-E\end{pmatrix}
-=(2-E)^2-E^2/4=0\Rightarrow E=4/3\ \text{或}\ 4.
+\begin{pmatrix}2-E&-E/2&0\\-E/2&2-E&-E/2\\0&-E/2&2-E\end{pmatrix}c=0.
 $$
 
-对 $E=4/3$，第一行给出 $c_1=c_2$；对 $E=4$，给出 $c_1=-c_2$。再用实际波函数范数归一化：
+非零解要求行列式为零：
 
 $$
 \begin{aligned}
-c=(a,a)^T:&\quad c^TSc=3a^2=1\Rightarrow c_+=(1,1)^T/\sqrt3,\\
-c=(a,-a)^T:&\quad c^TSc=a^2=1\Rightarrow c_-=(1,-1)^T.
+\det(H-ES)&=(2-E)\left[(2-E)^2-\frac{E^2}{2}\right]=0,\\
+E_-&=4-2\sqrt2,\qquad E_0=2,\qquad E_+=4+2\sqrt2.
 \end{aligned}
 $$
 
-把它们代回 $Hc=ESc$ 可分别核验。如果直接对角化 $H$，会错误地得到两个能量都为 2，因为忽略了基函数重叠。真实高斯基计算同样先求重叠 $S$，再处理广义本征值问题；不能因系数看起来只是一个向量就把 $S$ 省略。
+也可先对角化 $S$ 来理解结果。它的三个欧氏单位方向和本征值为
+
+$$
+\begin{array}{c|c|c}
+u& s\text{，满足 }Su=su&E=2/s\\\hline
+(1,\sqrt2,1)^T/2&1+1/\sqrt2&4-2\sqrt2\\
+(1,0,-1)^T/\sqrt2&1&2\\
+(1,-\sqrt2,1)^T/2&1-1/\sqrt2&4+2\sqrt2
+\end{array}
+$$
+
+为什么是 $2/s$？本例 $Hu=2u$，代入 $Hc=ESc$ 就成为 $2=Es$。实际归一化系数应取 $c=u/\sqrt s$，这样 $c^TSc=1$；仅把 $u$ 调成欧氏长度 1 还不够。核验每个 $c$ 满足 $Hc=ESc$。
+
+三个基函数通过中间一个发生相邻重叠，所有本征方向都要一起求。若忽略 $S$ 而直接对角化 $H$，会把三项能量全误写成 2。程序因此要明确保存重叠矩阵，检查它正定，再转成标准本征值问题。
 
 
 
